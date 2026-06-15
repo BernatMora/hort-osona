@@ -12,7 +12,12 @@ Projecte personal d'horticultura ecològica adaptat a la comarca d'**Osona** (Ca
 - [Quadern d'observacions 2026](plans-mensuals/quadern-observacio-2026.md)
 
 ### Fitxes de cultiu
-- [Bleda](07-fitxes-cultius/bleda.md) · [Ceba](07-fitxes-cultius/ceba.md) · [Enciam](07-fitxes-cultius/enciam.md) · [Mongeta](07-fitxes-cultius/mongeta.md) · [Pastanaga](07-fitxes-cultius/pastanaga.md) · [Pebrot](07-fitxes-cultius/pebrot.md) · [Tomàquet](07-fitxes-cultius/tomaquet.md) · [Carbassa](07-fitxes-cultius/carbassa.md) · [Carabassó](07-fitxes-cultius/carabasso.md) · [Aromàtiques](07-fitxes-cultius/aromatiques.md)
+- [Bleda](07-fitxes-cultius/bleda.md) · [Ceba](07-fitxes-cultius/ceba.md) · [Col](07-fitxes-cultius/col.md) · [Enciam](07-fitxes-cultius/enciam.md) · [Mongeta](07-fitxes-cultius/mongeta.md) · [Pastanaga](07-fitxes-cultius/pastanaga.md) · [Patata](07-fitxes-cultius/patata.md) · [Pebrot](07-fitxes-cultius/pebrot.md) · [Tomàquet](07-fitxes-cultius/tomaquet.md) · [Carbassa](07-fitxes-cultius/carbassa.md) · [Carabassó](07-fitxes-cultius/carabasso.md) · [Aromàtiques](07-fitxes-cultius/aromatiques.md)
+
+### Eines operatives
+- [Pla dels 12 mesos](pla-12-mesos.md) — guia any-tipus
+- [Bitàcola setmanal imprimible](bitacola-setmanal.md) · [versió HTML](bitacola-setmanal-imprimible.html)
+- [Pla de tractaments fitosanitaris](pla-tractaments-fitosanitaris.md)
 
 ### Guies de conreu
 - [Associacions i rotacions](02-associacions-rotacions.md)

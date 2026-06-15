@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitàcola setmanal de l'hort — Plantilla</title>
+<style>
+  @page { size: A4; margin: 1.2cm; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    color: #222;
+    max-width: 19cm;
+    margin: 0 auto;
+  }
+  h1 { font-size: 18pt; margin: 0 0 4pt 0; color: #2d5016; }
+  h2 {
+    font-size: 12pt; margin: 10pt 0 3pt 0;
+    border-bottom: 1.5pt solid #2d5016;
+    padding-bottom: 2pt; color: #2d5016;
+  }
+  h3 { font-size: 11pt; margin: 6pt 0 2pt 0; color: #4a7c2a; }
+  table { width: 100%; border-collapse: collapse; margin: 3pt 0 6pt 0; font-size: 9pt; }
+  th, td { border: 1px solid #888; padding: 3pt 4pt; text-align: left; vertical-align: top; }
+  th { background: #e8f0db; font-weight: 600; }
+  .checklist { list-style: none; padding: 0; margin: 3pt 0; }
+  .checklist li { padding: 1pt 0; }
+  .meta {
+    display: flex; gap: 10pt; margin: 4pt 0 8pt 0; flex-wrap: wrap;
+    font-size: 10pt;
+  }
+  .meta label { font-weight: 600; }
+  .meta input { border: none; border-bottom: 1px dotted #888; min-width: 60pt; }
+  .blank { border-bottom: 1px dotted #888; min-height: 14pt; display: block; width: 100%; }
+  .notes {
+    border: 1px dashed #888; min-height: 40pt;
+    margin: 4pt 0 6pt 0; padding: 4pt;
+  }
+  .scale-info { font-size: 8.5pt; color: #555; font-style: italic; }
+  .footer { margin-top: 8pt; font-size: 8.5pt; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 4pt; }
+  @media print { body { font-size: 10pt; } .no-print { display: none; } }
+  .print-btn {
+    position: fixed; top: 10pt; right: 10pt;
+    background: #2d5016; color: white; border: none;
+    padding: 8pt 12pt; border-radius: 4pt; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Imprimir</button>
+
+<h1>📓 Bitàcola setmanal de l'hort</h1>
+
+<div class="meta">
+  <div><label>Setmana nº:</label> <span class="blank" style="display:inline-block; width: 30pt;"></span></div>
+  <div><label>Any:</label> <span class="blank" style="display:inline-block; width: 50pt;"></span></div>
+  <div><label>Del:</label> <span class="blank" style="display:inline-block; width: 60pt;"></span></div>
+  <div><label>al:</label> <span class="blank" style="display:inline-block; width: 60pt;"></span></div>
+</div>
+
+<h2>🌤️ Meteorologia</h2>
+<table>
+  <tr>
+    <th>Dia</th><th>T. màx (°C)</th><th>T. mín (°C)</th><th>Pluja (mm)</th><th>Vent</th><th>Observacions</th>
+  </tr>
+  <tr><td>Dilluns</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Dimarts</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Dimecres</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Dijous</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Divendres</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Dissabte</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Diumenge</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><th>Total</th><td></td><td></td><td></td><td colspan="2"></td></tr>
+</table>
+
+<h2>🌱 Sembres i trasplantaments</h2>
+<ul class="checklist">
+  <li>☐ <strong>Sembrat:</strong> _________________________________________________________________</li>
+  <li>☐ <strong>Trasplantat:</strong> ______________________________________________________________</li>
+  <li>☐ <strong>Varietat:</strong> _________________________________________________________________</li>
+  <li>☐ <strong>Ubicació:</strong> _________________________________________________________________</li>
+</ul>
+
+<h2>🌾 Collites</h2>
+<table>
+  <tr><th>Cultiu</th><th>Varietat</th><th>Quantitat (kg/unitats)</th><th>Destinació</th><th>Notes</th></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>💧 Reg</h2>
+<ul class="checklist">
+  <li>☐ Dies de reg: ____________________________</li>
+  <li>☐ Volum total setmana: ________ L</li>
+  <li>☐ Sistema: ☐ Goteig ☐ Exudació ☐ Manual ☐ Aspersió</li>
+  <li>☐ Incidències: ______________________________________________________________</li>
+</ul>
+
+<h2>🧴 Tractaments aplicats</h2>
+<table>
+  <tr><th>Data</th><th>Producte</th><th>Cultiu</th><th>Plaga/Malaltia</th><th>Dosi</th><th>Resultat</th></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>🐛 Plagues i malalties observades</h2>
+<table>
+  <tr><th>Data</th><th>Cultiu</th><th>Símptoma</th><th>Possible causa</th><th>Acció presa</th></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>🐝 Fauna útil observada</h2>
+<ul class="checklist">
+  <li>☐ 🐞 Marietes — on? _________________________________________________________________</li>
+  <li>☐ 🐝 Abelles — on? _________________________________________________________________</li>
+  <li>☐ 🦋 Papallones — quines? __________________________________________________________</li>
+  <li>☐ 🐦 Ocells — quins? _________________________________________________________________</li>
+  <li>☐ 🐝 Abelles solitàries — on? ________________________________________________________</li>
+  <li>☐ Altres: __________________________________________________________________________</li>
+</ul>
+
+<h2>🌱 Estat dels cultius <span class="scale-info">(1=mort, 2=molt malament, 3=regular, 4=bo, 5=excel·lent)</span></h2>
+<table>
+  <tr><th>Cultiu</th><th>Estat (1-5)</th><th>Observacions</th></tr>
+  <tr><td>Tomàquet</td><td></td><td></td></tr>
+  <tr><td>Pebrot</td><td></td><td></td></tr>
+  <tr><td>Albergínia</td><td></td><td></td></tr>
+  <tr><td>Cogombre</td><td></td><td></td></tr>
+  <tr><td>Carbassó</td><td></td><td></td></tr>
+  <tr><td>Mongeta</td><td></td><td></td></tr>
+  <tr><td>Enciam</td><td></td><td></td></tr>
+  <tr><td>Bleda</td><td></td><td></td></tr>
+  <tr><td>Espinac</td><td></td><td></td></tr>
+  <tr><td>Pastanaga</td><td></td><td></td></tr>
+  <tr><td>Rave</td><td></td><td></td></tr>
+  <tr><td>Ceba</td><td></td><td></td></tr>
+  <tr><td>All</td><td></td><td></td></tr>
+  <tr><td>Patata</td><td></td><td></td></tr>
+  <tr><td>Col / Kale</td><td></td><td></td></tr>
+  <tr><td>Altres:</td><td></td><td></td></tr>
+</table>
+
+<h2>🛒 Compres i compres pendents</h2>
+<table>
+  <tr><th>Compres fetes</th><th>Quantitat</th><th>Preu €</th></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
+
+<table>
+  <tr><th>Pendent de comprar</th><th>Motiu</th></tr>
+  <tr><td></td><td></td></tr>
+  <tr><td></td><td></td></tr>
+</table>
+
+<h2>🛠️ Manteniment i infraestructura</h2>
+<ul class="checklist">
+  <li>☐ Compost: ☐ Remogut ☐ Afegit restes ☐ Regat ☐ Acabat</li>
+  <li>☐ Reg: ☐ Revisar degoters ☐ Netejar filtres ☐ Comprovar pressió</li>
+  <li>☐ Eines: ☐ Reparar ☐ Netejar ☐ Afilar</li>
+  <li>☐ Estructures: ☐ Tutors nous ☐ Mallesombra ☐ Hivernacle revisat</li>
+  <li>☐ Tanques i camins: ☐ Reparar ☐ Netejar males herbes</li>
+</ul>
+
+<h2>🪴 Compost</h2>
+<table>
+  <tr><th>Afegit</th><th>Quantitat</th><th>Tipus</th></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
+
+<h2>📋 Tasques per a la setmana vinent</h2>
+<ol>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+  <li>_________________________________________________________________</li>
+</ol>
+
+<h2>💡 Reflexions i aprenentatges</h2>
+<h3>Què ha funcionat bé?</h3>
+<div class="notes"></div>
+
+<h3>Què hauria de millorar?</h3>
+<div class="notes"></div>
+
+<h3>Què he après?</h3>
+<div class="notes"></div>
+
+<h3>Què faré diferent la setmana vinent?</h3>
+<div class="notes"></div>
+
+<h2>🌙 Fase lunar</h2>
+<ul class="checklist">
+  <li>☐ Lluna nova: _______________</li>
+  <li>☐ Quart creixent: ____________</li>
+  <li>☐ Lluna plena: ______________</li>
+  <li>☐ Quart minvant: ____________</li>
+</ul>
+
+<h2>📌 Notes</h2>
+<div class="notes" style="min-height: 60pt;"></div>
+<div class="notes" style="min-height: 60pt;"></div>
+
+<div class="footer">
+  Hort Osona · Bitàcola setmanal · Imprimeix una cada setmana
+</div>
+
+</body>
+</html>

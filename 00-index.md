@@ -17,8 +17,13 @@
 7. [Cobertes vegetals i adobs verds](05-cobertes-adobs-verds.md)
 8. [Predicció de tasques setmanals](08-pla-mensual.md)
 9. [Fitxes completes de cultius](07-fitxes-cultius/)
-   - [Bleda](07-fitxes-cultius/bleda.md) · [Ceba](07-fitxes-cultius/ceba.md) · [Enciam](07-fitxes-cultius/enciam.md) · [Mongeta](07-fitxes-cultius/mongeta.md) · [Pastanaga](07-fitxes-cultius/pastanaga.md) · [Pebrot](07-fitxes-cultius/pebrot.md) · [Tomàquet](07-fitxes-cultius/tomaquet.md) · [Carbassa](07-fitxes-cultius/carbassa.md) · [Carabassó](07-fitxes-cultius/carabasso.md) · [Aromàtiques](07-fitxes-cultius/aromatiques.md)
+   - [Bleda](07-fitxes-cultius/bleda.md) · [Ceba](07-fitxes-cultius/ceba.md) · [Col](07-fitxes-cultius/col.md) · [Enciam](07-fitxes-cultius/enciam.md) · [Mongeta](07-fitxes-cultius/mongeta.md) · [Pastanaga](07-fitxes-cultius/pastanaga.md) · [Patata](07-fitxes-cultius/patata.md) · [Pebrot](07-fitxes-cultius/pebrot.md) · [Tomàquet](07-fitxes-cultius/tomaquet.md) · [Carbassa](07-fitxes-cultius/carbassa.md) · [Carabassó](07-fitxes-cultius/carabasso.md) · [Aromàtiques](07-fitxes-cultius/aromatiques.md)
 10. [Varietats tradicionals catalanes i d'Osona](06-varietats-tradicionals.md)
+
+## Eines operatives
+- [Pla dels 12 mesos](pla-12-mesos.md) — guia any-tipus
+- [Bitàcola setmanal imprimible](bitacola-setmanal.md) · [versió HTML](bitacola-setmanal-imprimible.html)
+- [Pla de tractaments fitosanitaris](pla-tractaments-fitosanitaris.md)
 
 ## Com treballo
 - Cada consulta nova l'incorporo a la base (fitxa del cultiu, varietat, plaga, etc.).
