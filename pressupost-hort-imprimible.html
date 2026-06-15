@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressupost hort — Any 2026</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; color: #222; }
+  h1 { color: #2d5016; border-bottom: 3px solid #2d5016; padding-bottom: 0.4rem; }
+  h2 { color: #4a7c2a; margin-top: 2rem; border-bottom: 1.5px solid #4a7c2a; padding-bottom: 0.3rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.4rem 0.5rem; border: 1px solid #ccc; text-align: left; font-size: 0.95rem; }
+  th { background: #e8f0db; }
+  input[type="text"], input[type="number"] { width: 100%; border: none; background: transparent; padding: 0.2rem; font-size: 0.95rem; }
+  input[type="text"]:focus, input[type="number"]:focus { background: #fffce0; outline: 1px solid #2d5016; }
+  input[type="number"] { text-align: right; }
+  .subtotal { font-weight: 700; background: #f0f5e8; }
+  .total { font-weight: 700; background: #2d5016; color: white; font-size: 1.1rem; }
+  .info { background: #f8f8e0; padding: 0.8rem; border-radius: 4px; font-size: 0.9rem; margin: 1rem 0; }
+  button { background: #2d5016; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; margin: 0.2rem; }
+  button:hover { background: #1f3a0f; }
+  button.danger { background: #a00; }
+  button.secondary { background: #888; }
+  @media print { button, .no-print { display: none; } .total { background: #ddd; color: #000; } }
+</style>
+</head>
+<body>
+
+<h1>💰 Pressupost hort familiar — Any 2026</h1>
+
+<div class="info">
+  <strong>Com utilitzar:</strong> Omple les despeses per categoria. Els subtotals i total es calculen automàticament. Pots afegir files segons necessitis. Al final de l'any pots comparar el que havies previst amb el que realment has gastat.
+</div>
+
+<h2>1. Llavors i planter</h2>
+<table>
+  <tr><th>Concepte</th><th>Previst (€)</th><th>Real (€)</th><th>Notes</th><th class="no-print"></th></tr>
+  <tr><td><input type="text" placeholder="Llavors tomàquet"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Llavors pebrot"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Llavors enciam"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Patata de sembra"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Planter comprat"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr class="subtotal"><td>Subtotal</td><td data-subtotal-cat="1" data-tipo="previst">0.00</td><td data-subtotal-cat="1" data-tipo="real">0.00</td><td colspan="2"></td></tr>
+  <tr class="no-print"><td colspan="5" style="text-align:center;"><button onclick="afegirFila(this)">➕ Afegir fila</button></td></tr>
+</table>
+
+<h2>2. Adobs, esmenes i substrats</h2>
+<table>
+  <tr><th>Concepte</th><th>Previst (€)</th><th>Real (€)</th><th>Notes</th><th class="no-print"></th></tr>
+  <tr><td><input type="text" placeholder="Compost"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Fems"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Substrat"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Cendres"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr class="subtotal"><td>Subtotal</td><td data-subtotal-cat="2" data-tipo="previst">0.00</td><td data-subtotal-cat="2" data-tipo="real">0.00</td><td colspan="2"></td></tr>
+  <tr class="no-print"><td colspan="5" style="text-align:center;"><button onclick="afegirFila(this)">➕ Afegir fila</button></td></tr>
+</table>
+
+<h2>3. Tractaments i productes fitosanitaris</h2>
+<table>
+  <tr><th>Concepte</th><th>Previst (€)</th><th>Real (€)</th><th>Notes</th><th class="no-print"></th></tr>
+  <tr><td><input type="text" placeholder="Sabó potàssic"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Sulfat de coure"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Bacillus thuringiensis"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Oli de neem"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr class="subtotal"><td>Subtotal</td><td data-subtotal-cat="3" data-tipo="previst">0.00</td><td data-subtotal-cat="3" data-tipo="real">0.00</td><td colspan="2"></td></tr>
+  <tr class="no-print"><td colspan="5" style="text-align:center;"><button onclick="afegirFila(this)">➕ Afegir fila</button></td></tr>
+</table>
+
+<h2>4. Eines i infraestructura</h2>
+<table>
+  <tr><th>Concepte</th><th>Previst (€)</th><th>Real (€)</th><th>Notes</th><th class="no-print"></th></tr>
+  <tr><td><input type="text" placeholder="Eines manuals"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Malles i teles"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Tutors"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Reg (mànega, degoters...)"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Polvoritzador"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr class="subtotal"><td>Subtotal</td><td data-subtotal-cat="4" data-tipo="previst">0.00</td><td data-subtotal-cat="4" data-tipo="real">0.00</td><td colspan="2"></td></tr>
+  <tr class="no-print"><td colspan="5" style="text-align:center;"><button onclick="afegirFila(this)">➕ Afegir fila</button></td></tr>
+</table>
+
+<h2>5. Altres despeses</h2>
+<table>
+  <tr><th>Concepte</th><th>Previst (€)</th><th>Real (€)</th><th>Notes</th><th class="no-print"></th></tr>
+  <tr><td><input type="text" placeholder="Aigua"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Electricitat (bomba reg)"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Curs o formació"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Associació / quota"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text" placeholder="Llibres"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr><td><input type="text"/></td><td><input type="number" step="0.01"/></td><td><input type="number" step="0.01"/></td><td><input type="text"/></td><td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td></tr>
+  <tr class="subtotal"><td>Subtotal</td><td data-subtotal-cat="5" data-tipo="previst">0.00</td><td data-subtotal-cat="5" data-tipo="real">0.00</td><td colspan="2"></td></tr>
+  <tr class="no-print"><td colspan="5" style="text-align:center;"><button onclick="afegirFila(this)">➕ Afegir fila</button></td></tr>
+</table>
+
+<h2>📊 TOTAL</h2>
+<table>
+  <tr class="total">
+    <td>TOTAL ANY 2026</td>
+    <td id="totalPrevist">0.00 €</td>
+    <td id="totalReal">0.00 €</td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+<h2>🥬 Valor de la collita (estimat)</h2>
+<table>
+  <tr><th>Producte</th><th>Quantitat</th><th>Preu aprox. €/kg</th><th>Valor (€)</th></tr>
+  <tr><td>Tomàquet (kg)</td><td><input type="number" id="kg-tomaquet" onchange="actualitzarValor()"/></td><td>2,50</td><td id="v-tomaquet">0.00</td></tr>
+  <tr><td>Pebrot (kg)</td><td><input type="number" id="kg-pebrot" onchange="actualitzarValor()"/></td><td>2,80</td><td id="v-pebrot">0.00</td></tr>
+  <tr><td>Enciam (unitats)</td><td><input type="number" id="kg-enciam" onchange="actualitzarValor()"/></td><td>0,80</td><td id="v-enciam">0.00</td></tr>
+  <tr><td>Carbassó (kg)</td><td><input type="number" id="kg-carbasso" onchange="actualitzarValor()"/></td><td>1,80</td><td id="v-carbasso">0.00</td></tr>
+  <tr><td>Patata (kg)</td><td><input type="number" id="kg-patata" onchange="actualitzarValor()"/></td><td>1,50</td><td id="v-patata">0.00</td></tr>
+  <tr><td>Ceba (kg)</td><td><input type="number" id="kg-ceba" onchange="actualitzarValor()"/></td><td>1,80</td><td id="v-ceba">0.00</td></tr>
+  <tr><td>Mongeta (kg)</td><td><input type="number" id="kg-mongeta" onchange="actualitzarValor()"/></td><td>3,50</td><td id="v-mongeta">0.00</td></tr>
+  <tr><td>Altres</td><td><input type="number" id="kg-altres" onchange="actualitzarValor()"/></td><td>2,00</td><td id="v-altres">0.00</td></tr>
+  <tr class="total"><td colspan="3">VALOR ESTIMAT COLLITA</td><td id="totalCollita">0.00 €</td></tr>
+</table>
+
+<div class="info">
+  <strong>Balanç econòmic:</strong> Valor collita − Despesa real = 
+  <span id="balanc" style="font-weight:bold;">0.00 €</span><br>
+  <em>Un hort familiar sol donar un balanç positiu a partir del segon any (el primer hi ha molta inversió).</em>
+</div>
+
+<div class="no-print" style="text-align:center; margin: 2rem 0;">
+  <button onclick="window.print()">🖨️ Imprimir</button>
+  <button onclick="netejarTot()" class="secondary">🔄 Netejar tot</button>
+</div>
+
+<div style="margin-top:2rem; padding:1rem; background:#f0f5e8; border-radius:6px; font-size:0.9rem; color:#555;">
+  🌱 <em>Plantilla de pressupost hort-ecològic Osona · Any 2026</em>
+</div>
+
+<script>
+function afegirFila(btn) {
+  const table = btn.parentElement.parentElement.parentElement;
+  const row = table.insertRow(table.rows.length - 2);
+  row.innerHTML = `
+    <td><input type="text" placeholder="Concepte"/></td>
+    <td><input type="number" step="0.01" onchange="calcularTotals()"/></td>
+    <td><input type="number" step="0.01" onchange="calcularTotals()"/></td>
+    <td><input type="text"/></td>
+    <td class="no-print"><button onclick="eliminarFila(this)" class="danger">✕</button></td>
+  `;
+}
+
+function eliminarFila(btn) {
+  btn.parentElement.parentElement.remove();
+  calcularTotals();
+}
+
+function calcularTotals() {
+  // Per cada categoria
+  for (let cat = 1; cat <= 5; cat++) {
+    let prev = 0, real = 0;
+    document.querySelectorAll(`[data-subtotal-cat="${cat}"]`).forEach(cell => {
+      // Cerca la taula anterior amb la categoria
+    });
+    // Versió simplificada
+    const tables = document.querySelectorAll('table');
+    tables.forEach(table => {
+      const subtotal = table.querySelector('.subtotal');
+      if (subtotal) {
+        const subCat = subtotal.querySelector('[data-subtotal-cat]');
+        if (subCat && subCat.dataset.subtotalCat == cat) {
+          let p = 0, r = 0;
+          const rows = table.querySelectorAll('tr');
+          rows.forEach(row => {
+            if (row.classList.contains('subtotal') || row.querySelector('th')) return;
+            const inputs = row.querySelectorAll('input[type="number"]');
+            if (inputs.length >= 2) {
+              p += parseFloat(inputs[0].value) || 0;
+              r += parseFloat(inputs[1].value) || 0;
+            }
+          });
+          const cells = subtotal.querySelectorAll('td');
+          if (cells.length >= 3) {
+            cells[1].textContent = p.toFixed(2);
+            cells[2].textContent = r.toFixed(2);
+          }
+        }
+      }
+    });
+  }
+
+  // Total general
+  let totalP = 0, totalR = 0;
+  document.querySelectorAll('.subtotal').forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length >= 3) {
+      totalP += parseFloat(cells[1].textContent) || 0;
+      totalR += parseFloat(cells[2].textContent) || 0;
+    }
+  });
+  document.getElementById('totalPrevist').textContent = totalP.toFixed(2) + ' €';
+  document.getElementById('totalReal').textContent = totalR.toFixed(2) + ' €';
+  actualitzarBalanc(totalR);
+}
+
+function actualitzarValor() {
+  const preus = {tomaquet: 2.5, pebrot: 2.8, enciam: 0.8, carbasso: 1.8, patata: 1.5, ceba: 1.8, mongeta: 3.5, altres: 2.0};
+  let total = 0;
+  for (const k in preus) {
+    const kg = parseFloat(document.getElementById('kg-'+k)?.value) || 0;
+    const v = kg * preus[k];
+    document.getElementById('v-'+k).textContent = v.toFixed(2);
+    total += v;
+  }
+  document.getElementById('totalCollita').textContent = total.toFixed(2) + ' €';
+  actualitzarBalanc();
+}
+
+function actualitzarBalanc(despesaReal) {
+  if (despesaReal === undefined) {
+    despesaReal = parseFloat(document.getElementById('totalReal').textContent.replace('€','')) || 0;
+  }
+  const collita = parseFloat(document.getElementById('totalCollita').textContent.replace('€','')) || 0;
+  const balanc = collita - despesaReal;
+  const el = document.getElementById('balanc');
+  el.textContent = balanc.toFixed(2) + ' €';
+  el.style.color = balanc > 0 ? '#2d5016' : (balanc < 0 ? '#a00' : '#000');
+}
+
+function netejarTot() {
+  if (confirm('Segur que vols netejar totes les dades?')) {
+    document.querySelectorAll('input').forEach(i => i.value = '');
+    calcularTotals();
+    actualitzarValor();
+  }
+}
+
+// Inicialitzar càlcul
+document.addEventListener('input', calcularTotals);
+calcularTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de reg — Hort Osona</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+  h1 { color: #2d5016; border-bottom: 3px solid #2d5016; padding-bottom: 0.4rem; }
+  h2 { color: #4a7c2a; margin-top: 2rem; }
+  .field { margin-bottom: 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+  input, select { padding: 0.5rem; border: 1px solid #888; border-radius: 4px; font-size: 1rem; width: 100%; max-width: 300px; }
+  button { background: #2d5016; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+  button:hover { background: #1f3a0f; }
+  .result { background: #e8f0db; padding: 1.2rem; border-radius: 6px; margin-top: 1.5rem; border-left: 5px solid #2d5016; }
+  .result h3 { margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.5rem; border-bottom: 1px solid #ddd; text-align: left; }
+  th { background: #f0f5e8; }
+  .info { background: #f8f8e0; padding: 0.8rem; border-radius: 4px; font-size: 0.95rem; margin: 1rem 0; }
+  .tot { font-size: 1.3rem; font-weight: 700; color: #2d5016; }
+  @media print { button, .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<h1>💧 Calculadora de reg</h1>
+
+<p>Eina per calcular les necessitats hídriques setmanals dels cultius a l'hort d'Osona.</p>
+
+<div class="info">
+  <strong>Com funciona?</strong> Multiplica el coeficient del cultiu (L/m²/setmana) per la superfície que ocupa. Suma tots els cultius i obtindràs el volum total setmanal recomanat.
+</div>
+
+<h2>1. Selecciona els teus cultius</h2>
+
+<form id="regForm">
+
+  <table id="cultiusTable">
+    <tr>
+      <th>Cultiu</th>
+      <th>L/m²/setmana</th>
+      <th>Superfície (m²)</th>
+      <th>L/setmana</th>
+      <th class="no-print"></th>
+    </tr>
+  </table>
+
+  <button type="button" onclick="afegirFila()">➕ Afegir cultiu</button>
+  <button type="button" onclick="calcular()" style="background:#4a7c2a;">📊 Calcular</button>
+  <button type="button" onclick="netejar()" style="background:#888;">🔄 Netejar</button>
+
+</form>
+
+<div id="resultat" class="result" style="display:none;"></div>
+
+<h2>📋 Taula de coeficients (referència)</h2>
+<table>
+  <tr><th>Cultiu</th><th>L/m²/setmana (estiu)</th><th>Notes</th></tr>
+  <tr><td>Tomàquet</td><td>30-40</td><td>Molt exigent, especialment en floració</td></tr>
+  <tr><td>Pebrot</td><td>20-25</td><td>Sensible a l'estrès hídric</td></tr>
+  <tr><td>Albergínia</td><td>25-30</td><td>Voluminoses, exigents</td></tr>
+  <tr><td>Carbassa</td><td>40-50</td><td>Molt exigent, fulles grans</td></tr>
+  <tr><td>Carbassó</td><td>35-45</td><td>Exigent, cultiu ràpid</td></tr>
+  <tr><td>Cogombre</td><td>30-40</td><td>Exigent en aigua, sensible a sequera</td></tr>
+  <tr><td>Meló</td><td>25-35</td><td>Moderat-exigent</td></tr>
+  <tr><td>Síndria</td><td>25-30</td><td>Aprofita bé la humitat del sòl</td></tr>
+  <tr><td>Mongeta tendra</td><td>20-25</td><td>Moderat, arrels superficials</td></tr>
+  <tr><td>Mongeta seca</td><td>15-20</td><td>Menys exigent (cicle més llarg)</td></tr>
+  <tr><td>Pèsol</td><td>15-20</td><td>Moderat, sensible a sequera</td></tr>
+  <tr><td>Fava</td><td>15-20</td><td>Resistent, s'adapla</td></tr>
+  <tr><td>Enciam</td><td>25-30</td><td>Exigent, fulles tendres</td></tr>
+  <tr><td>Escarola</td><td>20-25</td><td>Moderat</td></tr>
+  <tr><td>Bleda</td><td>20-25</td><td>Resistent, s'adapla</td></tr>
+  <tr><td>Espinac</td><td>15-20</td><td>Moderat, puja a flor amb sequera</td></tr>
+  <tr><td>Col</td><td>25-35</td><td>Exigent, cabdells denses</td></tr>
+  <tr><td>Kale</td><td>20-25</td><td>Moderat-exigent</td></tr>
+  <tr><td>Bròquil</td><td>25-30</td><td>Exigent</td></tr>
+  <tr><td>Coliflor</td><td>25-30</td><td>Exigent, sensible</td></tr>
+  <tr><td>Pastanaga</td><td>20-25</td><td>Regularitat, no excessiu</td></tr>
+  <tr><td>Rave</td><td>15-20</td><td>Moderat, cicle ràpid</td></tr>
+  <tr><td>Remolatxa</td><td>15-20</td><td>Moderat</td></tr>
+  <tr><td>Ceba</td><td>15-20</td><td>Moderat, bulb sensible a irregularitat</td></tr>
+  <tr><td>All</td><td>10-15</td><td>Poc exigent</td></tr>
+  <tr><td>Porro</td><td>20-25</td><td>Moderat-exigent</td></tr>
+  <tr><td>Api</td><td>25-30</td><td>Exigent, necessita humitat constant</td></tr>
+  <tr><td>Patata</td><td>25-35</td><td>Crític en tuberització</td></tr>
+  <tr><td>Moniato</td><td>20-30</td><td>Resistent a sequera</td></tr>
+  <tr><td>Julivert</td><td>15-20</td><td>Moderat</td></tr>
+  <tr><td>Basilic</td><td>20-25</td><td>Moderat, sensible al fred</td></tr>
+</table>
+
+<h2>🌡️ Ajustos segons estació</h2>
+<table>
+  <tr><th>Estació</th><th>Multiplicador</th><th>Notes</th></tr>
+  <tr><td>Primavera (abril-maig)</td><td>× 0,7</td><td>Pluges freqüents, moderar</td></tr>
+  <tr><td>Estiu (juny-agost)</td><td>× 1,0</td><td>Base de càlcul</td></tr>
+  <tr><td>Tardor (set-oct)</td><td>× 0,6</td><td>Temperatures suaus, pluges</td></tr>
+  <tr><td>Hivern</td><td>× 0,3</td><td>Poques necessitats, glaçades</td></tr>
+</table>
+
+<h2>🛠️ Consells pràctics</h2>
+<ul>
+  <li><strong>Regar al matí (6-9h) o vespre (20-22h)</strong> — mai a ple sol.</li>
+  <li><strong>Mulching</strong> redueix un 30-50% les necessitats d'aigua.</li>
+  <li><strong>Goteig o exudació</strong> estalvia un 40% respecte a aspersió.</li>
+  <li><strong>Ploure 10 mm</strong> equival a 10 L/m² (descomptar del reg).</li>
+  <li><strong>Sòl argilós</strong> reté més humitat que el sorrenc (regar menys sovint, més quantitat).</li>
+  <li><strong>Comprovar la humitat</strong>: ficar el dit 5 cm al sòl — si és sec, regar.</li>
+</ul>
+
+<div style="margin-top:2rem; padding:1rem; background:#f0f5e8; border-radius:6px; font-size:0.9rem; color:#555;">
+  🌱 <em>Calculadora hort-ecològica Osona · Versió 1.0</em><br>
+  Per a més informació consulta <a href="pla-reg-personalitzat-2026.md">pla-reg-personalitzat-2026.md</a> i <a href="04-reg-fertilitzacio.md">04-reg-fertilitzacio.md</a>.
+</div>
+
+<script>
+const cultius = [
+  {nom: "Tomàquet", coef: 35},
+  {nom: "Pebrot", coef: 22},
+  {nom: "Albergínia", coef: 27},
+  {nom: "Carbassa", coef: 45},
+  {nom: "Carbassó", coef: 40},
+  {nom: "Cogombre", coef: 35},
+  {nom: "Meló", coef: 30},
+  {nom: "Síndria", coef: 27},
+  {nom: "Mongeta tendra", coef: 22},
+  {nom: "Mongeta seca", coef: 17},
+  {nom: "Pèsol", coef: 17},
+  {nom: "Fava", coef: 17},
+  {nom: "Enciam", coef: 27},
+  {nom: "Escarola", coef: 22},
+  {nom: "Bleda", coef: 22},
+  {nom: "Espinac", coef: 17},
+  {nom: "Col", coef: 30},
+  {nom: "Kale", coef: 22},
+  {nom: "Bròquil", coef: 27},
+  {nom: "Coliflor", coef: 27},
+  {nom: "Pastanaga", coef: 22},
+  {nom: "Rave", coef: 17},
+  {nom: "Remolatxa", coef: 17},
+  {nom: "Ceba", coef: 17},
+  {nom: "All", coef: 12},
+  {nom: "Porro", coef: 22},
+  {nom: "Api", coef: 27},
+  {nom: "Patata", coef: 30},
+  {nom: "Moniato", coef: 25},
+  {nom: "Julivert", coef: 17},
+  {nom: "Basilic", coef: 22},
+];
+
+function obtenirCoef(nom) {
+  const c = cultius.find(x => x.nom === nom);
+  return c ? c.coef : 20;
+}
+
+function afegirFila() {
+  const table = document.getElementById('cultiusTable');
+  const row = table.insertRow(-1);
+  row.innerHTML = `
+    <td><select name="cultiu" onchange="actualitzarCoef(this)">
+      <option value="">-- Tria --</option>
+      ${cultius.map(c => `<option value="${c.nom}">${c.nom}</option>`).join('')}
+      <option value="Altres">Altres</option>
+    </select></td>
+    <td><input type="number" name="coef" value="20" min="1" max="100" step="1"></td>
+    <td><input type="number" name="m2" value="0" min="0" step="0.5" onchange="calcular()"></td>
+    <td class="litres">0 L</td>
+    <td class="no-print"><button type="button" onclick="this.parentElement.parentElement.remove(); calcular();" style="background:#a00;padding:0.3rem 0.6rem;">✕</button></td>
+  `;
+}
+
+function actualitzarCoef(select) {
+  const row = select.parentElement.parentElement;
+  const coefInput = row.querySelector('input[name=coef]');
+  const nom = select.value;
+  if (nom && nom !== 'Altres') coefInput.value = obtenirCoef(nom);
+}
+
+function calcular() {
+  const rows = document.querySelectorAll('#cultiusTable tr');
+  let total = 0;
+  let detalls = [];
+
+  rows.forEach((row, i) => {
+    if (i === 0) return; // capçalera
+    const cultiu = row.querySelector('select[name=cultiu]')?.value;
+    const coef = parseFloat(row.querySelector('input[name=coef]')?.value) || 0;
+    const m2 = parseFloat(row.querySelector('input[name=m2]')?.value) || 0;
+    const litres = coef * m2;
+    row.querySelector('.litres').textContent = litres.toFixed(1) + ' L';
+    total += litres;
+    if (cultiu && m2 > 0) detalls.push({cultiu, m2, coef, litres});
+  });
+
+  const ajustEstiu = total; // base estiu
+  const ajustPrimavera = total * 0.7;
+  const ajustTardor = total * 0.6;
+  const ajustHivern = total * 0.3;
+
+  let html = '<h3>📊 Resultat</h3>';
+  html += '<table><tr><th>Cultiu</th><th>m²</th><th>L/m²/setm</th><th>L/setmana</th></tr>';
+  detalls.forEach(d => {
+    html += `<tr><td>${d.cultiu}</td><td>${d.m2}</td><td>${d.coef}</td><td>${d.litres.toFixed(1)} L</td></tr>`;
+  });
+  html += `</table>`;
+  html += `<p class="tot">Total estiu: ${total.toFixed(1)} L/setmana</p>`;
+  html += `<p><strong>Ajust estacional:</strong></p><ul>`;
+  html += `<li>Primavera: ${ajustPrimavera.toFixed(1)} L/setmana</li>`;
+  html += `<li>Estiu (base): ${ajustEstiu.toFixed(1)} L/setmana</li>`;
+  html += `<li>Tardor: ${ajustTardor.toFixed(1)} L/setmana</li>`;
+  html += `<li>Hivern: ${ajustHivern.toFixed(1)} L/setmana</li>`;
+  html += `</ul>`;
+  html += `<p>💡 <em>Això és el volum setmanal recomanat. Divideix entre els dies de reg (p. ex. 3 dies/setm) per obtenir el reg diari.</em></p>`;
+  html += `<p>🕐 <em>Per a 1 reg diari: ${(total/7).toFixed(1)} L/dia. Per a 3 regs/setm: ${(total/3).toFixed(1)} L/sessió.</em></p>`;
+
+  const div = document.getElementById('resultat');
+  div.innerHTML = html;
+  div.style.display = 'block';
+}
+
+function netejar() {
+  const table = document.getElementById('cultiusTable');
+  while (table.rows.length > 1) table.deleteRow(1);
+  document.getElementById('resultat').style.display = 'none';
+}
+
+// Inicialitzar amb 3 files
+for (let i = 0; i < 3; i++) afegirFila();
+</script>
+
+</body>
+</html>
