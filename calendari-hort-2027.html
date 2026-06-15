@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Calendari de l'Hort 2027 - Osona</title>
+<style>
+  @page { size: A4 landscape; margin: 0.5cm; }
+  body { font-family: 'Georgia', serif; color: #2a2a2a; margin: 0; padding: 0; }
+  .calendari-mes { width: 100%; height: 19cm; padding: 0.3cm; box-sizing: border-box; page-break-after: always; display: flex; flex-direction: column; }
+  .capcalera { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1a5d3a; padding-bottom: 0.2cm; margin-bottom: 0.3cm; }
+  .mes-titol { font-size: 2em; font-weight: bold; color: #1a5d3a; margin: 0; }
+  .any { font-size: 1em; color: #5d3a0d; }
+  .icona-mes { width: 60px; height: 60px; }
+  .cos-mes { display: flex; flex: 1; gap: 0.4cm; }
+  .taula-calendari { flex: 2; }
+  table.cal { width: 100%; border-collapse: collapse; font-size: 0.7em; }
+  table.cal th { background: #1a5d3a; color: white; padding: 4px; text-align: center; font-size: 0.9em; }
+  table.cal td { border: 1px solid #ccc; padding: 4px; vertical-align: top; width: 14.28%; height: 1.8cm; font-size: 0.85em; }
+  .dia-num { font-weight: bold; font-size: 1.1em; color: #1a5d3a; display: block; }
+  .festiu { color: #cc0000; font-weight: bold; }
+  .cap-setmana { background: #f5f0e8; }
+  .luna-nova, .luna-plena, .quart, .creixent { font-size: 1.3em; display: inline-block; margin-left: 3px; }
+  .luna-nova::after { content: "🌑"; }
+  .creixent::after { content: "🌒"; }
+  .quart::after { content: "🌓"; }
+  .luna-plena::after { content: "🌕"; }
+  .minvant::after { content: "🌗"; }
+  .info-lateral { flex: 1; background: #f5f5f0; border: 1px solid #ccc; padding: 8px; font-size: 0.75em; border-radius: 6px; }
+  .info-lateral h3 { color: #1a5d3a; margin: 0 0 6px 0; font-size: 1.1em; border-bottom: 1px solid #1a5d3a; padding-bottom: 2px; }
+  .info-lateral ul { list-style: none; padding-left: 0; margin: 4px 0; }
+  .info-lateral li { margin: 3px 0; padding-left: 14px; position: relative; }
+  .info-lateral li::before { content: "✓"; color: #1a5d3a; position: absolute; left: 0; font-weight: bold; }
+  .cultiu-icona { display: inline-block; margin: 0 2px; vertical-align: middle; }
+  .cultiu-mes { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .cultiu-mes-item { display: flex; align-items: center; font-size: 0.85em; background: #e8f5e8; padding: 2px 5px; border-radius: 8px; }
+  .cultiu-mes-item svg { width: 16px; height: 16px; margin-right: 3px; }
+  .portada { text-align: center; padding: 2cm; height: 100%; box-sizing: border-box; }
+  .portada h1 { font-size: 3.5em; color: #1a5d3a; margin-bottom: 0.3cm; }
+  .portada .subtitol { font-size: 1.5em; color: #5d3a0d; margin-bottom: 1cm; }
+  .portada .hort-illa { margin: 1cm auto; }
+  .portada .info { font-size: 1.1em; color: #555; line-height: 1.6; max-width: 18cm; margin: 0.3cm auto; text-align: left; }
+  .portada .credits { margin-top: 1cm; font-size: 0.9em; color: #888; }
+  .mesos-anys { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 0.3cm; margin-top: 1cm; }
+  .mes-mini { text-align: center; padding: 0.3cm; background: #f5f5f0; border-radius: 6px; width: 4cm; }
+  .mes-mini-nom { font-weight: bold; color: #1a5d3a; font-size: 1.1em; }
+  .mes-mini svg { width: 40px; height: 40px; margin: 4px 0; }
+  .dies-tasques { font-size: 0.7em; color: #5d3a0d; margin-top: 2px; }
+  .festa-mes { background: #fff8e8; padding: 4px; margin: 4px 0; border-radius: 4px; font-size: 0.85em; }
+  .festa-mes strong { color: #cc0000; }
+  .sant-mes { font-size: 0.8em; color: #666; }
+  .seccio-extra { margin-top: 6px; padding-top: 6px; border-top: 1px dashed #ccc; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada">
+<h1>🌱 Calendari de l'Hort 2027</h1>
+<div class="subtitol">Hort Ecològic d'Osona · Vic, Catalunya</div>
+
+<svg class="hort-illa" width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Marc hort -->
+  <rect x="10" y="10" width="180" height="130" fill="#e8f0d8" stroke="#1a5d3a" stroke-width="2"/>
+  <!-- Sol -->
+  <circle cx="160" cy="30" r="15" fill="#ffd700"/>
+  <!-- Tomàquets -->
+  <circle cx="40" cy="40" r="8" fill="#cc0000"/>
+  <circle cx="55" cy="50" r="8" fill="#cc0000"/>
+  <circle cx="40" cy="60" r="8" fill="#cc0000"/>
+  <line x1="40" y1="40" x2="40" y2="120" stroke="#1a5d3a" stroke-width="1.5"/>
+  <!-- Pebrots -->
+  <ellipse cx="80" cy="40" rx="5" ry="8" fill="#ffcc00"/>
+  <ellipse cx="90" cy="50" rx="5" ry="8" fill="#ff6600"/>
+  <line x1="85" y1="40" x2="85" y2="120" stroke="#1a5d3a" stroke-width="1.5"/>
+  <!-- Enciams -->
+  <circle cx="120" cy="50" r="10" fill="#90c290"/>
+  <circle cx="135" cy="60" r="10" fill="#90c290"/>
+  <!-- Carbassa -->
+  <ellipse cx="40" cy="100" rx="12" ry="10" fill="#ff8800"/>
+  <ellipse cx="60" cy="110" rx="10" ry="8" fill="#ffaa00"/>
+  <!-- Pastanagues -->
+  <line x1="120" y1="100" x2="120" y2="120" stroke="#ff6600" stroke-width="3"/>
+  <polygon points="115,100 125,100 120,90" fill="#1a5d3a"/>
+  <!-- Ceba -->
+  <ellipse cx="160" cy="100" rx="8" ry="10" fill="#d8a878"/>
+  <!-- Mongeteres (tutors) -->
+  <line x1="100" y1="80" x2="100" y2="120" stroke="#8B4513" stroke-width="2"/>
+  <line x1="105" y1="80" x2="105" y2="120" stroke="#8B4513" stroke-width="2"/>
+  <ellipse cx="100" cy="90" rx="3" ry="6" fill="#1a5d3a"/>
+  <ellipse cx="105" cy="95" rx="3" ry="6" fill="#1a5d3a"/>
+</svg>
+
+<div class="info">
+<strong>📅 Característiques del calendari:</strong><br>
+• 12 mesos amb vista completa de tasques de l'hort<br>
+• Dibuixos il·lustrats dels cultius del teu hort<br>
+• Fases lunars marcades cada dia<br>
+• Festes catalanes i labors<br>
+• Tasques mensuals i quinzenals<br>
+• Consells de sembra, trasplantament, collita<br>
+• Imprimible en A4 horitzontal (ideal per a la paret)
+</div>
+
+<div class="credits">
+Creat amb cura per a l'hort ecològic d'Osona · 2027
+</div>
+</div>
+
+<!-- ============== GENER ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Gener</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">G</text>
+  <circle cx="70" cy="25" r="8" fill="#ffffff" stroke="#999" stroke-width="1"/>
+  <text x="70" y="29" text-anchor="middle" font-size="10" fill="#333">❄</text>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="festiu">1 <span class="cap-setmana"><br>Cap d'Any</span></td>
+<td>2</td>
+<td class="cap-setmana">3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6 <span class="luna-nova"></span></td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td class="cap-setmana">10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14 <span class="quart"></span></td>
+<td>15</td>
+<td>16</td>
+<td class="cap-setmana">17</td>
+</tr>
+<tr>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21 <span class="luna-plena"></span></td>
+<td>22</td>
+<td>23</td>
+<td class="cap-setmana">24</td>
+</tr>
+<tr>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28 <span class="minvant"></span></td>
+<td>29</td>
+<td>30</td>
+<td class="cap-setmana">31</td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#8B4513"/></svg>
+Planter: cebes, escalunyes, porros
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" fill="#d8d8d8" stroke="#666"/></svg>
+Planificar: disseny hort 2027
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌨️ Tasques de Gener</h3>
+<ul>
+<li>Revisar eines i reparar-les</li>
+<li>Compostar restes de Nadal</li>
+<li>Planificar la temporada 2027</li>
+<li>Comprar llavors (començar!)</li>
+<li>Preparar tests, safates, substrat</li>
+<li>Fer planter d'interior escalfor</li>
+<li>Netejar caseta, eines</li>
+<li>Mulching hivern (protegir sòl)</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌱 Sembres del mes</h3>
+<ul>
+<li>Cebes (en test escalfat)</li>
+<li>Escalunyes</li>
+<li>Porros (test)</li>
+<li>Enciams hivern (test)</li>
+<li>Espinacs (test)</li>
+</ul>
+</div>
+<div class="seccio-extra">
+<h3>🐛 Plagues/malalties</h3>
+<ul>
+<li>Repòs general</li>
+<li>Vigilar humitat (fongs)</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>1 gen</strong> Cap d'Any · <strong>6 gen</strong> Reis</div>
+</div>
+</div>
+</div>
+
+<!-- ============== FEBRER ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Febrer</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#fff8e8" stroke="#1a5d3a" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">F</text>
+  <ellipse cx="50" cy="20" rx="15" ry="5" fill="#ffd700"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4 <span class="luna-nova"></span></td>
+<td>5</td>
+<td>6</td>
+<td class="cap-setmana">7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12 <span class="quart"></span></td>
+<td>13</td>
+<td class="cap-setmana">14</td>
+</tr>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19 <span class="luna-plena"></span></td>
+<td>20</td>
+<td class="cap-setmana">21</td>
+</tr>
+<tr>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26 <span class="minvant"></span></td>
+<td>27</td>
+<td class="cap-setmana">28</td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="#d8a878"/></svg>
+Cebes, escalunyes, porros
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#90c290"/></svg>
+Enciams, espinacs
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>❄️ Tasques de Febrer</h3>
+<ul>
+<li>Continuar sembrant en test</li>
+<li>Trasplantar planter robust</li>
+<li>Podar arbres fruiters</li>
+<li>Adobar arbres (fems)</li>
+<li>Revisar hivernacles</li>
+<li>Controlar plagues hivern</li>
+<li>Preparar el sòl (compost)</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌱 Sembres del mes</h3>
+<ul>
+<li>Cebes (test, fins març)</li>
+<li>Escalunyes</li>
+<li>Porros</li>
+<li>Enciams, espinacs</li>
+<li>Api, julivert</li>
+<li>Tomàquets (finals, cobert)</li>
+<li>Pebrots (cobert, últims dies)</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>14 feb</strong> Sant Valentí</div>
+</div>
+</div>
+</div>
+
+<!-- ============== MARÇ ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Març</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#e8f0d8" stroke="#1a5d3a" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">M</text>
+  <circle cx="35" cy="70" r="8" fill="#90c290"/>
+  <circle cx="50" cy="75" r="8" fill="#90c290"/>
+  <circle cx="65" cy="70" r="8" fill="#90c290"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5 <span class="luna-nova"></span></td>
+<td>6</td>
+<td class="cap-setmana">7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13 <span class="quart"></span></td>
+<td class="cap-setmana">14</td>
+</tr>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20 <span class="luna-plena"></span></td>
+<td class="cap-setmana">21 <span class="festiu"><br>Primavera</span></td>
+</tr>
+<tr>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27 <span class="minvant"></span></td>
+<td class="cap-setmana">28</td>
+</tr>
+<tr>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Tomàquets (cobert)
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="4" ry="7" fill="#ffcc00"/></svg>
+Pebrots, albergínies
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" fill="#8B4513"/></svg>
+Carbasses, carabassons
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌱 Tasques de Març</h3>
+<ul>
+<li>Preparar el sòl (no llaurar molt)</li>
+<li>Començar trasplantaments (cebes, porros)</li>
+<li>Sembrar tomàquets (cobert, últims dies)</li>
+<li>Albergínies, pebrots (test)</li>
+<li>Carbasses, carabassons (test)</li>
+<li>Plantar fruiters (a Osona, ara!)</li>
+<li>Compost: activar amb restes</li>
+<li>Mulching als fruiters</li>
+</ul>
+<div class="seccio-extra">
+<h3>🐛 Plagues</h3>
+<ul>
+<li>Caragols, llimacs (vigilar)</li>
+<li>Control preventiu</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>19 mar</strong> Sant Josep · <strong>21 mar</strong> Inici primavera</div>
+</div>
+</div>
+</div>
+
+<!-- ============== ABRIL ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Abril</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#fff8d8" stroke="#1a5d3a" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">A</text>
+  <ellipse cx="40" cy="50" rx="6" ry="8" fill="#ffcc00"/>
+  <ellipse cx="60" cy="60" rx="6" ry="8" fill="#ff6600"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 <span class="luna-nova"></span></td>
+<td>2</td>
+<td>3</td>
+<td class="cap-setmana">4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td class="cap-setmana">11 <span class="quart"></span></td>
+</tr>
+<tr>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td class="cap-setmana">18 <span class="luna-plena"></span></td>
+</tr>
+<tr>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23 <span class="festiu"><br>Sant Jordi</span></td>
+<td>24 <span class="minvant"></span></td>
+<td class="cap-setmana">25</td>
+</tr>
+<tr>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Trasplantar tomàquets
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="4" ry="7" fill="#ffcc00"/></svg>
+Pebrots
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#1a5d3a"/></svg>
+Pastanagues
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌷 Tasques d'Abril</h3>
+<ul>
+<li><strong>Trasplantar</strong> tomàquets (a partir del 15)</li>
+<li>Trasplantar pebrots, albergínies</li>
+<li>Sembrar pastanagues, remolatxa</li>
+<li>Sembrar mongetes (a partir del 20)</li>
+<li>Plantar cebes, patates</li>
+<li>Sembrar enciams (rotació)</li>
+<li>Primer mulching abundant</li>
+<li>Regar més (dies llargs)</li>
+</ul>
+<div class="seccio-extra">
+<h3>⚠️ Atenció gelades!</h3>
+<p>Protecció fins al 15-30 abril (a Osona). Tela anti-gelada, mantes.</p>
+</div>
+<div class="festa-mes"><strong>23 abr</strong> Sant Jordi 🌹</div>
+</div>
+</div>
+</div>
+
+<!-- ============== MAIG ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Maig</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#ffe8d8" stroke="#1a5d3a" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">M</text>
+  <circle cx="50" cy="30" r="12" fill="#ffd700"/>
+  <ellipse cx="50" cy="50" rx="3" ry="6" fill="#1a5d3a"/>
+  <ellipse cx="40" cy="65" rx="3" ry="6" fill="#ff69b4"/>
+  <ellipse cx="60" cy="65" rx="3" ry="6" fill="#ff69b4"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1 <span class="festiu"><br>Dia Treball</span></td>
+<td class="cap-setmana">2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4 <span class="luna-nova"></span></td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td class="cap-setmana">9</td>
+</tr>
+<tr>
+<td>10 <span class="quart"></span></td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td class="cap-setmana">16</td>
+</tr>
+<tr>
+<td>17 <span class="luna-plena"></span></td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td class="cap-setmana">23 <span class="minvant"></span></td>
+</tr>
+<tr>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td class="cap-setmana">30</td>
+</tr>
+<tr>
+<td>31</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Tomàquets en creixement
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="3" ry="6" fill="#1a5d3a"/></svg>
+Mongetes (tutores)
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#90c290"/></svg>
+Primers enciams!
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌞 Tasques de Maig</h3>
+<ul>
+<li><strong>Sembra massiva</strong> d'estiu</li>
+<li>Trasplantar carbasses, carabassons</li>
+<li>Sembrar mongetes (2a tongada)</li>
+<li>Plantar pebrots (definitiu)</li>
+<li>Col·locar tutors (tomàquets)</li>
+<li>Mulching abundant (5-10 cm)</li>
+<li>Reg abundant (19h)</li>
+<li><strong>Primers enciams</strong> del planter!</li>
+</ul>
+<div class="seccio-extra">
+<h3>🐛 Plagues</h3>
+<ul>
+<li>Pulgons (controlar!)</li>
+<li>Caragols, llimacs (màxim risc)</li>
+<li>Tractaments naturals</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>1 maig</strong> Dia del Treball · <strong>11 maig</strong> Fira Sant Ponç (Vic) 🌿</div>
+</div>
+</div>
+</div>
+
+<!-- ============== JUNY ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Juny</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#fff8d8" stroke="#cc8800" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#cc8800">J</text>
+  <circle cx="50" cy="25" r="10" fill="#ffd700"/>
+  <line x1="50" y1="5" x2="50" y2="10" stroke="#ffd700" stroke-width="2"/>
+  <line x1="50" y1="40" x2="50" y2="45" stroke="#ffd700" stroke-width="2"/>
+  <line x1="30" y1="25" x2="35" y2="25" stroke="#ffd700" stroke-width="2"/>
+  <line x1="65" y1="25" x2="70" y2="25" stroke="#ffd700" stroke-width="2"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>2 <span class="luna-nova"></span></td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td class="cap-setmana">6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8 <span class="quart"></span></td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td class="cap-setmana">13</td>
+</tr>
+<tr>
+<td>14</td>
+<td>15 <span class="luna-plena"></span></td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td class="cap-setmana">20</td>
+</tr>
+<tr>
+<td>21 <span class="minvant"></span></td>
+<td>22</td>
+<td>23 <span class="festiu"><br>Sant Joan</span></td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td class="cap-setmana">27</td>
+</tr>
+<tr>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Primers tomàquets!
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="5" ry="3" fill="#1a5d3a"/></svg>
+Carabassons
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>☀️ Tasques de Juny</h3>
+<ul>
+<li>Reg abundant (19h) URGENT</li>
+<li><strong>Mulching</strong> (5-10 cm) - PRIORITAT!</li>
+<li>Collir primers tomàquets</li>
+<li>Collir enciams, carabassons</li>
+<li>Podar xucladors tomàquet</li>
+<li>Tutors ben fixats</li>
+<li>Reforçar associacions</li>
+<li>Plantar aromàtiques</li>
+<li>Compostar restes</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌡️ Atenció</h3>
+<p>Onada de calor possible. Reg al vespre (19h). Acompanyaments per ombra parcial.</p>
+</div>
+<div class="festa-mes"><strong>23 juny</strong> Revetlla de Sant Joan 🔥 · <strong>24 juny</strong> Sant Joan</div>
+</div>
+</div>
+</div>
+
+<!-- ============== JULIOL ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Juliol</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#fff0d8" stroke="#cc5500" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#cc5500">J</text>
+  <circle cx="50" cy="40" r="15" fill="#ff6600"/>
+  <path d="M 35 40 Q 50 25 65 40" fill="#ff6600"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 <span class="luna-nova"></span></td>
+<td>2</td>
+<td>3</td>
+<td class="cap-setmana">4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7 <span class="quart"></span></td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td class="cap-setmana">11</td>
+</tr>
+<tr>
+<td>12</td>
+<td>13</td>
+<td>14 <span class="luna-plena"></span></td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td class="cap-setmana">18</td>
+</tr>
+<tr>
+<td>19 <span class="minvant"></span></td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td class="cap-setmana">25 <span class="festiu"><br>Sant Jaume</span></td>
+</tr>
+<tr>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Tomàquets en ple
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="4" ry="7" fill="#ffcc00"/></svg>
+Pebrots
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="3" fill="#1a5d3a"/></svg>
+Carbassons
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌞 Tasques de Juliol</h3>
+<ul>
+<li>Reg abundant (2 cops/dia si cal)</li>
+<li>Mulching: revisar i mantenir</li>
+<li>Collir abundantment!</li>
+<li>Fer conserves (melmelada, salsa)</li>
+<li>Assecar herbes</li>
+<li>Guardar llavors (hort, plantes)</li>
+<li>Preparar planter de tardor</li>
+<li>Controlar plagues (mildiu!)</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌿 Conserves del mes</h3>
+<ul>
+<li>Melmelada de tomàquet</li>
+<li>Salsa de tomàquet</li>
+<li>Tomàquet sec en oli</li>
+<li>Carbassa en almívar</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>25 jul</strong> Sant Jaume</div>
+</div>
+</div>
+</div>
+
+<!-- ============== AGOST ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Agost</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#f5e8d0" stroke="#cc6600" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#cc6600">A</text>
+  <circle cx="40" cy="35" r="10" fill="#ffd700"/>
+  <circle cx="60" cy="55" r="12" fill="#ff8c00"/>
+  <circle cx="35" cy="65" r="8" fill="#ffaa00"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="cap-setmana">1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3 <span class="luna-nova"></span></td>
+<td>4</td>
+<td>5 <span class="quart"></span></td>
+<td>6</td>
+<td>7</td>
+<td class="cap-setmana">8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12 <span class="luna-plena"></span></td>
+<td>13</td>
+<td>14</td>
+<td class="cap-setmana">15 <span class="festiu"><br>Assumpció</span></td>
+</tr>
+<tr>
+<td>16</td>
+<td>17 <span class="minvant"></span></td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td class="cap-setmana">22</td>
+</tr>
+<tr>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td class="cap-setmana">29</td>
+</tr>
+<tr>
+<td>30</td>
+<td>31</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#cc0000"/></svg>
+Tomàquets, pebrots
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="5" fill="#ff8800"/></svg>
+Carbasses (començant)
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#ff6600"/></svg>
+Pastanagues
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌻 Tasques d'Agost</h3>
+<ul>
+<li>Continuar reg i collita</li>
+<li>Assecar herbes per a l'hivern</li>
+<li>Guardar llavors (en abundància)</li>
+<li>Sembrar cols, bròquils (tardor)</li>
+<li>Sembrar espinacs, enciams (tardor)</li>
+<li>Sembrar raves, pastanagues (tardor)</li>
+<li>Continuar conserves</li>
+<li>Mulching: mantenir</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌾 Planter de tardor</h3>
+<ul>
+<li>Cols (a partir del 15)</li>
+<li>Bròquils</li>
+<li>Espinacs, enciams</li>
+<li>Raves</li>
+</ul>
+</div>
+<div class="festa-mes"><strong>15 ago</strong> L'Assumpció · <strong>31 ago</strong> Fires Vic (Fira de Santa Llúcia, prenadal)</div>
+</div>
+</div>
+</div>
+
+<!-- ============== SETEMBRE ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Setembre</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#fff0d0" stroke="#cc8800" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#cc8800">S</text>
+  <ellipse cx="40" cy="60" rx="6" ry="8" fill="#ff6600"/>
+  <line x1="40" y1="55" x2="40" y2="50" stroke="#1a5d3a" stroke-width="2"/>
+  <ellipse cx="60" cy="55" rx="6" ry="8" fill="#ffcc00"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td>1 <span class="luna-nova"></span></td>
+<td>2</td>
+<td>3 <span class="quart"></span></td>
+<td>4</td>
+<td>5</td>
+<td class="cap-setmana">6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10 <span class="luna-plena"></span></td>
+<td>11 <span class="festiu"><br>Diada</span></td>
+<td>12</td>
+<td class="cap-setmana">13</td>
+</tr>
+<tr>
+<td>14</td>
+<td>15 <span class="minvant"></span></td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td class="cap-setmana">20</td>
+</tr>
+<tr>
+<td>21</td>
+<td>22</td>
+<td>23 <span class="festiu"><br>Inici tardor</span></td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td class="cap-setmana">27</td>
+</tr>
+<tr>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="5" fill="#ff8800"/></svg>
+Carbasses grans
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#ff6600"/></svg>
+Pastanagues, remolatxa
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="#90c290"/></svg>
+Enciams tardor
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🍂 Tasques de Setembre</h3>
+<ul>
+<li>Collir carbasses, carabassons</li>
+<li>Collir tomàquets finals (verds = conserva)</li>
+<li>Trasplantar cols, bròquils</li>
+<li>Sembrar adob verd (civada + veça)</li>
+<li>Guardar llavors (final!)</li>
+<li>Compostar restes finals</li>
+<li>Assecar les darreres herbes</li>
+<li>Reduir regs (dies més curts)</li>
+</ul>
+<div class="seccio-extra">
+<h3>🍂 Adob verd</h3>
+<p>Sembra aquesta tardor: civada + veça + fenc. S'incorporarà a la primavera.</p>
+</div>
+<div class="festa-mes"><strong>11 set</strong> Diada Nacional de Catalunya 🇺🇸 · <strong>23 set</strong> Inici de la tardor</div>
+</div>
+</div>
+</div>
+
+<!-- ============== OCTUBRE ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Octubre</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#f5e0b0" stroke="#8B4513" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#8B4513">O</text>
+  <ellipse cx="50" cy="50" rx="12" ry="8" fill="#ff8c00"/>
+  <line x1="50" y1="42" x2="50" y2="40" stroke="#1a5d3a" stroke-width="2"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 <span class="luna-nova"></span></td>
+<td>2 <span class="quart"></span></td>
+<td>3</td>
+<td class="cap-setmana">4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9 <span class="luna-plena"></span></td>
+<td>10</td>
+<td class="cap-setmana">11</td>
+</tr>
+<tr>
+<td>12 <span class="festiu"><br>El Pilar</span></td>
+<td>13</td>
+<td>14 <span class="minvant"></span></td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td class="cap-setmana">18</td>
+</tr>
+<tr>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td class="cap-setmana">25</td>
+</tr>
+<tr>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30 <span class="luna-nova"></span></td>
+<td>31</td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="5" fill="#ff8800"/></svg>
+Carbasses (collir!)
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="#90c290"/></svg>
+Cols, bròquils
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#ff6600"/></svg>
+Pastanagues, naps
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🍁 Tasques d'Octubre</h3>
+<ul>
+<li>Collir carbasses, pastanagues, remolatxa</li>
+<li>Collir cols, bròquils</li>
+<li>Sembrar alls (tardor, per a primavera)</li>
+<li>Plantat fruiters (a Osona!)</li>
+<li>Adob verd creixent (no llaurar)</li>
+<li>Compostar restes de tardor</li>
+<li>Reduir regs (fred)</li>
+<li>Guardar eines (neteja, oli)</li>
+</ul>
+<div class="seccio-extra">
+<h3>🍂 Tardor: temps de collita i preparació</h3>
+<p>A Osona, octubre és abundant i dolç. És hora de guardar, conservar, i preparar l'hivern.</p>
+</div>
+<div class="festa-mes"><strong>12 oct</strong> El Pilar · <strong>31 oct</strong> Tots Sants</div>
+</div>
+</div>
+</div>
+
+<!-- ============== NOVEMBRE ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Novembre</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#e0d0b0" stroke="#5d3a0d" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#5d3a0d">N</text>
+  <line x1="40" y1="30" x2="40" y2="80" stroke="#5d3a0d" stroke-width="2"/>
+  <line x1="60" y1="30" x2="60" y2="80" stroke="#5d3a0d" stroke-width="2"/>
+  <line x1="30" y1="50" x2="70" y2="50" stroke="#5d3a0d" stroke-width="2"/>
+  <ellipse cx="40" cy="35" rx="4" ry="8" fill="#ff8c00"/>
+  <ellipse cx="60" cy="65" rx="4" ry="8" fill="#cc6600"/>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td>1 <span class="festiu"><br>Tots Sants</span></td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td class="cap-setmana">7</td>
+</tr>
+<tr>
+<td>8 <span class="quart"></span></td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td class="cap-setmana">14</td>
+</tr>
+<tr>
+<td>15 <span class="luna-plena"></span></td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td class="cap-setmana">21</td>
+</tr>
+<tr>
+<td>22</td>
+<td>23</td>
+<td>24 <span class="minvant"></span></td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td class="cap-setmana">28</td>
+</tr>
+<tr>
+<td>29 <span class="luna-nova"></span></td>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="#90c290"/></svg>
+Cols d'hivern
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#ff6600"/></svg>
+Pastanagues, naps
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="3" fill="#1a5d3a"/></svg>
+Adob verd creixent
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>🌰 Tasques de Novembre</h3>
+<ul>
+<li>Collir cols, bròquils, naps</li>
+<li>Collir les darreres carbasses</li>
+<li>Sembrar faves (tardor)</li>
+<li>Sembrar pèsols (tardor)</li>
+<li>Adobar arbres (compost)</li>
+<li>Mulching hivernal abundant</li>
+<li>Protegir del fred (manta, plàstic)</li>
+<li>Netejar l'hort (restes, eines)</li>
+</ul>
+<div class="seccio-extra">
+<h3>❄️ Prevenció gelades</h3>
+<p>A Osona, novembre ja pot gelar. Mulching gruixut (10-15 cm) sobre les cols, espinacs, i alls.</p>
+</div>
+<div class="festa-mes"><strong>1 nov</strong> Tots Sants · <strong>23 nov</strong> Sant Andreu</div>
+</div>
+</div>
+</div>
+
+<!-- ============== DESEMBRE ============== -->
+<div class="calendari-mes">
+<div class="capcalera">
+<div>
+<div class="mes-titol">Desembre</div>
+<div class="any">Hort Osona · 2027</div>
+</div>
+<svg class="icona-mes" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="40" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="50" y="65" text-anchor="middle" font-size="40" font-weight="bold" fill="#1a5d3a">D</text>
+  <polygon points="50,15 60,45 50,75 40,45" fill="#1a5d3a"/>
+  <circle cx="30" cy="70" r="5" fill="#cc0000"/>
+  <circle cx="70" cy="25" r="4" fill="#cc0000"/>
+  <circle cx="65" cy="70" r="4" fill="#cc0000"/>
+  <text x="20" y="40" font-size="14" fill="#666">❄</text>
+  <text x="75" y="60" font-size="14" fill="#666">❄</text>
+</svg>
+</div>
+<div class="cos-mes">
+<div class="taula-calendari">
+<table class="cal">
+<tr><th>Dl</th><th>Dt</th><th>Dc</th><th>Dj</th><th>Dv</th><th>Ds</th><th>Dg</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4 <td>
+<td class="luna-nova"></span></td>
+<td>5</td>
+</tr>
+<tr>
+<td>6 <span class="festiu"><br>Constitució</span></td>
+<td>7 <span class="quart"></span></td>
+<td>8 <span class="festiu"><br>Immaculada</span></td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td class="cap-setmana">12</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14 <span class="luna-plena"></span></td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td class="cap-setmana">19</td>
+</tr>
+<tr>
+<td>20</td>
+<td>21</td>
+<td>22 <span class="minvant"></span></td>
+<td>23</td>
+<td>24 <span class="festiu"><br>Nadal</span></td>
+<td>25 <span class="festiu"><br>Nadal</span></td>
+<td class="cap-setmana">26 <span class="festiu"><br>Sant Esteve</span></td>
+</tr>
+<tr>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31 <span class="festiu"><br>Cap d'Any</span></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div class="cultiu-mes">
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="#90c290"/></svg>
+Cols, bròquils d'hivern
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><polygon points="3,18 17,18 10,5" fill="#ff6600"/></svg>
+Naps, pastanagues
+</div>
+<div class="cultiu-mes-item">
+<svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="3" ry="6" fill="#1a5d3a"/></svg>
+Faves, pèsols (test)
+</div>
+</div>
+</div>
+<div class="info-lateral">
+<h3>❄️ Tasques de Desembre</h3>
+<ul>
+<li>Repòs de l'hort</li>
+<li>Collir cols d'hivern</li>
+<li>Collir naps, bròquils</li>
+<li>Mulching hivernal (10-15 cm)</li>
+<li>Revisar eines (netejar, oli)</li>
+<li>Reparar caseta, hivernacles</li>
+<li>Planificar la temporada 2028</li>
+<li>Decoració nadalenca natural</li>
+<li>Compartir fruits amb família</li>
+</ul>
+<div class="seccio-extra">
+<h3>🌟 Nadal al natural</h3>
+<p>Decoració amb elements del teu hort: corones de pi, espelmes de cera d'abella, rams d'espígol, ramellets d'herbes...</p>
+</div>
+<div class="festa-mes"><strong>6 des</strong> Dia Constitució · <strong>8 des</strong> Immaculada · <strong>24-25 des</strong> Nadal 🎄 · <strong>26 des</strong> Sant Esteve · <strong>31 des</strong> Cap d'Any</div>
+</div>
+</div>
+</div>
+
+<!-- PÀGINA FINAL: AGRAÏMENTS I RESUM -->
+<div class="portada">
+<h1 style="font-size: 2.5em;">🌟 Bon 2027! 🌟</h1>
+<div class="subtitol">Que el teu hort flueixi amb les estacions</div>
+
+<svg class="hort-illa" width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 4 estacions representades -->
+  <!-- Primavera -->
+  <circle cx="60" cy="50" r="30" fill="#fff8e8" stroke="#1a5d3a" stroke-width="2"/>
+  <text x="60" y="60" text-anchor="middle" font-size="24" fill="#1a5d3a">🌷</text>
+  <text x="60" y="100" text-anchor="middle" font-size="12" fill="#1a5d3a">Primavera</text>
+
+  <!-- Estiu -->
+  <circle cx="140" cy="50" r="30" fill="#fff0d0" stroke="#cc6600" stroke-width="2"/>
+  <text x="140" y="60" text-anchor="middle" font-size="24" fill="#cc6600">☀️</text>
+  <text x="140" y="100" text-anchor="middle" font-size="12" fill="#cc6600">Estiu</text>
+
+  <!-- Tardor -->
+  <circle cx="220" cy="50" r="30" fill="#f5e0b0" stroke="#8B4513" stroke-width="2"/>
+  <text x="220" y="60" text-anchor="middle" font-size="24" fill="#8B4513">🍂</text>
+  <text x="220" y="100" text-anchor="middle" font-size="12" fill="#8B4513">Tardor</text>
+
+  <!-- Hivern -->
+  <circle cx="60" cy="150" r="30" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="60" y="160" text-anchor="middle" font-size="24">❄️</text>
+  <text x="60" y="195" text-anchor="middle" font-size="12" fill="#666">Hivern</text>
+
+  <!-- Cicle al centre -->
+  <circle cx="170" cy="150" r="50" fill="none" stroke="#1a5d3a" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="170" y="155" text-anchor="middle" font-size="14" fill="#1a5d3a">El cicle</text>
+  <text x="170" y="170" text-anchor="middle" font-size="14" fill="#1a5d3a">de l'hort</text>
+</svg>
+
+<div class="info" style="margin-top: 1.5cm;">
+<strong>🌱 Les 4 estacions del teu hort 2027:</strong><br>
+• <strong>Primavera</strong> (març-juny): sembra i trasplantament<br>
+• <strong>Estiu</strong> (juny-setembre): reg, collita, conserves<br>
+• <strong>Tardor</strong> (setembre-desembre): collita final, adobs, bulbs<br>
+• <strong>Hivern</strong> (desembre-març): repòs, planter, planificació<br><br>
+
+<strong>🎯 Els 8 cultius del teu hort 2027:</strong><br>
+🍅 Tomàquets · 🫑 Pebrots · 🫘 Mongetes · 🥬 Enciams<br>
+🥕 Pastanagues · 🎃 Carbasses · 🥒 Carabassons · 🧅 Cebes<br><br>
+
+<strong>📊 Càlculs clau:</strong><br>
+• Producció esperada: 100-150 kg<br>
+• Estalvi: 200-500 €<br>
+• Hores: 60-80 h<br>
+• Mulching: 5-10 cm (URGENT!)<br>
+• Reg: 19h al vespre<br>
+• Sòl: sorrenc (cal millorar-lo!)<br>
+</div>
+
+<div class="credits">
+Calendari creat amb cura per a l'hort ecològic d'Osona · 2027<br>
+Imprimible en A4 horitzontal · Penjar a la paret<br>
+Consulta'l cada dia! 🌱📅
+</div>
+</div>
+
+</body>
+</html>

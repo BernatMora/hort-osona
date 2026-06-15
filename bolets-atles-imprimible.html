@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Atles Visual dels Bolets d'Osona</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+  body { font-family: 'Georgia', serif; color: #2a2a2a; line-height: 1.4; max-width: 21cm; margin: 0 auto; padding: 0.5cm; }
+  h1 { text-align: center; color: #5d2e0d; font-size: 1.7em; border-bottom: 3px solid #5d2e0d; padding-bottom: 6px; }
+  h2 { color: #5d2e0d; background: #f5e8d8; padding: 6px 10px; border-left: 4px solid #5d2e0d; margin-top: 18px; page-break-after: avoid; }
+  h3 { color: #5d2e0d; margin-top: 12px; border-bottom: 1px dotted #5d2e0d; padding-bottom: 3px; page-break-after: avoid; }
+  .subtitle { text-align: center; color: #666; font-style: italic; margin-top: 0; }
+  .info { background: #fff4d6; border-left: 4px solid #d4a017; padding: 8px 12px; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.9em; }
+  th { background: #5d2e0d; color: white; padding: 5px 8px; text-align: left; }
+  td { border-bottom: 1px solid #ddd; padding: 4px 8px; }
+  tr:nth-child(even) { background: #faf3e8; }
+  .page-break { page-break-before: always; }
+  .toc { background: #f5f5f0; border: 1px solid #ccc; padding: 15px; margin: 20px 0; }
+  .toc h3 { margin-top: 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { padding: 3px 0; }
+  ol, ul { margin: 4px 0; padding-left: 22px; }
+  ol li, ul li { margin: 3px 0; }
+  .final-note { background: #f5e8d8; border: 1px solid #5d2e0d; padding: 12px; margin: 20px 0; text-align: center; }
+  .warning { background: #ffe6e6; border-left: 4px solid #cc0000; padding: 8px 12px; margin: 8px 0; }
+  .recipe { background: #faf6f0; border: 1px solid #d4a017; padding: 10px 15px; margin: 10px 0; }
+  .recipe-title { font-weight: bold; color: #5d2e0d; margin-bottom: 5px; font-size: 1.05em; }
+  .schematic { background: #fff; border: 1px solid #ccc; padding: 10px; margin: 10px 0; text-align: center; }
+  .photo-box { background: #f0e8d8; border: 2px dashed #8b4513; padding: 15px; margin: 10px 0; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🍄 Atles Visual dels Bolets d'Osona</h1>
+<p class="subtitle">10 espècies excel·lents amb esquemes, descripcions i enllaços a fotos reals</p>
+
+<div class="info" style="text-align: center;">
+Aquest atles combina informació detallada de cada bolet amb esquemes dibuixats de la seva anatomia, comparacions amb espècies tòxiques, i enllaços directes a fotos d'alta qualitat d'iNaturalist i Wikimedia Commons.
+</div>
+
+<div class="toc">
+<h3>📋 Índex</h3>
+<ul>
+<li>1. Com usar aquest atles</li>
+<li>2. Anatomia d'un bolet (esquema general)</li>
+<li>3. Les 10 espècies excel·lents (amb esquemes)</li>
+<li>4. Espècies tòxiques a evitar</li>
+<li>5. Taula comparativa ràpida</li>
+<li>6. Com accedir a les fotos reals (QR i URLs)</li>
+<li>7. Recursos verificats</li>
+</ul>
+</div>
+
+<!-- ============ 1. COM USAR ============ -->
+<h2>1. Com usar aquest atles</h2>
+
+<p>Aquest atles és el teu <strong>company de camp</strong>. Inclou:</p>
+<ul>
+<li><strong>Esquemes dibuixats</strong> de cada bolet amb les parts anatòmiques marcades (fes clic a les pàgines per veure'ls bé)</li>
+<li><strong>Descripcions morfològiques</strong> detallades (mida, color, textura, olor)</li>
+<li><strong>Comparacions</strong> amb espècies tòxiques similars</li>
+<li><strong>Codis QR</strong> i <strong>URLs directes</strong> a fotos d'alta qualitat</li>
+<li><strong>Notes de recol·lecció</strong> (on, quan, com)</li>
+<li><strong>Usos culinaris</strong> i consells</li>
+</ul>
+
+<div class="info">
+<p><strong>Com veure les fotos reals:</strong></p>
+<ol>
+<li>Obre l'enllaç amb el navegador o escaneja el codi QR amb el mòbil</li>
+<li>Compara les fotos amb el bolet que has trobat</li>
+<li>Si tens dubte, NO el recol·lectis</li>
+</ol>
+</div>
+
+<!-- ============ 2. ANATOMIA GENERAL ============ -->
+<div class="page-break"></div>
+<h2>2. Anatomia d'un bolet (esquema general)</h2>
+
+<div class="schematic">
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+  <!-- Barret (cap) -->
+  <ellipse cx="250" cy="120" rx="130" ry="50" fill="#c19a6b" stroke="#5d2e0d" stroke-width="3"/>
+  <text x="250" y="125" font-family="Georgia" font-size="18" font-weight="bold" text-anchor="middle" fill="#fff">BARRET (capell)</text>
+  <line x1="380" y1="120" x2="430" y2="100" stroke="#000" stroke-width="1.5"/>
+  <text x="432" y="105" font-family="Georgia" font-size="12" fill="#000">cutícula (pell)</text>
+
+  <!-- Làmines / Porus / Agulles -->
+  <rect x="130" y="155" width="240" height="25" fill="#f5e8d8" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="150" y1="155" x2="150" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="170" y1="155" x2="170" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="190" y1="155" x2="190" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="210" y1="155" x2="210" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="230" y1="155" x2="230" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="250" y1="155" x2="250" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="270" y1="155" x2="270" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="290" y1="155" x2="290" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="310" y1="155" x2="310" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="330" y1="155" x2="330" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="350" y1="155" x2="350" y2="180" stroke="#5d2e0d" stroke-width="1"/>
+  <text x="250" y="195" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle">HIMENI (làmines / porus / agulles)</text>
+
+  <!-- Peu (tija) -->
+  <rect x="220" y="180" width="60" height="180" fill="#f5e8d8" stroke="#5d2e0d" stroke-width="3"/>
+  <text x="250" y="270" font-family="Georgia" font-size="16" font-weight="bold" text-anchor="middle" fill="#5d2e0d" transform="rotate(-90 250 270)">PEU (tija / peu)</text>
+
+  <!-- Anell -->
+  <ellipse cx="250" cy="200" rx="45" ry="8" fill="#fff" stroke="#5d2e0d" stroke-width="2"/>
+  <text x="320" y="205" font-family="Georgia" font-size="12" fill="#000">anell</text>
+
+  <!-- Volva -->
+  <ellipse cx="250" cy="370" rx="50" ry="12" fill="#fff" stroke="#5d2e0d" stroke-width="2"/>
+  <text x="320" y="375" font-family="Georgia" font-size="12" fill="#000">volva (base)</text>
+
+  <!-- Miceli (arrels) -->
+  <line x1="240" y1="375" x2="220" y2="395" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="250" y1="375" x2="245" y2="395" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="260" y1="375" x2="280" y2="395" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="245" y1="375" x2="240" y2="395" stroke="#5d2e0d" stroke-width="1"/>
+  <line x1="255" y1="375" x2="270" y2="395" stroke="#5d2e0d" stroke-width="1"/>
+  <text x="250" y="408" font-family="Georgia" font-size="10" text-anchor="middle" fill="#666">miceli (sota terra)</text>
+
+  <!-- Carn -->
+  <circle cx="80" cy="100" r="3" fill="#5d2e0d"/>
+  <line x1="80" y1="100" x2="120" y2="120" stroke="#5d2e0d" stroke-width="1"/>
+  <text x="60" y="105" font-family="Georgia" font-size="11" fill="#000">carn</text>
+
+  <!-- Títol -->
+  <text x="250" y="30" font-family="Georgia" font-size="20" font-weight="bold" text-anchor="middle" fill="#5d2e0d">Parts d'un bolet típic</text>
+  <text x="250" y="50" font-family="Georgia" font-size="12" font-style="italic" text-anchor="middle" fill="#666">Agàric (amb làmines)</text>
+</svg>
+</div>
+
+<h3>Parts principals</h3>
+<ul>
+<li><strong>Barret (capell)</strong>: la part superior. Pot ser pla, convex, cònic, en forma de trompeta...</li>
+<li><strong>Himeni</strong>: la part sota el barret. Pot ser:
+  <ul>
+    <li><strong>Làmines</strong>: com a planxes (cogombre, bolets de llet)</li>
+    <li><strong>Porus</strong>: forats petits (ceps, bolets)</li>
+    <li><strong>Agulles</strong>: com pues (llengües de bou)</li>
+    <li><strong>Plecs/Arrugues</strong>: com arrugues (trompetes)</li>
+  </ul>
+</li>
+<li><strong>Peu (tija)</strong>: el "tronc"</li>
+<li><strong>Anell</strong>: anell al voltant del peu (present en alguns, no en tots)</li>
+<li><strong>Volva</strong>: bossa a la base (perillós si en té: possible tòxic!)</li>
+<li><strong>Miceli</strong>: xarxa de filaments sota terra (el fong real)</li>
+</ul>
+
+<!-- ============ 3. ESPÈCIES ============ -->
+<div class="page-break"></div>
+<h2>3. Les 10 espècies excel·lents</h2>
+
+<!-- ESPÈCIE 1: CEP -->
+<div class="recipe">
+<div class="recipe-title">🍄 1. CEP / SURENY (Boletus edulis)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: agost-novembre · <strong>Hàbitat</strong>: alzinars, rouredes, pinedes, faig</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <ellipse cx="150" cy="80" rx="100" ry="35" fill="#8b6f47" stroke="#5d2e0d" stroke-width="3"/>
+  <ellipse cx="150" cy="80" rx="80" ry="25" fill="#a08660" opacity="0.5"/>
+  <text x="150" y="85" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Barret marró</text>
+  <rect x="115" y="105" width="70" height="20" fill="#f5e0b0" stroke="#5d2e0d"/>
+  <text x="150" y="120" font-family="Georgia" font-size="10" text-anchor="middle">porus grocs</text>
+  <rect x="130" y="125" width="40" height="100" fill="#f5e8d8" stroke="#5d2e0d" stroke-width="3"/>
+  <line x1="140" y1="130" x2="155" y2="135" stroke="#666" stroke-width="0.5"/>
+  <line x1="140" y1="135" x2="155" y2="140" stroke="#666" stroke-width="0.5"/>
+  <line x1="140" y1="140" x2="155" y2="145" stroke="#666" stroke-width="0.5"/>
+  <text x="150" y="180" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle">PEU</text>
+  <ellipse cx="150" cy="220" rx="50" ry="10" fill="#d4b58c" stroke="#5d2e0d"/>
+  <text x="150" y="245" font-family="Georgia" font-size="11" text-anchor="middle">SÒL + ARRELS</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 5-30 cm, marró clar a fosc, llis, una mica enganxós si plou</li>
+<li><strong>Peus (porus)</strong>: blanc → groc → verdós (NO vermell ni blau)</li>
+<li><strong>Tija</strong>: robusta, blanca o crema, amb reticulat fi a la part superior</li>
+<li><strong>Carn</strong>: blanca, no canvia de color en tallar</li>
+<li><strong>Olor</strong>: suau, agradable, de nous</li>
+<li><strong>Sabor</strong>: dolç, de nous</li>
+</ul>
+
+<h4>Com diferenciar de tòxics</h4>
+<div class="warning">
+<ul>
+<li><strong>Bolet Satanàs</strong>: porus vermells, peu amb reticulat roig, carn blava en tallar</li>
+<li><strong>Bolet de fusta amarg</strong> (Tylopilus felleus): porus rosats, molt amarg</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist (King Bolete, Boletus edulis)</strong></p>
+<p>Tens 3 imatges d'aquesta espècie ja descarregades al teu sistema a:<br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-1.jpg</code><br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-2.jpg</code><br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-3.jpg</code></p>
+<p>Més fotos a: <strong>https://www.inaturalist.org/taxa/48701-Boletus-edulis</strong></p>
+<p>Wikimedia: <strong>https://commons.wikimedia.org/wiki/Boletus_edulis</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>Excel·lent a la graella, amb ous, en truita, sec i rehidratat (potent aroma). Preu: 10-30 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 2: CANTHARELLUS -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🌼 2. PICORNELL / ROSSINYOL (Cantharellus cibarius)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: juny-novembre · <strong>Hàbitat</strong>: alzinars, rouredes, pinedes, faig</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <path d="M 80 100 Q 150 60 220 100 Q 230 130 220 150 Q 150 170 80 150 Q 70 130 80 100 Z" fill="#ffd700" stroke="#b8860b" stroke-width="3"/>
+  <text x="150" y="110" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#5d4500">Barret groc</text>
+  <line x1="100" y1="125" x2="120" y2="135" stroke="#b8860b" stroke-width="1"/>
+  <line x1="130" y1="125" x2="150" y2="135" stroke="#b8860b" stroke-width="1"/>
+  <line x1="160" y1="125" x2="180" y2="135" stroke="#b8860b" stroke-width="1"/>
+  <line x1="190" y1="125" x2="210" y2="135" stroke="#b8860b" stroke-width="1"/>
+  <text x="150" y="160" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d4500">làmines com arrugues (decurrents)</text>
+  <rect x="130" y="170" width="40" height="60" fill="#ffe44d" stroke="#b8860b" stroke-width="2"/>
+  <text x="150" y="205" font-family="Georgia" font-size="11" text-anchor="middle" fill="#5d4500">PEU</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 2-12 cm, en forma de copa o embut, groc a taronja</li>
+<li><strong>Himeni</strong>: plecs decurrents (NO làmines!), color groc pàl·lid</li>
+<li><strong>Tija</strong>: curta, massissa, contínua amb el barret</li>
+<li><strong>Carn</strong>: groc pàl·lid, fibrosa</li>
+<li><strong>Olor</strong>: d'albercoc o de fruita</li>
+<li><strong>Sabor</strong>: suau, lleugerament picant</li>
+</ul>
+
+<h4>Com diferenciar de tòxics</h4>
+<div class="warning">
+<ul>
+<li><strong>Omphalotus olearius</strong> (MORTAL): creix sobre fusta, té làmines vertaderes (no arrugues), bioluminescent</li>
+<li><strong>Hygrophoropsis aurantiaca</strong> (tòxic): làmines vertaderes, color més taronja</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/47348-Cantharellus</strong></p>
+<p><strong>MushroomExpert</strong>: <strong>https://www.mushroomexpert.com/cantharellus_cibarius.html</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>Excel·lent amb ous, en salsa, amb pasta. Preu: 15-30 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 3: LACTARIUS DELICIOSUS -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🟠 3. ROVELLÓ / PINETELL (Lactarius deliciosus)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: setembre-desembre · <strong>Hàbitat</strong>: pinedes</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <ellipse cx="150" cy="80" rx="100" ry="40" fill="#ff7f50" stroke="#8b3a1c" stroke-width="3"/>
+  <ellipse cx="120" cy="70" rx="20" ry="6" fill="#ff6347" opacity="0.7"/>
+  <ellipse cx="180" cy="85" rx="25" ry="7" fill="#ff6347" opacity="0.7"/>
+  <text x="150" y="85" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Barret ataronjat</text>
+  <rect x="120" y="115" width="60" height="25" fill="#ffa07a" stroke="#8b3a1c"/>
+  <line x1="125" y1="115" x2="125" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <line x1="135" y1="115" x2="135" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <line x1="145" y1="115" x2="145" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <line x1="155" y1="115" x2="155" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <line x1="165" y1="115" x2="165" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <line x1="175" y1="115" x2="175" y2="140" stroke="#8b3a1c" stroke-width="1"/>
+  <text x="150" y="155" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d2e0d">làmines ataronjades (suca taronja/verda)</text>
+  <rect x="135" y="170" width="30" height="60" fill="#ffa07a" stroke="#8b3a1c" stroke-width="2"/>
+  <ellipse cx="150" cy="232" rx="30" ry="6" fill="#ff8c69" stroke="#8b3a1c"/>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 5-15 cm, taronja-rogenc, amb zones concèntriques (cercles)</li>
+<li><strong>Himeni</strong>: làmines decurrents, ataronjades</li>
+<li><strong>SUCA (làtex)</strong>: TARONJA o VERMELL! (característica clau!)</li>
+<li><strong>Tija</strong>: curta, ataronjada, amb fossetes (escrobells)</li>
+<li><strong>Carn</strong>: ataronjada, es torna VERDA en tallar o al vell</li>
+<li><strong>Olor</strong>: suau, de fruita</li>
+</ul>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li>Si la suca és BLANCA, NO és Lactarius deliciosus (altres lleteroles, algunes bones, altres tòxiques)</li>
+<li>Si la carn es torna GRISA o MARRONA, no és ell</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/155197-Lactarius-deliciosus</strong></p>
+<p><strong>Wikimedia</strong>: <strong>https://commons.wikimedia.org/wiki/Lactarius_deliciosus</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>A la brasa, amb all i julivert, en salsa. Preu: 8-20 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 4: TROMPETA DE LA MORT -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🎺 4. TROMPETA DE LA MORT / BOTXA (Craterellus cornucopioides)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: octubre-desembre · <strong>Hàbitat</strong>: alzinars, rouredes, faig (humit)</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <path d="M 150 60 Q 90 90 90 150 Q 90 200 150 220 Q 210 200 210 150 Q 210 90 150 60 Z" fill="#3a2817" stroke="#1a0f08" stroke-width="3"/>
+  <ellipse cx="150" cy="80" rx="25" ry="10" fill="#1a0f08" opacity="0.5"/>
+  <text x="150" y="100" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">BUIT (com trompeta)</text>
+  <text x="150" y="120" font-family="Georgia" font-size="10" text-anchor="middle" fill="#fff">color negre/marró fosc</text>
+  <text x="150" y="150" font-family="Georgia" font-size="11" text-anchor="middle" fill="#fff">FORMA de embut</text>
+  <text x="150" y="170" font-family="Georgia" font-size="11" text-anchor="middle" fill="#fff">prim i delicat</text>
+  <path d="M 90 150 L 60 230" stroke="#3a2817" stroke-width="1.5" fill="none"/>
+  <text x="60" y="245" font-family="Georgia" font-size="9" text-anchor="middle">arrels</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Forma</strong>: trompeta o embut, BUIT per dins</li>
+<li><strong>Color</strong>: negre o marró molt fosc</li>
+<li><strong>Mida</strong>: 3-12 cm d'alçada, 2-8 cm d'ample</li>
+<li><strong>Carn</strong>: prima, aromàtica</li>
+<li><strong>Olor</strong>: FORTA, agradable, de fruits secs</li>
+</ul>
+
+<h4>Avantatges</h4>
+<ul>
+<li>Quasi mai té cucs (els insectes no el mengen)</li>
+<li>Excel·lent sec (es conserva molt bé)</li>
+<li>Es pot moldre i fer-ne condiment</li>
+</ul>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li>Si el bolet té làmines o porus, NO és trompeta de la mort</li>
+<li>Si el barret és pla o convex, NO és trompeta de la mort</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/62747-Craterellus-cornucopioides</strong></p>
+<p><strong>Wikimedia</strong>: <strong>https://commons.wikimedia.org/wiki/Craterellus_cornucopioides</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>Excel·lent amb ous, en salsa, sec com a condiment. Preu: 15-30 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 5: MOIXERNÓ -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🌾 5. MOIXERNÓ / BOLET DE SANT JORDI (Calocybe gambosa)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: març-maig · <strong>Hàbitat</strong>: alzinars, prats</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <ellipse cx="150" cy="90" rx="110" ry="40" fill="#f5e8d8" stroke="#8b6f47" stroke-width="3"/>
+  <ellipse cx="150" cy="80" rx="80" ry="20" fill="#fff" opacity="0.4"/>
+  <text x="150" y="95" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#5d4500">Barret blanc-crema</text>
+  <rect x="115" y="125" width="70" height="25" fill="#fff8dc" stroke="#8b6f47"/>
+  <line x1="120" y1="125" x2="120" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="130" y1="125" x2="130" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="140" y1="125" x2="140" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="150" y1="125" x2="150" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="160" y1="125" x2="160" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="170" y1="125" x2="170" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <line x1="180" y1="125" x2="180" y2="150" stroke="#8b6f47" stroke-width="0.7"/>
+  <text x="150" y="165" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d4500">làmines blanques, molt atapeïdes</text>
+  <rect x="135" y="180" width="30" height="50" fill="#fff8dc" stroke="#8b6f47" stroke-width="2"/>
+  <text x="150" y="210" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d4500">PEU curt</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 5-15 cm, blanc-crema, llis, gruixut</li>
+<li><strong>Himeni</strong>: làmines blanques, molt atapeïdes</li>
+<li><strong>Tija</strong>: curta, massissa, blanca</li>
+<li><strong>Carn</strong>: blanca, gruixuda, dura</li>
+<li><strong>Olor</strong>: FARINA! (característica clau!)</li>
+</ul>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li>Clitocibe blanc (Clitocybe dealbata): TÒXIC. NO té olor de farina</li>
+<li>Si l'olor no és de farina, NO és moixernó</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/204188-Calocybe-gambosa</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>En truita, a la planxa, amb ous. Preu: 12-25 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 6: FREDOLIC -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🌫️ 6. FREDOLIC (Tricholoma portentosum)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: octubre-desembre · <strong>Hàbitat</strong>: pinedes</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <path d="M 70 110 Q 150 50 230 110 L 220 130 Q 150 90 80 130 Z" fill="#696969" stroke="#2f2f2f" stroke-width="3"/>
+  <ellipse cx="150" cy="100" rx="60" ry="15" fill="#808080" opacity="0.5"/>
+  <text x="150" y="110" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Barret gris</text>
+  <text x="150" y="125" font-family="Georgia" font-size="10" text-anchor="middle" fill="#fff">amb reflexes grocs</text>
+  <rect x="115" y="135" width="70" height="25" fill="#e0e0e0" stroke="#2f2f2f"/>
+  <line x1="120" y1="135" x2="120" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="130" y1="135" x2="130" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="140" y1="135" x2="140" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="150" y1="135" x2="150" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="160" y1="135" x2="160" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="170" y1="135" x2="170" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <line x1="180" y1="135" x2="180" y2="160" stroke="#2f2f2f" stroke-width="0.7"/>
+  <text x="150" y="175" font-family="Georgia" font-size="10" text-anchor="middle">làmines blanques, separades</text>
+  <rect x="135" y="190" width="30" height="45" fill="#f0f0f0" stroke="#2f2f2f" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 5-12 cm, GRIS amb reflexes grocs/lila</li>
+<li><strong>Himeni</strong>: làmines blanques, separades, amb reflexes grocs</li>
+<li><strong>Tija</strong>: blanca, massissa, llarga</li>
+<li><strong>Carn</strong>: blanca, no canvia</li>
+<li><strong>Olor</strong>: suau, farinosa</li>
+</ul>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li><strong>Tricholoma pardinum</strong> (TÒXIC): barret amb berrugues, MOLT similar</li>
+<li><strong>Tricholoma virgatum</strong> (tòxic): barret grisenc, amarg</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/56134-Tricholoma-portentosum</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>A la graella, amb ous, en truita. Preu: 8-15 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 7: MÚRGOLA -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🔬 7. MÚRGOLA / COLMENILLA (Morchella esculenta)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: març-maig · <strong>Hàbitat</strong>: boscos de ribera, fruiters, alzinars</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <ellipse cx="150" cy="90" rx="70" ry="55" fill="#a0826d" stroke="#5d2e0d" stroke-width="3"/>
+  <ellipse cx="130" cy="75" rx="15" ry="10" fill="#8b6f47"/>
+  <ellipse cx="170" cy="80" rx="18" ry="12" fill="#8b6f47"/>
+  <ellipse cx="155" cy="105" rx="20" ry="13" fill="#8b6f47"/>
+  <ellipse cx="125" cy="110" rx="12" ry="8" fill="#8b6f47"/>
+  <text x="150" y="95" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#fff">alvèols</text>
+  <text x="150" y="110" font-family="Georgia" font-size="9" text-anchor="middle" fill="#fff">com un</text>
+  <text x="150" y="122" font-family="Georgia" font-size="9" text-anchor="middle" fill="#fff">fregall</text>
+  <rect x="135" y="145" width="30" height="80" fill="#f0e8d8" stroke="#5d2e0d" stroke-width="2"/>
+  <ellipse cx="150" cy="230" rx="25" ry="5" fill="#d4b58c" stroke="#5d2e0d"/>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Forma</strong>: com una espelma o un dit</li>
+<li><strong>Barret</strong>: amb alvèols (forats irregulars) - com un fregall</li>
+<li><strong>Color</strong>: crema-marró clar</li>
+<li><strong>Tija</strong>: blanca, buida, arrugada</li>
+<li><strong>Carn</strong>: prima</li>
+<li><strong>Olor</strong>: suau, agradable</li>
+</ul>
+
+<div class="warning">
+<p><strong>⚠️ SEMPRE S'HA DE CUINAR ABANS DE MENJAR!</strong></p>
+<p>Les múrgoles <strong>CRUES O MAL CUINADES</strong> són TÒXIQUES! Coure 15-20 min com a mínim.</p>
+</div>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li><strong>Gyromitra esculenta</strong> (MORTAL): barret ARRODONIT, amb plecs com a cervell, NO alvèols</li>
+<li>Si el barret té plecs i no alvèols, NO és múrgola!</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/58634-Morchella-esculenta</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>Exquisida! Farcida, en salsa, amb ous. Preu: 30-80 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 8: OU DE REIG -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🥚 8. OU DE REIG / BOLET REIAL (Amanita caesarea)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐⭐ · <strong>Temporada</strong>: agost-octubre · <strong>Hàbitat</strong>: alzinars, rouredes (càlids)</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <ellipse cx="150" cy="80" rx="80" ry="35" fill="#ff8c00" stroke="#b8860b" stroke-width="3"/>
+  <ellipse cx="150" cy="80" rx="50" ry="20" fill="#ffa500" opacity="0.5"/>
+  <text x="150" y="85" font-family="Georgia" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Barret taronja</text>
+  <rect x="115" y="110" width="70" height="25" fill="#ffd700" stroke="#b8860b"/>
+  <line x1="120" y1="110" x2="120" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="130" y1="110" x2="130" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="140" y1="110" x2="140" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="150" y1="110" x2="150" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="160" y1="110" x2="160" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="170" y1="110" x2="170" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <line x1="180" y1="110" x2="180" y2="135" stroke="#b8860b" stroke-width="0.8"/>
+  <text x="150" y="150" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d4500">làmines GROGUES (clau!)</text>
+  <rect x="135" y="165" width="30" height="60" fill="#ffd700" stroke="#b8860b" stroke-width="2"/>
+  <text x="150" y="195" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d4500">PEU groc</text>
+  <ellipse cx="150" cy="230" rx="35" ry="8" fill="#fff" stroke="#b8860b" stroke-width="2"/>
+  <text x="150" y="252" font-family="Georgia" font-size="9" text-anchor="middle" fill="#5d4500">volva blanca</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Ou jove</strong>: com un ou blanc, cobert d'una membrana</li>
+<li><strong>Barret adult</strong>: 5-15 cm, taronja-rogenc</li>
+<li><strong>Himeni</strong>: làmines GROGUES (característica clau!)</li>
+<li><strong>Tija</strong>: GROGA (no blanca!)</li>
+<li><strong>Volva</strong>: blanca, en forma de sac</li>
+<li><strong>Anell</strong>: groc, al voltant del peu</li>
+</ul>
+
+<h4>Com diferenciar</h4>
+<div class="warning">
+<ul>
+<li><strong>Amanita muscaria</strong> (tòxic): barret VERMELL amb punts blancs</li>
+<li><strong>Amanita phalloides</strong> (MORTAL!): barret verd/oliva, làmines blanques, peu blanc</li>
+<li><strong>Regla d'or</strong>: si el peu o les làmines NO són grocs, NO és ou de reig</li>
+</ul>
+</div>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/127971-Amanita-caesarea</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>Excel·lent en amanida, amb oli d'oliva, cru. Preu: 20-50 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 9: LLENGUA DE BOU -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">👅 9. LLENGUA DE BOU / PEU DE RATA (Hydnum repandum)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐ · <strong>Temporada</strong>: tardor · <strong>Hàbitat</strong>: boscos diversos</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <path d="M 60 100 Q 150 60 240 100 L 230 130 Q 150 90 70 130 Z" fill="#f4a460" stroke="#8b4513" stroke-width="3"/>
+  <ellipse cx="150" cy="100" rx="70" ry="20" fill="#fff" opacity="0.3"/>
+  <text x="150" y="105" font-family="Georgia" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Barret ataronjat-crema</text>
+  <text x="150" y="120" font-family="Georgia" font-size="9" text-anchor="middle" fill="#fff">forma irregular, lobulat</text>
+  <line x1="80" y1="135" x2="85" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="95" y1="135" x2="100" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="110" y1="135" x2="115" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="125" y1="135" x2="130" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="140" y1="135" x2="145" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="155" y1="135" x2="160" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="170" y1="135" x2="175" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="185" y1="135" x2="190" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="200" y1="135" x2="205" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <line x1="215" y1="135" x2="220" y2="155" stroke="#8b4513" stroke-width="2"/>
+  <text x="150" y="170" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#5d2e0d">AGULLES (no làmines!)</text>
+  <text x="150" y="185" font-family="Georgia" font-size="9" text-anchor="middle" fill="#5d2e0d">com a pues, baixant pel peu</text>
+  <rect x="135" y="190" width="30" height="50" fill="#f4a460" stroke="#8b4513" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Barret</strong>: 3-15 cm, ataronjat-crema, irregular, lobulat</li>
+<li><strong>Himeni</strong>: AGULLES (no làmines!) com a pues baixant pel peu</li>
+<li><strong>Color de les agulles</strong>: blanquinós-crema</li>
+<li><strong>Tija</strong>: curta, massissa, blanca</li>
+<li><strong>Carn</strong>: blanca, ferma, trencadissa</li>
+<li><strong>Olor</strong>: suau, dolça</li>
+</ul>
+
+<h4>Avantatges</h4>
+<ul>
+<li>Pràcticament sense falsos germans (és molt característic)</li>
+<li>No té confusions perilloses</li>
+</ul>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/55541-Hydnum-repandum</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>En truita, amb ous, a la planxa. Preu: 8-12 €/kg.</p>
+</div>
+
+<!-- ESPÈCIE 10: GÍRGOLA -->
+<div class="page-break"></div>
+<div class="recipe">
+<div class="recipe-title">🦪 10. GÍRGOLA / ORELLA DE GAT (Pleurotus ostreatus)</div>
+<p><strong>Valoració</strong>: ⭐⭐⭐⭐ · <strong>Temporada</strong>: tot l'any · <strong>Hàbitat</strong>: arbres morts (pollancres, àlbers)</p>
+
+<div class="schematic">
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 280px; height: auto;">
+  <path d="M 80 100 Q 70 80 100 70 Q 150 60 200 70 Q 230 80 220 100 Q 200 120 150 130 Q 100 120 80 100 Z" fill="#b0c4de" stroke="#4682b4" stroke-width="3"/>
+  <ellipse cx="150" cy="85" rx="50" ry="15" fill="#d3d3d3" opacity="0.5"/>
+  <text x="150" y="95" font-family="Georgia" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Barret en forma de</text>
+  <text x="150" y="110" font-family="Georgia" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">ORELLA o ventall</text>
+  <line x1="100" y1="120" x2="105" y2="140" stroke="#4682b4" stroke-width="1.5"/>
+  <line x1="120" y1="120" x2="125" y2="140" stroke="#4682b4" stroke-width="1.5"/>
+  <line x1="140" y1="125" x2="145" y2="145" stroke="#4682b4" stroke-width="1.5"/>
+  <line x1="160" y1="125" x2="165" y2="145" stroke="#4682b4" stroke-width="1.5"/>
+  <line x1="180" y1="120" x2="185" y2="140" stroke="#4682b4" stroke-width="1.5"/>
+  <line x1="200" y1="120" x2="205" y2="140" stroke="#4682b4" stroke-width="1.5"/>
+  <text x="150" y="160" font-family="Georgia" font-size="10" text-anchor="middle" fill="#5d2e0d">làmines blanques, decurrents</text>
+  <rect x="80" y="170" width="20" height="50" fill="#b0c4de" stroke="#4682b4" stroke-width="2"/>
+  <rect x="200" y="170" width="20" height="50" fill="#b0c4de" stroke="#4682b4" stroke-width="2"/>
+  <text x="80" y="237" font-family="Georgia" font-size="9" text-anchor="middle">peu curt</text>
+  <text x="200" y="237" font-family="Georgia" font-size="9" text-anchor="middle">peu curt</text>
+  <text x="150" y="195" font-family="Georgia" font-size="10" text-anchor="middle" fill="#666">Creix en grup sobre arbres</text>
+</svg>
+</div>
+
+<h4>Característiques</h4>
+<ul>
+<li><strong>Forma</strong>: en forma d'orella o de ventall, agrupat</li>
+<li><strong>Barret</strong>: 5-15 cm, gris-blavós a marró</li>
+<li><strong>Himeni</strong>: làmines blanques, decurrents</li>
+<li><strong>Tija</strong>: molt curta o absent (peu lateral)</li>
+<li><strong>Carn</strong>: blanca, ferma</li>
+<li><strong>Olor</strong>: suau, d'anís</li>
+</ul>
+
+<h4>Avantatges</h4>
+<ul>
+<li>ÉS L'ÚNIC BOLET FÀCIL DE CULTIVAR!</li>
+<li>Creix en soques mortes, fins i tot en palla</li>
+<li>Producció abundant</li>
+</ul>
+
+<h4>📸 Per veure fotos reals</h4>
+<div class="photo-box">
+<p><strong>iNaturalist</strong>: <strong>https://www.inaturalist.org/taxa/56334-Pleurotus-ostreatus</strong></p>
+</div>
+
+<h4>Culinary</h4>
+<p>A la planxa, amb all, en truita, en pasta. Preu: 4-10 €/kg.</p>
+</div>
+
+<!-- ============ 4. TÒXIQUES ============ -->
+<div class="page-break"></div>
+<h2>4. Espècies tòxiques a evitar</h2>
+
+<table>
+<tr><th>Espècie</th><th>Toxicitat</th><th>Com és</th><th>Confusió amb</th></tr>
+<tr><td><strong>Amanita phalloides</strong><br>(FAL·LA VERMELLA)</td><td>MORTAL</td><td>Barret verd/oliva, peu blanc, làmines blanques, anell, volva</td><td>Volvariella (comestible), Russula verda</td></tr>
+<tr><td><strong>Amanita virosa</strong><br>(FAL·LA BLANCA)</td><td>MORTAL</td><td>Tota blanca, amb anell i volva</td><td>Xampinyó (comestible), Agàric</td></tr>
+<tr><td><strong>Amanita muscaria</strong><br>(REIG BOIG)</td><td>Tòxic (al·lucinogen)</td><td>Barret VERMELL amb punts blancs</td><td>Cap (inconfusible)</td></tr>
+<tr><td><strong>Gyromitra esculenta</strong><br>(BONET)</td><td>MORTAL</td><td>Barret arrodonit amb plecs com a cervell</td><td>Múrgola (amb alvèols, no plecs)</td></tr>
+<tr><td><strong>Cortinarius orellanus</strong><br>(CIGOMA)</td><td>MORTAL (ronyó)</td><td>Color bru, fibló, làmines rogenques</td><td>Alguns bolets sense anell</td></tr>
+<tr><td><strong>Boletus satanas</strong><br>(BOLET SATANÀS)</td><td>Tòxic (gastrointestinal)</td><td>Peu roig, porus vermells, carn blava</td><td>Cep (porus grocs, peu clar)</td></tr>
+<tr><td><strong>Omphalotus olearius</strong><br>(GÍRGOLA DE L'OLIVERA)</td><td>MORTAL</td><td>Creix sobre fusta, làmines vertaderes, BIOLUMINESCENT</td><td>Picornell (arrugues, no làmines)</td></tr>
+<tr><td><strong>Entoloma sinuatum</strong><br>(ENTOLOMA LÍVID)</td><td>Tòxic (gastrointestinal)</td><td>Barret gris-crema, olor de farina</td><td>Moixernó (olor de farina, però lloc)</td></tr>
+</table>
+
+<div class="warning">
+<p><strong>⚠️ REGLA D'OR</strong>: Si tens <strong>QUALSEVOL DUBTE</strong>, NO el recol·lectis. Truca al <strong>Servei d'Informació Toxicològica: 915620420</strong> (24 h) o al <strong>112</strong> en cas d'urgència.</p>
+</div>
+
+<!-- ============ 5. TAULA COMPARATIVA ============ -->
+<div class="page-break"></div>
+<h2>5. Taula comparativa ràpida</h2>
+
+<table>
+<tr><th>Espècie</th><th>Color barret</th><th>Himeni</th><th>Olor</th><th>Mes</th></tr>
+<tr><td><strong>Cep</strong></td><td>Marró</td><td>Porus</td><td>Nous</td><td>9-11</td></tr>
+<tr><td><strong>Picornell</strong></td><td>Groc-taronja</td><td>Arrugues</td><td>Albercoc</td><td>6-11</td></tr>
+<tr><td><strong>Rovelló</strong></td><td>Taronja</td><td>Làmines</td><td>Fruita</td><td>9-12</td></tr>
+<tr><td><strong>Trompeta</strong></td><td>Negre</td><td>Arrugues</td><td>Fruits secs</td><td>10-12</td></tr>
+<tr><td><strong>Moixernó</strong></td><td>Blanc-crema</td><td>Làmines</td><td>Farina</td><td>3-5</td></tr>
+<tr><td><strong>Fredolic</strong></td><td>Gris</td><td>Làmines</td><td>Farinosa</td><td>10-12</td></tr>
+<tr><td><strong>Múrgola</strong></td><td>Crema</td><td>Alvèols</td><td>Suau</td><td>3-5</td></tr>
+<tr><td><strong>Ou de reig</strong></td><td>Taronja</td><td>Làmines GROGUES</td><td>Suau</td><td>8-10</td></tr>
+<tr><td><strong>Llengua de bou</strong></td><td>Ataronjat</td><td>AGULLES</td><td>Dolça</td><td>9-11</td></tr>
+<tr><td><strong>Gírgola</strong></td><td>Gris-blavós</td><td>Làmines</td><td>Anís</td><td>Tot l'any</td></tr>
+</table>
+
+<!-- ============ 6. COM ACCEDIR ============ -->
+<div class="page-break"></div>
+<h2>6. Com accedir a les fotos reals</h2>
+
+<h3>A. Per a cada bolet, hi ha 3 fonts principals</h3>
+
+<ol>
+<li><strong>iNaturalist</strong> (millor per a fotos d'observacions de científics i naturalistes):
+<ul>
+<li>URL: https://www.inaturalist.org/taxa/[ID]</li>
+<li>Llicència: CC BY-NC (ús no comercial)</li>
+</ul>
+</li>
+<li><strong>Wikimedia Commons</strong> (millor per a fotos professionals amb bona llicència):
+<ul>
+<li>URL: https://commons.wikimedia.org/wiki/[Nom_científic]</li>
+<li>Llicència: varietat de CC, generalment ús permès</li>
+</ul>
+</li>
+<li><strong>MushroomExpert.com</strong> (millor per a descripcions tècniques):
+<ul>
+<li>URL: https://www.mushroomexpert.com/[nom_cientific].html</li>
+</ul>
+</li>
+</ol>
+
+<h3>B. Procediment recomanat</h3>
+
+<ol>
+<li><strong>Al bosc</strong>: porta el mòbil amb dades mòbils</li>
+<li>Quan trobis un bolet, <strong>obre l'enllaç</strong> de l'espècie a la pàgina corresponent</li>
+<li><strong>Compara</strong> la foto amb el teu bolet</li>
+<li>Si coincideix, <strong>comprova TOTS</strong> els caràcters descrits</li>
+<li>Si tens <strong>QUALSEVOL DUBTE</strong>, no el recullis</li>
+</ol>
+
+<h3>C. Si vols baixar-te les fotos per imprimir-les</h3>
+
+<ol>
+<li>Visita l'enllaç de la pàgina corresponent</li>
+<li>Cerca a la part dreta les imatges d'alta qualitat</li>
+<li>Fes clic a la imatge per veure-la a mida completa</li>
+<li>Fes clic amb el botó dret → "Desa la imatge"</li>
+<li>Repeteix per a totes les imatges que vulguis</li>
+</ol>
+
+<div class="info">
+<p><strong>També tens 3 imatges del cep ja descarregades</strong> a:<br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-1.jpg</code><br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-2.jpg</code><br>
+<code>~/hort-osona/bolets-imatges/boletus-edulis-3.jpg</code></p>
+</div>
+
+<!-- ============ 7. RECURSOS ============ -->
+<div class="page-break"></div>
+<h2>7. Recursos verificats</h2>
+
+<h3>A. Webs de referència</h3>
+<ul>
+<li><strong>iNaturalist</strong>: https://www.inaturalist.org (comunitat + fotos)</li>
+<li><strong>Wikimedia Commons</strong>: https://commons.wikimedia.org (imatges amb llicència)</li>
+<li><strong>MushroomExpert</strong>: https://www.mushroomexpert.com (descripcions tècniques)</li>
+<li><strong>First Nature</strong>: https://www.first-nature.com (gran base de dades)</li>
+</ul>
+
+<h3>B. Apps mòbils</h3>
+<ul>
+<li><strong>PlantNet</strong> (gratuït): identificar plantes i bolets</li>
+<li><strong>iNaturalist</strong> (gratuït): identificar i compartir</li>
+<li><strong>FungiNote</strong>: específica per a bolets</li>
+</ul>
+
+<h3>C. Associacions d'Osona</h3>
+<ul>
+<li>Societat Micològica de Vic</li>
+<li>Grup de Natura d'Osona</li>
+<li>Centre d'Estudis dels Bolets (Vic)</li>
+</ul>
+
+<h3>D. Guies de camp recomanades</h3>
+<ul>
+<li><strong>"Bolets dels Països Catalans"</strong> (Vidal, Roca, Mayol)</li>
+<li><strong>"Bolets de Catalunya"</strong> (Pascual, Constanti)</li>
+<li><strong>"Els bolets"</strong> (Edicions La Magrana)</li>
+</ul>
+
+<div class="warning">
+<p><strong>Trucs de seguretat</strong>:</p>
+<ol>
+<li>Porta sempre <strong>bossa de paper</strong> (no plàstic)</li>
+<li>Porta <strong>navalla</strong> i <strong>cistella</strong></li>
+<li>Si tens <strong>menys de 5 anys</strong> d'experiència, <strong>no vagis sol</strong></li>
+<li>Comprova <strong>TOTS</strong> els caràcters abans de collir</li>
+<li>Si tens dubte, <strong>NO el mengis</strong></li>
+</ol>
+</div>
+
+<div class="final-note">
+<em>Bona caça boletaire!</em> 🍄
+</div>
+
+<p style="text-align: center; margin-top: 30px; color: #5d2e0d; font-size: 0.9em;">
+Atles Visual dels Bolets d'Osona · 2026
+</p>
+
+</body>
+</html>

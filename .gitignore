@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# OS temporary / prints
+*.tmp
+*.temp
+~$*
+
+# Converting scripts' temp outputs (keep the scripts)
+convertir_HTML_a_PDF_*.tmp
+*.log

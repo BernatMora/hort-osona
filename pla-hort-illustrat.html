@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Plànol de l'Hort d'Osona - 20 m²</title>
+<style>
+  @page { size: A4 landscape; margin: 1cm; }
+  body { font-family: 'Georgia', serif; color: #2a2a2a; line-height: 1.4; margin: 0; padding: 0.5cm; background: #fafafa; }
+  h1 { text-align: center; color: #2d5016; font-size: 1.8em; border-bottom: 3px solid #2d5016; padding-bottom: 6px; margin: 0 0 5px 0; }
+  h2 { text-align: center; color: #2d5016; font-size: 1.2em; margin: 10px 0; }
+  .subtitle { text-align: center; color: #666; font-style: italic; margin: 0 0 15px 0; }
+  .page-break { page-break-before: always; }
+  .container { display: flex; flex-direction: column; align-items: center; }
+  .legend { background: #f5f5f0; border: 1px solid #ccc; padding: 10px 20px; margin: 15px 0; max-width: 800px; }
+  .legend h3 { margin-top: 0; color: #2d5016; }
+  .legend ul { margin: 5px 0; padding-left: 20px; }
+  .legend li { margin: 2px 0; }
+  table.legend-table { border-collapse: collapse; margin: 10px auto; }
+  table.legend-table td { padding: 4px 10px; border-bottom: 1px solid #ddd; }
+  .notes { max-width: 800px; margin: 20px auto; }
+  .notes h3 { color: #2d5016; border-bottom: 2px solid #2d5016; padding-bottom: 4px; }
+  .warning { background: #fff4d6; border-left: 4px solid #d4a017; padding: 8px 12px; margin: 10px 0; }
+  .tip { background: #e6f3d4; border-left: 3px solid #4a7c1a; padding: 8px 12px; margin: 8px 0; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>🗺️ Plànol de l'Hort d'Osona</h1>
+<p class="subtitle">20 m² (4×5 m) · Osona, Catalunya · Versió il·lustrada</p>
+
+<div class="container">
+
+<!-- ============== PÀGINA 1: PLÀNOL IL·LUSTRAT ============== -->
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="max-width: 800px; border: 1px solid #333; background: #fffbf0;">
+  <!-- Marc exterior de l'hort -->
+  <rect x="50" y="50" width="700" height="500" fill="#e8f0d8" stroke="#2d5016" stroke-width="3"/>
+  
+  <!-- Text N (Nord) -->
+  <text x="400" y="30" font-family="Georgia" font-size="20" font-weight="bold" text-anchor="middle" fill="#2d5016">↑ N (menys sol)</text>
+  
+  <!-- Text S (Sud) -->
+  <text x="400" y="585" font-family="Georgia" font-size="20" font-weight="bold" text-anchor="middle" fill="#2d5016">↓ S (MÀXIM sol)</text>
+  
+  <!-- Text E i W -->
+  <text x="780" y="300" font-family="Georgia" font-size="18" font-weight="bold" text-anchor="middle" fill="#2d5016" transform="rotate(90 780 300)">E →</text>
+  <text x="20" y="300" font-family="Georgia" font-size="18" font-weight="bold" text-anchor="middle" fill="#2d5016" transform="rotate(-90 20 300)">← W</text>
+  
+  <!-- Sol del sud indicat -->
+  <g transform="translate(700, 580)">
+    <circle cx="0" cy="0" r="20" fill="#ffd700" stroke="#ff8c00" stroke-width="2"/>
+    <text x="0" y="5" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="#ff8c00">☀</text>
+  </g>
+  
+  <!-- Compostador (cantonada nord-oest) -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="60" height="60" fill="#8b4513" stroke="#5c2e0d" stroke-width="2"/>
+    <text x="30" y="35" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="white">♻</text>
+    <text x="30" y="50" font-family="Georgia" font-size="9" text-anchor="middle" fill="white">Compost</text>
+  </g>
+  
+  <!-- Galliner (cantonada nord-est) -->
+  <g transform="translate(660, 80)">
+    <polygon points="0,40 30,10 60,40 60,60 0,60" fill="#d2691e" stroke="#8b4513" stroke-width="2"/>
+    <text x="30" y="35" font-family="Georgia" font-size="14" font-weight="bold" text-anchor="middle" fill="white">🐔</text>
+    <text x="30" y="80" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Galliner</text>
+  </g>
+  
+  <!-- AROMÀTIQUES (perímetre nord) -->
+  <g transform="translate(160, 70)">
+    <circle cx="15" cy="15" r="10" fill="#9370db" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Romaní</text>
+  </g>
+  <g transform="translate(220, 70)">
+    <circle cx="15" cy="15" r="10" fill="#9acd32" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Sàlvia</text>
+  </g>
+  <g transform="translate(280, 70)">
+    <circle cx="15" cy="15" r="10" fill="#daa520" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Farigola</text>
+  </g>
+  <g transform="translate(340, 70)">
+    <circle cx="15" cy="15" r="10" fill="#ff69b4" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Orenga</text>
+  </g>
+  <g transform="translate(400, 70)">
+    <circle cx="15" cy="15" r="10" fill="#98fb98" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Melissa</text>
+  </g>
+  <g transform="translate(460, 70)">
+    <circle cx="15" cy="15" r="10" fill="#deb887" opacity="0.7"/>
+    <text x="15" y="40" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Donzell</text>
+  </g>
+  
+  <!-- BANCAL 1: TOMÀQUETS (costat oest, orientació sud) -->
+  <g transform="translate(80, 160)">
+    <rect x="0" y="0" width="100" height="120" fill="#ff6347" opacity="0.3" stroke="#b22222" stroke-width="2" rx="5"/>
+    <text x="50" y="20" font-family="Georgia" font-size="13" font-weight="bold" text-anchor="middle" fill="#8b0000">🍅 TOMÀQUETS</text>
+    <text x="50" y="35" font-family="Georgia" font-size="10" text-anchor="middle" fill="#8b0000">12 plantes</text>
+    <!-- 12 tomàquets dibuixats -->
+    <g font-size="18">
+      <text x="20" y="60">🍅</text>
+      <text x="50" y="60">🍅</text>
+      <text x="80" y="60">🍅</text>
+      <text x="20" y="85">🍅</text>
+      <text x="50" y="85">🍅</text>
+      <text x="80" y="85">🍅</text>
+      <text x="20" y="110">🍅</text>
+      <text x="50" y="110">🍅</text>
+      <text x="80" y="110">🍅</text>
+    </g>
+    <!-- Alfàbrega -->
+    <text x="95" y="80" font-size="14">🌿</text>
+  </g>
+  
+  <!-- BANCAL 2: PEBROTS (centre-nord) -->
+  <g transform="translate(200, 160)">
+    <rect x="0" y="0" width="80" height="80" fill="#ff4500" opacity="0.3" stroke="#cd0000" stroke-width="2" rx="5"/>
+    <text x="40" y="18" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="#8b0000">🫑 PEBROTS</text>
+    <text x="40" y="32" font-family="Georgia" font-size="9" text-anchor="middle" fill="#8b0000">6 plantes</text>
+    <g font-size="16">
+      <text x="15" y="55">🫑</text>
+      <text x="40" y="55">🫑</text>
+      <text x="65" y="55">🫑</text>
+      <text x="15" y="75">🫑</text>
+      <text x="40" y="75">🫑</text>
+      <text x="65" y="75">🫑</text>
+    </g>
+  </g>
+  
+  <!-- BANCAL 3: MONGETES -->
+  <g transform="translate(290, 160)">
+    <rect x="0" y="0" width="60" height="80" fill="#90ee90" opacity="0.3" stroke="#228b22" stroke-width="2" rx="5"/>
+    <text x="30" y="18" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#006400">🫘 MONG.</text>
+    <text x="30" y="32" font-family="Georgia" font-size="9" text-anchor="middle" fill="#006400">6 pl.</text>
+    <g font-size="14">
+      <text x="15" y="55">🫘</text>
+      <text x="40" y="55">🫘</text>
+      <text x="15" y="75">🫘</text>
+      <text x="40" y="75">🫘</text>
+    </g>
+  </g>
+  
+  <!-- BANCAL 4: PASTANAGUES + CEBA (a prop, NO juntes) -->
+  <g transform="translate(360, 160)">
+    <rect x="0" y="0" width="100" height="80" fill="#ffa500" opacity="0.3" stroke="#ff8c00" stroke-width="2" rx="5"/>
+    <text x="50" y="18" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#8b4513">🥕 PASTANAGUES</text>
+    <text x="50" y="32" font-family="Georgia" font-size="9" text-anchor="middle" fill="#8b4513">6 fileres</text>
+    <g font-size="12">
+      <text x="10" y="55">🥕</text>
+      <text x="30" y="55">🥕</text>
+      <text x="50" y="55">🥕</text>
+      <text x="70" y="55">🥕</text>
+      <text x="90" y="55">🥕</text>
+    </g>
+  </g>
+  
+  <!-- CEBA (a prop de pastanaga però a 1,5+ m de mongeta) -->
+  <g transform="translate(480, 160)">
+    <rect x="0" y="0" width="60" height="80" fill="#fff8dc" opacity="0.6" stroke="#daa520" stroke-width="2" rx="5"/>
+    <text x="30" y="18" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#8b4513">🧅 CEBA</text>
+    <text x="30" y="32" font-family="Georgia" font-size="9" text-anchor="middle" fill="#8b4513">6 fil.</text>
+    <g font-size="14">
+      <text x="15" y="55">🧅</text>
+      <text x="40" y="55">🧅</text>
+      <text x="15" y="75">🧅</text>
+      <text x="40" y="75">🧅</text>
+    </g>
+  </g>
+  
+  <!-- BANCAL 5: ENCIAMS (a l'est, sol de matí) -->
+  <g transform="translate(560, 160)">
+    <rect x="0" y="0" width="80" height="80" fill="#90ee90" opacity="0.4" stroke="#228b22" stroke-width="2" rx="5"/>
+    <text x="40" y="18" font-family="Georgia" font-size="11" font-weight="bold" text-anchor="middle" fill="#006400">🥬 ENCIAMS</text>
+    <text x="40" y="32" font-family="Georgia" font-size="9" text-anchor="middle" fill="#006400">6 plantes</text>
+    <g font-size="14">
+      <text x="15" y="55">🥬</text>
+      <text x="40" y="55">🥬</text>
+      <text x="65" y="55">🥬</text>
+      <text x="15" y="75">🥬</text>
+      <text x="40" y="75">🥬</text>
+      <text x="65" y="75">🥬</text>
+    </g>
+  </g>
+  
+  <!-- BANCAL 6: CARBASSES (costat oest, inferior) -->
+  <g transform="translate(80, 300)">
+    <rect x="0" y="0" width="180" height="100" fill="#ff8c00" opacity="0.3" stroke="#ff6347" stroke-width="2" rx="5"/>
+    <text x="90" y="20" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="#8b0000">🎃 CARBASSES (3 plantes)</text>
+    <text x="90" y="35" font-family="Georgia" font-size="9" text-anchor="middle" fill="#8b0000">S'escampen!</text>
+    <g font-size="24">
+      <text x="30" y="70">🎃</text>
+      <text x="90" y="70">🎃</text>
+      <text x="150" y="70">🎃</text>
+    </g>
+  </g>
+  
+  <!-- BANCAL 7: CARABASSONS (centre-sud) -->
+  <g transform="translate(280, 300)">
+    <rect x="0" y="0" width="160" height="100" fill="#9acd32" opacity="0.3" stroke="#556b2f" stroke-width="2" rx="5"/>
+    <text x="80" y="20" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="#006400">🥒 CARABASSONS (3 plantes)</text>
+    <text x="80" y="35" font-family="Georgia" font-size="9" text-anchor="middle" fill="#006400">S'escampen!</text>
+    <g font-size="24">
+      <text x="30" y="70">🥒</text>
+      <text x="80" y="70">🥒</text>
+      <text x="130" y="70">🥒</text>
+    </g>
+  </g>
+  
+  <!-- ZONA SUD - Aromàtiques baixes + flors -->
+  <g transform="translate(460, 300)">
+    <text x="80" y="20" font-family="Georgia" font-size="12" font-weight="bold" text-anchor="middle" fill="#2d5016">🌻 ZONA AROMÀTIQUES I FLORS</text>
+    <g font-size="20">
+      <text x="20" y="50">🌻</text>
+      <text x="60" y="50">🌼</text>
+      <text x="100" y="50">🌸</text>
+      <text x="140" y="50">🌺</text>
+      <text x="40" y="80">🌿</text>
+      <text x="80" y="80">🌿</text>
+      <text x="120" y="80">🌿</text>
+    </g>
+    <text x="80" y="100" font-family="Georgia" font-size="9" text-anchor="middle" fill="#2d5016">Caputxina · Calèndula · Borratja</text>
+  </g>
+  
+  <!-- CAMINS INTERIORS -->
+  <line x1="190" y1="160" x2="190" y2="280" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="285" y1="160" x2="285" y2="280" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="355" y1="160" x2="355" y2="280" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="475" y1="160" x2="475" y2="280" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="555" y1="160" x2="555" y2="280" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="270" y1="300" x2="270" y2="400" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="450" y1="300" x2="450" y2="400" stroke="#a0a0a0" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- ZONA D'INSTRUMENTS (mànega, regadora) -->
+  <g transform="translate(80, 440)">
+    <rect x="0" y="0" width="120" height="40" fill="#87ceeb" opacity="0.3" stroke="#4682b4" stroke-width="1" rx="3"/>
+    <text x="60" y="20" font-family="Georgia" font-size="10" text-anchor="middle" fill="#2d5016">💧 Zona reg</text>
+    <text x="60" y="33" font-family="Georgia" font-size="8" text-anchor="middle" fill="#2d5016">Mànega + regadora</text>
+  </g>
+  
+  <!-- ZONA DE MULCHING (camins) -->
+  <text x="400" y="450" font-family="Georgia" font-size="10" text-anchor="middle" fill="#8b4513" font-style="italic">🌾 Camins amb mulching de palla 5-10 cm 🌾</text>
+  
+  <!-- Mides -->
+  <text x="400" y="500" font-family="Georgia" font-size="12" text-anchor="middle" fill="#2d5016">5 m (ample) × 4 m (llarg) = 20 m²</text>
+  <text x="400" y="520" font-family="Georgia" font-size="10" text-anchor="middle" fill="#666" font-style="italic">Orientació: Sud-sud-oest (màxim sol)</text>
+</svg>
+
+</div>
+
+<div class="legend">
+<h3>📋 Llegenda</h3>
+<table class="legend-table">
+<tr><td>🍅 <strong>Tomàquets</strong></td><td>12 plantes + alfàbrega (associació clau)</td><td>5 m²</td></tr>
+<tr><td>🫑 <strong>Pebrots</strong></td><td>6 plantes (costat oest, sol)</td><td>2 m²</td></tr>
+<tr><td>🫘 <strong>Mongetes</strong></td><td>6 plantes (fixen N, bones companyies)</td><td>1,5 m²</td></tr>
+<tr><td>🥕 <strong>Pastanagues</strong></td><td>6 fileres (Associació Estrella amb ceba)</td><td>2 m²</td></tr>
+<tr><td>🧅 <strong>Cebes</strong></td><td>6 fileres (a 1,5+ m de mongeta!)</td><td>2 m²</td></tr>
+<tr><td>🥬 <strong>Enciams</strong></td><td>6 plantes (sol de matí, a l'est)</td><td>1,5 m²</td></tr>
+<tr><td>🎃 <strong>Carbasses</strong></td><td>3 plantes (s'escampen, sol ple)</td><td>3 m²</td></tr>
+<tr><td>🥒 <strong>Carabassons</strong></td><td>3 plantes (s'escampen, sol ple)</td><td>2,5 m²</td></tr>
+<tr><td>🌿 <strong>Aromàtiques</strong></td><td>Romaní, sàlvia, farigola, orenga, melissa, donzell, alfàbrega</td><td>Perímetre</td></tr>
+<tr><td>🌻 <strong>Flors</strong></td><td>Caputxina, calèndula, borratja (pol·linitzadors)</td><td>1 m²</td></tr>
+<tr><td>♻ <strong>Compostador</strong></td><td>Cantonada nord-oest (reutilitza restes)</td><td>1 m²</td></tr>
+<tr><td>🐔 <strong>Galliner</strong></td><td>Cantonada nord-est (lluny de l'hort)</td><td>2-3 m²</td></tr>
+</table>
+</div>
+
+<div class="page-break"></div>
+<h2>📐 Mesures exactes</h2>
+
+<div class="notes">
+
+<h3>🍅 Bancal 1: Tomàquets (5 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1,2 m × 4 m (parcel·la única allargada)</li>
+<li><strong>Distribució</strong>: 3 fileres × 4 plantes = 12 tomàquets</li>
+<li><strong>Marc de plantació</strong>: 0,5 m entre plantes, 0,7 m entre fileres</li>
+<li><strong>Associació</strong>: alfàbrega intercalada (repel·leix plagues, millora sabor)</li>
+<li><strong>Tutors</strong>: canyes de 1,8 m o estaques de fusta</li>
+</ul>
+
+<h3>🫑 Bancal 2: Pebrots (2 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1,2 m × 1,7 m</li>
+<li><strong>Distribució</strong>: 2 fileres × 3 plantes = 6 pebrots</li>
+<li><strong>Marc de plantació</strong>: 0,5 m × 0,6 m</li>
+<li><strong>Companyia</strong>: ceba al costat (espanta pugó)</li>
+</ul>
+
+<h3>🫘 Bancal 3: Mongetes (1,5 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1 m × 1,5 m</li>
+<li><strong>Distribució</strong>: 2 fileres × 3 plantes = 6 plantes</li>
+<li><strong>Tipus</strong>: enfiladisses (amb canyes) o baixes</li>
+<li><strong>⚠️</strong>: A 1,5+ m de la ceba (incompatibles!)</li>
+</ul>
+
+<h3>🥕 Bancal 4: Pastanagues (2 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1,2 m × 1,7 m</li>
+<li><strong>Distribució</strong>: 6 fileres separades 25 cm</li>
+<li><strong>Associació</strong>: ceba a la vora (repel·leix mosca de la pastanaga)</li>
+</ul>
+
+<h3>🧅 Bancal 5: Cebes (2 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1 m × 2 m</li>
+<li><strong>Distribució</strong>: 6 fileres separades 30 cm</li>
+<li><strong>Posició</strong>: a prop de pastanaga i pebrot</li>
+<li><strong>⚠️</strong>: a 1,5+ m de mongeta</li>
+</ul>
+
+<h3>🥬 Bancal 6: Enciams (1,5 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1,2 m × 1,2 m</li>
+<li><strong>Distribució</strong>: 2 fileres × 3 plantes = 6</li>
+<li><strong>Successió</strong>: plantar-ne 2 cada 2-3 setmanes</li>
+</ul>
+
+<h3>🎃 Bancal 7: Carbasses (3 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 2 m × 1,5 m</li>
+<li><strong>Distribució</strong>: 3 plantes amb molt espai (1 m entre elles)</li>
+<li><strong>Comportament</strong>: s'escampen, poden envair 4-6 m²</li>
+</ul>
+
+<h3>🥒 Bancal 8: Carabassons (2,5 m²)</h3>
+<ul>
+<li><strong>Mida</strong>: 1,5 m × 1,7 m</li>
+<li><strong>Distribució</strong>: 3 plantes amb 0,7 m entre elles</li>
+<li><strong>Comportament</strong>: arbustius (no tant com carbasses)</li>
+</ul>
+
+</div>
+
+<div class="page-break"></div>
+<h2>🌱 Associacions clau en el teu hort</h2>
+
+<div class="notes">
+
+<div class="tip">
+<h3>✅ Associacions excel·lents (a prop, ≤ 1 m)</h3>
+<ul>
+<li>🥕 <strong>Pastanaga + Ceba</strong>: repel·leixen plagues mútuament</li>
+<li>🍅 <strong>Tomàquet + Alfàbrega</strong>: repel·leix plagues, millora sabor</li>
+<li>🫑 <strong>Pebrot + Ceba</strong>: ceba espanta pugó</li>
+<li>🫘 <strong>Mongeta + Pebrot</strong>: mongeta fixa N</li>
+<li>🎃 <strong>Carbassa + Mongeta</strong>: mongeta fixa N, carbassa cobreix el sòl</li>
+<li>🌽 <strong>Carbassa + Mongeta + Blat de moro</strong>: "les 3 germanes"</li>
+<li>🥬 <strong>Enciam + Aromàtiques</strong>: aromàtiques repel·leixen plagues</li>
+</ul>
+</div>
+
+<div class="warning">
+<h3>⚠️ Incompatibilitats (a 1,5+ m de distància)</h3>
+<ul>
+<li>🧅 <strong>Ceba + Mongeta</strong>: NO juntes! (al·lium inhibeixen lleguminoses)</li>
+<li>🧅 <strong>Ceba + Cols</strong>: NO juntes (si tinguéssim cols)</li>
+<li>🍅 <strong>Tomàquet + Cols</strong>: NO juntes (si tinguéssim cols)</li>
+<li>🫑 <strong>Pebrot + Mongeta</strong>: a vegades problemàtic (provar)</li>
+</ul>
+</div>
+
+<h3>🏡 Aromàtiques ideals per al teu hort</h3>
+<table class="legend-table">
+<tr><th>Aromàtica</th><th>Posició</th><th>Què fa</th></tr>
+<tr><td>Romaní</td><td>Perímetre nord</td><td>Perenne, repel·leix plagues</td></tr>
+<tr><td>Sàlvia</td><td>Perímetre nord</td><td>Perenne, repel·leix plagues</td></tr>
+<tr><td>Farigola</td><td>Perímetre nord</td><td>Cobreix el sòl, atrau abelles</td></tr>
+<tr><td>Orenga</td><td>Perímetre nord</td><td>Perenne, atrau insectes bons</td></tr>
+<tr><td>Melissa</td><td>Perímetre nord</td><td>Atrau abelles, calmant</td></tr>
+<tr><td>Alfàbrega</td><td>Entre tomàquets</td><td>Anual, repel·leix plagues</td></tr>
+<tr><td>Caputxina</td><td>Prop carbasses/carabassons</td><td>Truc de les plagues (sacrifici)</td></tr>
+<tr><td>Calèndula</td><td>Perímetre</td><td>Medicinal, atrau pol·linitzadors</td></tr>
+<tr><td>Borratja</td><td>Perímetre</td><td>Excel·lent mel·lífera</td></tr>
+</table>
+
+</div>
+
+<div class="page-break"></div>
+<h2>🔧 Infraestructura</h2>
+
+<div class="notes">
+
+<h3>♻ Compostador (cantonada nord-oest)</h3>
+<ul>
+<li><strong>Tipus</strong>: 2 caixes de palets (1×1×1 m cadascuna)</li>
+<li><strong>Posició</strong>: cantonada nord-oest (lluny del galliner per olors)</li>
+<li><strong>Què hi posar</strong>: restes de l'hort + galliner (gallinassa, plomes)</li>
+<li><strong>Què evitar</strong>: carn, peix, làctics</li>
+</ul>
+
+<h3>🐔 Galliner (cantonada nord-est)</h3>
+<ul>
+<li><strong>Posició</strong>: cantonada nord-est (lluny de l'hort principal)</li>
+<li><strong>Per què</strong>: evitar olor, gallines a l'hort principal (menjarien plantes)</li>
+<li><strong>Connexió</strong>: el galliner alimenta el compostador</li>
+</ul>
+
+<h3>💧 Reg</h3>
+<ul>
+<li><strong>A punt</strong>: mànega + difusor suau</li>
+<li><strong>Hora</strong>: 19:00 (vespre, no molesta les gallines)</li>
+<li><strong>Volum</strong>: ~3 regs/setmana = ~600 L/setmana</li>
+<li><strong>Millora</strong>: 18 ampolles de degoteig per a tomàquets i pebrots</li>
+</ul>
+
+<h3>🌾 Mulching (URGENT!)</h3>
+<ul>
+<li><strong>Material</strong>: palla, gespa seca, fulles</li>
+<li><strong>Gruix</strong>: 5-10 cm</li>
+<li><strong>Estalvi</strong>: 200-300 L/setmana d'aigua</li>
+<li><strong>Què</strong>: aplicar a TOT l'hort, sobretot cucurbitàcies i solanàcies</li>
+</ul>
+
+<h3>🌿 Hotel d'insectes (prop del galliner)</h3>
+<ul>
+<li><strong>Materials</strong>: canyes, fusta amb forats, pinyes</li>
+<li><strong>Posició</strong>: sol de matí, 1,5 m d'alçada</li>
+<li><strong>Què atrau</strong>: abelles solitàries, sírfids, crisopes</li>
+</ul>
+
+</div>
+
+<div class="page-break"></div>
+<h2>🌅 Orientació solar</h2>
+
+<div class="notes">
+
+<h3>El sol a Osona (a l'estiu)</h3>
+<ul>
+<li><strong>Sol de matí</strong> (8-12h): sud-est</li>
+<li><strong>Sol de migdia</strong> (12-16h): sud</li>
+<li><strong>Sol de tarda</strong> (16-20h): sud-oest</li>
+</ul>
+
+<h3>Què va a cada zona?</h3>
+
+<div class="tip">
+<h3>☀️ Zona SUD (màxim sol, 6-8h directes)</h3>
+<ul>
+<li>Tomàquets, pebrots, carbasses, carabassons</li>
+<li>Els cultius que més necessiten sol</li>
+</ul>
+</div>
+
+<div class="tip">
+<h3>🌤️ Zona EST (sol de matí, 4-6h)</h3>
+<ul>
+<li>Enciams, bledes, herbes fresques</li>
+<li>Aprofitar el sol abans que els tomàquets facin ombra</li>
+</ul>
+</div>
+
+<div class="tip">
+<h3>🌥️ Zona NORD (menys sol, 2-4h)</h3>
+<ul>
+<li>Aromàtiques perennes (romaní, sàlvia, farigola)</li>
+<li>Compostador (no necessita sol)</li>
+<li>Galliner (no és bo que prengui massa sol a l'estiu)</li>
+</ul>
+</div>
+
+</div>
+
+<div class="page-break"></div>
+<h2>📅 Pla d'implementació</h2>
+
+<div class="notes">
+
+<h3>A. AQUESTA SETMANA (URGENT)</h3>
+<ul>
+<li>[ ] Comprar/aconseguir palla o gespa seca</li>
+<li>[ ] Aplicar mulching 5-10 cm a tot l'hort</li>
+<li>[ ] Reciclar 18 ampolles de 2 L</li>
+<li>[ ] Muntar sistema de degoteig als 12 tomàquets i 6 pebrots</li>
+<li>[ ] Adaptar difusor suau a la mànega</li>
+</ul>
+
+<h3>B. AQUEST MES</h3>
+<ul>
+<li>[ ] Comprar 3-5 aromàtiques perennes (romaní, sàlvia, farigola, orenga, melissa)</li>
+<li>[ ] Plantar-les al perímetre nord</li>
+<li>[ ] Sembrar caputxina i calèndula a la zona sud</li>
+<li>[ ] Construir hotel d'insectes (DIY)</li>
+<li>[ ] Posar un plat amb aigua i còdols</li>
+</ul>
+
+<h3>C. AQUEST ESTIU</h3>
+<ul>
+<li>[ ] Muntar el compostador a la cantonada nord-oest</li>
+<li>[ ] Muntar el galliner a la cantonada nord-est (si encara no el tens)</li>
+<li>[ ] Plantar 1-2 fruiters al sud (ametller, ginkgo)</li>
+<li>[ ] Provar reg automatitzat (Rachio, GARDENA)</li>
+</ul>
+
+<h3>D. AQUEST ANY</h3>
+<ul>
+<li>[ ] Fer balanç al desembre</li>
+<li>[ ] Planificar rotació de cultius per a 2027</li>
+<li>[ ] Aprendre a guardar llavors</li>
+<li>[ ] Fer conserves amb els excedents</li>
+<li>[ ] Pensar en hivernacle o túnel per a 2027</li>
+</ul>
+
+</div>
+
+<div class="legend">
+<h3>📚 Guies relacionades a la base de coneixement</h3>
+<ul>
+<li><strong>Reg-2026.pdf</strong>: Guia completa de reg</li>
+<li><strong>Plà-reg-personalitzat-2026.pdf</strong>: Pla personalitzat exacte</li>
+<li><strong>Associacions-rotacions</strong>: Taula completa d'associacions</li>
+<li><strong>Plagues-2026.pdf</strong>: Identificar i tractar plagues</li>
+<li><strong>Pol·linitzadors-2026.pdf</strong>: Com atraure'ls</li>
+<li><strong>Adventícies-2026.pdf</strong>: Més enllà de "males herbes"</li>
+<li><strong>Conservació-2026.pdf</strong>: 22 receptes per aprofitar l'hort</li>
+</ul>
+</div>
+
+<p style="text-align: center; margin-top: 30px; color: #2d5016; font-size: 0.9em;">
+Plànol de l'Hort d'Osona · 20 m² · Versió il·lustrada · 2026
+</p>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Anàlisi de Rendiment - Hort Osona</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+  body { font-family: 'Georgia', serif; color: #2a2a2a; line-height: 1.4; max-width: 21cm; margin: 0 auto; padding: 0.5cm; }
+  h1 { text-align: center; color: #1a5d3a; font-size: 1.7em; border-bottom: 3px solid #1a5d3a; padding-bottom: 6px; }
+  h2 { color: #1a5d3a; background: #d8e8d8; padding: 6px 10px; border-left: 4px solid #1a5d3a; margin-top: 18px; page-break-after: avoid; }
+  h3 { color: #1a5d3a; margin-top: 12px; border-bottom: 1px dotted #1a5d3a; padding-bottom: 3px; page-break-after: avoid; }
+  .subtitle { text-align: center; color: #666; font-style: italic; margin-top: 0; }
+  .info { background: #fff4d6; border-left: 4px solid #d4a017; padding: 8px 12px; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.85em; }
+  th { background: #1a5d3a; color: white; padding: 5px 8px; text-align: left; }
+  td { border-bottom: 1px solid #ddd; padding: 4px 8px; }
+  tr:nth-child(even) { background: #ecf3ed; }
+  .page-break { page-break-before: always; }
+  .toc { background: #f5f5f0; border: 1px solid #ccc; padding: 15px; margin: 20px 0; }
+  .toc h3 { margin-top: 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { padding: 3px 0; }
+  ol, ul { margin: 4px 0; padding-left: 22px; }
+  ol li, ul li { margin: 3px 0; }
+  .final-note { background: #d8e8d8; border: 1px solid #1a5d3a; padding: 12px; margin: 20px 0; text-align: center; }
+  .highlight { background: #ffeb9c; padding: 10px 15px; margin: 10px 0; border-left: 4px solid #d4a017; }
+</style>
+</head>
+<body>
+
+<h1>📊 Anàlisi de Rendiment de l'Hort</h1>
+<p class="subtitle">Quant produeixes, quant estalvies, quant vius · El teu hort en xifres</p>
+
+<div class="info" style="text-align: center;">
+Cada cop que talles un enciam o culls un tomàquet, estàs produint aliment. Però saps quant produeixes? Quant estalvies? Quin és el retorn? Aquesta guia t'ensenya a calcular, mesurar, analitzar i optimitzar el rendiment del teu hort de 20 m² a Osona.
+</div>
+
+<div class="toc">
+<h3>📋 Índex</h3>
+<ul>
+<li>1. Per què analitzar el rendiment</li>
+<li>2. Indicadors clau (KPIs)</li>
+<li>3. Rendiment per cultiu (dades reals)</li>
+<li>4. Anàlisi econòmica (costos, estalvi, ROI)</li>
+<li>5. Anàlisi del temps</li>
+<li>6. Anàlisi de sostenibilitat</li>
+<li>7. Com millorar el rendiment</li>
+<li>8. Exercicis pràctics</li>
+<li>9. Indicadors avançats</li>
+<li>10. El teu hort en xifres (cas pràctic)</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+<h2>2. Indicadors clau (KPIs)</h2>
+
+<h3>Producció</h3>
+<ol>
+<li>Kg totals collits per cultiu</li>
+<li>Unitats (enciams, carbasses, etc.)</li>
+<li>Kg/m² (rendiment per superfície)</li>
+</ol>
+
+<h3>Econòmics</h3>
+<ol start="4">
+<li>Costos totals (€/any)</li>
+<li>Estalvi (vs. mercat)</li>
+<li>Retorn de la inversió (ROI)</li>
+<li>Cost per kg produït</li>
+</ol>
+
+<h3>Temps</h3>
+<ol start="8">
+<li>Hores totals dedicades</li>
+<li>Hores per cultiu</li>
+<li>€/hora del teu temps</li>
+</ol>
+
+<h3>Sostenibilitat</h3>
+<ol start="11">
+<li>Aigua utilitzada (L/m²)</li>
+<li>Emissions estalviades (kg CO₂)</li>
+<li>Km 0 (aliments que NO has comprat)</li>
+</ol>
+
+<h3>Eines per mesurar</h3>
+<ul>
+<li>Llibreta de camp o full de càlcul</li>
+<li>App mòbil: Garden Manager, Veggie Garden Planner, etc.</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>3. Rendiment per cultiu (dades reals)</h2>
+
+<h3>Les 8 plantes del teu hort</h3>
+<table>
+<tr><th>Cultiu</th><th>Unitats</th><th>Kg/m² esperats</th><th>Període collita</th></tr>
+<tr><td>Tomàquet (12 plantes)</td><td>25-50 kg</td><td>5-12</td><td>juny-octubre</td></tr>
+<tr><td>Pebrot (6 plantes)</td><td>5-10 kg</td><td>1,5-3</td><td>juliol-octubre</td></tr>
+<tr><td>Mongeta (6 plantes)</td><td>2-4 kg</td><td>0,4-0,8</td><td>juny-setembre</td></tr>
+<tr><td>Enciam (6 plantes)</td><td>1,5-3 kg</td><td>1-2</td><td>maig-novembre</td></tr>
+<tr><td>Pastanaga (6 fileres)</td><td>8-15 kg</td><td>2-4</td><td>juny-novembre</td></tr>
+<tr><td>Carbassa (3 plantes)</td><td>15-40 kg</td><td>4-10</td><td>setembre-octubre</td></tr>
+<tr><td>Carabassó (3 plantes)</td><td>8-15 kg</td><td>2-4</td><td>juny-setembre</td></tr>
+<tr><td>Ceba (6 fileres)</td><td>6-12 kg</td><td>1,5-3</td><td>juliol-setembre</td></tr>
+</table>
+
+<h3>Total esperat (any normal)</h3>
+<ul>
+<li>Tomàquets: 35 kg</li>
+<li>Pebrots: 8 kg</li>
+<li>Mongetes: 3 kg</li>
+<li>Enciams: 9 unitats</li>
+<li>Pastanagues: 12 kg</li>
+<li>Carbasses: 25 kg</li>
+<li>Carabassons: 12 kg</li>
+<li>Cebes: 9 kg</li>
+<li><strong>TOTAL PES</strong>: ~104 kg + 9 enciams</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>4. Anàlisi econòmica</h2>
+
+<h3>4.1. Costos del teu hort</h3>
+
+<h4>Inversió inicial (primer any)</h4>
+<table>
+<tr><th>Concepte</th><th>Cost</th></tr>
+<tr><td>Eines bàsiques</td><td>80-150 €</td></tr>
+<tr><td>Mànega + accessoris</td><td>30-50 €</td></tr>
+<tr><td>Sistema de reg</td><td>30-60 €</td></tr>
+<tr><td>Tests, motlles</td><td>20-40 €</td></tr>
+<tr><td>Balança, llibreta</td><td>15-30 €</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>175-330 €</strong></td></tr>
+</table>
+
+<h4>Costos anuals</h4>
+<table>
+<tr><th>Concepte</th><th>€/any</th></tr>
+<tr><td>Llavors i planter</td><td>30-60 €</td></tr>
+<tr><td>Compost, adobs</td><td>20-50 €</td></tr>
+<tr><td>Aigua (reg)</td><td>30-80 €</td></tr>
+<tr><td>Mulching</td><td>20-40 €</td></tr>
+<tr><td>Tractaments naturals</td><td>5-15 €</td></tr>
+<tr><td>Reparacions</td><td>20-50 €</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>125-295 €/any</strong></td></tr>
+</table>
+
+<h3>4.2. Estalvi comparat amb el mercat</h3>
+<table>
+<tr><th>Producte</th><th>Kg collits</th><th>€/kg</th><th>Estalvi</th></tr>
+<tr><td>Tomàquet</td><td>35</td><td>3,50</td><td>122,50 €</td></tr>
+<tr><td>Pebrot</td><td>8</td><td>3,20</td><td>25,60 €</td></tr>
+<tr><td>Mongeta</td><td>3</td><td>5,00</td><td>15,00 €</td></tr>
+<tr><td>Enciams</td><td>9</td><td>1,50</td><td>13,50 €</td></tr>
+<tr><td>Pastanaga</td><td>12</td><td>2,50</td><td>30,00 €</td></tr>
+<tr><td>Carbassa</td><td>25</td><td>2,00</td><td>50,00 €</td></tr>
+<tr><td>Carabassó</td><td>12</td><td>2,20</td><td>26,40 €</td></tr>
+<tr><td>Ceba</td><td>9</td><td>2,40</td><td>21,60 €</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>113</strong></td><td>-</td><td><strong>304,60 €</strong></td></tr>
+</table>
+
+<div class="highlight">
+<strong>ESTALVI NET ANUAL (any 2+): 10-180 €</strong><br>
+Estalvi brut: ~305 € - Costos anuals: 125-295 € = Estalvi net: 10-180 €
+</div>
+
+<h3>4.3. Retorn de la inversió (ROI)</h3>
+<p>ROI = (Estalvi - Costos) / Costos × 100</p>
+<ul>
+<li><strong>Any 1</strong> (amb inversió inicial): ROI negatiu</li>
+<li><strong>Any 2+</strong>: ROI positiu (3-144%)</li>
+<li><strong>Any 3+</strong>: ROI positiu (18-300%)</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>5. Anàlisi del temps</h2>
+
+<h3>Hores dedicades al teu hort</h3>
+<table>
+<tr><th>Cultiu</th><th>Hores/any</th></tr>
+<tr><td>Tomàquet</td><td>12-18 h</td></tr>
+<tr><td>Pebrot</td><td>6-10 h</td></tr>
+<tr><td>Mongeta</td><td>4-6 h</td></tr>
+<tr><td>Enciam</td><td>4-6 h</td></tr>
+<tr><td>Pastanaga</td><td>6-8 h</td></tr>
+<tr><td>Carbassa</td><td>4-6 h</td></tr>
+<tr><td>Carabassó</td><td>4-6 h</td></tr>
+<tr><td>Ceba</td><td>4-6 h</td></tr>
+<tr><td>Manteniment general</td><td>10-15 h</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>52-81 h</strong></td></tr>
+</table>
+
+<p><strong>Mitjana setmanal</strong>: 6-10 h/setmana (1-1,5 h/dia durant 8 mesos actius).</p>
+
+<h3>Valor del teu temps</h3>
+<p>Si calculessim a preu de jardiner (20 €/h): 1040-1620 € de "valor". L'hort no és rendible com a feina, però sí com a salut, benestar, aprenentatge, comunitat, sostenibilitat.</p>
+
+<div class="page-break"></div>
+<h2>6. Anàlisi de sostenibilitat</h2>
+
+<h3>6.1. Aigua</h3>
+<ul>
+<li>Total anual: 1100-2000 L (pluja + reg)</li>
+<li>Aigua per kg: 10-20 L/kg (amb mulching)</li>
+<li>Estalvi vs industrial: 80-90%</li>
+</ul>
+
+<h3>6.2. Emissions de CO₂</h3>
+<ul>
+<li>Estalvi mitjà: 1,5 kg CO₂/kg produït</li>
+<li><strong>Total anual: 170 kg CO₂ estalviat</strong> (equival a 800 km en cotxe o 2 arbres plantats)</li>
+</ul>
+
+<h3>6.3. Km 0 i envasos</h3>
+<ul>
+<li>Distància estalviada: ~200 km per producte</li>
+<li>Envasos estalviat: 130-250/any</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>7. Com millorar el rendiment</h2>
+
+<h3>Augmentar la producció (+30-50%)</h3>
+<ol>
+<li>Mulching (millora el sòl, estalvia aigua)</li>
+<li>Rotació de cultius (evita plagues)</li>
+<li>Associacions (pastanaga + ceba, tomàquet + alfàbrega)</li>
+<li>Reg eficient (degoteig, al matí o al vespre)</li>
+<li>Fertilització ecològica (compost, fem, adobs verds)</li>
+<li>Varietats productives adaptades</li>
+<li>Plantació escalonada (enciam cada 2-3 setmanes)</li>
+<li>Tutors (tomàquets, pebrots, mongetes)</li>
+<li>Protecció (malla, hivernacle, ventall)</li>
+<li>Poda (treure xucladors, fulles velles)</li>
+</ol>
+
+<h3>Reduir els costos (-30-50%)</h3>
+<ol>
+<li>Guardar llavors (estalvia 30-50 €/any)</li>
+<li>Fer planter (estalvia 30-60 €/any)</li>
+<li>Fer compost (estalvia 20-50 €/any)</li>
+<li>Aprofitament d'aigua (bidons, pluja)</li>
+<li>Reutilitzar materials (pals, tests)</li>
+<li>Compartir eines amb veïns</li>
+<li>Mulching casolà (palla, gespa, fulles)</li>
+<li>Tractaments naturals (no pesticides)</li>
+</ol>
+
+<div class="page-break"></div>
+<h2>8. Exercicis pràctics</h2>
+
+<h3>Càlcul del teu hort</h3>
+<ol>
+<li>Crea una llibreta o full de càlcul</li>
+<li>Anota cada sembra/trasplantament</li>
+<li>Anota cada collita (data, quantitat)</li>
+<li>Anota cada despesa</li>
+<li>Anota cada hora dedicada</li>
+<li>Al final: suma i calcula estalvi</li>
+</ol>
+
+<h3>Comparació amb el mercat</h3>
+<ol>
+<li>Compara el teu preu/kg amb el del mercat</li>
+<li>Compara la qualitat (gust, frescor)</li>
+<li>Compara la distància (0 vs 50-500 km)</li>
+<li>Decideix si el teu hort és rendible</li>
+</ol>
+
+<h3>Producció esperada vs real</h3>
+<p>Rendiment = Real / Esperat × 100</p>
+<ul>
+<li>>100%: molt bé!</li>
+<li>80-100%: rendiment correcte</li>
+<li><80%: cal millorar</li>
+</ul>
+
+<div class="page-break"></div>
+<h2>10. El teu hort en xifres (cas pràctic)</h2>
+
+<h3>Resum anual (any 2)</h3>
+
+<h4>Producció</h4>
+<ul>
+<li>113 kg de verdures + 9 enciams</li>
+<li>Suficient per a 1-2 persones (8 mesos)</li>
+</ul>
+
+<h4>Economia</h4>
+<ul>
+<li>Costos anuals: 200 €</li>
+<li>Estalvi brut: 305 €</li>
+<li><strong>Estalvi net: 105 €</strong></li>
+<li><strong>ROI: 53%</strong></li>
+</ul>
+
+<h4>Temps</h4>
+<ul>
+<li>Hores totals: 65 h</li>
+<li>Setmanes actives: 32 setmanes</li>
+<li>Hores/setmana: 2 h</li>
+<li>Valor del temps: 1300 € (a 20 €/h)</li>
+</ul>
+
+<h4>Sostenibilitat</h4>
+<ul>
+<li>Aigua: 1500 L</li>
+<li>CO₂ estalviat: 170 kg</li>
+<li>Km estalviat: ~200 km</li>
+<li>Envasos estalviat: 150+</li>
+</ul>
+
+<h3>Què pots millorar?</h3>
+
+<h4>Si vols més producció</h4>
+<ul>
+<li>Afegir 1-2 cultius (patata, col, bleda)</li>
+<li>Triar varietats més productives</li>
+<li>Plantar escalonadament</li>
+</ul>
+
+<h4>Si vols més estalvi</h4>
+<ul>
+<li>Reduir costos (fer compost, guardar llavors)</li>
+<li>Augmentar producció</li>
+<li>Vendre excedents (cistelles, mercat)</li>
+</ul>
+
+<h4>Si vols menys temps</h4>
+<ul>
+<li>Mulching (estalvia reg + escardes)</li>
+<li>Reg automatitzat</li>
+<li>Menys varietats</li>
+<li>Més eines adequades</li>
+</ul>
+
+<div class="final-note">
+<strong>El missatge clau</strong>: amb un hort de 20 m² a Osona, pots produir 100-150 kg de verdures, estalviar 200-500 €/any, invertir 65 h del teu temps, estalviar 170 kg de CO₂, i gaudir d'un estil de vida més conscient. No és rendible com a feina, però sí com a inversió en salut, sostenibilitat, i benestar.
+</div>
+
+<h3>Eines de seguiment</h3>
+<ul>
+<li>Quadern de camp o full de càlcul</li>
+<li>Apps: Garden Manager, Veggie Garden Planner, PlantNet, iNaturalist, Meteocat</li>
+</ul>
+
+<p style="text-align: center; margin-top: 30px; color: #1a5d3a; font-size: 0.9em;">
+Anàlisi de Rendiment · Hort Ecològic Osona 2026
+</p>
+
+</body>
+</html>

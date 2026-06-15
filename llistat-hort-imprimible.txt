@@ -1,0 +1,343 @@
+================================================================================
+            LLISTAT DE L'HORT - TEMPORADA 2026
+            Data: ................................
+            Nom: ................................
+================================================================================
+
+INSTRUCCIONS:
+-------------
+- Omple a mà o directament al móbil/ordinador
+- Si no saps alguna cosa, posa "no ho sé"
+- Si tens una varietat local, anota el nom (ex: "Tomàquet de Montserrat")
+- Si tens dubtes, deixa un comentari al marge
+
+================================================================================
+SECCIÓ 1: HORT PRINCIPAL (els 8 cultius que ja em vas dir)
+================================================================================
+
+1.1 TOMÀQUETS
+- Quantes plantes tens? ___
+- Varietat? (si la saps): _______________________________
+- Estan tutorats? [ ] Sí  [ ] No
+- Alçada actual aproximada: ___
+- Estat: [ ] Trasplantat recent  [ ] Creixent  [ ] Floració  [ ] Quallat  [ ] Collint
+- Tens alfàbrega al peu? [ ] Sí  [ ] No
+
+1.2 PEBROTS
+- Quantes plantes tens? ___
+- Varietat? (si la saps): _______________________________
+- Color predominant: [ ] Verd  [ ] Roig  [ ] Barreja
+- Estat: [ ] Trasplantat  [ ] Creixent  [ ] Floració  [ ] Quallat  [ ] Collint
+
+1.3 MONGETES
+- Quantes plantes o m lineals? ___
+- Varietat? (si la saps): _______________________________
+- Tipus: [ ] Emparrats (altes)  [ ] Baixes
+- Estat: [ ] Sembrades  [ ] Creixent  [ ] Floració  [ ] Quallat  [ ] Collint
+
+1.4 ENCIAMS
+- Quantes plantes? ___
+- Varietat? (si la saps): _______________________________
+- Tipus: [ ] Fulla arrissada  [ ] Fulla llisa  [ ] Romana  [ ] Escarola
+- Tens successió (diferents èpoques)? [ ] Sí  [ ] No
+
+1.5 PASTANAGUES
+- Quantes fileres o m²? ___
+- Varietat? (si la saps): _______________________________
+- Tècnica: [ ] Filera simple  [ ] Filera amb ceba intercalada
+
+1.6 CARBASSES
+- Quantes plantes? ___
+- Varietat? (si la saps): _______________________________
+- Tipus: [ ] Rodona  [ ] Allargada  [ ] Barreja
+- On creixen? (on s'escampen): _______________________________
+
+1.7 CARABASSONS
+- Quantes plantes? ___
+- Varietat? (si la saps): _______________________________
+- On creixen? _______________________________
+
+1.8 CEBES
+- Quantes fileres o m²? ___
+- Varietat? (si la saps): _______________________________
+- Tipus: [ ] Tendres (per menjar fresc)  [ ] De guardar (per a hivern)
+- Mètode: [ ] Sembrades directament  [ ] Trasplantades
+
+================================================================================
+SECCIÓ 2: ALTRES CULTIUS ACTUALS (els que NO m'has dit)
+================================================================================
+- Què tens que NO està a la secció 1?
+- Per a cada un, posa: nº plantes/m² + varietat (si la saps)
+
+2.1 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.2 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.3 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.4 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.5 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.6 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.7 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+2.8 ____________________________
+- Quantes? ___
+- Varietat? _______________________________
+- Estat: _______________________________
+
+================================================================================
+SECCIÓ 3: AROMÀTIQUES (si en tens)
+================================================================================
+
+- Tens aromàtiques plantades? [ ] Sí  [ ] No
+- Quines i on?
+
+3.1 ____________________________ (on: _______________________________)
+3.2 ____________________________ (on: _______________________________)
+3.3 ____________________________ (on: _______________________________)
+3.4 ____________________________ (on: _______________________________)
+3.5 ____________________________ (on: _______________________________)
+3.6 ____________________________ (on: _______________________________)
+3.7 ____________________________ (on: _______________________________)
+3.8 ____________________________ (on: _______________________________)
+
+(Si tens moltes, pots afegir-ne més al final)
+
+================================================================================
+SECCIÓ 4: FRUITERS (si en tens a l'hort o jardí)
+================================================================================
+
+- Tens fruiters? [ ] Sí  [ ] No
+- Quants i quins?
+
+4.1 Tipus: ____________________________
+- Nº arbres: ___
+- Edat aproximada: ___
+- Varietat (si la saps): _______________________________
+- En producció? [ ] Sí  [ ] No
+
+4.2 Tipus: ____________________________
+- Nº arbres: ___
+- Edat aproximada: ___
+- Varietat (si la saps): _______________________________
+- En producció? [ ] Sí  [ ] No
+
+4.3 Tipus: ____________________________
+- Nº arbres: ___
+- Edat aproximada: ___
+- Varietat (si la saps): _______________________________
+- En producció? [ ] Sí  [ ] No
+
+4.4 Tipus: ____________________________
+- Nº arbres: ___
+- Edat aproximada: ___
+- Varietat (si la saps): _______________________________
+- En producció? [ ] Sí  [ ] No
+
+================================================================================
+SECCIÓ 5: INFRAESTRUCTURA I EQUIPAMENT
+================================================================================
+
+5.1 GALLINES
+- Quantes tens? ___
+- Raça (si la saps): _______________________________
+- On dormen? [ ] Galliner separat  [ ] Al costat de l'hort  [ ] A dins
+- Tens galliner mòbil? [ ] Sí  [ ] No
+
+5.2 COMPOSTADOR
+- Tens compostador? [ ] Sí  [ ] No
+- Si sí, tipus: [ ] Palets  [ ] Comprat  [ ] Casolà  [ ] Forat
+- On és? [ ] A l'hort  [ ] Al costat del galliner  [ ] A un altre lloc
+- Què hi tens ara? _______________________________
+
+5.3 REG
+- Com regues? [ ] Mànega  [ ] Regadora  [ ] Gota a gota  [ ] Cap
+- Tens: [ ] Aixeta a prop  [ ] Pou  [ ] Bassa  [ ] Cisterna  [ ] Cap
+- Bidons de recollida d'aigua? [ ] Sí, ___ litres  [ ] No
+
+5.4 MULCHING
+- Tens mulching actualment? [ ] Sí  [ ] No
+- Material: [ ] Palla  [ ] Gespa seca  [ ] Fulles  [ ] Cartó  [ ] Altres
+- Gruix: [ ] Fins 5 cm  [ ] 5-10 cm  [ ] Més de 10 cm
+
+5.5 ALTRES
+- Tens hivernacle? [ ] Sí  [ ] No
+- Tens túnel baix? [ ] Sí  [ ] No
+- Tens malla antiinsectes? [ ] Sí  [ ] No
+- Tens malla d'ombreig? [ ] Sí  [ ] No
+- Tens hotel d'insectes? [ ] Sí  [ ] No
+- Tens caixes niu? [ ] Sí  [ ] No
+
+================================================================================
+SECCIÓ 6: COMPOST I ADOBS
+================================================================================
+
+6.1 COMPOST QUE HI HA ACTUALMENT
+- Hi ha compost madur disponible? [ ] Sí  [ ] No
+- Quantitat estimada: [ ] Poc (<50 L)  [ ] Mitjà (50-200 L)  [ ] Molt (>200 L)
+
+6.2 ADOBS QUE USES
+- Quin tipus d'adob uses? (marca tots els que apliquis)
+  [ ] Compost casolà
+  [ ] Fems (de quin animal? ___________)
+  [ ] Compost comprat
+  [ ] Adob verd (civada, veça, etc.)
+  [ ] Purí d'ortigues
+  [ ] Altres: _______________________________
+
+6.3 ENQUANYS O ADOBS QUE COMPRES
+- Compres adobs? [ ] Sí  [ ] No
+- Quins? _______________________________
+- Cada quan? _______________________________
+
+================================================================================
+SECCIÓ 7: OBSERVACIONS I DUBTES
+================================================================================
+
+7.1 PLAGUES QUE HAS VIST
+- Què has vist aquest any?
+  [ ] Pugó
+  [ ] Mosca blanca
+  [ ] Llimacs
+  [ ] Cargols
+  [ ] Míldiu
+  [ ] Oïdi
+  [ ] Tuta absoluta
+  [ ] Cuc del tomàquet
+  [ ] Altres: _______________________________
+
+7.2 MALEES HERBES QUE TENS
+- Quines predominen al teu hort? _______________________________
+
+7.3 ANIMALS QUE HI HA A L'HORT
+- Què has vist? (pàrids, abelles, papallones, granotes, etc.)
+  _______________________________
+
+7.4 DUBTES O PREGUNTES
+- Què vols que t'ajudi a resoldre? _______________________________
+
+7.5 OBSERVACIONS GENERALS
+- Qualsevol cosa que vulguis dir-me: _______________________________
+
+================================================================================
+SECCIÓ 8: PLÀNOL DE L'HORT (esquema)
+================================================================================
+
+Si tens un plànol, dibuixa'l o fes-ne un esquema. Si no, marca
+la distribució amb una creu (X) cada planta a la posició.
+
+         N
+         ↑
+    ┌────┴────┐
+    │         │
+  W │  HORT   │ E
+← ──│ (4×5 m) │── →
+    │         │
+    │         │
+    └────┬────┘
+         ↓
+         S
+
+ESQUEMA:
+
+ ___________________________________
+|                                   |
+|                                   |
+|                                   |
+|                                   |
+|                                   |
+|                                   |
+|___________________________________|
+
+LLEGENDES:
+- N = nord (on no toca tant el sol)
+- S = sud (on toca més el sol)
+- T = tomàquet, P = pebrot, M = mongeta, E = enciam, Pa = pastanaga, Ca = carbassa, Cb = carabassó, Ce = ceba
+- A = aromàtica, Ar = arbre
+
+================================================================================
+SECCIÓ 9: OBJECTIUS PERSONALS
+================================================================================
+
+9.1 Què vols aconseguir amb l'hort enguany? _______________________________
+
+9.2 Què et preocupa més? _______________________________
+
+9.3 Quin és el teu nivell d'experiència?
+   [ ] Principiant  [ ] Intermedi  [ ] Avançat  [ ] Molt avançat
+
+9.4 Quant de temps dediques a l'hort per setmana?
+   [ ] <1 hora  [ ] 1-3 hores  [ ] 3-7 hores  [ ] >7 hores
+
+9.5 Què t'agrada més de l'hort? _______________________________
+
+================================================================================
+SECCIÓ 10: CALENDARI (anotacions lliures)
+================================================================================
+
+Aquesta setmana he vist/he fet:
+________________________________________________
+________________________________________________
+________________________________________________
+
+Aquesta setmana vull fer:
+________________________________________________
+________________________________________________
+________________________________________________
+
+================================================================================
+NOTES LLIURES
+================================================================================
+
+(Pot ser un espai per a dibuixos, esquemes, llistes, idees...)
+
+
+================================================================================
+INFORMACIÓ ADDICIONAL QUE POT SER ÚTIL
+================================================================================
+
+Si tens fotos de l'hort, pots portar-les. Les puc analitzar!
+
+Si tens etiquetes de llavors o planters, porta-les: puc entendre
+millor què tens.
+
+Si tens cap pregunta concreta sobre algun cultiu, apunta-la.
+
+================================================================================
+                    GRÀCIES! :)
+================================================================================
+
+Amb aquesta informació podré:
+- Actualitzar la fitxa de l'hort
+- Fer el plànol exacte
+- Revisar compatibilitats
+- Personalitzar el pla de reg
+- Crear un calendari de collites
+- Recomanar associacions específiques
+- Adaptar el pla mensual a la teva realitat
+
+================================================================================
