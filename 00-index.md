@@ -35,6 +35,7 @@
 - [CHANGELOG](CHANGELOG.md) — historial de canvis
 - [SETUP-WINDOWS](SETUP-WINDOWS.md) — guia de sincronització Windows
 - [SYNC-SCRIPT](SYNC-SCRIPT.md) — ús dels scripts hort-sync
+- [VSCODE-GUIDE](VSCODE-GUIDE.md) — com treballar amb VS Code
 
 ## Com treballo
 - Cada consulta nova l'incorporo a la base (fitxa del cultiu, varietat, plaga, etc.).
