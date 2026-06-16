@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hort Osona · Base de coneixement</title>
+<meta name="description" content="Base de coneixement personal d'hort ecològic, plantes medicinals, bolets i conserves, adaptat a Osona.">
+<meta name="generator" content="site/build.py">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c-bg:        #F5EBD8;
+    --c-bg-2:      #EFE3CB;
+    --c-paper:     #FBF5E6;
+    --c-ink:       #2B2418;
+    --c-ink-2:     #5A4F3A;
+    --c-line:      #D8C8A5;
+    --c-line-2:    #C4B189;
+    --c-olive:     #3D4A2A;
+    --c-leaf:      #5C7A3A;
+    --c-ochre:     #A8783E;
+    --c-mud:       #6B4F2A;
+    --c-accent-bg: #E8D9B0;
+    --c-red:       #8C3A1A;
+    --shadow:      0 1px 0 rgba(60,40,15,0.05), 0 2px 6px rgba(60,40,15,0.05);
+    --radius:      6px;
+    --sidebar-w:   290px;
+    --header-h:    64px;
+    --reading-max: 760px;
+  }
+  *,*::before,*::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--c-bg); color: var(--c-ink); }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--c-ochre); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { color: var(--c-mud); border-bottom-color: var(--c-ochre); }
+
+  .app { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+
+  .sidebar {
+    background: var(--c-bg-2);
+    border-right: 1px solid var(--c-line);
+    position: sticky; top: 0; align-self: start;
+    height: 100vh; overflow-y: auto;
+    padding: 22px 18px 32px;
+  }
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0 0 4px;
+    color: var(--c-olive);
+  }
+  .brand .leaf { color: var(--c-leaf); }
+  .brand-sub {
+    font-size: 12px;
+    color: var(--c-ink-2);
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .search-wrap { position: relative; margin-bottom: 18px; }
+  .search {
+    width: 100%;
+    font: inherit; font-size: 14px;
+    padding: 9px 12px 9px 34px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-2);
+    border-radius: var(--radius);
+    color: var(--c-ink);
+    transition: border-color .15s;
+  }
+  .search:focus { outline: none; border-color: var(--c-leaf); box-shadow: 0 0 0 3px rgba(92,122,58,0.15); }
+  .search-icon {
+    position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    color: var(--c-ink-2); font-size: 15px; pointer-events: none;
+  }
+  .nav { list-style: none; padding: 0; margin: 0; }
+  .nav-cat { margin: 0 0 4px; }
+  .nav-cat-btn {
+    display: flex; align-items: center; gap: 8px;
+    width: 100%; text-align: left;
+    background: transparent; border: 0; cursor: pointer;
+    font: inherit; font-size: 14px; font-weight: 600;
+    color: var(--c-olive);
+    padding: 8px 8px; border-radius: var(--radius);
+    letter-spacing: 0.01em;
+  }
+  .nav-cat-btn:hover { background: var(--c-accent-bg); }
+  .nav-cat-btn.cat-focused { background: var(--c-accent-bg); box-shadow: inset 3px 0 0 var(--c-ochre); }
+  .nav-cat-btn .em { font-size: 16px; }
+  .nav-cat-btn .ct {
+    margin-left: auto;
+    font-size: 11px; font-weight: 500;
+    color: var(--c-ink-2);
+    background: var(--c-bg);
+    padding: 1px 7px; border-radius: 10px;
+    border: 1px solid var(--c-line);
+  }
+  .nav-items { list-style: none; padding: 0 0 6px 24px; margin: 0; }
+  .nav-items li { margin: 0; }
+  .nav-item {
+    display: block; padding: 5px 8px;
+    font-size: 13.5px;
+    color: var(--c-ink-2);
+    border-radius: 4px;
+    border-bottom: 0;
+    line-height: 1.35;
+  }
+  .nav-item:hover { background: var(--c-accent-bg); color: var(--c-ink); }
+  .nav-item.active { background: var(--c-olive); color: var(--c-bg); font-weight: 500; }
+  .nav-cat.collapsed .nav-items { display: none; }
+  .sidebar-foot {
+    margin-top: 22px; padding-top: 16px;
+    border-top: 1px dashed var(--c-line-2);
+    font-size: 11.5px; color: var(--c-ink-2);
+    line-height: 1.5;
+  }
+
+  .main { padding: 0; min-width: 0; }
+  .topbar {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 32px;
+    background: var(--c-bg-2);
+    border-bottom: 1px solid var(--c-line);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(6px);
+  }
+  .crumbs {
+    font-size: 13px; color: var(--c-ink-2);
+    flex: 1; min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .crumbs a { color: var(--c-ink-2); border-bottom: 0; }
+  .crumbs a:hover { color: var(--c-ochre); }
+  .crumbs .sep { margin: 0 6px; color: var(--c-line-2); }
+  .topbar-meta {
+    font-size: 12px; color: var(--c-ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .reader {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    padding: 36px 32px 96px;
+  }
+  .reader-inner {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 36px 44px 44px;
+    box-shadow: var(--shadow);
+  }
+
+  .doc h1, .doc h2, .doc h3, .doc h4, .doc h5 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--c-olive);
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+  }
+  .doc h1 {
+    font-size: 32px; font-weight: 600;
+    margin: 0 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--c-ochre);
+  }
+  .doc h2 {
+    font-size: 22px; font-weight: 600;
+    margin: 36px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .doc h3 { font-size: 17px; font-weight: 600; margin: 26px 0 8px; color: var(--c-mud); }
+  .doc h4 { font-size: 15px; font-weight: 600; margin: 20px 0 6px; }
+  .doc p { margin: 0 0 14px; }
+  .doc ul, .doc ol { margin: 0 0 14px; padding-left: 24px; }
+  .doc li { margin: 4px 0; }
+  .doc li > p { margin: 4px 0; }
+  .doc blockquote {
+    margin: 16px 0;
+    padding: 10px 16px;
+    border-left: 3px solid var(--c-ochre);
+    background: var(--c-accent-bg);
+    color: var(--c-ink-2);
+    font-style: italic;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .doc blockquote p { margin: 0; }
+  .doc code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--c-accent-bg);
+    padding: 1px 5px; border-radius: 3px;
+    color: var(--c-mud);
+  }
+  .doc pre {
+    background: #2B2418; color: #F5EBD8;
+    padding: 14px 18px; border-radius: var(--radius);
+    overflow-x: auto;
+    font-size: 13px; line-height: 1.55;
+  }
+  .doc pre code { background: transparent; color: inherit; padding: 0; font-size: inherit; }
+  .doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+    background: var(--c-paper);
+  }
+  .doc th, .doc td {
+    border: 1px solid var(--c-line);
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .doc th {
+    background: var(--c-bg-2);
+    font-weight: 600;
+    color: var(--c-olive);
+  }
+  .doc tr:nth-child(even) td { background: rgba(232,217,176,0.4); }
+  .doc hr {
+    border: 0; border-top: 1px dashed var(--c-line-2);
+    margin: 28px 0;
+  }
+  .doc img { max-width: 100%; height: auto; border-radius: var(--radius); }
+  .doc-meta {
+    font-size: 13px; color: var(--c-ink-2);
+    margin-bottom: 18px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .doc-meta .pill {
+    display: inline-block;
+    background: var(--c-accent-bg);
+    color: var(--c-olive);
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+
+  .welcome {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+  .welcome-card {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 44px;
+    box-shadow: var(--shadow);
+  }
+  .welcome h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 40px; font-weight: 600;
+    color: var(--c-olive);
+    margin: 0 0 8px;
+    line-height: 1.1;
+  }
+  .welcome h1 .leaf { color: var(--c-leaf); }
+  .welcome .lede {
+    font-size: 17px; color: var(--c-ink-2);
+    margin: 0 0 24px;
+    line-height: 1.55;
+  }
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin: 24px 0 32px;
+  }
+  .stat {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .stat-n { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; color: var(--c-leaf); line-height: 1; }
+  .stat-l { font-size: 12.5px; color: var(--c-ink-2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+  .cat-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px; margin-top: 8px;
+  }
+  .cat-card {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px;
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    color: var(--c-ink);
+    border-bottom: 1px solid var(--c-line);
+    transition: transform .12s, background .12s;
+  }
+  .cat-card:hover { background: var(--c-accent-bg); transform: translateY(-1px); border-bottom-color: var(--c-ochre); color: var(--c-ink); }
+  .cat-card .em { font-size: 20px; }
+  .cat-card .nm { font-weight: 600; font-size: 14.5px; color: var(--c-olive); flex: 1; }
+  .cat-card .ct {
+    font-size: 12px; color: var(--c-ink-2);
+    font-variant-numeric: tabular-nums;
+    background: var(--c-paper); padding: 1px 8px; border-radius: 10px;
+    border: 1px solid var(--c-line);
+  }
+
+  .empty, .no-results {
+    padding: 60px 30px; text-align: center;
+    color: var(--c-ink-2);
+  }
+  .empty .em { font-size: 48px; display: block; margin-bottom: 10px; }
+
+  .hl { background: #F2D88A; color: var(--c-ink); padding: 0 2px; border-radius: 2px; }
+
+  @media (max-width: 820px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; max-height: 60vh; }
+    .reader, .welcome { padding: 20px 14px; }
+    .reader-inner { padding: 22px 18px; }
+    .stats { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .sidebar, .topbar { display: none; }
+    .app { grid-template-columns: 1fr; }
+    .reader-inner { border: 0; box-shadow: none; padding: 0; }
+    .doc a { color: var(--c-ink); }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" aria-label="Navegació">
+    <h1 class="brand"><span class="leaf">🌱</span> Hort Osona</h1>
+    <p class="brand-sub">Base de coneixement · Osona</p>
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input id="search" class="search" type="search" placeholder="Cerca per títol o text…" autocomplete="off" spellcheck="false">
+    </div>
+    <ul class="nav" id="nav"></ul>
+    <div class="sidebar-foot">
+      Generat el __DATE__<br>
+      __TOTAL__ documents · __NCAT__ categories<br>
+      <a href="build.py" style="border-bottom:0;color:var(--c-ochre)">build.py</a> regenera el lloc
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="crumbs" id="crumbs">
+        <a href="#" data-home>🌱 Hort Osona</a>
+      </div>
+      <div class="topbar-meta" id="topbar-meta">__TOTAL__ documents</div>
+    </div>
+    <div id="view" class="welcome"></div>
+  </main>
+
+</div>
+
+<script>
+(() => {
+  const DOCS = __DOCS__;
+  const SIDEBAR = __SIDEBAR__;
+  const TOTAL = __TOTAL__;
+
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+  const debounce = (fn, ms=120) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+  };
+
+  const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[c]);
+
+  const escapeRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  function readHash() {
+    const m = location.hash.match(/[#&]doc=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function readCatHash() {
+    const m = location.hash.match(/[#&]cat=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function writeHash(id) {
+    const newHash = '#doc=' + encodeURIComponent(id);
+    if (location.hash !== newHash) {
+      history.replaceState(null, '', newHash);
+    }
+  }
+
+  const INDEX = DOCS.map(d => ({
+    id: d.id,
+    title: d.title,
+    summary: d.summary,
+    category: d.category,
+    path: d.path,
+    hay: (d.title + ' ' + d.summary + ' ' + d.path).toLowerCase()
+  }));
+
+  function searchDocs(q) {
+    q = q.trim().toLowerCase();
+    if (!q) return null;
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return INDEX
+      .map(d => {
+        const hay = d.hay;
+        const all = tokens.every(t => hay.includes(t));
+        return all ? d : null;
+      })
+      .filter(Boolean);
+  }
+
+  function highlightText(text, tokens) {
+    if (!tokens.length) return escapeHtml(text);
+    const pattern = new RegExp('(' + tokens.map(escapeRe).join('|') + ')', 'gi');
+    return escapeHtml(text).replace(pattern, '<mark class="hl">$1</mark>');
+  }
+
+  function renderDoc(id) {
+    const doc = DOCS.find(d => d.id === id);
+    if (!doc) { renderWelcome(); return; }
+
+    writeHash(id);
+    document.title = doc.title + ' · Hort Osona';
+
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>' + escapeHtml(doc.category) + '</span>' +
+      '<span class="sep">›</span>' +
+      '<span>' + escapeHtml(doc.title) + '</span>';
+
+    const view = $('#view');
+    view.className = 'reader';
+    view.innerHTML =
+      '<div class="reader-inner">' +
+        '<div class="doc-meta">' +
+          '<span class="pill">' + escapeHtml(doc.category) + '</span>' +
+          '<span>' + escapeHtml(doc.path) + '</span>' +
+        '</div>' +
+        '<article class="doc">' + doc.html + '</article>' +
+      '</div>';
+
+    $$('.nav-item').forEach(a => a.classList.toggle('active', a.dataset.id === id));
+    const cat = $('.nav-cat-btn[data-cat="' + CSS.escape(doc.category) + '"]');
+    if (cat) cat.parentElement.classList.remove('collapsed');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function renderWelcome() {
+    document.title = 'Hort Osona · Base de coneixement';
+    $('#crumbs').innerHTML = '<a href="#" data-home>🌱 Hort Osona</a>';
+    const view = $('#view');
+    view.className = 'welcome';
+    view.innerHTML =
+      '<div class="welcome-card">' +
+        '<h1><span class="leaf">🌱</span> Hort Osona</h1>' +
+        '<p class="lede">Base de coneixement personal d\'hort ecològic, plantes medicinals, bolets i conserves, ' +
+        'adaptat a la comarca d\'<strong>Osona</strong> (Catalunya central). ' +
+        'Tria una categoria o comença a cercar a dalt a l\'esquerra.</p>' +
+        '<div class="stats">' +
+          '<div class="stat"><div class="stat-n">' + TOTAL + '</div><div class="stat-l">Documents</div></div>' +
+          '<div class="stat"><div class="stat-n">' + SIDEBAR.length + '</div><div class="stat-l">Categories</div></div>' +
+          '<div class="stat"><div class="stat-n">2026</div><div class="stat-l">Temporada</div></div>' +
+        '</div>' +
+        '<div class="cat-grid" id="cat-grid"></div>' +
+      '</div>';
+    const grid = $('#cat-grid');
+    SIDEBAR.forEach(s => {
+      const a = document.createElement('a');
+      a.className = 'cat-card';
+      a.href = '#cat=' + encodeURIComponent(s.name);
+      a.dataset.cat = s.name;
+      a.setAttribute('role', 'button');
+      a.innerHTML =
+        '<span class="em">' + s.emoji + '</span>' +
+        '<span class="nm">' + escapeHtml(s.name) + '</span>' +
+        '<span class="ct">' + s.count + '</span>';
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        // Neteja hash + cerca, després enfoca la categoria al sidebar
+        if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+        $('#search').value = '';
+        focusCategory(s.name);
+      });
+      grid.appendChild(a);
+    });
+  }
+
+  function focusCategory(name) {
+    // 1) Tanca totes les categories i obre la que toca
+    $$('.nav-cat').forEach(li => li.classList.add('collapsed'));
+    const btn = $('.nav-cat-btn[data-cat="' + CSS.escape(name) + '"]');
+    if (!btn) return;
+    const li = btn.parentElement;
+    li.classList.remove('collapsed');
+
+    // 2) Neteja qualsevol "active" previ
+    $$('.nav-item').forEach(a => a.classList.remove('active'));
+
+    // 3) Marca visualment la categoria (no pas un document concret)
+    $$('.nav-cat-btn').forEach(b => b.classList.remove('cat-focused'));
+    btn.classList.add('cat-focused');
+
+    // 4) Actualitza breadcrumb perquè sàpiga on és
+    document.title = name + ' · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>' + escapeHtml(name) + '</span>';
+
+    // 5) Scroll suau del sidebar fins al botó
+    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function renderSearchResults(q, tokens) {
+    const results = searchDocs(q);
+    document.title = (results ? results.length : 0) + ' resultats · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Cerca: &ldquo;' + escapeHtml(q) + '&rdquo;</span>';
+    const view = $('#view');
+    view.className = 'welcome';
+    if (!results || !results.length) {
+      view.innerHTML =
+        '<div class="welcome-card no-results">' +
+          '<span class="em">🔍</span>' +
+          '<h2 style="font-family:Fraunces,serif;color:var(--c-olive);margin:0 0 8px">Cap resultat</h2>' +
+          '<p>Res per a &ldquo;<strong>' + escapeHtml(q) + '</strong>&rdquo;. Prova amb un altre terme.</p>' +
+        '</div>';
+      return;
+    }
+    let html = '<div class="welcome-card">';
+    html += '<h1 style="font-size:26px;margin:0 0 6px">Resultats de cerca</h1>';
+    html += '<p class="lede" style="margin-bottom:18px">' + results.length + ' documents coincideixen amb &ldquo;' + escapeHtml(q) + '&rdquo;.</p>';
+    html += '<ul class="nav-items" style="padding-left:0;display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+    for (const r of results) {
+      html +=
+        '<li><a class="nav-item" href="#doc=' + encodeURIComponent(r.id) + '">' +
+          '<strong>' + highlightText(r.title, tokens) + '</strong><br>' +
+          '<span style="font-size:12px">' + highlightText(r.summary || r.path, tokens) + '</span>' +
+        '</a></li>';
+    }
+    html += '</ul></div>';
+    view.innerHTML = html;
+  }
+
+  function renderSidebar() {
+    const nav = $('#nav');
+    nav.innerHTML = '';
+    SIDEBAR.forEach(s => {
+      const docsInCat = DOCS.filter(d => d.category === s.name);
+      const li = document.createElement('li');
+      li.className = 'nav-cat';
+      const btn = document.createElement('button');
+      btn.className = 'nav-cat-btn';
+      btn.dataset.cat = s.name;
+      btn.innerHTML =
+        '<span class="em">' + s.emoji + '</span>' +
+        '<span>' + escapeHtml(s.name) + '</span>' +
+        '<span class="ct">' + s.count + '</span>';
+      btn.addEventListener('click', () => li.classList.toggle('collapsed'));
+      li.appendChild(btn);
+
+      const ul = document.createElement('ul');
+      ul.className = 'nav-items';
+      docsInCat.forEach(d => {
+        const a = document.createElement('a');
+        a.className = 'nav-item';
+        a.href = '#doc=' + encodeURIComponent(d.id);
+        a.dataset.id = d.id;
+        a.textContent = d.title;
+        ul.appendChild(a);
+      });
+      li.appendChild(ul);
+      nav.appendChild(li);
+    });
+  }
+
+  function route() {
+    const q = $('#search').value;
+    if (q.trim()) { renderSearchResults(q, q.trim().toLowerCase().split(/\s+/)); return; }
+    const id = readHash();
+    if (id) { renderDoc(id); return; }
+    const cat = readCatHash();
+    if (cat) {
+      renderWelcome();
+      // Petit timeout perquè el sidebar s'hagi renderitzat
+      setTimeout(() => focusCategory(cat), 0);
+      return;
+    }
+    renderWelcome();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar();
+    route();
+
+    const onInput = debounce(route, 100);
+    $('#search').addEventListener('input', e => onInput(e.target.value));
+    $('#search').addEventListener('keydown', e => {
+      if (e.key === 'Escape') { e.target.value = ''; route(); }
+    });
+
+    document.addEventListener('click', e => {
+      const t = e.target.closest('[data-home]');
+      if (t) { e.preventDefault(); location.hash = ''; $('#search').value = ''; renderWelcome(); }
+    });
+
+    window.addEventListener('hashchange', route);
+  });
+})();
+</script>
+</body>
+</html>

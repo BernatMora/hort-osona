@@ -121,8 +121,26 @@ hort-osona/
 ├── [guies medicinals]-guia.md
 ├── [tema]-imprimible.html               # versions imprimibles
 ├── [tema]-2026.pdf                      # PDFs
-└── SETUP-WINDOWS.md                     # guia sincronització Windows
+├── site/                                # 🌐 lloc web unificat
+│   ├── template.html                    #   template amb placeholders
+│   ├── build.py                         #   script generador
+│   └── index.html                       #   artefacte generat
+├── SETUP-WINDOWS.md                     # guia sincronització Windows
+└── SETUP-SITE.md                        # guia del lloc web
 ```
+
+## 🌐 Lloc web unificat
+
+Tots els 71 documents `.md` accessibles des d'un sol HTML amb sidebar,
+cercador i hash routing. Generat per `site/build.py` a partir de `template.html`.
+
+```bash
+python site/build.py          # regenera site/index.html
+python -m http.server 8765    # servidor local
+# obre http://127.0.0.1:8765/site/index.html
+```
+
+Més detalls a [SETUP-SITE.md](SETUP-SITE.md).
 
 ## 📅 Última actualització
 

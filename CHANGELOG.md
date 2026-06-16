@@ -2,6 +2,28 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-06-16] — Lloc web unificat
+
+### Afegit
+- **Lloc web estàtic** a `site/index.html` (1.3 MB · 71 documents · 9 categories):
+  - Sidebar amb categories collapsibles i comptadors.
+  - Cercador client-side amb highlighting.
+  - Hash routing per enllaços directes (`#doc=id`).
+  - Paleta terra-verd-crema inspirada en l'horta d'Osona.
+  - Tipografies: Fraunces (serif títols) + Inter (cos) + JetBrains Mono (codi).
+  - Responsive + print stylesheet.
+  - Zero dependències de runtime: tot és un únic fitxer HTML autocontingut.
+- **`site/build.py`** — script Python que llegeix tots els `.md`, els
+  classifica en 9 categories, els converteix a HTML i regenera el lloc.
+- **`site/template.html`** — el template HTML amb placeholders, separat
+  del codi de generació per facilitar edicions visuals.
+- **`SETUP-SITE.md`** — guia de com regenerar i visualitzar el lloc.
+- Esborrat `conserves.md` de la categoria "Conreu avançat" (ara és a
+  "Transformació i fermentats" on pertany per la seva naturalesa).
+
+### Modificat
+- `00-index.md` — afegits enllaços al lloc web unificat i a SETUP-SITE.
+
 ## [2026-06-15] — Sessió inicial d'ampliació
 
 ### Afegit
