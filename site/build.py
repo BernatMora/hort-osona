@@ -43,6 +43,7 @@ OUT_FILE = SITE_DIR / "index.html"
 INFRASTRUCTURE_FILES = {
     "README.md",
     "CHANGELOG.md",
+    "HORT-CHECKLIST.md",
     "SETUP-WINDOWS.md",
     "SETUP-SITE.md",
     "SYNC-SCRIPT.md",
@@ -304,8 +305,28 @@ def build():
     total_docs = len(docs)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
 
+    # 4b) Generar dades de la checklist del mes actual (per al giny del lloc web)
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "hort_checklist", ROOT / "hort-checklist.py"
+        )
+        hc = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(hc)
+        from datetime import date as _date
+        today = _date.today()
+        checklist_data = hc.generar_json(today.year, today.month)
+        # Desa el JSON a site/ perquè es pugui consumir independentment
+        (SITE_DIR / "checklist-data.json").write_text(
+            json.dumps(checklist_data, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except Exception as e:
+        print(f"⚠️  No s'ha pogut generar la checklist: {e}")
+        checklist_data = None
+
     # 5) Renderitzar HTML
-    out = render_html(docs, sidebar, total_docs, generated_at)
+    out = render_html(docs, sidebar, total_docs, generated_at, checklist_data)
     OUT_FILE.write_text(out, encoding="utf-8")
 
     # 6) Resum per consola
@@ -319,9 +340,10 @@ def build():
         print(f"     - {s['emoji']}  {s['name']:<25} {s['count']:>3} docs")
 
 
-def render_html(docs, sidebar, total_docs, generated_at):
+def render_html(docs, sidebar, total_docs, generated_at, checklist_data=None):
     docs_json = json.dumps(docs, ensure_ascii=False)
     sidebar_json = json.dumps(sidebar, ensure_ascii=False)
+    checklist_json = json.dumps(checklist_data, ensure_ascii=False) if checklist_data else "null"
 
     template_path = SITE_DIR / "template.html"
     tpl = template_path.read_text(encoding="utf-8")
@@ -329,6 +351,7 @@ def render_html(docs, sidebar, total_docs, generated_at):
     out = (tpl
            .replace("__DOCS__", docs_json)
            .replace("__SIDEBAR__", sidebar_json)
+           .replace("__CHECKLIST__", checklist_json)
            .replace("__TOTAL__", str(total_docs))
            .replace("__NCAT__", str(len(sidebar)))
            .replace("__DATE__", generated_at))

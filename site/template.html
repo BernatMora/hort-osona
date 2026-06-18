@@ -315,6 +315,128 @@
 
   .hl { background: #F2D88A; color: var(--c-ink); padding: 0 2px; border-radius: 2px; }
 
+  /* ───── Giny de checklist del mes ───── */
+  .month-widget {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin: 24px 0;
+  }
+  .month-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .month-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--c-olive);
+    font-size: 18px;
+    margin: 0 0 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .lunar-strip { display: flex; gap: 8px; margin-top: 10px; }
+  .lunar-cell {
+    flex: 1; text-align: center;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 4px;
+    padding: 6px 4px;
+    font-size: 11.5px;
+    color: var(--c-ink-2);
+  }
+  .lunar-cell .em { font-size: 22px; display: block; line-height: 1.1; }
+  .lunar-cell .dt { font-size: 10.5px; color: var(--c-ink-2); }
+  .top-task {
+    background: var(--c-paper);
+    border-left: 3px solid var(--c-red);
+    padding: 10px 14px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-top: 8px;
+  }
+  .top-task strong { color: var(--c-olive); }
+  .top-task small { display: block; color: var(--c-ink-2); margin-top: 4px; font-size: 12.5px; line-height: 1.4; }
+  .open-checklist {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 14px;
+    background: var(--c-leaf);
+    color: var(--c-bg);
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    font-weight: 500;
+    border-bottom: 0;
+  }
+  .open-checklist:hover { background: var(--c-olive); color: var(--c-bg); }
+
+  /* ───── Pàgina completa de checklist ───── */
+  .checklist-page { max-width: var(--reading-max); margin: 0 auto; padding: 36px 32px 96px; }
+  .checklist-page-inner {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 36px 44px 44px;
+    box-shadow: var(--shadow);
+  }
+  .checklist-page h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--c-olive);
+    font-size: 32px; font-weight: 600;
+    margin: 0 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--c-ochre);
+  }
+  .clima-note {
+    background: var(--c-accent-bg);
+    border-left: 3px solid var(--c-ochre);
+    padding: 12px 16px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 14px 0 24px;
+    color: var(--c-ink-2);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .checklist-section { margin: 28px 0 18px; }
+  .checklist-section h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--c-olive);
+    font-size: 20px;
+    margin: 0 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .lunar-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  .lunar-table th, .lunar-table td { border: 1px solid var(--c-line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  .lunar-table th { background: var(--c-bg-2); color: var(--c-olive); font-weight: 600; }
+  .task-list { list-style: none; padding: 0; margin: 8px 0; }
+  .task-list li { margin: 6px 0; }
+  .task-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; line-height: 1.4; }
+  .task-list input[type="checkbox"] { margin-top: 3px; transform: scale(1.1); accent-color: var(--c-leaf); }
+  .task-list .prio { font-size: 12px; flex-shrink: 0; }
+  .task-list .desc { color: var(--c-ink-2); font-size: 13px; display: block; margin-top: 2px; }
+  .task-list li[data-prio="5"] { background: rgba(140,58,26,0.05); padding: 4px 6px; border-radius: 4px; }
+  .task-list li.done { opacity: 0.5; text-decoration: line-through; }
+  .dates-clau { background: var(--c-bg-2); border: 1px dashed var(--c-line-2); padding: 14px 18px; border-radius: var(--radius); margin: 24px 0; }
+  .dates-clau h3 { font-family: 'Fraunces', Georgia, serif; color: var(--c-olive); margin: 0 0 8px; font-size: 17px; }
+  .dates-clau ul { margin: 0; padding-left: 20px; }
+  .dates-clau li { margin: 4px 0; font-size: 14px; }
+  .prompt-box {
+    background: #2B2418; color: #F5EBD8;
+    padding: 16px 20px; border-radius: var(--radius);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px; line-height: 1.55;
+    white-space: pre-wrap;
+    max-height: 400px; overflow-y: auto;
+    margin: 12px 0;
+  }
+  .copy-btn {
+    background: var(--c-leaf); color: var(--c-bg);
+    border: 0; padding: 6px 12px; border-radius: 4px;
+    font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .copy-btn:hover { background: var(--c-olive); }
+  @media (max-width: 820px) {
+    .month-widget { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 820px) {
     .app { grid-template-columns: 1fr; }
     .sidebar { position: relative; height: auto; max-height: 60vh; }
@@ -367,6 +489,7 @@
   const DOCS = __DOCS__;
   const SIDEBAR = __SIDEBAR__;
   const TOTAL = __TOTAL__;
+  const CHECKLIST = __CHECKLIST__;
 
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
@@ -388,6 +511,9 @@
   function readCatHash() {
     const m = location.hash.match(/[#&]cat=([^&]+)/);
     return m ? decodeURIComponent(m[1]) : null;
+  }
+  function isChecklistHash() {
+    return /[#&]checklist(?:&|$)/.test(location.hash);
   }
   function writeHash(id) {
     const newHash = '#doc=' + encodeURIComponent(id);
@@ -460,12 +586,49 @@
     $('#crumbs').innerHTML = '<a href="#" data-home>🌱 Hort Osona</a>';
     const view = $('#view');
     view.className = 'welcome';
+    let widgetHtml = '';
+    if (CHECKLIST) {
+      const mesCapital = CHECKLIST.mes_ca.charAt(0).toUpperCase() + CHECKLIST.mes_ca.slice(1);
+      // Determinar setmana actual (la que conté avui)
+      const avui = new Date();
+      const avuiIso = avui.toISOString().slice(0,10);
+      const setmanaActual = CHECKLIST.setmanes.find(s => s.inici <= avuiIso && s.fi >= avuiIso) || CHECKLIST.setmanes[0];
+      // Top tasca: la primera amb prio >= 4
+      const top = CHECKLIST.tasques.find(t => t.prio >= 4) || CHECKLIST.tasques[0];
+      const prioStr = top.prio >= 5 ? '🔴 Urgent' : (top.prio >= 4 ? '🟠 Important' : '🟡 Recomanat');
+      // Strip de les 4 primeres setmanes
+      const stripCells = CHECKLIST.setmanes.slice(0, 4).map(s => {
+        const dt = s.inici.slice(8,10) + '/' + s.inici.slice(5,7);
+        return '<div class="lunar-cell"><span class="em">' + s.fase.emoji + '</span><span class="dt">' + dt + '</span></div>';
+      }).join('');
+      widgetHtml =
+        '<div class="month-widget">' +
+          '<div class="month-card">' +
+            '<h3>📅 ' + mesCapital + ' ' + CHECKLIST.year + '</h3>' +
+            '<div style="font-size:13.5px;color:var(--c-ink-2)">' +
+              setmanaActual.fase.emoji + ' ' + escapeHtml(setmanaActual.fase.etiqueta) + ' — ' + escapeHtml(setmanaActual.fase.desc) +
+            '</div>' +
+            '<div class="top-task" style="margin-top:12px">' +
+              '<span class="prio" style="font-size:11px;color:var(--c-ink-2)">' + prioStr + '</span><br>' +
+              '<strong>' + escapeHtml(top.titol) + '</strong>' +
+              '<small>' + escapeHtml(top.desc) + '</small>' +
+            '</div>' +
+          '</div>' +
+          '<div class="month-card">' +
+            '<h3>🌙 Calendari lunar</h3>' +
+            '<div style="font-size:12.5px;color:var(--c-ink-2);margin-bottom:4px">4 setmanes del mes</div>' +
+            '<div class="lunar-strip">' + stripCells + '</div>' +
+            '<a class="open-checklist" href="#checklist">Obrir checklist completa →</a>' +
+          '</div>' +
+        '</div>';
+    }
     view.innerHTML =
       '<div class="welcome-card">' +
         '<h1><span class="leaf">🌱</span> Hort Osona</h1>' +
         '<p class="lede">Base de coneixement personal d\'hort ecològic, plantes medicinals, bolets i conserves, ' +
         'adaptat a la comarca d\'<strong>Osona</strong> (Catalunya central). ' +
         'Tria una categoria o comença a cercar a dalt a l\'esquerra.</p>' +
+        widgetHtml +
         '<div class="stats">' +
           '<div class="stat"><div class="stat-n">' + TOTAL + '</div><div class="stat-l">Documents</div></div>' +
           '<div class="stat"><div class="stat-n">' + SIDEBAR.length + '</div><div class="stat-l">Categories</div></div>' +
@@ -492,6 +655,133 @@
         focusCategory(s.name);
       });
       grid.appendChild(a);
+    });
+  }
+
+  function renderChecklist() {
+    if (!CHECKLIST) { renderWelcome(); return; }
+    const mesCapital = CHECKLIST.mes_ca.charAt(0).toUpperCase() + CHECKLIST.mes_ca.slice(1);
+    document.title = 'Checklist ' + mesCapital + ' ' + CHECKLIST.year + ' · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Checklist ' + escapeHtml(mesCapital) + ' ' + CHECKLIST.year + '</span>';
+
+    // Construeix el calendari lunar com a taula
+    let lunarRows = '';
+    for (const s of CHECKLIST.setmanes) {
+      lunarRows +=
+        '<tr><td><strong>Setmana ' + s.n + '</strong></td>' +
+        '<td>' + s.inici.slice(8,10) + '/' + s.inici.slice(5,7) + ' – ' + s.fi.slice(8,10) + '/' + s.fi.slice(5,7) + '</td>' +
+        '<td>' + s.fase.emoji + ' ' + escapeHtml(s.fase.etiqueta) + '</td>' +
+        '<td>' + escapeHtml(s.fase.desc) + '</td></tr>';
+    }
+
+    // Tasques agrupades per categoria
+    const perCat = {};
+    for (const t of CHECKLIST.tasques) {
+      (perCat[t.cat] = perCat[t.cat] || []).push(t);
+    }
+    const ordreCat = [
+      ['sembra', '🌱 Sembra'],
+      ['trasplantament', '🌿 Trasplantament'],
+      ['conreu', '🛠️ Conreu'],
+      ['tractaments', '🐞 Tractaments'],
+      ['collita', '🧺 Collita'],
+      ['planificacio', '📋 Planificació'],
+      ['observacio', '👀 Observació'],
+    ];
+    let taskSections = '';
+    for (const [key, titol] of ordreCat) {
+      if (!perCat[key]) continue;
+      const prioEmoji = p => p >= 5 ? '🔴' : (p >= 4 ? '🟠' : '🟡');
+      const items = perCat[key].map(t =>
+        '<li data-prio="' + t.prio + '"><label>' +
+          '<input type="checkbox" data-task="' + escapeHtml(t.titol) + '">' +
+          '<span><span class="prio">' + prioEmoji(t.prio) + '</span> <strong>' + escapeHtml(t.titol) + '</strong>' +
+          '<small class="desc">' + escapeHtml(t.desc) + '</small></span>' +
+        '</label></li>'
+      ).join('');
+      taskSections +=
+        '<div class="checklist-section"><h2>' + titol + '</h2>' +
+        '<ul class="task-list">' + items + '</ul></div>';
+    }
+
+    // Dates clau
+    let datesHtml = '';
+    if (CHECKLIST.dates_clau && CHECKLIST.dates_clau.length) {
+      datesHtml = '<div class="dates-clau"><h3>📌 Dates clau a Osona</h3><ul>';
+      for (const d of CHECKLIST.dates_clau) {
+        datesHtml += '<li><strong>' + escapeHtml(d.etiqueta) + '</strong> — ' + escapeHtml(d.data) + '</li>';
+      }
+      datesHtml += '</ul></div>';
+    }
+
+    const climaHtml = '<div class="clima-note">' + escapeHtml(CHECKLIST.clima_nota).replace(/\n/g, '<br>') + '</div>';
+
+    // Genera el prompt per copiar
+    let promptText = '# Hort Osona — ' + mesCapital + ' ' + CHECKLIST.year + '\n\n';
+    promptText += 'Estem a ' + mesCapital + ' de ' + CHECKLIST.year + '. ' + CHECKLIST.clima_nota.replace(/\n/g, ' ') + '\n\n';
+    promptText += '## Tasques prioritàries\n\n';
+    for (const t of CHECKLIST.tasques) {
+      const p = t.prio >= 5 ? 'URGENT' : (t.prio >= 4 ? 'IMPORTANT' : 'Recomanat');
+      promptText += '- [' + p + '] ' + t.titol + ' — ' + t.desc + '\n';
+    }
+    promptText += '\n## Calendari lunar\n\n';
+    for (const s of CHECKLIST.setmanes) {
+      promptText += '- Setmana ' + s.n + ' (' + s.inici + ' al ' + s.fi + '): ' + s.fase.etiqueta + ' — ' + s.fase.desc + '\n';
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>📅 Checklist ' + escapeHtml(mesCapital) + ' ' + CHECKLIST.year + '</h1>' +
+        climaHtml +
+        '<div class="checklist-section">' +
+          '<h2>🌙 Calendari lunar</h2>' +
+          '<table class="lunar-table"><thead><tr><th>Setmana</th><th>Dates</th><th>Fase</th><th>Recomanació</th></tr></thead><tbody>' +
+          lunarRows +
+          '</tbody></table>' +
+        '</div>' +
+        taskSections +
+        datesHtml +
+        '<div class="checklist-section">' +
+          '<h2>🤖 Prompt per Open WebUI</h2>' +
+          '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 8px">Copia aquest prompt i enganxa\'l com a system prompt a Open WebUI per tenir el context complet del mes.</p>' +
+          '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
+          '<pre class="prompt-box" id="prompt-box">' + escapeHtml(promptText) + '</pre>' +
+        '</div>' +
+      '</div>';
+
+    // Handler per copiar
+    const btn = $('#copy-prompt');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const text = $('#prompt-box').textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = '✅ Copiat!';
+          setTimeout(() => btn.textContent = '📋 Copiar prompt', 2000);
+        });
+      });
+    }
+
+    // Persistència dels checkboxes (localStorage)
+    $$('.task-list input[type="checkbox"]').forEach(cb => {
+      const key = 'checklist-' + CHECKLIST.year + '-' + CHECKLIST.month + '-' + cb.dataset.task;
+      if (localStorage.getItem(key) === '1') {
+        cb.checked = true;
+        cb.parentElement.parentElement.classList.add('done');
+      }
+      cb.addEventListener('change', () => {
+        if (cb.checked) {
+          localStorage.setItem(key, '1');
+          cb.parentElement.parentElement.classList.add('done');
+        } else {
+          localStorage.removeItem(key);
+          cb.parentElement.parentElement.classList.remove('done');
+        }
+      });
     });
   }
 
@@ -598,6 +888,7 @@
       setTimeout(() => focusCategory(cat), 0);
       return;
     }
+    if (isChecklistHash()) { renderChecklist(); return; }
     renderWelcome();
   }
 

@@ -2,6 +2,65 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-06-18] — Generador de checklist mensual i prompt Open WebUI
+
+### Afegit
+- **`hort-checklist.py`** — generador intel·ligent de checklist mensual de l'hort:
+  - Base de dades de ~60 tasques organitzades per mesos (1-12) i 7 categories
+    (sembra, trasplantament, conreu, tractaments, collita, planificació, observació).
+  - Càlcul de la **fase lunar real** per a qualsevol data (algorisme de cicles
+    sinòdics, referència 6 gener 2000, període 29.530588 dies, ±1 dia).
+  - Modes de sortida: Markdown imprimible, JSON estructurat, prompt Open WebUI,
+    fragment HTML, o escriptura directa a `plans-mensuals/AAAA-MM-mes.md`.
+  - Context climàtic del mes adaptat a Osona (gelades, calor, pluges, dates clau).
+  - Recomanacions biodinàmiques segons la fase lunar (sembra, trasplantament,
+    poda, adob verd).
+
+- **Integració al lloc web** (`site/index.html`, 1.37 MB):
+  - **Giny a la pàgina d'inici**: targeta esquerra amb el mes actual, fase
+    lunar de la setmana en curs i top tasca prioritària; targeta dreta amb
+    strip de 4 setmanes i botó "Obrir checklist completa".
+  - **Pàgina `#checklist`** completa: taula lunar detallada, tasques
+    organitzades per categoria amb **checkboxes persistents via localStorage**,
+    dates clau a Osona i prompt Open WebUI amb **botó "Copiar"**.
+  - Hash routing ampliat: `#checklist` carrega la pàgina completa.
+  - Persistència del marcatge entre sessions (cada tasca té clau
+    `checklist-YYYY-MM-titol`).
+
+- **`site/checklist-data.json`** — dades estructurades del mes actual, generat
+  automàticament per `build.py` cada vegada que es regenera el lloc.
+
+- **`site/build.py`** — ampliat:
+  - Importa `hort-checklist.py` dinàmicament.
+  - Genera el JSON del mes actual i l'incrusta al template.
+  - Passa el JSON com a placeholder `__CHECKLIST__` a `template.html`.
+
+- **`site/template.html`** — ampliat:
+  - CSS nou per a ginys mensils, taules lunars, llistes de tasques amb
+    checkboxes, quadre de prompt estil terminal.
+  - Funcions `renderChecklist()` i `isChecklistHash()` al router.
+  - Persistència dels checkboxes via localStorage.
+  - Botó de copiar prompt al porta-retalls.
+
+- **`HORT-CHECKLIST.md`** — guia completa d'ús de l'eina, exemples de CLI,
+  com afegir tasques i com funciona l'algorisme lunar.
+
+### Modificat
+- `site/build.py` — afegit `HORT-CHECKLIST.md` a `INFRASTRUCTURE_FILES`
+  perquè no aparegui com a categoria "Altres".
+
+### Com usar-ho
+```bash
+# Veure la checklist d'aquest mes
+python hort-checklist.py
+
+# Generar el fitxer del mes vinent a plans-mensuals/
+python hort-checklist.py --date 2026-07 --write
+
+# Prompt per Open WebUI (enganxar com a system prompt)
+python hort-checklist.py --prompt
+```
+
 ## [2026-06-16] — Lloc web unificat
 
 ### Afegit
