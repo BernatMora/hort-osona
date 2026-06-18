@@ -27,3 +27,11 @@
 # Converting scripts' temp outputs (keep the scripts)
 convertir_HTML_a_PDF_*.tmp
 *.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Site: build artefacts temporals (no pas l'artefacte final)
+site/extracted.js
