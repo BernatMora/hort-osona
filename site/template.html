@@ -723,6 +723,10 @@
   /* ───── Impressió / PDF ───── */
   @media print {
     .sidebar, .open-checklist, .copy-btn, .quadern-actions, .quadern-form, .cat-grid { display: none !important; }
+    .cal-any-controls button { display: none !important; }
+    .cal-any-controls { background: transparent !important; border: 0 !important; padding: 0 !important; }
+    .cal-any-mes { break-inside: avoid; }
+    .cal-any-day.te-entrada { background: rgba(168,120,62,0.4) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { background: white !important; color: black !important; }
     .checklist-page { padding: 0 !important; max-width: 100% !important; }
     .checklist-page-inner { padding: 10mm !important; max-width: 100% !important; }
@@ -831,6 +835,30 @@
     font-size: 13px;
   }
   .chat-config input { flex: 1; min-width: 200px; font: inherit; padding: 4px 8px; border: 1px solid var(--c-line); border-radius: 4px; background: var(--c-bg); }
+
+  /* ───── Calendari anual ───── */
+  .cal-any-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; padding: 10px 14px; background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); }
+  .cal-any-controls button { background: var(--c-olive); color: var(--c-bg); border: 0; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 500; }
+  .cal-any-controls button:hover { background: var(--c-leaf); }
+  .cal-any-titol { font-family: 'Fraunces', serif; font-size: 20px; color: var(--c-olive); margin: 0 12px; }
+  .cal-any-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cal-any-mes { background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); padding: 10px; }
+  .cal-any-mes h3 { font-family: 'Fraunces', serif; color: var(--c-olive); margin: 0 0 8px; font-size: 14px; text-align: center; }
+  .cal-any-cap { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; font-size: 9px; color: var(--c-ink-2); text-align: center; margin-bottom: 4px; }
+  .cal-any-cap span { padding: 2px 0; }
+  .cal-any-dies { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+  .cal-any-day { aspect-ratio: 1; min-height: 28px; padding: 2px 3px; font-size: 10px; background: var(--c-bg-2); border: 1px solid var(--c-line); border-radius: 2px; position: relative; display: flex; flex-direction: column; align-items: center; }
+  .cal-any-day.buit { background: transparent; border: 0; }
+  .cal-any-day.lluna-p { background: linear-gradient(135deg, var(--c-bg-2) 0%, rgba(245,235,216,0.5) 100%); }
+  .cal-any-day.te-entrada { background: rgba(168,120,62,0.18); border-color: var(--c-ochre); font-weight: 600; }
+  .cal-any-day.avui { border: 2px solid var(--c-leaf); font-weight: 700; background: rgba(92,122,58,0.12); }
+  .cal-any-day .d { font-size: 10px; }
+  .cal-any-day .ll { font-size: 9px; line-height: 1; margin-top: 1px; }
+  .cal-any-tasques { margin-top: 8px; padding-top: 6px; border-top: 1px dashed var(--c-line-2); }
+  .cal-any-tasques .tasca { font-size: 10px; line-height: 1.3; color: var(--c-ink); padding: 1px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cal-any-tasques .mes { font-size: 9px; color: var(--c-ink-2); font-style: italic; }
+  @media (max-width: 1100px) { .cal-any-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) { .cal-any-grid { grid-template-columns: 1fr; } }
 
   /* ───── Cerca avançada ───── */
   .adv-search-row { margin: 16px 0; }
@@ -1062,6 +1090,137 @@
     const cat = $('.nav-cat-btn[data-cat="' + CSS.escape(doc.category) + '"]');
     if (cat) cat.parentElement.classList.remove('collapsed');
     window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // ───── Pàgina #calendari-any — vista anual completa amb checklist, lluna i quadern ─────
+  const MESOS_ANY = ['Gener','Febrer','Març','Abril','Maig','Juny','Juliol','Agost','Setembre','Octubre','Novembre','Desembre'];
+  const SIMBOL_LLUNA = ['🌑','🌒','🌓','🌔','🌕','🌖','🌗','🌘'];
+  const FASE_LLUNA_NOM = ['nova','creixent','creixent','creixent','plena','minvant','minvant','minvant'];
+
+  // Calcula fase lunar (0-7) per una data
+  function faseLunar(date) {
+    const d = new Date(date);
+    // Algorisme simple basat en cicles sinòdics de 29.53 dies
+    // Referència: 6 gener 2000 (luna nova)
+    const ref = new Date(2000, 0, 6, 18, 14, 0);
+    const diff = (d - ref) / 86400000;
+    const cycle = 29.530588;
+    const pos = ((diff % cycle) + cycle) % cycle;
+    const fase = Math.floor((pos / cycle) * 8) % 8;
+    return { fase, nom: FASE_LLUNA_NOM[fase], simbol: SIMBOL_LLUNA[fase] };
+  }
+
+  function isCalendariAnyHash() {
+    return /[#&]calendari-any(?:&|$)/.test(location.hash);
+  }
+
+  function renderCalendariAny() {
+    document.title = 'Calendari anual · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      'Calendari anual';
+    const any = parseInt(localStorage.getItem('hort-osona-any') || new Date().getFullYear());
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>🗓️ Calendari anual</h1>' +
+        '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 14px">Vista de tot l\'any: <b>tasques del checklist</b> (verd), <b>fase lunar</b> (esquerra) i <b>entrades del quadern</b> (taronja).</p>' +
+        '<div class="cal-any-controls">' +
+          '<button id="cal-any-prev">← ' + (any-1) + '</button>' +
+          '<span class="cal-any-titol">' + any + '</span>' +
+          '<button id="cal-any-next">' + (any+1) + ' →</button>' +
+          '<button id="cal-any-print" style="margin-left:auto;background:var(--c-ochre)">🖨 Imprimir / PDF</button>' +
+        '</div>' +
+        '<div class="cal-any-grid" id="cal-any-grid"></div>' +
+        '<div class="cal-any-llista" id="cal-any-llista"></div>' +
+      '</div>';
+
+    $('#cal-any-prev').addEventListener('click', () => {
+      localStorage.setItem('hort-osona-any', any - 1);
+      renderCalendariAny();
+    });
+    $('#cal-any-next').addEventListener('click', () => {
+      localStorage.setItem('hort-osona-any', any + 1);
+      renderCalendariAny();
+    });
+    $('#cal-any-print').addEventListener('click', () => window.print());
+
+    // Obtenir dades
+    const entrades = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+    const entradesAny = entrades.filter(e => (e.data || '').startsWith(String(any)));
+    const entradesPerDia = {};
+    for (const e of entradesAny) {
+      entradesPerDia[e.data] = true;
+    }
+    // Tasques del checklist per mes
+    const tasquesPerMes = (typeof CHECKLIST !== 'undefined' && CHECKLIST && CHECKLIST.tasques) || [];
+
+    // Renderitzar 12 mesos
+    const grid = $('#cal-any-grid');
+    let html = '';
+    for (let m = 0; m < 12; m++) {
+      const diesMes = new Date(any, m + 1, 0).getDate();
+      // Primer dia del mes
+      const primerDia = new Date(any, m, 1).getDay(); // 0=diumenge
+      // Ajustar perquè dilluns sigui el primer
+      const ajust = primerDia === 0 ? 6 : primerDia - 1;
+
+      // Tasques del mes
+      const tasquesMes = tasquesPerMes.filter(t => (t.mesos || []).includes(m + 1) || t.mes === m + 1);
+
+      let diesHtml = '';
+      // Espais buits abans del primer dia
+      for (let i = 0; i < ajust; i++) {
+        diesHtml += '<div class="cal-any-day buit"></div>';
+      }
+      // Dies del mes
+      for (let d = 1; d <= diesMes; d++) {
+        const dataISO = any + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+        const dateObj = new Date(any, m, d);
+        const lluna = faseLunar(dateObj);
+        const teEntrada = entradesPerDia[dataISO];
+        const esAvui = dataISO === new Date().toISOString().slice(0, 10);
+        const classes = ['cal-any-day'];
+        if (lluna.fase === 0 || lluna.fase === 4) classes.push('lluna-plena');
+        if (lluna.nom === 'plena') classes.push('lluna-p');
+        if (teEntrada) classes.push('te-entrada');
+        if (esAvui) classes.push('avui');
+        diesHtml += '<div class="' + classes.join(' ') + '" title="' + dataISO + ' · ' + lluna.nom + (teEntrada ? ' · entrada' : '') + '">' +
+          '<span class="d">' + d + '</span>' +
+          (lluna.fase === 0 || lluna.fase === 4 ? '<span class="ll">' + lluna.simbol + '</span>' : '') +
+        '</div>';
+      }
+
+      html += '<div class="cal-any-mes">' +
+        '<h3>' + MESOS_ANY[m] + '</h3>' +
+        '<div class="cal-any-cap"><span>dl</span><span>dt</span><span>dc</span><span>dj</span><span>dv</span><span>ds</span><span>dg</span></div>' +
+        '<div class="cal-any-dies">' + diesHtml + '</div>' +
+        (tasquesMes.length ?
+          '<div class="cal-any-tasques">' + tasquesMes.slice(0, 4).map(t =>
+            '<div class="tasca" title="' + escapeHtml(t.desc || t.titol) + '">• ' + escapeHtml(t.titol) + '</div>'
+          ).join('') + (tasquesMes.length > 4 ? '<div class="mes">+' + (tasquesMes.length - 4) + ' més</div>' : '') + '</div>'
+        : '') +
+      '</div>';
+    }
+    grid.innerHTML = html;
+
+    // Llista de tasques de l'any agrupades per mes
+    const llista = $('#cal-any-llista');
+    let llistaHtml = '<h2 style="margin-top:30px">📋 Resum de tasques de ' + any + '</h2>';
+    for (let m = 0; m < 12; m++) {
+      const tasquesMes = tasquesPerMes.filter(t => (t.mesos || []).includes(m + 1) || t.mes === m + 1);
+      if (tasquesMes.length === 0) continue;
+      llistaHtml += '<h3 style="color:var(--c-olive);margin:14px 0 6px">' + MESOS_ANY[m] + ' (' + tasquesMes.length + ')</h3>' +
+        '<ul style="margin:0;padding-left:20px">' +
+        tasquesMes.map(t =>
+          '<li style="margin:3px 0"><b>' + escapeHtml(t.titol) + '</b>' +
+          (t.desc ? ' <span style="color:var(--c-ink-2);font-size:13px">— ' + escapeHtml(t.desc) + '</span>' : '') +
+          '</li>'
+        ).join('') + '</ul>';
+    }
+    llista.innerHTML = llistaHtml;
   }
 
   function renderWelcome() {
@@ -2764,6 +2923,7 @@
     if (isSensorsHash()) { renderSensors(); return; }
     if (isAssistentHash()) { renderAssistent(); return; }
     if (isCercaAvancadaHash()) { renderCercaAvancada(); return; }
+    if (isCalendariAnyHash()) { renderCalendariAny(); return; }
     if (isCalendariHash()) { renderCalendariQuadern(); return; }
     renderWelcome();
   }
