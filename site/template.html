@@ -366,6 +366,21 @@
     border-bottom: 0;
   }
   .open-checklist:hover { background: var(--c-olive); color: var(--c-bg); }
+  .meteo-widget {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    font-size: 13px;
+    color: var(--c-ink-2);
+  }
+  .meteo-widget .meteo-temp { font-size: 22px; color: var(--c-olive); font-weight: 600; font-family: 'Fraunces', serif; }
+  .meteo-widget .meteo-cond { color: var(--c-ink); }
+  .meteo-widget .meteo-lloc { font-size: 11.5px; color: var(--c-ink-2); margin-top: 4px; }
+  .meteo-forecast { display: flex; gap: 6px; margin-top: 8px; font-size: 11.5px; }
+  .meteo-day { flex: 1; text-align: center; padding: 4px 2px; background: var(--c-bg-2); border-radius: 3px; }
+  .meteo-day .em { font-size: 16px; display: block; }
 
   /* ───── Pàgina completa de checklist ───── */
   .checklist-page { max-width: var(--reading-max); margin: 0 auto; padding: 36px 32px 96px; }
@@ -433,7 +448,157 @@
     font: inherit; font-size: 13px; cursor: pointer;
   }
   .copy-btn:hover { background: var(--c-olive); }
+
+  /* ───── Quadern d'observació ───── */
+  .quadern-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .quadern-form label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--c-ink-2); }
+  .quadern-form input, .quadern-form textarea, .quadern-form select {
+    font: inherit; font-size: 14px;
+    padding: 7px 10px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-2);
+    border-radius: 4px;
+    color: var(--c-ink);
+  }
+  .quadern-form input:focus, .quadern-form textarea:focus, .quadern-form select:focus {
+    outline: none; border-color: var(--c-leaf);
+    box-shadow: 0 0 0 3px rgba(92,122,58,0.15);
+  }
+  .quadern-form textarea { min-height: 70px; resize: vertical; font-family: inherit; }
+  .quadern-form .full { grid-column: 1 / -1; }
+  .quadern-entries { margin-top: 24px; }
+  .quadern-entry {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-left: 3px solid var(--c-leaf);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 12px 16px;
+    margin: 8px 0;
+    position: relative;
+  }
+  .quadern-entry .data { font-size: 12px; color: var(--c-ink-2); margin-bottom: 4px; font-family: 'JetBrains Mono', monospace; }
+  .quadern-entry .meteo { font-size: 13.5px; color: var(--c-olive); margin-bottom: 4px; }
+  .quadern-entry .notes { color: var(--c-ink); line-height: 1.5; white-space: pre-wrap; }
+  .quadern-entry .del {
+    position: absolute; top: 8px; right: 10px;
+    background: transparent; border: 0; color: var(--c-ink-2);
+    cursor: pointer; font-size: 16px; padding: 2px 6px;
+  }
+  .quadern-entry .del:hover { color: var(--c-red); }
+  .quadern-actions { margin: 18px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+  .quadern-empty { text-align: center; color: var(--c-ink-2); padding: 30px; font-style: italic; }
+
+  /* ───── Calculadora de rotacions ───── */
+  .rotacions-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; margin: 16px 0;
+  }
+  .rot-parcela {
+    background: var(--c-paper);
+    border: 2px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 12px;
+    min-height: 110px;
+    transition: border-color .15s;
+  }
+  .rot-parcela.tocado { border-color: var(--c-red); }
+  .rot-parcela.ok { border-color: var(--c-leaf); }
+  .rot-parcela h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--c-olive);
+    margin: 0 0 6px;
+    font-size: 15px;
+  }
+  .rot-parcela label { display: block; font-size: 12px; color: var(--c-ink-2); margin-top: 6px; }
+  .rot-parcela select, .rot-parcela input {
+    width: 100%;
+    font: inherit; font-size: 13px;
+    padding: 4px 6px;
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: 3px;
+    color: var(--c-ink);
+    margin-top: 2px;
+  }
+  .rot-parcela .suggeriment {
+    font-size: 11.5px;
+    color: var(--c-leaf);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+  .rot-parcela .alerta {
+    font-size: 11.5px;
+    color: var(--c-red);
+    margin-top: 4px;
+  }
+  .rot-config {
+    display: flex; gap: 14px; align-items: end; flex-wrap: wrap;
+    background: var(--c-bg-2); padding: 12px 16px; border-radius: var(--radius);
+    margin-bottom: 16px;
+  }
+  .rot-config label { font-size: 13px; color: var(--c-ink-2); }
+  .rot-config input { width: 60px; }
+  .familia-color { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+  /* ───── Calculadora de dates ───── */
+  .dates-perfil {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  .dates-perfil h3 { font-family: 'Fraunces', serif; color: var(--c-olive); margin: 0 0 10px; font-size: 17px; }
+  .dates-perfil-row { display: flex; gap: 14px; align-items: end; flex-wrap: wrap; }
+  .dates-perfil label { font-size: 13px; color: var(--c-ink-2); display: flex; flex-direction: column; gap: 4px; }
+  .dates-perfil input, .dates-perfil select {
+    font: inherit; font-size: 14px;
+    padding: 6px 10px;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line-2);
+    border-radius: 4px;
+    color: var(--c-ink);
+  }
+  .dates-perfil select { min-width: 220px; }
+  .cultiu-row {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 10px; padding: 8px 12px;
+    border-bottom: 1px solid var(--c-line);
+    align-items: center;
+    font-size: 13.5px;
+  }
+  .cultiu-row.head { background: var(--c-bg-2); font-weight: 600; color: var(--c-olive); font-family: 'Fraunces', serif; }
+  .cultiu-row:last-child { border-bottom: 0; }
+  .cultiu-row .nom { font-weight: 500; }
+  .cultiu-row .dies { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--c-mud); }
+  .cultiu-row .finestra { color: var(--c-leaf); font-weight: 500; }
+  .cultiu-row.alerta { background: rgba(140,58,26,0.06); }
+  .cultiu-row.alerta .finestra { color: var(--c-red); }
+  .dates-extra { font-size: 12.5px; color: var(--c-ink-2); margin-top: 12px; line-height: 1.5; }
+
+  /* ───── Estadístiques ───── */
+  .stats-bar { display: flex; align-items: flex-end; gap: 6px; height: 140px; padding: 10px 0; border-bottom: 1px solid var(--c-line); }
+  .stats-mes { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .stats-mes .barra { width: 100%; background: var(--c-leaf); border-radius: 3px 3px 0 0; min-height: 2px; transition: height .3s; }
+  .stats-mes .pct { font-size: 10.5px; color: var(--c-ink-2); font-family: 'JetBrains Mono', monospace; }
+  .stats-mes .nom { font-size: 11px; color: var(--c-ink-2); text-transform: uppercase; }
+  .stats-cat-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+  .stats-cat-nom { width: 130px; font-size: 13px; color: var(--c-ink); }
+  .stats-cat-barra { flex: 1; height: 14px; background: var(--c-bg-2); border-radius: 3px; overflow: hidden; }
+  .stats-cat-emplenat { height: 100%; background: linear-gradient(to right, var(--c-leaf), var(--c-ochre)); border-radius: 3px; }
+  .stats-cat-pct { width: 50px; text-align: right; font-size: 12.5px; color: var(--c-ink-2); font-family: 'JetBrains Mono', monospace; }
+  .stats-resum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .stats-resum-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+  }
+  .stats-resum-card .gran { font-family: 'Fraunces', serif; font-size: 32px; color: var(--c-olive); font-weight: 600; line-height: 1; }
+  .stats-resum-card .lbl { font-size: 11.5px; color: var(--c-ink-2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
   @media (max-width: 820px) {
+    .quadern-form { grid-template-columns: 1fr; }
     .month-widget { grid-template-columns: 1fr; }
   }
 
@@ -514,6 +679,18 @@
   }
   function isChecklistHash() {
     return /[#&]checklist(?:&|$)/.test(location.hash);
+  }
+  function isQuadernHash() {
+    return /[#&]quadern(?:&|$)/.test(location.hash);
+  }
+  function isRotacionsHash() {
+    return /[#&]rotacions(?:&|$)/.test(location.hash);
+  }
+  function isDatesHash() {
+    return /[#&]dates(?:&|$)/.test(location.hash);
+  }
+  function isStatsHash() {
+    return /[#&]stats(?:&|$)/.test(location.hash);
   }
   function writeHash(id) {
     const newHash = '#doc=' + encodeURIComponent(id);
@@ -613,6 +790,7 @@
               '<strong>' + escapeHtml(top.titol) + '</strong>' +
               '<small>' + escapeHtml(top.desc) + '</small>' +
             '</div>' +
+            '<div id="meteo-actual"></div>' +
           '</div>' +
           '<div class="month-card">' +
             '<h3>🌙 Calendari lunar</h3>' +
@@ -633,6 +811,23 @@
           '<div class="stat"><div class="stat-n">' + TOTAL + '</div><div class="stat-l">Documents</div></div>' +
           '<div class="stat"><div class="stat-n">' + SIDEBAR.length + '</div><div class="stat-l">Categories</div></div>' +
           '<div class="stat"><div class="stat-n">2026</div><div class="stat-l">Temporada</div></div>' +
+        '</div>' +
+        '<div class="cat-grid">' +
+          '<a class="cat-card" href="#checklist" data-cat="Checklist">' +
+            '<span class="em">📅</span><span class="nm">Checklist del mes</span><span class="ct">amb lluna</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#quadern" data-cat="Quadern">' +
+            '<span class="em">📓</span><span class="nm">Quadern d\'observació</span><span class="ct">digital</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#rotacions" data-cat="Rotacions">' +
+            '<span class="em">🔄</span><span class="nm">Calculadora de rotacions</span><span class="ct">per parcel·la</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#dates" data-cat="Dates">' +
+            '<span class="em">📅</span><span class="nm">Calculadora de dates</span><span class="ct">trasplantament</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#stats" data-cat="Estadístiques">' +
+            '<span class="em">📊</span><span class="nm">Estadístiques</span><span class="ct">assoliment</span>' +
+          '</a>' +
         '</div>' +
         '<div class="cat-grid" id="cat-grid"></div>' +
       '</div>';
@@ -656,6 +851,733 @@
       });
       grid.appendChild(a);
     });
+    // Carrega meteorologia en background
+    setTimeout(() => { loadMeteo(); }, 100);
+  }
+
+  // Famílies botàniques principals amb colors
+  const FAMILIES = {
+    'solanacia':  { nom: 'Solanàcies',    cultius: 'Tomàquet, pebrot, albergínia, patata',  color: '#C0392B' },
+    'cucurbitacia': { nom: 'Cucurbitàcies', cultius: 'Carbassa, carabassó, cogombre, meló', color: '#E67E22' },
+    'brassicacia': { nom: 'Brassicàcies',  cultius: 'Col, coliflor, bròquil, rave, nap',    color: '#8E44AD' },
+    'liliacia':   { nom: 'Liliàcies',     cultius: 'Ceba, all, porro, espàrrec',           color: '#D4A017' },
+    'fabacia':    { nom: 'Lleguminoses',  cultius: 'Fava, pèsol, mongeta, cigró, llentia', color: '#5C7A3A' },
+    'asteracia':  { nom: 'Asteràcies',    cultius: 'Enciam, escarola, carxofa, gira-sol',  color: '#3498DB' },
+    'apiacia':    { nom: 'Apiàcies',      cultius: 'Pastanaga, api, julivert, rave',       color: '#16A085' },
+    'quinoa':     { nom: 'Quenopodiàcies', cultius: 'Bleda, espinac, remolatxa',           color: '#7F8C8D' },
+    'poacia':     { nom: 'Poàcies',       cultius: 'Blat de moro, blat, civada, ordi',     color: '#B7950B' },
+    'aromatiques': { nom: 'Aromàtiques',  cultius: 'Romaní, sàlvia, farigola, orenga, menta', color: '#27AE60' },
+    'adob_verd':  { nom: 'Adob verd',     cultius: 'Civada+veça, pèsol farratger, facèlia', color: '#229954' },
+    'repous':     { nom: 'Repòs / compost', cultius: 'Descans, compost, encobriment',       color: '#95A5A6' },
+  };
+
+  // Quines famílies poden anar després de quines (rotació permesa)
+  // Regla bàsica: NO repetir la mateixa família, i els lleguminoses van bé
+  // després de qualsevol perquè fixen nitrogen
+  function familiaOK(novaFamilia, familiesAnteriors) {
+    if (!novaFamilia) return { ok: true, motiu: '' };
+    if (novaFamilia === 'repous' || novaFamilia === 'adob_verd') {
+      return { ok: true, motiu: 'Tots els anys' };
+    }
+    if (familiesAnteriors.length === 0) {
+      return { ok: true, motiu: 'Primera plantada' };
+    }
+    if (familiesAnteriors[0] === novaFamilia) {
+      return { ok: false, motiu: '⚠️ Mateixa família que l\'any passat! Riscos: plagues, malalties, esgotament del sòl.' };
+    }
+    if (novaFamilia === 'fabacia') {
+      return { ok: true, motiu: 'Lleguminosa: bona després de qualsevol (fixa nitrogen)' };
+    }
+    return { ok: true, motiu: 'OK' };
+  }
+
+  // Perfils de localitats catalanes amb la data de la darrera glaçada fiable
+  // (basat en dades d'AEMET i experiència pagesa)
+  const PROFILS = {
+    'vic':       { nom: 'Vic / Osona (500-700m)',   ultimagla: '20-04', durada: 5, zona: 'continental' },
+    'manresa':   { nom: 'Manresa / Bages (200-300m)', ultimagla: '10-04', durada: 5, zona: 'prelitoral' },
+    'olot':      { nom: 'Olot / Garrotxa (400-500m)', ultimagla: '25-04', durada: 5, zona: 'continental' },
+    'girona':    { nom: 'Girona (70-150m)',         ultimagla: '01-04', durada: 4, zona: 'prelitoral' },
+    'lleida':    { nom: 'Lleida (150-200m)',         ultimagla: '05-04', durada: 5, zona: 'continental' },
+    'barcelona': { nom: 'Barcelona (0-50m)',         ultimagla: '15-03', durada: 3, zona: 'litoral' },
+    'tarragona': { nom: 'Tarragona (0-50m)',         ultimagla: '20-03', durada: 3, zona: 'litoral' },
+    'tortosa':   { nom: 'Tortosa / Baix Ebre (0-50m)', ultimagla: '15-03', durada: 3, zona: 'litoral' },
+    'puigcerda': { nom: 'Puigcerdà / Cerdanya (1200m)', ultimagla: '15-05', durada: 6, zona: 'muntanya' },
+    'cerdanyola':{ nom: 'Personalitzat',            ultimagla: '15-04', durada: 4, zona: 'manual' },
+  };
+
+  // Base de dades de cultius amb dies des de l'última glaçada per poder trasplantar a l'exterior
+  // Per cada cultiu: dies_des_glaçada_protegir, dies_des_glaçada_exterior, dies_fins_primera_glaçada_tardor
+  const CULTIUS_DATES = [
+    // [nom, dies_minim_protegit, dies_minim_exterior, dies_fins_primera_glaçada_tardor, familia]
+    { nom: 'Tomàquet',     prot: 60, ext: 75, tardor: 240, cat: 'solanacia' },
+    { nom: 'Pebrot',       prot: 70, ext: 90, tardor: 240, cat: 'solanacia' },
+    { nom: 'Albergínia',   prot: 75, ext: 95, tardor: 240, cat: 'solanacia' },
+    { nom: 'Patata',       prot: 30, ext: 45, tardor: 240, cat: 'solanacia' },
+    { nom: 'Carbassa',     prot: 50, ext: 65, tardor: 240, cat: 'cucurbitacia' },
+    { nom: 'Carabassó',    prot: 50, ext: 65, tardor: 240, cat: 'cucurbitacia' },
+    { nom: 'Cogombre',     prot: 60, ext: 75, tardor: 240, cat: 'cucurbitacia' },
+    { nom: 'Meló',         prot: 65, ext: 85, tardor: 230, cat: 'cucurbitacia' },
+    { nom: 'Síndria',      prot: 70, ext: 90, tardor: 230, cat: 'cucurbitacia' },
+    { nom: 'Col (bròquil, coliflor)', prot: 30, ext: 45, tardor: 280, cat: 'brassicacia' },
+    { nom: 'Col Kale',     prot: 30, ext: 45, tardor: 290, cat: 'brassicacia' },
+    { nom: 'Enciam',       prot: 20, ext: 30, tardor: 270, cat: 'asteracia' },
+    { nom: 'Escarola',     prot: 20, ext: 30, tardor: 290, cat: 'asteracia' },
+    { nom: 'Espinac',      prot: 10, ext: 20, tardor: 290, cat: 'quinoa' },
+    { nom: 'Bleda',        prot: 10, ext: 20, tardor: 290, cat: 'quinoa' },
+    { nom: 'Pastanaga',    prot: 0,  ext: 14, tardor: 280, cat: 'apiacia' },
+    { nom: 'Rave',         prot: 0,  ext: 7,  tardor: 280, cat: 'brassicacia' },
+    { nom: 'Ceba',         prot: 14, ext: 28, tardor: 290, cat: 'liliacia' },
+    { nom: 'All',          prot: 0,  ext: 0,  tardor: 350, cat: 'liliacia' },
+    { nom: 'Porro',        prot: 14, ext: 28, tardor: 290, cat: 'liliacia' },
+    { nom: 'Fava',         prot: 0,  ext: 0,  tardor: 300, cat: 'fabacia' },
+    { nom: 'Pèsol',        prot: 0,  ext: 0,  tardor: 290, cat: 'fabacia' },
+    { nom: 'Mongeta',      prot: 50, ext: 65, tardor: 240, cat: 'fabacia' },
+    { nom: 'Api',          prot: 20, ext: 35, tardor: 290, cat: 'apiacia' },
+    { nom: 'Julivert',     prot: 0,  ext: 0,  tardor: 320, cat: 'apiacia' },
+    { nom: 'Blat de moro', prot: 30, ext: 45, tardor: 240, cat: 'poacia' },
+    { nom: 'Gira-sol',     prot: 30, ext: 45, tardor: 240, cat: 'asteracia' },
+  ];
+
+  // Parsejar "DD-MM" com a data de l'any actual
+  function parseDataDM(s) {
+    const [d, m] = s.split('-').map(Number);
+    const any = new Date().getFullYear();
+    return new Date(any, m - 1, d);
+  }
+
+  function formatData(d) {
+    return d.toLocaleDateString('ca-ES', { day: '2-digit', month: 'short' });
+  }
+
+  function renderStats() {
+    document.title = 'Estadístiques · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Estadístiques</span>';
+
+    // Calcular per cada mes de l'any quantes tasques hi ha i quantes s'han marcat
+    const avui = new Date();
+    const any = avui.getFullYear();
+    const MESOS = ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'];
+
+    // Importem el mòdul hort-checklist en runtime? No, podem fer-ho via API:
+    // Simplement, agafem el nombre de tasques per mes des de TASQUES hard-coded
+    // Però com que no tenim accés directe, ho fem servir des de les dades del mes
+    // actual + una estimació conservadora.
+    // La bona aproximació: per a cada mes, mirem el JSON que tenim a checklist-data.json
+    // (només un mes), i per als altres agafem el recompte de tasques marcades.
+
+    // Solució simple: comptem només les tasques marcades al llarg de l'any
+    // llegint totes les claus de localStorage.
+    let totalMarcades = 0;
+    const perMes = Array(12).fill(0);
+    const perCat = { sembra: 0, trasplantament: 0, conreu: 0, tractaments: 0, collita: 0, planificacio: 0, observacio: 0 };
+    const anyActual = avui.getFullYear();
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('checklist-' + anyActual + '-')) {
+        const parts = k.split('-');
+        const mes = parseInt(parts[2]) - 1;
+        if (mes >= 0 && mes < 12) {
+          perMes[mes]++;
+          totalMarcades++;
+        }
+      }
+    }
+
+    // Comptem el total de tasques per mes (l'agafem del fitxer de planificació)
+    // Com que el JSON només té el mes actual, estimem basant-nos en el mòdul Python.
+    // Solució: afegir un recompte estàtic de tasques (des de hort-checklist.py).
+    // Per simplificar, comptem les tasques dels 12 mesos com a iguals (les del fitxer
+    // TASQUES). En realitat oscil·len entre 5-10.
+    const tasquesPerMes = Array(12).fill(0);
+    for (let m = 1; m <= 12; m++) {
+      // Estimació basada en hort-checklist.py: ~5-8 tasques per mes
+      tasquesPerMes[m-1] = m === avui.getMonth() + 1 ? CHECKLIST.tasques.length : 7;
+    }
+
+    // Gràfic de barres per mes
+    let barMes = '';
+    for (let m = 0; m < 12; m++) {
+      const pct = tasquesPerMes[m] > 0 ? Math.round((perMes[m] / tasquesPerMes[m]) * 100) : 0;
+      const alcada = Math.max(2, (pct / 100) * 120);
+      const esMesActual = (m === avui.getMonth());
+      barMes += '<div class="stats-mes">' +
+        '<div class="pct">' + pct + '%</div>' +
+        '<div class="barra" style="height:' + alcada + 'px;' + (esMesActual ? 'background:var(--c-ochre)' : '') + '"></div>' +
+        '<div class="nom">' + MESOS[m] + '</div>' +
+      '</div>';
+    }
+
+    // Resum
+    const totalAnual = tasquesPerMes.reduce((a, b) => a + b, 0);
+    const pctGlobal = totalAnual > 0 ? Math.round((totalMarcades / totalAnual) * 100) : 0;
+    const mesProductiu = perMes.indexOf(Math.max(...perMes));
+    const ratxa = (() => {
+      let max = 0, cur = 0;
+      for (let m = 0; m < 12; m++) {
+        if (perMes[m] > 0) { cur++; max = Math.max(max, cur); } else cur = 0;
+      }
+      return max;
+    })();
+
+    // Distribució per categoria (estimada a partir de les tasques marcades — sense
+    // saber la categoria sense el nom exacte, ho inferim per paraules clau)
+    const CAT_KEYWORDS = {
+      sembra: ['sembr', 'plantar', 'sembra'],
+      trasplantament: ['trasplant', 'repicar'],
+      conreu: ['mulching', 'reg', 'despuntar', 'tutors', 'cobert', 'podar', 'poda', 'fer llavors'],
+      tractaments: ['tuta', 'pugó', 'plaga', 'tracta', 'ortiga', 'consolda', 'purí', 'bacteris'],
+      collita: ['collir', 'collita', 'recol·lectar'],
+      planificacio: ['planificar', 'comprar', 'inventari', 'reparar', 'netejar', 'podar', 'poda'],
+      observacio: ['observ', 'anotar', 'quadern', 'polvoritzar'],
+    };
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith('checklist-')) {
+        const titol = k.split('-').slice(3).join('-').toLowerCase();
+        for (const [cat, kws] of Object.entries(CAT_KEYWORDS)) {
+          if (kws.some(kw => titol.includes(kw))) {
+            perCat[cat]++;
+            break;
+          }
+        }
+      }
+    }
+    let catRows = '';
+    const catNoms = {
+      sembra: '🌱 Sembra', trasplantament: '🌿 Trasplantament', conreu: '🛠️ Conreu',
+      tractaments: '🐞 Tractaments', collita: '🧺 Collita', planificacio: '📋 Planificació', observacio: '👀 Observació',
+    };
+    const catMax = Math.max(1, ...Object.values(perCat));
+    for (const [k, v] of Object.entries(perCat)) {
+      const pct = Math.round((v / catMax) * 100);
+      catRows += '<div class="stats-cat-row">' +
+        '<div class="stats-cat-nom">' + catNoms[k] + '</div>' +
+        '<div class="stats-cat-barra"><div class="stats-cat-emplenat" style="width:' + pct + '%"></div></div>' +
+        '<div class="stats-cat-pct">' + v + '</div>' +
+      '</div>';
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>📊 Estadístiques de l\'hort</h1>' +
+        '<p class="clima-note">Resum de la teva activitat a l\'hort. Les dades provenen dels checkboxes marcats al checklist de cada mes.</p>' +
+        '<div class="stats-resum">' +
+          '<div class="stats-resum-card"><div class="gran">' + totalMarcades + '</div><div class="lbl">Tasques fetes ' + anyActual + '</div></div>' +
+          '<div class="stats-resum-card"><div class="gran">' + pctGlobal + '%</div><div class="lbl">Taxa d\'assoliment</div></div>' +
+          '<div class="stats-resum-card"><div class="gran">' + ratxa + '</div><div class="lbl">Mesos seguits actiu</div></div>' +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>Tasques fetes per mes</h2>' +
+          '<div class="stats-bar">' + barMes + '</div>' +
+          '<p style="color:var(--c-ink-2);font-size:12.5px;margin-top:8px">El mes actual (en ocre) mostra el que has fet fins ara. La taxa d\'assoliment és una estimació (les tasques totals mensuals poden variar).</p>' +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>Per categoria</h2>' +
+          catRows +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>💡 Consells basats en les teves dades</h2>' +
+          '<ul style="color:var(--c-ink-2);line-height:1.7">' +
+            (pctGlobal < 30 ? '<li>⚠️ La teva taxa d\'assoliment és baixa. Mira si tens masses tasques o si n\'hi ha que pots delegar/simplificar.</li>' : '') +
+            (pctGlobal >= 30 && pctGlobal < 60 ? '<li>👍 Taxa correcta. Continua així!</li>' : '') +
+            (pctGlobal >= 60 ? '<li>🎉 Excel·lent taxa d\'assoliment! Ets un pagès digital.</li>' : '') +
+            (ratxa >= 6 ? '<li>🔥 Has estat actiu ' + ratxa + ' mesos seguits. L\'hort ho nota!</li>' : '') +
+            (perCat.conreu > perCat.sembra ? '<li>🛠️ Dediques molt al conreu. No t\'oblidis de la part de planificació!</li>' : '') +
+            '<li>📓 Recorda apuntar-ho tot al <a href="#quadern">quadern d\'observació</a> — és la peça clau per millorar any a any.</li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<button class="copy-btn" id="s-reset" style="background:var(--c-red)">🗑️ Esborrar totes les estadístiques</button>' +
+        '</div>' +
+      '</div>';
+
+    $('#s-reset').addEventListener('click', () => {
+      if (!confirm('Esborrar TOTS els checkboxes marcats? Aquesta acció no es pot desfer.')) return;
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('checklist-')) keys.push(k);
+      }
+      keys.forEach(k => localStorage.removeItem(k));
+      renderStats();
+    });
+  }
+
+  function renderDates() {
+    document.title = 'Calculadora de dates · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Calculadora de dates</span>';
+
+    const config = JSON.parse(localStorage.getItem('dates-config') || '{"perfil": "vic", "ultimaGlaUsuari": null}');
+    const perfil = PROFILS[config.perfil] || PROFILS.vic;
+    const ultimaGla = config.ultimaGlaUsuari
+      ? new Date(config.ultimaGlaUsuari)
+      : parseDataDM(perfil.ultimagla);
+
+    // Llista de perfils
+    let perfilsOpts = '';
+    for (const [k, v] of Object.entries(PROFILS)) {
+      perfilsOpts += '<option value="' + k + '"' + (k === config.perfil ? ' selected' : '') + '>' + v.nom + '</option>';
+    }
+
+    // Calcular finestres
+    const avui = new Date();
+    avui.setHours(0, 0, 0, 0);
+    const any = avui.getFullYear();
+    const iniciAny = new Date(any, 0, 1);
+
+    let rows = '';
+    for (const c of CULTIUS_DATES) {
+      const dataProtegida = new Date(ultimaGla.getTime() + c.prot * 86400000);
+      const dataExterior = new Date(ultimaGla.getTime() + c.ext * 86400000);
+      const dataFinalTardor = new Date(ultimaGla.getTime() + c.tardor * 86400000);
+      const alerta = dataProtegida < iniciAny;
+      const finestraText = alerta
+        ? '⚠️ Massa aviat'
+        : (dataExterior < avui
+            ? 'Ja ha passat — pots plantar'
+            : formatData(dataProtegida) + ' → ' + formatData(dataFinalTardor));
+      rows +=
+        '<div class="cultiu-row' + (alerta ? ' alerta' : '') + '">' +
+          '<span class="nom">' + c.nom + '</span>' +
+          '<span class="dies">protegida: +' + c.prot + 'd</span>' +
+          '<span class="dies">exterior: +' + c.ext + 'd</span>' +
+          '<span class="finestra">' + finestraText + '</span>' +
+        '</div>';
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>📅 Calculadora de dates de trasplantament</h1>' +
+        '<p class="clima-note">Tria el teu perfil de localitat o introdueix la data de la darrera glaçada que has vist aquest any. La calculadora t\'indica quan pots plantar cada cultiu a l\'exterior i quan acaba la temporada.</p>' +
+        '<div class="dates-perfil">' +
+          '<h3>Configuració</h3>' +
+          '<div class="dates-perfil-row">' +
+            '<label>Perfil de localitat' +
+              '<select id="d-perfil">' + perfilsOpts + '</select>' +
+            '</label>' +
+            '<label>Darrera glaçada observada (opcional)' +
+              '<input type="date" id="d-gla" value="' + (config.ultimaGlaUsuari || '') + '">' +
+            '</label>' +
+            '<button class="copy-btn" id="d-calc">🔄 Calcular</button>' +
+          '</div>' +
+          '<div class="dates-extra">' +
+            'Calculat per: <strong>' + perfil.nom + '</strong> · ' +
+            'Darrera glaçada: <strong>' + formatData(ultimaGla) + '</strong> · ' +
+            'Zona: <strong>' + perfil.zona + '</strong>' +
+          '</div>' +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>Cultius i finestres de trasplantament</h2>' +
+          '<div class="cultiu-row head">' +
+            '<span>Cultiu</span><span>Protegida</span><span>Exterior</span><span>Finestra</span>' +
+          '</div>' +
+          rows +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>Com funciona</h2>' +
+          '<p style="color:var(--c-ink-2);line-height:1.6">' +
+            '<strong>Dies des de la darrera glaçada</strong> és el temps mínim que ha de passar perquè el cultiu ' +
+            'sobrevisqui a l\'exterior. Cada espècie té un llindar diferent: els tomàquets necessiten 75 dies ' +
+            'sense glaçada (a 0°C), mentre que lescols i lespastanagues en necessiten menys.</p>' +
+          '<p style="color:var(--c-ink-2);line-height:1.6">' +
+            '<strong>Finestra</strong> és el període entre quan pots plantar a l\'exterior ' +
+            'i quan has de collir-ho tot abans que tornin les primeres gelades de tardor.</p>' +
+          '<p style="color:var(--c-ink-2);line-height:1.6">' +
+            'Si vols afinar amb la teva pròpia observació, introdueix la data de la darrera glaçada ' +
+            'que has vist aquest any. La calculadora s\'ajustarà a la teva realitat.</p>' +
+          '<p style="color:var(--c-ink-2);line-height:1.6">' +
+            '⚠️ <strong>Avís</strong>: aquestes són dates orientatives basades en l\'experiència pagesa. ' +
+            'La meteorologia real any a any pot variar. Sempre mira la previsió de 7 dies ' +
+            'abans de trasplantar res a l\'exterior.</p>' +
+        '</div>' +
+      '</div>';
+
+    $('#d-perfil').addEventListener('change', () => {
+      config.perfil = $('#d-perfil').value;
+      localStorage.setItem('dates-config', JSON.stringify(config));
+      renderDates();
+    });
+
+    $('#d-calc').addEventListener('click', () => {
+      const g = $('#d-gla').value;
+      if (g) {
+        config.ultimaGlaUsuari = g;
+        localStorage.setItem('dates-config', JSON.stringify(config));
+      } else {
+        config.ultimaGlaUsuari = null;
+        localStorage.setItem('dates-config', JSON.stringify(config));
+      }
+      renderDates();
+    });
+  }
+
+  // Coordenades per defecte de Vic, però es poden canviar a localStorage
+  // Open-Meteo: API gratuïta sense clau
+  // https://api.open-meteo.com/v1/forecast?latitude=41.93&longitude=2.25&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe/Madrid&forecast_days=5
+  const METEO_LLOCS = {
+    'vic':       { nom: 'Vic',         lat: 41.93, lon: 2.25 },
+    'manresa':   { nom: 'Manresa',     lat: 41.73, lon: 1.83 },
+    'olot':      { nom: 'Olot',        lat: 42.18, lon: 2.49 },
+    'girona':    { nom: 'Girona',      lat: 41.98, lon: 2.82 },
+    'barcelona': { nom: 'Barcelona',   lat: 41.39, lon: 2.17 },
+    'lleida':    { nom: 'Lleida',      lat: 41.62, lon: 0.62 },
+    'tarragona': { nom: 'Tarragona',   lat: 41.12, lon: 1.24 },
+  };
+  const WMO_CODES = {
+    0: '☀️ Serè',
+    1: '🌤 Poc ennuvolat',
+    2: '⛅ Parcialment ennuvolat',
+    3: '☁️ Cobert',
+    45: '🌫 Boira',
+    48: '🌫 Boira gebradora',
+    51: '🌦 Pluja feble',
+    53: '🌦 Pluja moderada',
+    55: '🌧 Pluja forta',
+    61: '🌦 Pluja',
+    63: '🌧 Pluja',
+    65: '🌧 Pluja forta',
+    71: '🌨 Neu feble',
+    73: '🌨 Neu',
+    75: '❄️ Neu forta',
+    77: '🌨 Grans de neu',
+    80: '🌦 Ruixats',
+    81: '🌧 Ruixats',
+    82: '⛈ Ruixats forts',
+    85: '🌨 Nevada',
+    86: '❄️ Nevada forta',
+    95: '⛈ Tempesta',
+    96: '⛈ Tempesta amb calamarsa',
+    99: '⛈ Tempesta forta amb calamarsa',
+  };
+
+  async function loadMeteo() {
+    const cfg = JSON.parse(localStorage.getItem('meteo-cfg') || '{"lloc": "vic"}');
+    const lloc = METEO_LLOCS[cfg.lloc] || METEO_LLOCS.vic;
+    const el = document.getElementById('meteo-actual');
+    if (!el) return; // no estem a la pàgina d'inici
+    el.innerHTML = '<div class="meteo-widget">⏳ Carregant meteorologia de ' + lloc.nom + '…</div>';
+    try {
+      const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lloc.lat + '&longitude=' + lloc.lon +
+        '&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m' +
+        '&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max' +
+        '&timezone=Europe/Madrid&forecast_days=5';
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const d = await r.json();
+      const c = d.current;
+      const conditio = WMO_CODES[c.weather_code] || '—';
+      // Construir previsió
+      let forecastHtml = '';
+      for (let i = 0; i < 5; i++) {
+        const dia = new Date(d.daily.time[i]);
+        const wmo = d.daily.weather_code[i];
+        const tmax = Math.round(d.daily.temperature_2m_max[i]);
+        const tmin = Math.round(d.daily.temperature_2m_min[i]);
+        const em = WMO_CODES[wmo] ? WMO_CODES[wmo].split(' ')[0] : '☁️';
+        forecastHtml += '<div class="meteo-day"><span class="em">' + em + '</span>' +
+          dia.toLocaleDateString('ca-ES', { weekday: 'short' }) + '<br>' +
+          tmax + '°/' + tmin + '°</div>';
+      }
+      el.innerHTML =
+        '<div class="meteo-widget">' +
+          '<div style="display:flex;align-items:baseline;gap:10px">' +
+            '<span class="meteo-temp">' + Math.round(c.temperature_2m) + '°C</span>' +
+            '<span class="meteo-cond">' + conditio + '</span>' +
+          '</div>' +
+          '<div class="meteo-lloc">📍 ' + lloc.nom + ' · Humitat: ' + c.relative_humidity_2m + '% · Vent: ' + Math.round(c.wind_speed_10m) + ' km/h</div>' +
+          '<div class="meteo-forecast">' + forecastHtml + '</div>' +
+          '<div style="margin-top:8px"><select id="meteo-lloc" style="font-size:11px;padding:2px 6px;border-radius:3px;border:1px solid var(--c-line)">' +
+            Object.entries(METEO_LLOCS).map(([k, v]) =>
+              '<option value="' + k + '"' + (k === cfg.lloc ? ' selected' : '') + '>' + v.nom + '</option>'
+            ).join('') +
+          '</select></div>' +
+        '</div>';
+      // Handler canvi de lloc
+      const sel = document.getElementById('meteo-lloc');
+      if (sel) {
+        sel.addEventListener('change', () => {
+          cfg.lloc = sel.value;
+          localStorage.setItem('meteo-cfg', JSON.stringify(cfg));
+          loadMeteo();
+        });
+      }
+    } catch (e) {
+      el.innerHTML = '<div class="meteo-widget">⚠️ No s\'ha pogut carregar la meteorologia (' + e.message + ')</div>';
+    }
+  }
+
+  function renderRotacions() {
+    document.title = 'Calculadora de rotacions · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Calculadora de rotacions</span>';
+
+    // Config per defecte: 4 files × 5 columnes (20 m² com el teu hort)
+    const config = JSON.parse(localStorage.getItem('rot-config') || '{"files": 4, "cols": 5}');
+    const parceles = JSON.parse(localStorage.getItem('rot-parceles') || '[]');
+
+    // Si no n'hi ha, inicialitzar-les buides
+    const total = config.files * config.cols;
+    while (parceles.length < total) {
+      parceles.push({ fila: Math.floor(parceles.length / config.cols), col: (parceles.length % config.cols), familia: '' });
+    }
+    while (parceles.length > total) parceles.pop();
+
+    // Llistat de famílies per al select
+    let familiesOpts = '<option value="">— Sense plantar / adob verd —</option>';
+    for (const [k, v] of Object.entries(FAMILIES)) {
+      familiesOpts += '<option value="' + k + '">' + v.nom + '</option>';
+    }
+
+    // Construeix graella
+    let gridHtml = '';
+    for (let i = 0; i < parceles.length; i++) {
+      const p = parceles[i];
+      const nom = String.fromCharCode(65 + p.fila) + (p.col + 1); // A1, A2, B1, etc.
+      const sug = familiaOK(p.familia, [p.familia]);
+      const familiaInfo = FAMILIES[p.familia];
+      const suggeriment = p.familia ? (sug.ok
+        ? '<div class="suggeriment">✓ ' + sug.motiu + '</div>'
+        : '<div class="alerta">' + sug.motiu + '</div>') : '';
+      gridHtml +=
+        '<div class="rot-parcela ' + (p.familia ? (sug.ok ? 'ok' : 'tocat') : '') + '">' +
+          '<h4>' + nom + '</h4>' +
+          '<label>Cultiu anterior' +
+            '<select data-i="' + i + '" data-field="familia">' +
+              familiesOpts.replace('value="' + p.familia + '"', 'value="' + p.familia + '" selected') +
+            '</select>' +
+          '</label>' +
+          (familiaInfo
+            ? '<div style="margin-top:6px"><span class="familia-color" style="background:' + familiaInfo.color + '"></span><small style="font-size:11px;color:var(--c-ink-2)">' + familiaInfo.cultius + '</small></div>'
+            : '') +
+          suggeriment +
+        '</div>';
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>🔄 Calculadora de rotacions</h1>' +
+        '<p class="clima-note">Marca què vas plantar l\'any passat a cada parcel·la. La calculadora et suggereix què plantar-hi enguany respectant la rotació de 4-6 anys. Les dades es desen al navegador.</p>' +
+        '<div class="rot-config">' +
+          '<label>Files <input type="number" id="r-files" min="1" max="8" value="' + config.files + '"></label>' +
+          '<label>Columnes <input type="number" id="r-cols" min="1" max="10" value="' + config.cols + '"></label>' +
+          '<span style="color:var(--c-ink-2);font-size:13px">' + total + ' parcel·les en total</span>' +
+          '<button class="copy-btn" id="r-apply">🔄 Redibuixar graella</button>' +
+          '<button class="copy-btn" id="r-clear" style="background:var(--c-red)">🗑️ Reset</button>' +
+        '</div>' +
+        '<div class="rotacions-grid">' + gridHtml + '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>📚 Guia ràpida de rotació</h2>' +
+          '<p style="color:var(--c-ink-2);font-size:14px;line-height:1.5">' +
+            'La rotació de cultius és <strong>imprescindible</strong> en horticultura ecològica. ' +
+            'No repetir la mateixa família al mateix lloc durant 4-6 anys evita:' +
+          '</p>' +
+          '<ul style="color:var(--c-ink-2);line-height:1.6">' +
+            '<li>🐞 Acumulació de plagues específiques (Tuta, mosca de la pastanaga…)</li>' +
+            '<li>🦠 Malalties del sòl (verticillium, fusarium, hernia de la col)</li>' +
+            '<li>🌱 Esgotament de nutrients específics</li>' +
+            '<li>🌿 Al·lelopatia (toxines que excreten algunes plantes)</li>' +
+          '</ul>' +
+          '<p style="color:var(--c-ink-2);font-size:14px"><strong>Esquema clàssic de 4 anys</strong>: ' +
+            '1) <span class="familia-color" style="background:#C0392B"></span>Fruita/Arrel → ' +
+            '2) <span class="familia-color" style="background:#8E44AD"></span>Cols/Brassiques → ' +
+            '3) <span class="familia-color" style="background:#5C7A3A"></span>Lleguminoses → ' +
+            '4) <span class="familia-color" style="background:#D4A017"></span>Arrels/Bulbs + descans</p>' +
+          '<p style="color:var(--c-ink-2);font-size:13px;margin-top:12px">Més info: ' +
+            '<a href="#doc=02-associacions-rotacions.md">02-associacions-rotacions.md</a> · ' +
+            '<a href="#doc=guia-avancada-osona.md">guia-avancada-osona.md</a>' +
+          '</p>' +
+        '</div>' +
+      '</div>';
+
+    // Handlers
+    $$('.rot-parcela select').forEach(sel => {
+      sel.addEventListener('change', () => {
+        const i = parseInt(sel.dataset.i);
+        parceles[i].familia = sel.value;
+        localStorage.setItem('rot-parceles', JSON.stringify(parceles));
+        renderRotacions();
+      });
+    });
+
+    $('#r-apply').addEventListener('click', () => {
+      const files = parseInt($('#r-files').value) || 4;
+      const cols = parseInt($('#r-cols').value) || 5;
+      localStorage.setItem('rot-config', JSON.stringify({ files, cols }));
+      // Reorganitzar parcel·les existents
+      const old = parceles.slice();
+      parceles.length = 0;
+      for (let i = 0; i < files * cols; i++) {
+        if (old[i]) {
+          old[i].fila = Math.floor(i / cols);
+          old[i].col = i % cols;
+          parceles.push(old[i]);
+        } else {
+          parceles.push({ fila: Math.floor(i / cols), col: i % cols, familia: '' });
+        }
+      }
+      localStorage.setItem('rot-parceles', JSON.stringify(parceles));
+      renderRotacions();
+    });
+
+    $('#r-clear').addEventListener('click', () => {
+      if (confirm('Esborrar totes les dades de rotacions?')) {
+        localStorage.removeItem('rot-parceles');
+        localStorage.removeItem('rot-config');
+        renderRotacions();
+      }
+    });
+  }
+
+  function renderQuadern() {
+    document.title = 'Quadern d\'observació · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Quadern d\'observació</span>';
+
+    const avui = new Date().toISOString().slice(0, 10);
+    const entries = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+
+    let entriesHtml = '';
+    if (entries.length === 0) {
+      entriesHtml = '<div class="quadern-empty">Encara no hi ha cap entrada. Comença afegint-ne una a dalt.</div>';
+    } else {
+      // Ordenar de més recent a més antic
+      const sorted = entries.slice().sort((a, b) => b.data.localeCompare(a.data));
+      for (const e of sorted) {
+        const meteo = [];
+        if (e.tmax) meteo.push('🌡️ ' + e.tmax + '°/' + e.tmin + '°');
+        if (e.pluja) meteo.push('🌧️ ' + e.pluja + 'mm');
+        if (e.sol) meteo.push('☀️ ' + e.sol + ' dies sol');
+        if (e.gelada) meteo.push('❄️ gelada');
+        const meteoStr = meteo.length ? meteo.join(' · ') : '—';
+        entriesHtml +=
+          '<div class="quadern-entry">' +
+            '<button class="del" data-del="' + e.id + '" title="Esborrar">×</button>' +
+            '<div class="data">' + e.data + (e.cultiu ? ' · ' + escapeHtml(e.cultiu) : '') + '</div>' +
+            '<div class="meteo">' + meteoStr + '</div>' +
+            '<div class="notes">' + escapeHtml(e.notes || '') + '</div>' +
+          '</div>';
+      }
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>📓 Quadern d\'observació</h1>' +
+        '<p class="clima-note">Anota cada setmana el que observes a l\'hort. ' +
+        'Les dades es desen al navegador (localStorage) i pots exportar-les a Markdown per incorporar-les al projecte.</p>' +
+        '<div class="checklist-section">' +
+          '<h2>Nova entrada</h2>' +
+          '<div class="quadern-form">' +
+            '<label>Data <input type="date" id="q-data" value="' + avui + '"></label>' +
+            '<label>Cultiu (opcional) <input type="text" id="q-cultiu" placeholder="Ex: tomaqueres, mongetes…"></label>' +
+            '<label>Temp. màx (°C) <input type="number" id="q-tmax" step="0.1"></label>' +
+            '<label>Temp. mín (°C) <input type="number" id="q-tmin" step="0.1"></label>' +
+            '<label>Pluja (mm) <input type="number" id="q-pluja" step="0.1"></label>' +
+            '<label>Dies de sol <input type="number" id="q-sol" min="0" max="7"></label>' +
+            '<label class="full" style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="q-gelada"> Hi ha hagut gelada aquesta setmana</label>' +
+            '<label class="full">Notes / observacions / accions <textarea id="q-notes" placeholder="Ex: primera flor de tomàquet, Tuta activa, reg abundant, etc."></textarea></label>' +
+          '</div>' +
+          '<div class="quadern-actions">' +
+            '<button class="copy-btn" id="q-add">💾 Afegir entrada</button>' +
+            '<button class="copy-btn" id="q-export" style="background:var(--c-ochre)">📥 Exportar a Markdown</button>' +
+            '<button class="copy-btn" id="q-clear" style="background:var(--c-red)">🗑️ Esborrar tot</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="checklist-section">' +
+          '<h2>Entrades (<span id="q-count">' + entries.length + '</span>)</h2>' +
+          '<div class="quadern-entries" id="q-list">' + entriesHtml + '</div>' +
+        '</div>' +
+      '</div>';
+
+    // Handlers
+    $('#q-add').addEventListener('click', () => {
+      const data = $('#q-data').value;
+      const cultiu = $('#q-cultiu').value.trim();
+      const tmax = $('#q-tmax').value;
+      const tmin = $('#q-tmin').value;
+      const pluja = $('#q-pluja').value;
+      const sol = $('#q-sol').value;
+      const gelada = $('#q-gelada').checked;
+      const notes = $('#q-notes').value.trim();
+      if (!data) { alert('Cal una data'); return; }
+      if (!notes && !tmax && !pluja) { alert('Afegeix almenys una nota o una dada meteorològica'); return; }
+      const entry = {
+        id: Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+        data, cultiu, tmax, tmin, pluja, sol, gelada, notes,
+        ts: new Date().toISOString()
+      };
+      const all = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+      all.push(entry);
+      localStorage.setItem('quadern-entries', JSON.stringify(all));
+      renderQuadern(); // re-render
+    });
+
+    $('#q-export').addEventListener('click', () => {
+      const all = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+      if (!all.length) { alert('No hi ha entrades per exportar'); return; }
+      const md = ['# Quadern d\'observació — Hort Osona', '', '_Exportat el ' + new Date().toISOString().slice(0, 10) + '_', ''];
+      const sorted = all.slice().sort((a, b) => a.data.localeCompare(b.data));
+      let currentMonth = '';
+      for (const e of sorted) {
+        const mes = e.data.slice(0, 7);
+        if (mes !== currentMonth) {
+          md.push('## ' + mes, '');
+          currentMonth = mes;
+        }
+        md.push('### ' + e.data + (e.cultiu ? ' — ' + e.cultiu : ''));
+        const meteo = [];
+        if (e.tmax) meteo.push('Temp: ' + e.tmax + '°/' + e.tmin + '°');
+        if (e.pluja) meteo.push('Pluja: ' + e.pluja + 'mm');
+        if (e.sol) meteo.push('Sol: ' + e.sol + ' dies');
+        if (e.gelada) meteo.push('⚠️ Gelada');
+        if (meteo.length) md.push('*' + meteo.join(' · ') + '*');
+        if (e.notes) md.push('', e.notes);
+        md.push('');
+      }
+      const blob = new Blob([md.join('\n')], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'quadern-' + new Date().toISOString().slice(0, 10) + '.md';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    $('#q-clear').addEventListener('click', () => {
+      if (confirm('Segur que vols esborrar totes les entrades? Aquesta acció no es pot desfer.')) {
+        localStorage.removeItem('quadern-entries');
+        renderQuadern();
+      }
+    });
+
+    // Esborrar individualment
+    $$('.quadern-entry .del').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!confirm('Esborrar aquesta entrada?')) return;
+        const id = btn.dataset.del;
+        const all = JSON.parse(localStorage.getItem('quadern-entries') || '[]').filter(e => e.id !== id);
+        localStorage.setItem('quadern-entries', JSON.stringify(all));
+        renderQuadern();
+      });
+    });
   }
 
   function renderChecklist() {
@@ -666,6 +1588,11 @@
       '<a href="#" data-home>🌱 Hort Osona</a>' +
       '<span class="sep">›</span>' +
       '<span>Checklist ' + escapeHtml(mesCapital) + ' ' + CHECKLIST.year + '</span>';
+
+    // Fusionar tasques personalitzades (localStorage) amb les del JSON
+    const custom = JSON.parse(localStorage.getItem('checklist-custom') || '[]');
+    const customForMonth = custom.filter(t => !t.mesos || t.mesos.includes(CHECKLIST.month));
+    const allTasques = CHECKLIST.tasques.concat(customForMonth);
 
     // Construeix el calendari lunar com a taula
     let lunarRows = '';
@@ -679,7 +1606,7 @@
 
     // Tasques agrupades per categoria
     const perCat = {};
-    for (const t of CHECKLIST.tasques) {
+    for (const t of allTasques) {
       (perCat[t.cat] = perCat[t.cat] || []).push(t);
     }
     const ordreCat = [
@@ -747,12 +1674,92 @@
         taskSections +
         datesHtml +
         '<div class="checklist-section">' +
+          '<h2>✏️ Afegir tasca personal</h2>' +
+          '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 8px">Afegeix tasques específiques del teu hort. Es desen al navegador (localStorage) i apareixen a la llista d\'aquest mes.</p>' +
+          '<div class="quadern-form">' +
+            '<label class="full">Títol <input type="text" id="c-titol" placeholder="Ex: Comprar planter de cols"></label>' +
+            '<label class="full">Descripció <textarea id="c-desc" placeholder="Ex: A L\'Era, demà al matí"></textarea></label>' +
+            '<label>Categoria ' +
+              '<select id="c-cat">' +
+                '<option value="conreu">🛠️ Conreu</option>' +
+                '<option value="sembra">🌱 Sembra</option>' +
+                '<option value="trasplantament">🌿 Trasplantament</option>' +
+                '<option value="tractaments">🐞 Tractaments</option>' +
+                '<option value="collita">🧺 Collita</option>' +
+                '<option value="planificacio">📋 Planificació</option>' +
+                '<option value="observacio">👀 Observació</option>' +
+              '</select>' +
+            '</label>' +
+            '<label>Prioritat (1-5) <input type="number" id="c-prio" min="1" max="5" value="3"></label>' +
+            '<label class="full" style="flex-direction:row;align-items:center;gap:12px">S\'aplica al mes: ' +
+              '<label style="flex-direction:row;align-items:center;gap:4px"><input type="checkbox" id="c-tots" checked> Tots els mesos</label>' +
+              '<span style="font-size:12px">(desmarca per triar mesos específics)</span>' +
+            '</label>' +
+            '<div id="c-mesos" class="full" style="display:none;gap:6px;flex-wrap:wrap">' +
+              ['Gener','Febrer','Març','Abril','Maig','Juny','Juliol','Agost','Setembre','Octubre','Novembre','Desembre'].map((m, i) =>
+                '<label style="flex-direction:row;align-items:center;gap:4px;background:var(--c-bg-2);padding:4px 8px;border-radius:4px"><input type="checkbox" value="' + (i+1) + '"> ' + m + '</label>'
+              ).join('') +
+            '</div>' +
+          '</div>' +
+          '<div class="quadern-actions">' +
+            '<button class="copy-btn" id="c-add">💾 Afegir tasca</button>' +
+            '<button class="copy-btn" id="c-show" style="background:var(--c-ink-2)">📋 Veure totes les meves (<span id="c-count">' + custom.length + '</span>)</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="checklist-section">' +
           '<h2>🤖 Prompt per Open WebUI</h2>' +
           '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 8px">Copia aquest prompt i enganxa\'l com a system prompt a Open WebUI per tenir el context complet del mes.</p>' +
           '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
           '<pre class="prompt-box" id="prompt-box">' + escapeHtml(promptText) + '</pre>' +
         '</div>' +
       '</div>';
+
+    // Handlers per a tasques personalitzades
+    const $tots = $('#c-tots');
+    const $mesos = $('#c-mesos');
+    if ($tots && $mesos) {
+      $tots.addEventListener('change', () => {
+        $mesos.style.display = $tots.checked ? 'none' : 'flex';
+      });
+    }
+    const btnAdd = $('#c-add');
+    if (btnAdd) {
+      btnAdd.addEventListener('click', () => {
+        const titol = $('#c-titol').value.trim();
+        const desc = $('#c-desc').value.trim();
+        if (!titol) { alert('Cal un títol'); return; }
+        const cat = $('#c-cat').value;
+        const prio = parseInt($('#c-prio').value) || 3;
+        const totes = $tots.checked;
+        let mesos = null;
+        if (!totes) {
+          mesos = $$('#c-mesos input:checked').map(cb => parseInt(cb.value));
+          if (!mesos.length) { alert('Selecciona almenys un mes o marca "Tots els mesos"'); return; }
+        }
+        const all = JSON.parse(localStorage.getItem('checklist-custom') || '[]');
+        all.push({ titol, cat, prio, desc, mesos, id: Date.now() + '-' + Math.random().toString(36).slice(2, 7) });
+        localStorage.setItem('checklist-custom', JSON.stringify(all));
+        alert('✅ Tasca afegida: ' + titol);
+        renderChecklist();
+      });
+    }
+    const btnShow = $('#c-show');
+    if (btnShow) {
+      btnShow.addEventListener('click', () => {
+        const all = JSON.parse(localStorage.getItem('checklist-custom') || '[]');
+        if (!all.length) { alert('No tens tasques personalitzades'); return; }
+        let txt = 'Les teves tasques personalitzades (' + all.length + '):\n\n';
+        for (const t of all) {
+          const p = t.prio >= 5 ? '🔴' : (t.prio >= 4 ? '🟠' : '🟡');
+          const mesos = t.mesos ? t.mesos.join(', ') : 'tots';
+          txt += p + ' [' + t.cat + '] ' + t.titol + ' (mesos: ' + mesos + ')\n';
+          if (t.desc) txt += '   ' + t.desc + '\n';
+          txt += '\n';
+        }
+        txt += '\n---\nVols esborrar-les totes? Tanca això i prem "Esborrar" dins de "Veure totes les meves".';
+        alert(txt);
+      });
+    }
 
     // Handler per copiar
     const btn = $('#copy-prompt');
@@ -889,6 +1896,10 @@
       return;
     }
     if (isChecklistHash()) { renderChecklist(); return; }
+    if (isQuadernHash()) { renderQuadern(); return; }
+    if (isRotacionsHash()) { renderRotacions(); return; }
+    if (isDatesHash()) { renderDates(); return; }
+    if (isStatsHash()) { renderStats(); return; }
     renderWelcome();
   }
 

@@ -1,15 +1,15 @@
 {
   "year": 2026,
-  "month": 6,
-  "mes_ca": "juny",
+  "month": 7,
+  "mes_ca": "juliol",
   "comarca": "Osona",
-  "clima_nota": "Temperatures suaus. Ideal per trasplantar cultius d'estiu.\n🔥 **Calor forta** entre 1 de juliol i 31 d'agost. Reg de matinera o vespre, mulching obligatori.",
-  "data_generacio": "2026-06-18",
+  "clima_nota": "🔥 **Calor forta** entre 1 de juliol i 31 d'agost. Reg de matinera o vespre, mulching obligatori.\nPic de calor i sequera. **Mulching 5-10 cm** indispensable.",
+  "data_generacio": "2026-07-03",
   "setmanes": [
     {
       "n": 1,
-      "inici": "2026-06-01",
-      "fi": "2026-06-07",
+      "inici": "2026-06-29",
+      "fi": "2026-07-05",
       "fase": {
         "nom": "minvant",
         "etiqueta": "Quart minvant",
@@ -19,8 +19,8 @@
     },
     {
       "n": 2,
-      "inici": "2026-06-08",
-      "fi": "2026-06-14",
+      "inici": "2026-07-06",
+      "fi": "2026-07-12",
       "fase": {
         "nom": "nova",
         "etiqueta": "Lluna nova",
@@ -30,8 +30,8 @@
     },
     {
       "n": 3,
-      "inici": "2026-06-15",
-      "fi": "2026-06-21",
+      "inici": "2026-07-13",
+      "fi": "2026-07-19",
       "fase": {
         "nom": "creixent",
         "etiqueta": "Quart creixent",
@@ -41,100 +41,87 @@
     },
     {
       "n": 4,
-      "inici": "2026-06-22",
-      "fi": "2026-06-28",
+      "inici": "2026-07-20",
+      "fi": "2026-07-26",
+      "fase": {
+        "nom": "creixent",
+        "etiqueta": "Quart creixent",
+        "emoji": "🌔",
+        "desc": "Sembra i trasplantar parts aèries (tomàquet, pebrot, enciam, cols)."
+      }
+    },
+    {
+      "n": 5,
+      "inici": "2026-07-27",
+      "fi": "2026-08-02",
       "fase": {
         "nom": "plena",
         "etiqueta": "Lluna plena",
         "emoji": "🌕",
         "desc": "Màxima activitat a sobre, bona per collir fruits i trasplantar."
       }
-    },
-    {
-      "n": 5,
-      "inici": "2026-06-29",
-      "fi": "2026-07-05",
-      "fase": {
-        "nom": "minvant",
-        "etiqueta": "Quart minvant",
-        "emoji": "🌗",
-        "desc": "Sembra i treballar arrels i bulbs (pastanaga, rave, ceba, all), poda, segar adob verd."
-      }
     }
   ],
   "tasques": [
     {
       "mesos": [
-        6
+        7
       ],
       "cat": "conreu",
       "prio": 5,
-      "titol": "Mulching a tot l'hort (URGENT)",
-      "desc": "5-10 cm de palla, gespa seca o fulles. Estalvia fins a 200-300 L/setmana."
+      "titol": "Reg diari (matinera o vespre)",
+      "desc": "A Osona, juliol és el mes més sec. No regar al migdia."
     },
     {
       "mesos": [
-        6
-      ],
-      "cat": "conreu",
-      "prio": 5,
-      "titol": "Reg abundant al matí o vespre",
-      "desc": "A les 19:00 amb difusor suau. 320 L/setmana de mitjana al juny."
-    },
-    {
-      "mesos": [
-        6
-      ],
-      "cat": "tractaments",
-      "prio": 4,
-      "titol": "Controlar Tuta, pugó, mosca blanca",
-      "desc": "Inspecció setmanal. Trampes cromàtiques, Bacillus, sabó potàssic."
-    },
-    {
-      "mesos": [
-        6
+        7
       ],
       "cat": "conreu",
       "prio": 4,
-      "titol": "Despuntar tomaqueres (deixar 4-5 rams)",
-      "desc": "Llevar brots axil·lars per concentrar energia. Tallar fulles baixes malaltes."
+      "titol": "Mulching abundant",
+      "desc": "Reforçar palla. Control de l'evaporació."
     },
     {
       "mesos": [
-        6
+        7
       ],
       "cat": "collita",
-      "prio": 3,
-      "titol": "Collir: pèsols, faves, maduixes, cebes tendres, enciams",
-      "desc": "Primers fruits: maduixes, cireres. Màxima activitat."
+      "prio": 4,
+      "titol": "Màxima collita d'estiu",
+      "desc": "Tomàquets, pebrots, carabassons, mongeta tendra, albergínies."
     },
     {
       "mesos": [
-        6
+        7
       ],
       "cat": "tractaments",
-      "prio": 3,
-      "titol": "Començar purí de consolda",
-      "desc": "Rica en potassi. Per a tomaqueres i fruiters. Alternar amb ortiga."
+      "prio": 4,
+      "titol": "Polvoritzar sofre si oïdi",
+      "desc": "Símptomes: pols blanca a fulles de carabassó, cogombre, vinya."
     },
     {
       "mesos": [
-        6
+        7
       ],
       "cat": "sembra",
       "prio": 3,
-      "titol": "Sembrar pastanagues de tardor i cols d'hivern",
-      "desc": "Cols d'hivern, bròquil tardà, escaroles."
+      "titol": "Sembrar cols d'hivern, escaroles, pastanagues",
+      "desc": "Cols d'hivern, kale, bròquil tardà, escaroles, pastanagues de tardor."
+    },
+    {
+      "mesos": [
+        7
+      ],
+      "cat": "conreu",
+      "prio": 3,
+      "titol": "Tallar adobs verds estivals abans de granar",
+      "desc": "Si tens facelia, mostassa, etc. Tallar i deixar en superfície."
     }
   ],
   "dates_clau": [
     {
-      "etiqueta": "Revetlla de Sant Joan",
-      "data": "23-24 de juny — el·lícies, solstici d'estiu"
-    },
-    {
-      "etiqueta": "Inici calor forta",
-      "data": "1 de juliol entrant — reforçar reg"
+      "etiqueta": "Pic de calor",
+      "data": "tot juliol — reg diari, mulching, ombra si cal"
     }
   ]
 }

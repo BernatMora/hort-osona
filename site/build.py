@@ -44,6 +44,7 @@ INFRASTRUCTURE_FILES = {
     "README.md",
     "CHANGELOG.md",
     "HORT-CHECKLIST.md",
+    "SETUP-GITHUB-PAGES.md",
     "SETUP-WINDOWS.md",
     "SETUP-SITE.md",
     "SYNC-SCRIPT.md",

@@ -120,18 +120,28 @@ def setmanes_del_mes(year: int, month: int) -> List[Tuple[date, date]]:
     dilluns_inicial = primer - timedelta(days=primer.weekday())
     setmanes = []
     cursor = dilluns_inicial
-    while cursor.month <= month or cursor.month == 1 and month == 12:
-        # Si la setmana toca el mes, l'afegim
+    # Limitem a un any + 1 mes per seguretat (cobreix desembre→gener)
+    max_iteracions = 60  # ~14 mesos de marge
+    i = 0
+    while i < max_iteracions:
         inici_setmana = cursor
         fi_setmana = cursor + timedelta(days=6)
-        # Comprova si hi ha solapament amb el mes
-        if inici_setmana.month == month or fi_setmana.month == month or \
-           (inici_setmana < primer.replace(day=1) and fi_setmana >= primer):
+        # Comprova si la setmana toca el mes buscat
+        # Cas 1: setmana totalment dins del mes
+        if inici_setmana.month == month and inici_setmana.year == year:
+            setmanes.append((inici_setmana, fi_setmana))
+        # Cas 2: setmana parcialment dins (setmana anterior al primer dia)
+        elif inici_setmana < primer and fi_setmana >= primer and fi_setmana.month == month:
+            setmanes.append((inici_setmana, fi_setmana))
+        # Cas 3: setmana que creua el canvi de mes (ex: 29 juny → 5 juliol)
+        elif inici_setmana.month == month and inici_setmana.year == year:
             setmanes.append((inici_setmana, fi_setmana))
         cursor += timedelta(days=7)
-        if cursor.year > year + 1:
+        i += 1
+        # Sortim si el cursor ja és 2 setmanes més enllà del final del mes
+        ultim_dia = (primer.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+        if cursor > ultim_dia + timedelta(days=14):
             break
-    # També afegim la setmana anterior si comença el dia 1-7 del mes
     return setmanes
 
 
