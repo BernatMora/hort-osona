@@ -631,7 +631,7 @@
     </div>
     <ul class="nav" id="nav"></ul>
     <div class="sidebar-foot">
-      Generat el 2026-07-03 08:24<br>
+      Generat el 2026-07-03 08:25<br>
       76 documents · 9 categories<br>
       <a href="build.py" style="border-bottom:0;color:var(--c-ochre)">build.py</a> regenera el lloc
     </div>
@@ -1580,6 +1580,62 @@
     });
   }
 
+  // Genera un .ics per a totes les tasques del mes actual
+  function generarICS() {
+    if (!CHECKLIST) return;
+    const tasques = (typeof allTasques !== 'undefined') ? allTasques : CHECKLIST.tasques;
+    if (!tasques || !tasques.length) {
+      alert('No hi ha tasques per exportar');
+      return;
+    }
+    const MESOS = ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny',
+                   'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'];
+    const year = CHECKLIST.year;
+    const month = CHECKLIST.month;
+    const setmanes = CHECKLIST.setmanes || [];
+    // Per a cada tasca, assignem una setmana i generem un esdeveniment
+    let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Hort Osona//Checklist//CAT\r\n';
+    ics += 'CALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n';
+    ics += 'X-WR-CALNAME:Hort Osona — ' + (MESOS[month-1] || '') + ' ' + year + '\r\n';
+    ics += 'X-WR-CALDESC:Checklist mensual de l\'hort d\'Osona\r\n';
+    let i = 0;
+    for (const t of tasques) {
+      // Assignar a una setmana del mes (distribució rotativa)
+      const sw = setmanes[i % setmanes.length] || setmanes[0];
+      if (!sw) continue;
+      const dataYMD = sw.inici || sw[0];
+      const dataFinYMD = sw.fi || sw[1];
+      const dtstart = dataYMD.replace(/-/g, '') + 'T090000';
+      const dtend = dataFinYMD.replace(/-/g, '') + 'T180000';
+      const dtstamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+      const uid = 'hortosona-' + year + month + '-' + i + '@hortosona.local';
+      const p = t.prio >= 5 ? 'URGENT' : (t.prio >= 4 ? 'IMPORTANT' : '');
+      const summary = (p ? '[' + p + '] ' : '') + t.titol;
+      ics += 'BEGIN:VEVENT\r\n';
+      ics += 'UID:' + uid + '\r\n';
+      ics += 'DTSTAMP:' + dtstamp + '\r\n';
+      ics += 'DTSTART;VALUE=DATE:' + dataYMD.replace(/-/g, '') + '\r\n';
+      ics += 'DTEND;VALUE=DATE:' + (new Date(new Date(dataFinYMD).getTime() + 86400000)).toISOString().slice(0, 10).replace(/-/g, '') + '\r\n';
+      ics += 'SUMMARY:' + summary.replace(/[\\,;]/g, '\\$&') + '\r\n';
+      ics += 'DESCRIPTION:' + (t.desc || '').replace(/[\\,;]/g, '\\$&') + '\r\n';
+      ics += 'CATEGORIES:Hort,' + (t.cat || 'conreu') + '\r\n';
+      ics += 'PRIORITY:' + (10 - (t.prio || 3) * 2) + '\r\n';  // ICS: 1-9, 1=high
+      ics += 'END:VEVENT\r\n';
+      i++;
+    }
+    ics += 'END:VCALENDAR\r\n';
+    // Descarregar
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'hort-osona-' + year + '-' + String(month).padStart(2, '0') + '.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   function renderChecklist() {
     if (!CHECKLIST) { renderWelcome(); return; }
     const mesCapital = CHECKLIST.mes_ca.charAt(0).toUpperCase() + CHECKLIST.mes_ca.slice(1);
@@ -1709,7 +1765,10 @@
         '<div class="checklist-section">' +
           '<h2>🤖 Prompt per Open WebUI</h2>' +
           '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 8px">Copia aquest prompt i enganxa\'l com a system prompt a Open WebUI per tenir el context complet del mes.</p>' +
-          '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
+          '<div class="quadern-actions">' +
+            '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
+            '<button class="copy-btn" id="export-ics" style="background:var(--c-leaf)">📅 Exportar a calendari (.ics)</button>' +
+          '</div>' +
           '<pre class="prompt-box" id="prompt-box">' + escapeHtml(promptText) + '</pre>' +
         '</div>' +
       '</div>';
@@ -1758,6 +1817,14 @@
         }
         txt += '\n---\nVols esborrar-les totes? Tanca això i prem "Esborrar" dins de "Veure totes les meves".';
         alert(txt);
+      });
+    }
+
+    // Handler per exportar ICS
+    const btnIcs = $('#export-ics');
+    if (btnIcs) {
+      btnIcs.addEventListener('click', () => {
+        generarICS();
       });
     }
 
