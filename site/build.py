@@ -49,6 +49,10 @@ INFRASTRUCTURE_FILES = {
     "SETUP-SITE.md",
     "SYNC-SCRIPT.md",
     "VSCODE-GUIDE.md",
+    "hort-osona-iot/README.md",
+    "hort-osona-iot/INICI-RAPID.md",
+    "hort-osona-iot/PEDIDO-AMAZON.md",
+    "hort-osona-iot/LLISTA-CURTA.md",
 }
 
 # Fitxers generats pel build a l'arrel (per a GitHub Pages) — no són contingut
