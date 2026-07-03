@@ -53,6 +53,9 @@
 
   .app { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
 
+  /* Evitar scroll horitzontal a tot arreu */
+  html, body { overflow-x: hidden; max-width: 100%; }
+
   .sidebar {
     background: var(--c-bg-2);
     border-right: 1px solid var(--c-line);
@@ -668,12 +671,40 @@
   }
 
   @media (max-width: 820px) {
-    .app { grid-template-columns: 1fr; }
-    .sidebar { position: relative; height: auto; max-height: 60vh; }
-    .reader, .welcome { padding: 20px 14px; }
-    .reader-inner { padding: 22px 18px; }
+    .app {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      max-height: 50vh;
+      overflow-y: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--c-line);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .sidebar .nav { max-height: none; overflow: visible; }
+    .reader, .welcome { padding: 18px 14px; }
+    .reader-inner { padding: 18px 14px; }
     .stats { grid-template-columns: 1fr; }
-    .cat-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr; gap: 8px; }
+    .cat-card { padding: 10px 12px; }
+    .topbar { padding: 10px 14px; }
+    .month-card { padding: 12px 14px; }
+    h1 { font-size: 26px !important; }
+    .cal-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .stat-n { font-size: 22px; }
+    .cal-mes { padding: 8px 10px; }
+    .cal-mes h3 { font-size: 12px; }
+    .welcome { padding: 12px 10px; }
+    .checklist-page { padding: 18px 10px 60px; }
+    .quadern-form { gap: 10px; }
+    .copy-btn { padding: 8px 12px; font-size: 13px; }
   }
 
   @media print {
