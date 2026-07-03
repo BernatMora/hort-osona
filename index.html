@@ -118,6 +118,36 @@
     color: var(--c-bg);
   }
 
+  /* Botó flotant d'accès directe a l'assistent IA */
+  .fab-assistent {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--c-olive);
+    color: var(--c-bg);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 28px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s;
+  }
+  .fab-assistent:hover {
+    background: var(--c-leaf);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  }
+  .fab-assistent .fab-label { font-size: 14px; }
+  @media (max-width: 480px) {
+    .fab-assistent .fab-label { display: none; }
+    .fab-assistent { padding: 14px 16px; font-size: 22px; }
+  }
+
   .sidebar {
     background: var(--c-bg-2);
     border-right: 1px solid var(--c-line);
@@ -722,7 +752,7 @@
 
   /* ───── Impressió / PDF ───── */
   @media print {
-    .sidebar, .open-checklist, .copy-btn, .quadern-actions, .quadern-form, .cat-grid { display: none !important; }
+    .sidebar, .open-checklist, .copy-btn, .quadern-actions, .quadern-form, .cat-grid, .theme-picker, .fab-assistent { display: none !important; }
     .cal-any-controls button { display: none !important; }
     .cal-any-controls { background: transparent !important; border: 0 !important; padding: 0 !important; }
     .cal-any-mes { break-inside: avoid; }
@@ -953,7 +983,7 @@
     </div>
     <ul class="nav" id="nav"></ul>
     <div class="sidebar-foot">
-      Generat el 2026-07-03 12:48<br>
+      Generat el 2026-07-03 13:07<br>
       76 documents · 9 categories<br>
       <a href="build.py" style="border-bottom:0;color:var(--c-ochre)">build.py</a> regenera el lloc
     </div>
@@ -3330,6 +3360,28 @@
     const btn = e.target.closest('button[data-theme]');
     if (btn) aplicarTema(btn.dataset.theme);
   });
+
+  // Botó flotant d'accès directe a l'assistent IA
+  const assistentFab = document.createElement('a');
+  assistentFab.className = 'fab-assistent';
+  assistentFab.href = '#assistent';
+  assistentFab.title = 'Assistent IA';
+  assistentFab.setAttribute('aria-label', 'Obrir assistent IA');
+  assistentFab.innerHTML = '🤖<span class="fab-label">Xat</span>';
+  document.body.appendChild(assistentFab);
+  // Amagar el botó flotant quan ja som a la pàgina de l'assistent
+  function updateFabVisibility() {
+    const fab = document.querySelector('.fab-assistent');
+    if (!fab) return;
+    if (/[#&]assistent(?:[&#]|$)/.test(location.hash)) {
+      fab.style.display = 'none';
+    } else {
+      fab.style.display = '';
+    }
+  }
+  window.addEventListener('hashchange', updateFabVisibility);
+  setTimeout(updateFabVisibility, 0);
+
   // Aplicar tema desat (o automàtic segons mes)
   const temaDesat = localStorage.getItem(THEME_KEY);
   if (temaDesat) {
