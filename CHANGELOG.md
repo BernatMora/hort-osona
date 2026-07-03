@@ -2,6 +2,45 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-07-03] — Sensors IoT + Assistent IA local (RAG + Ollama)
+
+### Sensors IoT — pàgina #sensors
+- Nova pàgina `#sensors` a la PWA que consumeix l'API REST del backend Raspberry (`/api/sensors`, `/api/sensors/{parcela}/history?hours=24`)
+- **Targetes de sensor** amb humitat del sòl, llum, temperatura, conductivitat, bateria
+- **Gràfiques SVG natives** (sense llibreries externes) de les últimes 24h per parcel·la
+- **Alerta visual** quan humitat < 30% (targeta amb borde vermell)
+- **Auto-refresc** cada 60 segons
+- **Configuració URL backend** via localStorage (per defecte `http://hortpi.local:8000`)
+- Hash routing `#sensors` afegit
+
+### Assistent IA local (Ollama + RAG)
+- **`hort-osona-iot/rag.py`** (~8.8 KB): sistema RAG que indexa 147 fitxes locals (76 web + d'altres) i respon amb cites
+- **Tokenitzador** robust: lowercase, sense accents, stopwords, **sinònims** (carbasso→carbassa, tomaca→tomàquet, pulgon→pugó, etc.)
+- **Cerca per paraules clau** amb bonus títol ×3 i exclusió de duplicats
+- **Model per defecte**: `llama3.1` (Ollama 0.31.1 al Mac)
+- **`hort-osona-iot/backend/api_chat.py`** (~2.5 KB): API FastAPI amb `GET /chat/health` i `POST /chat`
+- **Singleton RAG** a FastAPI per evitar recarregar documents a cada petició
+- **CORS obert** per permetre accés des de la PWA allotjada a GitHub Pages
+- **`hort-osona-iot/ollama_test.py`** (~3.2 KB): script de verificació d'Ollama
+
+### Pàgina #assistent (xat UI)
+- Nova pàgina `#assistent` a la PWA amb interfície de xat
+- **8 preguntes suggerides** predefinides
+- **Missatge de benvinguda** amb presentació
+- **Format de xat** (usuari a la dreta, assistent a l'esquerra)
+- **Fonts citades** com a enllaços clicables a les fitxes originals
+- **Configuració URL backend** via localStorage (per defecte `http://localhost:8001`)
+- **Animació de typing** "Pensant..." durant la generació
+- **100% local i privat** — sense núvol
+
+### Tests i validació
+- Ad-hoc verification completa: **34/34 checks passen, 0 fallits**
+- 3 preguntes reals validades end-to-end (carbassa, planter tomàquet, adventícies útils)
+- Temps de resposta RAG: 5-15 segons (variable segons model)
+- 4 fonts citades per pregunta
+- `node --check` JS OK, 16/16 tests unitaris
+- Backend actiu al port 8001, 147 docs indexats
+
 ## [2026-07-03] — PWA, GitHub Pages i millora responsive
 
 ### PWA completa
