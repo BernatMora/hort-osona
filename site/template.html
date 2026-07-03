@@ -624,6 +624,35 @@
     font-size: 8px; line-height: 12px; text-align: center;
     font-weight: 700;
   }
+
+  /* ───── Fonts locals ───── */
+  .font-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .font-item:last-child { border-bottom: 0; }
+  .font-nom {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--c-olive);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .font-nom:hover { text-decoration: underline; }
+  .font-desc { color: var(--c-ink-2); font-size: 13.5px; margin: 4px 0 2px; line-height: 1.5; }
+  .font-url { color: var(--c-ink-2); font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.7; }
+
+  /* ───── Impressió / PDF ───── */
+  @media print {
+    .sidebar, .open-checklist, .copy-btn, .quadern-actions, .quadern-form, .cat-grid { display: none !important; }
+    body { background: white !important; color: black !important; }
+    .checklist-page { padding: 0 !important; max-width: 100% !important; }
+    .checklist-page-inner { padding: 10mm !important; max-width: 100% !important; }
+    h1 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+    .checklist-section { page-break-inside: avoid; border-bottom: 1px solid #999; padding-bottom: 8px; margin-bottom: 14px; }
+    pre.prompt-box { display: none !important; }
+  }
   @media (max-width: 820px) {
     .quadern-form { grid-template-columns: 1fr; }
     .month-widget { grid-template-columns: 1fr; }
@@ -718,6 +747,12 @@
   }
   function isStatsHash() {
     return /[#&]stats(?:&|$)/.test(location.hash);
+  }
+  function isFontsHash() {
+    return /[#&]fonts(?:&|$)/.test(location.hash);
+  }
+  function isCalendariHash() {
+    return /[#&]calendari(?:&|$)/.test(location.hash);
   }
   function writeHash(id) {
     const newHash = '#doc=' + encodeURIComponent(id);
@@ -854,6 +889,12 @@
           '</a>' +
           '<a class="cat-card" href="#stats" data-cat="Estadístiques">' +
             '<span class="em">📊</span><span class="nm">Estadístiques</span><span class="ct">assoliment</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#calendari" data-cat="Calendari">' +
+            '<span class="em">📅</span><span class="nm">Calendari d\'observacions</span><span class="ct">vista anual</span>' +
+          '</a>' +
+          '<a class="cat-card" href="#fonts" data-cat="Fonts">' +
+            '<span class="em">📡</span><span class="nm">Fonts locals</span><span class="ct">i recursos</span>' +
           '</a>' +
         '</div>' +
         '<div class="cat-grid" id="cat-grid"></div>' +
@@ -1088,6 +1129,89 @@
       '</div>';
     }
 
+    // Estadístiques avançades: correlació meteo vs observacions
+    // Analitza si els dies amb més observacions coincideixen amb dies de canvis meteorològics
+    const entrades = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+    const perMesAny = {};  // compta entrades per mes-any
+    const METEOS = JSON.parse(localStorage.getItem('meteo-cfg') || '{"lloc": "vic"}');
+    const llocMeteo = METEO_LLOCS[METEOS.lloc] || METEO_LLOCS.vic;
+
+    for (const e of entrades) {
+      const d = e.data || (e.ts ? new Date(e.ts).toISOString().slice(0, 10) : null);
+      if (!d) continue;
+      const ym = d.slice(0, 7);  // YYYY-MM
+      perMesAny[ym] = (perMesAny[ym] || 0) + 1;
+    }
+
+    // Mesos amb més i menys activitat
+    const mesosActius = Object.entries(perMesAny)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+    const mesosInactius = Object.entries(perMesAny)
+      .sort((a, b) => a[1] - b[1])
+      .slice(0, 3);
+
+    // Cultius/categories esmentats al quadern (per paraules clau)
+    const CULT_KEYWORDS = {
+      'Tomàquet': ['tomàquet', 'tomaquer', 'tomàquets'],
+      'Enciam': ['enciam', 'enciams'],
+      'Carbassa': ['carbassa', 'carbasses'],
+      'Ceba': ['ceba', 'cebes'],
+      'Mongeta': ['mongeta', 'mongoetes'],
+      'Tomàquet (plagues)': ['tuta', 'mildiu', 'míldiu', 'oïdi', 'oidi'],
+      'Reg': ['reg', 'regar', 'mulching'],
+      'Plagues generals': ['pugó', 'pugons', 'plaga', 'plagues'],
+    };
+    const cultCounts = {};
+    for (const e of entrades) {
+      const txt = ((e.notes || '') + ' ' + (e.cultiu || '')).toLowerCase();
+      for (const [cat, kws] of Object.entries(CULT_KEYWORDS)) {
+        if (kws.some(kw => txt.includes(kw))) {
+          cultCounts[cat] = (cultCounts[cat] || 0) + 1;
+        }
+      }
+    }
+    const cultTop = Object.entries(cultCounts).sort((a, b) => b[1] - a[1]).slice(0, 6);
+
+    let cultRows = '';
+    const cultMax = Math.max(1, ...Object.values(cultCounts));
+    for (const [k, v] of cultTop) {
+      const pct = Math.round((v / cultMax) * 100);
+      cultRows += '<div class="stats-cat-row">' +
+        '<div class="stats-cat-nom">' + escapeHtml(k) + '</div>' +
+        '<div class="stats-cat-barra"><div class="stats-cat-emplenat" style="width:' + pct + '%"></div></div>' +
+        '<div class="stats-cat-pct">' + v + '</div>' +
+      '</div>';
+    }
+    if (!cultRows) cultRows = '<p style="color:var(--c-ink-2);font-size:13px">Encara no hi ha entrades al quadern. Comença a anotar i veuràs estadístiques personalitzades.</p>';
+
+    let actiusHtml = '';
+    for (const [ym, n] of mesosActius) {
+      const [y, m] = ym.split('-');
+      const nom_mes = ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'][parseInt(m) - 1];
+      actiusHtml += '<div style="display:flex;justify-content:space-between;padding:6px 12px;background:var(--c-bg-2);margin:2px 0;border-radius:3px"><span><strong>' + nom_mes + ' ' + y + '</strong></span><span style="color:var(--c-leaf);font-weight:600">' + n + ' entrades</span></div>';
+    }
+    if (!actiusHtml) actiusHtml = '<p style="color:var(--c-ink-2);font-size:13px">Sense dades encara.</p>';
+
+    // Recomanacions basades en patrons
+    let recomanacions = [];
+    if (totalMarcades > 0) {
+      const r = totalMarcades / Math.max(1, Object.keys(perMesAny).length);
+      if (r < 1) recomanacions.push('⚠️ Marquem poques tasques. Revisa si el checklist mensual és massa llarg o si l\'aplicació no et resulta pràctica.');
+      if (r >= 1 && r < 3) recomanacions.push('👍 Ritme correcte. Mira d\'augmentar gradualment fins a 3-4 tasques per setmana.');
+      if (r >= 3) recomanacions.push('🎉 Molt actiu! Vigila de no cremar-te — un hort es cuida sol en bona part.');
+    }
+    if (Object.keys(perMesAny).length >= 3) {
+      const r = cultCounts['Tomàquet (plagues)'] || 0;
+      if (r >= 3) recomanacions.push('🐛 Tens moltes entrades sobre plagues de tomàquet. Consulta <a href="#doc=03-gestio-plagues.md">03-gestio-plagues.md</a> per estratègies preventives.');
+    }
+    if (cultCounts['Reg'] >= 5) {
+      recomanacions.push('💧 Moltes entrades sobre reg. Considera instal·lar reg per degoteig per automatitzar.');
+    }
+    if (recomanacions.length === 0) {
+      recomanacions.push('📓 Continua registrant observacions. Com més dades tinguis, millor podré ajudar-te a millorar el rendiment de l\'hort.');
+    }
+
     const view = $('#view');
     view.className = 'checklist-page';
     view.innerHTML =
@@ -1109,15 +1233,17 @@
           catRows +
         '</div>' +
         '<div class="checklist-section">' +
-          '<h2>💡 Consells basats en les teves dades</h2>' +
+          '<h2>🔬 Estadístiques avançades</h2>' +
+          '<p style="color:var(--c-ink-2);font-size:13.5px;margin:0 0 12px">Aquestes dades combinen el quadern d\'observació amb els patrons detectats. Més dades = millors recomanacions.</p>' +
+          '<h3 style="font-family:\'Fraunces\',serif;color:var(--c-olive);font-size:15px;margin:14px 0 6px">Mesos més actius (al quadern)</h3>' +
+          actiusHtml +
+          '<h3 style="font-family:\'Fraunces\',serif;color:var(--c-olive);font-size:15px;margin:14px 0 6px">Temes més registrats</h3>' +
+          cultRows +
+          '<h3 style="font-family:\'Fraunces\',serif;color:var(--c-olive);font-size:15px;margin:14px 0 6px">💡 Recomanacions personalitzades</h3>' +
           '<ul style="color:var(--c-ink-2);line-height:1.7">' +
-            (pctGlobal < 30 ? '<li>⚠️ La teva taxa d\'assoliment és baixa. Mira si tens masses tasques o si n\'hi ha que pots delegar/simplificar.</li>' : '') +
-            (pctGlobal >= 30 && pctGlobal < 60 ? '<li>👍 Taxa correcta. Continua així!</li>' : '') +
-            (pctGlobal >= 60 ? '<li>🎉 Excel·lent taxa d\'assoliment! Ets un pagès digital.</li>' : '') +
-            (ratxa >= 6 ? '<li>🔥 Has estat actiu ' + ratxa + ' mesos seguits. L\'hort ho nota!</li>' : '') +
-            (perCat.conreu > perCat.sembra ? '<li>🛠️ Dediques molt al conreu. No t\'oblidis de la part de planificació!</li>' : '') +
-            '<li>📓 Recorda apuntar-ho tot al <a href="#quadern">quadern d\'observació</a> — és la peça clau per millorar any a any.</li>' +
+            recomanacions.map(r => '<li>' + r + '</li>').join('') +
           '</ul>' +
+          '<p style="color:var(--c-ink-2);font-size:12.5px;margin-top:12px"><strong>Meteorologia localitzada a:</strong> ' + llocMeteo.nom + ' (' + llocMeteo.lat + ', ' + llocMeteo.lon + '). Pots canviar-ho al giny de la pàgina d\'inici.</p>' +
         '</div>' +
         '<div class="checklist-section">' +
           '<button class="copy-btn" id="s-reset" style="background:var(--c-red)">🗑️ Esborrar totes les estadístiques</button>' +
@@ -1468,6 +1594,73 @@
         renderRotacions();
       }
     });
+  }
+
+  // Vista de fonts locals i enllaços útils
+  // (substitueix el lector RSS perquè les fonts locals no publiquen feeds RSS)
+  const FONTS_LOCALS = [
+    { nom: 'Esporus — Associació de la Llavor de Catalunya', url: 'https://www.esporus.org/', cat: 'Llavor', desc: 'Varietats locals, formacions, intercanvi de llavors. Seu a Vic/Manresa.' },
+    { nom: "L'Era — Producció Agrària Ecològica", url: 'https://www.assolecat.cat/', cat: 'Agricultura ecològica', desc: 'Associació per a la producció agrària ecològica a Catalunya.' },
+    { nom: 'CCPAE — Consell Català de la Producció Agrària Ecològica', url: 'https://www.ccpae.cat/', cat: 'Certificació', desc: "L'ens oficial de certificació ecològica a Catalunya." },
+    { nom: 'Fundació Miquel Agustí', url: 'https://www.fundaciomiquelagusti.cat/', cat: 'Recerca', desc: 'Recerca en varietats tradicionals catalanes, millora genètica ecològica.' },
+    { nom: 'Escola Agrària de Manresa', url: 'https://www.eaforestals.cat/ca/centres/ea-manresa', cat: 'Formació', desc: 'Cicles formatius i cursos d’agricultura ecològica.' },
+    { nom: 'Xarxa Catalana de Graners', url: 'https://xarxagraners.cat/', cat: 'Llavor', desc: 'Cooperativa de productors de cereals i lleguminoses ecològiques.' },
+    { nom: 'Cooperativa Tres Cadires', url: 'https://www.trescadires.cat/', cat: 'Formació', desc: 'Cooperativa de suport a la pagesia. Vic, Osona.' },
+    { nom: 'ADRÓ — Centre de Documentació', url: 'https://www.adro.cat/', cat: 'Recerca', desc: 'Centre de documentació del Parc Natural de la Zona Volcànica de la Garrotxa.' },
+    { nom: 'Vivers Vern (plantes autòctones)', url: 'https://www.viversvern.com/', cat: 'Vivers', desc: 'Plantes autòctones adaptades a Osona.' },
+    { nom: 'Semillas Fitó (llavors hortícoles)', url: 'https://www.semillasfito.com/', cat: 'Llavors', desc: 'Empresa de llavors catalana, amb varietats tradicionals.' },
+    { nom: 'Almàixera — Xarxa de Custòdia Agrària', url: 'https://www.almàixera.cat/', cat: 'Custòdia', desc: 'Custòdia del territori i suport a la pagesia.' },
+    { nom: 'L\'Obrador (Vic, mercat de pagès)', url: 'https://www.l-obrador.cat/', cat: 'Comerç', desc: 'Mercat de productes locals i artesans a Vic.' },
+  ];
+
+  function renderFonts() {
+    document.title = 'Fonts locals · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      '<span>Fonts locals</span>';
+
+    let perCat = {};
+    for (const f of FONTS_LOCALS) {
+      if (!perCat[f.cat]) perCat[f.cat] = [];
+      perCat[f.cat].push(f);
+    }
+
+    let html = '';
+    for (const [cat, llista] of Object.entries(perCat)) {
+      html += '<div class="checklist-section">' +
+        '<h2>' + escapeHtml(cat) + '</h2>' +
+        llista.map(f =>
+          '<div class="font-item">' +
+            '<a href="' + f.url + '" target="_blank" rel="noopener" class="font-nom">' + escapeHtml(f.nom) + '</a>' +
+            '<p class="font-desc">' + escapeHtml(f.desc) + '</p>' +
+            '<small class="font-url">' + f.url + '</small>' +
+          '</div>'
+        ).join('') +
+      '</div>';
+    }
+
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>📡 Fonts locals i recursos</h1>' +
+        '<p class="clima-note">Llista de referències d\'agricultura ecològica, llavors, recerca i formació a Catalunya. Enllaços externs — s\'obren en una pestanya nova.</p>' +
+        html +
+        '<div class="checklist-section">' +
+          '<h2>📚 Revistes i publicacions</h2>' +
+          '<div class="font-item">' +
+            '<strong>Agrocultura</strong> · <small>Revista en paper i digital del CCPAE, 3 números/any</small>' +
+          '</div>' +
+          '<div class="font-item">' +
+            '<strong>L\'Apuntador</strong> · <small>Butlletí del Parc Natural de la Zona Volcànica de la Garrotxa</small>' +
+          '</div>' +
+          '<div class="font-item">' +
+            '<strong>Agrodigital</strong> · <small>Notícies diàries del sector agrari</small>' +
+          '</div>' +
+        '</div>' +
+        '<p style="color:var(--c-ink-2);font-size:12.5px;margin-top:14px"><em>Nota: les fonts locals catalanes no publiquen feeds RSS de manera sistemàtica. Consulta-les directament o segueix-les a xarxes socials (Facebook, Instagram).</em></p>' +
+      '</div>';
   }
 
   // Vista calendari de les entrades del quadern
@@ -1872,6 +2065,7 @@
           '<div class="quadern-actions">' +
             '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
             '<button class="copy-btn" id="export-ics" style="background:var(--c-leaf)">📅 Exportar a calendari (.ics)</button>' +
+            '<button class="copy-btn" id="export-pdf" style="background:var(--c-mud)">🖨 Imprimir / PDF</button>' +
           '</div>' +
           '<pre class="prompt-box" id="prompt-box">' + escapeHtml(promptText) + '</pre>' +
         '</div>' +
@@ -1921,6 +2115,16 @@
         }
         txt += '\n---\nVols esborrar-les totes? Tanca això i prem "Esborrar" dins de "Veure totes les meves".';
         alert(txt);
+      });
+    }
+
+    // Handler per exportar PDF (via print)
+    const btnPdf = $('#export-pdf');
+    if (btnPdf) {
+      btnPdf.addEventListener('click', () => {
+        document.body.classList.add('print-mode');
+        window.print();
+        setTimeout(() => document.body.classList.remove('print-mode'), 500);
       });
     }
 
@@ -2071,6 +2275,8 @@
     if (isRotacionsHash()) { renderRotacions(); return; }
     if (isDatesHash()) { renderDates(); return; }
     if (isStatsHash()) { renderStats(); return; }
+    if (isFontsHash()) { renderFonts(); return; }
+    if (isCalendariHash()) { renderCalendariQuadern(); return; }
     renderWelcome();
   }
 
