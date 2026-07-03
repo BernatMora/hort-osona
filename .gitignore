@@ -32,6 +32,11 @@ convertir_HTML_a_PDF_*.tmp
 __pycache__/
 *.pyc
 *.pyo
+hort-osona-iot/venv/
+hort-osona-iot/data/*.db
+hort-osona-iot/data/*.sqlite
+hort-osona-iot/logs/*.log
+hort-osona-iot/.env
 
 # Site: build artefacts temporals (no pas l'artefacte final)
 site/extracted.js
