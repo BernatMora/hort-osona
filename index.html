@@ -831,6 +831,31 @@
     font-size: 13px;
   }
   .chat-config input { flex: 1; min-width: 200px; font: inherit; padding: 4px 8px; border: 1px solid var(--c-line); border-radius: 4px; background: var(--c-bg); }
+
+  /* ───── Cerca avançada ───── */
+  .adv-search-row { margin: 16px 0; }
+  .adv-search-row input { width: 100%; font: inherit; font-size: 15px; padding: 10px 14px; border: 1px solid var(--c-line); border-radius: var(--radius); background: var(--c-bg); }
+  .adv-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); padding: 14px; margin-bottom: 18px; }
+  .adv-filter-group label { display: block; font-size: 12px; color: var(--c-ink-2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .adv-cat-list { display: flex; flex-direction: column; gap: 4px; max-height: 220px; overflow-y: auto; }
+  .adv-cat-item { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; padding: 2px 4px; border-radius: 3px; }
+  .adv-cat-item:hover { background: var(--c-line-2); }
+  .adv-cat-item .ct { color: var(--c-ink-2); font-size: 11px; }
+  .adv-mesos { display: flex; flex-wrap: wrap; gap: 4px; }
+  .adv-mes-item { font-size: 12px; padding: 4px 8px; border: 1px solid var(--c-line); border-radius: 14px; cursor: pointer; background: var(--c-bg); }
+  .adv-mes-item input { margin-right: 4px; }
+  .adv-mes-item:has(input:checked) { background: var(--c-leaf); color: var(--c-bg); border-color: var(--c-leaf); }
+  .adv-results { margin-top: 20px; }
+  .adv-summary { color: var(--c-ink-2); font-size: 14px; margin-bottom: 12px; }
+  .adv-list { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; }
+  .adv-list .nav-item { display: block; padding: 10px 12px; }
+  .adv-meta { font-size: 11px; color: var(--c-ink-2); font-family: 'JetBrains Mono', monospace; }
+  .adv-sum { font-size: 12px; color: var(--c-ink-2); display: block; margin-top: 4px; }
+  .adv-empty { color: var(--c-ink-2); font-style: italic; padding: 30px; text-align: center; }
+  @media (max-width: 820px) {
+    .adv-filters { grid-template-columns: 1fr; }
+    .adv-list { grid-template-columns: 1fr; }
+  }
   @media (max-width: 1100px) {
     .app { grid-template-columns: 250px 1fr; }
   }
@@ -900,7 +925,7 @@
     </div>
     <ul class="nav" id="nav"></ul>
     <div class="sidebar-foot">
-      Generat el 2026-07-03 12:17<br>
+      Generat el 2026-07-03 12:23<br>
       76 documents · 9 categories<br>
       <a href="build.py" style="border-bottom:0;color:var(--c-ochre)">build.py</a> regenera el lloc
     </div>
@@ -2559,6 +2584,133 @@
     view.innerHTML = html;
   }
 
+  // ───── Pàgina #cerca — cercador avançat amb filtres ─────
+  const ADV_FILTERS_KEY = 'hort-osona-adv-filters';
+  const MESOS_CURTS = ['Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'];
+
+  function getAdvFilters() {
+    return JSON.parse(localStorage.getItem(ADV_FILTERS_KEY) || '{}');
+  }
+  function setAdvFilters(f) {
+    localStorage.setItem(ADV_FILTERS_KEY, JSON.stringify(f));
+  }
+
+  function isCercaAvancadaHash() {
+    return /[#&]cerca(?:&|$)/.test(location.hash);
+  }
+
+  function renderCercaAvancada() {
+    document.title = 'Cerca avançada · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      'Cerca avançada';
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner">' +
+        '<h1>🔍 Cerca avançada</h1>' +
+        '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 14px">Combina filtres per trobar ràpidament el que necessites. Els resultats s\'actualitzen en temps real.</p>' +
+        '<div class="adv-search-row">' +
+          '<input type="text" id="adv-q" placeholder="Cerca per text, cultiu, plaga..." />' +
+        '</div>' +
+        '<div class="adv-filters">' +
+          '<div class="adv-filter-group">' +
+            '<label>Categories</label>' +
+            '<div class="adv-cat-list" id="adv-cats">' + SIDEBAR.map(s =>
+              '<label class="adv-cat-item"><input type="checkbox" data-cat="' + escapeHtml(s.name) + '"> ' +
+              '<span>' + s.emoji + ' ' + escapeHtml(s.name) + ' <span class="ct">(' + s.count + ')</span></span></label>'
+            ).join('') + '</div>' +
+          '</div>' +
+          '<div class="adv-filter-group">' +
+            '<label>Època de l\'any (mesos amb tasques)</label>' +
+            '<div class="adv-mesos" id="adv-mesos">' +
+              MESOS_CURTS.map((m, i) =>
+                '<label class="adv-mes-item" data-mes="' + (i+1) + '"><input type="checkbox"> ' + m + '</label>'
+              ).join('') +
+            '</div>' +
+          '</div>' +
+          '<button class="copy-btn" id="adv-clear" style="background:var(--c-ochre);margin-top:10px">🗑️ Netejar tots els filtres</button>' +
+        '</div>' +
+        '<div id="adv-results" class="adv-results"></div>' +
+      '</div>';
+
+    // Restaurar filtres guardats
+    const f = getAdvFilters();
+    if (f.q) { $('#adv-q').value = f.q; }
+    if (f.cats && f.cats.length) {
+      $$('#adv-cats input').forEach(cb => {
+        if (f.cats.includes(cb.dataset.cat)) cb.checked = true;
+      });
+    }
+    if (f.mesos && f.mesos.length) {
+      $$('#adv-mesos input').forEach((cb, i) => {
+        if (f.mesos.includes(i + 1)) cb.checked = true;
+      });
+    }
+
+    function runSearch() {
+      const q = $('#adv-q').value;
+      const cats = $$('#adv-cats input:checked').map(cb => cb.dataset.cat);
+      const meses = $$('#adv-mesos input:checked').map((cb, i) => i + 1);
+      setAdvFilters({ q, cats, meses });
+
+      // Filtrar per text
+      let results = q.trim() ? searchDocs(q) || [] : DOCS.slice();
+
+      // Filtrar per categoria
+      if (cats.length) {
+        results = results.filter(d => cats.includes(d.category));
+      }
+
+      // Filtrar per mes (cerca al text si conté el nom del mes o la Xifra)
+      if (meses.length) {
+        const mesStrs = meses.map(m => MESOS_CURTS[m - 1].toLowerCase());
+        results = results.filter(d => {
+          const text = (d.title + ' ' + (d.summary || '') + ' ' + (d.html || '')).toLowerCase();
+          return meses.some(m => {
+            // Cerca el nom del mes o el numero ('mes X', '/X', 'X mes')
+            return text.includes(MESOS_CURTS[m - 1].toLowerCase()) ||
+                   text.includes('mes ' + m) ||
+                   text.includes('/' + m + '/') ||
+                   text.includes('-' + String(m).padStart(2, '0') + '-');
+          });
+        });
+      }
+
+      const res = $('#adv-results');
+      if (!results.length) {
+        res.innerHTML = '<p class="adv-empty">Cap document coincideix amb els filtres.</p>';
+        return;
+      }
+
+      const tokens = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      res.innerHTML =
+        '<p class="adv-summary"><b>' + results.length + '</b> documents trobats</p>' +
+        '<ul class="nav-items adv-list">' +
+        results.map(d =>
+          '<li><a class="nav-item" href="#doc=' + encodeURIComponent(d.id) + '">' +
+          '<strong>' + (q ? highlightText(d.title, tokens) : escapeHtml(d.title)) + '</strong>' +
+          '<br><span class="adv-meta">' + escapeHtml(d.category) + ' · ' + escapeHtml(d.path) + '</span>' +
+          (d.summary ? '<br><span class="adv-sum">' + (q ? highlightText(d.summary, tokens) : escapeHtml(d.summary)) + '</span>' : '') +
+          '</a></li>'
+        ).join('') + '</ul>';
+    }
+
+    // Handlers
+    const debouncedSearch = debounce(runSearch, 150);
+    $('#adv-q').addEventListener('input', debouncedSearch);
+    $$('#adv-cats input, #adv-mesos input').forEach(cb => cb.addEventListener('change', runSearch));
+    $('#adv-clear').addEventListener('click', () => {
+      $('#adv-q').value = '';
+      $$('#adv-cats input, #adv-mesos input').forEach(cb => cb.checked = false);
+      setAdvFilters({});
+      runSearch();
+    });
+
+    runSearch();
+  }
+
   function renderSidebar() {
     const nav = $('#nav');
     nav.innerHTML = '';
@@ -2611,6 +2763,7 @@
     if (isFontsHash()) { renderFonts(); return; }
     if (isSensorsHash()) { renderSensors(); return; }
     if (isAssistentHash()) { renderAssistent(); return; }
+    if (isCercaAvancadaHash()) { renderCercaAvancada(); return; }
     if (isCalendariHash()) { renderCalendariQuadern(); return; }
     renderWelcome();
   }
