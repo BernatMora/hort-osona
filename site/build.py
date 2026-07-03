@@ -102,6 +102,7 @@ CATEGORIES: List[Tuple[str, str, List[str]]] = [
             "rendiment-hort-guia.md",
             "fruiters-guia-completa.md",
             "adventicies-guia-completa.md",
+            "adventicies-utilitat-guia.md",
             "analisi-sol-guia-completa.md",
             "biologia-sol-curs.md",
             "pollinitzadors-guia-completa.md",
