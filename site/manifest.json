@@ -1,0 +1,60 @@
+{
+  "name": "Hort Osona — Base de coneixement",
+  "short_name": "Hort Osona",
+  "description": "Base de coneixement personal d'hort ecològic a la comarca d'Osona. Funciona offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5EBD8",
+  "theme_color": "#3D4A2A",
+  "lang": "ca",
+  "dir": "ltr",
+  "categories": ["education", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Checklist del mes",
+      "short_name": "Checklist",
+      "description": "Tasques mensuals amb fase lunar",
+      "url": "./index.html#checklist"
+    },
+    {
+      "name": "Quadern d'observació",
+      "short_name": "Quadern",
+      "description": "Anotacions diàries de l'hort",
+      "url": "./index.html#quadern"
+    },
+    {
+      "name": "Calculadora de rotacions",
+      "short_name": "Rotacions",
+      "description": "Planifica les rotacions de cultius",
+      "url": "./index.html#rotacions"
+    },
+    {
+      "name": "Estadístiques",
+      "short_name": "Stats",
+      "description": "Resum de la teva activitat",
+      "url": "./index.html#stats"
+    }
+  ]
+}

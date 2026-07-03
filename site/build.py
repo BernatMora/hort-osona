@@ -327,6 +327,14 @@ def build():
         print(f"⚠️  No s'ha pogut generar la checklist: {e}")
         checklist_data = None
 
+    # 5b) Els fitxers PWA (manifest, service worker, icones) ja estan a site/
+    # i es publiquen directament sense necessitat de copiar.
+    import os
+    pwa_files = ['manifest.json', 'service-worker.js', 'icon.svg', 'icon-192.png', 'icon-512.png']
+    for fname in pwa_files:
+        if (SITE_DIR / fname).exists():
+            print(f'  📦 PWA: {fname} OK')
+
     # 5) Renderitzar HTML
     out = render_html(docs, sidebar, total_docs, generated_at, checklist_data)
     OUT_FILE.write_text(out, encoding="utf-8")

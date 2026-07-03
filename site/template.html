@@ -6,6 +6,15 @@
 <title>Hort Osona · Base de coneixement</title>
 <meta name="description" content="Base de coneixement personal d'hort ecològic, plantes medicinals, bolets i conserves, adaptat a Osona.">
 <meta name="generator" content="site/build.py">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3D4A2A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hort Osona">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -2297,6 +2306,91 @@
 
     window.addEventListener('hashchange', route);
   });
+
+  // ───────────────── PWA: registre del Service Worker ─────────────────
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('[PWA] Service Worker registrat:', reg.scope))
+        .catch(err => console.warn('[PWA] Error registrant SW:', err));
+    });
+  }
+
+  // ───────────────── PWA: prompt d'instal·lació ─────────────────
+  let deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (localStorage.getItem('pwa-banner-dismissed') &&
+        Date.now() - parseInt(localStorage.getItem('pwa-banner-dismissed')) < 7 * 24 * 3600 * 1000) {
+      return;
+    }
+    const banner = document.createElement('div');
+    banner.id = 'pwa-install-banner';
+    banner.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:auto;background:var(--c-olive);color:var(--c-bg);padding:14px 18px;border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:9999;display:flex;align-items:center;gap:12px;font-size:14px;';
+    banner.innerHTML =
+      '<div style="flex:1">' +
+        '<strong>📱 Instal·la l\'app</strong><br>' +
+        '<small>Per accedir des del mòbil, fins i tot sense internet</small>' +
+      '</div>' +
+      '<button id="pwa-install-yes" style="background:var(--c-bg);color:var(--c-olive);border:0;padding:8px 14px;border-radius:4px;cursor:pointer;font-weight:600">Instal·lar</button>' +
+      '<button id="pwa-install-no" style="background:transparent;color:var(--c-bg);border:1px solid var(--c-bg);padding:8px 12px;border-radius:4px;cursor:pointer">Més tard</button>';
+    document.body.appendChild(banner);
+    document.getElementById('pwa-install-yes').addEventListener('click', async () => {
+      banner.remove();
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    });
+    document.getElementById('pwa-install-no').addEventListener('click', () => {
+      banner.remove();
+      localStorage.setItem('pwa-banner-dismissed', String(Date.now()));
+    });
+  });
+
+  window.addEventListener('appinstalled', () => {
+    const b = document.getElementById('pwa-install-banner');
+    if (b) b.remove();
+  });
+
+  // ───────────────── Notificacions ─────────────────
+  async function demanarPermisNotificacions() {
+    if (!('Notification' in window)) return false;
+    if (Notification.permission === 'granted') return true;
+    if (Notification.permission === 'denied') return false;
+    return (await Notification.requestPermission()) === 'granted';
+  }
+  function mostrarNotificacio(titol, cos) {
+    if (Notification.permission !== 'granted') return null;
+    const n = new Notification(titol, { body: cos, icon: 'icon-192.png', badge: 'icon-192.png', lang: 'ca' });
+    setTimeout(() => n.close(), 10000);
+    return n;
+  }
+  function programarNotificacioTasca(titol, desc, data) {
+    const target = new Date(data).getTime();
+    const diff = target - Date.now();
+    if (diff <= 0) return;
+    if (diff > 30 * 24 * 3600 * 1000) {
+      setTimeout(() => programarNotificacioTasca(titol, desc, data), 25 * 24 * 3600 * 1000);
+      return;
+    }
+    setTimeout(() => mostrarNotificacio('🌱 ' + titol, desc), diff);
+  }
+  function comprovarNotificacionsPendents() {
+    const prog = JSON.parse(localStorage.getItem('notif-programades') || '[]');
+    const ara = Date.now();
+    for (const p of prog) {
+      if (p.ts > ara && !p.notified) programarNotificacioTasca(p.titol, p.desc, p.ts);
+    }
+  }
+  setInterval(comprovarNotificacionsPendents, 60000);
+  comprovarNotificacionsPendents();
+
+  window.hortOsona = {
+    demanarPermisNotif: demanarPermisNotificacions,
+    mostrarNotif: mostrarNotificacio,
+    programarNotif: programarNotificacioTasca,
+  };
 })();
 </script>
 </body>
