@@ -2,6 +2,33 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-07-03] — PWA, GitHub Pages i millora responsive
+
+### PWA completa
+- **`site/manifest.json`**: PWA manifest amb nom, 4 dreceres (Checklist, Quadern, Rotacions, Estadístiques), icones 192/512, paleta terra-verd
+- **`site/service-worker.js`**: service worker amb cache-first per assets locals, network-first per Open-Meteo
+- **Icones PWA**: `icon.svg`, `icon-192.png`, `icon-512.png` (verd oliva, planta amb fruit)
+- **Banner d'instal·lació** PWA al navegador (Chrome, Edge) — botons "Instal·lar" i "Més tard" amb memòria de 7 dies
+- **Mode offline**: un cop instal·lada, l'app funciona sense Internet
+- **Notificacions programables**: API Notification + scheduling de tasques
+- **API pública**: `window.hortOsona.demanarPermisNotif()`, `.mostrarNotif()`, `.programarNotif()`
+
+### Reconfiguració per a GitHub Pages
+- El `site/build.py` ara genera `index.html` i tots els fitxers PWA a l'**arrel del repo** (no pas a `site/`)
+- Compatible amb GitHub Pages triant `main` + `/ (root)` (l'única opció que permet la UI actual)
+- Nova constant `GENERATED_AT_ROOT` per excloure fitxers generats de la categorització
+- **Publicat a**: <https://BernatMora.github.io/hort-osona/>
+
+### Fix responsive mòbil
+- `html, body { overflow-x: hidden; max-width: 100% }` — sense scroll horitzontal
+- `@media (max-width: 820px)`: layout vertical amb `grid-template-rows: auto 1fr`
+- **Sidebar sticky** al top quan es fa scroll (max-height 50vh)
+- Nou `@media (max-width: 480px)`: ajustos per a mòbils petits
+
+### Neteja
+- Esborrat `site/index.html` duplicat — ja no cal, es regenera a l'arrel
+- `site/` conté només els **orígens** (build.py, template.html, manifest.json, service-worker.js, icones, font del checklist)
+
 ## [2026-07-03] — Lots 3, 4 i 5: contingut i funcionalitats avançades
 
 ### Afegit (Lot 3 — Contingut)

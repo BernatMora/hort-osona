@@ -56,6 +56,60 @@
   /* Evitar scroll horitzontal a tot arreu */
   html, body { overflow-x: hidden; max-width: 100%; }
 
+  /* ───── Temes (paleta segons estació) ───── */
+  /* Estiu (per defecte) — verd fresc + ocre */
+  :root {
+    --c-bg:     #F5EBD8;
+    --c-olive:  #3D4A2A;
+    --c-ochre:  #A8783E;
+    --c-leaf:   #5C7A3A;
+    --c-mud:    #6B4F2A;
+  }
+  /* Tardor — tons terrosos, carbassa, granat */
+  body[data-theme="tardor"] {
+    --c-bg:     #F0E2C8;
+    --c-olive:  #6B3A1F;
+    --c-ochre:  #B85423;
+    --c-leaf:   #8B6F2A;
+    --c-mud:    #4A2818;
+  }
+  /* Hivern — blau-gris fred + verd pàl·lid */
+  body[data-theme="hivern"] {
+    --c-bg:     #ECEDF0;
+    --c-olive:  #2C3E50;
+    --c-ochre:  #5D8AA8;
+    --c-leaf:   #4A6741;
+    --c-mud:    #34495E;
+  }
+
+  /* Botó de canvi de tema */
+  .theme-picker {
+    position: fixed; top: 14px; right: 14px;
+    z-index: 100;
+    display: flex; gap: 6px;
+    background: var(--c-bg);
+    border: 1px solid var(--c-line);
+    border-radius: 20px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 12px;
+  }
+  .theme-picker button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 14px;
+    color: var(--c-ink-2);
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .theme-picker button:hover { background: var(--c-line-2); }
+  .theme-picker button.active {
+    background: var(--c-olive);
+    color: var(--c-bg);
+  }
+
   .sidebar {
     background: var(--c-bg-2);
     border-right: 1px solid var(--c-line);
@@ -2104,7 +2158,8 @@
           '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 8px">Copia aquest prompt i enganxa\'l com a system prompt a Open WebUI per tenir el context complet del mes.</p>' +
           '<div class="quadern-actions">' +
             '<button class="copy-btn" id="copy-prompt">📋 Copiar prompt</button>' +
-            '<button class="copy-btn" id="export-ics" style="background:var(--c-leaf)">📅 Exportar a calendari (.ics)</button>' +
+            '<button class="copy-btn" id="activar-recordatoris" style="background:var(--c-leaf)">🔔 Activar recordatoris</button>' +
+            '<button class="copy-btn" id="export-ics" style="background:var(--c-ochre)">📅 Exportar a calendari (.ics)</button>' +
             '<button class="copy-btn" id="export-pdf" style="background:var(--c-mud)">🖨 Imprimir / PDF</button>' +
           '</div>' +
           '<pre class="prompt-box" id="prompt-box">' + escapeHtml(promptText) + '</pre>' +
@@ -2166,6 +2221,40 @@
         window.print();
         setTimeout(() => document.body.classList.remove('print-mode'), 500);
       });
+    }
+
+    // Handler per activar recordatoris
+    const btnRecordatoris = $('#activar-recordatoris');
+    if (btnRecordatoris) {
+      btnRecordatoris.addEventListener('click', async () => {
+        const ok = await demanarPermisNotificacions();
+        if (!ok) {
+          alert('No s\'han pogut activar les notificacions. Comprova els permisos del navegador.');
+          return;
+        }
+        // Programar recordatori diari a les 8:00 del matí
+        const avui = new Date();
+        const proper = new Date(avui.getFullYear(), avui.getMonth(), avui.getDate(), 8, 0, 0);
+        if (proper <= avui) proper.setDate(proper.getDate() + 1);
+        const ms = proper.getTime() - avui.getTime();
+        setTimeout(() => {
+          mostrarNotificacio('🌱 Bon dia! Tens tasques a l\'hort?', 'Obre la PWA per veure el checklist d\'avui');
+          // Re-programar per demà
+          setInterval(() => {
+            mostrarNotificacio('🌱 Bon dia! Tens tasques a l\'hort?', 'Obre la PWA per veure el checklist d\'avui');
+          }, 24 * 3600 * 1000);
+        }, ms);
+        btnRecordatoris.textContent = '✅ Recordatoris actius (8:00 cada dia)';
+        btnRecordatoris.disabled = true;
+        btnRecordatoris.style.opacity = '0.7';
+        localStorage.setItem('recordatoris-actius', '1');
+      });
+      // Si ja estan actius, mostrar-ho
+      if (localStorage.getItem('recordatoris-actius')) {
+        btnRecordatoris.textContent = '✅ Recordatoris actius (8:00 cada dia)';
+        btnRecordatoris.disabled = true;
+        btnRecordatoris.style.opacity = '0.7';
+      }
     }
 
     // Handler per exportar ICS
@@ -2337,6 +2426,45 @@
 
     window.addEventListener('hashchange', route);
   });
+
+  // ───────────────── Selector de tema ─────────────────
+  const THEME_KEY = 'hort-osona-theme';
+  const THEMES = ['estiu', 'tardor', 'hivern'];
+  function aplicarTema(tema) {
+    if (THEMES.includes(tema)) {
+      document.body.setAttribute('data-theme', tema);
+    } else {
+      document.body.removeAttribute('data-theme');
+    }
+    localStorage.setItem(THEME_KEY, tema || 'estiu');
+    // Actualitzar botons actius
+    document.querySelectorAll('.theme-picker button').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === (tema || 'estiu'));
+    });
+  }
+  // Renderitzar el selector
+  const picker = document.createElement('div');
+  picker.className = 'theme-picker';
+  picker.innerHTML = THEMES.map(t =>
+    '<button data-theme="' + t + '">' + t.charAt(0).toUpperCase() + t.slice(1) + '</button>'
+  ).join('');
+  document.body.appendChild(picker);
+  picker.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-theme]');
+    if (btn) aplicarTema(btn.dataset.theme);
+  });
+  // Aplicar tema desat (o automàtic segons mes)
+  const temaDesat = localStorage.getItem(THEME_KEY);
+  if (temaDesat) {
+    aplicarTema(temaDesat);
+  } else {
+    // Auto: detecta estació segons el mes actual
+    const mes = new Date().getMonth() + 1;
+    let temaAuto = 'estiu';
+    if (mes >= 10 || mes <= 2) temaAuto = 'hivern';
+    else if (mes >= 9 || mes <= 11) temaAuto = 'tardor';
+    aplicarTema(temaAuto);
+  }
 
   // ───────────────── PWA: registre del Service Worker ─────────────────
   if ('serviceWorker' in navigator) {

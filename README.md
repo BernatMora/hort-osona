@@ -1,5 +1,10 @@
 # 🌱 Hort Osona — Base de coneixement
 
+> **🚀 [Obre la PWA al navegador →](https://BernatMora.github.io/hort-osona/)**
+>
+> Disponible com a **app instal·lable** (Chrome / Edge / Android). Funciona **offline**.
+> 📱 Banner d'instal·lació automàtic a la primera visita des del mòbil.
+
 Projecte personal d'horticultura ecològica adaptat a la comarca d'**Osona** (Catalunya central, voltant de Vic). Inclou planificació, fitxes de cultiu, guies avançades i una secció de plantes medicinals i remeieres.
 
 ## 📑 Índex ràpid
