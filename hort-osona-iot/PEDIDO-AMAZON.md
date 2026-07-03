@@ -3,6 +3,7 @@
 > Llista exacta de compra per al sistema de sensors hort amb Raspberry Pi 4B,
 > sensors Xiaomi MiFlora, LoRa 868MHz i backend Python.
 > Data de preparació: 2026-07-03.
+> **Estratègia de comanda triada: Opció 1 — Tot d'Amazon (1-2 dies d'entrega)**
 
 ## 💰 Resum del pressupost
 
