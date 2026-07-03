@@ -777,6 +777,48 @@
     background: var(--c-line-2); padding: 2px 6px; border-radius: 3px;
     font-family: 'JetBrains Mono', monospace; font-size: 12px;
   }
+
+  /* ───── Assistent IA ───── */
+  .chat-wrap { max-width: 800px; margin: 0 auto; }
+  .chat-messages { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; min-height: 200px; }
+  .chat-msg { padding: 12px 16px; border-radius: var(--radius); line-height: 1.5; }
+  .chat-msg.user { background: var(--c-olive); color: var(--c-bg); align-self: flex-end; max-width: 80%; }
+  .chat-msg.assistant { background: var(--c-paper); border: 1px solid var(--c-line); align-self: flex-start; max-width: 90%; }
+  .chat-msg .role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; margin-bottom: 4px; }
+  .chat-msg.user .role { color: var(--c-bg); }
+  .chat-msg .meta { font-size: 11px; color: var(--c-ink-2); margin-top: 6px; }
+  .chat-msg .sources { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--c-line-2); font-size: 12px; }
+  .chat-msg .sources a { color: var(--c-ochre); }
+  .chat-input-row { display: flex; gap: 8px; margin-top: 16px; }
+  .chat-input-row input {
+    flex: 1; font: inherit; font-size: 14px; padding: 10px 14px;
+    border: 1px solid var(--c-line); border-radius: var(--radius);
+    background: var(--c-bg);
+  }
+  .chat-input-row button {
+    padding: 10px 20px; background: var(--c-olive); color: var(--c-bg);
+    border: 0; border-radius: var(--radius); cursor: pointer; font-weight: 600;
+  }
+  .chat-input-row button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .chat-suggestions { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
+  .chat-suggestions button {
+    background: var(--c-bg-2); border: 1px solid var(--c-line);
+    color: var(--c-ink); padding: 6px 10px; border-radius: 16px;
+    font-size: 12px; cursor: pointer;
+  }
+  .chat-suggestions button:hover { background: var(--c-line-2); }
+  .chat-typing { display: inline-block; }
+  .chat-typing::after { content: '...'; animation: chat-dot 1.2s infinite; }
+  @keyframes chat-dot {
+    0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; }
+  }
+  .chat-config {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    background: var(--c-paper); border: 1px solid var(--c-line);
+    border-radius: var(--radius); padding: 10px 14px; margin-bottom: 14px;
+    font-size: 13px;
+  }
+  .chat-config input { flex: 1; min-width: 200px; font: inherit; padding: 4px 8px; border: 1px solid var(--c-line); border-radius: 4px; background: var(--c-bg); }
   @media (max-width: 820px) {
     .quadern-form { grid-template-columns: 1fr; }
     .month-widget { grid-template-columns: 1fr; }
@@ -839,7 +881,7 @@
     </div>
     <ul class="nav" id="nav"></ul>
     <div class="sidebar-foot">
-      Generat el 2026-07-03 11:23<br>
+      Generat el 2026-07-03 11:43<br>
       76 documents · 9 categories<br>
       <a href="build.py" style="border-bottom:0;color:var(--c-ochre)">build.py</a> regenera el lloc
     </div>
@@ -905,6 +947,9 @@
   }
   function isSensorsHash() {
     return /[#&]sensors(?:&|$)/.test(location.hash);
+  }
+  function isAssistentHash() {
+    return /[#&]assistent(?:&|$)/.test(location.hash);
   }
   function isCalendariHash() {
     return /[#&]calendari(?:&|$)/.test(location.hash);
@@ -2467,6 +2512,7 @@
     if (isStatsHash()) { renderStats(); return; }
     if (isFontsHash()) { renderFonts(); return; }
     if (isSensorsHash()) { renderSensors(); return; }
+    if (isAssistentHash()) { renderAssistent(); return; }
     if (isCalendariHash()) { renderCalendariQuadern(); return; }
     renderWelcome();
   }
@@ -2488,6 +2534,153 @@
 
     window.addEventListener('hashchange', route);
   });
+
+  // ───── Pàgina #assistent — xat amb IA local + RAG ─────
+  const CHAT_KEY = 'hort-osona-chat-url';
+  function getChatUrl() {
+    return localStorage.getItem(CHAT_KEY) || 'http://localhost:8001';
+  }
+  function setChatUrl(url) {
+    localStorage.setItem(CHAT_KEY, url);
+  }
+  const SUGGESTED_QUESTIONS = [
+    "Quan sembrar carbassa a Osona?",
+    "Com fer planter de tomàquets?",
+    "Quines plantes adventícies són útils?",
+    "Com combatre el mildiu del tomàquet?",
+    "Quines aromàtiques puc cultivar en test?",
+    "Quan trasplantar a l'exterior?",
+    "Què fer al juliol a l'hort?",
+    "Com fer compost casolà?",
+  ];
+
+  async function askAssistent(question) {
+    const base = getChatUrl();
+    const r = await fetch(base + '/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question }),
+      signal: AbortSignal.timeout(120000),
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  }
+
+  function appendMessage(role, text, sources) {
+    const wrap = $('#chat-messages');
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + role;
+    const roleLabel = role === 'user' ? 'Tu' : '🌱 Assistent';
+    let sourcesHtml = '';
+    if (sources && sources.length > 0) {
+      const list = sources.map(s =>
+        '<div>📄 <a href="#doc=' + encodeURIComponent(s.path) + '" data-doc="' + s.path + '">' +
+        escapeHtml(s.title) + '</a></div>'
+      ).join('');
+      sourcesHtml = '<div class="sources"><b>Fonts usades:</b>' + list + '</div>';
+    }
+    div.innerHTML =
+      '<div class="role">' + roleLabel + '</div>' +
+      '<div>' + escapeHtml(text).replace(/\n/g, '<br>') + '</div>' +
+      sourcesHtml;
+    wrap.appendChild(div);
+    wrap.scrollTop = wrap.scrollHeight;
+  }
+
+  function appendTyping() {
+    const wrap = $('#chat-messages');
+    const div = document.createElement('div');
+    div.id = 'chat-typing';
+    div.className = 'chat-msg assistant';
+    div.innerHTML = '<div class="role">🌱 Assistent</div><div class="chat-typing">Pensant</div>';
+    wrap.appendChild(div);
+    wrap.scrollTop = wrap.scrollHeight;
+  }
+
+  function removeTyping() {
+    const t = $('#chat-typing');
+    if (t) t.remove();
+  }
+
+  function renderAssistent() {
+    document.title = 'Assistent IA · Hort Osona';
+    $('#crumbs').innerHTML =
+      '<a href="#" data-home>🌱 Hort Osona</a>' +
+      '<span class="sep">›</span>' +
+      'Assistent IA';
+    const view = $('#view');
+    view.className = 'checklist-page';
+    view.innerHTML =
+      '<div class="checklist-page-inner chat-wrap">' +
+        '<h1>🤖 Assistent hortolà</h1>' +
+        '<p style="color:var(--c-ink-2);font-size:14px;margin:0 0 14px">Pregunta qualsevol cosa sobre el teu hort. L\'assistent cerca a les 76 fitxes locals i et respon usant Ollama (IA local al teu Mac).</p>' +
+        '<div class="chat-config">' +
+          '<label>Backend:</label>' +
+          '<input id="chat-url" type="text" placeholder="http://localhost:8001" />' +
+          '<button id="chat-save-url">Desar</button>' +
+        '</div>' +
+        '<div id="chat-messages" class="chat-messages"></div>' +
+        '<div class="chat-suggestions">' +
+          SUGGESTED_QUESTIONS.map(q =>
+            '<button data-q="' + escapeHtml(q) + '">' + escapeHtml(q) + '</button>'
+          ).join('') +
+        '</div>' +
+        '<div class="chat-input-row">' +
+          '<input id="chat-input" type="text" placeholder="Pregunta alguna cosa..." autocomplete="off" />' +
+          '<button id="chat-send">Enviar</button>' +
+        '</div>' +
+        '<p style="font-size:11px;color:var(--c-ink-2);margin-top:12px;text-align:center">100% local · privadesa total · sense núvol · Ollama + RAG</p>' +
+      '</div>';
+
+    $('#chat-url').value = getChatUrl();
+    $('#chat-save-url').addEventListener('click', () => {
+      setChatUrl($('#chat-url').value.trim());
+    });
+
+    async function sendQuestion(q) {
+      if (!q || !q.trim()) return;
+      const input = $('#chat-input');
+      const send = $('#chat-send');
+      input.disabled = true;
+      send.disabled = true;
+      send.textContent = '...';
+      appendMessage('user', q);
+      input.value = '';
+      appendTyping();
+      try {
+        const result = await askAssistent(q);
+        removeTyping();
+        appendMessage('assistant', result.answer, result.sources);
+      } catch (e) {
+        removeTyping();
+        appendMessage('assistant', '❌ Error: ' + e.message + '. Assegura\'t que el backend estigui actiu (api_chat.py) i que Ollama estigui corrent.');
+      } finally {
+        input.disabled = false;
+        send.disabled = false;
+        send.textContent = 'Enviar';
+        input.focus();
+      }
+    }
+
+    $('#chat-send').addEventListener('click', () => sendQuestion($('#chat-input').value));
+    $('#chat-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendQuestion($('#chat-input').value);
+      }
+    });
+    document.querySelectorAll('.chat-suggestions button').forEach(b => {
+      b.addEventListener('click', () => sendQuestion(b.dataset.q));
+    });
+
+    // Missatge de benvinguda
+    if ($('#chat-messages').children.length === 0) {
+      appendMessage('assistant',
+        'Hola! Soc el teu assistent hortolà local. Tinc accés a les 76 fitxes del projecte hort-osona. ' +
+        'Pregunta\'m sobre cultius, plagues, planificació, plantes medicinals o qualsevol cosa relacionada amb el teu hort d\'Osona. ' +
+        'Si vols exemples, fes clic a les preguntes suggerides de sota.');
+    }
+  }
 
   // ───── Pàgina #sensors — dades IoT reals del backend Raspberry ─────
   const SENSORS_KEY = 'hort-osona-sensors-url';
