@@ -545,22 +545,26 @@
     background: var(--c-bg-2);
     border: 1px solid var(--c-line);
     border-left: 3px solid var(--c-leaf);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 12px 16px;
-    margin: 8px 0;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
     position: relative;
   }
-  .quadern-entry .data { font-size: 12px; color: var(--c-ink-2); margin-bottom: 4px; font-family: 'JetBrains Mono', monospace; }
-  .quadern-entry .meteo { font-size: 13.5px; color: var(--c-olive); margin-bottom: 4px; }
-  .quadern-entry .notes { color: var(--c-ink); line-height: 1.5; white-space: pre-wrap; }
-  .quadern-entry .del {
-    position: absolute; top: 8px; right: 10px;
-    background: transparent; border: 0; color: var(--c-ink-2);
-    cursor: pointer; font-size: 16px; padding: 2px 6px;
-  }
-  .quadern-entry .del:hover { color: var(--c-red); }
+  .quadern-entry .data { font-family: 'Fraunces', serif; font-size: 15px; color: var(--c-olive); margin-bottom: 4px; }
+  .quadern-entry .meteo { font-size: 12px; color: var(--c-ink-2); margin-bottom: 8px; font-family: 'JetBrains Mono', monospace; }
+  .quadern-entry .notes { font-size: 14px; line-height: 1.55; color: var(--c-ink); }
+  .quadern-entry .del { position: absolute; top: 8px; right: 8px; background: transparent; border: 0; color: var(--c-ink-2); cursor: pointer; font-size: 18px; line-height: 1; padding: 4px 8px; border-radius: 4px; }
+  .quadern-entry .del:hover { color: #C0392B; background: rgba(192,57,43,0.08); }
+  .quadern-empty { color: var(--c-ink-2); font-style: italic; padding: 20px; text-align: center; }
+  .quadern-empty a { color: var(--c-ochre); }
+  .q-tag { display: inline-block; background: var(--c-line-2); color: var(--c-olive); padding: 2px 8px; border-radius: 10px; font-size: 12px; margin: 2px 4px 2px 0; cursor: pointer; }
+  .q-tag:hover { background: var(--c-leaf); color: var(--c-bg); }
+  .q-tag-inline { background: var(--c-line-2); color: var(--c-olive); padding: 1px 6px; border-radius: 8px; font-size: 0.92em; cursor: pointer; }
+  .q-tag-inline:hover { background: var(--c-leaf); color: var(--c-bg); }
+  .q-tag-cloud { margin: 12px 0; padding: 10px; background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius); }
+  .q-tags { margin-top: 8px; padding-top: 6px; border-top: 1px dashed var(--c-line-2); }
+  .quadern-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
   .quadern-actions { margin: 18px 0; display: flex; gap: 10px; flex-wrap: wrap; }
-  .quadern-empty { text-align: center; color: var(--c-ink-2); padding: 30px; font-style: italic; }
 
   /* ───── Calculadora de rotacions ───── */
   .rotacions-grid {
@@ -1955,6 +1959,24 @@
       '</div>';
   }
 
+  // Parser markdown molt basic: **bold**, *italic*, `code`, #tags
+  function formatQuadernText(text) {
+    if (!text) return '';
+    // Escape HTML primer
+    let s = escapeHtml(text);
+    // **bold**
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // *italic* (no dins de **)
+    s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+    // `code`
+    s = s.replace(/`([^`]+)`/g, '<code style="background:var(--c-line-2);padding:1px 4px;border-radius:3px">$1</code>');
+    // #tag (link intern a cerca per tag)
+    s = s.replace(/#([\wà-ÿ]+)/gi, '<span class="q-tag-inline" data-tag="$1">#$1</span>');
+    // Newlines -> <br>
+    s = s.replace(/\n/g, '<br>');
+    return s;
+  }
+
   function renderQuadern() {
     document.title = 'Quadern d\'observació · Hort Osona';
     $('#crumbs').innerHTML =
@@ -1963,11 +1985,26 @@
       '<span>Quadern d\'observació</span>';
 
     const avui = new Date().toISOString().slice(0, 10);
-    const entries = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+    let entries = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
+
+    // Filtre cerca (per text o tag)
+    const searchQ = (localStorage.getItem('quadern-search') || '').toLowerCase();
+    if (searchQ) {
+      entries = entries.filter(e => {
+        if ((e.notes || '').toLowerCase().includes(searchQ)) return true;
+        if ((e.cultiu || '').toLowerCase().includes(searchQ)) return true;
+        if ((e.tags || []).some(t => t.toLowerCase().includes(searchQ))) return true;
+        return false;
+      });
+    }
+
+    // Tots els tags únics (per al núvol)
+    const allTags = [...new Set(entries.flatMap(e => e.tags || []))].sort();
 
     let entriesHtml = '';
     if (entries.length === 0) {
-      entriesHtml = '<div class="quadern-empty">Encara no hi ha cap entrada. Comença afegint-ne una a dalt.</div>';
+      entriesHtml = '<div class="quadern-empty">Cap entrada' + (searchQ ? ' que coincideixi amb la cerca' : '') + '. ' +
+        (searchQ ? '<a href="#" id="q-clear-search">Neteja la cerca</a>' : 'Comença afegint-ne una a dalt.') + '</div>';
     } else {
       // Ordenar de més recent a més antic
       const sorted = entries.slice().sort((a, b) => b.data.localeCompare(a.data));
@@ -1978,12 +2015,16 @@
         if (e.sol) meteo.push('☀️ ' + e.sol + ' dies sol');
         if (e.gelada) meteo.push('❄️ gelada');
         const meteoStr = meteo.length ? meteo.join(' · ') : '—';
+        const tagsHtml = (e.tags || []).length
+          ? '<div class="q-tags">' + e.tags.map(t => '<span class="q-tag" data-tag="' + escapeHtml(t) + '">#' + escapeHtml(t) + '</span>').join('') + '</div>'
+          : '';
         entriesHtml +=
           '<div class="quadern-entry">' +
             '<button class="del" data-del="' + e.id + '" title="Esborrar">×</button>' +
-            '<div class="data">' + e.data + (e.cultiu ? ' · ' + escapeHtml(e.cultiu) : '') + '</div>' +
+            '<div class="data">' + e.data + (e.cultiu ? ' · <strong>' + escapeHtml(e.cultiu) + '</strong>' : '') + '</div>' +
             '<div class="meteo">' + meteoStr + '</div>' +
-            '<div class="notes">' + escapeHtml(e.notes || '') + '</div>' +
+            '<div class="notes">' + formatQuadernText(e.notes || '') + '</div>' +
+            tagsHtml +
           '</div>';
       }
     }
@@ -2005,7 +2046,8 @@
             '<label>Pluja (mm) <input type="number" id="q-pluja" step="0.1"></label>' +
             '<label>Dies de sol <input type="number" id="q-sol" min="0" max="7"></label>' +
             '<label class="full" style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="q-gelada"> Hi ha hagut gelada aquesta setmana</label>' +
-            '<label class="full">Notes / observacions / accions <textarea id="q-notes" placeholder="Ex: primera flor de tomàquet, Tuta activa, reg abundant, etc."></textarea></label>' +
+            '<label class="full">Notes / observacions / accions <textarea id="q-notes" placeholder="Ex: primera flor de tomàquet, Tuta activa, reg abundant, etc.&#10;&#10;Format: pots usar **negreta**, *cursiva*, `codi` i #tags"></textarea></label>' +
+            '<label class="full">Tags (opcional, separats per comes o espais) <input type="text" id="q-tags" placeholder="Ex: tomàquet, plaga, collita, Tuta"></label>' +
           '</div>' +
           '<div class="quadern-actions">' +
             '<button class="copy-btn" id="q-add">💾 Afegir entrada</button>' +
@@ -2014,10 +2056,23 @@
           '</div>' +
         '</div>' +
         '<div class="checklist-section">' +
+          '<h2>Cerca <input type="text" id="q-search" placeholder="text, cultiu o #tag" value="' + escapeHtml(searchQ) + '" style="margin-left:8px;padding:4px 8px;font-size:14px;border:1px solid var(--c-line);border-radius:4px;background:var(--c-bg)"></h2>' +
+          (allTags.length ? '<div class="q-tag-cloud">' + allTags.map(t => '<span class="q-tag" data-tag="' + escapeHtml(t) + '">#' + escapeHtml(t) + '</span>').join('') + '</div>' : '') +
           '<h2>Entrades (<span id="q-count">' + entries.length + '</span>)</h2>' +
           '<div class="quadern-entries" id="q-list">' + entriesHtml + '</div>' +
         '</div>' +
       '</div>';
+
+    // Handler cerca
+    const searchInput = $('#q-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', e => {
+        localStorage.setItem('quadern-search', e.target.value);
+        renderQuadern();
+        // Torna a enfocar
+        setTimeout(() => $('#q-search').focus(), 0);
+      });
+    }
 
     // Handlers
     $('#q-add').addEventListener('click', () => {
@@ -2029,11 +2084,19 @@
       const sol = $('#q-sol').value;
       const gelada = $('#q-gelada').checked;
       const notes = $('#q-notes').value.trim();
+      const tagsRaw = $('#q-tags').value.trim();
       if (!data) { alert('Cal una data'); return; }
       if (!notes && !tmax && !pluja) { alert('Afegeix almenys una nota o una dada meteorològica'); return; }
+      // Parse tags: separats per comes o espais, lowercase, sense # inicial
+      const tags = (tagsRaw ? tagsRaw.split(/[,\s]+/) : [])
+        .map(t => t.replace(/^#+/, '').trim().toLowerCase())
+        .filter(t => t.length > 0);
+      // Auto-extreure #tags del text si n'hi ha
+      const tagFromText = (notes.match(/#[\wà-ÿ]+/gi) || []).map(t => t.slice(1).toLowerCase());
+      const allTags = [...new Set([...tags, ...tagFromText])];
       const entry = {
         id: Date.now() + '-' + Math.random().toString(36).slice(2, 7),
-        data, cultiu, tmax, tmin, pluja, sol, gelada, notes,
+        data, cultiu, tmax, tmin, pluja, sol, gelada, notes, tags: allTags,
         ts: new Date().toISOString()
       };
       const all = JSON.parse(localStorage.getItem('quadern-entries') || '[]');
@@ -2090,6 +2153,26 @@
         renderQuadern();
       });
     });
+
+    // Click en un tag -> filtra per ell
+    $$('.q-tag, .q-tag-inline').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tag = el.dataset.tag;
+        localStorage.setItem('quadern-search', '#' + tag);
+        renderQuadern();
+      });
+    });
+
+    // Netejar cerca
+    const clearSearch = $('#q-clear-search');
+    if (clearSearch) {
+      clearSearch.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('quadern-search');
+        renderQuadern();
+      });
+    }
   }
 
   // Genera un .ics per a totes les tasques del mes actual
