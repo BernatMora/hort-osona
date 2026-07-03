@@ -36,8 +36,8 @@ import markdown
 # ───────────────────────────── Configuració ─────────────────────────────
 
 ROOT = Path(__file__).resolve().parent.parent          # arrel del projecte
-SITE_DIR = Path(__file__).resolve().parent              # carpeta site/
-OUT_FILE = SITE_DIR / "index.html"
+SITE_DIR = Path(__file__).resolve().parent              # carpeta site/ (orígens: icones, manifest, SW, template)
+OUT_FILE = ROOT / "index.html"                          # ← Genera a l'ARREL per a GitHub Pages
 
 # Fitxers d'infraestructura que NO entren al lloc (no són contingut de l'hort)
 INFRASTRUCTURE_FILES = {
@@ -49,6 +49,17 @@ INFRASTRUCTURE_FILES = {
     "SETUP-SITE.md",
     "SYNC-SCRIPT.md",
     "VSCODE-GUIDE.md",
+}
+
+# Fitxers generats pel build a l'arrel (per a GitHub Pages) — no són contingut
+GENERATED_AT_ROOT = {
+    "index.html",
+    "manifest.json",
+    "service-worker.js",
+    "icon.svg",
+    "icon-192.png",
+    "icon-512.png",
+    "checklist-data.json",
 }
 
 # Plantilles internes, no entren com a documents
@@ -188,7 +199,7 @@ def find_files_for_category(globs: List[str]) -> List[Path]:
             if not p.is_file():
                 continue
             rel = p.relative_to(ROOT).as_posix()
-            if rel in INFRASTRUCTURE_FILES or rel in INFRASTRUCTURE_DIRS:
+            if rel in INFRASTRUCTURE_FILES or rel in INFRASTRUCTURE_DIRS or rel in GENERATED_AT_ROOT:
                 continue
             if p.name.startswith("_"):  # plantilles
                 continue
@@ -327,13 +338,23 @@ def build():
         print(f"⚠️  No s'ha pogut generar la checklist: {e}")
         checklist_data = None
 
-    # 5b) Els fitxers PWA (manifest, service worker, icones) ja estan a site/
-    # i es publiquen directament sense necessitat de copiar.
-    import os
+    # 5b) Copiar fitxers PWA (manifest, service worker, icones) a l'ARREL
+    #     (perquè GitHub Pages serveixi tot des d'un sol directori)
+    import shutil
     pwa_files = ['manifest.json', 'service-worker.js', 'icon.svg', 'icon-192.png', 'icon-512.png']
     for fname in pwa_files:
-        if (SITE_DIR / fname).exists():
-            print(f'  📦 PWA: {fname} OK')
+        src = SITE_DIR / fname
+        dst = ROOT / fname
+        if src.exists():
+            if src.resolve() != dst.resolve():
+                shutil.copy2(src, dst)
+            print(f'  📦 PWA → arrel: {fname}')
+
+    # 5c) Copiar checklist-data.json a l'arrel (perquè la pàgina web el trobi)
+    checklist_src = SITE_DIR / "checklist-data.json"
+    if checklist_src.exists():
+        shutil.copy2(checklist_src, ROOT / "checklist-data.json")
+        print(f'  📦 checklist-data.json → arrel')
 
     # 5) Renderitzar HTML
     out = render_html(docs, sidebar, total_docs, generated_at, checklist_data)
