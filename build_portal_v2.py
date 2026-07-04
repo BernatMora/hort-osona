@@ -1,0 +1,1179 @@
+#!/usr/bin/env python3
+"""
+build_portal_v2.py — Reenginyeria del portal hort-osona, mobile-first.
+
+Layout:
+- MOBILE (<768px): header compacte + contingut a pantalla completa
+  + ☰ que obre un drawer lateral amb les categories
+- DESKTOP (>=768px): sidebar fixa 280px + contingut a la dreta
+
+Principis:
+- Cap element absolute que sobresurti
+- Cap z-index estrany
+- Un sol fitxer HTML amb tot incrustat
+- Sense dependències externes (fora Google Fonts)
+"""
+
+import sys
+import json
+import re
+import html
+import shutil
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Tuple
+
+BASE = Path("/Users/bernatmorasanglas/Desktop/hort-osona")
+
+# ──────────── CATEGORIES (mateix ordre que abans) ────────────
+CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
+    "Inici": [
+        ("00-index.md", "Índex general"),
+        ("README.md", "README"),
+        ("CHANGELOG.md", "Historial"),
+    ],
+    "Planificació": [
+        ("pla-12-mesos.md", "Pla dels 12 mesos"),
+        ("08-pla-mensual.md", "Pla d'acció mensual"),
+        ("plans-mensuals/2026-06-juny.md", "Pla juny 2026"),
+        ("planificacio-tardor-hivern-2026.md", "Tardor-hivern 2026-27"),
+        ("01-calendari-sembra.md", "Calendari de sembra"),
+        ("calendari-lunar-osona.md", "Calendari lunar"),
+        ("fitxa-hort.md", "Plànol de l'hort"),
+        ("pla-hort.md", "Plànol esquemàtic"),
+        ("pla-reg-personalitzat-2026.md", "Pla de reg personalitzat"),
+        ("croquis-hort.md", "Croquis dibuixable"),
+    ],
+    "Fitxes de cultiu": [
+        ("07-fitxes-cultius/all.md", "All"),
+        ("07-fitxes-cultius/bleda.md", "Bleda"),
+        ("07-fitxes-cultius/carbassa.md", "Carbassa"),
+        ("07-fitxes-cultius/carabasso.md", "Carabassó"),
+        ("07-fitxes-cultius/ceba.md", "Ceba"),
+        ("07-fitxes-cultius/col.md", "Col"),
+        ("07-fitxes-cultius/enciam.md", "Enciam"),
+        ("07-fitxes-cultius/fava.md", "Fava"),
+        ("07-fitxes-cultius/mongeta.md", "Mongeta"),
+        ("07-fitxes-cultius/pastanaga.md", "Pastanaga"),
+        ("07-fitxes-cultius/patata.md", "Patata"),
+        ("07-fitxes-cultius/pebrot.md", "Pebrot"),
+        ("07-fitxes-cultius/pesol.md", "Pèsol"),
+        ("07-fitxes-cultius/tomaquet.md", "Tomàquet"),
+        ("07-fitxes-cultius/aromatiques.md", "Aromàtiques"),
+    ],
+    "Conreu avançat": [
+        ("02-associacions-rotacions.md", "Associacions i rotacions"),
+        ("03-gestio-plagues.md", "Gestió de plagues"),
+        ("04-reg-fertilitzacio.md", "Reg i fertilització"),
+        ("05-cobertes-adobs-verds.md", "Cobertes i adobs verds"),
+        ("06-varietats-tradicionals.md", "Varietats tradicionals"),
+        ("compost.md", "Compost"),
+        ("planters-guia-completa.md", "Planters"),
+        ("guardar-llavors.md", "Guardar llavors"),
+        ("biodinamica-guia-completa.md", "Biodinàmica"),
+        ("guia-avancada-osona.md", "Guia avançada Osona"),
+        ("practiques-avancades.md", "Pràctiques avançades"),
+        ("pla-tractaments-fitosanitaris.md", "Tractaments fitosanitaris"),
+    ],
+    "Eines operatives": [
+        ("bitacola-setmanal.md", "Bitàcola setmanal"),
+        ("calculadora-sembra.md", "Calculadora de sembra"),
+    ],
+    "Conservació": [
+        ("conserves.md", "Conserves"),
+        ("guia-fermentats.md", "Fermentats"),
+    ],
+    "Sòl i natura": [
+        ("analisi-sol-guia-completa.md", "Anàlisi de sòl"),
+        ("biologia-sol-curs.md", "Biologia del sòl"),
+        ("adventicies-guia-completa.md", "Adventícies"),
+        ("pollinitzadors-guia-completa.md", "Pol·linitzadors"),
+        ("canvi-climatic-osona.md", "Canvi climàtic"),
+    ],
+    "Fruiters": [
+        ("fruiters-guia-completa.md", "Fruiters"),
+    ],
+    "Bolets": [
+        ("bolets-guia-completa.md", "Guia de bolets"),
+    ],
+    "Medicinal i remeieres": [
+        ("remeieres-guia-completa.md", "Remeieres"),
+        ("fitoterapia-curs.md", "Curs de fitoteràpia"),
+        ("hort-medicinal-guia.md", "Hort medicinal"),
+        ("hort-amb-nens-manual.md", "Hort amb nens"),
+        ("apotecaria-casolana-guia.md", "Apotecaria casolana"),
+        ("olis-massatge-guia.md", "Olis de massatge"),
+        ("sabons-medicinals-guia.md", "Sabons medicinals"),
+        ("cremes-ungeunts-especialitzats-guia.md", "Cremes i ungüents"),
+        ("banys-terapeutics-guia.md", "Banys terapèutics"),
+        ("productes-curatius-avancats-guia.md", "Productes curatius avançats"),
+        ("primers-auxilis-verds-manual.md", "Primers auxilis verds"),
+    ],
+    "Eines i tecnologia": [
+        ("hort-osona-iot/README.md", "Sistema IoT (Raspberry Pi)"),
+        ("hort-osona-iot/CHAT-SETUP.md", "Configurar el xat local"),
+    ],
+    "El meu hort": [
+        ("ACCES-MOBIL.md", "Com accedir des del mòbil"),
+        ("VSCODE-GUIDE.md", "Editar amb VS Code"),
+        ("HORT-CHECKLIST.md", "Checklist de l'hort"),
+    ],
+}
+
+# ──────────── UTILITATS ────────────
+
+def extract_title(content: str, fallback: str) -> str:
+    """Extreu el primer # del markdown."""
+    m = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+    return m.group(1).strip() if m else fallback
+
+
+def md_to_html(text: str) -> str:
+    """Conversió molt bàsica de markdown a HTML. Suficient per a la majoria de contingut."""
+    # Escapar HTML per seguretat
+    text = html.escape(text)
+
+    # Restaurar els blocs de codi (que han estat escapats)
+    # No, els blocs de codi s'han d'escapar igual, els tractarem com a pre>code
+
+    lines = text.split('\n')
+    out = []
+    in_code = False
+    in_list = False
+    in_table = False
+    table_rows = []
+
+    def flush_list():
+        nonlocal in_list
+        if in_list:
+            out.append('</ul>')
+            in_list = False
+
+    def flush_table():
+        nonlocal in_table, table_rows
+        if in_table:
+            out.append('</table>')
+            in_table = False
+            table_rows = []
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+
+        # Blocs de codi
+        if stripped.startswith('```'):
+            flush_list()
+            flush_table()
+            if in_code:
+                out.append('</code></pre>')
+                in_code = False
+            else:
+                out.append('<pre><code>')
+                in_code = True
+            i += 1
+            continue
+
+        if in_code:
+            out.append(line)
+            i += 1
+            continue
+
+        # Taules (línia amb |)
+        if '|' in line and not in_code:
+            flush_list()
+            if not in_table:
+                # Comprovar si la següent línia és separadora
+                if i + 1 < len(lines) and re.match(r'^\s*\|?[\s\-:|]+\|?\s*$', lines[i+1]):
+                    in_table = True
+                    table_rows = []
+                    out.append('<table>')
+            if in_table:
+                cells = [c.strip() for c in line.strip().strip('|').split('|')]
+                if i + 1 < len(lines) and re.match(r'^\s*\|?[\s\-:|]+\|?\s*$', lines[i+1]):
+                    # Separador
+                    out.append('<thead><tr>')
+                    for c in cells:
+                        out.append(f'<th>{inline_md(c)}</th>')
+                    out.append('</tr></thead><tbody>')
+                    i += 2
+                    continue
+                else:
+                    out.append('<tr>')
+                    for c in cells:
+                        out.append(f'<td>{inline_md(c)}</td>')
+                    out.append('</tr>')
+                    i += 1
+                    continue
+
+        # Capçaleres
+        m = re.match(r'^(#{1,6})\s+(.+)$', stripped)
+        if m:
+            flush_list()
+            flush_table()
+            level = len(m.group(1))
+            content_str = inline_md(m.group(2))
+            out.append(f'<h{level} id="{slugify(m.group(2))}">{content_str}</h{level}>')
+            i += 1
+            continue
+
+        # Llistes
+        m = re.match(r'^[\-\*]\s+(.+)$', stripped)
+        if m:
+            if not in_list:
+                out.append('<ul>')
+                in_list = True
+            out.append(f'<li>{inline_md(m.group(1))}</li>')
+            i += 1
+            continue
+        m = re.match(r'^\d+\.\s+(.+)$', stripped)
+        if m:
+            if not in_list:
+                out.append('<ol>')
+                in_list = True
+            out.append(f'<li>{inline_md(m.group(1))}</li>')
+            i += 1
+            continue
+
+        # Línia buida
+        if not stripped:
+            flush_list()
+            flush_table()
+            i += 1
+            continue
+
+        # Paràgraf
+        flush_list()
+        flush_table()
+        out.append(f'<p>{inline_md(stripped)}</p>')
+        i += 1
+
+    flush_list()
+    flush_table()
+    if in_code:
+        out.append('</code></pre>')
+    return '\n'.join(out)
+
+
+def inline_md(text: str) -> str:
+    """Format inline: **negreta**, *cursiva*, `codi`, [text](url)."""
+    # Codi inline (primer per evitar que s'interpreti altres coses dins)
+    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
+    # Negreta
+    text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
+    # Cursiva
+    text = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<em>\1</em>', text)
+    # Enllaços [text](url)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
+    return text
+
+
+def slugify(text: str) -> str:
+    text = re.sub(r'[^\w\s-]', '', text.lower())
+    text = re.sub(r'\s+', '-', text)
+    return text[:60]
+
+
+def read_doc(rel_path: str) -> Tuple[str, str, str]:
+    """Retorna (path, title, html_content) o None si no existeix."""
+    p = BASE / rel_path
+    if not p.exists():
+        return None
+    text = p.read_text(encoding="utf-8")
+    title = extract_title(text, p.stem)
+    # Si és .md, convertir; si és .html, agafar el body
+    if p.suffix == ".md":
+        content = md_to_html(text)
+    else:
+        # Extreure body d'un HTML
+        m = re.search(r'<body[^>]*>(.*)</body>', text, re.DOTALL | re.IGNORECASE)
+        content = m.group(1) if m else text
+        # Treure scripts i styles
+        content = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL)
+        content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL)
+    return rel_path, title, content
+
+
+# ──────────── MAIN ────────────
+
+def main():
+    # Carregar tots els documents
+    docs: Dict[str, Dict] = {}
+    for cat_name, items in CATEGORIES.items():
+        for rel_path, _label in items:
+            result = read_doc(rel_path)
+            if result:
+                path, title, content = result
+                docs[path] = {"title": title, "html": content, "category": cat_name}
+
+    print(f"Carregats {len(docs)} documents")
+
+    # Preparar el JSON per incrustar
+    docs_json = json.dumps(docs, ensure_ascii=False)
+
+    # Generar l'estructura del sidebar (categories -> items)
+    sidebar_data = {}
+    for cat_name, items in CATEGORIES.items():
+        sidebar_data[cat_name] = []
+        for rel_path, label in items:
+            if rel_path in docs:
+                sidebar_data[cat_name].append({
+                    "path": rel_path,
+                    "label": label,
+                    "title": docs[rel_path]["title"]
+                })
+
+    sidebar_json = json.dumps(sidebar_data, ensure_ascii=False)
+
+    # ──────────── HTML ────────────
+    portal = f"""<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Base de coneixement d'hort ecològic a Osona">
+<meta name="theme-color" content="#3D4A2A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hort Osona">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Hort Osona</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root {{
+  --c-bg: #F5EBD8;
+  --c-paper: #FFFCF3;
+  --c-ink: #2D2A22;
+  --c-ink-2: #6B665A;
+  --c-olive: #3D4A2A;
+  --c-olive-bg: #E8E2CC;
+  --c-ochre: #B5853A;
+  --c-line: #D9D0B5;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --header-h: 56px;
+  --sidebar-w: 280px;
+}}
+
+* {{ box-sizing: border-box; margin: 0; padding: 0; }}
+
+html, body {{
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}}
+
+button {{
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}}
+
+a {{ color: var(--c-olive); text-decoration: none; }}
+a:hover {{ text-decoration: underline; }}
+
+/* ──────────── LAYOUT ──────────── */
+.app {{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--header-h) 1fr;
+  height: 100vh;
+  height: 100dvh;
+}}
+
+/* Header (mòbil) */
+.header {{
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  height: var(--header-h);
+  position: relative;
+  z-index: 10;
+}}
+
+.header .menu-btn {{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 24px;
+  color: var(--c-paper);
+}}
+
+.header .menu-btn:hover,
+.header .menu-btn:active {{
+  background: rgba(255,255,255,0.15);
+}}
+
+.header .title {{
+  font-weight: 600;
+  font-size: 1.05rem;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}}
+
+.header .search-toggle {{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  color: var(--c-paper);
+}}
+
+/* Main content */
+.main {{
+  grid-row: 2;
+  grid-column: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}}
+
+/* ──────────── DRAWER (mòbil) ──────────── */
+.drawer-bg {{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}}
+
+.drawer-bg.open {{
+  opacity: 1;
+  pointer-events: auto;
+}}
+
+.drawer {{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 340px;
+  background: var(--c-paper);
+  z-index: 51;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+}}
+
+.drawer.open {{ transform: translateX(0); }}
+
+.drawer-header {{
+  padding: 16px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}}
+
+.drawer-header .title {{
+  font-weight: 600;
+  font-size: 1.1rem;
+}}
+
+.drawer-close {{
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 20px;
+  color: var(--c-paper);
+}}
+
+.drawer-search {{
+  padding: 12px;
+  border-bottom: 1px solid var(--c-line);
+}}
+
+.drawer-search input {{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: var(--c-bg);
+  color: var(--c-ink);
+}}
+
+.drawer-content {{
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}}
+
+.cat-section {{
+  border-bottom: 1px solid var(--c-line);
+}}
+
+.cat-toggle {{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--c-ink-2);
+  text-align: left;
+}}
+
+.cat-toggle .arrow {{
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}}
+
+.cat-section.open .cat-toggle .arrow {{
+  transform: rotate(180deg);
+}}
+
+.cat-section.open .cat-toggle {{
+  color: var(--c-olive);
+}}
+
+.cat-items {{
+  display: none;
+  list-style: none;
+  padding: 0 0 8px 0;
+}}
+
+.cat-section.open .cat-items {{
+  display: block;
+}}
+
+.cat-items li a {{
+  display: block;
+  padding: 10px 16px 10px 24px;
+  font-size: 0.95rem;
+  color: var(--c-ink);
+  border-left: 3px solid transparent;
+}}
+
+.cat-items li a:hover,
+.cat-items li a:active {{
+  background: var(--c-olive-bg);
+  border-left-color: var(--c-olive);
+  text-decoration: none;
+}}
+
+/* Search overlay (mòbil) */
+.search-overlay {{
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg);
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+}}
+
+.search-overlay.open {{ display: flex; }}
+
+.search-bar {{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  height: var(--header-h);
+}}
+
+.search-bar input {{
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.95);
+  color: var(--c-ink);
+}}
+
+.search-bar input:focus {{
+  outline: 2px solid var(--c-ochre);
+  outline-offset: 1px;
+}}
+
+.search-results {{
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}}
+
+.search-result {{
+  display: block;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--c-line);
+  color: var(--c-ink);
+}}
+
+.search-result:hover,
+.search-result:active {{
+  background: var(--c-olive-bg);
+  text-decoration: none;
+}}
+
+.search-result .title {{
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}}
+
+.search-result .cat {{
+  font-size: 0.75rem;
+  color: var(--c-ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}}
+
+.search-result .snippet {{
+  font-size: 0.85rem;
+  color: var(--c-ink-2);
+  margin-top: 4px;
+}}
+
+/* ──────────── DESKTOP (≥768px) ──────────── */
+@media (min-width: 768px) {{
+  .app {{
+    grid-template-columns: var(--sidebar-w) 1fr;
+    grid-template-rows: var(--header-h) 1fr;
+  }}
+
+  .header {{
+    grid-column: 1 / -1;
+  }}
+
+  .header .menu-btn {{
+    display: none;
+  }}
+
+  /* Sidebar fixa a l'esquerra (visible) */
+  .drawer {{
+    position: relative;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    flex: 1;
+    z-index: 1;
+    box-shadow: none;
+    border-right: 1px solid var(--c-line);
+    grid-column: 1;
+    grid-row: 2;
+  }}
+
+  .drawer-bg {{
+    display: none;
+  }}
+
+  .drawer-header {{
+    display: none;
+  }}
+
+  .drawer-search {{
+    background: var(--c-paper);
+  }}
+
+  /* El main ocupa la columna 2 */
+  .main {{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 24px 32px;
+  }}
+}}
+
+/* ──────────── TIPOGRAFIA DEL CONTINGUT ──────────── */
+.doc h1 {{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  color: var(--c-olive);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--c-olive-bg);
+}}
+
+.doc h2 {{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  color: var(--c-olive);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}}
+
+.doc h3 {{
+  font-size: 1.1rem;
+  color: var(--c-ink);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}}
+
+.doc p {{
+  margin-bottom: 12px;
+}}
+
+.doc ul, .doc ol {{
+  margin: 0 0 12px 24px;
+}}
+
+.doc li {{ margin-bottom: 4px; }}
+
+.doc code {{
+  background: var(--c-olive-bg);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 0.88em;
+  color: var(--c-ochre);
+}}
+
+.doc pre {{
+  background: var(--c-olive-bg);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}}
+
+.doc pre code {{
+  background: none;
+  padding: 0;
+  color: var(--c-ink);
+}}
+
+.doc table {{
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}}
+
+.doc th, .doc td {{
+  border: 1px solid var(--c-line);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}}
+
+.doc th {{
+  background: var(--c-olive-bg);
+  font-weight: 600;
+}}
+
+.doc blockquote {{
+  border-left: 3px solid var(--c-ochre);
+  padding-left: 12px;
+  margin: 12px 0;
+  color: var(--c-ink-2);
+  font-style: italic;
+}}
+
+.doc hr {{
+  border: none;
+  border-top: 1px solid var(--c-line);
+  margin: 20px 0;
+}}
+
+/* Benvinguda */
+.welcome {{
+  text-align: center;
+  padding: 32px 16px;
+}}
+
+.welcome h1 {{
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  color: var(--c-olive);
+  margin-bottom: 12px;
+}}
+
+.welcome .subtitle {{
+  color: var(--c-ink-2);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}}
+
+.welcome .stats {{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}}
+
+.welcome .stat {{
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  padding: 16px 20px;
+  min-width: 100px;
+}}
+
+.welcome .stat .num {{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--c-olive);
+}}
+
+.welcome .stat .lbl {{
+  font-size: 0.8rem;
+  color: var(--c-ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}}
+
+.welcome h2 {{
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--c-olive);
+  margin: 24px 0 12px;
+}}
+
+.welcome .quick {{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}}
+
+.welcome .quick a {{
+  display: block;
+  padding: 12px 16px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--c-ink);
+}}
+
+.welcome .quick a:hover,
+.welcome .quick a:active {{
+  border-color: var(--c-olive);
+  text-decoration: none;
+  background: var(--c-olive-bg);
+}}
+
+/* Enllaços interns del doc */
+.doc a[href^="#"] {{
+  color: var(--c-ochre);
+}}
+
+/* Scrollbar */
+.main::-webkit-scrollbar,
+.drawer-content::-webkit-scrollbar,
+.search-results::-webkit-scrollbar,
+.doc pre::-webkit-scrollbar,
+.doc table::-webkit-scrollbar {{
+  width: 6px;
+  height: 6px;
+}}
+
+.main::-webkit-scrollbar-thumb,
+.drawer-content::-webkit-scrollbar-thumb,
+.search-results::-webkit-scrollbar-thumb,
+.doc pre::-webkit-scrollbar-thumb,
+.doc table::-webkit-scrollbar-thumb {{
+  background: var(--c-line);
+  border-radius: 3px;
+}}
+
+/* Print */
+@media print {{
+  .header, .drawer, .drawer-bg, .search-overlay {{ display: none !important; }}
+  .app {{ grid-template-columns: 1fr; grid-template-rows: 1fr; }}
+  .main {{ grid-column: 1; grid-row: 1; padding: 0; overflow: visible; }}
+  .doc pre {{ white-space: pre-wrap; word-break: break-word; }}
+}}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="header">
+    <button class="menu-btn" id="menu-btn" aria-label="Obrir menú">☰</button>
+    <div class="title">🌱 Hort Osona</div>
+    <button class="search-toggle" id="search-btn" aria-label="Cerca">🔍</button>
+  </header>
+
+  <!-- SIDEBAR/DRAWER -->
+  <aside class="drawer" id="drawer" aria-label="Categories">
+    <div class="drawer-header">
+      <div class="title">Categories</div>
+      <button class="drawer-close" id="drawer-close" aria-label="Tancar">✕</button>
+    </div>
+    <div class="drawer-search">
+      <input type="search" id="sidebar-search" placeholder="Cerca un document..." autocomplete="off">
+    </div>
+    <div class="drawer-content" id="drawer-content">
+      <!-- S'omple amb JS -->
+    </div>
+  </aside>
+
+  <!-- BACKDROP -->
+  <div class="drawer-bg" id="drawer-bg"></div>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <div class="welcome" id="welcome">
+      <h1>🌱 Hort Osona</h1>
+      <p class="subtitle">Base de coneixement d'horticultura ecològica, plantes medicinals i conserves, adaptat a la comarca d'Osona.</p>
+      <div class="stats">
+        <div class="stat"><div class="num">{len(docs)}</div><div class="lbl">Documents</div></div>
+        <div class="stat"><div class="num">{len([d for d in docs if d.startswith('07-fitxes-cultius/')])}</div><div class="lbl">Fitxes cultiu</div></div>
+        <div class="stat"><div class="num">{len(CATEGORIES)}</div><div class="lbl">Categories</div></div>
+      </div>
+      <h2>Com començar</h2>
+      <p style="color: var(--c-ink-2);">Toca el botó ☰ per obrir el menú i triar un document, o bé 🔍 per cercar.</p>
+      <div class="quick">
+        <a href="#" data-path="pla-12-mesos.md" onclick="return openDoc(this.dataset.path)">📅 Pla dels 12 mesos</a>
+        <a href="#" data-path="plans-mensuals/2026-06-juny.md" onclick="return openDoc(this.dataset.path)">📅 Pla juny 2026</a>
+        <a href="#" data-path="07-fitxes-cultius/tomaquet.md" onclick="return openDoc(this.dataset.path)">🍅 Tomàquet</a>
+        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Calendari de sembra</a>
+        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions</a>
+        <a href="#" data-path="pla-tractaments-fitosanitaris.md" onclick="return openDoc(this.dataset.path)">🧪 Tractaments</a>
+      </div>
+    </div>
+    <article class="doc" id="doc" style="display:none"></article>
+  </main>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-bar">
+      <input type="search" id="search-input" placeholder="Cerca..." autocomplete="off" autofocus>
+      <button class="drawer-close" id="search-close" aria-label="Tancar" style="color: var(--c-paper)">✕</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+
+</div>
+
+<script>
+const SIDEBAR = {sidebar_json};
+const DOCS = {docs_json};
+
+// ──────────── INDEX DE CERCA ────────────
+const SEARCH_INDEX = Object.entries(DOCS).map(([path, d]) => {{
+  const plain = (d.title + ' ' + d.html.replace(/<[^>]+>/g, ' ')).toLowerCase();
+  return {{ path, title: d.title, category: d.category, plain }};
+}});
+
+// ──────────── RENDER SIDEBAR ────────────
+function renderSidebar(filter = '') {{
+  const container = document.getElementById('drawer-content');
+  const filterLower = filter.toLowerCase().trim();
+  let html = '';
+
+  for (const [catName, items] of Object.entries(SIDEBAR)) {{
+    const filtered = items.filter(it =>
+      !filterLower ||
+      it.title.toLowerCase().includes(filterLower) ||
+      it.label.toLowerCase().includes(filterLower)
+    );
+    if (filtered.length === 0) continue;
+
+    const itemsHtml = filtered.map(it =>
+      `<li><a href="#" data-path="${{it.path}}" onclick="return openDoc('${{it.path}}')">${{escapeHtml(it.label)}}</a></li>`
+    ).join('');
+
+    html += `<div class="cat-section" data-cat="${{escapeHtml(catName)}}">
+      <button class="cat-toggle" onclick="toggleCat(this.parentElement)">
+        <span>${{escapeHtml(catName)}}</span>
+        <span class="arrow">▼</span>
+      </button>
+      <ul class="cat-items">${{itemsHtml}}</ul>
+    </div>`;
+  }}
+
+  container.innerHTML = html;
+}}
+
+function toggleCat(section) {{
+  section.classList.toggle('open');
+}}
+
+// ──────────── DRAWER ────────────
+function openDrawer() {{
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawer-bg').classList.add('open');
+}}
+
+function closeDrawer() {{
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-bg').classList.remove('open');
+}}
+
+// ──────────── OPEN DOC ────────────
+function openDoc(path) {{
+  const d = DOCS[path];
+  if (!d) return false;
+  const doc = document.getElementById('doc');
+  const welcome = document.getElementById('welcome');
+  welcome.style.display = 'none';
+  doc.style.display = 'block';
+  // Escapar les substitucions fetes al build
+  let html = d.html;
+  html = html.split('<\\/script').join('</script');
+  html = html.split('<\\!--').join('<!--');
+  doc.innerHTML = html;
+  // Scroll a dalt
+  document.getElementById('main').scrollTop = 0;
+  // Tancar drawer i search si estan oberts (en mòbil)
+  closeDrawer();
+  closeSearch();
+  // Actualitzar hash per compartir
+  history.replaceState(null, '', '#' + encodeURIComponent(path));
+  return false;
+}}
+
+// ──────────── SEARCH ────────────
+function openSearch() {{
+  const ov = document.getElementById('search-overlay');
+  ov.classList.add('open');
+  setTimeout(() => document.getElementById('search-input').focus(), 50);
+}}
+
+function closeSearch() {{
+  document.getElementById('search-overlay').classList.remove('open');
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-results').innerHTML = '';
+}}
+
+function doSearch(q) {{
+  const results = document.getElementById('search-results');
+  if (!q || q.length < 2) {{
+    results.innerHTML = '<p style="padding:16px;color:var(--c-ink-2)">Escriu almenys 2 lletres per cercar.</p>';
+    return;
+  }}
+  const qLower = q.toLowerCase();
+  const matches = [];
+  for (const item of SEARCH_INDEX) {{
+    const idx = item.plain.indexOf(qLower);
+    if (idx >= 0) {{
+      // Extreure snippet al voltant
+      const start = Math.max(0, idx - 40);
+      const end = Math.min(item.plain.length, idx + q.length + 60);
+      let snippet = item.plain.substring(start, end);
+      if (start > 0) snippet = '…' + snippet;
+      if (end < item.plain.length) snippet = snippet + '…';
+      // Ressaltar la paraula
+      snippet = snippet.replace(new RegExp('(' + qLower.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi'), '<mark>$1</mark>');
+      matches.push({{ ...item, snippet }});
+    }}
+  }}
+  if (matches.length === 0) {{
+    results.innerHTML = '<p style="padding:16px;color:var(--c-ink-2)">Cap resultat per a "' + escapeHtml(q) + '".</p>';
+    return;
+  }}
+  results.innerHTML = matches.slice(0, 30).map(m =>
+    `<a href="#" class="search-result" data-path="${{m.path}}" onclick="return openDoc('${{m.path}}')">
+      <div class="title">${{escapeHtml(m.title)}}</div>
+      <div class="cat">${{escapeHtml(m.category)}}</div>
+      <div class="snippet">${{snippet}}</div>
+    </a>`
+  ).join('');
+}}
+
+// ──────────── UTILS ────────────
+function escapeHtml(s) {{
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}}
+
+// ──────────── INIT ────────────
+document.addEventListener('DOMContentLoaded', () => {{
+  renderSidebar();
+
+  // Botons header
+  document.getElementById('menu-btn').addEventListener('click', openDrawer);
+  document.getElementById('search-btn').addEventListener('click', openSearch);
+  document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+  document.getElementById('search-close').addEventListener('click', closeSearch);
+  document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
+
+  // Sidebar search
+  document.getElementById('sidebar-search').addEventListener('input', (e) => {{
+    renderSidebar(e.target.value);
+  }});
+
+  // Search overlay
+  document.getElementById('search-input').addEventListener('input', (e) => {{
+    doSearch(e.target.value);
+  }});
+
+  // Escape per tancar
+  document.addEventListener('keydown', (e) => {{
+    if (e.key === 'Escape') {{
+      closeDrawer();
+      closeSearch();
+    }}
+  }});
+
+  // Obrir document des de hash
+  if (location.hash.length > 1) {{
+    const path = decodeURIComponent(location.hash.substring(1));
+    if (DOCS[path]) openDoc(path);
+  }}
+}});
+</script>
+</body>
+</html>"""
+
+    out = BASE / "index.html"
+    out.write_text(portal, encoding="utf-8")
+    size_kb = out.stat().st_size / 1024
+    print(f"✅ {out} ({size_kb:.0f} KB)")
+
+    # Copiar assets PWA
+    for src, dst in [("site/manifest.json", "manifest.json"),
+                      ("site/icon.svg", "icon.svg"),
+                      ("site/icon-192.png", "icon-192.png"),
+                      ("site/icon-512.png", "icon-512.png"),
+                      ("site/service-worker.js", "service-worker.js")]:
+        sp = BASE / src
+        dp = BASE / dst
+        if sp.exists():
+            shutil.copy2(sp, dp)
+    print("✅ Assets PWA copiats")
+
+
+if __name__ == "__main__":
+    main()
