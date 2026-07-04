@@ -567,13 +567,15 @@ a:hover {{ text-decoration: underline; }}
 }}
 
 .cat-items {{
-  display: none;
   list-style: none;
   padding: 0 0 8px 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }}
 
 .cat-section.open .cat-items {{
-  display: block;
+  max-height: 5000px;
 }}
 
 .cat-items li a {{
@@ -1017,7 +1019,7 @@ function renderSidebar(filter = '') {{
     ).join('');
 
     html += `<div class="cat-section" data-cat="${{escapeHtml(catName)}}">
-      <button class="cat-toggle" onclick="toggleCat(this.parentElement)">
+      <button class="cat-toggle" onclick="toggleCat(this.parentElement)" aria-expanded="false">
         <span>${{escapeHtml(catName)}}</span>
         <span class="arrow">▼</span>
       </button>
@@ -1029,7 +1031,9 @@ function renderSidebar(filter = '') {{
 }}
 
 function toggleCat(section) {{
-  section.classList.toggle('open');
+  const wasOpen = section.classList.toggle('open');
+  const btn = section.querySelector('.cat-toggle');
+  if (btn) btn.setAttribute('aria-expanded', wasOpen ? 'true' : 'false');
 }}
 
 // ──────────── DRAWER ────────────
