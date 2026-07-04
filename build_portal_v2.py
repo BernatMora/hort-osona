@@ -297,6 +297,13 @@ def read_doc(rel_path: str) -> Tuple[str, str, str]:
         # Treure scripts i styles
         content = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL)
         content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL)
+
+    # Si la fitxa té una imatge SVG associada, inserir-la al principi
+    img_path = p.parent / "img" / f"{p.stem}.svg"
+    if img_path.exists():
+        img_html = f'<div class="doc-hero"><img src="img/{p.stem}.svg" alt="{title}" loading="lazy"></div>'
+        content = img_html + content
+
     return rel_path, title, content
 
 
@@ -885,6 +892,21 @@ a:hover {{ text-decoration: underline; }}
   margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--c-olive-bg);
+}}
+
+.doc .doc-hero {{
+  display: block;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+}}
+
+.doc .doc-hero img {{
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }}
 
 .doc h2 {{
