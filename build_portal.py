@@ -521,11 +521,12 @@ nav.categories .dropdown {
   border: 1px solid var(--c-line);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  min-width: 320px;
-  max-height: 70vh;
+  min-width: 360px; max-width: 480px;
+  max-height: 75vh;
   overflow-y: auto;
   display: none;
   padding: 0.5rem 0;
+  z-index: 100;
 }
 nav.categories .cat:hover .dropdown,
 nav.categories .cat.open .dropdown { display: block; }
@@ -953,6 +954,36 @@ function toggleSidebar() {
 // Tancar dropdowns en clicar fora
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.cat')) {
+    document.querySelectorAll('.cat.open').forEach(c => c.classList.remove('open'));
+  }
+});
+
+// OBRIR dropdown en clicar el botó
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.cat-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const cat = btn.parentElement;
+  const wasOpen = cat.classList.contains('open');
+  // Tancar tots els altres
+  document.querySelectorAll('.cat.open').forEach(c => {
+    if (c !== cat) c.classList.remove('open');
+  });
+  // Toggle el actual
+  if (wasOpen) cat.classList.remove('open');
+  else cat.classList.add('open');
+});
+
+// Tancar dropdown quan es tria un document
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.cat .dropdown a')) {
+    document.querySelectorAll('.cat.open').forEach(c => c.classList.remove('open'));
+  }
+});
+
+// Tancar amb tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
     document.querySelectorAll('.cat.open').forEach(c => c.classList.remove('open'));
   }
 });
