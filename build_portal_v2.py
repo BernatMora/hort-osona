@@ -1242,6 +1242,11 @@ function renderSidebar(filter = '') {{
   container.innerHTML = html;
 }}
 
+// Escapa caracters especials de regex per construir patrons segurs
+function escapeRegex(str) {{
+  return str.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&');
+}}
+
 function toggleCat(section) {{
   const wasOpen = section.classList.toggle('open');
   const btn = section.querySelector('.cat-toggle');
@@ -1313,7 +1318,8 @@ function doSearch(q) {{
       if (start > 0) snippet = '…' + snippet;
       if (end < item.plain.length) snippet = snippet + '…';
       // Ressaltar la paraula
-      snippet = snippet.replace(new RegExp('(' + qLower.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi'), '<mark>$1</mark>');
+      const safeQ = escapeRegex(qLower);
+      snippet = snippet.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark>$1</mark>');
       matches.push({{ ...item, snippet }});
     }}
   }}
@@ -1436,8 +1442,8 @@ async function sendChat(question) {{
     thinking.remove();
     let msg = '❌ Error: ' + escapeHtml(e.message);
     if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError')) {{
-      msg = '❌ No puc connectar amb el servidor del xat.<br><br>' +
-            'Assegura\'t que el backend esta arrencat:<br>' +
+      msg = "❌ No puc connectar amb el servidor del xat.<br><br>" +
+            "Assegura't que el backend esta arrencat:<br>" +
             '<code style="background:#f0e8d8;padding:2px 6px;border-radius:3px">cd hort-osona-iot && python3 -m uvicorn backend.api_chat:app --port 8001</code>';
     }}
     appendChatMsg(msg, 'error');
