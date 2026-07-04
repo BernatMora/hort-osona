@@ -334,8 +334,167 @@ a:hover { text-decoration: underline; }
   margin-top: 4px;
 }
 
+/* ──────────── CHAT ──────────── */
+.chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg);
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+}
+
+.chat-overlay.open { display: flex; }
+
+.chat-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  height: var(--header-h);
+}
+
+.chat-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.chat-status {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  color: var(--c-paper);
+}
+
+.chat-status.online { background: #4a7a3a; }
+.chat-status.offline { background: #a04040; }
+.chat-status.thinking { background: #b5853a; }
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+}
+
+.chat-msg-bot {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg-user {
+  background: var(--c-olive);
+  color: var(--c-paper);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg-error {
+  background: #fce4e4;
+  border: 1px solid #d97070;
+  color: #6b1f1f;
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+.chat-msg-thinking {
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  align-self: flex-start;
+  font-style: italic;
+  color: var(--c-ink-2);
+}
+
+.chat-msg-sources {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--c-line);
+  font-size: 0.8rem;
+  color: var(--c-ink-2);
+}
+
+.chat-msg-sources ul {
+  margin: 4px 0 0 16px;
+  padding: 0;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--c-paper);
+  border-top: 1px solid var(--c-line);
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--c-line);
+  border-radius: 20px;
+  font-size: 1rem;
+  background: var(--c-bg);
+  color: var(--c-ink);
+}
+
+.chat-form input:focus {
+  outline: 2px solid var(--c-ochre);
+  outline-offset: 1px;
+}
+
+.chat-form button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-form button:hover,
+.chat-form button:active {
+  background: #2a3420;
+}
+
+.chat-form button:disabled {
+  background: var(--c-ink-2);
+  opacity: 0.6;
+}
+
 /* ──────────── DESKTOP (≥768px) ──────────── */
 @media (min-width: 768px) {
+  .chat-overlay {
+    /* A escriptori, obre com a panell lateral dret (no pantalla completa) */
+    left: auto;
+    top: var(--header-h);
+    right: 0;
+    bottom: 0;
+    width: 420px;
+    border-left: 1px solid var(--c-line);
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+  }
+
   .app {
     grid-template-columns: var(--sidebar-w) 1fr;
     grid-template-rows: var(--header-h) 1fr;
@@ -601,6 +760,7 @@ a:hover { text-decoration: underline; }
   <header class="header">
     <button class="menu-btn" id="menu-btn" aria-label="Obrir menú">☰</button>
     <div class="title">🌱 Hort Osona</div>
+    <button class="search-toggle" id="chat-btn" aria-label="Xat amb l'hort" title="Pregunta a l'hort">💬</button>
     <button class="search-toggle" id="search-btn" aria-label="Cerca">🔍</button>
   </header>
 
@@ -652,6 +812,31 @@ a:hover { text-decoration: underline; }
       <button class="drawer-close" id="search-close" aria-label="Tancar" style="color: var(--c-paper)">✕</button>
     </div>
     <div class="search-results" id="search-results"></div>
+  </div>
+
+  <!-- CHAT PANEL -->
+  <div class="chat-overlay" id="chat-overlay">
+    <div class="chat-bar">
+      <span class="chat-title">💬 Xat amb l'hort</span>
+      <span class="chat-status" id="chat-status">desconnectat</span>
+      <button class="drawer-close" id="chat-close" aria-label="Tancar" style="color: var(--c-paper)">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg chat-msg-bot">
+        <strong>🌱 Hort Osona</strong><br>
+        Hola! Soc el teu assistent hortolà. Pregunta'm qualsevol cosa sobre el teu hort a Osona.<br><br>
+        <em>Exemples:</em>
+        <ul style="margin: 8px 0 0 16px; font-size: 0.9rem;">
+          <li>Quan sembrar carbassa?</li>
+          <li>Com combatre el mildiu?</li>
+          <li>Quines plantes medicinals puc cultivar?</li>
+        </ul>
+      </div>
+    </div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Pregunta a l'hort..." autocomplete="off" required>
+      <button type="submit" id="chat-send" aria-label="Enviar">➤</button>
+    </form>
   </div>
 
 </div>
@@ -794,6 +979,115 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+// ──────────── CHAT (RAG local) ────────────
+const CHAT_API = 'http://localhost:8001/chat';
+
+function setChatStatus(text, cls) {
+  const el = document.getElementById('chat-status');
+  el.textContent = text;
+  el.className = 'chat-status ' + (cls || '');
+}
+
+function openChat() {
+  document.getElementById('chat-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('chat-input').focus(), 50);
+  // Comprovar estat de l'API
+  checkChatHealth();
+}
+
+function closeChat() {
+  document.getElementById('chat-overlay').classList.remove('open');
+}
+
+function appendChatMsg(html, kind) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg chat-msg-' + (kind || 'bot');
+  div.innerHTML = html;
+  const container = document.getElementById('chat-messages');
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+async function checkChatHealth() {
+  try {
+    const r = await fetch('http://localhost:8001/chat/health');
+    if (r.ok) {
+      const data = await r.json();
+      if (data.status === 'ok') {
+        setChatStatus('connectat · ' + (data.model || ''), 'online');
+      } else {
+        setChatStatus('error', 'offline');
+      }
+    } else {
+      setChatStatus('HTTP ' + r.status, 'offline');
+    }
+  } catch (e) {
+    setChatStatus('no connectat', 'offline');
+  }
+}
+
+async function sendChat(question) {
+  // Mostrar pregunta de l'usuari
+  appendChatMsg(escapeHtml(question), 'user');
+
+  // Mostrar "pensant..."
+  const thinking = appendChatMsg('🤔 Pensant...', 'thinking');
+  setChatStatus('pensant...', 'thinking');
+  const sendBtn = document.getElementById('chat-send');
+  const input = document.getElementById('chat-input');
+  sendBtn.disabled = true;
+  input.disabled = true;
+
+  try {
+    const r = await fetch(CHAT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question })
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    thinking.remove();
+
+    // Renderitzar resposta amb format basic
+    let answer = data.answer || '(Sense resposta)';
+    // Convertir markdown molt basic a HTML
+    answer = escapeHtml(answer)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>')
+      .replace(/^/, '<p>')
+      .replace(/$/, '</p>');
+
+    // Afegir fonts
+    let sources = '';
+    if (data.sources && data.sources.length > 0) {
+      sources = '<div class="chat-msg-sources"><strong>📚 Fonts:</strong><ul>';
+      data.sources.slice(0, 4).forEach(s => {
+        sources += '<li>' + escapeHtml(s.title) + '</li>';
+      });
+      sources += '</ul></div>';
+    }
+
+    appendChatMsg(answer + sources, 'bot');
+    setChatStatus('connectat', 'online');
+  } catch (e) {
+    thinking.remove();
+    let msg = '❌ Error: ' + escapeHtml(e.message);
+    if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError')) {
+      msg = '❌ No puc connectar amb el servidor del xat.<br><br>' +
+            'Assegura't que el backend esta arrencat:<br>' +
+            '<code style="background:#f0e8d8;padding:2px 6px;border-radius:3px">cd hort-osona-iot && python3 -m uvicorn backend.api_chat:app --port 8001</code>';
+    }
+    appendChatMsg(msg, 'error');
+    setChatStatus('desconnectat', 'offline');
+  } finally {
+    sendBtn.disabled = false;
+    input.disabled = false;
+    input.focus();
+  }
+}
+
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderSidebar();
@@ -801,8 +1095,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botons header
   document.getElementById('menu-btn').addEventListener('click', openDrawer);
   document.getElementById('search-btn').addEventListener('click', openSearch);
+  document.getElementById('chat-btn').addEventListener('click', openChat);
   document.getElementById('drawer-close').addEventListener('click', closeDrawer);
   document.getElementById('search-close').addEventListener('click', closeSearch);
+  document.getElementById('chat-close').addEventListener('click', closeChat);
   document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
 
   // Sidebar search
@@ -815,11 +1111,22 @@ document.addEventListener('DOMContentLoaded', () => {
     doSearch(e.target.value);
   });
 
+  // Chat form
+  document.getElementById('chat-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = document.getElementById('chat-input');
+    const q = input.value.trim();
+    if (!q) return;
+    input.value = '';
+    sendChat(q);
+  });
+
   // Escape per tancar
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeDrawer();
       closeSearch();
+      closeChat();
     }
   });
 
