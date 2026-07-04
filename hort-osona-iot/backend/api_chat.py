@@ -24,7 +24,7 @@ from rag import HortRAG
 # === Models Pydantic ===
 class ChatRequest(BaseModel):
     question: str
-    model: str = "llama3.1"
+    model: str = "hermes3:latest"
 
 
 class SourceInfo(BaseModel):

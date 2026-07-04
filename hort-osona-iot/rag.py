@@ -40,7 +40,7 @@ class HortRAG:
         "hort-osona-iot/PEDIDO-AMAZON.md", "hort-osona-iot/LLISTA-CURTA.md",
     }
 
-    def __init__(self, docs_dir: str = None, model: str = "llama3.1"):
+    def __init__(self, docs_dir: str = None, model: str = "hermes3:latest"):
         if docs_dir is None:
             # Per defecte, el directori arrel del projecte
             root = Path(__file__).resolve().parent.parent.parent
