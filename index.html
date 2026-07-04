@@ -1001,7 +1001,20 @@ function escapeHtml(s) {
 }
 
 // ──────────── CHAT (RAG local) ────────────
-const CHAT_API = 'http://localhost:8001/chat';
+// IMPORTANT: des del mobil NO es pot accedir a 'localhost' perque localhost
+// sempre apunta al propi dispositiu. Cal usar la IP del Mac a la xarxa local.
+// Si el backend es a una Raspberry Pi o altre maquina, canviar aqui.
+//
+// Prioritat de URLs:
+// 1. window.CHAT_API_URL (definit a l'HTML) - te prioritat
+// 2. localhost:8001 - nomes funciona des de l'ordinador
+// 3. IP del Mac a la xarxa local (192.168.100.110:8001) - funciona des de mobil
+const FALLBACK_CHAT_URLS = [
+  'http://192.168.100.110:8001/chat',
+  'http://localhost:8001/chat'
+];
+let CHAT_API = window.CHAT_API_URL || FALLBACK_CHAT_URLS[0];
+let currentUrlIndex = 0;
 
 function setChatStatus(text, cls) {
   const el = document.getElementById('chat-status');
@@ -1012,7 +1025,7 @@ function setChatStatus(text, cls) {
 function openChat() {
   document.getElementById('chat-overlay').classList.add('open');
   setTimeout(() => document.getElementById('chat-input').focus(), 50);
-  // Comprovar estat de l'API
+  // Comprovar estat de l'API (prova totes les URLs)
   checkChatHealth();
 }
 
@@ -1031,21 +1044,26 @@ function appendChatMsg(html, kind) {
 }
 
 async function checkChatHealth() {
-  try {
-    const r = await fetch('http://localhost:8001/chat/health');
-    if (r.ok) {
-      const data = await r.json();
-      if (data.status === 'ok') {
-        setChatStatus('connectat · ' + (data.model || ''), 'online');
-      } else {
-        setChatStatus('error', 'offline');
+  // Provar totes les URLs fins que una funcioni
+  for (let i = 0; i < FALLBACK_CHAT_URLS.length; i++) {
+    const url = FALLBACK_CHAT_URLS[i].replace('/chat', '/chat/health');
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      if (r.ok) {
+        const data = await r.json();
+        if (data.status === 'ok') {
+          CHAT_API = FALLBACK_CHAT_URLS[i];
+          currentUrlIndex = i;
+          setChatStatus('connectat · ' + (data.model || ''), 'online');
+          return true;
+        }
       }
-    } else {
-      setChatStatus('HTTP ' + r.status, 'offline');
+    } catch (e) {
+      // provar la seguent
     }
-  } catch (e) {
-    setChatStatus('no connectat', 'offline');
   }
+  setChatStatus('desconnectat', 'offline');
+  return false;
 }
 
 async function sendChat(question) {
@@ -1059,6 +1077,18 @@ async function sendChat(question) {
   const input = document.getElementById('chat-input');
   sendBtn.disabled = true;
   input.disabled = true;
+
+  // Assegurar-nos que tenim una URL connectada
+  const connected = await checkChatHealth();
+  if (!connected) {
+    thinking.remove();
+    appendChatMsg(buildOfflineHelp(), 'error');
+    setChatStatus('desconnectat', 'offline');
+    sendBtn.disabled = false;
+    input.disabled = false;
+    input.focus();
+    return;
+  }
 
   try {
     const r = await fetch(CHAT_API, {
@@ -1096,9 +1126,7 @@ async function sendChat(question) {
     thinking.remove();
     let msg = '❌ Error: ' + escapeHtml(e.message);
     if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError')) {
-      msg = "❌ No puc connectar amb el servidor del xat.<br><br>" +
-            "Assegura't que el backend esta arrencat:<br>" +
-            '<code style="background:#f0e8d8;padding:2px 6px;border-radius:3px">cd hort-osona-iot && python3 -m uvicorn backend.api_chat:app --port 8001</code>';
+      msg = buildOfflineHelp();
     }
     appendChatMsg(msg, 'error');
     setChatStatus('desconnectat', 'offline');
@@ -1107,6 +1135,29 @@ async function sendChat(question) {
     input.disabled = false;
     input.focus();
   }
+}
+
+function buildOfflineHelp() {
+  // Detectar si estem en mobil/tablet
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const url = FALLBACK_CHAT_URLS[0];
+  const ipMatch = url.match(/http:\/\/([\d.]+):/);
+  const ip = ipMatch ? ipMatch[1] : 'la IP del Mac';
+  let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
+  help += '<strong>Com resoldre-ho:</strong><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
+  if (isMobile) {
+    help += '<li>Assegura't que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
+    help += '<li>Obre el <strong>Terminal</strong> al Mac i executa:<br>' +
+      '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">cd ~/Desktop/hort-osona/hort-osona-iot && python3 -m uvicorn backend.api_chat:app --host 0.0.0.0 --port 8001</code></li>';
+    help += '<li>Espera que aparegui "Uvicorn running on http://0.0.0.0:8001"</li>';
+  } else {
+    help += '<li>El backend no esta arrencat. Obre el <strong>Terminal</strong> i executa:<br>' +
+      '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">cd ~/Desktop/hort-osona/hort-osona-iot && python3 -m uvicorn backend.api_chat:app --port 8001</code></li>';
+  }
+  help += '<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button> un cop arrencat</li>';
+  help += '</ol>';
+  help += '<div style="margin-top:10px;font-size:0.8rem;color:#6B665A">URL que provem: <code>' + escapeHtml(url) + '</code></div>';
+  return help;
 }
 
 // ──────────── INIT ────────────
