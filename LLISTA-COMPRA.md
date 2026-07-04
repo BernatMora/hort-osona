@@ -7,13 +7,14 @@
 
 ## 📦 A comprar (prioritat)
 
-### 1. Receptor LoRa USB per a la Raspberry Pi 4 — **MOLT IMPORTANT**
-- **A Amazon ES busca**: `"Waveshare USB LoRa 868"` o `"RAK Wireless WisLink 868"`
-- 🔗 URL directa: https://www.amazon.es/s?k=waveshare+usb+lora+868
-- 🔗 Alternativa: https://www.amazon.es/s?k=sx1262+usb+dongle+868
-- **Filtra per**: 868 MHz, USB-A, xip SX1262 o SX1276
-- **Preu esperat**: 30-40 €
-- **Si NO trobes a Amazon**: mira a **Iberobotics.com** o **Electan.com**
+### 1. Receptor LoRa per a la Raspberry Pi 4 — **TROBAT!**
+- **Producte triat**: **Waveshare SX1262 868M LoRa HAT** (compatible Raspberry Pi)
+- **Per què**: HAT sobre GPIO (més estable que USB), xip SX1262 modern i sensible
+- 🔗 Cerca Amazon: `"Waveshare SX1262 868M LoRa HAT"`
+- 🔗 URL Waveshare: https://www.waveshare.com/wiki/SX1262_868M_LoRa_HAT
+- **Filtra**: 868 MHz (NO 433 ni 915), connector SMA per antena exterior
+- **Preu esperat**: 25-35 € (més econòmic que USB dongle)
+- **Si NO trobes a Amazon**: directament a Waveshare.com (envien dins EU)
 
 ### 2. Sensor humitat terra capacitiu
 - 🔗 https://www.amazon.es/s?k=sensor+humedad+suelo+capacitivo
@@ -77,12 +78,12 @@
 
 ## 🧪 Ordre recomanat de compra
 
-1. **Primera comanda** (el que cal per provar a casa):
-   - Waveshare USB LoRa 868 MHz (~35 €)
+1. **Primera comanda** (tot el que cal per provar a casa — **la més important**):
+   - Waveshare SX1262 868M LoRa HAT (~30 €) ← **receptor a la Pi 4**
    - Sensor humitat capacitiu (~7 €)
    - BME280 (~8 €)
    - Cables Dupont (~4 €)
-   - **Total**: ~55 €
+   - **Total**: ~50 €
 
 2. **Segona comanda** (muntar a l'hort):
    - Bateria 18650 (×2) (~18 €)
