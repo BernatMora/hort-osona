@@ -1,0 +1,77 @@
+{
+  "project": "Hort Osona IoT - Muntatge del node emissor",
+  "version": "1.0",
+  "tools_needed": [
+    "Soldador + estany (per soldar pins si cal)",
+    "Cables Dupont (ja inclosos al BOM)",
+    "Multimetre (opcional pero recomanable)",
+    "Tallador de cables"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "title": "Preparar la placa TTGO LoRa32",
+      "description": "Comprovar que la placa es la versio 868 MHz. Soltar els pins (header) si es necessari per soldar cables.",
+      "duration_min": 10
+    },
+    {
+      "n": 2,
+      "title": "Connectar BME280 al bus I2C",
+      "description": "Connectar 4 cables entre BME280 i TTGO: VCC->3V3, GND->GND, SCL->GPIO22, SDA->GPIO21. Lligar CSB del BME280 a VCC (3V3) per forçar mode I2C (adreça 0x76).",
+      "duration_min": 10
+    },
+    {
+      "n": 3,
+      "title": "Verificar OLED integrat",
+      "description": "L'OLED ja esta integrat al TTGO LoRa32. No cal cablejar res. Comprovar que s'encen durant el flash amb el primer test.",
+      "duration_min": 5
+    },
+    {
+      "n": 4,
+      "title": "Connectar sensor d'humitat del sol",
+      "description": "El sensor capacitiu te 3 cables: VCC (roig) -> 3V3, GND (negre) -> GND, AOUT (groc) -> GPIO36 (VP). Provar amb codi basic abans de segellar.",
+      "duration_min": 10
+    },
+    {
+      "n": 5,
+      "title": "Verificar divisior de tensio de la bateria",
+      "description": "El TTGO porta un divisor 100k/100k integrat a GPIO35 per mesurar la bateria 18650. Si el teu model no el porta, soldar dues resistencies 100k entre Vbat i GPIO35, i entre GPIO35 i GND.",
+      "duration_min": 15
+    },
+    {
+      "n": 6,
+      "title": "Inserir la bateria 18650",
+      "description": "Posar la bateria 18650 al portapiles posterior del TTGO. Atencio a la polaritat (+/-).",
+      "duration_min": 2
+    },
+    {
+      "n": 7,
+      "title": "Provar el firmware",
+      "description": "Connectar la placa per USB a l'ordinador. Fer 'pio run --target upload' per flashejar. Obrir el monitor serie (pio device monitor) i comprovar que: 1) es connecta a LoRa, 2) llegeix BME280 correctament, 3) llegeix el sensor de sol, 4) mostra dades a l'OLED, 5) envia el payload LoRa.",
+      "duration_min": 10
+    },
+    {
+      "n": 8,
+      "title": "Muntar dins la caixa estanca",
+      "description": "Posar la placa, la bateria i el portapiles dins la caixa IP65. El sensor de sol ha de sortir per un forat a la part inferior (cap a la terra). L'antena ha de sobresortir per dalt. Segellar els forats amb silicona calenta.",
+      "duration_min": 20
+    },
+    {
+      "n": 9,
+      "title": "Connectar el panell solar",
+      "description": "Si tens panell solar: connectar el cable USB del panell al port micro-USB de la placa (per carregar la bateria durant el dia). ATENCIO: el TTGO nomes carrega si l'entrada es 5V i per USB.",
+      "duration_min": 10
+    },
+    {
+      "n": 10,
+      "title": "Instal.lar a l'hort",
+      "description": "Enterrar el sensor de sol a uns 10 cm de profunditat. Posar la caixa en un pal o fixada a un arbre. Orientar el panell solar cap al sud a uns 30-45 graus. Comprovar que arriba senyal a la Raspberry Pi de casa (mirar els logs del receptor).",
+      "duration_min": 30
+    }
+  ],
+  "flash_instructions": {
+    "platformio_install": "pip install platformio && pio --version",
+    "build_and_flash": "cd node-emissor && pio run --target upload",
+    "monitor_serial": "pio device monitor"
+  }
+}

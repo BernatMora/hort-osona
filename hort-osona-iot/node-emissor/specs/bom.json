@@ -1,0 +1,72 @@
+{
+  "project": "Hort Osona IoT - Node Emissor",
+  "version": "1.0",
+  "components": [
+    {
+      "id": "esp32-lora",
+      "name": "TTGO LoRa32 ESP32 amb OLED",
+      "frequency": "868 MHz",
+      "chip": "SX1276",
+      "qty": 1,
+      "price_eur_approx": 22,
+      "supplier": "Bricogeek (codi 1121)",
+      "notes": "Inclou OLED 128x64 integrat i connector per bateria 18650"
+    },
+    {
+      "id": "bme280",
+      "name": "Sensor BME280 (T, H, P)",
+      "interface": "I2C",
+      "address": "0x76",
+      "qty": 1,
+      "price_eur_approx": 8,
+      "supplier": "Amazon ES / AliExpress",
+      "notes": "Important: que sigui BME280, no BMP280 (que no te humitat)"
+    },
+    {
+      "id": "soil-sensor",
+      "name": "Sensor humitat del sol capacitiu v1.2",
+      "interface": "Analogic",
+      "qty": 2,
+      "price_eur_approx": 7,
+      "supplier": "Amazon ES / AliExpress",
+      "notes": "Agafar 2 per si de cas. Capacitiu (no resistiu, que es corregeix rapidament)"
+    },
+    {
+      "id": "battery-18650",
+      "name": "Bateria 18650 Li-Io 3500 mAh",
+      "qty": 2,
+      "price_eur_approx": 16,
+      "supplier": "Amazon ES",
+      "notes": "Marques recomanades: Samsung 35E, LG MJ1, Panasonic NCR18650B. Evitar Ultrafire/Trustfire (falsificacions)"
+    },
+    {
+      "id": "solar-panel",
+      "name": "Panell solar 5V / 1W",
+      "qty": 1,
+      "price_eur_approx": 10,
+      "supplier": "Amazon ES / AliExpress",
+      "notes": "Amb sortida USB o micro-USB. Mida petita (10x15 cm)"
+    },
+    {
+      "id": "enclosure",
+      "name": "Caixa estanca IP65 150x100x70mm",
+      "qty": 1,
+      "price_eur_approx": 8,
+      "supplier": "Leroy Merlin / Amazon ES",
+      "notes": "IP65 o IP66 per exterior. Foradar per sortir els cables dels sensors"
+    },
+    {
+      "id": "dupont-cables",
+      "name": "Cables Dupont 40 ut (M-F + F-F)",
+      "qty": 1,
+      "price_eur_approx": 4,
+      "supplier": "Amazon ES / AliExpress",
+      "notes": "Per connectar sensors a l'ESP32"
+    }
+  ],
+  "total_eur_approx": 75,
+  "exclude_receiver": {
+    "note": "El receptor LoRa USB o HAT per a la Raspberry Pi es compta a part",
+    "receiver_hat_price_eur_approx": 30
+  }
+}
