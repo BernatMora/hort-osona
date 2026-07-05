@@ -326,8 +326,13 @@ def main():
 
     print(f"Carregats {len(docs)} documents")
 
-    # Preparar el JSON per incrustar
-    docs_json = json.dumps(docs, ensure_ascii=False)
+    # IMPORTANT: Guardem els metadades al DOCS pero NO el HTML.
+    # El HTML es llegeix sota demanda (lazy loading) des de docs/<path>.html
+    # Aixo redueix el portal de 1.2 MB a ~50 KB
+    docs_meta = {}
+    for path, d in docs.items():
+        docs_meta[path] = {"title": d["title"], "category": d["category"]}
+    docs_json = json.dumps(docs_meta, ensure_ascii=False)
 
     # Generar l'estructura del sidebar (categories -> items)
     sidebar_data = {}
@@ -342,6 +347,35 @@ def main():
                 })
 
     sidebar_json = json.dumps(sidebar_data, ensure_ascii=False)
+
+    # ──────────── GENERAR FITXERS HTML PER A CADA DOCUMENT ────────────
+    docs_dir = BASE / "docs"
+    docs_dir.mkdir(exist_ok=True)
+    # Netejar fitxers antics
+    for f in docs_dir.rglob("*"):
+        if f.is_file():
+            f.unlink()
+    for path, d in docs.items():
+        # Subdir per categoria: docs/<categoria>/<fitxer>.html
+        out_path = docs_dir / path
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(d["html"], encoding="utf-8")
+    print(f"✅ {len(docs)} fitxers HTML generats a {docs_dir.relative_to(BASE)}/")
+
+    # ──────────── GENERAR INDEX DE CERCA (search_index.json) ────────────
+    search_index = []
+    for path, d in docs.items():
+        plain = (d["title"] + " " + re.sub(r"<[^>]+>", " ", d["html"])).lower()
+        search_index.append({
+            "path": path,
+            "title": d["title"],
+            "category": d["category"],
+            "plain": plain
+        })
+    (BASE / "search_index.json").write_text(
+        json.dumps(search_index, ensure_ascii=False), encoding="utf-8"
+    )
+    print(f"✅ search_index.json ({len(search_index)} entrades)")
 
     # ──────────── HTML ────────────
     portal = f"""<!DOCTYPE html>
@@ -1207,10 +1241,27 @@ const SIDEBAR = {sidebar_json};
 const DOCS = {docs_json};
 
 // ──────────── INDEX DE CERCA ────────────
-const SEARCH_INDEX = Object.entries(DOCS).map(([path, d]) => {{
-  const plain = (d.title + ' ' + d.html.replace(/<[^>]+>/g, ' ')).toLowerCase();
-  return {{ path, title: d.title, category: d.category, plain }};
-}});
+// Carreguem l'index de cerca sota demanda des de search_index.json
+let SEARCH_INDEX = [];
+let SEARCH_INDEX_READY = false;
+let SEARCH_INDEX_LOADING = null;
+
+async function loadSearchIndex() {{
+  if (SEARCH_INDEX_READY) return SEARCH_INDEX;
+  if (SEARCH_INDEX_LOADING) return SEARCH_INDEX_LOADING;
+  SEARCH_INDEX_LOADING = fetch('search_index.json')
+    .then(r => r.ok ? r.json() : [])
+    .then(idx => {{
+      SEARCH_INDEX = idx;
+      SEARCH_INDEX_READY = true;
+      return idx;
+    }})
+    .catch(() => []);
+  return SEARCH_INDEX_LOADING;
+}}
+
+// Precarregar l'index en iniciar
+setTimeout(loadSearchIndex, 100);
 
 // ──────────── RENDER SIDEBAR ────────────
 function renderSidebar(filter = '') {{
@@ -1265,18 +1316,27 @@ function closeDrawer() {{
 }}
 
 // ──────────── OPEN DOC ────────────
-function openDoc(path) {{
+async function openDoc(path) {{
   const d = DOCS[path];
   if (!d) return false;
   const doc = document.getElementById('doc');
   const welcome = document.getElementById('welcome');
   welcome.style.display = 'none';
   doc.style.display = 'block';
-  // Escapar les substitucions fetes al build
-  let html = d.html;
-  html = html.split('<\\/script').join('</script');
-  html = html.split('<\\!--').join('<!--');
-  doc.innerHTML = html;
+  doc.innerHTML = '<p style="padding:24px;color:var(--c-ink-2)">⏳ Carregant...</p>';
+
+  // Carregar HTML sota demanda
+  try {{
+    const r = await fetch('docs/' + encodeURI(path));
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    let html = await r.text();
+    html = html.split('<\\/script').join('</script');
+    html = html.split('<\\!--').join('<!--');
+    doc.innerHTML = html;
+  }} catch (e) {{
+    doc.innerHTML = '<p style="padding:24px;color:#a04040">❌ Error carregant el document: ' + escapeHtml(e.message) + '</p>';
+  }}
+
   // Scroll a dalt
   document.getElementById('main').scrollTop = 0;
   // Tancar drawer i search si estan oberts (en mòbil)
@@ -1300,24 +1360,24 @@ function closeSearch() {{
   document.getElementById('search-results').innerHTML = '';
 }}
 
-function doSearch(q) {{
+async function doSearch(q) {{
   const results = document.getElementById('search-results');
   if (!q || q.length < 2) {{
     results.innerHTML = '<p style="padding:16px;color:var(--c-ink-2)">Escriu almenys 2 lletres per cercar.</p>';
     return;
   }}
+  // Assegurar que l'index esta carregat
+  await loadSearchIndex();
   const qLower = q.toLowerCase();
   const matches = [];
   for (const item of SEARCH_INDEX) {{
     const idx = item.plain.indexOf(qLower);
     if (idx >= 0) {{
-      // Extreure snippet al voltant
       const start = Math.max(0, idx - 40);
       const end = Math.min(item.plain.length, idx + q.length + 60);
       let snippet = item.plain.substring(start, end);
       if (start > 0) snippet = '…' + snippet;
       if (end < item.plain.length) snippet = snippet + '…';
-      // Ressaltar la paraula
       const safeQ = escapeRegex(qLower);
       snippet = snippet.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark>$1</mark>');
       matches.push({{ ...item, snippet }});
