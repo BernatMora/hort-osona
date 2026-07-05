@@ -1,0 +1,208 @@
+<!--
+  hort-live.html — Vista amb dades realtime de l'hort
+  Inclou dins el portal principal.
+  Per activar: editar build_portal_v2.py i afegir el boto al header
+-->
+
+<!-- Placeholder pel panell de dades en temps real -->
+<div class="hort-live" id="hort-live" style="display:none">
+  <h2>📡 Hort en directe</h2>
+
+  <!-- Configuracio: posa aqui el teu projecte Supabase -->
+  <div class="hort-config" style="background:var(--c-paper);padding:12px;border-radius:8px;margin-bottom:16px;font-size:0.9rem;border:1px solid var(--c-line)">
+    <strong>Configuracio:</strong> Edita <code>window.SUPABASE_URL</code> i
+    <code>window.SUPABASE_KEY</code> a l'HTML per connectar al teu projecte Supabase.
+    <br>
+    <small>Les dades venen de la Raspberry Pi que rep els sensors per LoRa i les puja a Supabase.</small>
+  </div>
+
+  <!-- Ultimes mesures -->
+  <div class="hort-stats" id="hort-stats">
+    <div class="hort-stat">
+      <div class="hort-stat-icon">🌡️</div>
+      <div class="hort-stat-val" id="stat-temp">--</div>
+      <div class="hort-stat-lbl">Temperatura</div>
+    </div>
+    <div class="hort-stat">
+      <div class="hort-stat-icon">💧</div>
+      <div class="hort-stat-val" id="stat-hum">--</div>
+      <div class="hort-stat-lbl">Humitat aire</div>
+    </div>
+    <div class="hort-stat">
+      <div class="hort-stat-icon">🌱</div>
+      <div class="hort-stat-val" id="stat-sol">--</div>
+      <div class="hort-stat-lbl">Humitat sòl</div>
+    </div>
+    <div class="hort-stat">
+      <div class="hort-stat-icon">🔋</div>
+      <div class="hort-stat-val" id="stat-bat">--</div>
+      <div class="hort-stat-lbl">Bateria node</div>
+    </div>
+  </div>
+
+  <!-- Consell de l'IA -->
+  <div class="hort-consell" id="hort-consell" style="background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;padding:16px;margin-bottom:24px;display:none">
+    <h3 style="margin-top:0;color:var(--c-olive)">🧠 Consell de l'hort</h3>
+    <div id="hort-consell-text" style="white-space:pre-wrap;font-size:0.95rem;line-height:1.5"></div>
+    <small id="hort-consell-ts" style="color:var(--c-ink-2)"></small>
+  </div>
+
+  <!-- Grafica historica -->
+  <div class="hort-chart-wrap" style="background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;padding:16px;margin-bottom:24px">
+    <h3 style="margin-top:0;color:var(--c-olive)">📈 Ultimes 24h</h3>
+    <canvas id="hort-chart" style="max-height:300px"></canvas>
+  </div>
+
+  <!-- Estat de la connexio -->
+  <div class="hort-status" id="hort-status" style="text-align:center;color:var(--c-ink-2);font-size:0.85rem">
+    <span id="hort-status-text">⏳ Connectant...</span>
+  </div>
+</div>
+
+<style>
+.hort-live h2 { font-family: Georgia, serif; color: var(--c-olive); margin-bottom: 16px; }
+.hort-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.hort-stat { background: var(--c-paper); border: 1px solid var(--c-line); border-radius: 8px; padding: 16px; text-align: center; }
+.hort-stat-icon { font-size: 2rem; margin-bottom: 4px; }
+.hort-stat-val { font-size: 1.6rem; font-weight: 700; color: var(--c-olive); line-height: 1.2; }
+.hort-stat-lbl { font-size: 0.8rem; color: var(--c-ink-2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+.hort-consell { animation: slideIn 0.3s ease-out; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<!--
+  IMPORTANT: Per fer anar aquesta vista necessites:
+  1. Un compte Supabase amb el schema hort-osona-iot/backend/supabase_schema.sql aplicat
+  2. Substituir SUPABASE_URL i SUPABASE_KEY aqui
+  3. La Raspberry Pi amb lora_receiver.py corrent
+  4. El node emissor enviant dades cada 15 min
+-->
+
+<script>
+// ──────────── CONFIGURACIO SUPABASE ────────────
+// Substitueix amb les teves dades reals de https://app.supabase.com
+const SUPABASE_URL = window.SUPABASE_URL || 'https://YOUR_PROJECT.supabase.co';
+const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_ANON_KEY';
+
+// Carregar Supabase JS des del CDN
+(function loadSupabase() {
+  if (window.supabase) return;
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+  s.onload = () => initHortLive();
+  document.head.appendChild(s);
+})();
+
+async function initHortLive() {
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const statusEl = document.getElementById('hort-status-text');
+
+  // 1. Carregar ultim consell
+  try {
+    const { data: consells } = await sb.from('consells_ia')
+      .select('*').order('ts', { ascending: false }).limit(1);
+    if (consells && consells.length > 0) {
+      const c = consells[0];
+      document.getElementById('hort-consell').style.display = 'block';
+      document.getElementById('hort-consell-text').textContent = c.consell;
+      document.getElementById('hort-consell-ts').textContent = new Date(c.ts).toLocaleString('ca');
+    }
+  } catch (e) { /* silenci */ }
+
+  // 2. Carregar ultimes mesures (ultimes 100)
+  try {
+    const { data: mesures } = await sb.from('mesures')
+      .select('*').order('ts', { ascending: false }).limit(100);
+
+    if (!mesures || mesures.length === 0) {
+      statusEl.textContent = '⏳ Sense dades encara. Espera la primera lectura del node (15 min).';
+      return;
+    }
+
+    // Mesura mes recent
+    const last = mesures[0];
+    document.getElementById('stat-temp').textContent = last.temperatura_c.toFixed(1) + '°C';
+    document.getElementById('stat-hum').textContent = last.humitat_amb_pct.toFixed(0) + '%';
+    document.getElementById('stat-sol').textContent = last.humitat_sol_pct + '%';
+    document.getElementById('stat-bat').textContent = last.bateria_v.toFixed(2) + 'V';
+
+    // Grafica (ultimes 24h = 96 lectures de 15min)
+    drawChart(mesures.reverse());
+
+    statusEl.textContent = `✅ Connectat · Ultima lectura: ${new Date(last.ts).toLocaleString('ca')}`;
+  } catch (e) {
+    statusEl.textContent = '❌ Error connectant amb Supabase: ' + e.message;
+  }
+
+  // 3. Subscriure's al Realtime
+  sb.channel('hort-live')
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'mesures' },
+        payload => updateLive(payload.new))
+    .subscribe();
+}
+
+function updateLive(m) {
+  // Actualitzar stats
+  document.getElementById('stat-temp').textContent = m.temperatura_c.toFixed(1) + '°C';
+  document.getElementById('stat-hum').textContent = m.humitat_amb_pct.toFixed(0) + '%';
+  document.getElementById('stat-sol').textContent = m.humitat_sol_pct + '%';
+  document.getElementById('stat-bat').textContent = m.bateria_v.toFixed(2) + 'V';
+  document.getElementById('hort-status-text').textContent =
+    '✅ Actualitzat: ' + new Date(m.ts).toLocaleString('ca');
+}
+
+function drawChart(mesures) {
+  // Grafica senzilla amb canvas (sense dependencia externa)
+  const c = document.getElementById('hort-chart');
+  const ctx = c.getContext('2d');
+  c.width = c.parentElement.clientWidth;
+  c.height = 300;
+
+  if (mesures.length < 2) return;
+
+  // Escalar
+  const margin = 40;
+  const w = c.width - margin * 2;
+  const h = c.height - margin * 2;
+  const temps = mesures.map(m => m.temperatura_c);
+  const hums = mesures.map(m => m.humitat_sol_pct);
+  const tMin = Math.min(...temps), tMax = Math.max(...temps);
+  const hMin = Math.min(...hums), hMax = Math.max(...hums);
+
+  // Eixos
+  ctx.strokeStyle = '#D9D0B5';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(margin, margin); ctx.lineTo(margin, h + margin);
+  ctx.lineTo(w + margin, h + margin); ctx.stroke();
+
+  // Linia temperatura
+  ctx.strokeStyle = '#B5853A';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  mesures.forEach((m, i) => {
+    const x = margin + (i / (mesures.length - 1)) * w;
+    const y = margin + h - ((m.temperatura_c - tMin) / (tMax - tMin || 1)) * h;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Linia humitat sol
+  ctx.strokeStyle = '#3D4A2A';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  mesures.forEach((m, i) => {
+    const x = margin + (i / (mesures.length - 1)) * w;
+    const y = margin + h - ((m.humitat_sol_pct - hMin) / (hMax - hMin || 1)) * h;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Llegenda
+  ctx.fillStyle = '#B5853A'; ctx.fillRect(margin, 10, 12, 4);
+  ctx.fillStyle = '#3D4A2A'; ctx.fillRect(margin + 100, 10, 12, 4);
+  ctx.fillStyle = '#2D2A22'; ctx.font = '12px sans-serif';
+  ctx.fillText('Temperatura (°C)', margin + 16, 14);
+  ctx.fillText('Humitat sòl (%)', margin + 116, 14);
+}
+</script>
