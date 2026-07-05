@@ -1552,7 +1552,7 @@ function buildOfflineHelp() {{
   let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
   help += '<strong>Com resoldre-ho:</strong><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
   if (isMobile) {{
-    help += '<li>Assegura\'t que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
+    help += '<li>Assegura\\'t que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
     help += '<li>Obre el <strong>Terminal</strong> al Mac i executa:<br>' +
       '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">cd ~/Desktop/hort-osona/hort-osona-iot && python3 -m uvicorn backend.api_chat:app --host 0.0.0.0 --port 8001</code></li>';
     help += '<li>Espera que aparegui "Uvicorn running on http://0.0.0.0:8001"</li>';
