@@ -1011,7 +1011,7 @@ async function doSearch(q) {
     `<a href="#" class="search-result" data-path="${m.path}" onclick="return openDoc('${m.path}')">
       <div class="title">${escapeHtml(m.title)}</div>
       <div class="cat">${escapeHtml(m.category)}</div>
-      <div class="snippet">${snippet}</div>
+      <div class="snippet">${m.snippet}</div>
     </a>`
   ).join('');
 }
