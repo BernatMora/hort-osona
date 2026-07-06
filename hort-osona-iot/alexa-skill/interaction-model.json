@@ -1,0 +1,207 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hort osona",
+      "intents": [
+        {
+          "name": "PreguntaHortIntent",
+          "slots": [
+            {
+              "name": "Pregunta",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "pregunta a l'hort {Pregunta}",
+            "pregunta a l'hort sobre {Pregunta}",
+            "que em pots dir sobre {Pregunta}",
+            "informa'm sobre {Pregunta}",
+            "explica'm {Pregunta}",
+            "com puc fer {Pregunta}",
+            "quan he de {Pregunta}",
+            "{Pregunta}"
+          ]
+        },
+        {
+          "name": "EstatHortIntent",
+          "slots": [],
+          "samples": [
+            "estat de l'hort",
+            "com esta l'hort",
+            "com van les plantes",
+            "tot be a l'hort",
+            "resum de l'hort"
+          ]
+        },
+        {
+          "name": "QuanSembrarIntent",
+          "slots": [
+            {
+              "name": "Cultiu",
+              "type": "Cultiu"
+            }
+          ],
+          "samples": [
+            "quan sembro {Cultiu}",
+            "quan he de sembrar {Cultiu}",
+            "quan es sembra {Cultiu}",
+            "epoca de sembra de {Cultiu}",
+            "quan plantar {Cultiu}"
+          ]
+        },
+        {
+          "name": "QuanCollirIntent",
+          "slots": [
+            {
+              "name": "Cultiu",
+              "type": "Cultiu"
+            }
+          ],
+          "samples": [
+            "quan collim {Cultiu}",
+            "quan he de collir {Cultiu}",
+            "quan es cull {Cultiu}",
+            "epoca de collita de {Cultiu}",
+            "quan segar {Cultiu}"
+          ]
+        },
+        {
+          "name": "ComCombatentIntent",
+          "slots": [
+            {
+              "name": "Plaga",
+              "type": "Plaga"
+            }
+          ],
+          "samples": [
+            "com combatre {Plaga}",
+            "com puc tractar {Plaga}",
+            "remei per {Plaga}",
+            "que fer contra {Plaga}",
+            "com eliminar {Plaga}"
+          ]
+        },
+        {
+          "name": "QuanRegarIntent",
+          "slots": [],
+          "samples": [
+            "quan he de regar",
+            "cal regar avui",
+            "l'hort necessita reg",
+            "toca regar",
+            "he de regar avui"
+          ]
+        },
+        {
+          "name": "HelpIntent",
+          "slots": [],
+          "samples": [
+            "ajuda",
+            "ajuda'm",
+            "que pots fer",
+            "que saps fer",
+            "com funciona"
+          ]
+        },
+        {
+          "name": "CancelIntent",
+          "slots": [],
+          "samples": [
+            "atura",
+            "atura't",
+            "cancel·la",
+            "prou",
+            "ja n'hi ha prou"
+          ]
+        },
+        {
+          "name": "StopIntent",
+          "slots": [],
+          "samples": [
+            "atura",
+            "para",
+            "prou",
+            "ja n'hi ha prou",
+            "acaba"
+          ]
+        },
+        {
+          "name": "NavigateHomeIntent",
+          "slots": [],
+          "samples": [
+            "torna a l'inici",
+            "torna al principi",
+            "comença de nou"
+          ]
+        },
+        {
+          "name": "FallbackIntent",
+          "slots": [],
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "Cultiu",
+          "values": [
+            {"name": {"value": "tomàquet"}},
+            {"name": {"value": "tomàquets"}},
+            {"name": {"value": "enciam"}},
+            {"name": {"value": "enciams"}},
+            {"name": {"value": "carbassa"}},
+            {"name": {"value": "carbassons"}},
+            {"name": {"value": "pebrot"}},
+            {"name": {"value": "pebrots"}},
+            {"name": {"value": "mongeta"}},
+            {"name": {"value": "mongetes"}},
+            {"name": {"value": "patata"}},
+            {"name": {"value": "patates"}},
+            {"name": {"value": "ceba"}},
+            {"name": {"value": "cebes"}},
+            {"name": {"value": "pastanaga"}},
+            {"name": {"value": "pastanagues"}},
+            {"name": {"value": "bleda"}},
+            {"name": {"value": "bledes"}},
+            {"name": {"value": "col"}},
+            {"name": {"value": "cols"}},
+            {"name": {"value": "api"}},
+            {"name": {"value": "rave"}},
+            {"name": {"value": "raves"}},
+            {"name": {"value": "porro"}},
+            {"name": {"value": "porros"}},
+            {"name": {"value": "meló"}},
+            {"name": {"value": "melons"}},
+            {"name": {"value": "escarola"}},
+            {"name": {"value": "escaroles"}},
+            {"name": {"value": "espinac"}},
+            {"name": {"value": "espinacs"}}
+          ]
+        },
+        {
+          "name": "Plaga",
+          "values": [
+            {"name": {"value": "el mildiu"}},
+            {"name": {"value": "mildiu"}},
+            {"name": {"value": "l'oïdi"}},
+            {"name": {"value": "oïdi"}},
+            {"name": {"value": "el pugó"}},
+            {"name": {"value": "pugó"}},
+            {"name": {"value": "la mosca blanca"}},
+            {"name": {"value": "mosca blanca"}},
+            {"name": {"value": "el trip"}},
+            {"name": {"value": "trips"}},
+            {"name": {"value": "la larva"}},
+            {"name": {"value": "larves"}},
+            {"name": {"value": "el cargol"}},
+            {"name": {"value": "cargols"}},
+            {"name": {"value": "llimacs"}},
+            {"name": {"value": "l'eruga"}},
+            {"name": {"value": "erugues"}},
+            {"name": {"value": "el fong"}},
+            {"name": {"value": "fongs"}}
+          ]
+        }
+      ]
+    }
+  }
+}
