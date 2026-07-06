@@ -3,37 +3,78 @@
  *
  * Cicle:
  *   1. Desperta del deep sleep
- *   2. Llegeix BME280 (T, H, P)
- *   3. Llegeix sensor humitat del sòl (capacitiu, GPIO36)
- *   4. Llegeix tensió bateria (divisor 100k/100k, GPIO35)
- *   5. Mostra dades a l'OLED 5 segons
- *   6. Envia payload CSV per LoRa 868 MHz
- *   7. Deep sleep 15 minuts
+ *   2. Llegeix sensor humitat del sol (capacitiu, GPIO 4)
+ *   3. Llegeix sensor temperatura DS18B20 (1-Wire, GPIO 5)
+ *   4. Llegeix tensio bateria (divisor, GPIO 1)
+ *   5. Envia payload JSON per LoRaWAN 868 MHz
+ *   6. Deep sleep 15 minuts
  *
- * Hardware: TTGO LoRa32 v2.1 + BME280 + sensor capacitiu v1.2
+ * Hardware:
+ *   - ESP32-S3 amb LoRa SX1262 (Waveshare o Waveshare SX1262)
+ *   - Sensor humitat del sol capaciti (3 pins)
+ *   - Sensor temperatura DS18B20 amb sonda d'acer
+ *   - Bateria LiPo 3.7V 2000mAh
+ *   - Panell solar 5V 1W (opcional)
+ *
+ * Connexions:
+ *   Sensor humitat:  VCC -> 3V3,  GND -> GND,  AOUT -> GPIO 4
+ *   DS18B20:         VCC -> 3V3,  GND -> GND,  DATA -> GPIO 5 (amb R 4.7k a VCC)
+ *   Bateria:         Sortida del TP4056 -> 3V3/GND (amb divisor 100k/100k a GPIO 1)
  */
 
 #include <Arduino.h>
-#include <Wire.h>
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BME280.h>
-#include <U8g2lib.h>
+#include <SPI.h>
 #include <RadioLib.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <ArduinoJson.h>
 #include "config.h"
 
 // ──────────── Objectes globals ────────────
-Adafruit_BME280 bme;
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(U8G2_R0, OLED_RST, OLED_SCL, OLED_SDA);
-SX1276 radio = new Module(LORA_CS, LORA_DIO0, LORA_RST, LORA_DIO1 ?? -1);
+SX1262 radio = new Module(LORA_CS, LORA_DIO1, LORA_RST, LORA_BUSY);
+OneWire oneWire(ONE_WIRE_PIN);
+DallasTemperature ds18b20(&oneWire);
 
 // ──────────── Variables globals ────────────
 RTC_DATA_ATTR int bootCount = 0;  // Persisteix entre deep sleeps
+RTC_DATA_ATTR int txFailCount = 0;  // Persisteix entre deep sleeps
 
 // ──────────── Funcions auxiliars ────────────
 
 /**
- * Llegeix el sensor d'humitat del sòl amb N mostres i retorna %.
- * Assumeix mapeig lineal: 0% (sec) = 4095, 100% (moll) = ~1500 (calibrar).
+ * Inicialitza el sensor DS18B20.
+ * Retorna true si OK.
+ */
+bool initDS18B20() {
+    ds18b20.begin();
+    int deviceCount = ds18b20.getDeviceCount();
+    if (deviceCount == 0) {
+        Serial.println("[DS18B20] ERROR: cap sensor detectat");
+        return false;
+    }
+    Serial.printf("[DS18B20] OK: %d sensor(s) detectat(s)\n", deviceCount);
+    ds18b20.setResolution(DS18B20_RESOLUTION);
+    return true;
+}
+
+/**
+ * Llegeix la temperatura del DS18B20 en graus Celsius.
+ * Retorna NaN si falla.
+ */
+float readTemperature() {
+    ds18b20.requestTemperatures();
+    float t = ds18b20.getTempCByIndex(0);
+    if (t == DEVICE_DISCONNECTED_C) {
+        Serial.println("[DS18B20] ERROR: lectura fallida");
+        return NAN;
+    }
+    return t;
+}
+
+/**
+ * Llegeix el sensor d'humitat del sol amb N mostres i retorna %.
+ * Mapeig linial: 0% (sec) = 3500, 100% (moll) = 1500 (calibrar).
+ * IMPORTANT: calibrar un cop tinguis el sensor a la ma.
  */
 int readSoilMoisture() {
     long sum = 0;
@@ -43,10 +84,9 @@ int readSoilMoisture() {
     }
     int raw = sum / SOIL_SAMPLES;
 
-    // Mapeig a % (calibrar segons el sensor concret)
-    // Ajusta aquests valors un cop tinguis el sensor a la mà:
-    // - Valor en sec: ~3500
-    // - Valor en aigua: ~1500
+    // Mapeig a % (calibrar segons el sensor)
+    // Deixar al sec: ~3500
+    // Submergit en aigua: ~1500
     const int RAW_DRY = 3500;
     const int RAW_WET = 1500;
     int pct = map(raw, RAW_DRY, RAW_WET, 0, 100);
@@ -54,7 +94,8 @@ int readSoilMoisture() {
 }
 
 /**
- * Llegeix tensió de la bateria amb divisor de tensió.
+ * Llegeix la tensio de la bateria amb divisor de tensio.
+ * Assumint divisor 100k/100k: Vbat = Vadc * 2
  */
 float readBattery() {
     int raw = analogRead(BATTERY_PIN);
@@ -65,46 +106,63 @@ float readBattery() {
 }
 
 /**
- * Construeix el payload CSV.
+ * Construeix el payload JSON amb les dades dels sensors.
  */
-String buildPayload(float t, float h, float p, int soil, float vbat) {
-    char buf[80];
-    snprintf(buf, sizeof(buf), "T:%.1f,H:%.1f,P:%.1f,S:%d,BAT:%.2f", t, h, p, soil, vbat);
-    return String(buf);
+String buildPayload(float t, int soil, float vbat) {
+    StaticJsonDocument<200> doc;
+    doc["id"] = NODE_ID;
+    doc["loc"] = NODE_LOCATION;
+    doc["boot"] = bootCount;
+    doc["t"] = isnan(t) ? -999 : t;  // -999 si no es pot llegir
+    doc["soil"] = soil;
+    doc["vbat"] = vbat;
+    doc["uptime"] = millis() / 1000;  // segons des del wakeup
+
+    String output;
+    serializeJson(doc, output);
+    return output;
 }
 
 /**
- * Mostra les dades a l'OLED durant OLED_ENABLED_TIME_S segons.
+ * Inicialitza el modul LoRa SX1262.
  */
-void showOnOLED(float t, float h, float p, int soil, float vbat) {
-    oled.clearBuffer();
-    oled.setFont(u8g2_font_6x10_tr);
-    oled.setCursor(0, 12);
-    oled.printf("Hort Osona #%d", bootCount);
-    oled.setCursor(0, 26);
-    oled.printf("T:%.1fC H:%.1f%%", t, h);
-    oled.setCursor(0, 38);
-    oled.printf("P:%.0f hPa", p);
-    oled.setCursor(0, 50);
-    oled.printf("Sol:%d%% Bat:%.2fV", soil, vbat);
-    oled.sendBuffer();
-
-    delay(OLED_ENABLED_TIME_S * 1000);
-    oled.setPowerSave(1);  // Apaga OLED
-}
-
-/**
- * Envia payload per LoRa.
- */
-bool sendLoRa(const String& payload) {
-    int state = radio.transmit(payload.c_str());
-    if (state == RADIOLIB_ERR_NONE) {
-        Serial.printf("[LoRa] TX OK: %s\n", payload.c_str());
-        return true;
-    } else {
-        Serial.printf("[LoRa] TX FAIL: %d\n", state);
+bool initLoRa() {
+    Serial.print("[LoRa] Inicialitzant... ");
+    int state = radio.begin(
+        LORA_FREQUENCY,
+        LORA_BANDWIDTH,
+        LORA_SPREADING_FACTOR,
+        5,        // Coding rate
+        LORA_TX_POWER,
+        8,        // Preamble length
+        1.6,      // TCXO voltage (si s'escau)
+        false     // Use TCXO?
+    );
+    if (state != RADIOLIB_ERR_NONE) {
+        Serial.printf("FAIL (%d)\n", state);
         return false;
     }
+    Serial.println("OK");
+    return true;
+}
+
+/**
+ * Envia payload per LoRa amb retry.
+ */
+bool sendLoRa(const String& payload, int maxRetries = 3) {
+    for (int attempt = 1; attempt <= maxRetries; attempt++) {
+        int state = radio.transmit(payload.c_str());
+        if (state == RADIOLIB_ERR_NONE) {
+            Serial.printf("[LoRa] TX OK (intent %d): %s\n", attempt, payload.c_str());
+            return true;
+        }
+        Serial.printf("[LoRa] TX FAIL (intent %d): %d\n", attempt, state);
+        if (attempt < maxRetries) {
+            delay(1000 + random(500));  // Backoff aleatori
+        }
+    }
+    txFailCount++;
+    return false;
 }
 
 // ──────────── SETUP ────────────
@@ -114,55 +172,33 @@ void setup() {
 
     bootCount++;
     Serial.printf("\n=== Boot #%d ===\n", bootCount);
+    Serial.printf("[Node] %s @ %s\n", NODE_ID, NODE_LOCATION);
 
-    // I2C
-    Wire.begin(I2C_SDA, I2C_SCL);
+    // Inicialitza sensors
+    initDS18B20();
 
-    // BME280
-    if (!bme.begin(BME280_I2C_ADDR)) {
-        Serial.println("[BME280] ERROR: no trobat!");
-        // Continuem igual — BME280 és opcional
-    } else {
-        Serial.println("[BME280] OK");
-    }
-
-    // OLED
-    oled.begin();
-    oled.setPowerSave(0);
-    oled.clearBuffer();
-
-    // LoRa
-    Serial.print("[LoRa] Inicialitzant... ");
-    int state = radio.begin(LORA_FREQUENCY, LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
-                             5, LORA_TX_POWER, 8, 1.6, false);
-    if (state != RADIOLIB_ERR_NONE) {
-        Serial.printf("FAIL (%d)\n", state);
-    } else {
-        Serial.println("OK");
-    }
+    // Inicialitza LoRa
+    initLoRa();
 }
 
 // ──────────── LOOP ────────────
 void loop() {
     // 1. Llegir sensors
-    float t = bme.readTemperature();
-    float h = bme.readHumidity();
-    float p = bme.readPressure();
+    float t = readTemperature();
     int soil = readSoilMoisture();
     float vbat = readBattery();
 
-    Serial.printf("[Sensors] T=%.1f H=%.1f P=%.1f Soil=%d%% Vbat=%.2f\n",
-                  t, h, p, soil, vbat);
+    if (isnan(t)) t = -999;
+    Serial.printf("[Sensors] T=%.1fC Soil=%d%% Vbat=%.2fV\n", t, soil, vbat);
 
-    // 2. Mostrar a OLED
-    showOnOLED(t, h, p, soil, vbat);
+    // 2. Construir payload
+    String payload = buildPayload(t, soil, vbat);
 
     // 3. Enviar per LoRa
-    String payload = buildPayload(t, h, p, soil, vbat);
     sendLoRa(payload);
 
     // 4. Deep sleep
-    Serial.printf("[Sleep] %d minuts\n", SLEEP_INTERVAL_MIN);
+    Serial.printf("[Sleep] %d minuts (boot #%d)\n", SLEEP_INTERVAL_MIN, bootCount);
     esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
     esp_deep_sleep_start();
 }
