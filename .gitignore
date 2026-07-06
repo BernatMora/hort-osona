@@ -40,3 +40,6 @@ hort-osona-iot/.env
 
 # Site: build artefacts temporals (no pas l'artefacte final)
 site/extracted.js
+
+# Backups locals de carpetes iCloud
+hort-osona-icloud-backup-*/
