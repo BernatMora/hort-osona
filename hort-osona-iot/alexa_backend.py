@@ -40,6 +40,8 @@ except ImportError:
 # Configuracio
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "hermes3:latest")
+# Port configurable. Per defecte 5050 per evitar conflictes amb AirPlay (5000).
+ALEXA_PORT = int(os.environ.get("ALEXA_PORT", "5050"))
 PROJECT_DIR = Path(__file__).parent
 CORPUS_DIR = PROJECT_DIR.parent  # Directori hort-osona/
 
@@ -295,6 +297,7 @@ def health():
         "status": "ok",
         "ollama_url": OLLAMA_URL,
         "ollama_model": OLLAMA_MODEL,
+        "port": ALEXA_PORT,
         "corpus_dir": str(CORPUS_DIR),
         "timestamp": datetime.now().isoformat()
     })
@@ -329,7 +332,7 @@ if __name__ == "__main__":
     print(f"Ollama: {OLLAMA_URL} ({OLLAMA_MODEL})")
     print(f"Corpus: {CORPUS_DIR}")
     print()
-    print("Escoltant a http://0.0.0.0:5000")
+    print("Escoltant a http://0.0.0.0:" + str(ALEXA_PORT))
     print("Endpoints:")
     print("  POST /alexa    - Webhook Alexa")
     print("  GET  /health   - Estat del servei")
@@ -338,4 +341,4 @@ if __name__ == "__main__":
     print("Per Alexa, exposa aquest servidor amb un tunnel o VPS.")
     print()
 
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=ALEXA_PORT, debug=False)
