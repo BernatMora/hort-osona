@@ -1,0 +1,26 @@
+[Unit]
+Description=Hort Osona — Bot de Telegram (RAG + Ollama)
+After=network.target ollama.service
+Wants=ollama.service
+
+[Service]
+Type=simple
+User=hort
+WorkingDirectory=/opt/hort-osona-iot
+Environment="PATH=/opt/hort-osona-iot/venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+EnvironmentFile=/opt/hort-osona-iot/.env
+ExecStart=/opt/hort-osona-iot/venv/bin/python /opt/hort-osona-iot/telegram_bot.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/opt/hort-osona-iot/logs/telegram_bot.log
+StandardError=append:/opt/hort-osona-iot/logs/telegram_bot.log
+
+# Seguretat
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/hort-osona-iot
+
+[Install]
+WantedBy=multi-user.target

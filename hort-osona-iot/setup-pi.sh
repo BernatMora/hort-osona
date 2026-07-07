@@ -104,7 +104,9 @@ pip install \
     requests \
     RPi.GPIO \
     spidev \
-    lgpio
+    lgpio \
+    python-telegram-bot \
+    python-dotenv
 echo -e "    ${GREEN}✅ Entorn Python configurat${NC}"
 
 # 7) Copiar fitxers del projecte
@@ -115,6 +117,15 @@ if [ -d "$SCRIPT_DIR" ]; then
     cp -r $SCRIPT_DIR/backend/* /opt/hort-osona-iot/backend/
     cp -r $SCRIPT_DIR/bridge/* /opt/hort-osona-iot/bridge/ 2>/dev/null || true
     cp $SCRIPT_DIR/rag.py /opt/hort-osona-iot/ 2>/dev/null || true
+    cp $SCRIPT_DIR/telegram_bot.py /opt/hort-osona-iot/ 2>/dev/null || true
+    cp $SCRIPT_DIR/.env.example /opt/hort-osona-iot/ 2>/dev/null || true
+
+    # Crear .env buit si no existeix (l'usuari l'ha d'omplir)
+    if [ ! -f /opt/hort-osona-iot/.env ]; then
+        cp $SCRIPT_DIR/.env.example /opt/hort-osona-iot/.env
+        chmod 600 /opt/hort-osona-iot/.env
+        echo -e "    ${YELLOW}⚠️  Creat .env buit. Recorda posar-hi el TELEGRAM_BOT_TOKEN${NC}"
+    fi
     echo -e "    ${GREEN}✅ Fitxers copiats${NC}"
 else
     echo -e "    ${YELLOW}⚠️  Cal copiar manualment des de $SCRIPT_DIR${NC}"
@@ -188,6 +199,12 @@ Environment="HOME=/usr/share/ollama"
 WantedBy=multi-user.target
 EOF
 
+# Servei: Bot de Telegram (carrega .env amb TELEGRAM_BOT_TOKEN)
+if [ -f $SCRIPT_DIR/systemd/hort-osona-telegram.service ]; then
+    sudo cp $SCRIPT_DIR/systemd/hort-osona-telegram.service /etc/systemd/system/
+    echo -e "    ${GREEN}✅ Servei bot Telegram instal·lat${NC}"
+fi
+
 sudo systemctl daemon-reload
 echo -e "    ${GREEN}✅ Serveis creats (no activats encara)${NC}"
 
@@ -253,8 +270,14 @@ echo "  4. Activar els serveis:"
 echo "     sudo systemctl enable --now ollama"
 echo "     sudo systemctl enable --now hort-lora-receiver"
 echo "     sudo systemctl enable --now hort-api-chat"
+echo "     sudo systemctl enable --now hort-osona-telegram"
 echo ""
-echo "  5. Verificar que tot funciona:"
+echo "  5. Configurar el bot de Telegram (important!):"
+echo "     sudo nano /opt/hort-osona-iot/.env"
+echo "     # Afegeix el teu TELEGRAM_BOT_TOKEN"
+echo "     sudo systemctl restart hort-osona-telegram"
+echo ""
+echo "  6. Verificar que tot funciona:"
 echo "     sudo systemctl status hort-lora-receiver"
 echo "     sudo journalctl -u hort-lora-receiver -f"
 echo "     curl http://localhost:8001/health"
