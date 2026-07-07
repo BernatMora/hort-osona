@@ -7,6 +7,8 @@
 
 Projecte personal d'horticultura ecològica adaptat a la comarca d'**Osona** (Catalunya central, voltant de Vic). Inclou planificació, fitxes de cultiu, guies avançades i una secció de plantes medicinals i remeieres.
 
+> **📖 Per a la visió completa del projecte (PWA + IoT + IA + Alexa + Cloud), consulta [PROJECTE-COMPLET.md](PROJECTE-COMPLET.md).**
+
 ## 📑 Índex ràpid
 
 ### Planificació
