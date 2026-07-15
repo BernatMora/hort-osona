@@ -36,6 +36,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("pla-12-mesos.md", "Pla dels 12 mesos"),
         ("08-pla-mensual.md", "Pla d'acció mensual"),
         ("plans-mensuals/2026-06-juny.md", "Pla juny 2026"),
+        ("plans-mensuals/2026-07-juliol.md", "Pla juliol 2026"),
         ("planificacio-tardor-hivern-2026.md", "Tardor-hivern 2026-27"),
         ("01-calendari-sembra.md", "Calendari de sembra"),
         ("calendari-lunar-osona.md", "Calendari lunar"),
