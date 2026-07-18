@@ -1,7 +1,7 @@
 // service-worker.js — Service Worker per a Hort Osona PWA
 // Cache-first per a l'HTML i assets, network-first per a Open-Meteo
 
-const CACHE_VERSION = 'hort-osona-v2';
+const CACHE_VERSION = 'hort-osona-v3';
 const STATIC_CACHE = CACHE_VERSION + '-static';
 const RUNTIME_CACHE = CACHE_VERSION + '-runtime';
 

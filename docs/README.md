@@ -4,6 +4,7 @@
 <p>&gt; Disponible com a <strong>app instal·lable</strong> (Chrome / Edge / Android). Funciona <strong>offline</strong>.</p>
 <p>&gt; 📱 Banner d&#x27;instal·lació automàtic a la primera visita des del mòbil.</p>
 <p>Projecte personal d&#x27;horticultura ecològica adaptat a la comarca d&#x27;<strong>Osona</strong> (Catalunya central, voltant de Vic). Inclou planificació, fitxes de cultiu, guies avançades i una secció de plantes medicinals i remeieres.</p>
+<p>&gt; <strong>📖 Per a la visió completa del projecte (PWA + IoT + IA + Alexa + Cloud), consulta <a href="PROJECTE-COMPLET.md" target="_blank" rel="noopener">PROJECTE-COMPLET.md</a>.</strong></p>
 <h2 id="-índex-ràpid">📑 Índex ràpid</h2>
 <h3 id="planificació">Planificació</h3>
 <ul>
@@ -133,7 +134,7 @@ hort-osona/
 └── SETUP-SITE.md                        # guia del lloc web
 </code></pre>
 <h2 id="-lloc-web-unificat">🌐 Lloc web unificat</h2>
-<p>Tots els 71 documents <code>.md</code> accessibles des d&#x27;un sol HTML amb sidebar,</p>
+<p>Els documents seleccionats al catàleg són accessibles des d&#x27;un sol portal amb sidebar,</p>
 <p>cercador i hash routing. Generat per <code>site/build.py</code> a partir de <code>template.html</code>.</p>
 <pre><code>
 python site/build.py          # regenera site/index.html
@@ -141,7 +142,15 @@ python -m http.server 8765    # servidor local
 # obre http://127.0.0.1:8765/site/index.html
 </code></pre>
 <p>Més detalls a <a href="SETUP-SITE.md" target="_blank" rel="noopener">SETUP-SITE.md</a>.</p>
+<h2 id="fonts-i-artefactes-generats">Fonts i artefactes generats</h2>
+<p>Consulta <a href="ESTRUCTURA-REPOSITORI.md" target="_blank" rel="noopener">ESTRUCTURA-REPOSITORI.md</a>. Els Markdown són la font editable; el portal, els HTML imprimibles i els PDF són artefactes generats. Les noves publicacions grans s’han de portar preferentment a GitHub Releases.</p>
+<p>Abans de publicar:</p>
+<pre><code>
+python build_portal_v2.py
+python validate_portal.py
+</code></pre>
+<p>Consulta també la <a href="POLITICA-CONTINGUT.md" target="_blank" rel="noopener">política editorial</a>, la <a href="PRIVACITAT.md" target="_blank" rel="noopener">privacitat</a> i les condicions d’<a href="AUTORIA-I-US.md" target="_blank" rel="noopener">autoria i ús</a>.</p>
 <h2 id="-última-actualització">📅 Última actualització</h2>
-<p>JUNY 2026 — Revisió del pla mensual, nova fitxa de cultiu (bleda), README, setup Windows.</p>
+<p>JULIOL 2026 — Portal operatiu, política editorial, privacitat, qualitat automàtica i previsió meteorològica general d’Osona.</p>
 <p>---</p>
 <p>_Hort ecològic a Osona. Temporada 2026._</p>

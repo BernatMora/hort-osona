@@ -1,0 +1,20 @@
+name: Portal quality
+
+on:
+  push:
+    paths: ["**.md", "build_portal_v2.py", "validate_portal.py", "site/**", ".github/workflows/portal-quality.yml"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python build_portal_v2.py
+      - run: python validate_portal.py
+      - run: git diff --check
+      - name: Generated portal is current
+        run: git diff --exit-code
