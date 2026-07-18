@@ -31,12 +31,21 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("00-index.md", "Índex general"),
         ("README.md", "README"),
         ("CHANGELOG.md", "Historial"),
+        ("POLITICA-CONTINGUT.md", "Política editorial"),
+        ("PRIVACITAT.md", "Privacitat"),
+        ("ESTRUCTURA-REPOSITORI.md", "Fonts i artefactes"),
+        ("AUTORIA-I-US.md", "Autoria i ús"),
     ],
     "Planificació": [
         ("pla-12-mesos.md", "Pla dels 12 mesos"),
         ("08-pla-mensual.md", "Pla d'acció mensual"),
         ("plans-mensuals/2026-06-juny.md", "Pla juny 2026"),
         ("plans-mensuals/2026-07-juliol.md", "Pla juliol 2026"),
+        ("plans-mensuals/2026-08-agost.md", "Pla agost 2026"),
+        ("plans-mensuals/2026-09-setembre.md", "Pla setembre 2026"),
+        ("plans-mensuals/2026-10-octubre.md", "Pla octubre 2026"),
+        ("plans-mensuals/2026-11-novembre.md", "Pla novembre 2026"),
+        ("plans-mensuals/2026-12-desembre.md", "Pla desembre 2026"),
         ("planificacio-tardor-hivern-2026.md", "Tardor-hivern 2026-27"),
         ("01-calendari-sembra.md", "Calendari de sembra"),
         ("calendari-lunar-osona.md", "Calendari lunar"),
@@ -130,6 +139,28 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("VSCODE-GUIDE.md", "Editar amb VS Code"),
         ("HORT-CHECKLIST.md", "Checklist de l'hort"),
     ],
+}
+
+HIGH_RISK_DOCS = {
+    "bolets-guia-completa.md", "conserves.md", "guia-fermentats.md",
+    "remeieres-guia-completa.md", "fitoterapia-curs.md", "hort-medicinal-guia.md",
+    "apotecaria-casolana-guia.md", "olis-massatge-guia.md", "sabons-medicinals-guia.md",
+    "cremes-ungeunts-especialitzats-guia.md", "banys-terapeutics-guia.md",
+    "productes-curatius-avancats-guia.md", "primers-auxilis-verds-manual.md",
+}
+
+# URL publicades abans del portal amb navegació per hash. Es mantenen com a
+# redireccions perquè els marcadors i enllaços antics continuïn funcionant.
+LEGACY_DOC_REDIRECTS = {
+    **{
+        f"plans-mensuals/2026-{month:02d}-{name}.html":
+        f"plans-mensuals/2026-{month:02d}-{name}.md"
+        for month, name in (
+            (6, "juny"), (7, "juliol"), (8, "agost"), (9, "setembre"),
+            (10, "octubre"), (11, "novembre"), (12, "desembre"),
+        )
+    },
+    "plans-mensuals/quadern-observacio-2026.html": "bitacola-setmanal.md",
 }
 
 # ──────────── UTILITATS ────────────
@@ -310,6 +341,14 @@ def read_doc(rel_path: str) -> Tuple[str, str, str]:
         img_html = f'<div class="doc-hero"><img src="img/{p.stem}.svg" alt="{title}" loading="lazy"></div>'
         content = img_html + content
 
+    if rel_path in HIGH_RISK_DOCS:
+        content = (
+            '<aside class="trust-warning"><strong>⚠️ Contingut sensible pendent de revisió editorial</strong>'
+            '<p>Informació educativa: no substitueix assessorament mèdic, farmacèutic, micològic o sanitari. '
+            'Davant una emergència, truca al 112. Consulta la '
+            '<a href="#POLITICA-CONTINGUT.md" data-doc-link="POLITICA-CONTINGUT.md">política editorial</a>.</p></aside>'
+        ) + content
+
     return rel_path, title, content
 
 
@@ -352,15 +391,25 @@ def main():
     # ──────────── GENERAR FITXERS HTML PER A CADA DOCUMENT ────────────
     docs_dir = BASE / "docs"
     docs_dir.mkdir(exist_ok=True)
-    # Netejar fitxers antics
-    for f in docs_dir.rglob("*"):
-        if f.is_file():
-            f.unlink()
+    # Sobreescriure només els artefactes que gestiona aquest generador. Altres
+    # fitxers de docs/ poden tenir URL públiques antigues que cal conservar.
     for path, d in docs.items():
         # Subdir per categoria: docs/<categoria>/<fitxer>.html
         out_path = docs_dir / path
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(d["html"], encoding="utf-8")
+
+    for legacy_path, doc_path in LEGACY_DOC_REDIRECTS.items():
+        target = f"../../index.html#{doc_path}"
+        out_path = docs_dir / legacy_path
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(
+            '<!doctype html><html lang="ca"><meta charset="utf-8">'
+            f'<meta http-equiv="refresh" content="0;url={target}">'
+            '<meta name="robots" content="noindex">'
+            f'<title>Redirecció — Hort Osona</title><p><a href="{target}">Obrir el document</a></p>',
+            encoding="utf-8",
+        )
     print(f"✅ {len(docs)} fitxers HTML generats a {docs_dir.relative_to(BASE)}/")
 
     # ──────────── GENERAR INDEX DE CERCA (search_index.json) ────────────
@@ -385,6 +434,14 @@ def main():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Base de coneixement d'hort ecològic a Osona">
+<link rel="canonical" href="https://bernatmora.github.io/hort-osona/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:title" content="Hort Osona — Base de coneixement">
+<meta property="og:description" content="Horticultura ecològica, planificació i eines pràctiques adaptades a Osona.">
+<meta property="og:url" content="https://bernatmora.github.io/hort-osona/">
+<meta property="og:image" content="https://bernatmora.github.io/hort-osona/icon-512.png">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#3D4A2A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1115,6 +1172,17 @@ a:hover {{ text-decoration: underline; }}
   margin: 24px 0 12px;
 }}
 
+.today-panel {{ max-width: 900px; margin: 0 auto 28px; padding: 20px; text-align: left; background: var(--c-paper); border: 1px solid var(--c-line); border-left: 4px solid var(--c-ochre); border-radius: 10px; box-shadow: var(--shadow); }}
+.today-panel h2 {{ margin: 0 0 6px; }}
+.today-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-top: 14px; }}
+.today-card {{ padding: 12px; background: var(--c-bg); border-radius: 8px; }}
+.today-card strong {{ display: block; color: var(--c-olive); margin-bottom: 4px; }}
+.today-actions {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }}
+.today-actions a {{ padding: 8px 12px; background: var(--c-olive); color: var(--c-paper); border-radius: 7px; }}
+.today-actions a:hover {{ text-decoration: none; background: #2a3420; }}
+.trust-warning {{ padding: 14px 16px; margin: 0 0 20px; background: #fff4dc; border: 1px solid #d7a84b; border-left: 5px solid #b16d16; border-radius: 8px; }}
+.trust-warning p {{ margin: 6px 0 0; }}
+
 .welcome .quick {{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1216,6 +1284,20 @@ a:hover {{ text-decoration: underline; }}
         <div class="stat"><div class="num">{len([d for d in docs if d.startswith('07-fitxes-cultius/')])}</div><div class="lbl">Fitxes cultiu</div></div>
         <div class="stat"><div class="num">{len(CATEGORIES)}</div><div class="lbl">Categories</div></div>
       </div>
+      <section class="today-panel" aria-labelledby="today-title">
+        <h2 id="today-title">🌤️ Avui al meu hort</h2>
+        <p id="today-date">Carregant la situació del dia…</p>
+        <div class="today-grid">
+          <div class="today-card"><strong>Temps a Vic/Osona</strong><span id="today-weather">Consultant la previsió…</span><small>Previsió general: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo ↗</a></small></div>
+          <div class="today-card"><strong>Prioritat del mes</strong><span id="today-task">Consulta el pla mensual.</span></div>
+          <div class="today-card"><strong>Sensors</strong><span>Dades privades al BernatLab; no es publiquen ubicacions ni lectures personals.</span></div>
+        </div>
+        <div class="today-actions">
+          <a href="#" id="today-plan">Obrir el pla del mes</a>
+          <a href="#" data-path="bitacola-setmanal.md" onclick="return openDoc(this.dataset.path)">Obrir la bitàcola</a>
+          <a href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener">Veure BernatLab ↗</a>
+        </div>
+      </section>
       <h2>Com començar</h2>
       <p style="color: var(--c-ink-2);">Toca el botó ☰ per obrir el menú i triar un document, o bé 🔍 per cercar.</p>
       <div class="quick">
@@ -1269,6 +1351,45 @@ a:hover {{ text-decoration: underline; }}
 <script>
 const SIDEBAR = {sidebar_json};
 const DOCS = {docs_json};
+
+const MONTH_DATA = {{
+  1: ['gener', 'plans-mensuals/2026-01-gener.md', 'Protegir de les gelades i planificar la temporada.'],
+  2: ['febrer', 'plans-mensuals/2026-02-febrer.md', 'Preparar planters i revisar el sòl.'],
+  3: ['març', 'plans-mensuals/2026-03-marc.md', 'Començar sembres i trasplantaments progressius.'],
+  4: ['abril', 'plans-mensuals/2026-04-abril.md', 'Controlar herbes, llimacs i reg de primavera.'],
+  5: ['maig', 'plans-mensuals/2026-05-maig.md', 'Enramar, acolxar i vigilar les plagues.'],
+  6: ['juny', 'plans-mensuals/2026-06-juny.md', 'Ajustar el reg i mantenir els cultius d’estiu.'],
+  7: ['juliol', 'plans-mensuals/2026-07-juliol.md', 'Prioritzar reg profund, ombra i collita.'],
+  8: ['agost', 'plans-mensuals/2026-08-agost.md', 'Collir, conservar i preparar cultius de tardor.'],
+  9: ['setembre', 'plans-mensuals/2026-09-setembre.md', 'Sembrar la tardor i recuperar el sòl.'],
+  10: ['octubre', 'plans-mensuals/2026-10-octubre.md', 'Protegir del fred i plantar alls i faves.'],
+  11: ['novembre', 'plans-mensuals/2026-11-novembre.md', 'Acolxar, compostar i reduir el reg.'],
+  12: ['desembre', 'plans-mensuals/2026-12-desembre.md', 'Mantenir, observar i planificar l’any següent.']
+}};
+
+async function loadToday() {{
+  const now = new Date();
+  const data = MONTH_DATA[now.getMonth() + 1];
+  document.getElementById('today-date').textContent = now.toLocaleDateString('ca-ES', {{weekday:'long', day:'numeric', month:'long', year:'numeric'}});
+  document.getElementById('today-task').textContent = data[2];
+  const plan = document.getElementById('today-plan');
+  const planPath = DOCS[data[1]] ? data[1] : 'pla-12-mesos.md';
+  plan.textContent = DOCS[data[1]] ? 'Obrir el pla de ' + data[0] : 'Obrir el pla anual';
+  plan.onclick = event => {{
+    event.preventDefault();
+    openDoc(planPath);
+  }};
+  try {{
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=41.9301&longitude=2.2549&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FMadrid&forecast_days=1';
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('forecast');
+    const weather = await response.json();
+    const rain = weather.daily.precipitation_probability_max[0];
+    document.getElementById('today-weather').textContent = `${{Math.round(weather.current.temperature_2m)}} °C · ${{Math.round(weather.daily.temperature_2m_min[0])}}–${{Math.round(weather.daily.temperature_2m_max[0])}} °C · pluja ${{rain}}%`;
+  }} catch (_) {{
+    document.getElementById('today-weather').textContent = 'Previsió no disponible; consulta el servei meteorològic local.';
+  }}
+}}
 
 // ──────────── INDEX DE CERCA ────────────
 // Carreguem l'index de cerca sota demanda des de search_index.json
@@ -1363,6 +1484,10 @@ async function openDoc(path) {{
     html = html.split('<\\/script').join('</script');
     html = html.split('<\\!--').join('<!--');
     doc.innerHTML = html;
+    doc.querySelectorAll('[data-doc-link]').forEach(link => link.addEventListener('click', event => {{
+      event.preventDefault();
+      openDoc(link.dataset.docLink);
+    }}));
   }} catch (e) {{
     doc.innerHTML = '<p style="padding:24px;color:#a04040">❌ Error carregant el document: ' + escapeHtml(e.message) + '</p>';
   }}
@@ -1444,9 +1569,9 @@ function escapeHtml(s) {{
 // Prioritat de URLs:
 // 1. window.CHAT_API_URL (definit a l'HTML) - te prioritat
 // 2. localhost:8001 - nomes funciona des de l'ordinador
-// 3. IP del Mac a la xarxa local (192.168.100.110:8001) - funciona des de mobil
+// 3. IP privada de l'equip local (exemple 192.168.1.50:8001) - funciona des de mòbil
 const FALLBACK_CHAT_URLS = [
-  'http://192.168.100.110:8001/chat',
+  'http://192.168.1.50:8001/chat',
   'http://localhost:8001/chat'
 ];
 let CHAT_API = window.CHAT_API_URL || FALLBACK_CHAT_URLS[0];
@@ -1598,7 +1723,14 @@ function buildOfflineHelp() {{
 
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {{
+  document.addEventListener('click', event => {{
+    if (event.target.closest('a[data-path]')) event.preventDefault();
+  }}, true);
   renderSidebar();
+  loadToday();
+  if ('serviceWorker' in navigator) {{
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {{}});
+  }}
 
   // Botons header
   document.getElementById('menu-btn').addEventListener('click', openDrawer);
@@ -1664,6 +1796,24 @@ document.addEventListener('DOMContentLoaded', () => {{
         if sp.exists():
             shutil.copy2(sp, dp)
     print("✅ Assets PWA copiats")
+
+    (BASE / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\nSitemap: https://bernatmora.github.io/hort-osona/sitemap.xml\n",
+        encoding="utf-8",
+    )
+    (BASE / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url><loc>https://bernatmora.github.io/hort-osona/</loc></url>\n'
+        '</urlset>\n', encoding="utf-8"
+    )
+    (BASE / "404.html").write_text(
+        '<!doctype html><html lang="ca"><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
+        '<title>Pàgina no trobada — Hort Osona</title><style>body{font:18px system-ui;max-width:42rem;margin:12vh auto;padding:2rem;color:#2D2A22;background:#F5EBD8}a{color:#3D4A2A}</style>'
+        '<h1>🌱 Pàgina no trobada</h1><p>Aquest enllaç no existeix o ha canviat.</p><p><a href="./">Tornar a Hort Osona</a></p></html>\n',
+        encoding="utf-8",
+    )
+    print("✅ SEO: robots.txt, sitemap.xml i 404.html")
 
 
 if __name__ == "__main__":

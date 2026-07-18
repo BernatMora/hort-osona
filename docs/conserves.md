@@ -1,4 +1,4 @@
-<h1 id="-conserves-casolanes-guia-completa-per-aprofitar-lx27hort-to">🥫 Conserves casolanes — Guia completa per aprofitar l&#x27;hort tot l&#x27;any</h1>
+<aside class="trust-warning"><strong>⚠️ Contingut sensible pendent de revisió editorial</strong><p>Informació educativa: no substitueix assessorament mèdic, farmacèutic, micològic o sanitari. Davant una emergència, truca al 112. Consulta la <a href="#POLITICA-CONTINGUT.md" data-doc-link="POLITICA-CONTINGUT.md">política editorial</a>.</p></aside><h1 id="-conserves-casolanes-guia-completa-per-aprofitar-lx27hort-to">🥫 Conserves casolanes — Guia completa per aprofitar l&#x27;hort tot l&#x27;any</h1>
 <p>&gt; Conservar els excedents és la saviesa pagesa per excel·lència. Amb l&#x27;hort d&#x27;Osona, tens matèria primera excel·lent per fer conserves que duraran mesos i et recordaran l&#x27;estiu a l&#x27;hivern.</p>
 <p>&gt;</p>
 <p>&gt; Aquesta guia està organitzada per <strong>estació de collita</strong> (perquè puguis fer les conserves quan toca, amb el producte fresc) i inclou les <strong>receptes clàssiques catalanes</strong> + algunes d&#x27;innovadores.</p>

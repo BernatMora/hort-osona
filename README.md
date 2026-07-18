@@ -138,7 +138,7 @@ hort-osona/
 
 ## 🌐 Lloc web unificat
 
-Tots els 71 documents `.md` accessibles des d'un sol HTML amb sidebar,
+Els documents seleccionats al catàleg són accessibles des d'un sol portal amb sidebar,
 cercador i hash routing. Generat per `site/build.py` a partir de `template.html`.
 
 ```bash
@@ -149,9 +149,22 @@ python -m http.server 8765    # servidor local
 
 Més detalls a [SETUP-SITE.md](SETUP-SITE.md).
 
+## Fonts i artefactes generats
+
+Consulta [ESTRUCTURA-REPOSITORI.md](ESTRUCTURA-REPOSITORI.md). Els Markdown són la font editable; el portal, els HTML imprimibles i els PDF són artefactes generats. Les noves publicacions grans s’han de portar preferentment a GitHub Releases.
+
+Abans de publicar:
+
+```bash
+python build_portal_v2.py
+python validate_portal.py
+```
+
+Consulta també la [política editorial](POLITICA-CONTINGUT.md), la [privacitat](PRIVACITAT.md) i les condicions d’[autoria i ús](AUTORIA-I-US.md).
+
 ## 📅 Última actualització
 
-JUNY 2026 — Revisió del pla mensual, nova fitxa de cultiu (bleda), README, setup Windows.
+JULIOL 2026 — Portal operatiu, política editorial, privacitat, qualitat automàtica i previsió meteorològica general d’Osona.
 
 ---
 _Hort ecològic a Osona. Temporada 2026._

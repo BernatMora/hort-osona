@@ -1,4 +1,4 @@
-<h1 id="-guia-de-fermentats-casolans-hort-osona">🫙 Guia de fermentats casolans — Hort Osona</h1>
+<aside class="trust-warning"><strong>⚠️ Contingut sensible pendent de revisió editorial</strong><p>Informació educativa: no substitueix assessorament mèdic, farmacèutic, micològic o sanitari. Davant una emergència, truca al 112. Consulta la <a href="#POLITICA-CONTINGUT.md" data-doc-link="POLITICA-CONTINGUT.md">política editorial</a>.</p></aside><h1 id="-guia-de-fermentats-casolans-hort-osona">🫙 Guia de fermentats casolans — Hort Osona</h1>
 <p>&gt; La fermentació làctica és una de les maneres més antigues, sanes i econòmiques de conservar excedents de l&#x27;hort. A més, crea probiòtics excel·lents per a la salut intestinal.</p>
 <h2 id="-què-és-la-fermentació-làctica">📚 Què és la fermentació làctica?</h2>
 <p>Procés en què els <strong>lactobacils</strong> (bacteris beneficiosos presents de forma natural a la superfície de les verdures) transformen els sucres en <strong>àcid làctic</strong>. Això:</p>

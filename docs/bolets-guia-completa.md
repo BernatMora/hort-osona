@@ -1,4 +1,4 @@
-<h1 id="-guia-completa-dels-bolets-a-osona-recollecció-i-cultiu">🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu</h1>
+<aside class="trust-warning"><strong>⚠️ Contingut sensible pendent de revisió editorial</strong><p>Informació educativa: no substitueix assessorament mèdic, farmacèutic, micològic o sanitari. Davant una emergència, truca al 112. Consulta la <a href="#POLITICA-CONTINGUT.md" data-doc-link="POLITICA-CONTINGUT.md">política editorial</a>.</p></aside><h1 id="-guia-completa-dels-bolets-a-osona-recollecció-i-cultiu">🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu</h1>
 <p>&gt; Osona és un <strong>paradís micològic</strong>: boscos de roure, alzina, pi, faig, castanyer... Tots ells donen <strong>bolets excel·lents</strong>, alguns molt valorats a la cuina. Aquesta guia t&#x27;ensenya a <strong>trobar</strong>, <strong>reconèixer</strong> i <strong>cuinar</strong> els bolets, i <strong>com cultivar-ne alguns</strong> al teu hort o al bosc de casa.</p>
 <h2 id="1-el-món-dels-bolets-a-osona">1. El món dels bolets a Osona</h2>
 <h3 id="a-què-és-un-bolet">A. Què és un bolet?</h3>
