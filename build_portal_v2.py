@@ -23,7 +23,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Tuple
 
-BASE = Path("/Users/bernatmorasanglas/Desktop/hort-osona")
+BASE = Path(__file__).resolve().parent
 
 # ──────────── CATEGORIES (mateix ordre que abans) ────────────
 CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
@@ -495,6 +495,14 @@ a:hover {{ text-decoration: underline; }}
   color: var(--c-paper);
 }}
 
+.header .project-shortcut {{
+  width: auto;
+  padding: 0 8px;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}}
+
 /* Main content */
 .main {{
   grid-row: 2;
@@ -575,6 +583,23 @@ a:hover {{ text-decoration: underline; }}
   background: var(--c-bg);
   color: var(--c-ink);
 }}
+
+.drawer-project-link {{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--c-line);
+  color: var(--c-olive);
+  font-weight: 600;
+}}
+
+.drawer-project-link:hover {{
+  background: var(--c-accent-bg);
+  text-decoration: none;
+}}
+
+.drawer-project-link .arrow {{ margin-left: auto; }}
 
 .drawer-content {{
   flex: 1;
@@ -1156,6 +1181,7 @@ a:hover {{ text-decoration: underline; }}
   <header class="header">
     <button class="menu-btn" id="menu-btn" aria-label="Obrir menú">☰</button>
     <div class="title">🌱 Hort Osona</div>
+    <a class="search-toggle project-shortcut" href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener" aria-label="Obrir BernatLab" title="BernatLab"><span aria-hidden="true">🧪</span> Lab</a>
     <button class="search-toggle" id="chat-btn" aria-label="Xat amb l'hort" title="Pregunta a l'hort">💬</button>
     <button class="search-toggle" id="search-btn" aria-label="Cerca">🔍</button>
   </header>
@@ -1169,6 +1195,9 @@ a:hover {{ text-decoration: underline; }}
     <div class="drawer-search">
       <input type="search" id="sidebar-search" placeholder="Cerca un document..." autocomplete="off">
     </div>
+    <a class="drawer-project-link" href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener">
+      <span aria-hidden="true">🧪</span> BernatLab <span class="arrow" aria-hidden="true">↗</span>
+    </a>
     <div class="drawer-content" id="drawer-content">
       <!-- S'omple amb JS -->
     </div>
