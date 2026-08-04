@@ -81,6 +81,10 @@ def main() -> None:
     portal_js = script.group(1)
     if ".at(-1)" in portal_js:
         fail("JavaScript incompatible: usa indexació clàssica en lloc de .at(-1)")
+    if "updateViaCache: 'none'" not in portal_js:
+        fail("La PWA ha de comprovar el Service Worker sense reutilitzar la cache HTTP")
+    if "controllerchange" not in portal_js or "SKIP_WAITING" not in portal_js:
+        fail("Falta l'activació automàtica de les actualitzacions PWA")
 
     init_start = portal_js.find("document.addEventListener('DOMContentLoaded'")
     listener_pos = portal_js.find("getElementById('menu-btn').addEventListener", init_start)
