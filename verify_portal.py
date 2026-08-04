@@ -78,7 +78,33 @@ def main() -> None:
     if result.returncode:
         fail("JavaScript invàlid: " + result.stderr.strip())
 
-    print(f"✅ Portal correcte: {len(docs)} documents, recursos presents i JavaScript vàlid")
+    portal_js = script.group(1)
+    if ".at(-1)" in portal_js:
+        fail("JavaScript incompatible: usa indexació clàssica en lloc de .at(-1)")
+
+    init_start = portal_js.find("document.addEventListener('DOMContentLoaded'")
+    listener_pos = portal_js.find("getElementById('menu-btn').addEventListener", init_start)
+    month_pos = portal_js.find("configureCurrentMonth();", init_start)
+    if init_start < 0 or listener_pos < 0 or month_pos < 0:
+        fail("No s'ha trobat la inicialització completa del portal")
+    if listener_pos > month_pos:
+        fail("Els botons s'han de registrar abans de configurar el mes")
+
+    required_handlers = [
+        "menu-btn", "home-btn", "search-btn", "chat-btn",
+        "drawer-close", "search-close", "chat-close",
+    ]
+    missing_handlers = [
+        item for item in required_handlers
+        if f"getElementById('{item}').addEventListener" not in portal_js
+    ]
+    if missing_handlers:
+        fail("Botons sense controlador: " + ", ".join(missing_handlers))
+
+    print(
+        f"✅ Portal correcte: {len(docs)} documents, recursos presents, "
+        "JavaScript compatible i botons inicialitzats"
+    )
 
 
 if __name__ == "__main__":
