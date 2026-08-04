@@ -1307,11 +1307,14 @@ function configureCurrentMonth() {
     .sort();
   const exact = available.find(path => path.startsWith('plans-mensuals/' + prefix));
   const currentKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-  const previous = available.filter(path => path.slice(16, 23) <= currentKey).at(-1);
-  const path = exact || previous || available.at(-1);
+  const pastMonths = available.filter(path => path.slice(16, 23) <= currentKey);
+  const previous = pastMonths.length ? pastMonths[pastMonths.length - 1] : '';
+  const latest = available.length ? available[available.length - 1] : '';
+  const path = exact || previous || latest;
   const title = document.getElementById('current-month-title');
   const link = document.getElementById('current-month-link');
 
+  if (!title || !link) return;
   title.textContent = `${monthNames[now.getMonth()].charAt(0).toUpperCase() + monthNames[now.getMonth()].slice(1)} ${now.getFullYear()}`;
   if (path) {
     link.dataset.path = path;
@@ -1517,9 +1520,8 @@ function saveChatUrl() {
 
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {
-  renderSidebar();
-  configureCurrentMonth();
-
+  // Botons header: registrar-los primer perquè una funció secundària
+  // no pugui deixar tota la interfície sense resposta.
   // Botons header
   document.getElementById('menu-btn').addEventListener('click', openDrawer);
   document.getElementById('home-btn').addEventListener('click', () => showWelcome());
@@ -1531,6 +1533,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('search-close').addEventListener('click', closeSearch);
   document.getElementById('chat-close').addEventListener('click', closeChat);
   document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
+
+  // Inicialització no crítica: un error aquí no desactiva els botons.
+  try {
+    renderSidebar();
+  } catch (error) {
+    console.error('No s’ha pogut construir el menú:', error);
+  }
+  try {
+    configureCurrentMonth();
+  } catch (error) {
+    console.error('No s’ha pogut configurar el mes actual:', error);
+  }
 
   // Els enllaços Markdown interns naveguen dins del portal.
   document.getElementById('doc').addEventListener('click', event => {
