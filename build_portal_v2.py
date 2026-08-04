@@ -1442,13 +1442,13 @@ a:hover {{ text-decoration: underline; }}
       <h2>Com començar</h2>
       <p style="color: var(--c-ink-2);">Toca el botó ☰ per obrir el menú i triar un document, o bé 🔍 per cercar.</p>
       <div class="quick">
-        <a href="#" data-path="pla-12-mesos.md" onclick="return openDoc(this.dataset.path)">📅 Pla dels 12 mesos</a>
-        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Què puc sembrar?</a>
-        <a href="#" data-path="04-reg-fertilitzacio.md" onclick="return openDoc(this.dataset.path)">💧 Reg i fertilització</a>
-        <a href="#" data-path="03-gestio-plagues.md" onclick="return openDoc(this.dataset.path)">🐞 Plagues i malalties</a>
-        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions i rotacions</a>
-        <a href="#" data-path="conserves.md" onclick="return openDoc(this.dataset.path)">🥫 Conserves</a>
-        <a href="#" data-path="remeieres-guia-completa.md" onclick="return openDoc(this.dataset.path)">🌿 Plantes remeieres</a>
+        <a href="#" data-path="pla-12-mesos.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">📅 Pla dels 12 mesos</a>
+        <a href="#" data-path="01-calendari-sembra.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">🌱 Què puc sembrar?</a>
+        <a href="#" data-path="04-reg-fertilitzacio.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">💧 Reg i fertilització</a>
+        <a href="#" data-path="03-gestio-plagues.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">🐞 Plagues i malalties</a>
+        <a href="#" data-path="02-associacions-rotacions.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">🌿 Associacions i rotacions</a>
+        <a href="#" data-path="conserves.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">🥫 Conserves</a>
+        <a href="#" data-path="remeieres-guia-completa.md" onclick="event.preventDefault();openDoc(this.dataset.path);return false">🌿 Plantes remeieres</a>
       </div>
     </div>
     <div class="doc-toolbar" id="doc-toolbar">
@@ -1542,7 +1542,7 @@ function renderSidebar(filter = '') {{
     if (filtered.length === 0) continue;
 
     const itemsHtml = filtered.map(it =>
-      `<li><a href="#" data-path="${{it.path}}" onclick="return openDoc('${{it.path}}')">${{escapeHtml(it.label)}}</a></li>`
+      `<li><a href="#" data-path="${{it.path}}" onclick="event.preventDefault();openDoc(this.dataset.path);return false">${{escapeHtml(it.label)}}</a></li>`
     ).join('');
 
     html += `<div class="cat-section" data-cat="${{escapeHtml(catName)}}">
@@ -1726,7 +1726,7 @@ async function doSearch(q) {{
     return;
   }}
   results.innerHTML = matches.slice(0, 30).map(m =>
-    `<a href="#" class="search-result" data-path="${{m.path}}" onclick="return openDoc('${{m.path}}')">
+    `<a href="#" class="search-result" data-path="${{m.path}}" onclick="event.preventDefault();openDoc(this.dataset.path);return false">
       <div class="title">${{escapeHtml(m.title)}}</div>
       <div class="cat">${{escapeHtml(m.category)}}</div>
       <div class="snippet">${{m.snippet}}</div>
