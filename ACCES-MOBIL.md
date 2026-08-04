@@ -52,7 +52,8 @@ Cada vegada que vulguis actualitzar el contingut:
 
 ```bash
 cd ~/Desktop/hort-osona
-python3 build_portal.py   # regenera l'index.html i copia assets PWA
+python3 build_portal_v2.py   # regenera l'index.html, els documents i els assets PWA
+python3 verify_portal.py     # comprova que tot sigui correcte abans de publicar
 ./hort-sync.sh "missatge" # commit + push
 ```
 
@@ -62,7 +63,7 @@ Si vols, pots crear un àlies al terminal per fer-ho en una sola ordre:
 
 ```bash
 # Afegeix això a ~/.zshrc:
-alias hort-publish='cd ~/Desktop/hort-osona && python3 build_portal.py && ./hort-sync.sh "Actualitzar web"'
+alias hort-publish='cd ~/Desktop/hort-osona && python3 build_portal_v2.py && ./hort-sync.sh "Actualitzar web"'
 ```
 
 Després:
@@ -117,6 +118,6 @@ hort-publish "Afegida fitxa de carxofa"
 ## 📞 Ajuda
 
 Si alguna cosa no funciona:
-1. Comprova que el portal es genera bé: `python3 build_portal.py`
+1. Comprova que el portal es genera bé: `python3 build_portal_v2.py`
 2. Comprova els assets PWA: `ls -la manifest.json icon-*.png service-worker.js`
 3. Comprova que el push ha funcionat: `git log --oneline -3`

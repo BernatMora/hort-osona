@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-de-plantes-adventícies-les-quotmales-herbesqu">🌱 Guia completa de plantes adventícies — Les &quot;males herbes&quot; que t&#x27;ajuden</h1>
-<p>&gt; A l&#x27;hort ecològic <strong>no hi ha &quot;males herbes&quot;</strong>, hi ha <strong>plantes adventícies</strong>: plantes que creixen soles, sovint ajuden a l&#x27;ecosistema, i moltes són <strong>comestibles, medicinals o útils</strong>. Aquesta guia et canvia la mirada: en lloc d&#x27;arrencar-les totes, aprendràs a <strong>conviure-hi</strong>, a <strong>aprofitar-les</strong> i a <strong>gestionar-les intel·ligentment</strong>.</p>
+<blockquote>A l&#x27;hort ecològic <strong>no hi ha &quot;males herbes&quot;</strong>, hi ha <strong>plantes adventícies</strong>: plantes que creixen soles, sovint ajuden a l&#x27;ecosistema, i moltes són <strong>comestibles, medicinals o útils</strong>. Aquesta guia et canvia la mirada: en lloc d&#x27;arrencar-les totes, aprendràs a <strong>conviure-hi</strong>, a <strong>aprofitar-les</strong> i a <strong>gestionar-les intel·ligentment</strong>.</blockquote>
 <h2 id="1-què-són-les-plantes-adventícies">1. Què són les plantes adventícies?</h2>
 <h3 id="definició">Definició</h3>
 <p>Les <strong>plantes adventícies</strong> (també dites <strong>&quot;males herbes&quot;</strong> o <strong>&quot;espontànies&quot;</strong>) són plantes que <strong>creixen soles</strong> a l&#x27;hort, sense que les sembris. Inclouen:</p>
@@ -643,7 +643,7 @@
 <td><strong>Desembre</strong></td>
 <td>Planificar la biodiversitat</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="6-plantes-adventícies-com-a-aliment">6. Plantes adventícies com a aliment</h2>
 <h3 id="receptes-ràpides">Receptes ràpides</h3>
 <h4 id="sopa-dx27ortigues">Sopa d&#x27;ortigues</h4>
@@ -773,7 +773,7 @@
 <td><strong>Cap blanc</strong></td>
 <td>Sòl sec, calcari</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="9-plantes-adventícies-invasores-vigilar">9. Plantes adventícies invasores (vigilar!)</h2>
 <h3 id="a-osona-algunes-són-especialment-invasores">A Osona, algunes són especialment invasores:</h3>
 <ul>
@@ -807,7 +807,7 @@
 <li><strong>Deixar</strong> créixer</li>
 <li><strong>Gestionar</strong> les invasores</li>
 <li><strong>Observar</strong> i gaudir</li>
-</ul>
+</ol>
 <h2 id="11-la-quotmala-herbaquot-perfecta-resum">11. La &quot;mala herba&quot; perfecta: resum</h2>
 <table>
 <thead><tr>
@@ -887,10 +887,10 @@
 <td>—</td>
 <td>✅</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="12-notes-finals">12. Notes finals</h2>
 <h3 id="el-missatge-clàsic">El missatge clàsic</h3>
-<p>&gt; <strong>&quot;La millor mala herba és la que mengen els animals, medicinal o que atrau abelles.&quot;</strong></p>
+<blockquote><strong>&quot;La millor mala herba és la que mengen els animals, medicinal o que atrau abelles.&quot;</strong></blockquote>
 <h3 id="canvi-de-mirada">Canvi de mirada</h3>
 <p>En lloc d&#x27;arrencar tot, <strong>aprenem a conviure</strong>. Gestionar, no eliminar. Aprofitar, no lluitar.</p>
 <h3 id="beneficis">Beneficis</h3>
@@ -909,5 +909,5 @@
 <li><strong>Menja</strong> les que siguin comestibles</li>
 <li><strong>Fes</strong> preparats amb elles</li>
 <li><strong>Gaudir</strong> del teu hort</li>
-</ul>
+</ol>
 <p>🌱 <strong>Bona convivència amb les plantes adventícies!</strong></p>

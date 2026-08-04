@@ -32,7 +32,7 @@
 <td>Abril-maig</td>
 <td>Agost-setembre (per a gra sec)</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Dies des de sembra fins a collita</strong>: 90-150 dies (llarg, però poca feina)</li>
 <li><strong>Tradició d&#x27;Osona</strong>: sembrar la fava per Sant Andreu (30 novembre) — dita pagesa</li>

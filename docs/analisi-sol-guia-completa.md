@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-dx27anàlisi-de-sòl-per-a-lx27hort-dx27osona">🔬 Guia completa d&#x27;anàlisi de sòl per a l&#x27;hort d&#x27;Osona</h1>
-<p>&gt; Conèixer el teu sòl és la base per cultivar bé. Un sòl sa, equilibrat i viu és el <strong>factor número 1</strong> per a l&#x27;èxit de l&#x27;hort. Aquesta guia t&#x27;ensenyarà a fer <strong>anàlisis bàsiques tu mateix</strong>, a <strong>interpretar-les</strong>, i a <strong>actuar en conseqüència</strong>.</p>
+<blockquote>Conèixer el teu sòl és la base per cultivar bé. Un sòl sa, equilibrat i viu és el <strong>factor número 1</strong> per a l&#x27;èxit de l&#x27;hort. Aquesta guia t&#x27;ensenyarà a fer <strong>anàlisis bàsiques tu mateix</strong>, a <strong>interpretar-les</strong>, i a <strong>actuar en conseqüència</strong>.</blockquote>
 <h2 id="1-per-què-analitzar-el-sòl">1. Per què analitzar el sòl?</h2>
 <h3 id="per-què-és-fonamental">Per què és fonamental</h3>
 <ol>
@@ -9,7 +9,7 @@
 <li><strong>Estalviar diners</strong> — adobs i esmenes que no necessites</li>
 <li><strong>Evitar contaminació</strong> — metalls pesants, pesticides residuals</li>
 <li><strong>Millorar amb temps</strong> — comparar any a any</li>
-</ul>
+</ol>
 <h3 id="el-sòl-ideal-per-a-hort">El sòl ideal per a hort</h3>
 <table>
 <thead><tr>
@@ -52,7 +52,7 @@
 <td>Alta</td>
 <td>Cucs, fongs, bacteris</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-tipus-dx27anàlisi">2. Tipus d&#x27;anàlisi</h2>
 <h3 id="a-anàlisi-casolana-tu-mateix-gratuïta">A. Anàlisi casolana (tu mateix, gratuïta)</h3>
 <p>Pots fer-ne <strong>3 de bàsiques</strong> amb materials senzills:</p>
@@ -60,7 +60,7 @@
 <li><strong>Test de textura</strong> (sorra/llim/argila)</li>
 <li><strong>Test de pH</strong> (amb vinagre i bicarbonat)</li>
 <li><strong>Test d&#x27;estructura i vida</strong> (observació directa)</li>
-</ul>
+</ol>
 <h3 id="b-anàlisi-professional-al-laboratori-30-100-">B. Anàlisi professional (al laboratori, 30-100 €)</h3>
 <p>Convé fer-ne una <strong>cada 3-5 anys</strong> per tenir una visió completa:</p>
 <ul>
@@ -89,14 +89,24 @@
 <ol>
 <li><strong>Agafar</strong> un grapat de sòl humit (no sec, no entollat)</li>
 <li><strong>Fregar</strong> entre els dits:</li>
+</ol>
+<ul>
 <li><strong>Si es nota granulat i aspre</strong> → molt de <strong>sorra</strong></li>
 <li><strong>Si es nota llis i suau</strong> → molt de <strong>llim</strong></li>
 <li><strong>Si es nota enganxós i es pot fer bola</strong> → molt d&#x27;<strong>argila</strong></li>
+</ul>
+<ol>
 <li><strong>Fer una bola</strong> amb el sòl humit:</li>
+</ol>
+<ul>
 <li>Es trenca? → sorrenc</li>
 <li>Es manté? → argilós</li>
 <li>Es manté però es pot modelar? → franc (ideal)</li>
+</ul>
+<ol>
 <li><strong>Fer un &quot;cúmul&quot; de cucurutxo</strong>:</li>
+</ol>
+<ul>
 <li>Si pots fer un cucurutxo de &gt;5 cm → molt argilós</li>
 <li>Si no pots fer-lo → sorrenc</li>
 </ul>
@@ -137,7 +147,7 @@
 <td>Bona</td>
 <td><strong>Tots els cultius</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="el-teu-cas-recordant-la-teva-informació">El teu cas (recordant la teva informació)</h4>
 <p>Has dit que el teu sòl és <strong>sorrenc</strong>. Això vol dir:</p>
 <ul>
@@ -158,9 +168,15 @@
 <h4 id="procediment">Procediment</h4>
 <ol>
 <li><strong>Tassó 1</strong>: sòl + vinagre</li>
+</ol>
+<ul>
 <li><strong>Fa bombolles/escuma</strong> → sòl <strong>alcalí</strong> (pH &gt; 7)</li>
 <li><strong>No fa res</strong> → no és alcalí, segueix</li>
+</ul>
+<ol>
 <li><strong>Tassó 2</strong>: sòl + aigua (fer una pasta) + bicarbonat</li>
+</ol>
+<ul>
 <li><strong>Fa bombolles/escuma</strong> → sòl <strong>àcid</strong> (pH &lt; 7)</li>
 <li><strong>No fa res</strong> → sòl <strong>neutre</strong> (pH = 7)</li>
 </ul>
@@ -214,7 +230,7 @@
 <td>Difícil cultivar</td>
 <td>Consultar professional</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="adaptació-del-ph-a-osona">Adaptació del pH a Osona</h4>
 <ul>
 <li>A Osona, els sòls solen ser <strong>lleugerament àcids a neutres</strong> (pH 6-7,5)</li>
@@ -233,15 +249,25 @@
 <ol>
 <li><strong>Cavar</strong> un forat de 20 cm de profunditat</li>
 <li><strong>Observar</strong> i <strong>comptar</strong>:</li>
+</ol>
+<ul>
 <li><strong>Cucs de terra</strong> (≥5-10 per forat = molt bo)</li>
 <li><strong>Larves i insectes</strong> (≥3-5 = bo)</li>
 <li><strong>Arrels blanques</strong> (= bona estructura)</li>
 <li><strong>Fongs blancs</strong> (micorrizes = excel·lent)</li>
+</ul>
+<ol>
 <li><strong>Tacte</strong> del sòl:</li>
+</ol>
+<ul>
 <li><strong>Granular</strong>, amb agregats → bona estructura</li>
 <li><strong>Massís, dur</strong> → compactat</li>
 <li><strong>Pols</strong> quan és sec → falta estructura</li>
+</ul>
+<ol>
 <li><strong>Olor</strong>:</li>
+</ol>
+<ul>
 <li><strong>Olor de terra humida</strong> (geosmina) → molt sa</li>
 <li><strong>Olor àcida o de podrit</strong> → massa humit o compactat</li>
 <li><strong>Sense olor</strong> → vida pobra</li>
@@ -273,7 +299,7 @@
 <td>Cap cuc, compactat</td>
 <td>Compost, deixar descansar, sembrar adob verd</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="d-test-de-drenatge">D. Test de drenatge</h3>
 <h4 id="què-mesura">Què mesura</h4>
 <p>La capacitat del sòl d&#x27;<strong>absorbir i drenar</strong> l&#x27;aigua.</p>
@@ -284,6 +310,8 @@
 <li><strong>Esperar</strong> 24 hores (que s&#x27;escorri)</li>
 <li><strong>Tornar a omplir</strong> amb aigua</li>
 <li><strong>Cronometrar</strong> quant triga a buidar-se:</li>
+</ol>
+<ul>
 <li><strong>&lt; 30 min</strong>: drenatge excessiu (sorrenc)</li>
 <li><strong>30 min - 2 h</strong>: drenatge bo (ideal)</li>
 <li><strong>2 - 6 h</strong>: drenatge lent (argilós)</li>
@@ -296,7 +324,7 @@
 <li><strong>Cavar</strong> a 10 cm: ha d&#x27;estar humit</li>
 <li><strong>Si no</strong>: aigua baixa massa ràpid (sorrenc) o hi ha crosta superficial</li>
 <li><strong>Solució</strong>: afegir compost, mulching</li>
-</ul>
+</ol>
 <h2 id="4-anàlisi-professional-de-sòl">4. Anàlisi professional de sòl</h2>
 <h3 id="quan-fer-la">Quan fer-la</h3>
 <ul>
@@ -417,7 +445,7 @@ Magnesi (Mg): 120 mg/kg
 <td>&gt; 400 mg/kg</td>
 <td>Sulfat de magnesi</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-millores-del-sòl">5. Millores del sòl</h2>
 <h3 id="per-a-sòl-sorrenc-el-teu-cas">Per a sòl sorrenc (el teu cas)</h3>
 <h4 id="a-augmentar-la-matèria-orgànica">A. Augmentar la matèria orgànica</h4>
@@ -478,7 +506,7 @@ Magnesi (Mg): 120 mg/kg
 <li><strong>Adob verd</strong></li>
 <li><strong>Reg moderat</strong> (no entollar)</li>
 <li><strong>Cobertura del sòl</strong> (molt important!)</li>
-</ul>
+</ol>
 <h3 id="signes-de-vida">Signes de vida</h3>
 <ul>
 <li><strong>Cucs de terra</strong>: 5-10 per forat = molt bo</li>
@@ -591,7 +619,7 @@ Restes → torna a començar
 <td><strong>Hivern</strong></td>
 <td>Repòs del sòl (no treballar)</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="cada-3-5-anys">Cada 3-5 anys</h3>
 <ul>
 <li><strong>Anàlisi professional completa</strong></li>
@@ -645,7 +673,7 @@ ARGILA        ███████████████████
 <td>Alt</td>
 <td>Fàcil</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="13-resum-visual-tests-casolans-ràpids">13. Resum visual: tests casolans ràpids</h2>
 <table>
 <thead><tr>
@@ -696,7 +724,7 @@ ARGILA        ███████████████████
 <td>Trencar sòl sec</td>
 <td>Granular = bo</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="14-fitxa-dx27anàlisi-del-teu-hort">14. Fitxa d&#x27;anàlisi del teu hort</h2>
 <h3 id="dades-generals">Dades generals</h3>
 <ul>
@@ -730,7 +758,7 @@ ARGILA        ███████████████████
 <li><strong>Curt termini</strong> (aquesta setmana): ___</li>
 <li><strong>Mig termini</strong> (aquest mes): ___</li>
 <li><strong>Llarg termini</strong> (aquest any): ___</li>
-</ul>
+</ol>
 <h2 id="15-glossari">15. Glossari</h2>
 <ul>
 <li><strong>Argila</strong>: partícula fina (&lt;0,002 mm), enganxosa</li>
@@ -767,7 +795,7 @@ ARGILA        ███████████████████
 </ul>
 <h2 id="17-notes-finals">17. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; El sòl és un <strong>ésser viu</strong>, no un substrat inert. Com més el cuides, més et cuidarà. Un hort en sòl sa produeix plantes sanes, que produeixen menjar sa, que et fa sa a tu. És un cercle virtuós.</p>
+<blockquote>El sòl és un <strong>ésser viu</strong>, no un substrat inert. Com més el cuides, més et cuidarà. Un hort en sòl sa produeix plantes sanes, que produeixen menjar sa, que et fa sa a tu. És un cercle virtuós.</blockquote>
 <h3 id="el-teu-cas-concret">El teu cas concret</h3>
 <p>Com que tens <strong>sòl sorrenc</strong>:</p>
 <ul>

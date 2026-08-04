@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-de-pollinitzadors-com-atraurex27ls-i-mantenir">🐝 Guia completa de pol·linitzadors — Com atraure&#x27;ls i mantenir-los</h1>
-<p>&gt; Els pol·linitzadors són <strong>els millors aliats del teu hort</strong>. Sense ells, no hi ha tomàquets, carabassons, fruita, ni molts altres aliments. Aquesta guia t&#x27;ensenya a <strong>identificar-los</strong>, <strong>atraure&#x27;ls</strong> i <strong>protegir-los</strong>. A Osona, amb la seva biodiversitat, tens l&#x27;oportunitat de crear un hort refugi per a abelles, papallones, sírfids i molts altres.</p>
+<blockquote>Els pol·linitzadors són <strong>els millors aliats del teu hort</strong>. Sense ells, no hi ha tomàquets, carabassons, fruita, ni molts altres aliments. Aquesta guia t&#x27;ensenya a <strong>identificar-los</strong>, <strong>atraure&#x27;ls</strong> i <strong>protegir-los</strong>. A Osona, amb la seva biodiversitat, tens l&#x27;oportunitat de crear un hort refugi per a abelles, papallones, sírfids i molts altres.</blockquote>
 <h2 id="1-per-què-els-pollinitzadors-són-essencials">1. Per què els pol·linitzadors són essencials</h2>
 <h3 id="dades-clau">Dades clau</h3>
 <ul>
@@ -195,7 +195,7 @@
 <td>Vol nocturn, silenciós</td>
 <td>Nit</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="4-com-atraurex27ls-al-teu-hort">4. Com atraure&#x27;ls al teu hort</h2>
 <h3 id="a-plantes-mellíferes-per-estació">A. Plantes mel·líferes per estació</h3>
 <h4 id="primavera-març-maig">PRIMAVERA (març-maig)</h4>
@@ -252,12 +252,16 @@
 <p><strong>Construcció</strong>:</p>
 <ol>
 <li><strong>Muntatge</strong>:</li>
+</ol>
+<ul>
 <li>Caixa de fusta amb parets sòlides</li>
 <li>Teulada inclinada (per a pluja)</li>
 <li>Pota o suport</li>
 </ul>
 <ol>
 <li><strong>Materials a posar</strong>:</li>
+</ol>
+<ul>
 <li><strong>Canyes buides</strong> (de bambú, margall): forats de 3-10 mm</li>
 <li><strong>Fusta amb forats</strong> (3-10 mm de diàmetre, 10-15 cm de fons)</li>
 <li><strong>Pinyes de pi</strong> (per a crisopes)</li>
@@ -267,6 +271,8 @@
 </ul>
 <ol>
 <li><strong>Posició</strong>:</li>
+</ol>
+<ul>
 <li><strong>Al sol del matí</strong> (10-15°C és el mínim per volar)</li>
 <li><strong>A 1,5-2 m</strong> d&#x27;alçada</li>
 <li><strong>Resguardat</strong> del vent</li>
@@ -275,6 +281,8 @@
 </ul>
 <ol>
 <li><strong>Manteniment</strong>:</li>
+</ol>
+<ul>
 <li><strong>No moure</strong> un cop instal·lat</li>
 <li><strong>No tocar</strong> els forats (les abelles estan dins)</li>
 <li><strong>A la tardor</strong>, cobrir amb malla fina (ocells no mengin les larves)</li>
@@ -330,7 +338,7 @@
 <li><strong>Calèndula</strong> (Calendula officinalis) — tot l&#x27;any</li>
 <li><strong>Caputxina</strong> (Tropaeolum majus) — molt nèctar</li>
 <li><strong>Menta/Melissa</strong> (Mentha, Melissa) — estiu</li>
-</ul>
+</ol>
 <h3 id="plantes-autòctones-dx27osona-excellents-per-a-biodiversitat">Plantes autòctones d&#x27;Osona (excel·lents per a biodiversitat)</h3>
 <ul>
 <li><strong>Aranyoner</strong> (Prunus spinosa) — florida abundant</li>
@@ -409,7 +417,7 @@
 <td><strong>Desembre</strong></td>
 <td>Repòs, hivernants en caus</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="8-problemes-comuns-i-solucions">8. Problemes comuns i solucions</h2>
 <h3 id="a-no-vénen-pollinitzadors">A. No vénen pol·linitzadors</h3>
 <p><strong>Causa</strong>: Poca diversitat de flors, pesticides, monocultiu, absència de refugis</p>
@@ -450,23 +458,23 @@
 <h3 id="a-llista-dx27implementació">A. Llista d&#x27;implementació</h3>
 <h4 id="curt-termini-aquesta-setmana">Curt termini (aquesta setmana)</h4>
 <ul>
-<li>[ ] <strong>Observar</strong> quins pol·linitzadors ja tens</li>
-<li>[ ] <strong>No pesticides</strong> (a partir d&#x27;ara!)</li>
-<li>[ ] <strong>Deixar</strong> una zona de &quot;males herbes&quot; florir</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span><strong>Observar</strong> quins pol·linitzadors ja tens</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span><strong>No pesticides</strong> (a partir d&#x27;ara!)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span><strong>Deixar</strong> una zona de &quot;males herbes&quot; florir</span></label></li>
 </ul>
 <h4 id="mig-termini-aquest-mes">Mig termini (aquest mes)</h4>
 <ul>
-<li>[ ] <strong>Plantar</strong> 5-10 aromàtiques perennes</li>
-<li>[ ] <strong>Construir</strong> un hotel d&#x27;insectes (DIY)</li>
-<li>[ ] <strong>Posar</strong> un plat amb aigua i còdols</li>
-<li>[ ] <strong>Sembrar</strong> facèlia o caputxina (ràpides)</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Plantar</strong> 5-10 aromàtiques perennes</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span><strong>Construir</strong> un hotel d&#x27;insectes (DIY)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span><strong>Posar</strong> un plat amb aigua i còdols</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span><strong>Sembrar</strong> facèlia o caputxina (ràpides)</span></label></li>
 </ul>
 <h4 id="llarg-termini-aquest-any">Llarg termini (aquest any)</h4>
 <ul>
-<li>[ ] <strong>Plantar</strong> fruiters amb flor abundant</li>
-<li>[ ] <strong>Plantar</strong> un marge florit (10-15 plantes autòctones)</li>
-<li>[ ] <strong>Instal·lar</strong> caixa niu per a pàrids</li>
-<li>[ ] <strong>Deixar</strong> una paret de pedra o fusta morta</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span><strong>Plantar</strong> fruiters amb flor abundant</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span><strong>Plantar</strong> un marge florit (10-15 plantes autòctones)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span><strong>Instal·lar</strong> caixa niu per a pàrids</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="10"> <span><strong>Deixar</strong> una paret de pedra o fusta morta</span></label></li>
 </ul>
 <h3 id="b-plantes-concretes-a-comprarplantar">B. Plantes concretes a comprar/plantar</h3>
 <p><strong>A la tardor</strong> (octubre-novembre):</p>
@@ -559,7 +567,7 @@
 <td><strong>Desembre</strong></td>
 <td>Repòs hivernal.</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="13-recursos-a-osona">13. Recursos a Osona</h2>
 <h3 id="associacions-i-projectes">Associacions i projectes</h3>
 <ul>
@@ -627,7 +635,7 @@
 <li><strong>No destruir</strong> amb pesticides</li>
 <li><strong>Observar</strong> i aprendre</li>
 <li><strong>Compartir</strong> la saviesa</li>
-</ul>
+</ol>
 <h3 id="beneficis">Beneficis</h3>
 <ul>
 <li><strong>Millor collita</strong> (pol·linització)</li>
@@ -637,5 +645,5 @@
 <li><strong>Educació</strong> (aprendre de la natura)</li>
 </ul>
 <h3 id="compromís">Compromís</h3>
-<p>&gt; Un hort sense pol·linitzadors és com una orquestra sense instruments. <strong>Cuida&#x27;ls, i ells et cuidaran a tu.</strong></p>
+<blockquote>Un hort sense pol·linitzadors és com una orquestra sense instruments. <strong>Cuida&#x27;ls, i ells et cuidaran a tu.</strong></blockquote>
 <p>🐝 <strong>Bona pol·linització al teu hort!</strong></p>

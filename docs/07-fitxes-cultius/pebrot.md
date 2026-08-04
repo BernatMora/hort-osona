@@ -47,12 +47,14 @@
 <li><strong>Marc de plantació</strong>: 40-50 cm entre plantes, 60-80 cm entre files</li>
 <li><strong>Densitat</strong>: 4-6 plantes/m²</li>
 <li><strong>Tècnica</strong>:</li>
+</ul>
+<ol>
 <li>Llavors en safata amb substrat fi (febrer-març, a 20-25°C).</li>
 <li>Germinen en 8-15 dies.</li>
 <li>Repicar quan tinguin 2 fulles veritables.</li>
 <li>Endurir 7-10 dies abans de trasplantar.</li>
 <li>Trasplantar a partir de mitjans maig (o 1 setmana abans amb túnel).</li>
-</ul>
+</ol>
 <h2 id="conreu">Conreu</h2>
 <ul>
 <li><strong>Reg</strong>: regular però moderat, <strong>15-25 L/m²/setmana</strong>. Reduir en maduració. Mai entollar.</li>
@@ -125,7 +127,7 @@
 <td>Berguedà (Osona)</td>
 <td>Dolç, allargat, varietat local</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="notes-i-observacions-personals">Notes i observacions personals</h2>
 <ul>
 <li>_A Osona, el pebrot triga a madurar. <strong>Paciència</strong>._</li>

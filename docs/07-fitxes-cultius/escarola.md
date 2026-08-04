@@ -1,4 +1,4 @@
-<div class="doc-hero"><img src="img/escarola.svg" alt="Fitxa de cultiu: Escarola (Cichorium endivia)" loading="lazy"></div><h1 id="fitxa-de-cultiu-escarola-cichorium-endivia">Fitxa de cultiu: Escarola (Cichorium endivia)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/escarola.svg" alt="Fitxa de cultiu: Escarola (Cichorium endivia)" loading="lazy"></div><h1 id="fitxa-de-cultiu-escarola-cichorium-endivia">Fitxa de cultiu: Escarola (Cichorium endivia)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Cichorium endivia</em> (var. <em>latifolium</em> = escarola de fulla ampla; var. <em>crispum</em> = escarola arrissada)</li>

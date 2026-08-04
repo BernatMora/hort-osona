@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-de-fruiters-per-a-osona">🍎 Guia completa de fruiters per a Osona</h1>
-<p>&gt; Els fruiters són la <strong>inversió a llarg termini</strong> de l&#x27;hort i el jardí. A Osona, amb el seu clima continental i la tradició pagesa centenària, tenim un llegat extraordinari de varietats locals de fruita adaptades al nostre sòl i clima. Aquesta guia et donarà les eines per plantar, cuidar i gaudir dels teus propis fruiters.</p>
+<blockquote>Els fruiters són la <strong>inversió a llarg termini</strong> de l&#x27;hort i el jardí. A Osona, amb el seu clima continental i la tradició pagesa centenària, tenim un llegat extraordinari de varietats locals de fruita adaptades al nostre sòl i clima. Aquesta guia et donarà les eines per plantar, cuidar i gaudir dels teus propis fruiters.</blockquote>
 <h2 id="1-per-què-plantar-fruiters-a-osona">1. Per què plantar fruiters a Osona?</h2>
 <h3 id="avantatges">Avantatges</h3>
 <ul>
@@ -54,7 +54,7 @@
 <td>&quot;Codonyer del país&quot;</td>
 <td>Antic, molt rústic, ideal Osona</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="b-fruiters-de-llavor-també-excellents">B. Fruiters de llavor (també excel·lents)</h3>
 <p>Necessiten hiverns freds, ideals a Osona.</p>
 <table>
@@ -83,7 +83,7 @@
 <td>&quot;Servera de pastor&quot;</td>
 <td>Silvestre, per a gelea</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="c-fruiters-secs">C. Fruiters secs</h3>
 <table>
 <thead><tr>
@@ -102,7 +102,7 @@
 <td><strong>Amettller</strong></td>
 <td>Primerenc, resistent. Varietats &quot;Mollar&quot; i &quot;Llargueta&quot;</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="d-fruiters-petits-excellents-en-hort-petit">D. Fruiters petits (excel·lents en hort petit)</h3>
 <table>
 <thead><tr>
@@ -133,7 +133,7 @@
 <td><strong>Saüc</strong> (Sambucus nigra)</td>
 <td>Autòcton, flors i fruits medicinals</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="3-planificar-la-plantació">3. Planificar la plantació</h2>
 <h3 id="quan-plantar-a-osona">Quan plantar a Osona</h3>
 <table>
@@ -157,7 +157,7 @@
 <td>En <strong>test</strong> (amb pa d&#x27;arrels)</td>
 <td>Si no vols esperar la tardor</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Regla d&#x27;Osona</strong>: plantar a la tardor (octubre-novembre) sempre que es pugui. El sòl és humit, les arrels creixen durant l&#x27;hivern i a la primavera broten fort.</p>
 <h3 id="on-plantar">On plantar</h3>
 <p><strong>Consideracions clau</strong>:</p>
@@ -169,7 +169,7 @@
 <li><strong>A 4-5 m de l&#x27;hort</strong> (per no fer ombra excessiva als cultius)</li>
 <li><strong>A 3-4 m entre arbres</strong> (depenent de l&#x27;espècie)</li>
 <li><strong>A 5-6 m de parets o construccions</strong> (per al futur desenvolupament)</li>
-</ul>
+</ol>
 <h3 id="distàncies-de-plantació">Distàncies de plantació</h3>
 <table>
 <thead><tr>
@@ -217,7 +217,7 @@
 <td>30 cm</td>
 <td>40 cm</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="4-plantació-pas-a-pas">4. Plantació pas a pas</h2>
 <h3 id="a-preparar-el-terreny-1-2-mesos-abans">A. Preparar el terreny (1-2 mesos abans)</h3>
 <ol>
@@ -227,7 +227,7 @@
 <li><strong>Afegir al fons</strong>: 2-3 kg de compost madur + 100 g de farina d&#x27;os + 100 g de cendres</li>
 <li><strong>Barrejar</strong> la terra amb compost (1/3 compost, 2/3 terra)</li>
 <li><strong>Omplir el forat</strong> i deixar <strong>reposar 1-2 mesos</strong> (perquè la terra s&#x27;assenti)</li>
-</ul>
+</ol>
 <h3 id="b-el-dia-de-plantar">B. El dia de plantar</h3>
 <ol>
 <li><strong>Regar</strong> el forat uns dies abans</li>
@@ -240,7 +240,7 @@
 <li><strong>Regar bé</strong> (20-30 L)</li>
 <li><strong>Mulching</strong> amb palla (5-10 cm, NO tocar el tronc)</li>
 <li><strong>Tutor</strong> (pal de fusta) si fa vent o l&#x27;arbre és gran</li>
-</ul>
+</ol>
 <h3 id="c-primer-any-cures-crítiques">C. Primer any: cures crítiques</h3>
 <p><strong>El primer any és decisiu</strong>! L&#x27;arbre ha d&#x27;establir bé les arrels.</p>
 <ul>
@@ -284,7 +284,7 @@
 <td>Retirar fulles i fruits caiguts</td>
 <td>Eliminar fonts de malalties</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="primavera-març-maig">Primavera (març-maig)</h3>
 <table>
 <thead><tr>
@@ -317,7 +317,7 @@
 <td>Regar arbres joves (20-30 L/setmana)</td>
 <td>Primer any crític</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="estiu-juny-agost">Estiu (juny-agost)</h3>
 <table>
 <thead><tr>
@@ -345,7 +345,7 @@
 <td>Vigilar mosca de la fruita</td>
 <td>Trampes grogues o feromones</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="tardor-setembre-novembre">Tardor (setembre-novembre)</h3>
 <table>
 <thead><tr>
@@ -378,7 +378,7 @@
 <td>Podar arbres vells o mal formats</td>
 <td>Aprofitar la tardor</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="6-poda-la-clau-del-fruit">6. Poda: la clau del fruit</h2>
 <h3 id="tipus-de-poda">Tipus de poda</h3>
 <table>
@@ -412,7 +412,7 @@
 <td>Quan l&#x27;arbre envellix</td>
 <td>Revitalitzar arbres vells</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="eines-bàsiques">Eines bàsiques</h3>
 <ul>
 <li><strong>Tisores de poda</strong> (1-2 cm de branca)</li>
@@ -549,7 +549,7 @@
 <td>Fruits picats</td>
 <td>Malla protectora, espantaocells</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="b-malalties">B. Malalties</h3>
 <table>
 <thead><tr>
@@ -582,7 +582,7 @@
 <td>Taques marrons a fulles</td>
 <td>Coure, neteja de fulles caigudes</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="c-calendari-de-tractaments">C. Calendari de tractaments</h3>
 <table>
 <thead><tr>
@@ -615,7 +615,7 @@
 <td>Sofre (si cal)</td>
 <td>Oïdi</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="9-plagues-dx27animals-salvatges">9. Plagues d&#x27;animals salvatges</h2>
 <h3 id="a-osona-els-arbres-joves-pateixen">A Osona, els arbres joves pateixen:</h3>
 <ul>
@@ -680,7 +680,7 @@
 <td>6è-8è any</td>
 <td>15è-20è any</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="producció-esperada-arbre-adult">Producció esperada (arbre adult)</h3>
 <table>
 <thead><tr>
@@ -723,7 +723,7 @@
 <td>Avellaner</td>
 <td>5-10 kg/any</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="conservació">Conservació</h3>
 <ul>
 <li><strong>Pomes i peres</strong> d&#x27;hivern: 2-6 mesos en celler fresc (5-10°C, humitat 80-90%)</li>
@@ -807,7 +807,7 @@
 <td><strong>~180 m²</strong></td>
 <td>Pati familiar petit</td>
 </tr>
-</table>
+</tbody></table>
 <p>Això és molt per a un hort de 20 m², però si tens jardí pots començar amb 3-4 arbres. Recomanació mínima:</p>
 <ul>
 <li>1 pomera</li>
@@ -835,5 +835,5 @@
 <li><strong>Compra</strong> arbres a vivers locals (Vic, Manresa, Berga)</li>
 <li><strong>Tria varietats</strong> adaptades a Osona (poma de Tona, codony del país, etc.)</li>
 <li><strong>Planta</strong> a la tardor, amb bona terra i paciència</li>
-</ul>
+</ol>
 <p>🌳 Bona collita de fruiters a Osona!</p>

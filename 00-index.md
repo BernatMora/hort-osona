@@ -29,7 +29,7 @@
 - [Pressupost anual](pressupost-hort-imprimible.html) — amb càlcul automàtic
 - [Croquis dibuixable](croquis-hort.md) — plantilla per planificar l'espai
 - [Guia de fermentats](guia-fermentats.md) — xucrut, kimchi, kombucha, kefir
-- [🌐 **Lloc web unificat**](site/index.html) — tots els .md navegables amb cerca i categories (regenerable amb `site/build.py`)
+- [🌐 **Lloc web unificat**](index.html) — tots els documents navegables amb cerca i categories (regenerable amb `build_portal_v2.py`)
 
 ## Documentació del projecte
 - [README](README.md) — visió general

@@ -32,7 +32,7 @@
 <td>Agost-setembre</td>
 <td>Abril-maig</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Dies de cicle</strong>: 180-240 dies (llarg!)</li>
 <li><strong>Truc Osona</strong>: plantar a l&#x27;octubre (per Tots Sants) dóna els millors resultats</li>

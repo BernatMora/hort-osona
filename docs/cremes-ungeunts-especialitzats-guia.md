@@ -1,8 +1,8 @@
 <h1 id="-manual-de-cremes-i-ungüents-per-a-pell-8-fitxes-especialitz">🌿 Manual de Cremes i Ungüents per a Pell — 8 fitxes especialitzades</h1>
-<p>&gt; Tens un hort amb 8 plantes remeieres, però a vegades necessites <strong>solucions ràpides i específiques</strong> per a <strong>problemes de pell</strong>: cremades solars, talls, picades d&#x27;insectes, èczemes, acne, picors, ferides, irritacions del bolquer... Aquesta guia et dóna <strong>8 fitxes ultra-específiques</strong> amb <strong>la millor recepta</strong> per a cada problema, els <strong>ingredients exactes</strong>, les <strong>precaucions</strong> i els <strong>temps de millora esperats</strong>. Són receptes <strong>professionals</strong> que pots fer a casa amb <strong>eines bàsiques de cuina</strong>.</p>
+<blockquote>Tens un hort amb 8 plantes remeieres, però a vegades necessites <strong>solucions ràpides i específiques</strong> per a <strong>problemes de pell</strong>: cremades solars, talls, picades d&#x27;insectes, èczemes, acne, picors, ferides, irritacions del bolquer... Aquesta guia et dóna <strong>8 fitxes ultra-específiques</strong> amb <strong>la millor recepta</strong> per a cada problema, els <strong>ingredients exactes</strong>, les <strong>precaucions</strong> i els <strong>temps de millora esperats</strong>. Són receptes <strong>professionals</strong> que pots fer a casa amb <strong>eines bàsiques de cuina</strong>.</blockquote>
 <h2 id="1-abans-de-començar">1. Abans de començar</h2>
 <h3 id="a-la-regla-dx27or">A. La regla d&#x27;or</h3>
-<p>&gt; <strong>Per a cada problema de pell, hi ha una recepta específica que funciona millor</strong>. No serveix el mateix ungüent per a tot. Aquest manual t&#x27;ensenya a fer <strong>8 productes especialitzats</strong> que cobreixen el 95% de les necessitats de la família.</p>
+<blockquote><strong>Per a cada problema de pell, hi ha una recepta específica que funciona millor</strong>. No serveix el mateix ungüent per a tot. Aquest manual t&#x27;ensenya a fer <strong>8 productes especialitzats</strong> que cobreixen el 95% de les necessitats de la família.</blockquote>
 <h3 id="b-materials-bàsics">B. Materials bàsics</h3>
 <ul>
 <li><strong>Oli d&#x27;oliva verge extra</strong> (1 litre)</li>
@@ -44,7 +44,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en pots petits de 50 ml</li>
 <li>Deixa refredar totalment a la nevera</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Aplicar sobre la cremada 3-4 cops al dia</li>
@@ -81,15 +81,19 @@
 <p><strong>Preparació</strong>:</p>
 <ol>
 <li>Prepara amb antelació:</li>
+</ol>
+<ul>
 <li>Oli d&#x27;hipèric: 3-4 setmanes al sol amb flors d&#x27;hipèric fresques</li>
 <li>Oli de calèndula: 15 dies al sol</li>
+</ul>
+<ol>
 <li>A bany maria, fon els dos olis + cera d&#x27;abella + mantega</li>
 <li>Retira del foc</li>
 <li>Deixa refredar 3-5 min</li>
 <li>Afegeix els olis essencials</li>
 <li>Aboca en pots petits de vidre</li>
 <li>Deixa solidificar</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Neteja primer la ferida amb aigua i sabó</li>
@@ -134,7 +138,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en tubs petits o pots (50 ml)</li>
 <li>Refreda a la nevera perquè quedi ben sòlid</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Aplicar directament sobre la picada</li>
@@ -183,7 +187,7 @@
 <li>Afegeix olis essencials</li>
 <li>Aboca en pots de vidre</li>
 <li>Refreda a la nevera</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Aplicar 2-3 cops al dia a la zona afectada</li>
@@ -228,7 +232,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en un pot de vidre</li>
 <li><strong>Guarda a la nevera</strong> (ha d&#x27;estar sempre fresc!)</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Aplicar a la zona afectada</li>
@@ -274,7 +278,7 @@
 <li>Deixa refredar 5 min</li>
 <li>Afegeix els olis essencials</li>
 <li>Aboca en pots petits</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Rentar i eixugar bé els peus</li>
@@ -322,7 +326,7 @@
 <li>Si el nen té &gt;6 mesos, afegeix l&#x27;oli essencial de lavanda</li>
 <li>Aboca en pots petits de 50 ml</li>
 <li>Refreda a la nevera</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Canvia el bolquer sovint</li>
@@ -373,7 +377,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en pots petits (50-100 ml)</li>
 <li>Etiqueta amb la data i ingredients</li>
-</ul>
+</ol>
 <p><strong>Aplicació</strong>:</p>
 <ul>
 <li>Per a qualsevol problema de pell lleu</li>
@@ -450,7 +454,7 @@
 <td>Tots</td>
 <td>Ràpida</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="4-calendari-dx27elaboració">4. Calendari d&#x27;elaboració</h2>
 <h3 id="per-tenir-tots-els-productes-en-1-any">Per tenir tots els productes en 1 any</h3>
 <table>
@@ -490,7 +494,7 @@
 <td><strong>Hivern</strong></td>
 <td>Usar els productes</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-com-organitzar-lx27apotecaria">5. Com organitzar l&#x27;apotecaria</h2>
 <h3 id="sistema-dx27emmagatzematge">Sistema d&#x27;emmagatzematge</h3>
 <p>Crea una <strong>caixa de l&#x27;apotecaria</strong> a casa:</p>
@@ -565,14 +569,14 @@
 </ul>
 <h2 id="8-notes-finals">8. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Tens <strong>8 plantes remeieres</strong> al teu hort, i amb elles pots fer <strong>8 productes especialitzats</strong> que cobreixen la majoria de necessitats de la família. <strong>Màxima eficàcia</strong> amb <strong>ingredients naturals</strong>, <strong>sense productes químics</strong>, i amb la <strong>satisfacció de fer-ho tu</strong>.</p>
+<blockquote>Tens <strong>8 plantes remeieres</strong> al teu hort, i amb elles pots fer <strong>8 productes especialitzats</strong> que cobreixen la majoria de necessitats de la família. <strong>Màxima eficàcia</strong> amb <strong>ingredients naturals</strong>, <strong>sense productes químics</strong>, i amb la <strong>satisfacció de fer-ho tu</strong>.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: comprar ingredients bàsics</li>
 <li><strong>Aquest mes</strong>: fer el <strong>primer oli de calèndula</strong></li>
 <li><strong>Aquest estiu</strong>: fer <strong>4-5 productes essencials</strong></li>
 <li><strong>Aquest any</strong>: tenir l&#x27;<strong>apotecaria completa</strong></li>
-</ul>
+</ol>
 <h3 id="la-saviesa">La saviesa</h3>
-<p>&gt; A Osona, les àvies ja feien totes aquestes cremes. La saviesa era oral, de mare a filla, de padrina a néta. <strong>Tu tens el coneixement, les plantes, les eines i el temps</strong>. Comença.</p>
+<blockquote>A Osona, les àvies ja feien totes aquestes cremes. La saviesa era oral, de mare a filla, de padrina a néta. <strong>Tu tens el coneixement, les plantes, les eines i el temps</strong>. Comença.</blockquote>
 <p>🌿 <strong>Bona salut amb les teves cremes casolanes!</strong></p>

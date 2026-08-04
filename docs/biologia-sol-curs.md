@@ -1,5 +1,5 @@
 <h1 id="-curs-de-biologia-del-sòl-el-món-sota-els-teus-peus">🌍 Curs de Biologia del Sòl — El món sota els teus peus</h1>
-<p>&gt; El <strong>sòl</strong> és l&#x27;<strong>ecosistema més complex i ric</strong> del planeta. En <strong>un gram</strong> de sòl sa hi ha <strong>mil milions de bacteris</strong>, <strong>milers de fongs</strong>, <strong>protozous, nematodes, artròpodes, i arrels</strong> de plantes. Tots junts formen la <strong>&quot;xarxa d&#x27;internet&quot;</strong> més antiga del món. Sense sòl sa, <strong>no hi ha plantes sanes, ni animals sans, ni éssers humans sans</strong>. Aquest curs t&#x27;ensenya què és el <strong>sòl</strong> (no és brutor, és <strong>vida</strong>!), com es <strong>forma</strong>, com funciona, qui hi viu, i com <strong>cuidar-lo</strong> perquè el teu hort produeixi <strong>aliments sans</strong> durant dècades.</p>
+<blockquote>El <strong>sòl</strong> és l&#x27;<strong>ecosistema més complex i ric</strong> del planeta. En <strong>un gram</strong> de sòl sa hi ha <strong>mil milions de bacteris</strong>, <strong>milers de fongs</strong>, <strong>protozous, nematodes, artròpodes, i arrels</strong> de plantes. Tots junts formen la <strong>&quot;xarxa d&#x27;internet&quot;</strong> més antiga del món. Sense sòl sa, <strong>no hi ha plantes sanes, ni animals sans, ni éssers humans sans</strong>. Aquest curs t&#x27;ensenya què és el <strong>sòl</strong> (no és brutor, és <strong>vida</strong>!), com es <strong>forma</strong>, com funciona, qui hi viu, i com <strong>cuidar-lo</strong> perquè el teu hort produeixi <strong>aliments sans</strong> durant dècades.</blockquote>
 <h2 id="mòdul-1-què-és-el-sòl">MÒDUL 1: QUÈ ÉS EL SÒL?</h2>
 <h3 id="11-definició">1.1. Definició</h3>
 <p>El <strong>sòl</strong> és la <strong>capa superficial</strong> de l&#x27;escorça terrestre, composta per:</p>
@@ -27,7 +27,7 @@
 <li><strong>Colonització</strong> (líquens, molses, bacteris)</li>
 <li><strong>Acumulació de matèria orgànica</strong></li>
 <li><strong>Maduració</strong> (horitzons diferenciats)</li>
-</ul>
+</ol>
 <p>A <strong>Osona</strong>, el sòl és variat:</p>
 <ul>
 <li><strong>Calcari</strong> (sud d&#x27;Osona, Vic)</li>
@@ -93,7 +93,7 @@
 <li>Agafa un grapat de sòl humit</li>
 <li>Prem amb força</li>
 <li>Obre la mà</li>
-</ul>
+</ol>
 <p><strong>ARENÓS</strong>: es desfà, no forma bola</p>
 <p><strong>LLIMÓS</strong>: forma bola, es trenca amb pressió</p>
 <p><strong>ARGILÓS</strong>: forma bola, no es trenca, brillant</p>
@@ -242,7 +242,7 @@ Matèria orgànica (fullaraca, restes)
 <li><strong>Descompositors</strong> (bacteris, fongs) mineralitzen</li>
 <li><strong>Nutrients</strong> tornen disponibles per a les plantes</li>
 <li><strong>Cicle es repeteix</strong></li>
-</ul>
+</ol>
 <h2 id="mòdul-5-propietats-del-sòl">MÒDUL 5: PROPIETATS DEL SÒL</h2>
 <h3 id="51-ph-acidesa">5.1. pH (acidesa)</h3>
 <p><strong>ESCALA</strong>: 0-14</p>
@@ -586,7 +586,7 @@ TORNEM A COMENÇAR
 <li><strong>Reg</strong> al vespre (19h) amb difusor</li>
 <li><strong>Ampolles de degoteig</strong> per als tomàquets</li>
 <li><strong>Acompanyaments</strong> (alfàbrega, calèndula)</li>
-</ul>
+</ol>
 <p><strong>MITJÀ TERMINI</strong> (3-5 anys):</p>
 <ol>
 <li><strong>Rotació de cultius</strong> (4-5 anys)</li>
@@ -594,7 +594,7 @@ TORNEM A COMENÇAR
 <li><strong>Fems</strong> compostats (1 cop l&#x27;any)</li>
 <li><strong>Coberta permanent</strong> als camins</li>
 <li><strong>Més compost</strong> (10 kg/m²/any)</li>
-</ul>
+</ol>
 <p><strong>LLARG TERMINI</strong> (5-10 anys):</p>
 <ol>
 <li><strong>Sòl amb 4-6% de matèria orgànica</strong></li>
@@ -602,7 +602,7 @@ TORNEM A COMENÇAR
 <li><strong>Autosuficiència</strong> en nutrients</li>
 <li><strong>Aprofitament d&#x27;aigua</strong> òptim</li>
 <li><strong>Estructura</strong> granular</li>
-</ul>
+</ol>
 <h3 id="122-evolució-esperada">12.2. Evolució esperada</h3>
 <p><strong>ANY 1</strong>:</p>
 <ul>
@@ -639,9 +639,9 @@ TORNEM A COMENÇAR
 <p>Sembrar civada + veça a la tardor, segar a la primavera, incorporar.</p>
 <h2 id="notes-finals">NOTES FINALS</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; El <strong>sòl</strong> no és &quot;brutor&quot;. És l&#x27;<strong>ecosistema més ric, complex, i viu</strong> del planeta. Amb <strong>1 gram</strong> de sòl sa hi ha <strong>mil milions de bacteris</strong>, <strong>mil metres d&#x27;hiifa de fongs</strong>, <strong>protozous, nematodes, àcars, col·lèmbols, cucs, arrels</strong>, i molt més. Tots treballen junts per <strong>fer créixer les teves plantes</strong>, <strong>filtrar l&#x27;aigua</strong>, <strong>sequestrar carboni</strong>, i <strong>sostenir la vida</strong>.</p>
-<p>&gt;</p>
-<p>&gt; Si <strong>cuides el sòl</strong>, el sòl <strong>cuidarà</strong> les teves plantes, animals, i a tu. Per <strong>dècades</strong>.</p>
+<blockquote>El <strong>sòl</strong> no és &quot;brutor&quot;. És l&#x27;<strong>ecosistema més ric, complex, i viu</strong> del planeta. Amb <strong>1 gram</strong> de sòl sa hi ha <strong>mil milions de bacteris</strong>, <strong>mil metres d&#x27;hiifa de fongs</strong>, <strong>protozous, nematodes, àcars, col·lèmbols, cucs, arrels</strong>, i molt més. Tots treballen junts per <strong>fer créixer les teves plantes</strong>, <strong>filtrar l&#x27;aigua</strong>, <strong>sequestrar carboni</strong>, i <strong>sostenir la vida</strong>.</blockquote>
+<blockquote></blockquote>
+<blockquote>Si <strong>cuides el sòl</strong>, el sòl <strong>cuidarà</strong> les teves plantes, animals, i a tu. Per <strong>dècades</strong>.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: fes el test de la mà i el de cucs</li>
@@ -649,7 +649,7 @@ TORNEM A COMENÇAR
 <li><strong>Aquest estiu</strong>: fes compost</li>
 <li><strong>Aquesta tardor</strong>: sembra adob verd</li>
 <li><strong>Aquest any</strong>: observa l&#x27;evolució</li>
-</ul>
+</ol>
 <h3 id="la-saviesa">La saviesa</h3>
-<p>&gt; A Osona, els <strong>pagesos</strong> coneixien el <strong>seu sòl</strong> amb detall: sabien <strong>on plantar</strong>, <strong>què plantar</strong>, <strong>quan llaurar</strong>, <strong>quan deixar descansar</strong>. Era la <strong>seva saviesa pagesa</strong>, transmesa de <strong>generació en generació</strong>. Avui tu pots <strong>recuperar</strong> aquesta saviesa, <strong>combinada</strong> amb la <strong>ciència moderna</strong>, i <strong>crear</strong> un hort amb un <strong>sòl excepcional</strong>.</p>
+<blockquote>A Osona, els <strong>pagesos</strong> coneixien el <strong>seu sòl</strong> amb detall: sabien <strong>on plantar</strong>, <strong>què plantar</strong>, <strong>quan llaurar</strong>, <strong>quan deixar descansar</strong>. Era la <strong>seva saviesa pagesa</strong>, transmesa de <strong>generació en generació</strong>. Avui tu pots <strong>recuperar</strong> aquesta saviesa, <strong>combinada</strong> amb la <strong>ciència moderna</strong>, i <strong>crear</strong> un hort amb un <strong>sòl excepcional</strong>.</blockquote>
 <p>🌍 <strong>Bona vida al sòl!</strong></p>

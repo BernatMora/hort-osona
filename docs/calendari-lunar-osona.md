@@ -1,5 +1,5 @@
 <h1 id="-calendari-lunar-aplicat-a-lx27hort-dx27osona">🌙 Calendari lunar aplicat a l&#x27;hort d&#x27;Osona</h1>
-<p>&gt; El calendari lunar és una eina pagesa mil·lenària. Tot i que la ciència moderna no n&#x27;ha demostrat tots els efectes, <strong>molts pagesos ecològics</strong> continuen usant-lo perquè observen que certes feines es fan millor en determinades fases lunars. Aquesta és una <strong>guia pràctica i oberta</strong> — combina la saviesa tradicional amb la climatologia real d&#x27;Osona, perquè la lluna és una ajuda, no una religió.</p>
+<blockquote>El calendari lunar és una eina pagesa mil·lenària. Tot i que la ciència moderna no n&#x27;ha demostrat tots els efectes, <strong>molts pagesos ecològics</strong> continuen usant-lo perquè observen que certes feines es fan millor en determinades fases lunars. Aquesta és una <strong>guia pràctica i oberta</strong> — combina la saviesa tradicional amb la climatologia real d&#x27;Osona, perquè la lluna és una ajuda, no una religió.</blockquote>
 <h2 id="1-conceptes-bàsics-del-calendari-lunar">1. Conceptes bàsics del calendari lunar</h2>
 <h3 id="les-4-fases-de-la-lluna">Les 4 fases de la Lluna</h3>
 <pre><code>
@@ -53,7 +53,7 @@ CREIXENT  🌗  MINVANT
 <li><strong>Lluna creixent (Nova → Plena)</strong>: la saba puja cap a les parts aèries (fulles, fruits, flors)</li>
 <li><strong>Lluna minvant (Plena → Nova)</strong>: la saba baixa cap a les arrels (arrels, bulbs, tubercles)</li>
 </ul>
-<p>&gt; ⚠️ <strong>Important</strong>: això <strong>no està científicament demostrat</strong>, però l&#x27;observació pagesa centenària ho suggereix. Aplica&#x27;l com a orientació, no com a llei.</p>
+<blockquote>⚠️ <strong>Important</strong>: això <strong>no està científicament demostrat</strong>, però l&#x27;observació pagesa centenària ho suggereix. Aplica&#x27;l com a orientació, no com a llei.</blockquote>
 <h2 id="2-la-lluna-a-lx27hort-dx27osona-què-fer-a-cada-fase">2. La Lluna a l&#x27;hort d&#x27;Osona: què fer a cada fase</h2>
 <h3 id="-lluna-nova">🌑 Lluna NOVA</h3>
 <p><strong>Aprofitar per</strong>:</p>
@@ -278,7 +278,7 @@ CREIXENT  🌗  MINVANT
 <li><strong>Temperatura</strong> (per sobre 10°C = bona època de trasplantar)</li>
 <li><strong>Risc de gelades</strong> (evitar-les!)</li>
 <li><strong>Lluna</strong> (orientativa)</li>
-</ul>
+</ol>
 <p><strong>Exemple pràctic</strong>:</p>
 <ul>
 <li>Si tens un planter llest al febrer però encara glaça, <strong>espera</strong> encara que la lluna sigui bona</li>
@@ -300,7 +300,7 @@ CREIXENT  🌗  MINVANT
 <li><strong>&quot;Sembrar en lluna nova, fruits al capdamunt&quot;</strong> — millor per a plantes que volem que creixin</li>
 <li><strong>&quot;Collir en lluna plena, fruits més dolços&quot;</strong> — la saba és al màxim</li>
 </ul>
-<p>&gt; ⚠️ <strong>Aplica-les com a inspiració, no com a dogma.</strong> El que importa és la salut de la planta, no la fase lunar exacta.</p>
+<blockquote>⚠️ <strong>Aplica-les com a inspiració, no com a dogma.</strong> El que importa és la salut de la planta, no la fase lunar exacta.</blockquote>
 <h2 id="6-resum-visual-què-fer-a-cada-fase">6. Resum visual: què fer a cada fase</h2>
 <pre><code>
   LLUNA NOVA          LLUNA CREIXENT        LLUNA PLENA           LLUNA MINVANT
@@ -328,5 +328,5 @@ CREIXENT  🌗  MINVANT
 <li><strong>L&#x27;observació</strong>: és la millor eina</li>
 <li><strong>L&#x27;experiència</strong>: après any a any</li>
 </ul>
-<p>&gt; 🌱 <strong>El millor hortolà és el que observa les seves plantes, no el que segueix cegament un calendari.</strong></p>
+<blockquote>🌱 <strong>El millor hortolà és el que observa les seves plantes, no el que segueix cegament un calendari.</strong></blockquote>
 <p>Bona observació lunar a Osona! 🌙</p>

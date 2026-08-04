@@ -1,5 +1,5 @@
 <h1 id="-productes-curatius-avançats-tisanes-banys-càpsules-mellats-">🧴 Productes Curatius Avançats — Tisanes, banys, càpsules, mel·lats, tècniques i molt més</h1>
-<p>&gt; Tens <strong>40 plantes remeieres</strong> identificades, <strong>15 productes generals</strong> a l&#x27;apotecaria i <strong>8 cremes especialitzades</strong> per a problemes específics. Ara anem <strong>més enllà</strong>: <strong>5 productes nous</strong> (tisanes compostes, càpsules, banys terapèutics, mel·lats avançats, sal i vinagre aromàtics) + <strong>5 tècniques avançades</strong> (destil·lació, pomada clàssica, sabons medicinals, gelea reial, ungüent &quot;del Pare&quot;). Amb tot això tindràs una <strong>farmàcia casolana completa</strong> digne d&#x27;un herbolari professional.</p>
+<blockquote>Tens <strong>40 plantes remeieres</strong> identificades, <strong>15 productes generals</strong> a l&#x27;apotecaria i <strong>8 cremes especialitzades</strong> per a problemes específics. Ara anem <strong>més enllà</strong>: <strong>5 productes nous</strong> (tisanes compostes, càpsules, banys terapèutics, mel·lats avançats, sal i vinagre aromàtics) + <strong>5 tècniques avançades</strong> (destil·lació, pomada clàssica, sabons medicinals, gelea reial, ungüent &quot;del Pare&quot;). Amb tot això tindràs una <strong>farmàcia casolana completa</strong> digne d&#x27;un herbolari professional.</blockquote>
 <h2 id="1-tisanes-i-infusions-compostes">1. Tisanes i infusions compostes</h2>
 <h3 id="a-què-és-una-tisana-composta">A. Què és una tisana composta?</h3>
 <p>Una <strong>tisana composta</strong> és una barreja de 2-5 plantes que treballen <strong>juntes</strong> per a un objectiu específic. A diferència d&#x27;una sola planta, la barreja <strong>combina propietats</strong> i <strong>equilibra efectes</strong>.</p>
@@ -18,7 +18,7 @@
 <li>Barrejar les herbes seques en un bol</li>
 <li>Guardar en pot de vidre amb tapa</li>
 <li>Infusió: 1 cullerada de la barreja per tassa, 7-10 min</li>
-</ul>
+</ol>
 <p><strong>Dosi</strong>: 1 tassa després de cada àpat</p>
 <p>---</p>
 <h4 id="-2-tisana-quotbon-sonquot">😴 2. Tisana &quot;Bon Son&quot;</h4>
@@ -107,7 +107,7 @@
 <li>Guardar en pots de vidre amb tapa</li>
 <li>Etiquetar amb nom, ingredients, propietats, data</li>
 <li>Durada: 1 any (en lloc fresc i sec)</li>
-</ul>
+</ol>
 <p>---</p>
 <h2 id="2-càpsules-i-pols-medicinals">2. Càpsules i pols medicinals</h2>
 <h3 id="a-avantatges">A. Avantatges</h3>
@@ -171,7 +171,7 @@
 <li>Tancar amb la part superior</li>
 <li>Guardar en pot de vidre fosc</li>
 <li>Etiquetar</li>
-</ul>
+</ol>
 <p><strong>Dosi general</strong>:</p>
 <ul>
 <li>Adults: 2-3 càpsules, 2-3 cops/dia</li>
@@ -188,7 +188,7 @@
 <li>Deixar 15 min</li>
 <li>Colar i abocar a la banyera</li>
 <li>Bany de 15-20 min</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: insomni, ansietat, pell irritada, esgotament</p>
 <p>---</p>
 <h4 id="2-bany-de-peu-de-sàlvia">2. Bany de peu de sàlvia</h4>
@@ -200,7 +200,7 @@
 <li>Colar</li>
 <li>Posar en un recipient</li>
 <li>Bany de peus de 15 min</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: refredament de peus, fongs, suor excessiva, cansament</p>
 <p>---</p>
 <h4 id="3-bany-tonificant-de-romaní">3. Bany tonificant de romaní</h4>
@@ -210,7 +210,7 @@
 <li>Tirar l&#x27;aigua bullint sobre el romaní</li>
 <li>Deixar 15 min</li>
 <li>Colar i afegir a la banyera</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: matí, per a despertar-se, circulació, dolors musculars</p>
 <p>---</p>
 <h4 id="4-bany-detox-de-farigola">4. Bany detox de farigola</h4>
@@ -224,7 +224,7 @@
 <li>Tirar l&#x27;aigua bullint sobre la menta</li>
 <li>Deixar 20 min</li>
 <li>Colar i afegir a la banyera</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: cops de calor, calor excessiva, esgotament</p>
 <h3 id="b-les-4-compreses-medicinals">B. Les 4 compreses medicinals</h3>
 <h4 id="1-compresa-de-calèndula-per-a-ferides">1. Compresa de calèndula (per a ferides)</h4>
@@ -278,7 +278,7 @@
 <li>Coure 20 min a foc lent</li>
 <li>Colar</li>
 <li>Abocar en pots de vidre</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: 1 cullerada per a la tos, 2-3 cops/dia</p>
 <p>---</p>
 <h3 id="b-xarop-antitussigen-multiherbes">B. Xarop antitussigen multiherbes</h3>
@@ -300,7 +300,7 @@
 <li>Coure 15 min</li>
 <li>Abocar en ampolles de vidre fosc</li>
 <li>Dura 3 mesos a la nevera</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="c-mel-dx27espígol-per-a-cremades-de-boca">C. Mel d&#x27;espígol (per a cremades de boca)</h3>
 <p><strong>Ingredients</strong>:</p>
@@ -424,7 +424,7 @@
 <li>Posar gel a la tapa</li>
 <li>Coure a foc lent 2-3 hores</li>
 <li>El vapor condensa i cau al bol: oli essencial + aigua aromàtica</li>
-</ul>
+</ol>
 <p><strong>Plantes ideals</strong>:</p>
 <ul>
 <li>Espígol (calmant)</li>
@@ -473,7 +473,7 @@
 <li>Deixar reposar 24-48 h</li>
 <li>Treure del motlle</li>
 <li>Curar 4-6 setmanes</li>
-</ul>
+</ol>
 <p><strong>Sabons medicinals</strong>:</p>
 <ul>
 <li><strong>Sabó de calèndula</strong>: pell sensible, èczemes</li>
@@ -567,7 +567,7 @@
 <td><strong>Desembre</strong></td>
 <td>Fer balanç, etiquetar, organitzar l&#x27;apotecaria</td>
 </tr>
-</table>
+</tbody></table>
 <p>---</p>
 <h2 id="8-combinacions-i-quotpacksquot-temàtics">8. Combinacions i &quot;packs&quot; temàtics</h2>
 <h3 id="pack-quotfamília-completaquot">Pack &quot;Família completa&quot;</h3>
@@ -617,7 +617,7 @@
 <p>---</p>
 <h2 id="9-notes-finals">9. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Tens <strong>40 plantes remeieres</strong> + <strong>15 productes bàsics</strong> + <strong>8 cremes especialitzades</strong> + <strong>5 productes nous</strong> (tisanes compostes, càpsules, banys, mel·lats, vinagres) + <strong>5 tècniques avançades</strong> (destil·lació, sabons, gelea reial, ungüent antic, pomada clàssica). Això és una <strong>farmàcia casolana completa</strong>, digna d&#x27;un herbolari professional.</p>
+<blockquote>Tens <strong>40 plantes remeieres</strong> + <strong>15 productes bàsics</strong> + <strong>8 cremes especialitzades</strong> + <strong>5 productes nous</strong> (tisanes compostes, càpsules, banys, mel·lats, vinagres) + <strong>5 tècniques avançades</strong> (destil·lació, sabons, gelea reial, ungüent antic, pomada clàssica). Això és una <strong>farmàcia casolana completa</strong>, digna d&#x27;un herbolari professional.</blockquote>
 <h3 id="aplica-ho-amb-seny">Aplica-ho amb seny</h3>
 <ol>
 <li><strong>Comença pel bàsic</strong> (cremes, ungüents, olis)</li>
@@ -625,7 +625,7 @@
 <li><strong>Aprèn</strong> tècniques avançades quan tinguis confiança</li>
 <li><strong>Etiqueta tot</strong></li>
 <li><strong>Comparteix</strong> la saviesa</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-pagesa">La saviesa pagesa</h3>
-<p>&gt; A Osona, les àvies ja feien totes aquestes cremes, mel·lats, vinagres i banys. La saviesa era oral, transmesa de generació en generació. <strong>Tu tens el coneixement, les plantes, les eines, el temps i la paciència</strong>. Només et cal <strong>començar</strong>.</p>
+<blockquote>A Osona, les àvies ja feien totes aquestes cremes, mel·lats, vinagres i banys. La saviesa era oral, transmesa de generació en generació. <strong>Tu tens el coneixement, les plantes, les eines, el temps i la paciència</strong>. Només et cal <strong>començar</strong>.</blockquote>
 <p>🌿 <strong>Bona salut amb la teva farmàcia natural completa!</strong></p>

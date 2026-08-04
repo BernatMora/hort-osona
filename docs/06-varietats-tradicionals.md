@@ -1,10 +1,10 @@
 <h1 id="-varietats-tradicionals-catalanes-i-dx27osona">🌾 Varietats tradicionals catalanes i d&#x27;Osona</h1>
-<p>&gt; A Osona hi ha una rica història agrària que es remunta a l&#x27;Edat Mitjana (fires de Vic, mercats del Vallès, transhumància). Moltes varietats s&#x27;han conservat gràcies a:</p>
-<p>&gt; - <strong>Esporus</strong> (Associació de la Llavors de Catalunya) - banc de llavors de varietats tradicionals</p>
-<p>&gt; - <strong>L&#x27;Era</strong> (Espai de Recursos Agroecològics) - assessorament i difusió</p>
-<p>&gt; - <strong>CCPAE</strong> (Consell Català de la Producció Agrària Ecològica)</p>
-<p>&gt; - <strong>Xarxa Catalana de Graners</strong> - custòdia de varietats antigues</p>
-<p>&gt; - Pagesos locals i cases de pagès que han guardat llavor any rere any.</p>
+<blockquote>A Osona hi ha una rica història agrària que es remunta a l&#x27;Edat Mitjana (fires de Vic, mercats del Vallès, transhumància). Moltes varietats s&#x27;han conservat gràcies a:</blockquote>
+<blockquote>- <strong>Esporus</strong> (Associació de la Llavors de Catalunya) - banc de llavors de varietats tradicionals</blockquote>
+<blockquote>- <strong>L&#x27;Era</strong> (Espai de Recursos Agroecològics) - assessorament i difusió</blockquote>
+<blockquote>- <strong>CCPAE</strong> (Consell Català de la Producció Agrària Ecològica)</blockquote>
+<blockquote>- <strong>Xarxa Catalana de Graners</strong> - custòdia de varietats antigues</blockquote>
+<blockquote>- Pagesos locals i cases de pagès que han guardat llavor any rere any.</blockquote>
 <h2 id="tomàquets">Tomàquets</h2>
 <table>
 <thead><tr>
@@ -85,7 +85,7 @@
 <td>Verd i vermell, pell gruixuda</td>
 <td>Resistent, llarg</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="pebrots">Pebrots</h2>
 <table>
 <thead><tr>
@@ -118,7 +118,7 @@
 <td>Penedès, Camp de Tarragona</td>
 <td>Petit, rodó, picant moderat</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="mongetes">Mongetes</h2>
 <table>
 <thead><tr>
@@ -181,7 +181,7 @@
 <td>Penedès</td>
 <td>Tavella llarga i prima, tendre</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="enciams-i-fulles">Enciams i fulles</h2>
 <table>
 <thead><tr>
@@ -219,14 +219,14 @@
 <td>Osona</td>
 <td>Fulla gran, carnosa</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="tomàquets-antics-dx27osona-en-recuperació-activa">Tomàquets antics d&#x27;Osona (en recuperació activa)</h2>
 <ul>
 <li><strong>Tomàquet del Pages d&#x27;Osona</strong> (any 1900-1940): rodó, vermell, molt gust, bon calibre</li>
 <li><strong>Tomàquet llarg de Muntanyola</strong> (municipi d&#x27;Osona): allargat, dolç</li>
 <li><strong>Tomàquet blanc de Sant Bartomeu del Grau</strong>: tomàquet blanc, dolç, especial</li>
 </ul>
-<p>&gt; Moltes d&#x27;aquestes varietats les pots recuperar contactant amb <strong>Esporus</strong> (www.esporus.org) o la <strong>Fira de Sant Mateu d&#x27;Agost a Vic</strong> (trobada de pagesos i vivers de varietats locals).</p>
+<blockquote>Moltes d&#x27;aquestes varietats les pots recuperar contactant amb <strong>Esporus</strong> (www.esporus.org) o la <strong>Fira de Sant Mateu d&#x27;Agost a Vic</strong> (trobada de pagesos i vivers de varietats locals).</blockquote>
 <h2 id="cebes-i-alls">Cebes i alls</h2>
 <table>
 <thead><tr>
@@ -264,7 +264,7 @@
 <td>Osona</td>
 <td>Ceba d&#x27;hivern, blanca, gust suau</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="alls-i-altres-bulbs-antics-dx27osona">Alls i altres bulbs antics d&#x27;Osona</h2>
 <ul>
 <li><strong>All porro de Tona</strong> (municipi d&#x27;Osona)</li>
@@ -313,7 +313,7 @@
 <td>Tot Catalunya</td>
 <td>Fulla arrissada, resisteix gelades</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="pastanagues">Pastanagues</h2>
 <table>
 <thead><tr>
@@ -341,7 +341,7 @@
 <td>Osona</td>
 <td>Cilíndrica, color intens, gust dolç</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="pèsols-i-faves">Pèsols i faves</h2>
 <table>
 <thead><tr>
@@ -384,7 +384,7 @@
 <td>Mallorca</td>
 <td>Gran, dolça</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="fruiters-tradicionals-dx27osona">Fruiters tradicionals d&#x27;Osona</h2>
 <table>
 <thead><tr>
@@ -439,7 +439,7 @@
 <td><strong>Servera de pastor (Sorbus aria)</strong></td>
 <td>Autòctona, fruits</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="per-on-comprar-llavors-i-planter-ecològic-dx27osona-i-catalu">Per on comprar llavors i planter ecològic d&#x27;Osona i Catalunya</h2>
 <ul>
 <li><strong>Esporus</strong> (Manresa) - llavors varietats locals</li>
@@ -457,10 +457,12 @@
 <ul>
 <li><strong>Avantatges</strong>: adaptades al sòl i clima locals, patrimoni cultural, sovint més gustoses i nutritives.</li>
 <li><strong>Com fer-ho</strong>:</li>
+</ul>
+<ol>
 <li>Adquirir llavor d&#x27;un banc (Esporus, Les Refardes).</li>
 <li>Conrear, observar i seleccionar els millors fruits.</li>
 <li>Guardar llavor any rere any (assecar, etiquetar, congelar).</li>
 <li>Intercanviar a la Fira de la Llavor o xarxes locals.</li>
 <li>Documentar al quadern de l&#x27;hort.</li>
-</ul>
-<p>&gt; El repte actual: moltes varietats tradicionals s&#x27;han perdut. <strong>Cada llavor que conreem i guardem és un tresor per a les generacions futures.</strong></p>
+</ol>
+<blockquote>El repte actual: moltes varietats tradicionals s&#x27;han perdut. <strong>Cada llavor que conreem i guardem és un tresor per a les generacions futures.</strong></blockquote>

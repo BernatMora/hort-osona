@@ -1,5 +1,5 @@
 <h1 id="-guia-pràctica-avançada-per-a-lx27hortolà-fer-llavors-hivern">🔧 Guia pràctica avançada per a l&#x27;hortolà — Fer llavors, hivernacles, reg automatitzat i conservació de varietats</h1>
-<p>&gt; Quan ja tens l&#x27;hort funcionant, arriba el moment de fer un <strong>salt qualitatiu</strong>: deixar de comprar llavors cada any, construir el teu propi hivernacle, automatitzar el reg, i <strong>participar activament en la conservació de varietats locals</strong>. Aquesta guia és per a tu que ja tens experiència i vols <strong>fer créixer el teu hort a un nivell professional</strong>.</p>
+<blockquote>Quan ja tens l&#x27;hort funcionant, arriba el moment de fer un <strong>salt qualitatiu</strong>: deixar de comprar llavors cada any, construir el teu propi hivernacle, automatitzar el reg, i <strong>participar activament en la conservació de varietats locals</strong>. Aquesta guia és per a tu que ja tens experiència i vols <strong>fer créixer el teu hort a un nivell professional</strong>.</blockquote>
 <h2 id="1-fer-llavors-pròpies-nivell-avançat">1. Fer llavors pròpies: nivell avançat</h2>
 <h3 id="a-per-què-fer-llavors-pròpies">A. Per què fer llavors pròpies?</h3>
 <p>Ja vam parlar de <strong>guardar llavors bàsiques</strong> a la guia anterior. Ara anem <strong>més enllà</strong>:</p>
@@ -9,7 +9,7 @@
 <li><strong>Emmagatzematge a llarg termini</strong>: banc de llavors casolà</li>
 <li><strong>Creació de varietats pròpies</strong>: selecció massiva</li>
 <li><strong>Participació en xarxes de llavors</strong></li>
-</ul>
+</ol>
 <h3 id="b-tècniques-de-selecció">B. Tècniques de selecció</h3>
 <h4 id="1-selecció-massal-clàssica">1. Selecció massal (clàssica)</h4>
 <p>Cada any, <strong>tries les millors plantes</strong> del teu hort i en <strong>guardo llavors</strong>. Repetint cada any, <strong>s&#x27;adapten al teu sòl i clima</strong>.</p>
@@ -73,7 +73,7 @@
 <td><strong>Col</strong></td>
 <td>Totes les cols creuen entre elles! Aïllar 1 km</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Solucions</strong>:</p>
 <ul>
 <li><strong>Bossa d&#x27;aïllament</strong> (tela fina sobre les flors)</li>
@@ -234,7 +234,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <td><strong>Agost</strong></td>
 <td>Escaroles, espinacs, rúcula, kale</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="b-tècniques-avançades-de-planter">B. Tècniques avançades de planter</h3>
 <h4 id="1-pre-germinació">1. Pre-germinació</h4>
 <p>Per llavors lentes o capricioses:</p>
@@ -247,7 +247,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <li>Guardar a 20-25°C</li>
 <li>Comprovar cada dia</li>
 <li>Trasplantar quan germini</li>
-</ul>
+</ol>
 <h4 id="2-estratificació-per-a-llavors-que-necessiten-fred">2. Estratificació (per a llavors que necessiten fred)</h4>
 <p>Necessari per: pomerer, perer,servera, pruner, noguera, avellaner, alzina, roure.</p>
 <p><strong>Mètode</strong>:</p>
@@ -256,7 +256,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <li>Posar en bossa de plàstic</li>
 <li>Guardar a la nevera (4-5°C) durant 2-3 mesos</li>
 <li>Sembrar a la primavera</li>
-</ul>
+</ol>
 <h4 id="3-escarificació-per-a-llavors-amb-closca-dura">3. Escarificació (per a llavors amb closca dura)</h4>
 <p>Necessari per: esparreguera, pèsol, fava (a vegades).</p>
 <p><strong>Mètodes</strong>:</p>
@@ -281,7 +281,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <li>Posar en aigua o substrat</li>
 <li>Mantenir humit</li>
 <li>Trasplantar quan arreli (2-3 setmanes)</li>
-</ul>
+</ol>
 <h3 id="c-plantes-per-a-esqueixos">C. Plantes per a esqueixos</h3>
 <table>
 <thead><tr>
@@ -349,7 +349,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <td>Estiu</td>
 <td>Fàcil</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="3-hivernacle-casolà-disseny-i-construcció">3. Hivernacle casolà: disseny i construcció</h2>
 <h3 id="a-per-què-un-hivernacle">A. Per què un hivernacle?</h3>
 <p><strong>Avantatges</strong>:</p>
@@ -540,7 +540,7 @@ Pot 2: Tomàquet - 2026 - &quot;Pebrotí&quot; - origen: Esporus
 <li><strong>Tub principal</strong> (distribució)</li>
 <li><strong>Degotadors</strong> (gotes a cada planta)</li>
 <li><strong>Sensor d&#x27;humitat</strong> (opcional)</li>
-</ul>
+</ol>
 <p><strong>Esquema</strong>:</p>
 <pre><code>
 Aixeta → Filtre → Programador → Tub 16mm → Degotadors → Plantes
@@ -699,7 +699,7 @@ Aixeta → Filtre → Programador → Tub 16mm → Degotadors → Plantes
 <td>10-20 €</td>
 <td>Anivellar</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="b-eines-avançades">B. Eines avançades</h3>
 <table>
 <thead><tr>
@@ -757,7 +757,7 @@ Aixeta → Filtre → Programador → Tub 16mm → Degotadors → Plantes
 <td>100-500 €</td>
 <td>Documentar</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="c-inversió-anual">C. Inversió anual</h3>
 <p><strong>Per a un hort de 20 m²</strong>:</p>
 <ul>
@@ -977,7 +977,7 @@ Parcel·la 2: Enciams
 <p><strong>Any 5</strong>: 15-20 cultius, viver consolidat, associacionisme</p>
 <h2 id="11-notes-finals">11. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Quan ja tens l&#x27;hort funcionant, <strong>comença la part més bonica</strong>: deixar de dependre de l&#x27;exterior, <strong>produir les teves pròpies llavors</strong>, <strong>automatitzar el reg</strong>, <strong>construir el teu hivernacle</strong> i <strong>participar en la conservació del patrimoni genètic</strong>. Això és la <strong>pagesia regenerativa</strong> en acció.</p>
+<blockquote>Quan ja tens l&#x27;hort funcionant, <strong>comença la part més bonica</strong>: deixar de dependre de l&#x27;exterior, <strong>produir les teves pròpies llavors</strong>, <strong>automatitzar el reg</strong>, <strong>construir el teu hivernacle</strong> i <strong>participar en la conservació del patrimoni genètic</strong>. Això és la <strong>pagesia regenerativa</strong> en acció.</blockquote>
 <h3 id="aplica-ho-amb-seny">Aplica-ho amb seny</h3>
 <ol>
 <li><strong>Pas a pas</strong>: no intentis fer-ho tot de cop</li>
@@ -985,7 +985,7 @@ Parcel·la 2: Enciams
 <li><strong>Inverteix</strong> gradualment: hivernacle, eines</li>
 <li><strong>Comparteix</strong> el coneixement</li>
 <li><strong>Gaudir</strong> del procés!</li>
-</ul>
+</ol>
 <h3 id="el-futur-de-la-pagesia">El futur de la pagesia</h3>
-<p>&gt; El futur és la <strong>pagesia petita, ecològica, diversificada i connectada amb el territori</strong>. La teva contribució és <strong>valiosa</strong> per a tu, la teva família i la societat.</p>
+<blockquote>El futur és la <strong>pagesia petita, ecològica, diversificada i connectada amb el territori</strong>. La teva contribució és <strong>valiosa</strong> per a tu, la teva família i la societat.</blockquote>
 <p>🌱 <strong>Bona professionalització del teu hort!</strong></p>

@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-dels-bolets-a-osona-recollecció-i-cultiu">🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu</h1>
-<p>&gt; Osona és un <strong>paradís micològic</strong>: boscos de roure, alzina, pi, faig, castanyer... Tots ells donen <strong>bolets excel·lents</strong>, alguns molt valorats a la cuina. Aquesta guia t&#x27;ensenya a <strong>trobar</strong>, <strong>reconèixer</strong> i <strong>cuinar</strong> els bolets, i <strong>com cultivar-ne alguns</strong> al teu hort o al bosc de casa.</p>
+<blockquote>Osona és un <strong>paradís micològic</strong>: boscos de roure, alzina, pi, faig, castanyer... Tots ells donen <strong>bolets excel·lents</strong>, alguns molt valorats a la cuina. Aquesta guia t&#x27;ensenya a <strong>trobar</strong>, <strong>reconèixer</strong> i <strong>cuinar</strong> els bolets, i <strong>com cultivar-ne alguns</strong> al teu hort o al bosc de casa.</blockquote>
 <h2 id="1-el-món-dels-bolets-a-osona">1. El món dels bolets a Osona</h2>
 <h3 id="a-què-és-un-bolet">A. Què és un bolet?</h3>
 <p>Un <strong>bolet</strong> és el <strong>cos fructífer</strong> d&#x27;un <strong>fong</strong>. El fong viu <strong>sota terra</strong> (miceli) i produeix el bolet per <strong>reproduir-se</strong> (escampar espores). Els bolets són <strong>molt antics</strong> (més que les plantes!), <strong>molt diversos</strong> (més de 100.000 espècies) i <strong>molt beneficiosos</strong> per als ecosistemes.</p>
@@ -34,7 +34,7 @@
 <td><strong>Hivern</strong> (desembre-febrer)</td>
 <td>Fredolics (si fa bon temps), orelles de gat, fredolucs</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-les-30-espècies-dx27osona">2. Les 30 espècies d&#x27;Osona</h2>
 <h3 id="a-espècies-excellents-">A. Espècies excel·lents (⭐⭐⭐⭐⭐)</h3>
 <h4 id="1-cep-boletus-edulis">1. Cep (Boletus edulis)</h4>
@@ -260,7 +260,7 @@
 <li><strong>No et refiïs del color</strong> (molt variable)</li>
 <li><strong>Un bolet tallat canvia de color?</strong> Compte!</li>
 <li><strong>Si un animal se&#x27;l menja, no vol dir que sigui bo</strong></li>
-</ul>
+</ol>
 <h3 id="b-com-fer-una-bona-identificació">B. Com fer una bona identificació</h3>
 <ol>
 <li><strong>Fer fotos</strong> (barret, peu, làmines, sota el barret)</li>
@@ -269,7 +269,7 @@
 <li><strong>Olorar-lo</strong> (de farina, d&#x27;anís, de peix, de cosa rara)</li>
 <li><strong>Tallar-lo</strong> (color de la carn, canvia?)</li>
 <li><strong>Resseguir-lo amb un mapa micològic</strong> (PlantNet, FungiNote)</li>
-</ul>
+</ol>
 <h3 id="c-eines-útils">C. Eines útils</h3>
 <ul>
 <li><strong>PlantNet</strong> (app, identificar plantes i bolets)</li>
@@ -351,7 +351,7 @@
 <td>Boscos temperats</td>
 <td>Fredolics (si fa bon temps)</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-com-cultivar-bolets-a-casa-5-mètodes">5. Com cultivar bolets a casa (5 mètodes!)</h2>
 <h3 id="a-per-què-cultivar">A. Per què cultivar?</h3>
 <ul>
@@ -385,7 +385,7 @@
 <li><strong>Mou a un lloc amb llum</strong> (no sol directe)</li>
 <li><strong>Apareixen els primers bolets</strong> en 1-2 setmanes</li>
 <li><strong>Collir</strong> quan els barrets estiguin plans</li>
-</ul>
+</ol>
 <p><strong>Rendiment</strong>: 5-10 kg de gírgoles per 10 kg de palla</p>
 <p><strong>Cures</strong>:</p>
 <ul>
@@ -407,7 +407,7 @@
 <li>Deixar en un lloc fresc i humit</li>
 <li>Esperar 7-14 dies</li>
 <li>Collir</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: fàcil, ràpid, ideal per a nens</p>
 <p>---</p>
 <h3 id="d-mètode-3-cultivar-xampinyons-agaricus-bisporus">D. Mètode 3: Cultivar xampinyons (Agaricus bisporus)</h3>
@@ -431,7 +431,7 @@
 <li><strong>Baixa la temperatura</strong> a 12-15°C</li>
 <li><strong>Cobreix amb una capa de turba</strong> (3-5 cm)</li>
 <li><strong>Espera 3-5 setmanes</strong>: apareixen els xampinyons</li>
-</ul>
+</ol>
 <p><strong>Rendiment</strong>: 5-10 kg de xampinyons per m²</p>
 <p>---</p>
 <h3 id="e-mètode-4-cultivar-bolets-en-soques-al-bosc-o-lx27hort">E. Mètode 4: Cultivar bolets en soques (al bosc o l&#x27;hort)</h3>
@@ -453,7 +453,7 @@
 <li><strong>Espera 6-12 mesos</strong>: la soca es cobreix de miceli blanc</li>
 <li><strong>Després de 1-2 anys</strong>: apareixen els primers bolets</li>
 <li><strong>Cada any</strong> produeix noves onades</li>
-</ul>
+</ol>
 <p><strong>Espècies ideals per a soques</strong>:</p>
 <ul>
 <li><strong>Gírgola</strong> (Pleurotus): pollancre, àlber, salze</li>
@@ -475,7 +475,7 @@
 <li><strong>Posar-hi les micorrizes</strong></li>
 <li><strong>Tapar i regar</strong></li>
 <li><strong>Esperar 2-5 anys</strong> per veure els primers bolets</li>
-</ul>
+</ol>
 <p><strong>Espècies ideals</strong>:</p>
 <ul>
 <li><strong>Cep</strong>: roure, alzina, castanyer</li>
@@ -623,7 +623,7 @@
 </ul>
 <h2 id="9-notes-finals">9. Notes finals</h2>
 <h3 id="a-el-missatge-clau">A. El missatge clau</h3>
-<p>&gt; Osona és un <strong>paradís boletaire</strong>. Tens <strong>30 espècies excel·lents</strong> per descobrir, <strong>5 mètodes</strong> per cultivar-ne a casa, i <strong>una tradició mil·lenària</strong> que et connecta amb la terra, el bosc i la cultura pagesa. <strong>Respecta el bosc, identifica bé, i gaudeix-ne amb moderació</strong>.</p>
+<blockquote>Osona és un <strong>paradís boletaire</strong>. Tens <strong>30 espècies excel·lents</strong> per descobrir, <strong>5 mètodes</strong> per cultivar-ne a casa, i <strong>una tradició mil·lenària</strong> que et connecta amb la terra, el bosc i la cultura pagesa. <strong>Respecta el bosc, identifica bé, i gaudeix-ne amb moderació</strong>.</blockquote>
 <h3 id="b-per-on-començar">B. Per on començar</h3>
 <ol>
 <li><strong>Inscriu-te a una sortida guiada</strong> (Societat Micològica de Vic)</li>
@@ -631,7 +631,7 @@
 <li><strong>Practica amb un expert</strong> els primers cops</li>
 <li><strong>Prova el cultiu de gírgoles</strong> (el més fàcil)</li>
 <li><strong>Investiga les zones</strong> d&#x27;Osona amb bolets</li>
-</ul>
+</ol>
 <h3 id="c-la-saviesa-pagesa">C. La saviesa pagesa</h3>
-<p>&gt; Els avis d&#x27;Osona sabien <strong>on, quan i com</strong> buscar bolets. Aquesta saviesa es transmet <strong>de pares a fills</strong>, <strong>de padrins a néts</strong>. <strong>Tu tens el dret i el deure</strong> d&#x27;aprendre-la i transmetre-la. És <strong>patrimoni cultural</strong> de la comarca.</p>
+<blockquote>Els avis d&#x27;Osona sabien <strong>on, quan i com</strong> buscar bolets. Aquesta saviesa es transmet <strong>de pares a fills</strong>, <strong>de padrins a néts</strong>. <strong>Tu tens el dret i el deure</strong> d&#x27;aprendre-la i transmetre-la. És <strong>patrimoni cultural</strong> de la comarca.</blockquote>
 <p>🍄 <strong>Bona caça boletaire!</strong></p>

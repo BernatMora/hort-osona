@@ -1,5 +1,5 @@
 <h1 id="-guia-de-fermentats-casolans-hort-osona">🫙 Guia de fermentats casolans — Hort Osona</h1>
-<p>&gt; La fermentació làctica és una de les maneres més antigues, sanes i econòmiques de conservar excedents de l&#x27;hort. A més, crea probiòtics excel·lents per a la salut intestinal.</p>
+<blockquote>La fermentació làctica és una de les maneres més antigues, sanes i econòmiques de conservar excedents de l&#x27;hort. A més, crea probiòtics excel·lents per a la salut intestinal.</blockquote>
 <h2 id="-què-és-la-fermentació-làctica">📚 Què és la fermentació làctica?</h2>
 <p>Procés en què els <strong>lactobacils</strong> (bacteris beneficiosos presents de forma natural a la superfície de les verdures) transformen els sucres en <strong>àcid làctic</strong>. Això:</p>
 <ul>
@@ -30,7 +30,7 @@
 <li><strong>Cada dia</strong>, premsar amb un cullera o netejar la floridura si n&#x27;apareix a la superfície</li>
 <li><strong>Provar</strong> als 5-7 dies — punt àlgid entre 7-14</li>
 <li><strong>Quan estigui al gust</strong>, tapar hermèticament i guardar a la nevera</li>
-</ul>
+</ol>
 <h3 id="variacions">Variacions</h3>
 <ul>
 <li><strong>Xucrut de pastanaga</strong>: substituir 30% de la col per pastanaga ratllada</li>
@@ -67,7 +67,7 @@
 <li><strong>Empaquetar</strong> en un pot, premsant bé perquè quedi cobert pel líquid</li>
 <li><strong>Deixar fermentar 1-3 dies</strong> a temperatura ambient</li>
 <li><strong>Guardar a la nevera</strong> — millor amb el temps (2-4 setmanes)</li>
-</ul>
+</ol>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>El kimchi evoluciona amb el temps: de fresc a fort a molt àcid — al teu gust!</li>
@@ -94,7 +94,7 @@
 <li><strong>Tapar</strong> amb tapa solta o amb drap</li>
 <li><strong>Deixar 3-7 dies</strong> a temperatura ambient</li>
 <li><strong>Provar</strong> i guardar a la nevera</li>
-</ul>
+</ol>
 <h3 id="variacions">Variacions</h3>
 <ul>
 <li><strong>Picants</strong>: afegir bitxo o pebre de caiena</li>
@@ -118,7 +118,7 @@
 <li><strong>Tapar</strong> solta</li>
 <li><strong>Fermentar 5-7 dies</strong> a temperatura ambient</li>
 <li><strong>Guardar a la nevera</strong></li>
-</ul>
+</ol>
 <h2 id="-borscht-ucraïnès-de-remolatxa">🥬 Borscht ucraïnès (de remolatxa)</h2>
 <h3 id="ingredients">Ingredients</h3>
 <ul>
@@ -140,7 +140,7 @@
 <li><strong>Posar en pots</strong>, premsar</li>
 <li><strong>Fermentar 3-5 dies</strong> a temperatura ambient</li>
 <li><strong>Refrigerar</strong></li>
-</ul>
+</ol>
 <h2 id="-kombucha">🫖 Kombucha</h2>
 <h3 id="ingredients">Ingredients</h3>
 <ul>
@@ -161,7 +161,7 @@
 <li><strong>Deixar 7-14 dies</strong> a 20-25°C, sense sol directe</li>
 <li><strong>Provar</strong> als 7 dies — el pH hauria de ser 2,5-3,5</li>
 <li><strong>Guardar a la nevera</strong> — es pot envasar en ampolles amb segellat</li>
-</ul>
+</ol>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>El SCOBY es pot guardar indefinidament — anar fent servir</li>
@@ -184,7 +184,7 @@
 <li><strong>Deixar 24-48 h</strong> a temperatura ambient</li>
 <li><strong>Colar</strong> i guardar el líquid a la nevera</li>
 <li><strong>Tornar a posar els naps</strong> en aigua nova per tornar a fer-ne</li>
-</ul>
+</ol>
 <h2 id="-altres-fermentats-interessants">🧂 Altres fermentats interessants</h2>
 <table>
 <thead><tr>
@@ -237,7 +237,7 @@
 <td>Bròquil + col + sal</td>
 <td>Variació interessant</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-consells-generals-de-seguretat">⚠️ Consells generals de seguretat</h2>
 <h3 id="bàsics">Bàsics</h3>
 <ul>
@@ -314,4 +314,4 @@
 <td>Kombucha, kefir</td>
 <td>Cicle continu, no depèn de collites</td>
 </tr>
-</table>
+</tbody></table>

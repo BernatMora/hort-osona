@@ -1,4 +1,4 @@
-<div class="doc-hero"><img src="img/porro.svg" alt="Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)" loading="lazy"></div><h1 id="fitxa-de-cultiu-porro-allium-ampeloprasum-var-porrum">Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/porro.svg" alt="Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)" loading="lazy"></div><h1 id="fitxa-de-cultiu-porro-allium-ampeloprasum-var-porrum">Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Allium ampeloprasum</em> var. <em>porrum</em></li>

@@ -1,5 +1,5 @@
 <h1 id="-guia-dx27hort-medicinal-a-casa-8-plantes-remeieres-ideals-p">🌿 Guia d&#x27;Hort Medicinal a Casa — 8 plantes remeieres ideals per cultivar a Osona</h1>
-<p>&gt; Imagina&#x27;t tenir <strong>8 plantes medicinals</strong> al teu hort que t&#x27;ajudin amb les molèsties del dia a dia: refredats, indigestions, insomni, ansietat, dolors musculars, ferides, problemes de pell... Totes elles <strong>perfectament adaptables al clima d&#x27;Osona</strong> i <strong>fàcils de cultivar</strong> al teu hort de 20 m². Aquesta guia t&#x27;explica quines plantes triar, on plantar-les, com collir-les, com fer remeis casolans, i quines <strong>precauccions</strong> tenir.</p>
+<blockquote>Imagina&#x27;t tenir <strong>8 plantes medicinals</strong> al teu hort que t&#x27;ajudin amb les molèsties del dia a dia: refredats, indigestions, insomni, ansietat, dolors musculars, ferides, problemes de pell... Totes elles <strong>perfectament adaptables al clima d&#x27;Osona</strong> i <strong>fàcils de cultivar</strong> al teu hort de 20 m². Aquesta guia t&#x27;explica quines plantes triar, on plantar-les, com collir-les, com fer remeis casolans, i quines <strong>precauccions</strong> tenir.</blockquote>
 <h2 id="1-per-què-un-hort-medicinal">1. Per què un hort medicinal?</h2>
 <h3 id="a-avantatges">A. Avantatges</h3>
 <ol>
@@ -10,7 +10,7 @@
 <li><strong>Estètica</strong>: plantes boniques i aromàtiques</li>
 <li><strong>Tradició</strong>: recuperar la saviesa de les &quot;saunadores&quot; d&#x27;Osona</li>
 <li><strong>Estalvi</strong>: estalviar compres a l&#x27;herboristeria</li>
-</ul>
+</ol>
 <h3 id="b-per-a-tu-al-teu-hort-de-20-m²">B. Per a tu, al teu hort de 20 m²</h3>
 <ul>
 <li>Tens <strong>8 cultius</strong> ja (tomàquets, pebrots, mongetes, enciams, pastanagues, carbasses, carabassons, cebes)</li>
@@ -524,7 +524,7 @@
 <td>Hipèric, saüc, equinàcia</td>
 <td>Bonus</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-calendari-de-lx27hort-medicinal">5. Calendari de l&#x27;hort medicinal</h2>
 <h3 id="gener">Gener</h3>
 <ul>
@@ -595,7 +595,7 @@
 <li><strong>2-7 dies</strong> (segons planta)</li>
 <li><strong>Voltejar</strong> cada dia</li>
 <li><strong>Prova</strong>: la fulla ha de cruixir</li>
-</ul>
+</ol>
 <h3 id="emmagatzematge">Emmagatzematge</h3>
 <ul>
 <li><strong>Pots de vidre</strong> amb tapa</li>
@@ -727,10 +727,10 @@
 <td>Calèndula, camamil·la</td>
 <td>Oli, ungüent, compreses</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="9-notes-finals">9. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Un hort medicinal és <strong>la inversió més intel·ligent</strong> que pots fer. Amb 8 plantes remeieres, tens <strong>una farmàcia natural completa</strong> a casa. A Osona, tens el <strong>clima perfecte</strong> per cultivar-les, i tens la <strong>saviesa de les &quot;saunadores&quot;</strong> que les van usar durant segles.</p>
+<blockquote>Un hort medicinal és <strong>la inversió més intel·ligent</strong> que pots fer. Amb 8 plantes remeieres, tens <strong>una farmàcia natural completa</strong> a casa. A Osona, tens el <strong>clima perfecte</strong> per cultivar-les, i tens la <strong>saviesa de les &quot;saunadores&quot;</strong> que les van usar durant segles.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: comprar 3-4 plantes perennes (romaní, sàlvia, farigola, espígol)</li>
@@ -738,7 +738,7 @@
 <li><strong>Aquesta primavera</strong>: sembrar camamil·la i calèndula</li>
 <li><strong>Aquest estiu</strong>: collir i assecar</li>
 <li><strong>Aquest any</strong>: tenir la teva &quot;farmàcia&quot; completa</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-pagesa">La saviesa pagesa</h3>
-<p>&gt; &quot;Qui té un hort medicinal a casa, té un tresor per a tota la vida.&quot;</p>
+<blockquote>&quot;Qui té un hort medicinal a casa, té un tresor per a tota la vida.&quot;</blockquote>
 <p>🌿 <strong>Bona salut amb el teu hort medicinal!</strong></p>

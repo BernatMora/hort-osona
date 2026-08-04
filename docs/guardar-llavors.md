@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-per-guardar-llavors-varietats-locals-dx27oson">🌾 Guia completa per guardar llavors — Varietats locals d&#x27;Osona</h1>
-<p>&gt; Guardar llavors és un dels actes més bells i revolucionaris de l&#x27;horticultura. Significa <strong>recuperar la sobirania alimentària</strong>, <strong>preservar varietats locals adaptades</strong> al teu sòl i clima, i <strong>estalviar diners</strong> any rere any. A Osona, amb la seva rica història pagesa i la tasca d&#x27;Esporus, L&#x27;Era i Les Refardes, tens un tresor al teu abast.</p>
+<blockquote>Guardar llavors és un dels actes més bells i revolucionaris de l&#x27;horticultura. Significa <strong>recuperar la sobirania alimentària</strong>, <strong>preservar varietats locals adaptades</strong> al teu sòl i clima, i <strong>estalviar diners</strong> any rere any. A Osona, amb la seva rica història pagesa i la tasca d&#x27;Esporus, L&#x27;Era i Les Refardes, tens un tresor al teu abast.</blockquote>
 <h2 id="per-què-guardar-llavors">Per què guardar llavors?</h2>
 <h3 id="avantatges">Avantatges</h3>
 <ol>
@@ -9,7 +9,7 @@
 <li><strong>🌍 Sostenibilitat</strong> — sense transport, sense patents, sense híbrids estèrils</li>
 <li><strong>🍅 Millora del gust</strong> — les varietats locals sovint tenen més gust</li>
 <li><strong>👨‍🌾 Autonomia</strong> — ets lliure de comprar o no al mercat</li>
-</ul>
+</ol>
 <h3 id="el-que-cal-saber">El que cal saber</h3>
 <ul>
 <li><strong>NO tot es pot guardar fàcilment</strong> — algunes plantes són híbrides (F1) i no reproduiran fidèlment</li>
@@ -61,7 +61,7 @@
 <td>Biennal, creua amb alls</td>
 <td>Difícil aïllar</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="pollinitzades-per-insectes-cal-aïllar">Pol·linitzades per insectes (cal aïllar)</h3>
 <table>
 <thead><tr>
@@ -89,7 +89,7 @@
 <td>Altres alls i cebes en flor</td>
 <td>500 m</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Per al teu hort de 20 m²</strong>: la pol·linització creuada és un risc real. Si vols guardar llavors pures, <strong>concentra&#x27;t en les autopol·linitzants</strong> (tomàquet, pebrot, mongeta, pèsol, enciam) que són les que tens!</p>
 <h2 id="2-guardar-llavors-de-tomàquet-la-teva-joia">2. Guardar llavors de TOMÀQUET (la teva joia)</h2>
 <h3 id="per-què-és-la-millor-per-començar">Per què és la millor per començar</h3>
@@ -129,7 +129,7 @@
 <td><strong>Febrer-març 2027</strong></td>
 <td>Sembrar les llavors guardades</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="pas-a-pas-fermentació-el-mètode-tradicional">Pas a pas (fermentació, el mètode tradicional)</h3>
 <h4 id="1-triar-les-millors-plantes-i-fruits">1. Triar les millors plantes i fruits</h4>
 <ul>
@@ -227,7 +227,7 @@
 <td><strong>Gener-febrer 2027</strong></td>
 <td>Sembrar</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="pas-a-pas">Pas a pas</h3>
 <h4 id="1-triar">1. Triar</h4>
 <ul>
@@ -297,7 +297,7 @@
 <td><strong>Abril-maig 2027</strong></td>
 <td>Sembrar</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="pas-a-pas">Pas a pas</h3>
 <h4 id="1-triar">1. Triar</h4>
 <ul>
@@ -329,7 +329,7 @@
 <li>Les llavors queden netes</li>
 </ul>
 <h4 id="6-congelar-24-48-h-clau-per-matar-corcs">6. <strong>CONGELAR 24-48 h</strong> (clau per matar corcs)</h4>
-<p>&gt; ⚠️ <strong>A Osona hi ha el corc de la mongeta</strong> (<em>Acanthoscelides obtectus</em>) que pon ous dins la llavor. <strong>Un cop el tens a la mongeta guardada, no te&#x27;n desfaràs</strong>.</p>
+<blockquote>⚠️ <strong>A Osona hi ha el corc de la mongeta</strong> (<em>Acanthoscelides obtectus</em>) que pon ous dins la llavor. <strong>Un cop el tens a la mongeta guardada, no te&#x27;n desfaràs</strong>.</blockquote>
 <ul>
 <li>Posar les llavors al congelador 24-48 h</li>
 <li>Això mata els ous i larves</li>
@@ -356,7 +356,7 @@
 <li><strong>Posar en bosses</strong> de paper i sacsejar</li>
 <li><strong>Ventar</strong> per separar</li>
 <li><strong>Guardar</strong> 2-3 anys</li>
-</ul>
+</ol>
 <h2 id="6-guardar-llavors-de-pastanaga-més-complicat">6. Guardar llavors de PASTANAGA (més complicat)</h2>
 <h3 id="important">Important</h3>
 <ul>
@@ -373,7 +373,7 @@
 <li>Assecar en lloc sec</li>
 <li>Fregar per alliberar les llavors</li>
 <li>Guardar 2-3 anys</li>
-</ul>
+</ol>
 <h2 id="7-guardar-llavors-de-cebes-biennal">7. Guardar llavors de CEBES (biennal)</h2>
 <h3 id="important">Important</h3>
 <ul>
@@ -390,7 +390,7 @@
 <li>A l&#x27;estiu, deixar florir</li>
 <li>Quan les llavors estiguin negres, collir</li>
 <li>Assecar i guardar 1-2 anys</li>
-</ul>
+</ol>
 <h2 id="8-regles-universals-per-guardar-llavors">8. Regles universals per guardar llavors</h2>
 <h3 id="a-selecció">A. Selecció</h3>
 <ul>
@@ -428,7 +428,7 @@
 <li>Compta quantes germinen</li>
 <li><strong>Si &gt; 70%</strong>: encara són bones</li>
 <li><strong>Si &lt; 50%</strong>: millor comprar noves</li>
-</ul>
+</ol>
 <h2 id="9-calendari-resum-per-guardar-llavors-per-al-teu-hort">9. Calendari resum per guardar llavors (per al teu hort)</h2>
 <table>
 <thead><tr>
@@ -481,18 +481,22 @@
 <td>Sembrar les llavors guardades</td>
 <td>Totes</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="10-el-banc-de-llavors-casolà">10. El banc de llavors casolà</h2>
 <h3 id="com-organitzar-lo">Com organitzar-lo</h3>
 <ol>
 <li><strong>Pots de vidre petits</strong> o <strong>sobres de paper</strong></li>
 <li>Etiquetar amb:</li>
+</ol>
+<ul>
 <li>Espècie i varietat</li>
 <li>Any de collita</li>
 <li>Procedència</li>
+</ul>
+<ol>
 <li>Guardar en <strong>caixa de fusta o cartró</strong> (transpirable)</li>
 <li>En <strong>lloc fresc, sec i fosc</strong> (celler, rebost, nevera)</li>
-</ul>
+</ol>
 <h3 id="on-guardar">On guardar</h3>
 <ul>
 <li><strong>Nevera</strong>: bona opció, temperatura constant</li>
@@ -573,7 +577,7 @@
 <td>No saps si la planta és híbrida F1</td>
 <td>Comprovar l&#x27;etiqueta: &quot;F1&quot; o &quot;híbrid&quot; = no guardar</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="14-el-cercle-virtuós">14. El cercle virtuós</h2>
 <pre><code>
 1. Compres llavor local catalana (Esporus, Les Refardes)

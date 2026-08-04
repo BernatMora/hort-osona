@@ -4,12 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Base de coneixement d'hort ecològic a Osona">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:title" content="Hort Osona">
+<meta property="og:description" content="Calendari, plans mensuals i guies d'horticultura ecològica adaptades a Osona.">
+<meta property="og:url" content="https://bernatmora.github.io/hort-osona/">
 <meta name="theme-color" content="#3D4A2A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Hort Osona">
 <meta name="mobile-web-app-capable" content="yes">
 <title>Hort Osona</title>
+<link rel="canonical" href="https://bernatmora.github.io/hort-osona/">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -51,6 +58,27 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--c-ochre);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
 a { color: var(--c-olive); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -88,6 +116,18 @@ a:hover { text-decoration: underline; }
   font-size: 24px;
   color: var(--c-paper);
 }
+
+.header .home-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: var(--c-paper);
+}
+
+.header .home-btn.visible { display: flex; }
 
 .header .menu-btn:hover,
 .header .menu-btn:active {
@@ -593,6 +633,70 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+.doc-toolbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.doc-toolbar.visible { display: flex; }
+
+.doc-toolbar button {
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  font-weight: 650;
+}
+
+.doc-toolbar .doc-category {
+  color: var(--c-ink-2);
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.doc-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#reset-tasks-btn { display: none; }
+#reset-tasks-btn.visible { display: inline-block; }
+
+.doc .task-item {
+  list-style: none;
+  margin-left: -1.25rem;
+  padding: 5px 0;
+}
+
+.doc .task-item label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.doc .task-item input {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  accent-color: var(--c-olive);
+  flex: 0 0 auto;
+}
+
+.doc .task-item input:checked + span {
+  color: var(--c-ink-2);
+  text-decoration: line-through;
+}
+
 .doc h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
@@ -734,6 +838,49 @@ a:hover { text-decoration: underline; }
   margin: 24px 0 12px;
 }
 
+.current-month-card {
+  margin: 24px auto;
+  padding: 20px;
+  max-width: 680px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.current-month-card .eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.current-month-card h2 {
+  margin: 4px 0 8px;
+  color: var(--c-paper);
+  font-size: 1.55rem;
+}
+
+.current-month-card p { margin-bottom: 14px; }
+
+.current-month-card a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  font-weight: 700;
+}
+
+.current-month-card a:hover {
+  text-decoration: none;
+  background: var(--c-olive-bg);
+}
+
 .welcome .quick {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -794,11 +941,14 @@ a:hover { text-decoration: underline; }
 </head>
 <body>
 
+<a class="skip-link" href="#main">Saltar al contingut</a>
+
 <div class="app">
 
   <!-- HEADER -->
   <header class="header">
     <button class="menu-btn" id="menu-btn" aria-label="Obrir menú">☰</button>
+    <button class="home-btn" id="home-btn" aria-label="Tornar a l'inici" title="Inici">⌂</button>
     <div class="title">🌱 Hort Osona</div>
     <a class="search-toggle project-shortcut" href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener" aria-label="Obrir BernatLab" title="BernatLab"><span aria-hidden="true">🧪</span> Lab</a>
     <button class="search-toggle" id="chat-btn" aria-label="Xat amb l'hort" title="Pregunta a l'hort">💬</button>
@@ -831,19 +981,33 @@ a:hover { text-decoration: underline; }
       <h1>🌱 Hort Osona</h1>
       <p class="subtitle">Base de coneixement d'horticultura ecològica, plantes medicinals i conserves, adaptat a la comarca d'Osona.</p>
       <div class="stats">
-        <div class="stat"><div class="num">78</div><div class="lbl">Documents</div></div>
+        <div class="stat"><div class="num">96</div><div class="lbl">Documents</div></div>
         <div class="stat"><div class="num">26</div><div class="lbl">Fitxes cultiu</div></div>
         <div class="stat"><div class="num">12</div><div class="lbl">Categories</div></div>
       </div>
+      <section class="current-month-card" aria-labelledby="current-month-title">
+        <div class="eyebrow">El que toca ara a Osona</div>
+        <h2 id="current-month-title">Carregant el mes actual…</h2>
+        <p>Sembres, trasplantaments, collites i feines recomanades per aquest mes.</p>
+        <a href="#" id="current-month-link">🌱 Veure què pots plantar i què toca fer</a>
+      </section>
       <h2>Com començar</h2>
       <p style="color: var(--c-ink-2);">Toca el botó ☰ per obrir el menú i triar un document, o bé 🔍 per cercar.</p>
       <div class="quick">
         <a href="#" data-path="pla-12-mesos.md" onclick="return openDoc(this.dataset.path)">📅 Pla dels 12 mesos</a>
-        <a href="#" data-path="plans-mensuals/2026-07-juliol.html" onclick="return openDoc(this.dataset.path)">📅 Pla juliol 2026
-        <a href="#" data-path="07-fitxes-cultius/tomaquet.md" onclick="return openDoc(this.dataset.path)">🍅 Tomàquet</a>
-        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Calendari de sembra</a>
-        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions</a>
-        <a href="#" data-path="pla-tractaments-fitosanitaris.md" onclick="return openDoc(this.dataset.path)">🧪 Tractaments</a>
+        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Què puc sembrar?</a>
+        <a href="#" data-path="04-reg-fertilitzacio.md" onclick="return openDoc(this.dataset.path)">💧 Reg i fertilització</a>
+        <a href="#" data-path="03-gestio-plagues.md" onclick="return openDoc(this.dataset.path)">🐞 Plagues i malalties</a>
+        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions i rotacions</a>
+        <a href="#" data-path="conserves.md" onclick="return openDoc(this.dataset.path)">🥫 Conserves</a>
+        <a href="#" data-path="remeieres-guia-completa.md" onclick="return openDoc(this.dataset.path)">🌿 Plantes remeieres</a>
+      </div>
+    </div>
+    <div class="doc-toolbar" id="doc-toolbar">
+      <button type="button" id="back-home-btn">← Tornar a l’inici</button>
+      <div class="doc-toolbar-actions">
+        <button type="button" id="reset-tasks-btn">Netejar marques</button>
+        <span class="doc-category" id="doc-category"></span>
       </div>
     </div>
     <article class="doc" id="doc" style="display:none"></article>
@@ -886,8 +1050,8 @@ a:hover { text-decoration: underline; }
 </div>
 
 <script>
-const SIDEBAR = {"Inici": [{"path": "00-index.md", "label": "Índex general", "title": "🌱 Base de coneixement — Hort ecològic a Osona"}, {"path": "README.md", "label": "README", "title": "🌱 Hort Osona — Base de coneixement"}, {"path": "CHANGELOG.md", "label": "Historial", "title": "📝 CHANGELOG — Hort Osona"}], "Planificació": [{"path": "pla-12-mesos.md", "label": "Pla dels 12 mesos", "title": "🗓️ Pla dels 12 mesos — Hort ecològic a Osona (any tipus)"}, {"path": "08-pla-mensual.md", "label": "Pla d'acció mensual", "title": "📅 Pla d'acció mensual — Hort ecològic Osona"}, {"path": "plans-mensuals/2026-10-octubre.html", "label": "Pla octubre 2026", "title": "Pla d'acció — Juliol 2026 (Osona)"}, {"path": "planificacio-tardor-hivern-2026.md", "label": "Tardor-hivern 2026-27", "title": "🍂 Planificació de tardor i hivern a Osona"}, {"path": "01-calendari-sembra.md", "label": "Calendari de sembra", "title": "📅 Calendari de sembra i trasplantament — Osona"}, {"path": "calendari-lunar-osona.md", "label": "Calendari lunar", "title": "🌙 Calendari lunar aplicat a l'hort d'Osona"}, {"path": "fitxa-hort.md", "label": "Plànol de l'hort", "title": "🏡 Fitxa del meu hort — Osona"}, {"path": "pla-hort.md", "label": "Plànol esquemàtic", "title": "🗺️ Plànol de l'hort — 20 m² (4×5 m)"}, {"path": "pla-reg-personalitzat-2026.md", "label": "Pla de reg personalitzat", "title": "💧 Pla de reg personalitzat — Hort Osona, juny 2026"}, {"path": "croquis-hort.md", "label": "Croquis dibuixable", "title": "🗺️ Croquis de l'hort — Plantilla dibuixable"}], "Fitxes de cultiu": [{"path": "07-fitxes-cultius/all.md", "label": "All", "title": "Fitxa de cultiu: All (Allium sativum)"}, {"path": "07-fitxes-cultius/alfabrega.md", "label": "Alfàbrega", "title": "Fitxa de cultiu: Alfàbrega (*Ocimum basilicum*)"}, {"path": "07-fitxes-cultius/api.md", "label": "Api", "title": "Fitxa de cultiu: Api (Apium graveolens)"}, {"path": "07-fitxes-cultius/bleda.md", "label": "Bleda", "title": "Fitxa de cultiu: Bleda"}, {"path": "07-fitxes-cultius/carbassa.md", "label": "Carbassa", "title": "Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)"}, {"path": "07-fitxes-cultius/carabasso.md", "label": "Carabassó", "title": "Fitxa de cultiu: Carabassó (Cucurbita pepo)"}, {"path": "07-fitxes-cultius/ceba.md", "label": "Ceba", "title": "Fitxa de cultiu: Ceba (Allium cepa)"}, {"path": "07-fitxes-cultius/col.md", "label": "Col", "title": "Fitxa de cultiu: Col (Brassica oleracea)"}, {"path": "07-fitxes-cultius/enciam.md", "label": "Enciam", "title": "Fitxa de cultiu: Enciam (Lactuca sativa)"}, {"path": "07-fitxes-cultius/escarola.md", "label": "Escarola", "title": "Fitxa de cultiu: Escarola (Cichorium endivia)"}, {"path": "07-fitxes-cultius/espinac.md", "label": "Espinac", "title": "Fitxa de cultiu: Espinac (Spinacia oleracea)"}, {"path": "07-fitxes-cultius/farigola.md", "label": "Farigola", "title": "Fitxa de cultiu: Farigola (*Thymus vulgaris*)"}, {"path": "07-fitxes-cultius/fava.md", "label": "Fava", "title": "Fitxa de cultiu: Fava (Vicia faba)"}, {"path": "07-fitxes-cultius/melo.md", "label": "Meló", "title": "Fitxa de cultiu: Meló (Cucumis melo)"}, {"path": "07-fitxes-cultius/menta.md", "label": "Menta", "title": "Fitxa de cultiu: Menta (*Mentha sp.*)"}, {"path": "07-fitxes-cultius/mongeta.md", "label": "Mongeta", "title": "Fitxa de cultiu: Mongeta (Phaseolus vulgaris)"}, {"path": "07-fitxes-cultius/orenga.md", "label": "Orenga", "title": "Fitxa de cultiu: Orenga (*Origanum vulgare*)"}, {"path": "07-fitxes-cultius/pastanaga.md", "label": "Pastanaga", "title": "Fitxa de cultiu: Pastanaga (Daucus carota)"}, {"path": "07-fitxes-cultius/patata.md", "label": "Patata", "title": "Fitxa de cultiu: Patata (Solanum tuberosum)"}, {"path": "07-fitxes-cultius/pebrot.md", "label": "Pebrot", "title": "Fitxa de cultiu: Pebrot (Capsicum annuum)"}, {"path": "07-fitxes-cultius/pesol.md", "label": "Pèsol", "title": "Fitxa de cultiu: Pèsol (Pisum sativum)"}, {"path": "07-fitxes-cultius/porro.md", "label": "Porro", "title": "Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)"}, {"path": "07-fitxes-cultius/rave.md", "label": "Rave", "title": "Fitxa de cultiu: Rave (Raphanus sativus)"}, {"path": "07-fitxes-cultius/romani.md", "label": "Romaní", "title": "Fitxa de cultiu: Romaní (*Salvia rosmarinus*)"}, {"path": "07-fitxes-cultius/tomaquet.md", "label": "Tomàquet", "title": "Fitxa de cultiu: Tomàquet (Solanum lycopersicum)"}, {"path": "07-fitxes-cultius/aromatiques.md", "label": "Totes les aromàtiques", "title": "🌿 Aromàtiques a l'hort d'Osona"}], "Conreu avançat": [{"path": "02-associacions-rotacions.md", "label": "Associacions i rotacions", "title": "🌿 Associacions, incompatibilitats i rotacions de cultius"}, {"path": "03-gestio-plagues.md", "label": "Gestió de plagues", "title": "🐞 Gestió ecològica de plagues i malalties — Osona"}, {"path": "04-reg-fertilitzacio.md", "label": "Reg i fertilització", "title": "💧 Reg i fertilització ecològica — Osona"}, {"path": "05-cobertes-adobs-verds.md", "label": "Cobertes i adobs verds", "title": "🌱 Cobertes vegetals i adobs verds"}, {"path": "06-varietats-tradicionals.md", "label": "Varietats tradicionals", "title": "🌾 Varietats tradicionals catalanes i d'Osona"}, {"path": "compost.md", "label": "Compost", "title": "♻️ Compostatge casolà — Guia completa per Osona"}, {"path": "planters-guia-completa.md", "label": "Planters", "title": "🌱 Guia completa per fer planters — Hort Osona"}, {"path": "guardar-llavors.md", "label": "Guardar llavors", "title": "🌾 Guia completa per guardar llavors — Varietats locals d'Osona"}, {"path": "biodinamica-guia-completa.md", "label": "Biodinàmica", "title": "🌟 Guia completa de biodinàmica aplicada a l'hort d'Osona"}, {"path": "guia-avancada-osona.md", "label": "Guia avançada Osona", "title": "🌳 Guia avançada — Etnobotànica, arbres singulars, conreus exòtics i plantes útils d'Osona"}, {"path": "practiques-avancades.md", "label": "Pràctiques avançades", "title": "🔧 Guia pràctica avançada per a l'hortolà — Fer llavors, hivernacles, reg automatitzat i conservació de varietats"}, {"path": "pla-tractaments-fitosanitaris.md", "label": "Tractaments fitosanitaris", "title": "🧪 Pla de tractaments fitosanitaris — Hort ecològic a Osona (any tipus)"}], "Eines operatives": [{"path": "bitacola-setmanal.md", "label": "Bitàcola setmanal", "title": "📓 Bitàcola setmanal de l'hort — Plantilla"}, {"path": "calculadora-sembra.md", "label": "Calculadora de sembra", "title": "🌱 Calculadora de sembra"}], "Conservació": [{"path": "conserves.md", "label": "Conserves", "title": "🥫 Conserves casolanes — Guia completa per aprofitar l'hort tot l'any"}, {"path": "guia-fermentats.md", "label": "Fermentats", "title": "🫙 Guia de fermentats casolans — Hort Osona"}], "Sòl i natura": [{"path": "analisi-sol-guia-completa.md", "label": "Anàlisi de sòl", "title": "🔬 Guia completa d'anàlisi de sòl per a l'hort d'Osona"}, {"path": "biologia-sol-curs.md", "label": "Biologia del sòl", "title": "🌍 Curs de Biologia del Sòl — El món sota els teus peus"}, {"path": "adventicies-guia-completa.md", "label": "Adventícies", "title": "🌱 Guia completa de plantes adventícies — Les \"males herbes\" que t'ajuden"}, {"path": "pollinitzadors-guia-completa.md", "label": "Pol·linitzadors", "title": "🐝 Guia completa de pol·linitzadors — Com atraure'ls i mantenir-los"}, {"path": "canvi-climatic-osona.md", "label": "Canvi climàtic", "title": "🌍 Guia del canvi climàtic i l'hort a Osona"}], "Fruiters": [{"path": "fruiters-guia-completa.md", "label": "Fruiters", "title": "🍎 Guia completa de fruiters per a Osona"}], "Bolets": [{"path": "bolets-guia-completa.md", "label": "Guia de bolets", "title": "🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu"}], "Medicinal i remeieres": [{"path": "remeieres-guia-completa.md", "label": "Remeieres", "title": "🌿 Guia completa de plantes remeieres — Farmàcia viva a Osona"}, {"path": "fitoterapia-curs.md", "label": "Curs de fitoteràpia", "title": "🌿 Curs Complet de Fitoteràpia Pràctica — De la planta al medicament"}, {"path": "hort-medicinal-guia.md", "label": "Hort medicinal", "title": "🌿 Guia d'Hort Medicinal a Casa — 8 plantes remeieres ideals per cultivar a Osona"}, {"path": "hort-amb-nens-manual.md", "label": "Hort amb nens", "title": "🌱 Manual d'Hort amb Nens — Guia pràctica per a famílies i educadors"}, {"path": "apotecaria-casolana-guia.md", "label": "Apotecaria casolana", "title": "🏺 Apotecaria Casolana — Crema, ungüents i remeis amb plantes del teu hort"}, {"path": "olis-massatge-guia.md", "label": "Olis de massatge", "title": "💆 Guia d'Olis de Massatge Casolans — 10 olis amb plantes del teu hort"}, {"path": "sabons-medicinals-guia.md", "label": "Sabons medicinals", "title": "🧴 Guia de Sabons Medicinals Casolans — 10 sabons amb plantes del teu hort"}, {"path": "cremes-ungeunts-especialitzats-guia.md", "label": "Cremes i ungüents", "title": "🌿 Manual de Cremes i Ungüents per a Pell — 8 fitxes especialitzades"}, {"path": "banys-terapeutics-guia.md", "label": "Banys terapèutics", "title": "🛁 Guia de Banys Terapèutics Casolans — 12 banys amb plantes del teu hort"}, {"path": "productes-curatius-avancats-guia.md", "label": "Productes curatius avançats", "title": "🧴 Productes Curatius Avançats — Tisanes, banys, càpsules, mel·lats, tècniques i molt més"}, {"path": "primers-auxilis-verds-manual.md", "label": "Primers auxilis verds", "title": "🚑 Manual de Primers Auxilis Verds — Guia ràpida amb remeis naturals del teu hort"}], "Eines i tecnologia": [{"path": "hort-osona-iot/README.md", "label": "Sistema IoT (Raspberry Pi)", "title": "🌱 Hort Osona IoT — Sistema complert"}, {"path": "hort-osona-iot/CHAT-SETUP.md", "label": "Configurar el xat local", "title": "🤖 Sistema de xat amb IA local (RAG + Ollama)"}], "El meu hort": [{"path": "ACCES-MOBIL.md", "label": "Com accedir des del mòbil", "title": "📱 Accés des del mòbil — Hort Osona PWA"}, {"path": "VSCODE-GUIDE.md", "label": "Editar amb VS Code", "title": "🛠️ Guia de VS Code per al projecte hort-osona"}, {"path": "HORT-CHECKLIST.md", "label": "Checklist de l'hort", "title": "🌱 HORT-CHECKLIST — Generador de checklist mensual de l'hort"}]};
-const DOCS = {"00-index.md": {"title": "🌱 Base de coneixement — Hort ecològic a Osona", "category": "Inici"}, "README.md": {"title": "🌱 Hort Osona — Base de coneixement", "category": "Inici"}, "CHANGELOG.md": {"title": "📝 CHANGELOG — Hort Osona", "category": "Inici"}, "pla-12-mesos.md": {"title": "🗓️ Pla dels 12 mesos — Hort ecològic a Osona (any tipus)", "category": "Planificació"}, "08-pla-mensual.md": {"title": "📅 Pla d'acció mensual — Hort ecològic Osona", "category": "Planificació"}, "plans-mensuals/2026-10-octubre.html": {"title": "Pla d'acció — Juliol 2026 (Osona)", "category": "Planificació"}, "planificacio-tardor-hivern-2026.md": {"title": "🍂 Planificació de tardor i hivern a Osona", "category": "Planificació"}, "01-calendari-sembra.md": {"title": "📅 Calendari de sembra i trasplantament — Osona", "category": "Planificació"}, "calendari-lunar-osona.md": {"title": "🌙 Calendari lunar aplicat a l'hort d'Osona", "category": "Planificació"}, "fitxa-hort.md": {"title": "🏡 Fitxa del meu hort — Osona", "category": "Planificació"}, "pla-hort.md": {"title": "🗺️ Plànol de l'hort — 20 m² (4×5 m)", "category": "Planificació"}, "pla-reg-personalitzat-2026.md": {"title": "💧 Pla de reg personalitzat — Hort Osona, juny 2026", "category": "Planificació"}, "croquis-hort.md": {"title": "🗺️ Croquis de l'hort — Plantilla dibuixable", "category": "Planificació"}, "07-fitxes-cultius/all.md": {"title": "Fitxa de cultiu: All (Allium sativum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/alfabrega.md": {"title": "Fitxa de cultiu: Alfàbrega (*Ocimum basilicum*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/api.md": {"title": "Fitxa de cultiu: Api (Apium graveolens)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/bleda.md": {"title": "Fitxa de cultiu: Bleda", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/carbassa.md": {"title": "Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/carabasso.md": {"title": "Fitxa de cultiu: Carabassó (Cucurbita pepo)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/ceba.md": {"title": "Fitxa de cultiu: Ceba (Allium cepa)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/col.md": {"title": "Fitxa de cultiu: Col (Brassica oleracea)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/enciam.md": {"title": "Fitxa de cultiu: Enciam (Lactuca sativa)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/escarola.md": {"title": "Fitxa de cultiu: Escarola (Cichorium endivia)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/espinac.md": {"title": "Fitxa de cultiu: Espinac (Spinacia oleracea)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/farigola.md": {"title": "Fitxa de cultiu: Farigola (*Thymus vulgaris*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/fava.md": {"title": "Fitxa de cultiu: Fava (Vicia faba)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/melo.md": {"title": "Fitxa de cultiu: Meló (Cucumis melo)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/menta.md": {"title": "Fitxa de cultiu: Menta (*Mentha sp.*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/mongeta.md": {"title": "Fitxa de cultiu: Mongeta (Phaseolus vulgaris)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/orenga.md": {"title": "Fitxa de cultiu: Orenga (*Origanum vulgare*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pastanaga.md": {"title": "Fitxa de cultiu: Pastanaga (Daucus carota)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/patata.md": {"title": "Fitxa de cultiu: Patata (Solanum tuberosum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pebrot.md": {"title": "Fitxa de cultiu: Pebrot (Capsicum annuum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pesol.md": {"title": "Fitxa de cultiu: Pèsol (Pisum sativum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/porro.md": {"title": "Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/rave.md": {"title": "Fitxa de cultiu: Rave (Raphanus sativus)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/romani.md": {"title": "Fitxa de cultiu: Romaní (*Salvia rosmarinus*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/tomaquet.md": {"title": "Fitxa de cultiu: Tomàquet (Solanum lycopersicum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/aromatiques.md": {"title": "🌿 Aromàtiques a l'hort d'Osona", "category": "Fitxes de cultiu"}, "02-associacions-rotacions.md": {"title": "🌿 Associacions, incompatibilitats i rotacions de cultius", "category": "Conreu avançat"}, "03-gestio-plagues.md": {"title": "🐞 Gestió ecològica de plagues i malalties — Osona", "category": "Conreu avançat"}, "04-reg-fertilitzacio.md": {"title": "💧 Reg i fertilització ecològica — Osona", "category": "Conreu avançat"}, "05-cobertes-adobs-verds.md": {"title": "🌱 Cobertes vegetals i adobs verds", "category": "Conreu avançat"}, "06-varietats-tradicionals.md": {"title": "🌾 Varietats tradicionals catalanes i d'Osona", "category": "Conreu avançat"}, "compost.md": {"title": "♻️ Compostatge casolà — Guia completa per Osona", "category": "Conreu avançat"}, "planters-guia-completa.md": {"title": "🌱 Guia completa per fer planters — Hort Osona", "category": "Conreu avançat"}, "guardar-llavors.md": {"title": "🌾 Guia completa per guardar llavors — Varietats locals d'Osona", "category": "Conreu avançat"}, "biodinamica-guia-completa.md": {"title": "🌟 Guia completa de biodinàmica aplicada a l'hort d'Osona", "category": "Conreu avançat"}, "guia-avancada-osona.md": {"title": "🌳 Guia avançada — Etnobotànica, arbres singulars, conreus exòtics i plantes útils d'Osona", "category": "Conreu avançat"}, "practiques-avancades.md": {"title": "🔧 Guia pràctica avançada per a l'hortolà — Fer llavors, hivernacles, reg automatitzat i conservació de varietats", "category": "Conreu avançat"}, "pla-tractaments-fitosanitaris.md": {"title": "🧪 Pla de tractaments fitosanitaris — Hort ecològic a Osona (any tipus)", "category": "Conreu avançat"}, "bitacola-setmanal.md": {"title": "📓 Bitàcola setmanal de l'hort — Plantilla", "category": "Eines operatives"}, "calculadora-sembra.md": {"title": "🌱 Calculadora de sembra", "category": "Eines operatives"}, "conserves.md": {"title": "🥫 Conserves casolanes — Guia completa per aprofitar l'hort tot l'any", "category": "Conservació"}, "guia-fermentats.md": {"title": "🫙 Guia de fermentats casolans — Hort Osona", "category": "Conservació"}, "analisi-sol-guia-completa.md": {"title": "🔬 Guia completa d'anàlisi de sòl per a l'hort d'Osona", "category": "Sòl i natura"}, "biologia-sol-curs.md": {"title": "🌍 Curs de Biologia del Sòl — El món sota els teus peus", "category": "Sòl i natura"}, "adventicies-guia-completa.md": {"title": "🌱 Guia completa de plantes adventícies — Les \"males herbes\" que t'ajuden", "category": "Sòl i natura"}, "pollinitzadors-guia-completa.md": {"title": "🐝 Guia completa de pol·linitzadors — Com atraure'ls i mantenir-los", "category": "Sòl i natura"}, "canvi-climatic-osona.md": {"title": "🌍 Guia del canvi climàtic i l'hort a Osona", "category": "Sòl i natura"}, "fruiters-guia-completa.md": {"title": "🍎 Guia completa de fruiters per a Osona", "category": "Fruiters"}, "bolets-guia-completa.md": {"title": "🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu", "category": "Bolets"}, "remeieres-guia-completa.md": {"title": "🌿 Guia completa de plantes remeieres — Farmàcia viva a Osona", "category": "Medicinal i remeieres"}, "fitoterapia-curs.md": {"title": "🌿 Curs Complet de Fitoteràpia Pràctica — De la planta al medicament", "category": "Medicinal i remeieres"}, "hort-medicinal-guia.md": {"title": "🌿 Guia d'Hort Medicinal a Casa — 8 plantes remeieres ideals per cultivar a Osona", "category": "Medicinal i remeieres"}, "hort-amb-nens-manual.md": {"title": "🌱 Manual d'Hort amb Nens — Guia pràctica per a famílies i educadors", "category": "Medicinal i remeieres"}, "apotecaria-casolana-guia.md": {"title": "🏺 Apotecaria Casolana — Crema, ungüents i remeis amb plantes del teu hort", "category": "Medicinal i remeieres"}, "olis-massatge-guia.md": {"title": "💆 Guia d'Olis de Massatge Casolans — 10 olis amb plantes del teu hort", "category": "Medicinal i remeieres"}, "sabons-medicinals-guia.md": {"title": "🧴 Guia de Sabons Medicinals Casolans — 10 sabons amb plantes del teu hort", "category": "Medicinal i remeieres"}, "cremes-ungeunts-especialitzats-guia.md": {"title": "🌿 Manual de Cremes i Ungüents per a Pell — 8 fitxes especialitzades", "category": "Medicinal i remeieres"}, "banys-terapeutics-guia.md": {"title": "🛁 Guia de Banys Terapèutics Casolans — 12 banys amb plantes del teu hort", "category": "Medicinal i remeieres"}, "productes-curatius-avancats-guia.md": {"title": "🧴 Productes Curatius Avançats — Tisanes, banys, càpsules, mel·lats, tècniques i molt més", "category": "Medicinal i remeieres"}, "primers-auxilis-verds-manual.md": {"title": "🚑 Manual de Primers Auxilis Verds — Guia ràpida amb remeis naturals del teu hort", "category": "Medicinal i remeieres"}, "hort-osona-iot/README.md": {"title": "🌱 Hort Osona IoT — Sistema complert", "category": "Eines i tecnologia"}, "hort-osona-iot/CHAT-SETUP.md": {"title": "🤖 Sistema de xat amb IA local (RAG + Ollama)", "category": "Eines i tecnologia"}, "ACCES-MOBIL.md": {"title": "📱 Accés des del mòbil — Hort Osona PWA", "category": "El meu hort"}, "VSCODE-GUIDE.md": {"title": "🛠️ Guia de VS Code per al projecte hort-osona", "category": "El meu hort"}, "HORT-CHECKLIST.md": {"title": "🌱 HORT-CHECKLIST — Generador de checklist mensual de l'hort", "category": "El meu hort"}};
+const SIDEBAR = {"Inici": [{"path": "00-index.md", "label": "Índex general", "title": "🌱 Base de coneixement — Hort ecològic a Osona"}, {"path": "README.md", "label": "README", "title": "🌱 Hort Osona — Base de coneixement"}, {"path": "PROJECTE-COMPLET.md", "label": "Visió completa del projecte", "title": "🌱 Hort Osona — Visió completa del projecte"}, {"path": "resum-final-base-coneixement.md", "label": "Resum de la base de coneixement", "title": "📚 El Manual Definitiu del teu Hort d'Osona — Resum final de tota la base de coneixement"}, {"path": "CHANGELOG.md", "label": "Historial", "title": "📝 CHANGELOG — Hort Osona"}], "Planificació": [{"path": "pla-12-mesos.md", "label": "Pla dels 12 mesos", "title": "🗓️ Pla dels 12 mesos — Hort ecològic a Osona (any tipus)"}, {"path": "08-pla-mensual.md", "label": "Pla d'acció mensual", "title": "📅 Pla d'acció mensual — Hort ecològic Osona"}, {"path": "plans-mensuals/2026-06-juny.md", "label": "Pla juny 2026", "title": "Pla d'acció — Juny 2026 (Osona)"}, {"path": "plans-mensuals/2026-07-juliol.md", "label": "Pla juliol 2026", "title": "Pla d'acció — Juliol 2026 (Osona)"}, {"path": "plans-mensuals/2026-08-agost.md", "label": "Pla agost 2026", "title": "Pla d'accio - Agost 2026 (Osona)"}, {"path": "plans-mensuals/2026-09-setembre.md", "label": "Pla setembre 2026", "title": "Pla d'accio - Setembre 2026 (Osona)"}, {"path": "plans-mensuals/2026-10-octubre.md", "label": "Pla octubre 2026", "title": "Pla d'accio - Octubre 2026 (Osona)"}, {"path": "plans-mensuals/2026-11-novembre.md", "label": "Pla novembre 2026", "title": "Pla d'accio - Novembre 2026 (Osona)"}, {"path": "plans-mensuals/2026-12-desembre.md", "label": "Pla desembre 2026", "title": "Pla d'accio - Desembre 2026 (Osona)"}, {"path": "planificacio-tardor-hivern-2026.md", "label": "Tardor-hivern 2026-27", "title": "🍂 Planificació de tardor i hivern a Osona"}, {"path": "01-calendari-sembra.md", "label": "Calendari de sembra", "title": "📅 Calendari de sembra i trasplantament — Osona"}, {"path": "calendari-lunar-osona.md", "label": "Calendari lunar", "title": "🌙 Calendari lunar aplicat a l'hort d'Osona"}, {"path": "fitxa-hort.md", "label": "Plànol de l'hort", "title": "🏡 Fitxa del meu hort — Osona"}, {"path": "pla-hort.md", "label": "Plànol esquemàtic", "title": "🗺️ Plànol de l'hort — 20 m² (4×5 m)"}, {"path": "pla-reg-personalitzat-2026.md", "label": "Pla de reg personalitzat", "title": "💧 Pla de reg personalitzat — Hort Osona, juny 2026"}, {"path": "croquis-hort.md", "label": "Croquis dibuixable", "title": "🗺️ Croquis de l'hort — Plantilla dibuixable"}, {"path": "pla-hort-esquematic.md", "label": "Plànol esquemàtic ampliat", "title": "🗺️ Plànol de l'Hort d'Osona — 20 m²"}, {"path": "rendiment-hort-guia.md", "label": "Aprofitament i rendiment", "title": "📊 Guia d'Anàlisi de Rendiment de l'Hort — Quant produeixes, quant estalvies, quant vius"}], "Fitxes de cultiu": [{"path": "07-fitxes-cultius/all.md", "label": "All", "title": "Fitxa de cultiu: All (Allium sativum)"}, {"path": "07-fitxes-cultius/alfabrega.md", "label": "Alfàbrega", "title": "Fitxa de cultiu: Alfàbrega (*Ocimum basilicum*)"}, {"path": "07-fitxes-cultius/api.md", "label": "Api", "title": "Fitxa de cultiu: Api (Apium graveolens)"}, {"path": "07-fitxes-cultius/bleda.md", "label": "Bleda", "title": "Fitxa de cultiu: Bleda"}, {"path": "07-fitxes-cultius/carbassa.md", "label": "Carbassa", "title": "Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)"}, {"path": "07-fitxes-cultius/carabasso.md", "label": "Carabassó", "title": "Fitxa de cultiu: Carabassó (Cucurbita pepo)"}, {"path": "07-fitxes-cultius/ceba.md", "label": "Ceba", "title": "Fitxa de cultiu: Ceba (Allium cepa)"}, {"path": "07-fitxes-cultius/col.md", "label": "Col", "title": "Fitxa de cultiu: Col (Brassica oleracea)"}, {"path": "07-fitxes-cultius/enciam.md", "label": "Enciam", "title": "Fitxa de cultiu: Enciam (Lactuca sativa)"}, {"path": "07-fitxes-cultius/escarola.md", "label": "Escarola", "title": "Fitxa de cultiu: Escarola (Cichorium endivia)"}, {"path": "07-fitxes-cultius/espinac.md", "label": "Espinac", "title": "Fitxa de cultiu: Espinac (Spinacia oleracea)"}, {"path": "07-fitxes-cultius/farigola.md", "label": "Farigola", "title": "Fitxa de cultiu: Farigola (*Thymus vulgaris*)"}, {"path": "07-fitxes-cultius/fava.md", "label": "Fava", "title": "Fitxa de cultiu: Fava (Vicia faba)"}, {"path": "07-fitxes-cultius/melo.md", "label": "Meló", "title": "Fitxa de cultiu: Meló (Cucumis melo)"}, {"path": "07-fitxes-cultius/menta.md", "label": "Menta", "title": "Fitxa de cultiu: Menta (*Mentha sp.*)"}, {"path": "07-fitxes-cultius/mongeta.md", "label": "Mongeta", "title": "Fitxa de cultiu: Mongeta (Phaseolus vulgaris)"}, {"path": "07-fitxes-cultius/orenga.md", "label": "Orenga", "title": "Fitxa de cultiu: Orenga (*Origanum vulgare*)"}, {"path": "07-fitxes-cultius/pastanaga.md", "label": "Pastanaga", "title": "Fitxa de cultiu: Pastanaga (Daucus carota)"}, {"path": "07-fitxes-cultius/patata.md", "label": "Patata", "title": "Fitxa de cultiu: Patata (Solanum tuberosum)"}, {"path": "07-fitxes-cultius/pebrot.md", "label": "Pebrot", "title": "Fitxa de cultiu: Pebrot (Capsicum annuum)"}, {"path": "07-fitxes-cultius/pesol.md", "label": "Pèsol", "title": "Fitxa de cultiu: Pèsol (Pisum sativum)"}, {"path": "07-fitxes-cultius/porro.md", "label": "Porro", "title": "Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)"}, {"path": "07-fitxes-cultius/rave.md", "label": "Rave", "title": "Fitxa de cultiu: Rave (Raphanus sativus)"}, {"path": "07-fitxes-cultius/romani.md", "label": "Romaní", "title": "Fitxa de cultiu: Romaní (*Salvia rosmarinus*)"}, {"path": "07-fitxes-cultius/tomaquet.md", "label": "Tomàquet", "title": "Fitxa de cultiu: Tomàquet (Solanum lycopersicum)"}, {"path": "07-fitxes-cultius/aromatiques.md", "label": "Totes les aromàtiques", "title": "🌿 Aromàtiques a l'hort d'Osona"}, {"path": "aromatiques-guia-completa.md", "label": "Guia completa d'aromàtiques", "title": "🌿 Guia completa d'aromàtiques — Usos culinaris, medicinals i a l'hort"}], "Conreu avançat": [{"path": "02-associacions-rotacions.md", "label": "Associacions i rotacions", "title": "🌿 Associacions, incompatibilitats i rotacions de cultius"}, {"path": "03-gestio-plagues.md", "label": "Gestió de plagues", "title": "🐞 Gestió ecològica de plagues i malalties — Osona"}, {"path": "04-reg-fertilitzacio.md", "label": "Reg i fertilització", "title": "💧 Reg i fertilització ecològica — Osona"}, {"path": "05-cobertes-adobs-verds.md", "label": "Cobertes i adobs verds", "title": "🌱 Cobertes vegetals i adobs verds"}, {"path": "06-varietats-tradicionals.md", "label": "Varietats tradicionals", "title": "🌾 Varietats tradicionals catalanes i d'Osona"}, {"path": "compost.md", "label": "Compost", "title": "♻️ Compostatge casolà — Guia completa per Osona"}, {"path": "planters-guia-completa.md", "label": "Planters", "title": "🌱 Guia completa per fer planters — Hort Osona"}, {"path": "guardar-llavors.md", "label": "Guardar llavors", "title": "🌾 Guia completa per guardar llavors — Varietats locals d'Osona"}, {"path": "biodinamica-guia-completa.md", "label": "Biodinàmica", "title": "🌟 Guia completa de biodinàmica aplicada a l'hort d'Osona"}, {"path": "guia-avancada-osona.md", "label": "Guia avançada Osona", "title": "🌳 Guia avançada — Etnobotànica, arbres singulars, conreus exòtics i plantes útils d'Osona"}, {"path": "practiques-avancades.md", "label": "Pràctiques avançades", "title": "🔧 Guia pràctica avançada per a l'hortolà — Fer llavors, hivernacles, reg automatitzat i conservació de varietats"}, {"path": "pla-tractaments-fitosanitaris.md", "label": "Tractaments fitosanitaris", "title": "🧪 Pla de tractaments fitosanitaris — Hort ecològic a Osona (any tipus)"}, {"path": "plagues-guia-visual.md", "label": "Guia visual de plagues", "title": "🐛 Guia de plagues i malalties — Identificació visual i tractament ecològic"}], "Eines operatives": [{"path": "bitacola-setmanal.md", "label": "Bitàcola setmanal", "title": "📓 Bitàcola setmanal de l'hort — Plantilla"}, {"path": "calculadora-sembra.md", "label": "Calculadora de sembra", "title": "🌱 Calculadora de sembra"}, {"path": "eines-digitals-guia.md", "label": "Eines digitals", "title": "📱 Guia d'eines digitals per a l'hort — Apps, webs i programari que t'ajudaran"}, {"path": "apps-planificacio-guia.md", "label": "Aplicacions de planificació", "title": "📱 Les millors apps per planificar el teu hort d'Osona"}], "Conservació": [{"path": "conserves.md", "label": "Conserves", "title": "🥫 Conserves casolanes — Guia completa per aprofitar l'hort tot l'any"}, {"path": "guia-fermentats.md", "label": "Fermentats", "title": "🫙 Guia de fermentats casolans — Hort Osona"}], "Sòl i natura": [{"path": "analisi-sol-guia-completa.md", "label": "Anàlisi de sòl", "title": "🔬 Guia completa d'anàlisi de sòl per a l'hort d'Osona"}, {"path": "biologia-sol-curs.md", "label": "Biologia del sòl", "title": "🌍 Curs de Biologia del Sòl — El món sota els teus peus"}, {"path": "adventicies-guia-completa.md", "label": "Adventícies", "title": "🌱 Guia completa de plantes adventícies — Les \"males herbes\" que t'ajuden"}, {"path": "pollinitzadors-guia-completa.md", "label": "Pol·linitzadors", "title": "🐝 Guia completa de pol·linitzadors — Com atraure'ls i mantenir-los"}, {"path": "canvi-climatic-osona.md", "label": "Canvi climàtic", "title": "🌍 Guia del canvi climàtic i l'hort a Osona"}, {"path": "adventicies-utilitat-guia.md", "label": "Utilitat de les adventícies", "title": "🌱 Guia completa de plantes adventícies útils — Les \"males herbes\" que t'ajuden"}], "Fruiters": [{"path": "fruiters-guia-completa.md", "label": "Fruiters", "title": "🍎 Guia completa de fruiters per a Osona"}], "Bolets": [{"path": "bolets-guia-completa.md", "label": "Guia de bolets", "title": "🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu"}], "Medicinal i remeieres": [{"path": "remeieres-guia-completa.md", "label": "Remeieres", "title": "🌿 Guia completa de plantes remeieres — Farmàcia viva a Osona"}, {"path": "fitoterapia-curs.md", "label": "Curs de fitoteràpia", "title": "🌿 Curs Complet de Fitoteràpia Pràctica — De la planta al medicament"}, {"path": "hort-medicinal-guia.md", "label": "Hort medicinal", "title": "🌿 Guia d'Hort Medicinal a Casa — 8 plantes remeieres ideals per cultivar a Osona"}, {"path": "hort-amb-nens-manual.md", "label": "Hort amb nens", "title": "🌱 Manual d'Hort amb Nens — Guia pràctica per a famílies i educadors"}, {"path": "apotecaria-casolana-guia.md", "label": "Apotecaria casolana", "title": "🏺 Apotecaria Casolana — Crema, ungüents i remeis amb plantes del teu hort"}, {"path": "olis-massatge-guia.md", "label": "Olis de massatge", "title": "💆 Guia d'Olis de Massatge Casolans — 10 olis amb plantes del teu hort"}, {"path": "sabons-medicinals-guia.md", "label": "Sabons medicinals", "title": "🧴 Guia de Sabons Medicinals Casolans — 10 sabons amb plantes del teu hort"}, {"path": "cremes-ungeunts-especialitzats-guia.md", "label": "Cremes i ungüents", "title": "🌿 Manual de Cremes i Ungüents per a Pell — 8 fitxes especialitzades"}, {"path": "banys-terapeutics-guia.md", "label": "Banys terapèutics", "title": "🛁 Guia de Banys Terapèutics Casolans — 12 banys amb plantes del teu hort"}, {"path": "productes-curatius-avancats-guia.md", "label": "Productes curatius avançats", "title": "🧴 Productes Curatius Avançats — Tisanes, banys, càpsules, mel·lats, tècniques i molt més"}, {"path": "primers-auxilis-verds-manual.md", "label": "Primers auxilis verds", "title": "🚑 Manual de Primers Auxilis Verds — Guia ràpida amb remeis naturals del teu hort"}, {"path": "curatius-resum-final.md", "label": "Resum de productes curatius", "title": "🌿 Resum Final — 3 Guies de Productes Curatius Casolans"}, {"path": "botiga-casolana-guia.md", "label": "Botiga casolana", "title": "🏪 Guia de Botiga Casolana — Com vendre els teus productes artesans"}, {"path": "decoracio-natural-manual.md", "label": "Decoració natural", "title": "🎨 Manual de Decoració amb Elements Naturals — Crear art amb el que la natura t'ofereix"}], "Eines i tecnologia": [{"path": "hort-osona-iot/README.md", "label": "Sistema IoT (Raspberry Pi)", "title": "🌱 Hort Osona IoT — Sistema complert"}, {"path": "hort-osona-iot/CHAT-SETUP.md", "label": "Configurar el xat local", "title": "🤖 Sistema de xat amb IA local (RAG + Ollama)"}], "El meu hort": [{"path": "ACCES-MOBIL.md", "label": "Com accedir des del mòbil", "title": "📱 Accés des del mòbil — Hort Osona PWA"}, {"path": "VSCODE-GUIDE.md", "label": "Editar amb VS Code", "title": "🛠️ Guia de VS Code per al projecte hort-osona"}, {"path": "HORT-CHECKLIST.md", "label": "Checklist de l'hort", "title": "🌱 HORT-CHECKLIST — Generador de checklist mensual de l'hort"}]};
+const DOCS = {"00-index.md": {"title": "🌱 Base de coneixement — Hort ecològic a Osona", "category": "Inici"}, "README.md": {"title": "🌱 Hort Osona — Base de coneixement", "category": "Inici"}, "PROJECTE-COMPLET.md": {"title": "🌱 Hort Osona — Visió completa del projecte", "category": "Inici"}, "resum-final-base-coneixement.md": {"title": "📚 El Manual Definitiu del teu Hort d'Osona — Resum final de tota la base de coneixement", "category": "Inici"}, "CHANGELOG.md": {"title": "📝 CHANGELOG — Hort Osona", "category": "Inici"}, "pla-12-mesos.md": {"title": "🗓️ Pla dels 12 mesos — Hort ecològic a Osona (any tipus)", "category": "Planificació"}, "08-pla-mensual.md": {"title": "📅 Pla d'acció mensual — Hort ecològic Osona", "category": "Planificació"}, "plans-mensuals/2026-06-juny.md": {"title": "Pla d'acció — Juny 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-07-juliol.md": {"title": "Pla d'acció — Juliol 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-08-agost.md": {"title": "Pla d'accio - Agost 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-09-setembre.md": {"title": "Pla d'accio - Setembre 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-10-octubre.md": {"title": "Pla d'accio - Octubre 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-11-novembre.md": {"title": "Pla d'accio - Novembre 2026 (Osona)", "category": "Planificació"}, "plans-mensuals/2026-12-desembre.md": {"title": "Pla d'accio - Desembre 2026 (Osona)", "category": "Planificació"}, "planificacio-tardor-hivern-2026.md": {"title": "🍂 Planificació de tardor i hivern a Osona", "category": "Planificació"}, "01-calendari-sembra.md": {"title": "📅 Calendari de sembra i trasplantament — Osona", "category": "Planificació"}, "calendari-lunar-osona.md": {"title": "🌙 Calendari lunar aplicat a l'hort d'Osona", "category": "Planificació"}, "fitxa-hort.md": {"title": "🏡 Fitxa del meu hort — Osona", "category": "Planificació"}, "pla-hort.md": {"title": "🗺️ Plànol de l'hort — 20 m² (4×5 m)", "category": "Planificació"}, "pla-reg-personalitzat-2026.md": {"title": "💧 Pla de reg personalitzat — Hort Osona, juny 2026", "category": "Planificació"}, "croquis-hort.md": {"title": "🗺️ Croquis de l'hort — Plantilla dibuixable", "category": "Planificació"}, "pla-hort-esquematic.md": {"title": "🗺️ Plànol de l'Hort d'Osona — 20 m²", "category": "Planificació"}, "rendiment-hort-guia.md": {"title": "📊 Guia d'Anàlisi de Rendiment de l'Hort — Quant produeixes, quant estalvies, quant vius", "category": "Planificació"}, "07-fitxes-cultius/all.md": {"title": "Fitxa de cultiu: All (Allium sativum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/alfabrega.md": {"title": "Fitxa de cultiu: Alfàbrega (*Ocimum basilicum*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/api.md": {"title": "Fitxa de cultiu: Api (Apium graveolens)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/bleda.md": {"title": "Fitxa de cultiu: Bleda", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/carbassa.md": {"title": "Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/carabasso.md": {"title": "Fitxa de cultiu: Carabassó (Cucurbita pepo)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/ceba.md": {"title": "Fitxa de cultiu: Ceba (Allium cepa)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/col.md": {"title": "Fitxa de cultiu: Col (Brassica oleracea)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/enciam.md": {"title": "Fitxa de cultiu: Enciam (Lactuca sativa)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/escarola.md": {"title": "Fitxa de cultiu: Escarola (Cichorium endivia)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/espinac.md": {"title": "Fitxa de cultiu: Espinac (Spinacia oleracea)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/farigola.md": {"title": "Fitxa de cultiu: Farigola (*Thymus vulgaris*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/fava.md": {"title": "Fitxa de cultiu: Fava (Vicia faba)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/melo.md": {"title": "Fitxa de cultiu: Meló (Cucumis melo)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/menta.md": {"title": "Fitxa de cultiu: Menta (*Mentha sp.*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/mongeta.md": {"title": "Fitxa de cultiu: Mongeta (Phaseolus vulgaris)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/orenga.md": {"title": "Fitxa de cultiu: Orenga (*Origanum vulgare*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pastanaga.md": {"title": "Fitxa de cultiu: Pastanaga (Daucus carota)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/patata.md": {"title": "Fitxa de cultiu: Patata (Solanum tuberosum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pebrot.md": {"title": "Fitxa de cultiu: Pebrot (Capsicum annuum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/pesol.md": {"title": "Fitxa de cultiu: Pèsol (Pisum sativum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/porro.md": {"title": "Fitxa de cultiu: Porro (Allium ampeloprasum var. porrum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/rave.md": {"title": "Fitxa de cultiu: Rave (Raphanus sativus)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/romani.md": {"title": "Fitxa de cultiu: Romaní (*Salvia rosmarinus*)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/tomaquet.md": {"title": "Fitxa de cultiu: Tomàquet (Solanum lycopersicum)", "category": "Fitxes de cultiu"}, "07-fitxes-cultius/aromatiques.md": {"title": "🌿 Aromàtiques a l'hort d'Osona", "category": "Fitxes de cultiu"}, "aromatiques-guia-completa.md": {"title": "🌿 Guia completa d'aromàtiques — Usos culinaris, medicinals i a l'hort", "category": "Fitxes de cultiu"}, "02-associacions-rotacions.md": {"title": "🌿 Associacions, incompatibilitats i rotacions de cultius", "category": "Conreu avançat"}, "03-gestio-plagues.md": {"title": "🐞 Gestió ecològica de plagues i malalties — Osona", "category": "Conreu avançat"}, "04-reg-fertilitzacio.md": {"title": "💧 Reg i fertilització ecològica — Osona", "category": "Conreu avançat"}, "05-cobertes-adobs-verds.md": {"title": "🌱 Cobertes vegetals i adobs verds", "category": "Conreu avançat"}, "06-varietats-tradicionals.md": {"title": "🌾 Varietats tradicionals catalanes i d'Osona", "category": "Conreu avançat"}, "compost.md": {"title": "♻️ Compostatge casolà — Guia completa per Osona", "category": "Conreu avançat"}, "planters-guia-completa.md": {"title": "🌱 Guia completa per fer planters — Hort Osona", "category": "Conreu avançat"}, "guardar-llavors.md": {"title": "🌾 Guia completa per guardar llavors — Varietats locals d'Osona", "category": "Conreu avançat"}, "biodinamica-guia-completa.md": {"title": "🌟 Guia completa de biodinàmica aplicada a l'hort d'Osona", "category": "Conreu avançat"}, "guia-avancada-osona.md": {"title": "🌳 Guia avançada — Etnobotànica, arbres singulars, conreus exòtics i plantes útils d'Osona", "category": "Conreu avançat"}, "practiques-avancades.md": {"title": "🔧 Guia pràctica avançada per a l'hortolà — Fer llavors, hivernacles, reg automatitzat i conservació de varietats", "category": "Conreu avançat"}, "pla-tractaments-fitosanitaris.md": {"title": "🧪 Pla de tractaments fitosanitaris — Hort ecològic a Osona (any tipus)", "category": "Conreu avançat"}, "plagues-guia-visual.md": {"title": "🐛 Guia de plagues i malalties — Identificació visual i tractament ecològic", "category": "Conreu avançat"}, "bitacola-setmanal.md": {"title": "📓 Bitàcola setmanal de l'hort — Plantilla", "category": "Eines operatives"}, "calculadora-sembra.md": {"title": "🌱 Calculadora de sembra", "category": "Eines operatives"}, "eines-digitals-guia.md": {"title": "📱 Guia d'eines digitals per a l'hort — Apps, webs i programari que t'ajudaran", "category": "Eines operatives"}, "apps-planificacio-guia.md": {"title": "📱 Les millors apps per planificar el teu hort d'Osona", "category": "Eines operatives"}, "conserves.md": {"title": "🥫 Conserves casolanes — Guia completa per aprofitar l'hort tot l'any", "category": "Conservació"}, "guia-fermentats.md": {"title": "🫙 Guia de fermentats casolans — Hort Osona", "category": "Conservació"}, "analisi-sol-guia-completa.md": {"title": "🔬 Guia completa d'anàlisi de sòl per a l'hort d'Osona", "category": "Sòl i natura"}, "biologia-sol-curs.md": {"title": "🌍 Curs de Biologia del Sòl — El món sota els teus peus", "category": "Sòl i natura"}, "adventicies-guia-completa.md": {"title": "🌱 Guia completa de plantes adventícies — Les \"males herbes\" que t'ajuden", "category": "Sòl i natura"}, "pollinitzadors-guia-completa.md": {"title": "🐝 Guia completa de pol·linitzadors — Com atraure'ls i mantenir-los", "category": "Sòl i natura"}, "canvi-climatic-osona.md": {"title": "🌍 Guia del canvi climàtic i l'hort a Osona", "category": "Sòl i natura"}, "adventicies-utilitat-guia.md": {"title": "🌱 Guia completa de plantes adventícies útils — Les \"males herbes\" que t'ajuden", "category": "Sòl i natura"}, "fruiters-guia-completa.md": {"title": "🍎 Guia completa de fruiters per a Osona", "category": "Fruiters"}, "bolets-guia-completa.md": {"title": "🍄 Guia completa dels Bolets a Osona — Recol·lecció i cultiu", "category": "Bolets"}, "remeieres-guia-completa.md": {"title": "🌿 Guia completa de plantes remeieres — Farmàcia viva a Osona", "category": "Medicinal i remeieres"}, "fitoterapia-curs.md": {"title": "🌿 Curs Complet de Fitoteràpia Pràctica — De la planta al medicament", "category": "Medicinal i remeieres"}, "hort-medicinal-guia.md": {"title": "🌿 Guia d'Hort Medicinal a Casa — 8 plantes remeieres ideals per cultivar a Osona", "category": "Medicinal i remeieres"}, "hort-amb-nens-manual.md": {"title": "🌱 Manual d'Hort amb Nens — Guia pràctica per a famílies i educadors", "category": "Medicinal i remeieres"}, "apotecaria-casolana-guia.md": {"title": "🏺 Apotecaria Casolana — Crema, ungüents i remeis amb plantes del teu hort", "category": "Medicinal i remeieres"}, "olis-massatge-guia.md": {"title": "💆 Guia d'Olis de Massatge Casolans — 10 olis amb plantes del teu hort", "category": "Medicinal i remeieres"}, "sabons-medicinals-guia.md": {"title": "🧴 Guia de Sabons Medicinals Casolans — 10 sabons amb plantes del teu hort", "category": "Medicinal i remeieres"}, "cremes-ungeunts-especialitzats-guia.md": {"title": "🌿 Manual de Cremes i Ungüents per a Pell — 8 fitxes especialitzades", "category": "Medicinal i remeieres"}, "banys-terapeutics-guia.md": {"title": "🛁 Guia de Banys Terapèutics Casolans — 12 banys amb plantes del teu hort", "category": "Medicinal i remeieres"}, "productes-curatius-avancats-guia.md": {"title": "🧴 Productes Curatius Avançats — Tisanes, banys, càpsules, mel·lats, tècniques i molt més", "category": "Medicinal i remeieres"}, "primers-auxilis-verds-manual.md": {"title": "🚑 Manual de Primers Auxilis Verds — Guia ràpida amb remeis naturals del teu hort", "category": "Medicinal i remeieres"}, "curatius-resum-final.md": {"title": "🌿 Resum Final — 3 Guies de Productes Curatius Casolans", "category": "Medicinal i remeieres"}, "botiga-casolana-guia.md": {"title": "🏪 Guia de Botiga Casolana — Com vendre els teus productes artesans", "category": "Medicinal i remeieres"}, "decoracio-natural-manual.md": {"title": "🎨 Manual de Decoració amb Elements Naturals — Crear art amb el que la natura t'ofereix", "category": "Medicinal i remeieres"}, "hort-osona-iot/README.md": {"title": "🌱 Hort Osona IoT — Sistema complert", "category": "Eines i tecnologia"}, "hort-osona-iot/CHAT-SETUP.md": {"title": "🤖 Sistema de xat amb IA local (RAG + Ollama)", "category": "Eines i tecnologia"}, "ACCES-MOBIL.md": {"title": "📱 Accés des del mòbil — Hort Osona PWA", "category": "El meu hort"}, "VSCODE-GUIDE.md": {"title": "🛠️ Guia de VS Code per al projecte hort-osona", "category": "El meu hort"}, "HORT-CHECKLIST.md": {"title": "🌱 HORT-CHECKLIST — Generador de checklist mensual de l'hort", "category": "El meu hort"}};
 
 // ──────────── INDEX DE CERCA ────────────
 // Carreguem l'index de cerca sota demanda des de search_index.json
@@ -905,7 +1069,10 @@ async function loadSearchIndex() {
       SEARCH_INDEX_READY = true;
       return idx;
     })
-    .catch(() => []);
+    .catch(() => {
+      SEARCH_INDEX_LOADING = null;
+      return [];
+    });
   return SEARCH_INDEX_LOADING;
 }
 
@@ -965,13 +1132,39 @@ function closeDrawer() {
 }
 
 // ──────────── OPEN DOC ────────────
-async function openDoc(path) {
+let currentDocPath = '';
+
+function showWelcome(updateHistory = true) {
+  currentDocPath = '';
+  document.getElementById('welcome').style.display = 'block';
+  document.getElementById('doc').style.display = 'none';
+  document.getElementById('doc-toolbar').classList.remove('visible');
+  document.getElementById('home-btn').classList.remove('visible');
+  document.getElementById('reset-tasks-btn').classList.remove('visible');
+  document.querySelector('.header .title').textContent = '🌱 Hort Osona';
+  document.title = 'Hort Osona';
+  document.getElementById('main').scrollTop = 0;
+  closeDrawer();
+  closeSearch();
+  if (updateHistory && location.hash) history.pushState(null, '', location.pathname + location.search);
+}
+
+async function openDoc(path, options = {}) {
+  const updateHistory = options.updateHistory !== false;
+  const section = options.section || '';
   const d = DOCS[path];
   if (!d) return false;
   const doc = document.getElementById('doc');
   const welcome = document.getElementById('welcome');
+  currentDocPath = path;
   welcome.style.display = 'none';
   doc.style.display = 'block';
+  document.getElementById('doc-toolbar').classList.add('visible');
+  document.getElementById('home-btn').classList.add('visible');
+  document.getElementById('doc-category').textContent = d.category || '';
+  document.getElementById('reset-tasks-btn').classList.remove('visible');
+  document.querySelector('.header .title').textContent = d.title.replace(/[*_]/g, '');
+  document.title = d.title.replace(/[*_]/g, '') + ' · Hort Osona';
   doc.innerHTML = '<p style="padding:24px;color:var(--c-ink-2)">⏳ Carregant...</p>';
 
   // Carregar HTML sota demanda
@@ -979,9 +1172,16 @@ async function openDoc(path) {
     const r = await fetch('docs/' + encodeURI(path));
     if (!r.ok) throw new Error('HTTP ' + r.status);
     let html = await r.text();
-    html = html.split('<\/script').join('</script');
+    html = html.split('<' + '/script').join('</script');
     html = html.split('<\!--').join('<!--');
     doc.innerHTML = html;
+    initTaskCheckboxes(path);
+    if (section) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(section);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   } catch (e) {
     doc.innerHTML = '<p style="padding:24px;color:#a04040">❌ Error carregant el document: ' + escapeHtml(e.message) + '</p>';
   }
@@ -992,8 +1192,45 @@ async function openDoc(path) {
   closeDrawer();
   closeSearch();
   // Actualitzar hash per compartir
-  history.replaceState(null, '', '#' + encodeURIComponent(path));
+  const nextHash = '#' + encodeURIComponent(path);
+  if (updateHistory && location.hash !== nextHash) history.pushState(null, '', nextHash);
   return false;
+}
+
+function normalizeDocPath(href) {
+  const clean = href.split('#')[0].replace(/^[.][/]/, '');
+  if (DOCS[clean]) return clean;
+  if (!currentDocPath) return clean;
+  const parts = currentDocPath.split('/');
+  parts.pop();
+  for (const segment of clean.split('/')) {
+    if (!segment || segment === '.') continue;
+    if (segment === '..') parts.pop();
+    else parts.push(segment);
+  }
+  const relative = parts.join('/');
+  return DOCS[relative] ? relative : clean;
+}
+
+function taskStorageKey(path, index) {
+  return `hort-task:${path}:${index}`;
+}
+
+function initTaskCheckboxes(path) {
+  const boxes = [...document.querySelectorAll('#doc input[data-task-index]')];
+  for (const box of boxes) {
+    const saved = localStorage.getItem(taskStorageKey(path, box.dataset.taskIndex));
+    if (saved !== null) box.checked = saved === '1';
+  }
+  document.getElementById('reset-tasks-btn').classList.toggle('visible', boxes.length > 0);
+}
+
+function resetCurrentTasks() {
+  if (!currentDocPath) return;
+  for (const box of document.querySelectorAll('#doc input[data-task-index]')) {
+    box.checked = false;
+    localStorage.removeItem(taskStorageKey(currentDocPath, box.dataset.taskIndex));
+  }
 }
 
 // ──────────── SEARCH ────────────
@@ -1017,6 +1254,10 @@ async function doSearch(q) {
   }
   // Assegurar que l'index esta carregat
   await loadSearchIndex();
+  if (!SEARCH_INDEX_READY) {
+    results.innerHTML = '<p style="padding:16px;color:#a04040">No s’ha pogut carregar l’índex de cerca. Comprova la connexió i torna-ho a provar.</p>';
+    return;
+  }
   const qLower = q.toLowerCase();
   const matches = [];
   for (const item of SEARCH_INDEX) {
@@ -1055,6 +1296,42 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+// ──────────── MES ACTUAL ────────────
+function configureCurrentMonth() {
+  const monthNames = ['gener', 'febrer', 'març', 'abril', 'maig', 'juny',
+    'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'];
+  const now = new Date();
+  const prefix = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-`;
+  const available = Object.keys(DOCS)
+    .filter(path => /^plans-mensuals[/][0-9]{4}-[0-9]{2}-[^.]+[.]md$/.test(path))
+    .sort();
+  const exact = available.find(path => path.startsWith('plans-mensuals/' + prefix));
+  const currentKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  const previous = available.filter(path => path.slice(16, 23) <= currentKey).at(-1);
+  const path = exact || previous || available.at(-1);
+  const title = document.getElementById('current-month-title');
+  const link = document.getElementById('current-month-link');
+
+  title.textContent = `${monthNames[now.getMonth()].charAt(0).toUpperCase() + monthNames[now.getMonth()].slice(1)} ${now.getFullYear()}`;
+  if (path) {
+    link.dataset.path = path;
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      openDoc(path);
+    });
+    if (!exact) {
+      link.textContent = '📅 Veure l’últim pla mensual disponible';
+    }
+  } else {
+    link.dataset.path = '01-calendari-sembra.md';
+    link.textContent = '🌱 Veure el calendari de sembra';
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      openDoc('01-calendari-sembra.md');
+    });
+  }
+}
+
 // ──────────── CHAT (RAG local) ────────────
 // IMPORTANT: des del mobil NO es pot accedir a 'localhost' perque localhost
 // sempre apunta al propi dispositiu. Cal usar la IP del Mac a la xarxa local.
@@ -1068,7 +1345,7 @@ const FALLBACK_CHAT_URLS = [
   'http://192.168.100.110:8001/chat',
   'http://localhost:8001/chat'
 ];
-let CHAT_API = window.CHAT_API_URL || FALLBACK_CHAT_URLS[0];
+let CHAT_API = window.CHAT_API_URL || localStorage.getItem('hort-chat-api') || FALLBACK_CHAT_URLS[0];
 let currentUrlIndex = 0;
 
 function setChatStatus(text, cls) {
@@ -1099,15 +1376,21 @@ function appendChatMsg(html, kind) {
 }
 
 async function checkChatHealth() {
+  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {
+    setChatStatus('cal una URL HTTPS', 'offline');
+    return false;
+  }
   // Provar totes les URLs fins que una funcioni
-  for (let i = 0; i < FALLBACK_CHAT_URLS.length; i++) {
-    const url = FALLBACK_CHAT_URLS[i].replace('/chat', '/chat/health');
+  const candidates = [...new Set([CHAT_API, ...FALLBACK_CHAT_URLS])]
+    .filter(url => location.protocol !== 'https:' || url.startsWith('https:'));
+  for (let i = 0; i < candidates.length; i++) {
+    const url = candidates[i].replace(/[/]chat[/]?$/, '/chat/health');
     try {
       const r = await fetch(url, { cache: 'no-store' });
       if (r.ok) {
         const data = await r.json();
         if (data.status === 'ok') {
-          CHAT_API = FALLBACK_CHAT_URLS[i];
+          CHAT_API = candidates[i];
           currentUrlIndex = i;
           setChatStatus('connectat · ' + (data.model || ''), 'online');
           return true;
@@ -1196,9 +1479,12 @@ function buildOfflineHelp() {
   // Detectar si estem en mobil/tablet
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const url = FALLBACK_CHAT_URLS[0];
-  const ipMatch = url.match(/http:\/\/([\d.]+):/);
+  const ipMatch = url.match(/http:[/][/]([0-9.]+):/);
   const ip = ipMatch ? ipMatch[1] : 'la IP del Mac';
   let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
+  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {
+    help += '<strong>La web pública és HTTPS i el navegador bloqueja un servidor HTTP local.</strong> Configura una adreça HTTPS segura de la Raspberry o del Mac.<br><br>';
+  }
   help += '<strong>Com resoldre-ho:</strong><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
   if (isMobile) {
     help += '<li>Assegura\'t que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
@@ -1212,21 +1498,59 @@ function buildOfflineHelp() {
   help += `<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button> un cop arrencat</li>`;
   help += '</ol>';
   help += '<div style="margin-top:10px;font-size:0.8rem;color:#6B665A">URL que provem: <code>' + escapeHtml(url) + '</code></div>';
+  help += '<div style="margin-top:12px"><label for="chat-api-url"><strong>URL HTTPS del xat</strong></label>' +
+    '<div style="display:flex;gap:6px;margin-top:5px"><input id="chat-api-url" type="url" value="' + escapeHtml(CHAT_API) + '" placeholder="https://.../chat" style="min-width:0;flex:1;padding:7px;border:1px solid #D9D0B5;border-radius:5px">' +
+    '<button onclick="saveChatUrl()" style="background:#3D4A2A;color:#FFFCF3;padding:7px 10px;border-radius:5px">Desar</button></div></div>';
   return help;
+}
+
+function saveChatUrl() {
+  const input = document.getElementById('chat-api-url');
+  if (!input) return;
+  const value = input.value.trim().replace(/[/]$/, '');
+  if (!/^https?:[/][/]/i.test(value)) return;
+  CHAT_API = value.endsWith('/chat') ? value : value + '/chat';
+  localStorage.setItem('hort-chat-api', CHAT_API);
+  setChatStatus('comprovant...', 'thinking');
+  checkChatHealth();
 }
 
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderSidebar();
+  configureCurrentMonth();
 
   // Botons header
   document.getElementById('menu-btn').addEventListener('click', openDrawer);
+  document.getElementById('home-btn').addEventListener('click', () => showWelcome());
+  document.getElementById('back-home-btn').addEventListener('click', () => showWelcome());
+  document.getElementById('reset-tasks-btn').addEventListener('click', resetCurrentTasks);
   document.getElementById('search-btn').addEventListener('click', openSearch);
   document.getElementById('chat-btn').addEventListener('click', openChat);
   document.getElementById('drawer-close').addEventListener('click', closeDrawer);
   document.getElementById('search-close').addEventListener('click', closeSearch);
   document.getElementById('chat-close').addEventListener('click', closeChat);
   document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
+
+  // Els enllaços Markdown interns naveguen dins del portal.
+  document.getElementById('doc').addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (!href || /^(https?:|mailto:|tel:)/i.test(href)) return;
+    const [rawPath, section = ''] = href.split('#');
+    if (!rawPath) return;
+    const path = normalizeDocPath(rawPath);
+    if (!DOCS[path]) return;
+    event.preventDefault();
+    openDoc(path, { section });
+  });
+
+  document.getElementById('doc').addEventListener('change', event => {
+    const box = event.target.closest('input[data-task-index]');
+    if (!box || !currentDocPath) return;
+    localStorage.setItem(taskStorageKey(currentDocPath, box.dataset.taskIndex), box.checked ? '1' : '0');
+  });
 
   // Sidebar search
   document.getElementById('sidebar-search').addEventListener('input', (e) => {
@@ -1250,6 +1574,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Escape per tancar
   document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      openSearch();
+      return;
+    }
     if (e.key === 'Escape') {
       closeDrawer();
       closeSearch();
@@ -1260,7 +1589,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Obrir document des de hash
   if (location.hash.length > 1) {
     const path = decodeURIComponent(location.hash.substring(1));
-    if (DOCS[path]) openDoc(path);
+    if (DOCS[path]) openDoc(path, { updateHistory: false });
+  }
+
+  window.addEventListener('popstate', () => {
+    if (location.hash.length > 1) {
+      const path = decodeURIComponent(location.hash.substring(1));
+      if (DOCS[path]) openDoc(path, { updateHistory: false });
+    } else {
+      showWelcome(false);
+    }
+  });
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
   }
 });
 </script>

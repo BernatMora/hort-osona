@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una planta d'api">
+  <defs>
+    <radialGradient id="api-bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="api-stem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fons -->
+  <rect width="200" height="200" fill="url(#api-bg)" rx="12"/>
+
+  <!-- Base (arrels + terra) -->
+  <ellipse cx="100" cy="170" rx="55" ry="12" fill="#8B6F47" opacity="0.6"/>
+  <path d="M 100 165 L 95 185 M 100 165 L 100 188 M 100 165 L 105 184 M 95 168 L 88 188 M 105 168 L 112 187" stroke="#6B4423" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Tija central -->
+  <rect x="98" y="60" width="4" height="105" fill="url(#api-stem)" rx="2"/>
+
+  <!-- Fulles d'api (penes) -->
+  <g fill="url(#api-stem)" opacity="0.9">
+    <!-- Penea central -->
+    <ellipse cx="100" cy="60" rx="20" ry="30"/>
+    <!-- Penea esquerra -->
+    <ellipse cx="70" cy="80" rx="22" ry="14" transform="rotate(-30 70 80)"/>
+    <!-- Penea dreta -->
+    <ellipse cx="130" cy="80" rx="22" ry="14" transform="rotate(30 130 80)"/>
+    <!-- Penea inferior esquerra -->
+    <ellipse cx="75" cy="110" rx="24" ry="12" transform="rotate(-20 75 110)"/>
+    <!-- Penea inferior dreta -->
+    <ellipse cx="125" cy="110" rx="24" ry="12" transform="rotate(20 125 110)"/>
+    <!-- Penea base -->
+    <ellipse cx="100" cy="135" rx="28" ry="10"/>
+  </g>
+
+  <!-- Nervis de les fulles -->
+  <g stroke="#3D4A2A" stroke-width="1" fill="none" opacity="0.5">
+    <line x1="100" y1="40" x2="100" y2="80"/>
+    <line x1="60" y1="75" x2="80" y2="85"/>
+    <line x1="140" y1="75" x2="120" y2="85"/>
+  </g>
+
+  <!-- Etiqueta -->
+  <text x="100" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3D4A2A" font-style="italic">Apium graveolens</text>
+</svg>

@@ -1,5 +1,5 @@
 <h1 id="-guia-del-canvi-climàtic-i-lx27hort-a-osona">🌍 Guia del canvi climàtic i l&#x27;hort a Osona</h1>
-<p>&gt; El canvi climàtic ja <strong>no és futur</strong>: ja està passant a Osona. Estius més càlids, hiverns més suaus, pluges més irregulars, onades de calor més freqüents. Com a hortolà, <strong>puc adaptar-me</strong> per continuar collint aliments sans al meu hort. Aquesta guia t&#x27;explica què està passant, com t&#x27;afecta, i què fer per adaptar-te.</p>
+<blockquote>El canvi climàtic ja <strong>no és futur</strong>: ja està passant a Osona. Estius més càlids, hiverns més suaus, pluges més irregulars, onades de calor més freqüents. Com a hortolà, <strong>puc adaptar-me</strong> per continuar collint aliments sans al meu hort. Aquesta guia t&#x27;explica què està passant, com t&#x27;afecta, i què fer per adaptar-te.</blockquote>
 <h2 id="1-el-canvi-climàtic-a-osona-dades-concretes">1. El canvi climàtic a Osona: dades concretes</h2>
 <h3 id="a-temperatura">A. Temperatura</h3>
 <h4 id="tendència-històrica-1950-2024">Tendència històrica (1950-2024)</h4>
@@ -28,7 +28,7 @@
 <td>+3,0°C</td>
 <td>+4,0°C</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="què-significa-a-osona">Què significa a Osona</h4>
 <ul>
 <li><strong>Estius</strong>: 35-40°C seran habituals (ara 30-35°C)</li>
@@ -70,7 +70,7 @@
 <td>60-80</td>
 <td>Molt torrencials</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="què-significa">Què significa</h4>
 <ul>
 <li><strong>Menys pluja total</strong> però <strong>més intensa</strong></li>
@@ -165,11 +165,15 @@
 <h4 id="tècniques">Tècniques</h4>
 <ol>
 <li><strong>Mulching permanent</strong> (5-10 cm de palla o gespa seca)</li>
+</ol>
+<ul>
 <li>Redueix l&#x27;evaporació 50-70%</li>
 <li>Regala 200-300 L/setmana a l&#x27;estiu</li>
 </ul>
 <ol>
 <li><strong>Reg eficient</strong></li>
+</ol>
+<ul>
 <li><strong>Degoteig</strong>: millor que aspersió</li>
 <li><strong>Reg al matí</strong> (5-9 h) o <strong>vespre</strong> (19-21 h)</li>
 <li><strong>Reg profund</strong> però <strong>infreqüent</strong> (millor arrels profundes)</li>
@@ -177,29 +181,35 @@
 </ul>
 <ol>
 <li><strong>Sòl viu i sa</strong></li>
+</ol>
+<ul>
 <li><strong>Compost</strong> (5-10 cm/any)</li>
 <li><strong>Matèria orgànica</strong> (reté aigua com una esponja)</li>
 <li><strong>No llaurar en excés</strong> (l&#x27;estructura es trenca)</li>
 </ul>
 <ol>
 <li><strong>Ombra</strong></li>
+</ol>
+<ul>
 <li><strong>Malla d&#x27;ombreig</strong> (30-50% ombra) a l&#x27;estiu</li>
 <li><strong>Cultius alts</strong> al sud (cucurbitàcies fan ombra als més petits)</li>
 <li><strong>Arbres</strong> al sud (ombra natural a l&#x27;estiu)</li>
 </ul>
 <ol>
 <li><strong>Recollir aigua de pluja</strong></li>
+</ol>
+<ul>
 <li><strong>Bidons</strong> (200-1000 L)</li>
 <li><strong>Bassa</strong> petita (1-2 m³)</li>
 <li><strong>Riu/rec</strong> si tens accés</li>
 </ul>
 <h4 id="què-fer-al-teu-hort-20-m²">Què fer al teu hort (20 m²)</h4>
 <ul>
-<li>[ ] <strong>Mulching</strong> ja (recorda, sòl sorrenc + sense mulch = URGENT)</li>
-<li>[ ] <strong>Sistema de degoteig</strong> o ampolles reciclades</li>
-<li>[ ] <strong>2-3 bidons</strong> de 200 L per a aigua de pluja</li>
-<li>[ ] <strong>Malla d&#x27;ombreig</strong> al 50% per a tomàquets</li>
-<li>[ ] <strong>Ombra natural</strong> amb plantes altes al sud</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span><strong>Mulching</strong> ja (recorda, sòl sorrenc + sense mulch = URGENT)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span><strong>Sistema de degoteig</strong> o ampolles reciclades</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span><strong>2-3 bidons</strong> de 200 L per a aigua de pluja</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Malla d&#x27;ombreig</strong> al 50% per a tomàquets</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span><strong>Ombra natural</strong> amb plantes altes al sud</span></label></li>
 </ul>
 <h3 id="b-adaptar-el-calendari-de-sembra">B. Adaptar el calendari de sembra</h3>
 <h4 id="avançar-la-sembra">Avançar la sembra</h4>
@@ -249,7 +259,7 @@
 <td><strong>Albergínia</strong></td>
 <td>&#x27;Llarga de Mataró&#x27; (resistent)</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="varietats-mediterrànies-climes-més-càlids">Varietats mediterrànies (climes més càlids)</h4>
 <ul>
 <li><strong>Tomàquet</strong>: varietats italianes (San Marzano, Pomodoro)</li>
@@ -311,7 +321,7 @@
 <li><strong>A un hort de 20 m²</strong>: 1-2 t de C emmagatzemat (en 5 anys)</li>
 </ul>
 <h4 id="el-missatge">El missatge</h4>
-<p>&gt; Cada hort ecològic <strong>és una mena d&#x27;inversió climàtica</strong> a petita escala. <strong>Fes-ho bé i seràs part de la solució.</strong></p>
+<blockquote>Cada hort ecològic <strong>és una mena d&#x27;inversió climàtica</strong> a petita escala. <strong>Fes-ho bé i seràs part de la solució.</strong></blockquote>
 <h2 id="5-captura-dx27aigua-optimitzar-cada-gota">5. Captura d&#x27;aigua: optimitzar cada gota</h2>
 <h3 id="sistemes">Sistemes</h3>
 <h4 id="1-bidons-de-recollida">1. Bidons de recollida</h4>
@@ -385,7 +395,7 @@
 <td><strong>Maig</strong></td>
 <td>Trasplantar cogombres, carabassons al maig (no esperar juny)</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="estiu-juny-agost">Estiu (juny-agost)</h3>
 <table>
 <thead><tr>
@@ -404,7 +414,7 @@
 <td><strong>Agost</strong></td>
 <td>Si sobreviu: reg 50-60 L/setmana. Tomàquets en perill si 40°C+.</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="tardor-setembre-novembre">Tardor (setembre-novembre)</h3>
 <table>
 <thead><tr>
@@ -423,7 +433,7 @@
 <td><strong>Novembre</strong></td>
 <td>Pintar calç als arbres. Cobrir amb palla.</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="hivern-desembre-febrer">Hivern (desembre-febrer)</h3>
 <table>
 <thead><tr>
@@ -442,7 +452,7 @@
 <td><strong>Febrer</strong></td>
 <td>Planters primerencs (febrer-març).</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="8-cultius-emergents-adaptats-a-osona">8. Cultius emergents adaptats a Osona</h2>
 <h3 id="a-cultius-termòfils-resistents-a-la-calor">A. Cultius termòfils (resistents a la calor)</h3>
 <ul>
@@ -481,28 +491,28 @@
 <li><strong>Ampolles de degoteig</strong> per a tomàquets i pebrots</li>
 <li><strong>Plantar aromàtiques</strong> perennes (si no les tens)</li>
 <li><strong>Reparar o instal·lar sistema de reg</strong> (mànega + difusor)</li>
-</ul>
+</ol>
 <h3 id="b-pla-a-curt-termini-aquest-mes">B. Pla a curt termini (aquest mes)</h3>
 <ol>
 <li><strong>Comprar 1-2 bidons</strong> de 200 L</li>
 <li><strong>Instal·lar malla d&#x27;ombreig</strong> al 30-50% sobre tomàquets</li>
 <li><strong>Plantar un arbre</strong> al sud (fruiters joves a la tardor)</li>
 <li><strong>Fer un marge florit</strong> amb plantes autòctones</li>
-</ul>
+</ol>
 <h3 id="c-pla-a-mitjà-termini-aquest-any">C. Pla a mitjà termini (aquest any)</h3>
 <ol>
 <li><strong>Fer compost</strong> amb preparats biodinàmics</li>
 <li><strong>Fer adob verd</strong> (civada + veça) a la tardor</li>
 <li><strong>Plantar fruiters mediterranis</strong> (ametller, olivera)</li>
 <li><strong>Instal·lar bassa</strong> o cisterna</li>
-</ul>
+</ol>
 <h3 id="d-pla-a-llarg-termini-2-5-anys">D. Pla a llarg termini (2-5 anys)</h3>
 <ol>
 <li><strong>Crear refugi climàtic</strong> (tanques vegetals, bassa)</li>
 <li><strong>Fer xarxa de llavors</strong> amb altres pagesos</li>
 <li><strong>Diversificar</strong> (perennes, fruiters, aromàtiques)</li>
 <li><strong>Convertir l&#x27;hort</strong> en un <strong>sistema resilient</strong></li>
-</ul>
+</ol>
 <h2 id="10-recursos-a-osona">10. Recursos a Osona</h2>
 <h3 id="sobre-el-canvi-climàtic">Sobre el canvi climàtic</h3>
 <ul>
@@ -530,14 +540,14 @@
 <li>Sistema de degoteig amb ampolles</li>
 <li>Reg al matí o vespre</li>
 <li>Collir al matí</li>
-</ul>
+</ol>
 <h3 id="mig-termini-aquest-mes">Mig termini (aquest mes)</h3>
 <ol>
 <li>Comprar 1-2 bidons d&#x27;aigua</li>
 <li>Malla d&#x27;ombreig al 30-50%</li>
 <li>Plantar aromàtiques</li>
 <li>Fer marges florits</li>
-</ul>
+</ol>
 <h3 id="llarg-termini-aquest-any">Llarg termini (aquest any)</h3>
 <ol>
 <li>Compost amb preparats biodinàmics</li>
@@ -547,10 +557,10 @@
 <li>Refugi climàtic (tanques vegetals)</li>
 <li>Diversificar cultius</li>
 <li>Connectar amb xarxa de llavors locals</li>
-</ul>
+</ol>
 <h2 id="12-notes-finals">12. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; El canvi climàtic és un repte, <strong>però també una oportunitat</strong>. Els horts ecològics, biodiversos i resilients són part de la solució. Cada cosa que fas al teu hort — retenir aigua, capturar carboni, augmentar la biodiversitat, menjar de proximitat — <strong>és un acte climàtic</strong>.</p>
+<blockquote>El canvi climàtic és un repte, <strong>però també una oportunitat</strong>. Els horts ecològics, biodiversos i resilients són part de la solució. Cada cosa que fas al teu hort — retenir aigua, capturar carboni, augmentar la biodiversitat, menjar de proximitat — <strong>és un acte climàtic</strong>.</blockquote>
 <h3 id="per-a-tu-concretament">Per a tu concretament</h3>
 <p>Com que tens <strong>sòl sorrenc</strong>, <strong>reg manual</strong>, <strong>gallines</strong> i <strong>filosofia ecològica</strong>:</p>
 <ul>
@@ -559,5 +569,5 @@
 <li>Amb 200-300 € d&#x27;inversió, pots adaptar l&#x27;hort a 5-10 anys vista</li>
 </ul>
 <h3 id="el-futur-és-local">El futur és local</h3>
-<p>&gt; <strong>El futur de l&#x27;alimentació és local.</strong> El teu hort, encara que sigui petit, és una peça d&#x27;un sistema alimentari resilient. <strong>Cuida&#x27;l bé, i ell et cuidarà a tu.</strong></p>
+<blockquote><strong>El futur de l&#x27;alimentació és local.</strong> El teu hort, encara que sigui petit, és una peça d&#x27;un sistema alimentari resilient. <strong>Cuida&#x27;l bé, i ell et cuidarà a tu.</strong></blockquote>
 <p>🌍 <strong>Bona adaptació climàtica al teu hort!</strong></p>

@@ -1,5 +1,5 @@
 <h1 id="-guia-de-vs-code-per-al-projecte-hort-osona">🛠️ Guia de VS Code per al projecte hort-osona</h1>
-<p>&gt; VS Code és l&#x27;editor que farem servir per editar els fitxers <code>.md</code> (Markdown) i <code>.html</code> del projecte. Aquesta guia t&#x27;ensenya el flux de treball bàsic.</p>
+<blockquote>VS Code és l&#x27;editor que farem servir per editar els fitxers <code>.md</code> (Markdown) i <code>.html</code> del projecte. Aquesta guia t&#x27;ensenya el flux de treball bàsic.</blockquote>
 <h2 id="-dreceres-essencials">⌨️ Dreceres essencials</h2>
 <table>
 <thead><tr>
@@ -47,35 +47,41 @@
 <td><code>⌘ + /</code></td>
 <td>Comenta/descomenta línia</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-editar-un-fitxer-md-markdown">📝 Editar un fitxer <code>.md</code> (Markdown)</h2>
 <ol>
 <li><strong>Obre la carpeta del projecte</strong>:</li>
+</ol>
+<ul>
 <li><code>⌘ + O</code> → selecciona <code>~/Desktop/hort-osona</code></li>
 </ul>
 <ol>
 <li><strong>Obre un fitxer</strong>:</li>
+</ol>
+<ul>
 <li>Sidebar esquerre (si no el tens visible: <code>⌘ + B</code>) → navega</li>
 <li>O <code>⌘ + P</code> → escriu part del nom (p. ex. &quot;bleda&quot;)</li>
 </ul>
 <ol>
 <li><strong>Edita-lo</strong> com si fos un editor de text normal</li>
-</ul>
+</ol>
 <ol>
 <li><strong>Vista prèvia en directe</strong>:</li>
+</ol>
+<ul>
 <li><code>⌘ + K</code> → <code>V</code> (primer K, deixar anar, V)</li>
 <li>Veure&#x27;s l&#x27;edició a l&#x27;esquerra i el render a la dreta</li>
 <li>Es va actualitzant mentre escrius</li>
 </ul>
 <ol>
 <li><strong>Desar</strong>: <code>⌘ + S</code></li>
-</ul>
+</ol>
 <h2 id="-obrir-un-fitxer-html-al-navegador">🌐 Obrir un fitxer <code>.html</code> al navegador</h2>
 <p>Per a les calculadores i eines interactives:</p>
 <ol>
 <li>Click dret al fitxer → <strong>&quot;Reveal in Finder&quot;</strong> (veure&#x27;l al Finder)</li>
 <li>Doble clic → s&#x27;obre al navegador per defecte</li>
-</ul>
+</ol>
 <p>O des de terminal integrat:</p>
 <pre><code>
 open -a &quot;Safari&quot; ~/Desktop/hort-osona/calculadora-reg-imprimible.html
@@ -86,7 +92,7 @@ open -a &quot;Safari&quot; ~/Desktop/hort-osona/calculadora-reg-imprimible.html
 <ol>
 <li><code>⌘ + ò</code> per obrir el terminal</li>
 <li>Escriu:</li>
-</ul>
+</ol>
 <pre><code>
    git pull
    # ... editar fitxers ...
@@ -96,7 +102,7 @@ open -a &quot;Safari&quot; ~/Desktop/hort-osona/calculadora-reg-imprimible.html
 </code></pre>
 <ol>
 <li>O més fàcil, amb el nostre script:</li>
-</ul>
+</ol>
 <pre><code>
    ./hort-sync.sh &quot;El que he canviat&quot;
 </code></pre>
@@ -107,7 +113,7 @@ open -a &quot;Safari&quot; ~/Desktop/hort-osona/calculadora-reg-imprimible.html
 <li>Tria &quot;Hort: sync (commit + push)&quot;</li>
 <li>Escriu el missatge del commit</li>
 <li>S&#x27;executa automàticament</li>
-</ul>
+</ol>
 <h3 id="opció-c-interfície-gràfica">Opció C — Interfície gràfica</h3>
 <p>VS Code ja té Git integrat! Mira la barra lateral esquerra:</p>
 <ul>
@@ -143,18 +149,18 @@ VS Code
 <ol>
 <li><code>⌘ + K</code> → <code>⌘ + T</code></li>
 <li>Tria un dels temes (recomano: &quot;Light+&quot;, &quot;Solarized Light&quot;, &quot;Catppuccino Latte&quot;)</li>
-</ul>
+</ol>
 <h3 id="augmentar-mida-de-la-lletra">Augmentar mida de la lletra</h3>
 <ol>
 <li><code>⌘ + ,</code> (preferències)</li>
 <li>Cerca &quot;font size&quot;</li>
 <li>Puja-ho a 15-16</li>
-</ul>
+</ol>
 <h3 id="canviar-idioma-a-català">Canviar idioma a català</h3>
 <ol>
 <li><code>⌘ + Shift + P</code> → &quot;Configure Display Language&quot;</li>
 <li>Busca &quot;Catalan&quot; — si està disponible, canvia</li>
-</ul>
+</ol>
 <h2 id="-workflow-recomanat-per-al-dia-a-dia">📚 Workflow recomanat per al dia a dia</h2>
 <ol>
 <li><strong>Obre VS Code</strong> amb la carpeta del projecte</li>
@@ -164,7 +170,7 @@ VS Code
 <li><code>⌘ + S</code> per desar</li>
 <li><strong>Revisa</strong> els canvis a la pestanya &quot;Source Control&quot;</li>
 <li>Fes <strong>commit + push</strong> amb <code>hort-sync.sh &quot;missatge&quot;</code> o des de la UI</li>
-</ul>
+</ol>
 <h2 id="-si-alguna-cosa-no-va">🆘 Si alguna cosa no va</h2>
 <ul>
 <li><strong>No veus la vista prèvia?</strong> → Comprova que el fitxer té extensió <code>.md</code></li>

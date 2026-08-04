@@ -1,7 +1,7 @@
 <h1 id="-conserves-casolanes-guia-completa-per-aprofitar-lx27hort-to">🥫 Conserves casolanes — Guia completa per aprofitar l&#x27;hort tot l&#x27;any</h1>
-<p>&gt; Conservar els excedents és la saviesa pagesa per excel·lència. Amb l&#x27;hort d&#x27;Osona, tens matèria primera excel·lent per fer conserves que duraran mesos i et recordaran l&#x27;estiu a l&#x27;hivern.</p>
-<p>&gt;</p>
-<p>&gt; Aquesta guia està organitzada per <strong>estació de collita</strong> (perquè puguis fer les conserves quan toca, amb el producte fresc) i inclou les <strong>receptes clàssiques catalanes</strong> + algunes d&#x27;innovadores.</p>
+<blockquote>Conservar els excedents és la saviesa pagesa per excel·lència. Amb l&#x27;hort d&#x27;Osona, tens matèria primera excel·lent per fer conserves que duraran mesos i et recordaran l&#x27;estiu a l&#x27;hivern.</blockquote>
+<blockquote></blockquote>
+<blockquote>Aquesta guia està organitzada per <strong>estació de collita</strong> (perquè puguis fer les conserves quan toca, amb el producte fresc) i inclou les <strong>receptes clàssiques catalanes</strong> + algunes d&#x27;innovadores.</blockquote>
 <h2 id="-seguretat-primer-llegir-abans-de-començar">⚠️ Seguretat primer (llegir abans de començar)</h2>
 <h3 id="regles-dx27or">Regles d&#x27;or</h3>
 <ol>
@@ -12,7 +12,7 @@
 <li><strong>Refreda</strong> lentament (12-24 hores) i <strong>etiqueta</strong> sempre amb data i contingut.</li>
 <li><strong>Guarda en lloc fresc, sec i fosc</strong> (celler, rebost).</li>
 <li><strong>Mai tastis</strong> una conserva que faci mala olor, bombolles o tapa inflada (botulisme!).</li>
-</ul>
+</ol>
 <h3 id="materials-bàsics">Materials bàsics</h3>
 <ul>
 <li><strong>Pots de vidre</strong> amb tapa nova (reutilitza els de melmelada comercial, però amb tapa nova)</li>
@@ -73,7 +73,7 @@
 <td>Col (xucrut), cogombre, rave</td>
 <td>4-12 mesos (refrigerat)</td>
 </tr>
-</table>
+</tbody></table>
 <p>---</p>
 <h1 id="-estiu-juliol-setembre-temps-de-tomàquet-i-pebrots">🍅 ESTIU (juliol-setembre) — Temps de tomàquet i pebrots</h1>
 <h2 id="1-salsa-de-tomàquet-natural-la-clàssica-catalana">1. Salsa de tomàquet natural (la clàssica catalana)</h2>
@@ -105,7 +105,7 @@
 <li><strong>Omplir els pots</strong> (esterilitzats) deixant 1 cm fins la vora.</li>
 <li><strong>Tancar</strong> fort i <strong>bany maria</strong> 20 minuts.</li>
 <li><strong>Refredar</strong> 24 h, etiquetar, guardar en lloc fresc i fosc.</li>
-</ul>
+</ol>
 <h3 id="trucs">Trucs</h3>
 <ul>
 <li>💡 Per a una salsa <strong>més suau</strong>, passar-la pel passapurs després de coure.</li>
@@ -135,7 +135,7 @@
 <li><strong>Omplir amb aigua bullent</strong> fins a cobrir (deixar 1 cm).</li>
 <li><strong>Tapar</strong> i <strong>bany maria</strong> 30-40 min.</li>
 <li><strong>Refredar</strong> i guardar.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides d&#x27;hivern</li>
@@ -164,7 +164,7 @@
 <li><strong>Refredar</strong> i posar en pots de vidre.</li>
 <li><strong>Cobrir amb oli d&#x27;oliva</strong> fins que quedin submergits.</li>
 <li><strong>Tapar</strong> i guardar a la nevera.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, pasta, pa amb tomàquet d&#x27;alta gamma</li>
@@ -192,7 +192,7 @@
 <li><strong>Omplir els pots</strong> (esterilitzats), afegir 1 gra d&#x27;all partit per pot.</li>
 <li><strong>Cobrir amb oli d&#x27;oliva</strong> i una mica de sal.</li>
 <li><strong>Tapar</strong> i guardar a la nevera (dura 2-3 setmanes) o <strong>bany maria 20 min</strong> (dura 12 mesos).</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, escalivada, pa amb escalivada</li>
@@ -225,7 +225,7 @@
 <li><strong>Cobrir amb el vinagre</strong> calent.</li>
 <li><strong>Tapar</strong> i <strong>bany maria</strong> 15 min.</li>
 <li><strong>Refredar</strong> i guardar 1 mes abans de consumir (perquè agafin gust).</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Aperitiu, tapes, amanides</li>
@@ -261,7 +261,7 @@
 <li><strong>Cobrir amb el vinagre</strong> calent.</li>
 <li><strong>Tapar</strong> i <strong>bany maria</strong> 15 min.</li>
 <li><strong>Refredar</strong> i guardar 1-2 setmanes abans de consumir.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, tapes, hamburgueses</li>
@@ -293,7 +293,7 @@
 <li><strong>Omplir els pots</strong> (esterilitzats) calents.</li>
 <li><strong>Tapar</strong> i <strong>bany maria</strong> 15-20 min.</li>
 <li><strong>Refredar</strong> i guardar.</li>
-</ul>
+</ol>
 <h3 id="variacions">Variacions</h3>
 <ul>
 <li><strong>Melmelada de carbassa i poma</strong> (afegir 500 g poma)</li>
@@ -328,7 +328,7 @@
 <li><strong>Refredar</strong> i posar en pots.</li>
 <li><strong>Cobrir amb oli</strong> (si en bany maria: afegir 1 cullerada llimona per pot).</li>
 <li><strong>Tapar</strong> i <strong>bany maria 20 min</strong> (o guardar a la nevera 1 setmana).</li>
-</ul>
+</ol>
 <p>---</p>
 <h2 id="9-ceba-caramellitzada-la-joia-per-a-formatges-i-carns">9. Ceba caramel·litzada (la joia per a formatges i carns)</h2>
 <p><strong>Rendiment</strong>: 4-6 pots de 250 g</p>
@@ -351,7 +351,7 @@
 <li><strong>Salpebrar</strong> i deixar refredar.</li>
 <li><strong>Omplir els pots</strong> (esterilitzats).</li>
 <li><strong>Tapar</strong> i <strong>bany maria 15 min</strong> (o guardar a la nevera 2 setmanes).</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Hamburgueses, pizzes</li>
@@ -383,14 +383,14 @@
 <li><strong>Tapar</strong> i guardar en lloc fresc.</li>
 <li><strong>Remenar</strong> 1 cop per setmana.</li>
 <li><strong>Llestes</strong> en 2-3 mesos (provar regularment).</li>
-</ul>
+</ol>
 <h3 id="variació-ràpida-olives-en-lleixiu-1-dia">Variació ràpida (olives en lleixiu, 1 dia)</h3>
 <ol>
 <li><strong>Fer les olives</strong> amb un cop lleuger.</li>
 <li><strong>Remull</strong> en aigua amb lleixiu (1 cullerada per litre) 12-24 h.</li>
 <li><strong>Esbandir</strong> molt bé (3-4 canvis d&#x27;aigua).</li>
 <li><strong>Continuar</strong> amb la recepta de sal des del pas 4.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Aperitiu clàssic català</li>
@@ -421,7 +421,7 @@
 <li><strong>Cobrir amb el vinagre</strong> calent.</li>
 <li><strong>Tapar</strong> i <strong>bany maria 20 min</strong>.</li>
 <li><strong>Refredar</strong> i guardar 1 mes abans de consumir.</li>
-</ul>
+</ol>
 <p>---</p>
 <h2 id="12-col-fermentada-xucrut-casolà">12. Col fermentada (xucrut casolà)</h2>
 <p><strong>Rendiment</strong>: 2-3 pots grans</p>
@@ -445,7 +445,7 @@
 <li><strong>Treure</strong> l&#x27;escuma si en surt.</li>
 <li><strong>Tapar fort</strong> quan deixi de fermentar.</li>
 <li><strong>Refrigerar</strong> i esperar <strong>2-4 setmanes</strong> abans de consumir.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, sandvitxos</li>
@@ -472,7 +472,7 @@
 <li><strong>Barrejar</strong> amb la sal i altres ingredients.</li>
 <li><strong>Omplir pots</strong> de vidre petits.</li>
 <li><strong>Tapar</strong> i guardar en lloc sec.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, carns, peixos</li>
@@ -501,7 +501,7 @@
 <li><strong>Tapar</strong> i guardar en lloc fresc i fosc.</li>
 <li><strong>Esperar 2 setmanes</strong> abans d&#x27;utilitzar.</li>
 <li><strong>Colar</strong> i reomplir (opcional).</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Amanides, pa</li>
@@ -520,7 +520,7 @@
 <li><strong>Omplir bosses</strong> de plàstic o recipients de 250-500 g.</li>
 <li><strong>Etiquetar</strong> amb data.</li>
 <li><strong>Congelar</strong>.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Sopes, salses, guisats</li>
@@ -536,7 +536,7 @@
 <li><strong>Refredar</strong>.</li>
 <li><strong>Omplir</strong> recipients o bosses (fraccions de 300-500 g).</li>
 <li><strong>Etiquetar</strong> i <strong>congelar</strong>.</li>
-</ul>
+</ol>
 <h2 id="17-carabassons-carbassa-pebrots-a-daus-per-a-guarnicions">17. Carabassons, carbassa, pebrots a daus (per a guarnicions)</h2>
 <p><strong>Rendiment</strong>: 10-15 bosses</p>
 <h3 id="preparació">Preparació</h3>
@@ -547,7 +547,7 @@
 <li><strong>Assecar</strong> bé.</li>
 <li><strong>Embolicar</strong> en bosses individuals.</li>
 <li><strong>Etiquetar</strong> i <strong>congelar</strong>.</li>
-</ul>
+</ol>
 <h2 id="18-pastanaga-remolatxa-bleda-a-trossos">18. Pastanaga, remolatxa, bleda (a trossos)</h2>
 <p>Igual que el 17. Ratllades o a daus, blanquir 2 min, congelar.</p>
 <h2 id="19-mongeta-tendra-i-pèsol-blanquir-i-congelar">19. Mongeta tendra i pèsol (blanquir i congelar)</h2>
@@ -558,7 +558,7 @@
 <li><strong>Refredar</strong> en aigua gelada.</li>
 <li><strong>Assecar</strong>.</li>
 <li><strong>Congelar</strong> en bosses.</li>
-</ul>
+</ol>
 <p>---</p>
 <h1 id="-especialitats-catalanes">🌶️ ESPECIALITATS CATALANES</h1>
 <h2 id="20-quotsofregitquot-base-la-sofregida-de-la-iaia">20. &quot;Sofregit&quot; base (la sofregida de la iaia)</h2>
@@ -582,7 +582,7 @@
 <li><strong>Salpebrar</strong>.</li>
 <li><strong>Refredar</strong>, <strong>fraccionar</strong> en pots petits (250-500 g).</li>
 <li><strong>Refrigerar</strong> 1 setmana o <strong>congelar</strong>.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Base de totes les menges: pasta, arrossos, carns, peixos, pizzes, cocas.</li>
@@ -617,7 +617,7 @@
 <li><strong>Omplir els pots</strong> (esterilitzats).</li>
 <li><strong>Tapar</strong> i <strong>bany maria 20 min</strong>.</li>
 <li><strong>Refredar</strong> i guardar.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Calçots, escalivada, carns a la brasa</li>
@@ -645,7 +645,7 @@
 <li><strong>Anar afegint oli</strong> gota a gota, sense parar de remenar, com una maionesa.</li>
 <li><strong>Quan espesseixi</strong>, afegir la llimona.</li>
 <li><strong>Refrigerar</strong> immediatament.</li>
-</ul>
+</ol>
 <h3 id="ús">Ús</h3>
 <ul>
 <li>Patates, peix, carns</li>

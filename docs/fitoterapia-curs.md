@@ -1,5 +1,5 @@
 <h1 id="-curs-complet-de-fitoteràpia-pràctica-de-la-planta-al-medica">🌿 Curs Complet de Fitoteràpia Pràctica — De la planta al medicament</h1>
-<p>&gt; La <strong>fitoteràpia</strong> és l&#x27;art i la ciència d&#x27;usar <strong>plantes medicinals</strong> per prevenir i tractar malalties. És una de les <strong>formes de medicina més antigues</strong> del món (més de 5.000 anys) i, avui dia, <strong>el 80% de la població mundial</strong> depèn de plantes medicinals com a <strong>primera línia de salut</strong>. Aquest curs et portarà des dels <strong>fonaments teòrics</strong> fins a les <strong>aplicacions pràctiques</strong> amb les <strong>plantes del teu hort</strong> d&#x27;Osona. No substitueix el metge, però et donarà una <strong>base sòlida</strong> per a la teva <strong>salut natural</strong>.</p>
+<blockquote>La <strong>fitoteràpia</strong> és l&#x27;art i la ciència d&#x27;usar <strong>plantes medicinals</strong> per prevenir i tractar malalties. És una de les <strong>formes de medicina més antigues</strong> del món (més de 5.000 anys) i, avui dia, <strong>el 80% de la població mundial</strong> depèn de plantes medicinals com a <strong>primera línia de salut</strong>. Aquest curs et portarà des dels <strong>fonaments teòrics</strong> fins a les <strong>aplicacions pràctiques</strong> amb les <strong>plantes del teu hort</strong> d&#x27;Osona. No substitueix el metge, però et donarà una <strong>base sòlida</strong> per a la teva <strong>salut natural</strong>.</blockquote>
 <h2 id="mòdul-1-introducció-a-la-fitoteràpia">MÒDUL 1: INTRODUCCIÓ A LA FITOTERÀPIA</h2>
 <h3 id="11-què-és-la-fitoteràpia">1.1. Què és la fitoteràpia?</h3>
 <p><strong>Definició</strong>: La fitoteràpia (del grec <em>phyton</em> = planta, i <em>therapeia</em> = teràpia) és la utilització de <strong>plantes medicinals</strong> i els seus productes per prevenir, alleujar o guarir malalties.</p>
@@ -35,7 +35,7 @@
 <li><strong>Prevenció</strong>: mantenir la salut amb plantes</li>
 <li><strong>Història</strong>: recuperar la saviesa tradicional</li>
 <li><strong>Ciència</strong>: entendre els principis actius</li>
-</ul>
+</ol>
 <h2 id="mòdul-2-principis-actius">MÒDUL 2: PRINCIPIS ACTIUS</h2>
 <h3 id="21-què-són-els-principis-actius">2.1. Què són els principis actius?</h3>
 <p>Són les <strong>substàncies químiques</strong> de les plantes que tenen <strong>efecte terapèutic</strong> sobre el cos humà. Una planta medicinal pot tenir <strong>desenes o centenars</strong> de principis actius diferents, treballant <strong>sinèrgicament</strong>.</p>
@@ -228,7 +228,7 @@
 <li><strong>Arç groc</strong> (diürètic)</li>
 <li><strong>Borratja</strong> (depurativa, mel·lífera)</li>
 <li><strong>Orenga</strong> (antisèptica, cuina)</li>
-</ul>
+</ol>
 <h2 id="mòdul-5-les-plantes-del-teu-hort-guia-pràctica">MÒDUL 5: LES PLANTES DEL TEU HORT — GUIA PRÀCTICA</h2>
 <h3 id="51-les-8-plantes-remeieres-del-teu-hort">5.1. Les 8 plantes remeieres del teu hort</h3>
 <p><strong>1. ROMANÍ</strong> (<em>Rosmarinus officinalis</em>)</p>
@@ -322,7 +322,7 @@
 <li>Deixar 5-10 min</li>
 <li>Colar</li>
 <li>Beure</li>
-</ul>
+</ol>
 <p><strong>Quantitats</strong>:</p>
 <ul>
 <li>Parts toves (flors, fulles): 1-2 culleradetes seques per tassa (200-250 ml)</li>
@@ -343,7 +343,7 @@
 <li>Deixar infusionar 5 min</li>
 <li>Colar</li>
 <li>Beure</li>
-</ul>
+</ol>
 <p><strong>Indicat per</strong>: arrels, escorça, llavors, fruits secs, tiges</p>
 <h3 id="63-tintures-en-alcohol">6.3. TINTURES (en alcohol)</h3>
 <p><strong>Recepta universal</strong> (1:5):</p>
@@ -357,7 +357,7 @@
 <li>Filtrar amb tela fina</li>
 <li>Embotellar en vidre fosc</li>
 <li>Etiquetar (nom, data, dosi)</li>
-</ul>
+</ol>
 <p><strong>Dosi</strong>: 20-30 gotes en aigua, 2-3 cops al dia (adult)</p>
 <p><strong>Durada</strong>: 1-3 anys (en vidre fosc, lloc fosc)</p>
 <h3 id="64-xarops-per-a-nens-refredats">6.4. XAROPS (per a nens, refredats)</h3>
@@ -372,7 +372,7 @@
 <li>Coure 5 min a foc lent</li>
 <li>Abocar en ampolla de vidre fosc</li>
 <li>Guardar a la nevera</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 2-3 mesos (a la nevera)</p>
 <p><strong>Dosi</strong>: 1 cullerada 2-3 cops/dia (adults); 1 culleradeta (nens)</p>
 <h3 id="65-olis-medicinals">6.5. OLIS MEDICINALS</h3>
@@ -387,7 +387,7 @@
 <li>Filtrar</li>
 <li>Embotellar en vidre fosc</li>
 <li>Etiquetar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Ús</strong>: extern, massatges, ungüents</p>
 <h3 id="66-ungüents">6.6. UNGÜENTS</h3>
@@ -399,7 +399,7 @@
 <li>Remenar fins que es fongui</li>
 <li>Abocar en pots</li>
 <li>Deixar refredar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Ús</strong>: extern, pell, ferides, cremades</p>
 <h2 id="mòdul-7-fitoteràpia-per-aparells">MÒDUL 7: FITOTERÀPIA PER APARELLS</h2>
@@ -802,7 +802,7 @@
 <li><strong>Nens, embarassades, gent gran</strong>: molta cura</li>
 <li><strong>No perllongar</strong> tractaments sense descans</li>
 <li><strong>Para</strong> si apareixen efectes estranys</li>
-</ul>
+</ol>
 <h3 id="92-plantes-potencialment-perilloses">9.2. Plantes potencialment perilloses</h3>
 <ul>
 <li><strong>Acònit</strong> (tòxica mortal)</li>
@@ -855,7 +855,7 @@
 <td><strong>Romaní</strong></td>
 <td>Anticoagulants, diürètics</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="94-plantes-fotosensibilitzants">9.4. Plantes fotosensibilitzants</h3>
 <ul>
 <li><strong>Hipèric</strong> (oli)</li>
@@ -948,16 +948,16 @@
 <p><strong>Ús</strong>: al vespre, per relaxar.</p>
 <h2 id="notes-finals">NOTES FINALS</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; La <strong>fitoteràpia</strong> és <strong>saviesa mil·lenària</strong> que la ciència moderna <strong>està validant</strong> dia a dia. Les plantes no són &quot;<strong>placebos</strong>&quot; ni &quot;<strong>alternatives</strong>&quot; - són <strong>medicina</strong>. Usades amb <strong>coneixement, respecte i prudència</strong>, poden ser <strong>aliades poderoses</strong> per a la teva salut.</p>
-<p>&gt;</p>
-<p>&gt; <strong>Recorda</strong>: no substitueixen el metge, però poden <strong>complementar</strong> perfectament els tractaments convencionals, <strong>prevenir</strong> malalties, i donar-te <strong>autonomia</strong> sobre la teva salut.</p>
+<blockquote>La <strong>fitoteràpia</strong> és <strong>saviesa mil·lenària</strong> que la ciència moderna <strong>està validant</strong> dia a dia. Les plantes no són &quot;<strong>placebos</strong>&quot; ni &quot;<strong>alternatives</strong>&quot; - són <strong>medicina</strong>. Usades amb <strong>coneixement, respecte i prudència</strong>, poden ser <strong>aliades poderoses</strong> per a la teva salut.</blockquote>
+<blockquote></blockquote>
+<blockquote><strong>Recorda</strong>: no substitueixen el metge, però poden <strong>complementar</strong> perfectament els tractaments convencionals, <strong>prevenir</strong> malalties, i donar-te <strong>autonomia</strong> sobre la teva salut.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: plantar 1-2 plantes remeieres noves</li>
 <li><strong>Aquest mes</strong>: aprendre 1 forma d&#x27;ús (infusió, tintura, oli)</li>
 <li><strong>Aquest estiu</strong>: fer el teu propi oli de calèndula</li>
 <li><strong>Aquest any</strong>: tenir 8-10 plantes remeieres, 10 preparats, 1 farmaciola</li>
-</ul>
+</ol>
 <h3 id="la-saviesa">La saviesa</h3>
-<p>&gt; A Osona, les <strong>àvies</strong> tenien <strong>saviesa</strong> de <strong>5.000 anys</strong> sobre plantes. La ciència actual està <strong>descobrint</strong> que tenien <strong>raó</strong> en gairebé tot. Tu pots <strong>recuperar</strong> aquesta saviesa, <strong>complementada</strong> amb la ciència, i <strong>compartir-la</strong> amb la teva família i la teva comunitat.</p>
+<blockquote>A Osona, les <strong>àvies</strong> tenien <strong>saviesa</strong> de <strong>5.000 anys</strong> sobre plantes. La ciència actual està <strong>descobrint</strong> que tenien <strong>raó</strong> en gairebé tot. Tu pots <strong>recuperar</strong> aquesta saviesa, <strong>complementada</strong> amb la ciència, i <strong>compartir-la</strong> amb la teva família i la teva comunitat.</blockquote>
 <p>🌿 <strong>Bona salut amb la fitoteràpia!</strong></p>

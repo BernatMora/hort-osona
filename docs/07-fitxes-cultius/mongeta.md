@@ -48,11 +48,13 @@
 <li><strong>Enfiladissa</strong>: 30-40 cm entre plantes, 70-80 cm entre files</li>
 <li><strong>Densitat</strong>: 8-12 plantes/m²</li>
 <li><strong>Tècnica</strong>:</li>
+</ul>
+<ol>
 <li>Sembra directa a partir de maig (temperatura del sòl &gt;12°C).</li>
 <li>Posar 2-3 llavors per forat, aclarir a 1-2 plantes.</li>
 <li>Per enfiladisses: posar tutors o canyes (1,5-2,5 m) abans que creixi.</li>
 <li>Cobrir amb substrat i compactar lleugerament.</li>
-</ul>
+</ol>
 <h2 id="conreu">Conreu</h2>
 <ul>
 <li><strong>Reg</strong>: moderat a l&#x27;inici, <strong>regular i abundant en floració i quallat</strong>. Reduir al final del cicle.</li>

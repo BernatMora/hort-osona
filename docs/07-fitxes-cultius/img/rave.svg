@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un rave">
+  <defs>
+    <radialGradient id="rave-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="rave-root" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#E84A5F"/>
+      <stop offset="60%" stop-color="#C23847"/>
+      <stop offset="100%" stop-color="#8B1A2B"/>
+    </radialGradient>
+    <linearGradient id="rave-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#rave-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="135" rx="55" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Arrels fines -->
+  <g stroke="#C9A57B" stroke-width="1" fill="none" opacity="0.7">
+    <path d="M 100 145 L 92 165"/>
+    <path d="M 100 145 L 100 168"/>
+    <path d="M 100 145 L 108 165"/>
+    <path d="M 100 145 L 85 160"/>
+    <path d="M 100 145 L 115 160"/>
+  </g>
+
+  <!-- Arrel (rave) -->
+  <ellipse cx="100" cy="135" rx="28" ry="22" fill="url(#rave-root)"/>
+  <!-- Brill -->
+  <ellipse cx="92" cy="125" rx="6" ry="4" fill="#FFB8B8" opacity="0.6"/>
+
+  <!-- Tija curta -->
+  <rect x="98" y="115" width="4" height="15" fill="#5C7A45"/>
+
+  <!-- Fulles de rave (brots) -->
+  <g fill="url(#rave-leaves)">
+    <ellipse cx="85" cy="95" rx="8" ry="20" transform="rotate(-25 85 95)"/>
+    <ellipse cx="100" cy="80" rx="8" ry="25"/>
+    <ellipse cx="115" cy="95" rx="8" ry="20" transform="rotate(25 115 95)"/>
+    <ellipse cx="92" cy="105" rx="7" ry="15" transform="rotate(-10 92 105)"/>
+    <ellipse cx="108" cy="105" rx="7" ry="15" transform="rotate(10 108 105)"/>
+  </g>
+
+  <text x="100" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3D4A2A" font-style="italic">Raphanus sativus</text>
+</svg>

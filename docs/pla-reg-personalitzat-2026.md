@@ -1,6 +1,6 @@
 <h1 id="-pla-de-reg-personalitzat-hort-osona-juny-2026">💧 Pla de reg personalitzat — Hort Osona, juny 2026</h1>
-<p>&gt; Document generat específicament per al teu hort (20 m², sòl sorrenc, reg amb mànega, 8 cultius).</p>
-<p>&gt; Inclou el calendari setmanal, el sistema d&#x27;estalvi d&#x27;aigua, les operacions prioritàries i les solucions pràctiques.</p>
+<blockquote>Document generat específicament per al teu hort (20 m², sòl sorrenc, reg amb mànega, 8 cultius).</blockquote>
+<blockquote>Inclou el calendari setmanal, el sistema d&#x27;estalvi d&#x27;aigua, les operacions prioritàries i les solucions pràctiques.</blockquote>
 <h2 id="dades-del-teu-hort">Dades del teu hort</h2>
 <table>
 <thead><tr>
@@ -35,7 +35,7 @@
 <td>Tutora tomàquets</td>
 <td>Ja col·locada ✓</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="cultius-i-mida-exacta">Cultius i mida exacta</h2>
 <table>
 <thead><tr>
@@ -98,7 +98,7 @@
 <td><strong>19 m²</strong></td>
 <td><strong>~615 L/setmana</strong></td>
 </tr>
-</table>
+</tbody></table>
 <p>---</p>
 <h2 id="per-què-regar-a-les-7-del-vespre-19h-és-bona-elecció">Per què regar a les 7 del vespre (19h) és bona elecció</h2>
 <table>
@@ -122,11 +122,11 @@
 <td>No cremes fulles</td>
 <td>Ja no hi ha sol fort</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Atenció</strong>: les fulles que quedin mullades tota la nit poden afavorir <strong>míldiu o oïdi</strong> a tomaqueres i pebrots. Per això, sempre <strong>mullar a la base, mai les fulles</strong>. Si mulching amb palla, redueix molt aquest risc.</p>
 <p>---</p>
 <h2 id="calendari-dx27aquesta-setmana-10-16-juny-2026">Calendari d&#x27;aquesta setmana (10-16 juny 2026)</h2>
-<p>&gt; Ha plogut avui (10/06) → sòl humit. Començo a regar a partir de dimecres.</p>
+<blockquote>Ha plogut avui (10/06) → sòl humit. Començo a regar a partir de dimecres.</blockquote>
 <table>
 <thead><tr>
 <th>Dia</th>
@@ -176,7 +176,7 @@
 <td><strong>~300-340 L</strong></td>
 <td>Setmana de transició</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="ajustaments-segons-el-temps">Ajustaments segons el temps</h3>
 <table>
 <thead><tr>
@@ -199,7 +199,7 @@
 <td>Onada de calor (&gt;35°C)</td>
 <td>Reg matinal extra (60 L) + el del vespre</td>
 </tr>
-</table>
+</tbody></table>
 <p>---</p>
 <h2 id="pla-setmanal-tipus-sense-pluja-juliol-agost">Pla setmanal tipus (sense pluja) — juliol-agost</h2>
 <p>A partir del juliol, la pluja baixa a 40-60 mm/mes i la calor puja. El pla serà:</p>
@@ -249,7 +249,7 @@
 <td><strong>4 regs</strong></td>
 <td><strong>~380-400 L/setmana</strong></td>
 </tr>
-</table>
+</tbody></table>
 <p>Amb <strong>mulching aplicat</strong> pots baixar a 250-300 L/setmana (estalvi 30%).</p>
 <p>---</p>
 <h2 id="sistema-dx27estalvi-dx27aigua-el-más-important-mulching">Sistema d&#x27;estalvi d&#x27;aigua (el más important: MULCHING)</h2>
@@ -279,7 +279,7 @@
 <td>600+ L/setmana</td>
 <td>300-400 L/setmana</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="com-aplicar-mulching-al-teu-hort-aquesta-setmana">Com aplicar mulching al teu hort (aquesta setmana!)</h3>
 <p><strong>Material recomanat</strong> (per ordre de preferència):</p>
 <ol>
@@ -287,7 +287,7 @@
 <li><strong>Gespa seca</strong> (gratuïta, de segar) — bona però dura poc</li>
 <li><strong>Fullaraca</strong> (gratuïta, arbres propers) — bona</li>
 <li><strong>Restes de poda triturada</strong> (gratuïta) — bona per a fruiters</li>
-</ul>
+</ol>
 <p><strong>Aplicació pas a pas</strong>:</p>
 <ol>
 <li><strong>Dia 1</strong>: segar/aconseguir material. Deixar assecar 1 dia si és gespa fresca</li>
@@ -296,7 +296,7 @@
 <li><strong>Prioritat 1</strong>: tomàquets (12) i pebrots (6) — patiran més la calor</li>
 <li><strong>Prioritat 2</strong>: carabassons (3) i carbasses (3)</li>
 <li><strong>Prioritat 3</strong>: la resta</li>
-</ul>
+</ol>
 <p><strong>Temps estimat</strong>: 2-3 hores per a 19 m²</p>
 <p><strong>Cost</strong>: 0-80 € segons material</p>
 <p><strong>Estalvi</strong>: 200-300 L d&#x27;aigua per setmana!</p>
@@ -315,7 +315,7 @@
 <li>Tancar i capgirar</li>
 <li>Enfonsar al costat de la planta (a 10-15 cm de la tija)</li>
 <li>L&#x27;aigua va degotant 2-3 dies</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>:</p>
 <ul>
 <li>Gratuït (reciclatge)</li>
@@ -331,14 +331,14 @@
 <li><strong>Pressió baixa</strong>: obrir l&#x27;aixeta només 1/3</li>
 <li><strong>Posició</strong>: a 30-50 cm del sòl</li>
 <li><strong>Moviment</strong>: lent, anar canviant de zona</li>
-</ul>
+</ol>
 <h3 id="ordre-de-reg-recomanat-per-aprofitar-cada-gota">Ordre de reg recomanat (per aprofitar cada gota)</h3>
 <ol>
 <li><strong>Primer</strong>: cucurbitàcies (carabassons i carbasses) — les més exigents</li>
 <li><strong>Segon</strong>: tomàquets i pebrots — base, mai fulles</li>
 <li><strong>Tercer</strong>: mongetes, pastanagues</li>
 <li><strong>Últim</strong>: enciams i cebes — els que menys necessiten</li>
-</ul>
+</ol>
 <h3 id="temps-de-reg-per-cultiu-amb-difusor-suau-100-lh">Temps de reg per cultiu (amb difusor suau, 100 L/h)</h3>
 <table>
 <thead><tr>
@@ -381,7 +381,7 @@
 <td><strong>~65-70 min</strong></td>
 <td><strong>~340-400 L</strong></td>
 </tr>
-</table>
+</tbody></table>
 <p>Amb mulching pots retallar un 30%.</p>
 <p>---</p>
 <h2 id="comprovar-humitat-cada-dia-5-segons">Comprovar humitat cada dia (5 segons)</h2>
@@ -390,7 +390,7 @@
 <li>Fica el dit a <strong>3-4 cm</strong> de profunditat</li>
 <li>Si surt <strong>humit</strong> → no regar</li>
 <li>Si surt <strong>sec</strong> → regar</li>
-</ul>
+</ol>
 <p><strong>Aplica-ho sobretot al sòl sorrenc</strong>:</p>
 <ul>
 <li>❌ No jutgis per la capa superficial (s&#x27;asseca ràpid)</li>
@@ -401,23 +401,23 @@
 <h2 id="pla-dx27acció-immediat-aquesta-setmana">Pla d&#x27;acció immediat (aquesta setmana)</h2>
 <h3 id="prioritat-1-fer-aquesta-setmana">Prioritat 1 — Fer aquesta setmana</h3>
 <ul>
-<li>[ ] Dimecres 12: reg vespre (19h), 90-100 L</li>
-<li>[ ] Divendres 14: reg vespre, 110-120 L</li>
-<li>[ ] Diumenge 16: reg vespre, 100-120 L</li>
-<li>[ ] Recollir 18 ampolles de 2 L buides</li>
-<li>[ ] Aconseguir palla o material per mulching</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span>Dimecres 12: reg vespre (19h), 90-100 L</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span>Divendres 14: reg vespre, 110-120 L</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span>Diumenge 16: reg vespre, 100-120 L</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span>Recollir 18 ampolles de 2 L buides</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span>Aconseguir palla o material per mulching</span></label></li>
 </ul>
 <h3 id="prioritat-2-cap-de-setmana-15-16-juny">Prioritat 2 — Cap de setmana (15-16 juny)</h3>
 <ul>
-<li>[ ] Aplicar mulching (2-3 h de feina)</li>
-<li>[ ] Muntar sistema d&#x27;ampolles als 12 tomàquets i 6 pebrots</li>
-<li>[ ] Adaptar difusor suau a la mànega</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span>Aplicar mulching (2-3 h de feina)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span>Muntar sistema d&#x27;ampolles als 12 tomàquets i 6 pebrots</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span>Adaptar difusor suau a la mànega</span></label></li>
 </ul>
 <h3 id="prioritat-3-properes-setmanes">Prioritat 3 — Properes setmanes</h3>
 <ul>
-<li>[ ] Comprar pluviòmetre (~15 €)</li>
-<li>[ ] Considerar sensor d&#x27;humitat (~10 €)</li>
-<li>[ ] Planificar 1-2 bidons d&#x27;aigua de pluja per al juliol</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span>Comprar pluviòmetre (~15 €)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span>Considerar sensor d&#x27;humitat (~10 €)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="10"> <span>Planificar 1-2 bidons d&#x27;aigua de pluja per al juliol</span></label></li>
 </ul>
 <p>---</p>
 <h2 id="resum-visual-del-teu-pla">Resum visual del teu pla</h2>

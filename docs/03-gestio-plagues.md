@@ -6,7 +6,7 @@
 <li><strong>Llindars d&#x27;actuació</strong>: no tractis si no supera 5-10% plantes afectades. La biodiversitat tolera una mica de plaga.</li>
 <li><strong>Mètodes físics i biològics</strong> primer; <strong>tractaments botànics</strong> (cuina pròpia) només si cal.</li>
 <li><strong>Tractaments minerals</strong> (coure, sofre) només en casos extrems i respectant el període de seguretat.</li>
-</ul>
+</ol>
 <h2 id="2-plagues-principals-a-osona-tractaments">2. Plagues principals a Osona + tractaments</h2>
 <h3 id="pugó-myzus-persicae-aphis-fabae-acyrthosiphon-pisum">Pugó (Myzus persicae, Aphis fabae, Acyrthosiphon pisum)</h3>
 <ul>
@@ -166,7 +166,7 @@
 <td>Gener-Febrer</td>
 <td>Poda, tractament d&#x27;hivern, planificació</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-insectes-beneficiosos-a-afavorir">5. Insectes beneficiosos a afavorir</h2>
 <table>
 <thead><tr>
@@ -229,7 +229,7 @@
 <td>Erugues hivernals a fruiters</td>
 <td>Caixes niu, deixar bardissa</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="6-preparats-botànics-casolans-receptes">6. Preparats botànics casolans (receptes)</h2>
 <h3 id="macerat-dx27ortiga-enfortidor-repellent">Macerat d&#x27;ortiga (enfortidor + repel·lent)</h3>
 <ul>

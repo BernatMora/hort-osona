@@ -48,7 +48,7 @@ automàticament en 30-60 segons. No cal fer res més.
 Per tant, el workflow queda:
 ```bash
 # Després d'editar els .md
-python site/build.py       # regenera site/index.html
+python3 build_portal_v2.py # regenera index.html i docs/ a l'arrel
 git add .
 git commit -m "..."
 git push                   # GitHub Pages es desplega automàticament

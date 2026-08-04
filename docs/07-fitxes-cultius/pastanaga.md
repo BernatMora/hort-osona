@@ -62,7 +62,7 @@
 <td><strong>Març</strong></td>
 <td>Inici de la flor (les deixes per a llavor)</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="a-osona-calendari-ideal">A Osona, calendari ideal</h3>
 <ul>
 <li><strong>Primera sembra</strong>: mitjans març (sòl &gt;7°C, generalment ho és)</li>
@@ -90,11 +90,15 @@
 <ul>
 <li><strong>Profunditat</strong>: 0,5-1 cm</li>
 <li><strong>Tècnica</strong>:</li>
+</ul>
+<ol>
 <li>Fer solcs de 1-1,5 cm de profunditat</li>
 <li>Barrejar les llavors amb sorra fina (per distribuir millor, ja que són molt petites)</li>
 <li>Sembrar a filera, amb cura</li>
 <li>Cobrir amb substrat fi</li>
 <li>Mantenir humit fins a germinar (10-20 dies!)</li>
+</ol>
+<ul>
 <li><strong>Aclarir</strong>:</li>
 <li>A 2-3 cm quan tinguin 2-3 fulles</li>
 <li>A 5-7 cm quan tinguin 4-5 fulles</li>
@@ -128,7 +132,7 @@
 <li><strong>Rotació</strong> estricta (3-4 anys)</li>
 <li><strong>Sembra primerenca o tardana</strong> (la mosca vola maig-juny i agost-setembre, evita aquests períodes)</li>
 <li><strong>No deixar pastanagues a l&#x27;hivern</strong> (sobretot les de guardar)</li>
-</ul>
+</ol>
 <h2 id="collita">Collita</h2>
 <ul>
 <li><strong>Quan collir</strong>:</li>
@@ -171,7 +175,7 @@
 <td>Osona</td>
 <td>Cilíndrica, color intens, dolça (recuperació via Esporus)</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="notes-i-observacions-personals">Notes i observacions personals</h2>
 <ul>
 <li>_A Osona, sembrar a <strong>finals de juny</strong> = collita a l&#x27;octubre-novembre (moment perfecte per guardar-les)._</li>

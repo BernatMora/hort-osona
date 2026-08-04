@@ -1,5 +1,5 @@
 <h1 id="-apotecaria-casolana-crema-ungüents-i-remeis-amb-plantes-del">🏺 Apotecaria Casolana — Crema, ungüents i remeis amb plantes del teu hort</h1>
-<p>&gt; Imagina&#x27;t tenir una <strong>&quot;farmàcia natural&quot;</strong> feta a casa, amb productes elaborats amb les plantes que <strong>tu mateix cultives</strong> al teu hort de 20 m² a Osona. Aquesta guia t&#x27;ensenya a fer <strong>15 productes medicinals</strong> diferents — cremes, ungüents, bàlsams, olis, tintures, xarops — amb les <strong>8 plantes remeieres</strong> que ja tens al teu hort (o que hi pots afegir): romaní, sàlvia, farigola, espígol, menta, calèndula, camamil·la, til·la. Tots els productes són per a <strong>ús extern</strong> (pell, ferides, cremades, picades, dolors) o <strong>ús intern</strong> (digestió, tos, refredat, insomni). Tots amb <strong>receptes pas a pas</strong>, <strong>mesures exactes</strong> i <strong>conservació</strong>.</p>
+<blockquote>Imagina&#x27;t tenir una <strong>&quot;farmàcia natural&quot;</strong> feta a casa, amb productes elaborats amb les plantes que <strong>tu mateix cultives</strong> al teu hort de 20 m² a Osona. Aquesta guia t&#x27;ensenya a fer <strong>15 productes medicinals</strong> diferents — cremes, ungüents, bàlsams, olis, tintures, xarops — amb les <strong>8 plantes remeieres</strong> que ja tens al teu hort (o que hi pots afegir): romaní, sàlvia, farigola, espígol, menta, calèndula, camamil·la, til·la. Tots els productes són per a <strong>ús extern</strong> (pell, ferides, cremades, picades, dolors) o <strong>ús intern</strong> (digestió, tos, refredat, insomni). Tots amb <strong>receptes pas a pas</strong>, <strong>mesures exactes</strong> i <strong>conservació</strong>.</blockquote>
 <h2 id="1-introducció">1. Introducció</h2>
 <h3 id="a-què-pots-fer-amb-les-plantes-del-teu-hort">A. Què pots fer amb les plantes del teu hort?</h3>
 <p>Cada planta medicinal es pot transformar en <strong>3-5 productes diferents</strong>:</p>
@@ -21,7 +21,7 @@
 <li><strong>Personalització</strong>: pots adaptar les receptes als teus gustos</li>
 <li><strong>Sostenibilitat</strong>: pots de vidre reutilitzats, sense plàstic</li>
 <li><strong>Satisfacció</strong>: fer coses amb les pròpies mans</li>
-</ul>
+</ol>
 <h3 id="c-material-bàsic-necessari">C. Material bàsic necessari</h3>
 <p>Per fer qualsevol dels productes, necessitaràs:</p>
 <h4 id="recipient-i-eines">Recipient i eines</h4>
@@ -71,7 +71,7 @@
 <li>Remena cada dia</li>
 <li>Filtra amb tela fina</li>
 <li>Guarda en ampolla de vidre fosc</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~450 ml</p>
 <p>---</p>
@@ -93,7 +93,7 @@
 <li>Aboca en pots petits (50 ml)</li>
 <li>Deixa refredar (1-2 hores)</li>
 <li>Tapa</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos (en lloc fresc)</p>
 <p><strong>Rendiment</strong>: ~4-5 pots petits</p>
 <p>---</p>
@@ -116,7 +116,7 @@
 <li>Bateix amb batedora elèctrica fins que es refredi (textura de crema)</li>
 <li>Afegeix l&#x27;oli essencial i la mel</li>
 <li>Aboca en pots de vidre</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 1-2 mesos (a la nevera)</p>
 <p><strong>Rendiment</strong>: ~150-200 g</p>
 <p>---</p>
@@ -137,7 +137,7 @@
 <li>Deixa 3-4 setmanes al sol (l&#x27;oli es torna vermell/roig)</li>
 <li>Filtra</li>
 <li>Guarda en ampolla de vidre fosc</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~450 ml</p>
 <p><strong>⚠️ Important</strong>: L&#x27;hipèric <strong>fotosensibilitza</strong>. No aplicar i prendre el sol! Millor aplicar al vespre.</p>
@@ -161,7 +161,7 @@
 <li>Afegir la cera</li>
 <li>Afegir l&#x27;oli essencial</li>
 <li>Abocar en pots petits</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~4-5 pots</p>
 <p>---</p>
@@ -180,7 +180,7 @@
 <li>Fondre tot a bany maria</li>
 <li>Abocar en pots petits (10 ml) o en un tub de bàlsam</li>
 <li>Deixar refredar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6 mesos</p>
 <p><strong>Rendiment</strong>: 2-3 tubs</p>
 <p>---</p>
@@ -202,7 +202,7 @@
 <li>Deixa 3 setmanes al sol</li>
 <li>Filtra</li>
 <li>Guarda en ampolla fosc</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~450 ml</p>
 <p><strong>Ús extern</strong>: aplicar amb massatge a la zona adolorida, 2-3 cops/dia</p>
@@ -223,7 +223,7 @@
 <li>Deixa 2 setmanes en lloc fosc</li>
 <li>Filtra</li>
 <li>Guarda en ampolla fosc</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 12 mesos</p>
 <p><strong>Ús extern</strong>: aplicar amb cotó a la zona, mai en ferides obertes</p>
 <p>---</p>
@@ -244,7 +244,7 @@
 <li>Escalfar oli + cera a bany maria</li>
 <li>Abocar en pots</li>
 <li>Deixar refredar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~4 pots</p>
 <p>---</p>
@@ -264,7 +264,7 @@
 <li>Filtrar</li>
 <li>Escalfar amb cera a bany maria</li>
 <li>Abocar en pots petits</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6 mesos</p>
 <p><strong>Ús extern</strong>: aplicar a la zona de la picada, refresca instantàniament</p>
 <p>---</p>
@@ -284,7 +284,7 @@
 <li>Deixa 2-3 setmanes</li>
 <li>Filtra</li>
 <li>Dilueix 1:5 amb aigua per usar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p>---</p>
 <h3 id="e-per-a-refredats-tos-i-grip-ús-intern">E. PER A REFREDATS, TOS I GRIP (ús intern)</h3>
@@ -307,7 +307,7 @@
 <li>Coure 5 min a foc lent</li>
 <li>Abocar en ampolla de vidre fosc</li>
 <li>Guardar a la nevera</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 2-3 mesos (a la nevera)</p>
 <p><strong>Dosi</strong>: 1 cullerada 2-3 cops/dia (adults); 1 culleradeta (nens)</p>
 <p>---</p>
@@ -327,7 +327,7 @@
 <li>Deixa 2-4 setmanes en lloc fosc</li>
 <li>Filtra</li>
 <li>Guarda en ampolla fosc</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 12 mesos</p>
 <p><strong>Dosi</strong>: 20-30 gotes en aigua, 2-3 cops/dia</p>
 <p>---</p>
@@ -346,7 +346,7 @@
 <li>Deixar 10 min</li>
 <li>Colar</li>
 <li>Guardar a la nevera (fins 3 dies)</li>
-</ul>
+</ol>
 <p><strong>Dosi</strong>: 1 tassa 30 min abans d&#x27;anar a dormir</p>
 <p>---</p>
 <h3 id="f-producte-avançat-crema-de-calèndula-aranya-per-a-cremades">F. PRODUCTE AVANÇAT: CREMA DE CALÈNDULA + ARANYA (per a cremades)</h3>
@@ -372,7 +372,7 @@
 <li>Afegir l&#x27;oli essencial</li>
 <li>Abocar en pots petits</li>
 <li>Deixar refredar</li>
-</ul>
+</ol>
 <p><strong>Durada</strong>: 6-12 mesos</p>
 <p><strong>Rendiment</strong>: ~5-6 pots de 50 ml</p>
 <p>---</p>
@@ -442,7 +442,7 @@
 <td><strong>Hivern</strong></td>
 <td>Usar els productes</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-conservació">5. Conservació</h2>
 <h3 id="principis-generals">Principis generals</h3>
 <ul>
@@ -489,7 +489,7 @@
 <td><strong>Vinagre medicinal</strong></td>
 <td>6-12 mesos</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="6-seguretat-i-precaucions">6. Seguretat i precaucions</h2>
 <h3 id="a-per-a-infants">A. Per a infants</h3>
 <ul>
@@ -583,7 +583,7 @@
 </ul>
 <h2 id="10-notes-finals">10. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; L&#x27;apotecaria casolana és <strong>la culminació</strong> d&#x27;un hort medicinal. No només tens plantes que curen, sinó <strong>productes acabats</strong> que pots fer servir cada dia. És <strong>autonomia, sostenibilitat i saviesa</strong> en un pot de vidre.</p>
+<blockquote>L&#x27;apotecaria casolana és <strong>la culminació</strong> d&#x27;un hort medicinal. No només tens plantes que curen, sinó <strong>productes acabats</strong> que pots fer servir cada dia. És <strong>autonomia, sostenibilitat i saviesa</strong> en un pot de vidre.</blockquote>
 <h3 id="aplica-ho-amb-seny">Aplica-ho amb seny</h3>
 <ol>
 <li><strong>Comença pel bàsic</strong>: oli de calèndula (1 sola recepta)</li>
@@ -591,7 +591,7 @@
 <li><strong>Etiqueta tot</strong> (nom, data)</li>
 <li><strong>Guarda</strong> bé (vidre fosc, lloc sec)</li>
 <li><strong>Comparteix</strong> (regala, ensenya, documenta)</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-de-les-àvies">La saviesa de les àvies</h3>
-<p>&gt; Les àvies d&#x27;Osona feien <strong>tots</strong> aquests productes, sense Internet, sense llibres. Usaven la saviesa transmesa de boca en boca, observant, provant, ajustant. <strong>Tu tens el coneixement, les plantes, i les eines</strong>. Només et cal <strong>començar</strong>.</p>
+<blockquote>Les àvies d&#x27;Osona feien <strong>tots</strong> aquests productes, sense Internet, sense llibres. Usaven la saviesa transmesa de boca en boca, observant, provant, ajustant. <strong>Tu tens el coneixement, les plantes, i les eines</strong>. Només et cal <strong>començar</strong>.</blockquote>
 <p>🏺 <strong>Bona apotecaria casolana amb el teu hort!</strong></p>

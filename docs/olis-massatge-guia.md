@@ -1,5 +1,5 @@
 <h1 id="-guia-dx27olis-de-massatge-casolans-10-olis-amb-plantes-del-">💆 Guia d&#x27;Olis de Massatge Casolans — 10 olis amb plantes del teu hort</h1>
-<p>&gt; Un bon <strong>oli de massatge</strong> pot <strong>alleujar dolors musculars</strong>, <strong>reduir l&#x27;estrès</strong>, <strong>millorar la son</strong>, <strong>nodrir la pell</strong> i crear un moment de <strong>connexió</strong> amb la persona estimada. Amb les <strong>plantes medicinals del teu hort</strong> i uns pocs ingredients, pots fer <strong>10 olis de massatge específics</strong> per a cada necessitat: relaxar, energitzar, calmar dolors, hidratar, revitalitzar... Tots <strong>naturals, eficaços i bonics</strong>.</p>
+<blockquote>Un bon <strong>oli de massatge</strong> pot <strong>alleujar dolors musculars</strong>, <strong>reduir l&#x27;estrès</strong>, <strong>millorar la son</strong>, <strong>nodrir la pell</strong> i crear un moment de <strong>connexió</strong> amb la persona estimada. Amb les <strong>plantes medicinals del teu hort</strong> i uns pocs ingredients, pots fer <strong>10 olis de massatge específics</strong> per a cada necessitat: relaxar, energitzar, calmar dolors, hidratar, revitalitzar... Tots <strong>naturals, eficaços i bonics</strong>.</blockquote>
 <h2 id="1-introducció">1. Introducció</h2>
 <h3 id="a-per-què-fer-olis-de-massatge-a-casa">A. Per què fer olis de massatge a casa?</h3>
 <ol>
@@ -9,7 +9,7 @@
 <li><strong>Econòmics</strong> (un oli de 100 ml costa 2-3 € vs 15-25 € a l&#x27;herboristeria)</li>
 <li><strong>Romàntics</strong> (per a parella, fills, família)</li>
 <li><strong>Terapèutics</strong> (el massatge en si ja és curatiu)</li>
-</ul>
+</ol>
 <h3 id="b-les-plantes-que-necessites">B. Les plantes que necessites</h3>
 <p><strong>Ja les tens al teu hort</strong>: romaní, sàlvia, farigola, espígol, menta, calèndula, camamil·la.</p>
 <p><strong>Pots afegir o comprar</strong>: hipèric (oli roig), àrnica, calèndula (ja la tens).</p>
@@ -98,7 +98,7 @@
 <td>Cabell, cara, anti-edat</td>
 <td>Alt</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Recomanació per a tu</strong>: oli d&#x27;ametlles (el més versàtil) + oli d&#x27;oliva (el més barat, el tens a casa).</p>
 <h2 id="3-els-10-olis-de-massatge-específics">3. Els 10 olis de massatge específics</h2>
 <h3 id="1-oli-de-massatge-relaxant-per-a-dormir-estrès">1. Oli de massatge relaxant (per a dormir, estrès)</h3>
@@ -123,7 +123,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en ampolla fosc</li>
 <li>Etiqueta</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar al cos 30 min abans d&#x27;anar a dormir. Massatge suau.</p>
 <p><strong>Durada</strong>: 6-12 mesos.</p>
 <p>---</p>
@@ -161,7 +161,7 @@
 <li>Macera 2-4 hores</li>
 <li>Filtra</li>
 <li>Afegeix els OE</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar a la zona adolorida, massatge profund. 2-3 cops al dia.</p>
 <p><strong>Durada</strong>: 6-12 mesos.</p>
 <p>---</p>
@@ -182,7 +182,7 @@
 <li>Macera 1 hora</li>
 <li>Filtra</li>
 <li>Afegeix vitamina E</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar suaument al cos del nen, especialment a l&#x27;esquena, braços i cames. Abans de dormir.</p>
 <p><strong>Durada</strong>: 6 mesos.</p>
 <p>---</p>
@@ -203,7 +203,7 @@
 <li>Barreja els olis base</li>
 <li>Afegeix els OE</li>
 <li>Embotella en vidre fosc</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: massatge mutu, amb música suau i llum tènue.</p>
 <p><strong>Durada</strong>: 6-12 mesos.</p>
 <p>---</p>
@@ -224,7 +224,7 @@
 <li>Afegeix les plantes</li>
 <li>Macera 2 hores</li>
 <li>Filtra</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar al cuir cabellut, massatge circular, deixar 30 min - 1 hora, rentar amb xampú suau. 1-2 cops per setmana.</p>
 <p><strong>Durada</strong>: 3-6 mesos.</p>
 <p>---</p>
@@ -263,7 +263,7 @@
 <li>Macera 2 hores</li>
 <li>Filtra</li>
 <li>Afegeix els OE</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar als peus amb massatge vigoritzant, del taló als dits. 1-2 cops al dia, especialment al vespre.</p>
 <p><strong>Durada</strong>: 6 mesos.</p>
 <p>---</p>
@@ -285,7 +285,7 @@
 <li>Macera 1 hora</li>
 <li>Filtra</li>
 <li>Afegeix OE i vitamina E</li>
-</ul>
+</ol>
 <p><strong>Ús</strong>: aplicar a la panxa, glutis, cuixes. Massatge suau. Des del segon trimestre.</p>
 <p><strong>Durada</strong>: 3-6 mesos.</p>
 <p>---</p>
@@ -310,35 +310,35 @@
 <li>Fregar amb els polzes (moviments circulars)</li>
 <li>Premsió suau a punts de tensió</li>
 <li>Acabar amb lliscaments suaus</li>
-</ul>
+</ol>
 <h3 id="b-per-a-cames">B. Per a cames</h3>
 <ol>
 <li>Lliscaments llargs, de turmell a maluc</li>
 <li>Premsió amb el polze a la zona del bessó</li>
 <li>Fregar els genolls suaument</li>
 <li>Massatge als peus (cada dit)</li>
-</ul>
+</ol>
 <h3 id="c-per-a-peus">C. Per a peus</h3>
 <ol>
 <li>Lliscaments del taló als dits</li>
 <li>Pressió al centre del peu</li>
 <li>Fregar cada dit</li>
 <li>Acabar amb lliscaments suaus</li>
-</ul>
+</ol>
 <h3 id="d-per-a-mans">D. Per a mans</h3>
 <ol>
 <li>Lliscaments del canell als dits</li>
 <li>Fregar cada dit</li>
 <li>Pressió al centre de la mà</li>
 <li>Acabar amb lliscaments</li>
-</ul>
+</ol>
 <h3 id="e-per-a-cara">E. Per a cara</h3>
 <ol>
 <li>Lliscaments suaus amb els dits</li>
 <li>Pressió al front, temples, cellls</li>
 <li>Massatge circular a les galtes</li>
 <li>Acabar amb lliscaments suaus</li>
-</ul>
+</ol>
 <h2 id="5-embolcalls-i-presentació-idees-per-a-regalar">5. Embolcalls i presentació (idees per a regalar)</h2>
 <h3 id="pack-de-3-olis">Pack de 3 olis</h3>
 <ul>
@@ -360,7 +360,7 @@
 </ul>
 <h2 id="6-notes-finals">6. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Un <strong>oli de massatge fet per tu</strong> és un <strong>acte d&#x27;amor</strong> en una ampolla. És curatiu, terapèutic, i crea <strong>moments de connexió</strong> amb les persones que estimes. Amb les plantes del teu hort i una mica d&#x27;afany, pots fer <strong>10 olis únics</strong> per a cada necessitat.</p>
+<blockquote>Un <strong>oli de massatge fet per tu</strong> és un <strong>acte d&#x27;amor</strong> en una ampolla. És curatiu, terapèutic, i crea <strong>moments de connexió</strong> amb les persones que estimes. Amb les plantes del teu hort i una mica d&#x27;afany, pots fer <strong>10 olis únics</strong> per a cada necessitat.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: comprar oli d&#x27;ametlles</li>
@@ -368,7 +368,7 @@
 <li><strong>Aquest mes</strong>: fer 2-3 olis més</li>
 <li><strong>Aquest any</strong>: tenir <strong>8-10 olis</strong> variats</li>
 <li><strong>Nadal</strong>: regalar olis artesans</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-de-les-mans">La saviesa de les mans</h3>
-<p>&gt; El <strong>massatge</strong> és la <strong>medicina més antiga</strong> del món. Les mans que toquen curen, que cuiden, que estimen. Cada oli que fas amb les teves pròpies mans és una <strong>continuació</strong> d&#x27;aquesta saviesa mil·lenària.</p>
+<blockquote>El <strong>massatge</strong> és la <strong>medicina més antiga</strong> del món. Les mans que toquen curen, que cuiden, que estimen. Cada oli que fas amb les teves pròpies mans és una <strong>continuació</strong> d&#x27;aquesta saviesa mil·lenària.</blockquote>
 <p>💆 <strong>Bona salut amb els teus olis de massatge!</strong></p>

@@ -32,7 +32,7 @@
 <td>Maig - principi juny</td>
 <td>Setembre - octubre</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Truc</strong>: sembrar en lluna minvant (creença popular) — sembla que dona millor collita, però no és crític.</li>
 </ul>
@@ -74,12 +74,16 @@
 <li><strong>Solcs</strong> separats 60-70 cm</li>
 <li><strong>Densitat</strong>: 4-5 plantes/m²</li>
 <li><strong>Tècnica de sembra</strong>:</li>
+</ul>
+<ol>
 <li><strong>Fer germinar les patates llavor</strong> 4-6 setmanes abans en un lloc fresc (10-15°C), lluminós → brots curts, robustos i verds</li>
 <li>Tallar les patates grans en trossos amb 2-3 ulls (gemmes), deixant cicatritzar 1-2 dies</li>
 <li>Solcs de 15 cm de profunditat</li>
 <li>Col·locar els trossos amb els brots cap amunt</li>
 <li>Cobrir amb 10-12 cm de terra</li>
 <li><strong>No regar fins que surt el brot</strong> (per evitar podridura)</li>
+</ol>
+<ul>
 <li><strong>Patates llavor</strong>:</li>
 <li>Comprovar certificades (evitar malalties)</li>
 <li>Guardar les pròpies: només si les plantes estan sanes, calibre mitjà, brot verd</li>
@@ -87,9 +91,13 @@
 <h2 id="conreu">Conreu</h2>
 <ul>
 <li><strong>Reg</strong>: <strong>molt crític en 3 moments</strong>:</li>
+</ul>
+<ol>
 <li><strong>Inici</strong> (sortida del brot): moderat</li>
 <li><strong>Tuberització</strong> (floració ≈ 5-7 setmanes post-sembra): abundant, 25-30 L/m²/setmana</li>
 <li><strong>Maduració</strong> (final): reduir</li>
+</ol>
+<ul>
 <li><strong>Evitar regs irregulars</strong>: causen tubercles deformats (&quot;corbates&quot;), clivelles, sarna</li>
 <li>Regar al matí o vespre; mai a ple sol</li>
 <li><strong>Encoixinat</strong>: molt recomanable sobretot a l&#x27;estiu (palla 10-15 cm) — manté fresc el sòl, evita que els tubercles s&#x27;exposin al sol (es tornen verds i tòxics per solanina)</li>

@@ -24,7 +24,7 @@
 <li>Unir amb cargols (més duradors que els claus) o amb brides</li>
 <li>Fer una tapa amb un palet sencer + lona plàstica</li>
 <li>Posar les 2 caixes contigües (per poder traspassar el compost)</li>
-</ul>
+</ol>
 <h3 id="opció-b-compostador-comprat">Opció B — Compostador comprat</h3>
 <ul>
 <li><strong>Cost</strong>: 100-250 €</li>
@@ -73,7 +73,7 @@
 <td>—</td>
 <td>Si plou, ja està</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="què-posar-hi-">Què posar-hi ✅</h2>
 <ul>
 <li>Restes de fruita i verdura (cuita o crua)</li>
@@ -113,11 +113,15 @@ Mes 12-18:  Madur. Olor de bosc. Fosc, homogeni, no es reconeixen restes.
 <li><strong>Voltejar</strong> cada 2-3 setmanes amb forca o pala</li>
 <li><strong>Afegir material</strong> quan hi hagi espai (1 part verd + 3 parts marró)</li>
 <li><strong>Comprovar humitat</strong>: ha d&#x27;estar com una esponja escorreguda</li>
+</ol>
+<ul>
 <li>Massa sec → afegir aigua o material verd</li>
 <li>Massa humit → afegir material marró (palla) i voltejar</li>
+</ul>
+<ol>
 <li><strong>Tapar</strong> sempre amb la tapa o lona</li>
 <li><strong>Traspassar</strong> a la 2a caixa als 6 mesos (compost jove → compost madur)</li>
-</ul>
+</ol>
 <h2 id="connexió-amb-el-teu-galliner">Connexió amb el teu galliner</h2>
 <p>Cada setmana:</p>
 <ol>
@@ -125,7 +129,7 @@ Mes 12-18:  Madur. Olor de bosc. Fosc, homogeni, no es reconeixen restes.
 <li><strong>Portar-ho al compostador jove</strong> amb el forca</li>
 <li><strong>Afegir material marró</strong> (palla, fullaraca) per equilibrar</li>
 <li><strong>Voltejar</strong> la pila sencera</li>
-</ul>
+</ol>
 <p>Si tens gallines, el <strong>jaç del galliner</strong> és un ingredient meravellós:</p>
 <ul>
 <li>Palla + fems + plomes + closques d&#x27;ou = barreja completa</li>
@@ -180,7 +184,7 @@ Mes 12-18:  Madur. Olor de bosc. Fosc, homogeni, no es reconeixen restes.
 <td>Sobretot a l&#x27;estiu</td>
 <td>Cobrir sempre les restes fresques amb marró</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="plantes-indicadores">Plantes indicadores</h2>
 <table>
 <thead><tr>
@@ -207,7 +211,7 @@ Mes 12-18:  Madur. Olor de bosc. Fosc, homogeni, no es reconeixen restes.
 <td>Molsa</td>
 <td>Massa humit, falta ventilació</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="calendari-anual-del-compostador-a-osona">Calendari anual del compostador a Osona</h2>
 <table>
 <thead><tr>
@@ -250,7 +254,7 @@ Mes 12-18:  Madur. Olor de bosc. Fosc, homogeni, no es reconeixen restes.
 <td>Des</td>
 <td>Repòs parcial; planificar any vinent</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="recursos">Recursos</h2>
 <ul>
 <li><strong>L&#x27;Era</strong> (Espai de Recursos Agroecològics, Manresa): cursos i assessorament</li>

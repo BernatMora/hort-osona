@@ -1,7 +1,7 @@
 <h1 id="-calendari-de-sembra-i-trasplantament-osona">📅 Calendari de sembra i trasplantament — Osona</h1>
-<p>&gt; Ajustat a Osona (continental, gelades fins a finals d&#x27;abril, calor de juliol-agost).</p>
-<p>&gt; M = sembra en test/llit de sembres (protegit) · S = sembra directa a terra · T = trasplantament · C = collita</p>
-<p>&gt; Llegendes a peu de taula.</p>
+<blockquote>Ajustat a Osona (continental, gelades fins a finals d&#x27;abril, calor de juliol-agost).</blockquote>
+<blockquote>M = sembra en test/llit de sembres (protegit) · S = sembra directa a terra · T = trasplantament · C = collita</blockquote>
+<blockquote>Llegendes a peu de taula.</blockquote>
 <h2 id="hortalisses-dx27estiu-fruitcalor">Hortalisses d&#x27;estiu (fruit/calor)</h2>
 <table>
 <thead><tr>
@@ -154,7 +154,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="hortalisses-de-fulla-i-arrel-primaveratardor">Hortalisses de fulla i arrel (primavera/tardor)</h2>
 <table>
 <thead><tr>
@@ -322,7 +322,7 @@
 <td>C</td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="hortalisses-de-gra-i-lleguminoses">Hortalisses de gra i lleguminoses</h2>
 <table>
 <thead><tr>
@@ -445,7 +445,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="bulbs-i-tubercles">Bulbs i tubercles</h2>
 <table>
 <thead><tr>
@@ -538,7 +538,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="aromàtiques-i-medicinals-perennes-o-anuals">Aromàtiques i medicinals (perennes o anuals)</h2>
 <table>
 <thead><tr>
@@ -736,7 +736,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="calendari-lunar-orientatiu">Calendari lunar (orientatiu)</h2>
 <ul>
 <li><strong>Lluna creixent (1a quinzena)</strong>: sembra/trasplantar parts aèries (tomàquet, pebrot, enciam, cols).</li>

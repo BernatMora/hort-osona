@@ -1,7 +1,7 @@
 <h1 id="-reg-i-fertilització-ecològica-osona">💧 Reg i fertilització ecològica — Osona</h1>
 <h2 id="1-reg-segons-estació-i-meteorologia">1. Reg segons estació i meteorologia</h2>
 <h3 id="regla-dx27or">Regla d&#x27;or</h3>
-<p>&gt; <strong>A Osona, la pluja no és mai prou.</strong> De mitjana cal complementar 400-600 mm anuals amb reg. Sobretot de juny a setembre.</p>
+<blockquote><strong>A Osona, la pluja no és mai prou.</strong> De mitjana cal complementar 400-600 mm anuals amb reg. Sobretot de juny a setembre.</blockquote>
 <h3 id="necessitats-hídriques-per-cultiu-lm²-i-setmana-en-ple-estiu">Necessitats hídriques per cultiu (L/m² i setmana, en ple estiu)</h3>
 <table>
 <thead><tr>
@@ -74,7 +74,7 @@
 <td>10-15</td>
 <td>Mínim de manteniment</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="calendari-de-reg-a-osona">Calendari de reg a Osona</h3>
 <table>
 <thead><tr>
@@ -155,7 +155,7 @@
 <td>Molt baix</td>
 <td>Gairebé nul</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="tipus-de-reg-recomanat">Tipus de reg recomanat</h3>
 <table>
 <thead><tr>
@@ -194,7 +194,7 @@
 <td>Malbarat, malalties</td>
 <td><strong>Evitar en ecològic</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="reg-intelligent">Reg intel·ligent</h3>
 <ul>
 <li><strong>Matinar (6-9h)</strong> o <strong>vesprada-nit (19-21h)</strong>: evitar evaporació i cremar fulles.</li>
@@ -206,7 +206,7 @@
 </ul>
 <h2 id="2-fertilització-ecològica">2. Fertilització ecològica</h2>
 <h3 id="principi">Principi</h3>
-<p>&gt; <strong>Alimenta el sòl, no la planta.</strong> Un sòl viu (fongs, bacteris, cucs, microartròpodes) alimenta la planta. L&#x27;objectiu és <strong>mantenir i augmentar la matèria orgànica</strong> del sòl (objectiu: 3-5% MO).</p>
+<blockquote><strong>Alimenta el sòl, no la planta.</strong> Un sòl viu (fongs, bacteris, cucs, microartròpodes) alimenta la planta. L&#x27;objectiu és <strong>mantenir i augmentar la matèria orgànica</strong> del sòl (objectiu: 3-5% MO).</blockquote>
 <h3 id="tipus-de-fertilitzants-ecològics">Tipus de fertilitzants ecològics</h3>
 <h4 id="a-matèria-orgànica">A. Matèria orgànica</h4>
 <table>
@@ -282,7 +282,7 @@
 <td>Ràpid</td>
 <td>Potassi, alcalinitza; 100 g/m²/any màx</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="b-adobs-verds-veure-05-cobertes-adobs-verdsmd">B. Adobs verds (veure 05-cobertes-adobs-verds.md)</h4>
 <h4 id="c-preparats-líquids-casolans">C. Preparats líquids casolans</h4>
 <table>
@@ -316,7 +316,7 @@
 <td>Estimulador potent</td>
 <td>1 part lixiviat en 10 parts aigua</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="d-minerals-naturals">D. Minerals naturals</h4>
 <table>
 <thead><tr>
@@ -359,7 +359,7 @@
 <td>Reforça parets cel·lulars</td>
 <td>Equisetum o pols de quars</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="pla-anual-de-fertilització-a-osona">Pla anual de fertilització a Osona</h3>
 <table>
 <thead><tr>
@@ -386,7 +386,7 @@
 <td><strong>Final estiu (ago-set)</strong></td>
 <td>Preparar parcel·les per a cultius de tardor amb compost.</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="diagnòstic-ràpid-de-carències">Diagnòstic ràpid de carències</h3>
 <table>
 <thead><tr>
@@ -434,7 +434,7 @@
 <td>Fòsfor</td>
 <td>Farina d&#x27;os</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="anàlisi-de-sòl">Anàlisi de sòl</h3>
 <ul>
 <li><strong>Cada 3-4 anys</strong>: fer una analítica a un laboratori (a Vic, Manresa o per internet).</li>
@@ -510,4 +510,4 @@
 <td>Gairebé nul</td>
 <td>Cobrir parcel·les, palla, repòs</td>
 </tr>
-</table>
+</tbody></table>

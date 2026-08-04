@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-per-fer-planters-hort-osona">🌱 Guia completa per fer planters — Hort Osona</h1>
-<p>&gt; Fer planter és un dels actes més bonics i útils de l&#x27;hort ecològic. Et permet <strong>avançar la temporada 4-6 setmanes</strong>, <strong>estalviar diners</strong>, <strong>controlar la qualitat</strong> i <strong>provar varietats locals</strong> que no trobaràs al mercat. A Osona, amb el seu clima continental, fer planter és gairebé imprescindible per als cultius d&#x27;estiu.</p>
+<blockquote>Fer planter és un dels actes més bonics i útils de l&#x27;hort ecològic. Et permet <strong>avançar la temporada 4-6 setmanes</strong>, <strong>estalviar diners</strong>, <strong>controlar la qualitat</strong> i <strong>provar varietats locals</strong> que no trobaràs al mercat. A Osona, amb el seu clima continental, fer planter és gairebé imprescindible per als cultius d&#x27;estiu.</blockquote>
 <h2 id="per-què-fer-planter">Per què fer planter?</h2>
 <h3 id="avantatges-clau">Avantatges clau</h3>
 <ol>
@@ -9,7 +9,7 @@
 <li><strong>🌱 Varietats locals</strong> — pots sembrar tomàquet de Montserrat, pebrot d&#x27;Olot, etc.</li>
 <li><strong>🏡 Autoabastament</strong> — ets més lliure</li>
 <li><strong>❄️ Protecció</strong> — les plantes joves creixen protegides del fred, gelades, plagues</li>
-</ul>
+</ol>
 <h2 id="1-conceptes-bàsics">1. Conceptes bàsics</h2>
 <h3 id="què-és-un-planter">Què és un planter?</h3>
 <p>Un planter és una <strong>planta jove</strong> que ha crescut en un recipient petit (test, safata, etc.) fins que està llesta per ser trasplantada a l&#x27;hort. Es compon de:</p>
@@ -57,7 +57,7 @@
 <td>Per llavors petites o amb gelades</td>
 <td>Efecte hivernacle</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-materials-necessaris">2. Materials necessaris</h2>
 <h3 id="bàsics-per-començar">Bàsics (per començar)</h3>
 <table>
@@ -97,7 +97,7 @@
 <td>1-2 €</td>
 <td>Plàstic o fusta, retolador permanent</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="opcionals-per-millorar">Opcionals (per millorar)</h3>
 <table>
 <thead><tr>
@@ -130,7 +130,7 @@
 <td>5-10 €</td>
 <td>Estimula l&#x27;enraizament</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="utensilis-addicionals">Utensilis addicionals</h3>
 <ul>
 <li>Cullera petita o escuradents</li>
@@ -169,7 +169,7 @@
 <li><strong>Mesclar</strong> amb 30% de sorra gruixuda o perlita</li>
 <li><strong>Esterilitzar</strong> al forn 30 min a 80°C (opcional, per evitar males herbes)</li>
 <li><strong>Refredar</strong> abans d&#x27;usar</li>
-</ul>
+</ol>
 <h2 id="4-pas-a-pas-fer-un-planter">4. Pas a pas: fer un planter</h2>
 <h3 id="a-preparar-el-recipient">A. Preparar el recipient</h3>
 <ol>
@@ -178,33 +178,37 @@
 <li><strong>Fer forats de drenatge</strong> si no en té (per a envasos reciclats)</li>
 <li><strong>Omplir</strong> amb substrat fins a 1 cm del borde</li>
 <li><strong>Anivellar</strong> suaument, sense compactar</li>
-</ul>
+</ol>
 <h3 id="b-sembrar-les-llavors">B. Sembrar les llavors</h3>
 <p><strong>Mètode clàssic:</strong></p>
 <ol>
 <li><strong>Fer forats petits</strong> amb el dit o un escuradents</li>
+</ol>
+<ul>
 <li>Profunditat: <strong>2-3 vegades la mida de la llavor</strong></li>
 <li>Tomàquet: 0,5-1 cm</li>
 <li>Pebrot: 0,5-1 cm</li>
 <li>Cogombre/carbassó: 2-3 cm</li>
 <li>Enciam: 0,5 cm</li>
+</ul>
+<ol>
 <li><strong>Posar 1-2 llavors</strong> per alvèol</li>
 <li><strong>Cobrir</strong> amb substrat fi</li>
 <li><strong>Premsar suaument</strong> (per contacte llavor-substrat)</li>
-</ul>
+</ol>
 <p><strong>Mètode &quot;a voleo&quot;</strong> (per a llavors molt petites comenciams o alfàbrega):</p>
 <ol>
 <li>Barrejar les llavors amb sorra fina (1 part llavors + 3 parts sorra)</li>
 <li>Escampar per la superfície</li>
 <li>Cobrir amb substrat fi (no gaire)</li>
-</ul>
+</ol>
 <h3 id="c-regar">C. Regar</h3>
 <ol>
 <li><strong>Regar suaument</strong> amb polvoritzador (per no moure les llavors)</li>
 <li>O <strong>regar per immersió</strong> (submergir la safata 1 cm en aigua 5-10 min)</li>
 <li><strong>Deixar escórrer</strong> bé</li>
 <li><strong>Mantenir humit</strong> (no entollat, no sec)</li>
-</ul>
+</ol>
 <h3 id="d-etiquetar">D. Etiquetar</h3>
 <p>Sembla obvi, però <strong>sempre etiqueta</strong>! Posa:</p>
 <ul>
@@ -323,7 +327,7 @@
 <td>14-28</td>
 <td>No</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Truc clau</strong>: cobrir la safata amb un plàstic transparent fins que germinin (efecte hivernacle). Aixeca&#x27;l 5 min cada dia per ventilar.</p>
 <h3 id="f-post-germinació">F. Post-germinació</h3>
 <p>Quan les llavors han germinat (cotiledons verds):</p>
@@ -333,7 +337,7 @@
 <li><strong>Temperatura lleugerament més baixa</strong> (15-20°C) per evitar que s&#x27;estirin</li>
 <li><strong>Regar</strong> quan el substrat comenci a assecar-se</li>
 <li><strong>Ventilar</strong> si fa molta calor</li>
-</ul>
+</ol>
 <h2 id="5-repicat-trasplantar-les-plàntules">5. Repicat: trasplantar les plàntules</h2>
 <h3 id="què-és-el-repicat">Què és el repicat?</h3>
 <p>Moure les plàntules del recipient petit a un test individual, perquè tinguin més espai per créixer.</p>
@@ -353,7 +357,7 @@
 <li><strong>Col·locar</strong> al test, amb les arrels ben esteses</li>
 <li><strong>Omplir</strong> amb substrat fins a sota els cotiledons</li>
 <li><strong>Regar</strong> suaument</li>
-</ul>
+</ol>
 <h4 id="per-a-tests-petits-test-més-gran">Per a tests petits → test més gran</h4>
 <ul>
 <li>Igual, però amb més cura amb les arrels</li>
@@ -394,7 +398,7 @@
 <td><strong>Dia 9-10</strong></td>
 <td>Tot el dia i nit (si la Tª &gt; 10°C)</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Si baixa de 8°C o gelada, tornar a l&#x27;interior!</strong></p>
 <h2 id="7-trasplantament-a-lx27hort-definitiu">7. Trasplantament: a l&#x27;hort definitiu</h2>
 <h3 id="quan-trasplantar">Quan trasplantar</h3>
@@ -414,7 +418,7 @@
 <li><strong>Omplir</strong> amb terra</li>
 <li><strong>Regar</strong> bé (10-15 L/m²)</li>
 <li><strong>Mulching</strong> al voltant (palla)</li>
-</ul>
+</ol>
 <h3 id="primeres-cures-post-trasplantament">Primeres cures post-trasplantament</h3>
 <ul>
 <li><strong>Ombra</strong> 2-3 dies amb malla d&#x27;ombreig si fa sol fort</li>
@@ -452,7 +456,7 @@
 <td>0,5-1 cm</td>
 <td>5-8 llavors</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Condicions</strong>: 20-25°C (a casa, amb manta tèrmica o prop de la finestra al sud), substrat humit, llum abundant</p>
 <h3 id="març-planter-dx27hivern-primavera">Març: PLANTER D&#x27;HIVERN-PRIMAVERA</h3>
 <p><strong>Dies 1-15 de març</strong>:</p>
@@ -487,7 +491,7 @@
 <td>1 cm</td>
 <td>4-6 llavors</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Dies 15-31 de març</strong>:</p>
 <table>
 <thead><tr>
@@ -514,7 +518,7 @@
 <td>1 cm</td>
 <td>20-30 llavors</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="abril-planter-dx27estiu-principis">Abril: PLANTER D&#x27;ESTIU (principis)</h3>
 <p><strong>Dies 1-15 d&#x27;abril</strong>:</p>
 <table>
@@ -554,7 +558,7 @@
 <td>0,5 cm</td>
 <td>6-8 llavors</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Dies 15-30 d&#x27;abril</strong>:</p>
 <ul>
 <li>Repicar tomàquets, pebrots, albergínies a tests individuals</li>

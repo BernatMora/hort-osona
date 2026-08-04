@@ -68,21 +68,21 @@
 <td>—</td>
 <td><strong>~19 m²</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="infraestructura">Infraestructura</h2>
 <ul>
-<li>[x] Galliner (actiu, gallines aporten fems + control de plagues)</li>
-<li>[ ] Compostador (en projecte — pendent de construir)</li>
-<li>[x] Reg manual amb MÀNEGA</li>
-<li>[ ] Mulching — PENDENT (cal fer aquesta setmana!)</li>
-<li>[ ] Sense hivernacle</li>
-<li>[ ] Sense túnel</li>
-<li>[ ] Malla antiinsectes <em>(a afegir per Tuta)</em></li>
-<li>[ ] Malla d&#x27;ombreig <em>(útil a l&#x27;estiu)</em></li>
-<li>[ ] Sensorgem d&#x27;humitat</li>
-<li>[ ] Pluviòmetre</li>
-<li>[ ] Hotel d&#x27;insectes</li>
-<li>[ ] Bassa d&#x27;aigua de pluja</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0" checked> <span>Galliner (actiu, gallines aporten fems + control de plagues)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span>Compostador (en projecte — pendent de construir)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2" checked> <span>Reg manual amb MÀNEGA</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span>Mulching — PENDENT (cal fer aquesta setmana!)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span>Sense hivernacle</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span>Sense túnel</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span>Malla antiinsectes <em>(a afegir per Tuta)</em></span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span>Malla d&#x27;ombreig <em>(útil a l&#x27;estiu)</em></span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span>Sensorgem d&#x27;humitat</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span>Pluviòmetre</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="10"> <span>Hotel d&#x27;insectes</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="11"> <span>Bassa d&#x27;aigua de pluja</span></label></li>
 </ul>
 <h2 id="cultius-presents-aquesta-temporada-juny-2026">Cultius presents aquesta temporada (juny 2026)</h2>
 <ol>
@@ -94,7 +94,7 @@
 <li><strong>Carbasses</strong> — varietat a anotar</li>
 <li><strong>Carabassons</strong> — varietat a anotar</li>
 <li><strong>Cebes</strong> — varietat a anotar (sembra agost-set per trasplantar oct-nov → collita abril-juny)</li>
-</ul>
+</ol>
 <h2 id="distribució-de-lx27hort-esquema-a-omplir">Distribució de l&#x27;hort (esquema a omplir)</h2>
 <pre><code>
 ┌─────────────────────────────────────────────┐
@@ -107,16 +107,16 @@
 └─────────────────────────────────────────────┘
 </code></pre>
 <h2 id="plagues-i-malalties-observades">Plagues i malalties observades</h2>
-<p>&gt; Cal omplir. Mentre no sàpigues, fes <strong>revisió setmanal</strong> (10 min) i apunta qualsevol cosa rara al quadern.</p>
+<blockquote>Cal omplir. Mentre no sàpigues, fes <strong>revisió setmanal</strong> (10 min) i apunta qualsevol cosa rara al quadern.</blockquote>
 <h2 id="fauna-beneficiosa-observada">Fauna beneficiosa observada</h2>
 <ul>
-<li>[ ] Marietes</li>
-<li>[ ] Abelles / borinots</li>
-<li>[ ] Sírfids</li>
-<li>[ ] Ratpenats</li>
-<li>[ ] Granotes / gripaus</li>
-<li>[ ] Pàrids (ocells)</li>
-<li>[ ] Altres: ___________</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="12"> <span>Marietes</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="13"> <span>Abelles / borinots</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="14"> <span>Sírfids</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="15"> <span>Ratpenats</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="16"> <span>Granotes / gripaus</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="17"> <span>Pàrids (ocells)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="18"> <span>Altres: ___________</span></label></li>
 </ul>
 <h2 id="calendari-de-lx27hort-a-actualitzar-cada-any">Calendari de l&#x27;hort (a actualitzar cada any)</h2>
 <h3 id="any-2026">Any 2026</h3>
@@ -135,14 +135,14 @@
 </ul>
 <h2 id="proves-a-fer">Proves a fer</h2>
 <ul>
-<li>[ ] Adquirir llavors de varietats locals catalanes: mongeta del Ganxet, mongeta paretana, tomàquet de Montserrat, pebrot d&#x27;Olot, poma de Tona (per contacte amb L&#x27;Era, Esporus o Les Refardes)</li>
-<li>[ ] Construir compostador (veure fitxa 04-reg-fertilitzacio.md)</li>
-<li>[ ] Pluviòmetre a l&#x27;hort</li>
-<li>[ ] Hotel d&#x27;insectes</li>
-<li>[ ] Aromàtiques perennes (romaní, sàlvia, farigola, orenga, menta, espígol)</li>
-<li>[ ] Calendula, caputxina, tagetes (acompanyants)</li>
-<li>[ ] Malla antiinsectes per a tomaqueres (Tuta)</li>
-<li>[ ] Sistema de reg per degoteig casolà (ampolles reciclades) — URGENT per sòl sorrenc!</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="19"> <span>Adquirir llavors de varietats locals catalanes: mongeta del Ganxet, mongeta paretana, tomàquet de Montserrat, pebrot d&#x27;Olot, poma de Tona (per contacte amb L&#x27;Era, Esporus o Les Refardes)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="20"> <span>Construir compostador (veure fitxa 04-reg-fertilitzacio.md)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="21"> <span>Pluviòmetre a l&#x27;hort</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="22"> <span>Hotel d&#x27;insectes</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="23"> <span>Aromàtiques perennes (romaní, sàlvia, farigola, orenga, menta, espígol)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="24"> <span>Calendula, caputxina, tagetes (acompanyants)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="25"> <span>Malla antiinsectes per a tomaqueres (Tuta)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="26"> <span>Sistema de reg per degoteig casolà (ampolles reciclades) — URGENT per sòl sorrenc!</span></label></li>
 </ul>
 <h2 id="notes-personals">Notes personals</h2>
-<p>&gt; _Espai per a observacions, idees, dubtes, descobriments._</p>
+<blockquote>_Espai per a observacions, idees, dubtes, descobriments._</blockquote>

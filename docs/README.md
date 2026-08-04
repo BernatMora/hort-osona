@@ -1,9 +1,10 @@
 <h1 id="-hort-osona-base-de-coneixement">🌱 Hort Osona — Base de coneixement</h1>
-<p>&gt; <strong>🚀 <a href="https://BernatMora.github.io/hort-osona/" target="_blank" rel="noopener">Obre la PWA al navegador →</a></strong></p>
-<p>&gt;</p>
-<p>&gt; Disponible com a <strong>app instal·lable</strong> (Chrome / Edge / Android). Funciona <strong>offline</strong>.</p>
-<p>&gt; 📱 Banner d&#x27;instal·lació automàtic a la primera visita des del mòbil.</p>
+<blockquote><strong>🚀 <a href="https://BernatMora.github.io/hort-osona/" target="_blank" rel="noopener">Obre la PWA al navegador →</a></strong></blockquote>
+<blockquote></blockquote>
+<blockquote>Disponible com a <strong>app instal·lable</strong> (Chrome / Edge / Android). Funciona <strong>offline</strong>.</blockquote>
+<blockquote>📱 Banner d&#x27;instal·lació automàtic a la primera visita des del mòbil.</blockquote>
 <p>Projecte personal d&#x27;horticultura ecològica adaptat a la comarca d&#x27;<strong>Osona</strong> (Catalunya central, voltant de Vic). Inclou planificació, fitxes de cultiu, guies avançades i una secció de plantes medicinals i remeieres.</p>
+<blockquote><strong>📖 Per a la visió completa del projecte (PWA + IoT + IA + Alexa + Cloud), consulta <a href="PROJECTE-COMPLET.md" target="_blank" rel="noopener">PROJECTE-COMPLET.md</a>.</strong></blockquote>
 <h2 id="-índex-ràpid">📑 Índex ràpid</h2>
 <h3 id="planificació">Planificació</h3>
 <ul>
@@ -136,9 +137,10 @@ hort-osona/
 <p>Tots els 71 documents <code>.md</code> accessibles des d&#x27;un sol HTML amb sidebar,</p>
 <p>cercador i hash routing. Generat per <code>site/build.py</code> a partir de <code>template.html</code>.</p>
 <pre><code>
-python site/build.py          # regenera site/index.html
-python -m http.server 8765    # servidor local
-# obre http://127.0.0.1:8765/site/index.html
+python3 build_portal_v2.py    # regenera index.html i docs/ a l&#x27;arrel
+python3 verify_portal.py      # comprova documents, recursos i JavaScript
+python3 -m http.server 8765   # servidor local
+# obre http://127.0.0.1:8765/
 </code></pre>
 <p>Més detalls a <a href="SETUP-SITE.md" target="_blank" rel="noopener">SETUP-SITE.md</a>.</p>
 <h2 id="-última-actualització">📅 Última actualització</h2>

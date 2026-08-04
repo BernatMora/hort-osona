@@ -1,5 +1,5 @@
 <h1 id="-calculadora-de-sembra">🌱 Calculadora de sembra</h1>
-<p>&gt; Eina per calcular quantes plantes necessites i quantes llavors comprar. Inclou factors de pèrdues per germinació, planter, plagues, etc.</p>
+<blockquote>Eina per calcular quantes plantes necessites i quantes llavors comprar. Inclou factors de pèrdues per germinació, planter, plagues, etc.</blockquote>
 <h2 id="-com-utilitzar-aquesta-calculadora">📋 Com utilitzar aquesta calculadora</h2>
 <p>Per a cada cultiu, segueix aquests passos:</p>
 <ol>
@@ -8,7 +8,7 @@
 <li><strong>Calcula el nombre de plantes</strong> = superfície / (marc × marc)</li>
 <li><strong>Aplica un factor de pèrdua</strong> (germinació, fallades, plagues)</li>
 <li><strong>Obtindràs el nombre de llavors</strong> a comprar</li>
-</ul>
+</ol>
 <h2 id="-taula-resum">📊 Taula resum</h2>
 <table>
 <thead><tr>
@@ -214,7 +214,7 @@
 <td>1,2</td>
 <td>1 tubercle</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-exemples-de-càlcul">🧮 Exemples de càlcul</h2>
 <h3 id="exemple-1-20-m²-de-tomàquet">Exemple 1: 20 m² de tomàquet</h3>
 <ul>
@@ -277,7 +277,7 @@
 <td>1,3</td>
 <td>2-5 plantes per &quot;llavor&quot;, cal aclarir</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-ajudes-de-càlcul-de-llavors">💰 Ajudes de càlcul de llavors</h2>
 <table>
 <thead><tr>
@@ -320,7 +320,7 @@
 <td>5-10 g (≈500-1000 llavors)</td>
 <td>2-5 m²</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-plantació-per-llarg-de-solc-no-per-superfície">📐 Plantació per llarg de solc (no per superfície)</h2>
 <p>Si plantes en filera (no a cops), pots calcular per <strong>metres lineals</strong>:</p>
 <h3 id="taula-metres-lineals-m²">Taula metres lineals → m²</h3>
@@ -353,7 +353,7 @@
 <td>100 cm</td>
 <td>1,00 m²</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="exemple-30-m-lineals-de-pastanaga-en-solc-de-40-cm">Exemple: 30 m lineals de pastanaga en solc de 40 cm</h3>
 <ul>
 <li>Superfície: 30 × 0,40 = 12 m²</li>
@@ -421,7 +421,7 @@
 <td>—</td>
 <td>—</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-veure-també">📚 Veure també</h2>
 <ul>
 <li><a href="01-calendari-sembra.md" target="_blank" rel="noopener">Calendari de sembra</a> — què sembrar quan</li>

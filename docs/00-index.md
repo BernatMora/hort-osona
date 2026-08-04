@@ -18,9 +18,13 @@
 <li><a href="05-cobertes-adobs-verds.md" target="_blank" rel="noopener">Cobertes vegetals i adobs verds</a></li>
 <li><a href="08-pla-mensual.md" target="_blank" rel="noopener">Predicció de tasques setmanals</a></li>
 <li><a href="07-fitxes-cultius/" target="_blank" rel="noopener">Fitxes completes de cultius</a></li>
+</ol>
+<ul>
 <li><a href="07-fitxes-cultius/all.md" target="_blank" rel="noopener">All</a> · <a href="07-fitxes-cultius/bleda.md" target="_blank" rel="noopener">Bleda</a> · <a href="07-fitxes-cultius/ceba.md" target="_blank" rel="noopener">Ceba</a> · <a href="07-fitxes-cultius/col.md" target="_blank" rel="noopener">Col</a> · <a href="07-fitxes-cultius/enciam.md" target="_blank" rel="noopener">Enciam</a> · <a href="07-fitxes-cultius/fava.md" target="_blank" rel="noopener">Fava</a> · <a href="07-fitxes-cultius/mongeta.md" target="_blank" rel="noopener">Mongeta</a> · <a href="07-fitxes-cultius/pastanaga.md" target="_blank" rel="noopener">Pastanaga</a> · <a href="07-fitxes-cultius/patata.md" target="_blank" rel="noopener">Patata</a> · <a href="07-fitxes-cultius/pebrot.md" target="_blank" rel="noopener">Pebrot</a> · <a href="07-fitxes-cultius/pesol.md" target="_blank" rel="noopener">Pèsol</a> · <a href="07-fitxes-cultius/tomaquet.md" target="_blank" rel="noopener">Tomàquet</a> · <a href="07-fitxes-cultius/carbassa.md" target="_blank" rel="noopener">Carbassa</a> · <a href="07-fitxes-cultius/carabasso.md" target="_blank" rel="noopener">Carabassó</a> · <a href="07-fitxes-cultius/aromatiques.md" target="_blank" rel="noopener">Aromàtiques</a></li>
-<li><a href="06-varietats-tradicionals.md" target="_blank" rel="noopener">Varietats tradicionals catalanes i d&#x27;Osona</a></li>
 </ul>
+<ol>
+<li><a href="06-varietats-tradicionals.md" target="_blank" rel="noopener">Varietats tradicionals catalanes i d&#x27;Osona</a></li>
+</ol>
 <h2 id="eines-operatives">Eines operatives</h2>
 <ul>
 <li><a href="pla-12-mesos.md" target="_blank" rel="noopener">Pla dels 12 mesos</a> — guia any-tipus</li>
@@ -31,7 +35,7 @@
 <li><a href="pressupost-hort-imprimible.html" target="_blank" rel="noopener">Pressupost anual</a> — amb càlcul automàtic</li>
 <li><a href="croquis-hort.md" target="_blank" rel="noopener">Croquis dibuixable</a> — plantilla per planificar l&#x27;espai</li>
 <li><a href="guia-fermentats.md" target="_blank" rel="noopener">Guia de fermentats</a> — xucrut, kimchi, kombucha, kefir</li>
-<li><a href="site/index.html" target="_blank" rel="noopener">🌐 <strong>Lloc web unificat</strong></a> — tots els .md navegables amb cerca i categories (regenerable amb <code>site/build.py</code>)</li>
+<li><a href="index.html" target="_blank" rel="noopener">🌐 <strong>Lloc web unificat</strong></a> — tots els documents navegables amb cerca i categories (regenerable amb <code>build_portal_v2.py</code>)</li>
 </ul>
 <h2 id="documentació-del-projecte">Documentació del projecte</h2>
 <ul>

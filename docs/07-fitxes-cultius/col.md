@@ -1,5 +1,5 @@
 <h1 id="fitxa-de-cultiu-col-brassica-oleracea">Fitxa de cultiu: Col (Brassica oleracea)</h1>
-<p>&gt; <strong>Aplica a:</strong> col llombarda, col de cabdell (repol·lo), col kale, bròquil, coliflor, colrave (kohlrabi), col de Brussel·les, col xina (bok choy), col ràpano.</p>
+<blockquote><strong>Aplica a:</strong> col llombarda, col de cabdell (repol·lo), col kale, bròquil, coliflor, colrave (kohlrabi), col de Brussel·les, col xina (bok choy), col ràpano.</blockquote>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Brassica oleracea</em> (var. <em>capitata</em>, <em>acephala</em>, <em>botrytis</em>, <em>gemmifera</em>, <em>gongylodes</em>, <em>pekinensis</em>, <em>rapa</em>)</li>
@@ -43,7 +43,7 @@
 <td>Juny-juliol</td>
 <td>Octubre-març</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Dies des de trasplantament fins a collita</strong>: 60-150 dies segons varietat</li>
 </ul>

@@ -1,5 +1,5 @@
 <h1 id="-pla-dels-12-mesos-hort-ecològic-a-osona-any-tipus">🗓️ Pla dels 12 mesos — Hort ecològic a Osona (any tipus)</h1>
-<p>&gt; Visió general del que toca fer a l&#x27;hort al llarg de l&#x27;any. Cada secció mensual té una visió sintètica — per a detalls operacionals, consulta els plans mensuals concrets a <code>plans-mensuals/</code>.</p>
+<blockquote>Visió general del que toca fer a l&#x27;hort al llarg de l&#x27;any. Cada secció mensual té una visió sintètica — per a detalls operacionals, consulta els plans mensuals concrets a <code>plans-mensuals/</code>.</blockquote>
 <h2 id="característiques-del-clima-dx27osona">Característiques del clima d&#x27;Osona</h2>
 <ul>
 <li><strong>Altitud</strong>: 500-700 m</li>
@@ -300,7 +300,7 @@
 <td>Novembre-desembre</td>
 <td>Descans, emmagatzematge, poda, planificació</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-dates-clau-dx27osona">🗓️ Dates clau d&#x27;Osona</h2>
 <ul>
 <li><strong>25 gener</strong> — Sant Pau: marcar inici de l&#x27;any hortícola</li>

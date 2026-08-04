@@ -78,7 +78,7 @@
 <td>Cuina (peixos), repel·lent</td>
 <td>Resisteix gelades; vigorós</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="-anuals-o-biennals-cal-sembrar-cada-any">🟢 Anuals o biennals (cal sembrar cada any)</h3>
 <table>
 <thead><tr>
@@ -116,7 +116,7 @@
 <td>Flors comestibles, mel·lífera, medicinal</td>
 <td>Es ressembra sola cada any. <strong>Molt bona</strong> prop de tomaqueres i maduixes</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="disposició-recomanada-a-lx27hort">Disposició recomanada a l&#x27;hort</h2>
 <h3 id="-la-quotbarrera-aromàticaquot-al-voltant-de-lx27hort-tot-el-">🌺 La &quot;barrera aromàtica&quot; (al voltant de l&#x27;hort, tot el perímetre)</h3>
 <ul>
@@ -181,7 +181,7 @@
 <td><strong>Nov-Feb</strong></td>
 <td>Protegir llorer, alfàbrega perenne (<em>O. kilimandscharicum</em>) amb malla</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="com-assecar-aromàtiques-per-guardar-tot-lx27any">Com assecar aromàtiques (per guardar tot l&#x27;any)</h2>
 <ol>
 <li><strong>Collir</strong> al matí, quan la rosada s&#x27;ha eixugat</li>
@@ -190,7 +190,7 @@
 <li><strong>Esperar 2-3 setmanes</strong></li>
 <li><strong>Triturar</strong> i guardar en pots de vidre amb tapa</li>
 <li><strong>Durada</strong>: 1 any (després perden aroma)</li>
-</ul>
+</ol>
 <h2 id="per-a-infusions-recepta-bàsica">Per a infusions (recepta bàsica)</h2>
 <ul>
 <li><strong>Digestiva</strong>: menta + farigola + camamilla</li>

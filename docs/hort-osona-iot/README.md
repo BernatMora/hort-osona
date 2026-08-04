@@ -51,6 +51,8 @@ hort-osona-iot/
 <h2 id="-flux-de-dades">🔄 Flux de dades</h2>
 <ol>
 <li><strong>Node hort</strong> (cada 15 min):</li>
+</ol>
+<ul>
 <li>Es desperta del deep sleep</li>
 <li>Llegeix BME280 (T, H, P) + sensor sol + bateria</li>
 <li>Mostra a l&#x27;OLED 5 segons</li>
@@ -59,6 +61,8 @@ hort-osona-iot/
 </ul>
 <ol>
 <li><strong>Receptor Pi 4</strong> (continu):</li>
+</ol>
+<ul>
 <li>Escolta LoRa amb el HAT SX1262</li>
 <li>Parseja el CSV</li>
 <li>INSERT a Supabase (<code>mesures</code>)</li>
@@ -66,6 +70,8 @@ hort-osona-iot/
 </ul>
 <ol>
 <li><strong>Web</strong> (a l&#x27;obrir):</li>
+</ol>
+<ul>
 <li>Carrega últimes 100 mesures</li>
 <li>Mostra stats (T, H, sol, bat)</li>
 <li>Dibuixa gràfic 24h</li>
@@ -79,7 +85,7 @@ hort-osona-iot/
 <li>Crear nou projecte</li>
 <li>Anar a SQL Editor i executar <code>backend/supabase_schema.sql</code></li>
 <li>Copiar URL i anon key → posar-les a <code>lora_receiver.py</code> i <code>web/hort-live.html</code></li>
-</ul>
+</ol>
 <h3 id="pas-2-muntar-el-node-emissor">Pas 2: Muntar el node emissor</h3>
 <ul>
 <li>Seguir <code>node-emissor/docs/steps.json</code> (10 passos)</li>
@@ -157,17 +163,17 @@ T:18.5,H:62.3,P:1013.2,S:45,BAT:3.92
 <td><strong>TOTAL</strong></td>
 <td><strong>~105 €</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-cosa-a-fer">🎯 Cosa a fer</h2>
 <ul>
-<li>[x] Hardware especificat (Bricogeek + Amazon ES)</li>
-<li>[x] Node emissor firmware (PlatformIO)</li>
-<li>[x] Receptor Python (RPi 4 + LoRa → Supabase)</li>
-<li>[x] Schema Supabase (2 taules + Realtime)</li>
-<li>[x] Vista web amb dades realtime</li>
-<li>[ ] Comprar hardware</li>
-<li>[ ] Muntar el node</li>
-<li>[ ] Muntar el receptor</li>
-<li>[ ] Crear compte Supabase</li>
-<li>[ ] Provar el flux complet</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0" checked> <span>Hardware especificat (Bricogeek + Amazon ES)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1" checked> <span>Node emissor firmware (PlatformIO)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2" checked> <span>Receptor Python (RPi 4 + LoRa → Supabase)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3" checked> <span>Schema Supabase (2 taules + Realtime)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4" checked> <span>Vista web amb dades realtime</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span>Comprar hardware</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span>Muntar el node</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span>Muntar el receptor</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span>Crear compte Supabase</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span>Provar el flux complet</span></label></li>
 </ul>

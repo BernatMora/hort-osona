@@ -1,5 +1,5 @@
 <h1 id="-pla-dx27acció-mensual-hort-ecològic-osona">📅 Pla d&#x27;acció mensual — Hort ecològic Osona</h1>
-<p>&gt; Aquest és el calendari-base de tasques mensuals. A cada arxiu <code>plans-mensuals/AAAA-MM.md</code> s&#x27;hi desarà el pla personalitzat del mes amb les varietats, cultius i notes específiques.</p>
+<blockquote>Aquest és el calendari-base de tasques mensuals. A cada arxiu <code>plans-mensuals/AAAA-MM.md</code> s&#x27;hi desarà el pla personalitzat del mes amb les varietats, cultius i notes específiques.</blockquote>
 <h2 id="gener-repòs-actiu">Gener — Repòs actiu</h2>
 <p><strong>A l&#x27;hort</strong></p>
 <ul>

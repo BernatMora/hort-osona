@@ -1,5 +1,5 @@
 <h1 id="-croquis-de-lx27hort-plantilla-dibuixable">🗺️ Croquis de l&#x27;hort — Plantilla dibuixable</h1>
-<p>&gt; Imprimeix aquesta plantilla per fer croquis a mà o dibuixa&#x27;l directament amb l&#x27;eina d&#x27;edició.</p>
+<blockquote>Imprimeix aquesta plantilla per fer croquis a mà o dibuixa&#x27;l directament amb l&#x27;eina d&#x27;edició.</blockquote>
 <h2 id="-plantilla-bàsica-graella">📐 Plantilla bàsica (graella)</h2>
 <pre><code>
 ┌──────────────────────────────────────────────────────────────────┐
@@ -95,7 +95,7 @@
 <td>☐ Sí  ☐ No</td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-rotació-dels-bancals">🔄 Rotació dels bancals</h2>
 <p>Anota què hi plantaràs cada any a cada bancal (rotació de 4 anys):</p>
 <h3 id="bancal-nº-______">Bancal nº ______</h3>
@@ -135,7 +135,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="famílies-de-rotació">Famílies de rotació</h3>
 <ol>
 <li><strong>Arrels</strong> (pastanaga, rave, remolatxa, all, ceba)</li>
@@ -143,8 +143,8 @@
 <li><strong>Fruit</strong> (tomàquet, pebrot, albergínia, carbassa)</li>
 <li><strong>Lleguminoses</strong> (mongeta, pèsol, fava)</li>
 <li><strong>Tubèrculs</strong> (patata)</li>
-</ul>
-<p>&gt; Regla bàsica: no repetir la mateixa família al mateix bancal fins passat 3-4 anys.</p>
+</ol>
+<blockquote>Regla bàsica: no repetir la mateixa família al mateix bancal fins passat 3-4 anys.</blockquote>
 <h2 id="-inventari-del-que-hi-ha-plantat">🌿 Inventari del que hi ha plantat</h2>
 <table>
 <thead><tr>
@@ -228,7 +228,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-infraestructura">🏗️ Infraestructura</h2>
 <h3 id="reg">Reg</h3>
 <ul>
@@ -282,7 +282,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="espècies-espontànies-útils-marges">Espècies espontànies útils (marges)</h3>
 <ul>
 <li>Ortigues (per a purí): ☐ Sí</li>
@@ -371,13 +371,13 @@ Inversions previstes:
 <td>1,2-1,5 m</td>
 <td>Alçada anti-conills, gallines</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-versions-del-croquis-per-anys">🖼️ Versions del croquis (per anys)</h2>
 <ul>
-<li>[ ] <strong>Versió 2024</strong> (paper)</li>
-<li>[ ] <strong>Versió 2025</strong> (paper)</li>
-<li>[ ] <strong>Versió 2026</strong> (paper) ← actual</li>
-<li>[ ] <strong>Versió digital</strong> (planol-ilustrat.html)</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span><strong>Versió 2024</strong> (paper)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span><strong>Versió 2025</strong> (paper)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span><strong>Versió 2026</strong> (paper) ← actual</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Versió digital</strong> (planol-ilustrat.html)</span></label></li>
 </ul>
 <p>---</p>
 <p><em>Fes diverses còpies d&#x27;aquesta plantilla al llarg dels anys. Comparar-les t&#x27;ajuda a veure l&#x27;evolució de l&#x27;hort.</em></p>

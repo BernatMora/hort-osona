@@ -1,5 +1,5 @@
 <h1 id="-sistema-de-xat-amb-ia-local-rag-ollama">🤖 Sistema de xat amb IA local (RAG + Ollama)</h1>
-<p>&gt; Com fer servir l&#x27;assistent hortolà que respon consultes en català basant-se en les fitxes del projecte.</p>
+<blockquote>Com fer servir l&#x27;assistent hortolà que respon consultes en català basant-se en les fitxes del projecte.</blockquote>
 <h2 id="-què-és">🎯 Què és?</h2>
 <p>L&#x27;API de xat combina:</p>
 <ul>
@@ -97,7 +97,7 @@ curl -X POST http://localhost:8001/chat \
 <td><code>/docs</code></td>
 <td>Documentació interactiva (Swagger)</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="exemple-de-resposta">Exemple de resposta</h3>
 <pre><code>
 {
@@ -137,7 +137,7 @@ def __init__(self, docs_dir: str = None, model: str = &quot;elteumodel&quot;):
 <li>Comprova que tens permisos de lectura a tots els <code>.md</code></li>
 <li>Mira els logs d&#x27;Uvicorn per si hi ha un error</li>
 <li>Prova de buidar el sistema: <code>pkill -f uvicorn</code> i tornar a arrencar</li>
-</ul>
+</ol>
 <h3 id="-quotport-8001-already-in-usequot">❌ &quot;Port 8001 already in use&quot;</h3>
 <pre><code>
 lsof -i :8001
@@ -163,7 +163,7 @@ pkill -f &quot;uvicorn.*api_chat&quot;
 <li>Assegura&#x27;t que l&#x27;API escolta a <code>0.0.0.0</code> (ja ho fa)</li>
 <li>Accedeix des d&#x27;un altre dispositiu: <code>http://IP-DE-LA-PI:8001/chat/health</code></li>
 <li>O usa Tailscale per accés segur des de fora de casa</li>
-</ul>
+</ol>
 <p>A la PWA, configura <code>BACKEND_URL</code> a <code>http://hortpi.local:8001</code> o la IP de Tailscale.</p>
 <h2 id="-més-informació">📚 Més informació</h2>
 <ul>

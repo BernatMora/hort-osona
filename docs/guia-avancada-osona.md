@@ -1,5 +1,5 @@
 <h1 id="-guia-avançada-etnobotànica-arbres-singulars-conreus-exòtics">🌳 Guia avançada — Etnobotànica, arbres singulars, conreus exòtics i plantes útils d&#x27;Osona</h1>
-<p>&gt; Aquesta és la <strong>guia més especial</strong> de la base de coneixement. Connecta l&#x27;hort amb la <strong>història, la cultura i el patrimoni natural</strong> d&#x27;Osona. Descobreix <strong>plantes oblidades</strong>, <strong>arbres monumentals</strong>, <strong>conreus exòtics</strong> que es poden cultivar a la comarca, i el <strong>legat etnobotànic</strong> que hem heretat dels nostres avantpassats. A Osona hi ha <strong>molta més saviesa</strong> de la que et penses.</p>
+<blockquote>Aquesta és la <strong>guia més especial</strong> de la base de coneixement. Connecta l&#x27;hort amb la <strong>història, la cultura i el patrimoni natural</strong> d&#x27;Osona. Descobreix <strong>plantes oblidades</strong>, <strong>arbres monumentals</strong>, <strong>conreus exòtics</strong> que es poden cultivar a la comarca, i el <strong>legat etnobotànic</strong> que hem heretat dels nostres avantpassats. A Osona hi ha <strong>molta més saviesa</strong> de la que et penses.</blockquote>
 <h2 id="1-etnobotànica-dx27osona-el-llegat">1. Etnobotànica d&#x27;Osona: el llegat</h2>
 <h3 id="què-és-lx27etnobotànica">Què és l&#x27;etnobotànica?</h3>
 <p>L&#x27;etnobotànica és l&#x27;estudi de la <strong>relació entre les persones i les plantes</strong>: usos medicinals, culinaris, artesans, rituals, simbòlics. A Osona, hi ha <strong>molt de llegat</strong> per descobrir.</p>
@@ -795,7 +795,7 @@
 <li>Perer (Pyrus communis)</li>
 <li>Pruner (Prunus domestica)</li>
 <li>Saüc (Sambucus nigra)</li>
-</ul>
+</ol>
 <h3 id="plantes-dx27hort-20">Plantes d&#x27;hort (20)</h3>
 <ol>
 <li>Tomàquet</li>
@@ -818,7 +818,7 @@
 <li>Pèsol</li>
 <li>Nap</li>
 <li>Xirivia</li>
-</ul>
+</ol>
 <h3 id="aromàtiques-10">Aromàtiques (10)</h3>
 <ol>
 <li>Romaní</li>
@@ -831,7 +831,7 @@
 <li>Anet</li>
 <li>Donzell</li>
 <li>Safrà (Crocus sativus)</li>
-</ul>
+</ol>
 <h3 id="adventícies-útils-5">Adventícies útils (5)</h3>
 <ol>
 <li>Ortiga</li>
@@ -839,10 +839,10 @@
 <li>Camamilla</li>
 <li>Borratja</li>
 <li>Plantatge</li>
-</ul>
+</ol>
 <h2 id="10-notes-finals">10. Notes finals</h2>
 <h3 id="el-missatge-clàssic">El missatge clàssic</h3>
-<p>&gt; A Osona tenim <strong>molt de patrimoni natural i cultural</strong>. No l&#x27;hem de perdre. Cada planta, cada varietat, cada recepta és un <strong>tresor</strong> que hem de <strong>conservar, cultivar, compartir</strong>.</p>
+<blockquote>A Osona tenim <strong>molt de patrimoni natural i cultural</strong>. No l&#x27;hem de perdre. Cada planta, cada varietat, cada recepta és un <strong>tresor</strong> que hem de <strong>conservar, cultivar, compartir</strong>.</blockquote>
 <h3 id="què-pots-fer-avui">Què pots fer avui</h3>
 <ol>
 <li><strong>Identificar</strong> 5 plantes autòctones a la teva zona</li>
@@ -850,7 +850,7 @@
 <li><strong>Recuperar</strong> 1 recepta tradicional</li>
 <li><strong>Compartir</strong> el coneixement</li>
 <li><strong>Visitar</strong> un dels centres etnobotànics</li>
-</ul>
+</ol>
 <h3 id="el-futur">El futur</h3>
-<p>&gt; El futur de l&#x27;agricultura a Osona és una <strong>síntesi</strong> entre el <strong>passat</strong> (varietats locals, saviesa pagesa) i el <strong>futur</strong> (biodinàmica, agroecologia, canvi climàtic). <strong>Aquest hort és la teva contribució a aquest futur</strong>.</p>
+<blockquote>El futur de l&#x27;agricultura a Osona és una <strong>síntesi</strong> entre el <strong>passat</strong> (varietats locals, saviesa pagesa) i el <strong>futur</strong> (biodinàmica, agroecologia, canvi climàtic). <strong>Aquest hort és la teva contribució a aquest futur</strong>.</blockquote>
 <p>🌳 <strong>Bona descoberta del patrimoni d&#x27;Osona!</strong></p>

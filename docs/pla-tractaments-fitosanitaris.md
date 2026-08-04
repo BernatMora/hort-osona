@@ -1,5 +1,5 @@
 <h1 id="-pla-de-tractaments-fitosanitaris-hort-ecològic-a-osona-any-">🧪 Pla de tractaments fitosanitaris — Hort ecològic a Osona (any tipus)</h1>
-<p>&gt; Calendari orientatiu de tractaments <strong>preventius</strong> en horticultura ecològica. <strong>No</strong> és una recepta mèdica: cada hort és diferent. La regla d&#x27;or és: <strong>observar primer, tractar només si cal</strong>.</p>
+<blockquote>Calendari orientatiu de tractaments <strong>preventius</strong> en horticultura ecològica. <strong>No</strong> és una recepta mèdica: cada hort és diferent. La regla d&#x27;or és: <strong>observar primer, tractar només si cal</strong>.</blockquote>
 <h2 id="-filosofia">📋 Filosofia</h2>
 <ol>
 <li><strong>Prevenció &gt; curació</strong> — un hort equilibrat, biodivers i sa necessita pocs tractaments.</li>
@@ -8,7 +8,7 @@
 <li><strong>Respectar la fauna útil</strong> — no aplicar productes agressius si hi ha abelles, marietes, sírfids actius.</li>
 <li><strong>Aplicar al vespre o matí</strong> — fora de les hores d&#x27;activitat de pol·linitzadors.</li>
 <li><strong>Anotar al quadern</strong> — què has aplicat, quan, amb què, resultat.</li>
-</ul>
+</ol>
 <h2 id="-catàleg-de-tractaments-habituals">🧴 Catàleg de tractaments habituals</h2>
 <table>
 <thead><tr>
@@ -115,7 +115,7 @@
 <td>Polvoritzar cada 7 dies</td>
 <td>Aplicar al moment</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-pla-mensual">📅 Pla mensual</h2>
 <h3 id="-gener-descans">🌱 Gener — Descans</h3>
 <ul>
@@ -318,7 +318,7 @@
 <td>Hivern</td>
 <td>Als fruiters</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="-normes-generals">⚠️ Normes generals</h2>
 <h3 id="quan-no-aplicar">Quan NO aplicar</h3>
 <ul>
@@ -350,20 +350,20 @@
 </ul>
 <h2 id="-llista-de-la-compra-anual">🛒 Llista de la compra anual</h2>
 <ul>
-<li>[ ] <strong>Sabó potàssic</strong> (1-2 L)</li>
-<li>[ ] <strong>Oli de neem</strong> (0,5 L)</li>
-<li>[ ] <strong>Sulfat de coure</strong> (1 kg)</li>
-<li>[ ] <strong>Calç apagada</strong> (5 kg)</li>
-<li>[ ] <strong>Bicarbonat sòdic</strong> (1 kg)</li>
-<li>[ ] <strong>Bacillus thuringiensis</strong> var. <em>kurstaki</em> (100-200 g)</li>
-<li>[ ] <strong>Bacillus thuringiensis</strong> var. <em>tenebrionis</em> (per escarabat Colorado, 100 g)</li>
-<li>[ ] <strong>Llet descremada en pols</strong> (1 kg)</li>
-<li>[ ] <strong>Plantes trampa</strong>: calèndula, caputxina, facèlia, anet</li>
-<li>[ ] <strong>Trampes cromotropiques</strong> (grogues, blaves)</li>
-<li>[ ] <strong>Feromones</strong> (Tuta absoluta, carpocapsa, mosca de l&#x27;oliva si cal)</li>
-<li>[ ] <strong>Malla antiinsectes</strong> (5x5 mm o 6x6 mm)</li>
-<li>[ ] <strong>Polvoritzador</strong> (1 L, 5 L, 15 L)</li>
-<li>[ ] <strong>Guants i ulleres</strong></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span><strong>Sabó potàssic</strong> (1-2 L)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span><strong>Oli de neem</strong> (0,5 L)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span><strong>Sulfat de coure</strong> (1 kg)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Calç apagada</strong> (5 kg)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span><strong>Bicarbonat sòdic</strong> (1 kg)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span><strong>Bacillus thuringiensis</strong> var. <em>kurstaki</em> (100-200 g)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span><strong>Bacillus thuringiensis</strong> var. <em>tenebrionis</em> (per escarabat Colorado, 100 g)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span><strong>Llet descremada en pols</strong> (1 kg)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span><strong>Plantes trampa</strong>: calèndula, caputxina, facèlia, anet</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span><strong>Trampes cromotropiques</strong> (grogues, blaves)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="10"> <span><strong>Feromones</strong> (Tuta absoluta, carpocapsa, mosca de l&#x27;oliva si cal)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="11"> <span><strong>Malla antiinsectes</strong> (5x5 mm o 6x6 mm)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="12"> <span><strong>Polvoritzador</strong> (1 L, 5 L, 15 L)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="13"> <span><strong>Guants i ulleres</strong></span></label></li>
 </ul>
 <h2 id="-per-saber-ne-més">📚 Per saber-ne més</h2>
 <ul>

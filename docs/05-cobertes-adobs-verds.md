@@ -32,7 +32,7 @@
 <td>Trèvol blanc, festuca, gespa de fruiters</td>
 <td>Veça, fava, mostassa, civada, fenc</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="3-espècies-principals">3. Espècies principals</h2>
 <h3 id="lleguminoses-fixen-n-50-200-kg-nhaany">Lleguminoses (fixen N: 50-200 kg N/ha/any)</h3>
 <table>
@@ -108,7 +108,7 @@
 <td>6 mesos</td>
 <td>Arrels profundes, ácid, N</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="graminies-estructura-i-biomassa">Graminies (estructura i biomassa)</h3>
 <table>
 <thead><tr>
@@ -153,7 +153,7 @@
 <td>3-4 mesos</td>
 <td>Estival, tolera sequera</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="crucíferes-i-altres-estructura-fongs-nematodes">Crucíferes i altres (estructura, fongs, nematodes)</h3>
 <table>
 <thead><tr>
@@ -198,7 +198,7 @@
 <td>3-4 mesos</td>
 <td>Mel·lífera,Medicinal</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="4-barreges-recomanades-per-osona">4. Barreges recomanades per Osona</h2>
 <h3 id="hivern-sembra-set-oct-incorpora-març-abril">Hivern (sembra set-oct, incorpora març-abril)</h3>
 <ul>
@@ -224,7 +224,7 @@
 <li><strong>Cobrir amb rasclet</strong> lleuger.</li>
 <li><strong>Compactar</strong> amb taula o corrons.</li>
 <li><strong>Regar</strong> si no plou els 3-5 dies següents.</li>
-</ul>
+</ol>
 <h3 id="gestió">Gestió</h3>
 <ul>
 <li><strong>Segar</strong> quan comença la floració (màxima biomassa, abans de granar).</li>
@@ -262,7 +262,7 @@
 <td><strong>Ago-Set</strong></td>
 <td>Segar i incorporar per a cultius de tardor</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="7-mulchs-cobertes-mortes">7. Mulchs (cobertes mortes)</h2>
 <table>
 <thead><tr>
@@ -325,7 +325,7 @@
 <td>Permeable, ecològica</td>
 <td>Cost inicial</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="com-aplicar-mulch">Com aplicar mulch</h3>
 <ul>
 <li><strong>Gruix</strong>: 5-10 cm</li>

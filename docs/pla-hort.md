@@ -1,6 +1,6 @@
 <h1 id="-plànol-de-lx27hort-20-m²-45-m">🗺️ Plànol de l&#x27;hort — 20 m² (4×5 m)</h1>
-<p>&gt; <strong>Hort d&#x27;Osona, filosofia ecològica</strong></p>
-<p>&gt; Aplicable aquesta temporada (2026) i base per a la <strong>rotació 2027</strong>.</p>
+<blockquote><strong>Hort d&#x27;Osona, filosofia ecològica</strong></blockquote>
+<blockquote>Aplicable aquesta temporada (2026) i base per a la <strong>rotació 2027</strong>.</blockquote>
 <h2 id="principis-del-disseny">Principis del disseny</h2>
 <ol>
 <li><strong>Sol</strong>: ideal orientació sud/sud-est. Les plantes altes al nord, les baixes al sud (per no fer ombra).</li>
@@ -11,7 +11,7 @@
 <li><strong>Acompanyants</strong> (alfàbrega, calèndula, caputxina) intercalades.</li>
 <li><strong>Camins</strong> de 40-50 cm per accedir sense trepitjar cultius.</li>
 <li><strong>Compostador i galliner</strong> fora de l&#x27;hort però a prop.</li>
-</ul>
+</ol>
 <p>---</p>
 <h2 id="opció-a-hort-clàssic-en-4-parcelles-rectangulars-4125-m-cada">Opció A — Hort clàssic en <strong>4 parcel·les rectangulars (4×1,25 m cadascuna) + 2 camins</strong></h2>
 <pre><code>
@@ -127,7 +127,7 @@
 <li><strong>Rotació de 3 anys</strong> (no de 4-5-6): més senzilla per a 8 cultius</li>
 <li><strong>Ceba i mongeta perfectament separades</strong> (2,5 m de distància)</li>
 <li><strong>Cucurbitàcies aïllades</strong> en un bancal (no envairan la resta)</li>
-</ul>
+</ol>
 <h2 id="on-collocar-el-compostador-i-el-galliner">On col·locar el compostador i el galliner</h2>
 <pre><code>
   ┌─────────────────────────────────────────────────────┐
@@ -193,7 +193,7 @@
 <td>Pastanaga, camamilla, pebrot</td>
 <td>A la vora</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="a-evitar">A evitar</h2>
 <ul>
 <li>❌ <strong>Ceba + Mongeta</strong> (oposar-les)</li>

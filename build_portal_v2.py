@@ -25,18 +25,40 @@ from typing import Dict, List, Tuple
 
 BASE = Path(__file__).resolve().parent
 
+MESOS_CAT = [
+    "gener", "febrer", "març", "abril", "maig", "juny",
+    "juliol", "agost", "setembre", "octubre", "novembre", "desembre",
+]
+
+
+def monthly_plans() -> List[Tuple[str, str]]:
+    """Retorna tots els plans mensuals disponibles, ordenats per data."""
+    plans = []
+    pattern = re.compile(r"^(\d{4})-(\d{2})-([^.]+)\.md$")
+    for path in sorted((BASE / "plans-mensuals").glob("*.md")):
+        match = pattern.match(path.name)
+        if not match:
+            continue
+        year, month, month_name = match.groups()
+        plans.append((
+            f"plans-mensuals/{path.name}",
+            f"Pla {month_name} {year}",
+        ))
+    return plans
+
 # ──────────── CATEGORIES (mateix ordre que abans) ────────────
 CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
     "Inici": [
         ("00-index.md", "Índex general"),
         ("README.md", "README"),
+        ("PROJECTE-COMPLET.md", "Visió completa del projecte"),
+        ("resum-final-base-coneixement.md", "Resum de la base de coneixement"),
         ("CHANGELOG.md", "Historial"),
     ],
     "Planificació": [
         ("pla-12-mesos.md", "Pla dels 12 mesos"),
         ("08-pla-mensual.md", "Pla d'acció mensual"),
-        ("plans-mensuals/2026-06-juny.md", "Pla juny 2026"),
-        ("plans-mensuals/2026-07-juliol.md", "Pla juliol 2026"),
+        *monthly_plans(),
         ("planificacio-tardor-hivern-2026.md", "Tardor-hivern 2026-27"),
         ("01-calendari-sembra.md", "Calendari de sembra"),
         ("calendari-lunar-osona.md", "Calendari lunar"),
@@ -44,6 +66,8 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("pla-hort.md", "Plànol esquemàtic"),
         ("pla-reg-personalitzat-2026.md", "Pla de reg personalitzat"),
         ("croquis-hort.md", "Croquis dibuixable"),
+        ("pla-hort-esquematic.md", "Plànol esquemàtic ampliat"),
+        ("rendiment-hort-guia.md", "Aprofitament i rendiment"),
     ],
     "Fitxes de cultiu": [
         ("07-fitxes-cultius/all.md", "All"),
@@ -72,6 +96,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("07-fitxes-cultius/romani.md", "Romaní"),
         ("07-fitxes-cultius/tomaquet.md", "Tomàquet"),
         ("07-fitxes-cultius/aromatiques.md", "Totes les aromàtiques"),
+        ("aromatiques-guia-completa.md", "Guia completa d'aromàtiques"),
     ],
     "Conreu avançat": [
         ("02-associacions-rotacions.md", "Associacions i rotacions"),
@@ -86,10 +111,13 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("guia-avancada-osona.md", "Guia avançada Osona"),
         ("practiques-avancades.md", "Pràctiques avançades"),
         ("pla-tractaments-fitosanitaris.md", "Tractaments fitosanitaris"),
+        ("plagues-guia-visual.md", "Guia visual de plagues"),
     ],
     "Eines operatives": [
         ("bitacola-setmanal.md", "Bitàcola setmanal"),
         ("calculadora-sembra.md", "Calculadora de sembra"),
+        ("eines-digitals-guia.md", "Eines digitals"),
+        ("apps-planificacio-guia.md", "Aplicacions de planificació"),
     ],
     "Conservació": [
         ("conserves.md", "Conserves"),
@@ -101,6 +129,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("adventicies-guia-completa.md", "Adventícies"),
         ("pollinitzadors-guia-completa.md", "Pol·linitzadors"),
         ("canvi-climatic-osona.md", "Canvi climàtic"),
+        ("adventicies-utilitat-guia.md", "Utilitat de les adventícies"),
     ],
     "Fruiters": [
         ("fruiters-guia-completa.md", "Fruiters"),
@@ -120,6 +149,9 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("banys-terapeutics-guia.md", "Banys terapèutics"),
         ("productes-curatius-avancats-guia.md", "Productes curatius avançats"),
         ("primers-auxilis-verds-manual.md", "Primers auxilis verds"),
+        ("curatius-resum-final.md", "Resum de productes curatius"),
+        ("botiga-casolana-guia.md", "Botiga casolana"),
+        ("decoracio-natural-manual.md", "Decoració natural"),
     ],
     "Eines i tecnologia": [
         ("hort-osona-iot/README.md", "Sistema IoT (Raspberry Pi)"),
@@ -152,19 +184,22 @@ def md_to_html(text: str) -> str:
     out = []
     in_code = False
     in_list = False
+    list_tag = None
     in_table = False
     table_rows = []
+    task_index = 0
 
     def flush_list():
-        nonlocal in_list
+        nonlocal in_list, list_tag
         if in_list:
-            out.append('</ul>')
+            out.append(f'</{list_tag}>')
             in_list = False
+            list_tag = None
 
     def flush_table():
         nonlocal in_table, table_rows
         if in_table:
-            out.append('</table>')
+            out.append('</tbody></table>')
             in_table = False
             table_rows = []
 
@@ -232,18 +267,47 @@ def md_to_html(text: str) -> str:
         # Llistes
         m = re.match(r'^[\-\*]\s+(.+)$', stripped)
         if m:
-            if not in_list:
+            if not in_list or list_tag != 'ul':
+                flush_list()
                 out.append('<ul>')
                 in_list = True
-            out.append(f'<li>{inline_md(m.group(1))}</li>')
+                list_tag = 'ul'
+            item_text = m.group(1)
+            task = re.match(r'^\[([ xX])\]\s+(.+)$', item_text)
+            if task:
+                checked = ' checked' if task.group(1).lower() == 'x' else ''
+                out.append(
+                    f'<li class="task-item"><label><input type="checkbox" '
+                    f'data-task-index="{task_index}"{checked}> '
+                    f'<span>{inline_md(task.group(2))}</span></label></li>'
+                )
+                task_index += 1
+            else:
+                out.append(f'<li>{inline_md(item_text)}</li>')
             i += 1
             continue
         m = re.match(r'^\d+\.\s+(.+)$', stripped)
         if m:
-            if not in_list:
+            if not in_list or list_tag != 'ol':
+                flush_list()
                 out.append('<ol>')
                 in_list = True
+                list_tag = 'ol'
             out.append(f'<li>{inline_md(m.group(1))}</li>')
+            i += 1
+            continue
+
+        # Cites i separadors
+        if stripped.startswith('&gt;'):
+            flush_list()
+            flush_table()
+            out.append(f'<blockquote>{inline_md(stripped[4:].strip())}</blockquote>')
+            i += 1
+            continue
+        if re.match(r'^[-*_]{{3,}}$', stripped):
+            flush_list()
+            flush_table()
+            out.append('<hr>')
             i += 1
             continue
 
@@ -307,7 +371,8 @@ def read_doc(rel_path: str) -> Tuple[str, str, str]:
     # Si la fitxa té una imatge SVG associada, inserir-la al principi
     img_path = p.parent / "img" / f"{p.stem}.svg"
     if img_path.exists():
-        img_html = f'<div class="doc-hero"><img src="img/{p.stem}.svg" alt="{title}" loading="lazy"></div>'
+        web_img_path = Path("docs") / Path(rel_path).parent / "img" / f"{p.stem}.svg"
+        img_html = f'<div class="doc-hero"><img src="{web_img_path.as_posix()}" alt="{html.escape(title)}" loading="lazy"></div>'
         content = img_html + content
 
     return rel_path, title, content
@@ -352,15 +417,17 @@ def main():
     # ──────────── GENERAR FITXERS HTML PER A CADA DOCUMENT ────────────
     docs_dir = BASE / "docs"
     docs_dir.mkdir(exist_ok=True)
-    # Netejar fitxers antics
-    for f in docs_dir.rglob("*"):
-        if f.is_file():
-            f.unlink()
+    # No esborrem tota la carpeta: també conté documents generats per altres
+    # eines del projecte que no formen part del menú d'aquest portal.
     for path, d in docs.items():
         # Subdir per categoria: docs/<categoria>/<fitxer>.html
         out_path = docs_dir / path
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(d["html"], encoding="utf-8")
+    # Copiar les imatges que fan servir les fitxes de cultiu.
+    source_images = BASE / "07-fitxes-cultius" / "img"
+    if source_images.exists():
+        shutil.copytree(source_images, docs_dir / "07-fitxes-cultius" / "img", dirs_exist_ok=True)
     print(f"✅ {len(docs)} fitxers HTML generats a {docs_dir.relative_to(BASE)}/")
 
     # ──────────── GENERAR INDEX DE CERCA (search_index.json) ────────────
@@ -385,12 +452,19 @@ def main():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Base de coneixement d'hort ecològic a Osona">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:title" content="Hort Osona">
+<meta property="og:description" content="Calendari, plans mensuals i guies d'horticultura ecològica adaptades a Osona.">
+<meta property="og:url" content="https://bernatmora.github.io/hort-osona/">
 <meta name="theme-color" content="#3D4A2A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Hort Osona">
 <meta name="mobile-web-app-capable" content="yes">
 <title>Hort Osona</title>
+<link rel="canonical" href="https://bernatmora.github.io/hort-osona/">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -432,6 +506,27 @@ button {{
   -webkit-tap-highlight-color: transparent;
 }}
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {{
+  outline: 3px solid var(--c-ochre);
+  outline-offset: 2px;
+}}
+
+.skip-link {{
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  transform: translateY(-150%);
+}}
+
+.skip-link:focus {{ transform: translateY(0); }}
+
 a {{ color: var(--c-olive); text-decoration: none; }}
 a:hover {{ text-decoration: underline; }}
 
@@ -469,6 +564,18 @@ a:hover {{ text-decoration: underline; }}
   font-size: 24px;
   color: var(--c-paper);
 }}
+
+.header .home-btn {{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: var(--c-paper);
+}}
+
+.header .home-btn.visible {{ display: flex; }}
 
 .header .menu-btn:hover,
 .header .menu-btn:active {{
@@ -974,6 +1081,70 @@ a:hover {{ text-decoration: underline; }}
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }}
 
+.doc-toolbar {{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--c-line);
+}}
+
+.doc-toolbar.visible {{ display: flex; }}
+
+.doc-toolbar button {{
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  font-weight: 650;
+}}
+
+.doc-toolbar .doc-category {{
+  color: var(--c-ink-2);
+  font-size: 0.85rem;
+  text-align: right;
+}}
+
+.doc-toolbar-actions {{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}}
+
+#reset-tasks-btn {{ display: none; }}
+#reset-tasks-btn.visible {{ display: inline-block; }}
+
+.doc .task-item {{
+  list-style: none;
+  margin-left: -1.25rem;
+  padding: 5px 0;
+}}
+
+.doc .task-item label {{
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  cursor: pointer;
+}}
+
+.doc .task-item input {{
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  accent-color: var(--c-olive);
+  flex: 0 0 auto;
+}}
+
+.doc .task-item input:checked + span {{
+  color: var(--c-ink-2);
+  text-decoration: line-through;
+}}
+
 .doc h2 {{
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
@@ -1115,6 +1286,49 @@ a:hover {{ text-decoration: underline; }}
   margin: 24px 0 12px;
 }}
 
+.current-month-card {{
+  margin: 24px auto;
+  padding: 20px;
+  max-width: 680px;
+  background: var(--c-olive);
+  color: var(--c-paper);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}}
+
+.current-month-card .eyebrow {{
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}}
+
+.current-month-card h2 {{
+  margin: 4px 0 8px;
+  color: var(--c-paper);
+  font-size: 1.55rem;
+}}
+
+.current-month-card p {{ margin-bottom: 14px; }}
+
+.current-month-card a {{
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--c-paper);
+  color: var(--c-olive);
+  font-weight: 700;
+}}
+
+.current-month-card a:hover {{
+  text-decoration: none;
+  background: var(--c-olive-bg);
+}}
+
 .welcome .quick {{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1175,11 +1389,14 @@ a:hover {{ text-decoration: underline; }}
 </head>
 <body>
 
+<a class="skip-link" href="#main">Saltar al contingut</a>
+
 <div class="app">
 
   <!-- HEADER -->
   <header class="header">
     <button class="menu-btn" id="menu-btn" aria-label="Obrir menú">☰</button>
+    <button class="home-btn" id="home-btn" aria-label="Tornar a l'inici" title="Inici">⌂</button>
     <div class="title">🌱 Hort Osona</div>
     <a class="search-toggle project-shortcut" href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener" aria-label="Obrir BernatLab" title="BernatLab"><span aria-hidden="true">🧪</span> Lab</a>
     <button class="search-toggle" id="chat-btn" aria-label="Xat amb l'hort" title="Pregunta a l'hort">💬</button>
@@ -1216,15 +1433,29 @@ a:hover {{ text-decoration: underline; }}
         <div class="stat"><div class="num">{len([d for d in docs if d.startswith('07-fitxes-cultius/')])}</div><div class="lbl">Fitxes cultiu</div></div>
         <div class="stat"><div class="num">{len(CATEGORIES)}</div><div class="lbl">Categories</div></div>
       </div>
+      <section class="current-month-card" aria-labelledby="current-month-title">
+        <div class="eyebrow">El que toca ara a Osona</div>
+        <h2 id="current-month-title">Carregant el mes actual…</h2>
+        <p>Sembres, trasplantaments, collites i feines recomanades per aquest mes.</p>
+        <a href="#" id="current-month-link">🌱 Veure què pots plantar i què toca fer</a>
+      </section>
       <h2>Com començar</h2>
       <p style="color: var(--c-ink-2);">Toca el botó ☰ per obrir el menú i triar un document, o bé 🔍 per cercar.</p>
       <div class="quick">
         <a href="#" data-path="pla-12-mesos.md" onclick="return openDoc(this.dataset.path)">📅 Pla dels 12 mesos</a>
-        <a href="#" data-path="plans-mensuals/2026-06-juny.md" onclick="return openDoc(this.dataset.path)">📅 Pla juny 2026</a>
-        <a href="#" data-path="07-fitxes-cultius/tomaquet.md" onclick="return openDoc(this.dataset.path)">🍅 Tomàquet</a>
-        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Calendari de sembra</a>
-        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions</a>
-        <a href="#" data-path="pla-tractaments-fitosanitaris.md" onclick="return openDoc(this.dataset.path)">🧪 Tractaments</a>
+        <a href="#" data-path="01-calendari-sembra.md" onclick="return openDoc(this.dataset.path)">🌱 Què puc sembrar?</a>
+        <a href="#" data-path="04-reg-fertilitzacio.md" onclick="return openDoc(this.dataset.path)">💧 Reg i fertilització</a>
+        <a href="#" data-path="03-gestio-plagues.md" onclick="return openDoc(this.dataset.path)">🐞 Plagues i malalties</a>
+        <a href="#" data-path="02-associacions-rotacions.md" onclick="return openDoc(this.dataset.path)">🌿 Associacions i rotacions</a>
+        <a href="#" data-path="conserves.md" onclick="return openDoc(this.dataset.path)">🥫 Conserves</a>
+        <a href="#" data-path="remeieres-guia-completa.md" onclick="return openDoc(this.dataset.path)">🌿 Plantes remeieres</a>
+      </div>
+    </div>
+    <div class="doc-toolbar" id="doc-toolbar">
+      <button type="button" id="back-home-btn">← Tornar a l’inici</button>
+      <div class="doc-toolbar-actions">
+        <button type="button" id="reset-tasks-btn">Netejar marques</button>
+        <span class="doc-category" id="doc-category"></span>
       </div>
     </div>
     <article class="doc" id="doc" style="display:none"></article>
@@ -1286,7 +1517,10 @@ async function loadSearchIndex() {{
       SEARCH_INDEX_READY = true;
       return idx;
     }})
-    .catch(() => []);
+    .catch(() => {{
+      SEARCH_INDEX_LOADING = null;
+      return [];
+    }});
   return SEARCH_INDEX_LOADING;
 }}
 
@@ -1346,13 +1580,39 @@ function closeDrawer() {{
 }}
 
 // ──────────── OPEN DOC ────────────
-async function openDoc(path) {{
+let currentDocPath = '';
+
+function showWelcome(updateHistory = true) {{
+  currentDocPath = '';
+  document.getElementById('welcome').style.display = 'block';
+  document.getElementById('doc').style.display = 'none';
+  document.getElementById('doc-toolbar').classList.remove('visible');
+  document.getElementById('home-btn').classList.remove('visible');
+  document.getElementById('reset-tasks-btn').classList.remove('visible');
+  document.querySelector('.header .title').textContent = '🌱 Hort Osona';
+  document.title = 'Hort Osona';
+  document.getElementById('main').scrollTop = 0;
+  closeDrawer();
+  closeSearch();
+  if (updateHistory && location.hash) history.pushState(null, '', location.pathname + location.search);
+}}
+
+async function openDoc(path, options = {{}}) {{
+  const updateHistory = options.updateHistory !== false;
+  const section = options.section || '';
   const d = DOCS[path];
   if (!d) return false;
   const doc = document.getElementById('doc');
   const welcome = document.getElementById('welcome');
+  currentDocPath = path;
   welcome.style.display = 'none';
   doc.style.display = 'block';
+  document.getElementById('doc-toolbar').classList.add('visible');
+  document.getElementById('home-btn').classList.add('visible');
+  document.getElementById('doc-category').textContent = d.category || '';
+  document.getElementById('reset-tasks-btn').classList.remove('visible');
+  document.querySelector('.header .title').textContent = d.title.replace(/[*_]/g, '');
+  document.title = d.title.replace(/[*_]/g, '') + ' · Hort Osona';
   doc.innerHTML = '<p style="padding:24px;color:var(--c-ink-2)">⏳ Carregant...</p>';
 
   // Carregar HTML sota demanda
@@ -1360,9 +1620,16 @@ async function openDoc(path) {{
     const r = await fetch('docs/' + encodeURI(path));
     if (!r.ok) throw new Error('HTTP ' + r.status);
     let html = await r.text();
-    html = html.split('<\\/script').join('</script');
+    html = html.split('<' + '/script').join('</script');
     html = html.split('<\\!--').join('<!--');
     doc.innerHTML = html;
+    initTaskCheckboxes(path);
+    if (section) {{
+      requestAnimationFrame(() => {{
+        const target = document.getElementById(section);
+        if (target) target.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+      }});
+    }}
   }} catch (e) {{
     doc.innerHTML = '<p style="padding:24px;color:#a04040">❌ Error carregant el document: ' + escapeHtml(e.message) + '</p>';
   }}
@@ -1373,8 +1640,45 @@ async function openDoc(path) {{
   closeDrawer();
   closeSearch();
   // Actualitzar hash per compartir
-  history.replaceState(null, '', '#' + encodeURIComponent(path));
+  const nextHash = '#' + encodeURIComponent(path);
+  if (updateHistory && location.hash !== nextHash) history.pushState(null, '', nextHash);
   return false;
+}}
+
+function normalizeDocPath(href) {{
+  const clean = href.split('#')[0].replace(/^[.][/]/, '');
+  if (DOCS[clean]) return clean;
+  if (!currentDocPath) return clean;
+  const parts = currentDocPath.split('/');
+  parts.pop();
+  for (const segment of clean.split('/')) {{
+    if (!segment || segment === '.') continue;
+    if (segment === '..') parts.pop();
+    else parts.push(segment);
+  }}
+  const relative = parts.join('/');
+  return DOCS[relative] ? relative : clean;
+}}
+
+function taskStorageKey(path, index) {{
+  return `hort-task:${{path}}:${{index}}`;
+}}
+
+function initTaskCheckboxes(path) {{
+  const boxes = [...document.querySelectorAll('#doc input[data-task-index]')];
+  for (const box of boxes) {{
+    const saved = localStorage.getItem(taskStorageKey(path, box.dataset.taskIndex));
+    if (saved !== null) box.checked = saved === '1';
+  }}
+  document.getElementById('reset-tasks-btn').classList.toggle('visible', boxes.length > 0);
+}}
+
+function resetCurrentTasks() {{
+  if (!currentDocPath) return;
+  for (const box of document.querySelectorAll('#doc input[data-task-index]')) {{
+    box.checked = false;
+    localStorage.removeItem(taskStorageKey(currentDocPath, box.dataset.taskIndex));
+  }}
 }}
 
 // ──────────── SEARCH ────────────
@@ -1398,6 +1702,10 @@ async function doSearch(q) {{
   }}
   // Assegurar que l'index esta carregat
   await loadSearchIndex();
+  if (!SEARCH_INDEX_READY) {{
+    results.innerHTML = '<p style="padding:16px;color:#a04040">No s’ha pogut carregar l’índex de cerca. Comprova la connexió i torna-ho a provar.</p>';
+    return;
+  }}
   const qLower = q.toLowerCase();
   const matches = [];
   for (const item of SEARCH_INDEX) {{
@@ -1436,6 +1744,42 @@ function escapeHtml(s) {{
     .replace(/'/g, '&#39;');
 }}
 
+// ──────────── MES ACTUAL ────────────
+function configureCurrentMonth() {{
+  const monthNames = ['gener', 'febrer', 'març', 'abril', 'maig', 'juny',
+    'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'];
+  const now = new Date();
+  const prefix = `${{now.getFullYear()}}-${{String(now.getMonth() + 1).padStart(2, '0')}}-`;
+  const available = Object.keys(DOCS)
+    .filter(path => /^plans-mensuals[/][0-9]{{4}}-[0-9]{{2}}-[^.]+[.]md$/.test(path))
+    .sort();
+  const exact = available.find(path => path.startsWith('plans-mensuals/' + prefix));
+  const currentKey = `${{now.getFullYear()}}-${{String(now.getMonth() + 1).padStart(2, '0')}}`;
+  const previous = available.filter(path => path.slice(16, 23) <= currentKey).at(-1);
+  const path = exact || previous || available.at(-1);
+  const title = document.getElementById('current-month-title');
+  const link = document.getElementById('current-month-link');
+
+  title.textContent = `${{monthNames[now.getMonth()].charAt(0).toUpperCase() + monthNames[now.getMonth()].slice(1)}} ${{now.getFullYear()}}`;
+  if (path) {{
+    link.dataset.path = path;
+    link.addEventListener('click', event => {{
+      event.preventDefault();
+      openDoc(path);
+    }});
+    if (!exact) {{
+      link.textContent = '📅 Veure l’últim pla mensual disponible';
+    }}
+  }} else {{
+    link.dataset.path = '01-calendari-sembra.md';
+    link.textContent = '🌱 Veure el calendari de sembra';
+    link.addEventListener('click', event => {{
+      event.preventDefault();
+      openDoc('01-calendari-sembra.md');
+    }});
+  }}
+}}
+
 // ──────────── CHAT (RAG local) ────────────
 // IMPORTANT: des del mobil NO es pot accedir a 'localhost' perque localhost
 // sempre apunta al propi dispositiu. Cal usar la IP del Mac a la xarxa local.
@@ -1449,7 +1793,7 @@ const FALLBACK_CHAT_URLS = [
   'http://192.168.100.110:8001/chat',
   'http://localhost:8001/chat'
 ];
-let CHAT_API = window.CHAT_API_URL || FALLBACK_CHAT_URLS[0];
+let CHAT_API = window.CHAT_API_URL || localStorage.getItem('hort-chat-api') || FALLBACK_CHAT_URLS[0];
 let currentUrlIndex = 0;
 
 function setChatStatus(text, cls) {{
@@ -1480,15 +1824,21 @@ function appendChatMsg(html, kind) {{
 }}
 
 async function checkChatHealth() {{
+  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {{
+    setChatStatus('cal una URL HTTPS', 'offline');
+    return false;
+  }}
   // Provar totes les URLs fins que una funcioni
-  for (let i = 0; i < FALLBACK_CHAT_URLS.length; i++) {{
-    const url = FALLBACK_CHAT_URLS[i].replace('/chat', '/chat/health');
+  const candidates = [...new Set([CHAT_API, ...FALLBACK_CHAT_URLS])]
+    .filter(url => location.protocol !== 'https:' || url.startsWith('https:'));
+  for (let i = 0; i < candidates.length; i++) {{
+    const url = candidates[i].replace(/[/]chat[/]?$/, '/chat/health');
     try {{
       const r = await fetch(url, {{ cache: 'no-store' }});
       if (r.ok) {{
         const data = await r.json();
         if (data.status === 'ok') {{
-          CHAT_API = FALLBACK_CHAT_URLS[i];
+          CHAT_API = candidates[i];
           currentUrlIndex = i;
           setChatStatus('connectat · ' + (data.model || ''), 'online');
           return true;
@@ -1577,9 +1927,12 @@ function buildOfflineHelp() {{
   // Detectar si estem en mobil/tablet
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const url = FALLBACK_CHAT_URLS[0];
-  const ipMatch = url.match(/http:\/\/([\d.]+):/);
+  const ipMatch = url.match(/http:[/][/]([0-9.]+):/);
   const ip = ipMatch ? ipMatch[1] : 'la IP del Mac';
   let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
+  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {{
+    help += '<strong>La web pública és HTTPS i el navegador bloqueja un servidor HTTP local.</strong> Configura una adreça HTTPS segura de la Raspberry o del Mac.<br><br>';
+  }}
   help += '<strong>Com resoldre-ho:</strong><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
   if (isMobile) {{
     help += '<li>Assegura\\'t que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
@@ -1593,21 +1946,59 @@ function buildOfflineHelp() {{
   help += `<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button> un cop arrencat</li>`;
   help += '</ol>';
   help += '<div style="margin-top:10px;font-size:0.8rem;color:#6B665A">URL que provem: <code>' + escapeHtml(url) + '</code></div>';
+  help += '<div style="margin-top:12px"><label for="chat-api-url"><strong>URL HTTPS del xat</strong></label>' +
+    '<div style="display:flex;gap:6px;margin-top:5px"><input id="chat-api-url" type="url" value="' + escapeHtml(CHAT_API) + '" placeholder="https://.../chat" style="min-width:0;flex:1;padding:7px;border:1px solid #D9D0B5;border-radius:5px">' +
+    '<button onclick="saveChatUrl()" style="background:#3D4A2A;color:#FFFCF3;padding:7px 10px;border-radius:5px">Desar</button></div></div>';
   return help;
+}}
+
+function saveChatUrl() {{
+  const input = document.getElementById('chat-api-url');
+  if (!input) return;
+  const value = input.value.trim().replace(/[/]$/, '');
+  if (!/^https?:[/][/]/i.test(value)) return;
+  CHAT_API = value.endsWith('/chat') ? value : value + '/chat';
+  localStorage.setItem('hort-chat-api', CHAT_API);
+  setChatStatus('comprovant...', 'thinking');
+  checkChatHealth();
 }}
 
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {{
   renderSidebar();
+  configureCurrentMonth();
 
   // Botons header
   document.getElementById('menu-btn').addEventListener('click', openDrawer);
+  document.getElementById('home-btn').addEventListener('click', () => showWelcome());
+  document.getElementById('back-home-btn').addEventListener('click', () => showWelcome());
+  document.getElementById('reset-tasks-btn').addEventListener('click', resetCurrentTasks);
   document.getElementById('search-btn').addEventListener('click', openSearch);
   document.getElementById('chat-btn').addEventListener('click', openChat);
   document.getElementById('drawer-close').addEventListener('click', closeDrawer);
   document.getElementById('search-close').addEventListener('click', closeSearch);
   document.getElementById('chat-close').addEventListener('click', closeChat);
   document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
+
+  // Els enllaços Markdown interns naveguen dins del portal.
+  document.getElementById('doc').addEventListener('click', event => {{
+    const link = event.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (!href || /^(https?:|mailto:|tel:)/i.test(href)) return;
+    const [rawPath, section = ''] = href.split('#');
+    if (!rawPath) return;
+    const path = normalizeDocPath(rawPath);
+    if (!DOCS[path]) return;
+    event.preventDefault();
+    openDoc(path, {{ section }});
+  }});
+
+  document.getElementById('doc').addEventListener('change', event => {{
+    const box = event.target.closest('input[data-task-index]');
+    if (!box || !currentDocPath) return;
+    localStorage.setItem(taskStorageKey(currentDocPath, box.dataset.taskIndex), box.checked ? '1' : '0');
+  }});
 
   // Sidebar search
   document.getElementById('sidebar-search').addEventListener('input', (e) => {{
@@ -1631,6 +2022,11 @@ document.addEventListener('DOMContentLoaded', () => {{
 
   // Escape per tancar
   document.addEventListener('keydown', (e) => {{
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {{
+      e.preventDefault();
+      openSearch();
+      return;
+    }}
     if (e.key === 'Escape') {{
       closeDrawer();
       closeSearch();
@@ -1641,7 +2037,20 @@ document.addEventListener('DOMContentLoaded', () => {{
   // Obrir document des de hash
   if (location.hash.length > 1) {{
     const path = decodeURIComponent(location.hash.substring(1));
-    if (DOCS[path]) openDoc(path);
+    if (DOCS[path]) openDoc(path, {{ updateHistory: false }});
+  }}
+
+  window.addEventListener('popstate', () => {{
+    if (location.hash.length > 1) {{
+      const path = decodeURIComponent(location.hash.substring(1));
+      if (DOCS[path]) openDoc(path, {{ updateHistory: false }});
+    }} else {{
+      showWelcome(false);
+    }}
+  }});
+
+  if ('serviceWorker' in navigator) {{
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {{}});
   }}
 }});
 </script>

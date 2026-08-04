@@ -142,9 +142,10 @@ Tots els 71 documents `.md` accessibles des d'un sol HTML amb sidebar,
 cercador i hash routing. Generat per `site/build.py` a partir de `template.html`.
 
 ```bash
-python site/build.py          # regenera site/index.html
-python -m http.server 8765    # servidor local
-# obre http://127.0.0.1:8765/site/index.html
+python3 build_portal_v2.py    # regenera index.html i docs/ a l'arrel
+python3 verify_portal.py      # comprova documents, recursos i JavaScript
+python3 -m http.server 8765   # servidor local
+# obre http://127.0.0.1:8765/
 ```
 
 Més detalls a [SETUP-SITE.md](SETUP-SITE.md).

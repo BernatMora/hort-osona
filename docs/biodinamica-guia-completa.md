@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-de-biodinàmica-aplicada-a-lx27hort-dx27osona">🌟 Guia completa de biodinàmica aplicada a l&#x27;hort d&#x27;Osona</h1>
-<p>&gt; La biodinàmica és <strong>l&#x27;agricultura més antiga de l&#x27;agricultura ecològica</strong>. Va néixer el 1924 amb Rudolf Steiner i és una síntesis de <strong>pagesia tradicional, ciència del sòl, ritmes còsmics i espiritualitat agrària</strong>. A Osona, amb el seu llegat mil·lenari de saviesa pagesa, hi encaixa perfectament. Aquesta guia és pràctica: explica què és, què fer, com fer-ho i per què.</p>
+<blockquote>La biodinàmica és <strong>l&#x27;agricultura més antiga de l&#x27;agricultura ecològica</strong>. Va néixer el 1924 amb Rudolf Steiner i és una síntesis de <strong>pagesia tradicional, ciència del sòl, ritmes còsmics i espiritualitat agrària</strong>. A Osona, amb el seu llegat mil·lenari de saviesa pagesa, hi encaixa perfectament. Aquesta guia és pràctica: explica què és, què fer, com fer-ho i per què.</blockquote>
 <h2 id="1-què-és-lx27agricultura-biodinàmica">1. Què és l&#x27;agricultura biodinàmica?</h2>
 <h3 id="definició">Definició</h3>
 <p>L&#x27;<strong>agricultura biodinàmica</strong> (<em>biologisch-dynamisch</em> en alemany) és un mètode d&#x27;agricultura ecològica que:</p>
@@ -10,7 +10,7 @@
 <li><strong>Promou la biodiversitat</strong> i l&#x27;autosuficiència</li>
 <li><strong>Cerca la salut del sòl</strong> com a base de la salut de la planta</li>
 <li><strong>Integra animals</strong> (sobretot remugants)</li>
-</ul>
+</ol>
 <h3 id="origen">Origen</h3>
 <ul>
 <li><strong>1924</strong>: Rudolf Steiner (filòsof austríac) imparteix el <em>Curs d&#x27;Agricultura</em> a Koberwitz (Polònia)</li>
@@ -67,7 +67,7 @@
 <td>No</td>
 <td><strong>Sí</strong> (antroposofia de Steiner)</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="per-què-aplicar-la-a-osona">Per què aplicar-la a Osona?</h3>
 <ol>
 <li><strong>Tradició pagesa mil·lenària</strong> — la pagesia d&#x27;Osona sempre ha treballat amb els ritmes de la lluna</li>
@@ -76,7 +76,7 @@
 <li><strong>Varietats locals</strong> — la biodinàmica promou la conservació</li>
 <li><strong>Mercat de proximitat</strong> — Vic i Manresa valoren productes Demeter</li>
 <li><strong>Comunitat activa</strong> — hi ha pagesos biodinàmics a la comarca (Pla del Bàrrega, etc.)</li>
-</ul>
+</ol>
 <h2 id="2-lx27organisme-agrícola-pensar-com-un-ésser-viu">2. L&#x27;Organisme-Agrícola: pensar com un ésser viu</h2>
 <h3 id="la-finca-com-a-individu">La finca com a individu</h3>
 <p>Segons Steiner, <strong>la finca és un ésser viu</strong> amb:</p>
@@ -99,8 +99,8 @@
 <li><strong>Aigua</strong> (bassa, pou, rec)</li>
 <li><strong>Compost</strong> (fem compostat amb preparats)</li>
 <li><strong>Persones</strong> (la pagesa, la comunitat)</li>
-</ul>
-<p>&gt; A un hort de 20 m², és difícil tenir-ho tot, però podem <strong>inspirar-nos</strong> en la filosofia: integrar animals (gallines), arbres (fruiters), compost, i diversitat.</p>
+</ol>
+<blockquote>A un hort de 20 m², és difícil tenir-ho tot, però podem <strong>inspirar-nos</strong> en la filosofia: integrar animals (gallines), arbres (fruiters), compost, i diversitat.</blockquote>
 <h2 id="3-els-8-preparats-biodinàmics">3. Els 8 Preparats Biodinàmics</h2>
 <p>Els <strong>preparats biodinàmics</strong> són el cor de la biodinàmica. Són <strong>8</strong> (numerats del 500 al 507, i 508) i serveixen per:</p>
 <ul>
@@ -132,7 +132,7 @@
 <li><strong>Deixar</strong> 6 mesos (fins a Pasqua, abril)</li>
 <li><strong>Desenterrar</strong></li>
 <li><strong>Guardar</strong> en un pot de ceràmica, en lloc fresc i fosc, en torba humida</li>
-</ul>
+</ol>
 <p><strong>Com aplicar-lo</strong>:</p>
 <ol>
 <li><strong>Agafar</strong> una petita quantitat (30-60 g per hectàrea, 1-2 g per hort petit)</li>
@@ -140,7 +140,7 @@
 <li><strong>Remenar</strong> durant <strong>1 hora</strong> en una galleda o bidó (creant vòrtex)</li>
 <li><strong>Polvoritzar</strong> al sòl o a les plantes al <strong>vespre</strong> o <strong>matí</strong></li>
 <li><strong>Freqüència</strong>: 2-3 vegades/any, sobretot a la primavera i tardor</li>
-</ul>
+</ol>
 <h4 id="501-sílice-corn-silica-horn-silica">501 — SÍLICE (corn silica / Horn Silica)</h4>
 <p><strong>Què és</strong>:</p>
 <ul>
@@ -162,7 +162,7 @@
 <li><strong>Deixar</strong> 6 mesos</li>
 <li><strong>Desenterrar</strong> a la tardor</li>
 <li><strong>Guardar</strong> igual que el 500</li>
-</ul>
+</ol>
 <p><strong>Com aplicar-lo</strong>:</p>
 <ol>
 <li><strong>Agafar</strong> 1-2 g per aplicació</li>
@@ -170,7 +170,7 @@
 <li><strong>Remenar</strong> 1 hora</li>
 <li><strong>Polvoritzar</strong> a les <strong>fulles</strong> al <strong>matí</strong> (per aprofitar la llum)</li>
 <li><strong>Freqüència</strong>: 2-3 vegades/any, a la primavera i estiu</li>
-</ul>
+</ol>
 <h3 id="preparats-de-compost-afegir-al-fem">Preparats de compost (afegir al fem)</h3>
 <p>Aquests 6 preparats s&#x27;afegeixen al <strong>fem en compostatge</strong> per millorar la seva qualitat.</p>
 <h4 id="502-milfulles-achillea-millefolium">502 — Milfulles (Achillea millefolium)</h4>
@@ -220,9 +220,13 @@
 <li><strong>Què és</strong>: decocció d&#x27;equisetum (cua de cavall)</li>
 <li><strong>Què fa</strong>: <strong>antifúngic natural</strong> (contra míldiu, oïdi, monília)</li>
 <li><strong>Com fer-lo</strong>:</li>
+</ul>
+<ol>
 <li><strong>Bullir</strong> 100 g d&#x27;equisetum sec en 1 L d&#x27;aigua, 20 min</li>
 <li><strong>Diluir</strong> 1:5</li>
 <li><strong>Polvoritzar</strong> a les fulles</li>
+</ol>
+<ul>
 <li><strong>Alternativa</strong>: 1 part d&#x27;equisetum + 9 parts d&#x27;aigua, deixar 24h, colar</li>
 </ul>
 <h3 id="taula-resum-dels-preparats">Taula resum dels preparats</h3>
@@ -297,7 +301,7 @@
 <td>Antifúngic</td>
 <td>Quan cal</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="4-els-ritmes-còsmics-el-cor-de-la-biodinàmica">4. Els Ritmes Còsmics: el cor de la biodinàmica</h2>
 <h3 id="a-els-ritmes-lunars">A. Els ritmes lunars</h3>
 <p>Igual que el calendari lunar bàsic, però <strong>més desenvolupat</strong> en biodinàmica:</p>
@@ -386,7 +390,7 @@
 <td>Fulla</td>
 <td>♓</td>
 </tr>
-</table>
+</tbody></table>
 <h4 id="dies-de-la-biodinàmica-segons-maria-thun">Dies de la biodinàmica (segons Maria Thun)</h4>
 <p>Maria Thun va descobrir que <strong>la Lluna, en passar per cada constel·lació, afavoreix una part de la planta</strong>:</p>
 <ul>
@@ -445,7 +449,7 @@
 <td>Estructura, fred, calci</td>
 <td>—</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="c-ritmes-solars-i-estacionals">C. Ritmes solars i estacionals</h3>
 <ul>
 <li><strong>Solstici d&#x27;estiu (21 juny)</strong>: màxima llum</li>
@@ -467,18 +471,26 @@
 <li><strong>Lloc</strong>: a l&#x27;ombra, protegit del vent i la pluja directa</li>
 <li><strong>Mida ideal</strong>: 1,5 m d&#x27;amplada × 1,5 m d&#x27;alt × 2-3 m de llarg</li>
 <li><strong>Capes</strong> (com el compost normal):</li>
+</ol>
+<ul>
 <li>30 cm de restes verdes (herba, restes de cuina, males herbes)</li>
 <li>10 cm de restes seques (palla, fulles, cartó)</li>
 <li>Repetir fins a 1,5 m</li>
+</ul>
+<ol>
 <li><strong>Humitat</strong>: com una esponja espremuda (50-60%)</li>
 <li><strong>Posar els 6 preparats</strong> (502-507) en forats fets a la pila:</li>
+</ol>
+<ul>
 <li>1 bola de cada preparat</li>
 <li>50-70 cm de profunditat</li>
 <li>Distribuïts per tota la pila</li>
+</ul>
+<ol>
 <li><strong>Tapar</strong> amb palla</li>
 <li><strong>Remenar</strong> a les 2-3 setmanes (opcional)</li>
 <li><strong>Maduració</strong>: 6-12 mesos</li>
-</ul>
+</ol>
 <h3 id="dosificació-del-compost-biodinàmic">Dosificació del compost biodinàmic</h3>
 <ul>
 <li><strong>Hort</strong>: 2-3 kg/m²/any</li>
@@ -492,25 +504,27 @@
 <li><strong>Insereix</strong> els 6 preparats en forats</li>
 <li><strong>Espera</strong> 2-3 mesos</li>
 <li><strong>Ja el tindràs</strong> com a biodinàmic</li>
-</ul>
+</ol>
 <h2 id="6-el-calendari-de-sembra-i-trasplantament-biodinàmic">6. El Calendari de sembra i trasplantament biodinàmic</h2>
 <h3 id="regles-dx27or">Regles d&#x27;or</h3>
 <ol>
 <li><strong>Sembra sempre en dia de l&#x27;element que vols</strong>:</li>
+</ol>
+<ul>
 <li>Sembra d&#x27;enciam = <strong>dia fulla</strong> (Cranc, Escorpió, Peixos)</li>
 <li>Sembra de tomàquet = <strong>dia fruit</strong> (Àries, Lleó, Sagitari)</li>
 <li>Sembra de pastanaga = <strong>dia arrel</strong> (Taure, Verge, Capricorn)</li>
 </ul>
 <ol>
 <li><strong>Trasplanta en dia arrel</strong> (per a tot, excepte arbres)</li>
-</ul>
+</ol>
 <ol>
 <li><strong>Poda en dia arrel o flor</strong> (per a arbres)</li>
-</ul>
+</ol>
 <ol>
 <li><strong>Collita al matí, en dia fruit</strong>, si és per menjar (millor sabor)</li>
 <li><strong>Collita al vespre, en dia arrel</strong>, si és per guardar</li>
-</ul>
+</ol>
 <h3 id="dies-òptims-a-osona-2026">Dies òptims a Osona (2026)</h3>
 <p>Aquestes dates són <strong>orientatives</strong> (les fases lunars canvien cada any):</p>
 <h4 id="febrer-2026">Febrer 2026</h4>
@@ -538,7 +552,7 @@
 <li><strong>Dies fruit</strong> per trasplantar carbasses: dies 2, 9, 16, 23</li>
 <li><strong>Dies fulla</strong> per sembrar bleda, espinacs: dies 4, 11, 18, 25</li>
 </ul>
-<p>&gt; <strong>Consulta el calendari actualitzat</strong> a <a href="https://www.mariathun.com" target="_blank" rel="noopener">Maria Thun</a> o al calendari Demeter.</p>
+<blockquote><strong>Consulta el calendari actualitzat</strong> a <a href="https://www.mariathun.com" target="_blank" rel="noopener">Maria Thun</a> o al calendari Demeter.</blockquote>
 <h2 id="7-pollinització-i-biodiversitat">7. Pol·linització i Biodiversitat</h2>
 <h3 id="la-biodinàmica-promou">La biodinàmica promou</h3>
 <ol>
@@ -549,7 +563,7 @@
 <li><strong>Bassa</strong> d&#x27;aigua</li>
 <li><strong>Bestiar</strong> (gallines, abelles, etc.)</li>
 <li><strong>No pesticides</strong>, ni &quot;suau&quot;</li>
-</ul>
+</ol>
 <h3 id="al-teu-hort-20-m²">Al teu hort (20 m²)</h3>
 <p>Encara que no puguis tenir 50% de marge, pots:</p>
 <ul>
@@ -608,7 +622,7 @@
 <td>Mengen llimacs, ous</td>
 <td>SÍ</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="tu-ja-tens-gallines-això-ja-et-fa-biodinàmic">Tu ja tens gallines! Això ja et fa biodinàmic</h3>
 <p>Aprofita el <strong>fem de gallina</strong> per al teu compost (és molt ric en N).</p>
 <h2 id="9-malalties-i-plagues-en-biodinàmica">9. Malalties i plagues en biodinàmica</h2>
@@ -628,6 +642,8 @@
 <li><strong>Rotació</strong> correcta</li>
 <li><strong>Associacions</strong> i <strong>biodiversitat</strong></li>
 <li><strong>Preparats específics</strong>:</li>
+</ol>
+<ul>
 <li><strong>Ortiga</strong>: fertilitzant i repel·lent</li>
 <li><strong>Camamilla</strong>: calci i antiinflamatòria</li>
 <li><strong>Cua de cavall</strong>: antifúngic</li>
@@ -640,7 +656,7 @@
 <li>Munta la teva compostadora (ja tinc la guia a <code>compost.md</code>)</li>
 <li>Compra els <strong>6 preparats</strong> (502-507) — pots comprar-los a <strong>Esporus, L&#x27;Era o Demeter-España</strong></li>
 <li>Insereix-los a la pila</li>
-</ul>
+</ol>
 <h4 id="2-comprar-el-preparat-500-i-501">2. Comprar el preparat 500 (i 501)</h4>
 <ul>
 <li>Pots comprar-los a <strong>Demeter</strong> o a un distribuïdor</li>
@@ -714,7 +730,7 @@
 <li><strong>Connecta amb els pagesos</strong> de la zona (Vic, Manresa, Bages)</li>
 <li><strong>Celebra el cicle</strong> — la <strong>Pasqua</strong> és l&#x27;inici del calendari biodinàmic</li>
 <li><strong>Comparteix</strong> — el coneixement s&#x27;enriqueix compartint-lo</li>
-</ul>
+</ol>
 <h2 id="13-com-obtenir-els-preparats">13. Com obtenir els preparats</h2>
 <h3 id="on-comprar-los-a-catalunya">On comprar-los a Catalunya</h3>
 <table>
@@ -753,7 +769,7 @@
 <td>Productes locals, biodinàmics</td>
 <td>Dimarts i dissabte</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="preus-aproximats">Preus aproximats</h3>
 <ul>
 <li><strong>Preparat 500</strong>: 25-35 € / unitat</li>
@@ -855,19 +871,29 @@
 <td>Ecològics</td>
 <td><strong>Demeter + ecològics</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="16-notes-finals">16. Notes finals</h2>
 <h3 id="per-començar-a-osona">Per començar a Osona</h3>
 <ol>
 <li><strong>No facis tot de cop</strong> — comença amb 2-3 pràctiques:</li>
+</ol>
+<ul>
 <li>Aplicar 500 a la primavera</li>
 <li>Usar el calendari lunar</li>
 <li>Fer compost amb preparats</li>
+</ul>
+<ol>
 <li><strong>Després</strong> afegeix:</li>
+</ol>
+<ul>
 <li>501</li>
 <li>Associacions</li>
 <li>Cua de cavall</li>
+</ul>
+<ol>
 <li><strong>Molt després</strong>:</li>
+</ol>
+<ul>
 <li>Tots els preparats</li>
 <li>Tots els ritmes</li>
 </ul>
@@ -879,5 +905,5 @@
 <li><strong>La paciència</strong> és indispensable</li>
 </ul>
 <h3 id="un-missatge-final">Un missatge final</h3>
-<p>&gt; La biodinàmica no és una religió ni una moda. És una <strong>manera pagesa de fer agricultura</strong> que connecta l&#x27;hort amb el cosmos, el sòl amb la planta, i el pagès amb la terra. <strong>No la necessites per menjar, però et portarà més satisfacció de la que et penses.</strong> Comença poc a poc, observa, i deixa&#x27;t sorprendre per la saviesa de la terra.</p>
+<blockquote>La biodinàmica no és una religió ni una moda. És una <strong>manera pagesa de fer agricultura</strong> que connecta l&#x27;hort amb el cosmos, el sòl amb la planta, i el pagès amb la terra. <strong>No la necessites per menjar, però et portarà més satisfacció de la que et penses.</strong> Comença poc a poc, observa, i deixa&#x27;t sorprendre per la saviesa de la terra.</blockquote>
 <p>🌟 <strong>Bona agricultura biodinàmica a Osona!</strong></p>

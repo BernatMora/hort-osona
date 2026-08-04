@@ -1,4 +1,4 @@
-<div class="doc-hero"><img src="img/melo.svg" alt="Fitxa de cultiu: Meló (Cucumis melo)" loading="lazy"></div><h1 id="fitxa-de-cultiu-meló-cucumis-melo">Fitxa de cultiu: Meló (Cucumis melo)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/melo.svg" alt="Fitxa de cultiu: Meló (Cucumis melo)" loading="lazy"></div><h1 id="fitxa-de-cultiu-meló-cucumis-melo">Fitxa de cultiu: Meló (Cucumis melo)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Cucumis melo</em></li>

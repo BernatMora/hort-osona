@@ -1,5 +1,5 @@
 <h1 id="-guia-completa-de-plantes-remeieres-farmàcia-viva-a-osona">🌿 Guia completa de plantes remeieres — Farmàcia viva a Osona</h1>
-<p>&gt; Les plantes remeieres són <strong>la medicina de la terra</strong>, usades des de fa milers d&#x27;anys. A Osona, amb la seva riquesa etnobotànica i la tradició pagesa, tenim un llegat extraordinari de saviesa sobre plantes medicinals. Aquesta és la <strong>guia més completa</strong> de la base de coneixement: 40 plantes remeieres amb <strong>dosis, preparats, indicacions, precaucions</strong> i <strong>receptes pràctiques</strong> per fer a casa.</p>
+<blockquote>Les plantes remeieres són <strong>la medicina de la terra</strong>, usades des de fa milers d&#x27;anys. A Osona, amb la seva riquesa etnobotànica i la tradició pagesa, tenim un llegat extraordinari de saviesa sobre plantes medicinals. Aquesta és la <strong>guia més completa</strong> de la base de coneixement: 40 plantes remeieres amb <strong>dosis, preparats, indicacions, precaucions</strong> i <strong>receptes pràctiques</strong> per fer a casa.</blockquote>
 <h2 id="1-introducció">1. Introducció</h2>
 <h3 id="què-són-les-plantes-remeieres">Què són les plantes remeieres?</h3>
 <p>Són plantes que tenen <strong>propietats medicinals demostrades</strong> (per la ciència moderna o la tradició) i que es poden utilitzar per <strong>prevenir, alleujar o curar</strong> malalties i molèsties.</p>
@@ -17,9 +17,9 @@
 <li><strong>Coneixement</strong>: aprendre a usar la natura amb saviesa</li>
 <li><strong>Tradició</strong>: recuperar el llegat de la saviesa popular</li>
 <li><strong>Eficàcia</strong>: per a moltes molèsties, la fitoteràpia és excel·lent</li>
-</ul>
+</ol>
 <h3 id="advertència-important-">ADVERTÈNCIA IMPORTANT ⚠️</h3>
-<p>&gt; <strong>Aquesta guia és informativa</strong>. Les plantes medicinals poden tenir <strong>interaccions amb medicaments</strong>, <strong>contraindicacions</strong> i <strong>efectes secundaris</strong>. <strong>Consulta sempre un professional</strong> (metge, fitoterapeuta, farmacèutic) abans d&#x27;usar-les per a malalties serioses. <strong>En cas d&#x27;urgència, truca al 112 o al teu metge</strong>.</p>
+<blockquote><strong>Aquesta guia és informativa</strong>. Les plantes medicinals poden tenir <strong>interaccions amb medicaments</strong>, <strong>contraindicacions</strong> i <strong>efectes secundaris</strong>. <strong>Consulta sempre un professional</strong> (metge, fitoterapeuta, farmacèutic) abans d&#x27;usar-les per a malalties serioses. <strong>En cas d&#x27;urgència, truca al 112 o al teu metge</strong>.</blockquote>
 <h2 id="2-conceptes-bàsics-de-fitoteràpia">2. Conceptes bàsics de fitoteràpia</h2>
 <h3 id="a-parts-de-la-planta-usades">A. Parts de la planta usades</h3>
 <ul>
@@ -98,7 +98,7 @@
 <td>Tela mullada en infusió</td>
 <td>Hores</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="c-dosi-general-per-a-adults">C. Dosi general (per a adults)</h3>
 <ul>
 <li><strong>Infusió</strong>: 1-2 culleradetes per tassa (200-250 ml), 2-3 cops/dia</li>
@@ -768,7 +768,7 @@
 <li>Posar en ampolles de vidre</li>
 <li>Guardar a la nevera (dura 6 mesos)</li>
 <li>Prendre 1-2 cullerades quan comencin els símptomes</li>
-</ul>
+</ol>
 <h4 id="infusió-antiviral-potent">Infusió antiviral potent</h4>
 <ul>
 <li>1 cullerada de flors de saüc</li>
@@ -785,7 +785,7 @@
 <li>Colar</li>
 <li>Afegir mel al gust</li>
 <li>Beure 3-4 tasses/dia</li>
-</ul>
+</ol>
 <h3 id="b-per-a-lx27estiu-refrescants-i-protectors">B. Per a l&#x27;estiu (refrescants i protectors)</h3>
 <h4 id="loció-refrescant-de-cogombre-i-calèndula">Loció refrescant de cogombre i calèndula</h4>
 <ul>
@@ -802,7 +802,7 @@
 <li>Afegir l&#x27;oli essencial</li>
 <li>Guardar a la nevera</li>
 <li>Aplicar a la cara i el cos</li>
-</ul>
+</ol>
 <h4 id="oli-de-calèndula-casolà-per-a-cremades-solars">Oli de calèndula casolà (per a cremades solars)</h4>
 <ul>
 <li>100 g de pètals de calèndula secs</li>
@@ -819,7 +819,7 @@
 <li>Abocar en pots petits</li>
 <li>Deixar refredar</li>
 <li>Aplicar sobre cremades solars</li>
-</ul>
+</ol>
 <h3 id="c-per-a-la-salut-diària">C. Per a la salut diària</h3>
 <h4 id="infusió-diària-digestiva">Infusió diària digestiva</h4>
 <ul>
@@ -861,7 +861,7 @@
 <li>Abocar en pots petits</li>
 <li>Deixar refredar</li>
 <li>Aplicar 2-3 cops/dia</li>
-</ul>
+</ol>
 <h4 id="oli-de-romaní-per-a-dolors-musculars">Oli de romaní (per a dolors musculars)</h4>
 <ul>
 <li>100 g de romaní fresc</li>
@@ -874,7 +874,7 @@
 <li>Deixar 15 dies al sol</li>
 <li>Colar</li>
 <li>Aplicar amb massatge a zones dolorides</li>
-</ul>
+</ol>
 <h4 id="tintura-dx27àrnica-per-a-cops">Tintura d&#x27;àrnica (per a cops)</h4>
 <ul>
 <li>50 g de flors d&#x27;àrnica seques</li>
@@ -889,7 +889,7 @@
 <li>Diluir 1:5 amb aigua</li>
 <li>Aplicar amb cotó sobre cops i contusions</li>
 <li><strong>MAI aplicar en ferides obertes</strong></li>
-</ul>
+</ol>
 <h3 id="e-per-a-nens-amb-cura">E. Per a nens (amb cura)</h3>
 <h4 id="xarop-de-mel-i-farigola-per-a-la-tos">Xarop de mel i farigola (per a la tos)</h4>
 <ul>
@@ -907,7 +907,7 @@
 <li>Coure a foc lent 10 min</li>
 <li>Guardar en pot de vidre</li>
 <li>Dosi nens: 1 culleradeta, 2-3 cops/dia</li>
-</ul>
+</ol>
 <h4 id="infusió-de-camamilla-i-tilla-nerviosisme-infantil">Infusió de camamilla i til·la (nerviosisme infantil)</h4>
 <ul>
 <li>1 culleradeta de camamilla</li>
@@ -922,7 +922,7 @@
 <li>Colar</li>
 <li>Dosi nens (1-5 anys): 1-2 cullerades</li>
 <li>Dosi nens (5-12 anys): 1/2 tassa</li>
-</ul>
+</ol>
 <h2 id="5-calendari-de-collita-de-plantes-medicinals">5. Calendari de collita de plantes medicinals</h2>
 <table>
 <thead><tr>
@@ -950,7 +950,7 @@
 <td>Escorces</td>
 <td>Escorces</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="a-osona-èpoques-concretes">A Osona, èpoques concretes</h3>
 <table>
 <thead><tr>
@@ -1033,7 +1033,7 @@
 <td>Setembre-octubre</td>
 <td>Arrels</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="6-com-assecar-i-guardar-les-plantes">6. Com assecar i guardar les plantes</h2>
 <h3 id="a-assecat">A. Assecat</h3>
 <ol>
@@ -1046,7 +1046,7 @@
 <li><strong>2-7 dies</strong> (segons planta)</li>
 <li><strong>Voltejar</strong> cada dia</li>
 <li><strong>Prova</strong>: la fulla ha de cruixir</li>
-</ul>
+</ol>
 <h3 id="b-conservació">B. Conservació</h3>
 <ul>
 <li><strong>Pots de vidre</strong> amb tapa (netejar bé)</li>
@@ -1073,7 +1073,7 @@
 <li>Colar amb tela</li>
 <li>Guardar en ampolla fosca</li>
 <li>Dosi: 20-30 gotes, 2-3 cops/dia (en aigua)</li>
-</ul>
+</ol>
 <h3 id="b-oli-medicinal-per-a-moltes-plantes">B. Oli medicinal (per a moltes plantes)</h3>
 <p><strong>Material</strong>:</p>
 <ul>
@@ -1089,7 +1089,7 @@
 <li>Colar amb tela</li>
 <li>Guardar en ampolla fosca</li>
 <li>Durada: 6-12 mesos</li>
-</ul>
+</ol>
 <h3 id="c-ungüent-per-a-ús-extern">C. Ungüent (per a ús extern)</h3>
 <p><strong>Material</strong>:</p>
 <ul>
@@ -1107,7 +1107,7 @@
 <li>Abocar en pots petits</li>
 <li>Deixar refredar</li>
 <li>Tapar</li>
-</ul>
+</ol>
 <h3 id="d-xarop-per-a-tos-i-refredats">D. Xarop (per a tos i refredats)</h3>
 <p><strong>Material</strong>:</p>
 <ul>
@@ -1126,7 +1126,7 @@
 <li>Abocar en ampolles</li>
 <li>Guardar a la nevera</li>
 <li>Durada: 6-12 mesos</li>
-</ul>
+</ol>
 <h2 id="8-precaucions-generals">8. Precaucions generals</h2>
 <h3 id="a-sempre-consultar-metge-si">A. Sempre consultar metge si</h3>
 <ul>
@@ -1198,7 +1198,7 @@
 <li><strong>Melissa</strong> (ansietat)</li>
 <li><strong>Farigola</strong> (tos, digestió)</li>
 <li><strong>Hiperic</strong> (depressió, ferides) - amb precaució</li>
-</ul>
+</ol>
 <h3 id="c-al-rebost">C. Al rebost</h3>
 <ul>
 <li><strong>Mel</strong> (us universal)</li>
@@ -1274,10 +1274,10 @@
 <li><strong>Plantatge</strong> (pell, tos)</li>
 <li><strong>Sàlvia</strong> (memòria, gola)</li>
 <li><strong>Hiperic</strong> (depressió, ferides) - amb precaució</li>
-</ul>
+</ol>
 <h2 id="13-notes-finals">13. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Les plantes remeieres són <strong>la saviesa acumulada</strong> de milers d&#x27;anys d&#x27;observació. <strong>No substitueixen el metge</strong>, però per a molèsties lleus, prevenció i benestar, són una <strong>eina poderosa, segura i gratuïta</strong>.</p>
+<blockquote>Les plantes remeieres són <strong>la saviesa acumulada</strong> de milers d&#x27;anys d&#x27;observació. <strong>No substitueixen el metge</strong>, però per a molèsties lleus, prevenció i benestar, són una <strong>eina poderosa, segura i gratuïta</strong>.</blockquote>
 <h3 id="aplica-ho-amb-seny">Aplica-ho amb seny</h3>
 <ol>
 <li><strong>Aprèn</strong> a identificar correctament</li>
@@ -1285,7 +1285,7 @@
 <li><strong>Dosi correcta</strong>: &quot;el que cura, en excés pot fer mal&quot;</li>
 <li><strong>Combina</strong> amb bona alimentació i estil de vida</li>
 <li><strong>Comparteix</strong> el coneixement</li>
-</ul>
+</ol>
 <h3 id="el-futur">El futur</h3>
-<p>&gt; A Osona, tens <strong>l&#x27;oportunitat de recuperar la tradició etnobotànica</strong>. Un hort amb plantes remeieres és un <strong>tresor</strong> per a tu, la teva família i la teva comunitat.</p>
+<blockquote>A Osona, tens <strong>l&#x27;oportunitat de recuperar la tradició etnobotànica</strong>. Un hort amb plantes remeieres és un <strong>tresor</strong> per a tu, la teva família i la teva comunitat.</blockquote>
 <p>🌿 <strong>Bona salut amb les plantes remeieres!</strong></p>

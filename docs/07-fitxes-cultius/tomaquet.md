@@ -39,12 +39,14 @@
 <li><strong>Marc de plantació</strong>: 50-60 cm entre plantes, 80-100 cm entre files</li>
 <li><strong>Test intermedi</strong>: 10-12 cm de diàmetre</li>
 <li><strong>Tècnica</strong>:</li>
+</ul>
+<ol>
 <li>Llavors en safata o test amb substrat fi (febrer-març, a 20-25°C).</li>
 <li>Germinen en 5-10 dies.</li>
 <li>Repicar quan tinguin 2 fulles veritables.</li>
 <li>Endurir (<em>hardening off</em>) 7-10 dies abans de trasplantar.</li>
 <li>Trasplantar a partir de la 2a-3a setmana de maig (o 1 setmana abans amb túnel).</li>
-</ul>
+</ol>
 <h2 id="conreu">Conreu</h2>
 <ul>
 <li><strong>Reg</strong>: profund i regular, <strong>mai mullar fulles</strong>. Gota a gota, 25-35 L/m²/setmana a l&#x27;estiu. Reduir en maduració.</li>

@@ -80,7 +80,7 @@
 <td>Collir les últimes cebes d&#x27;hivern</td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="a-osona-el-calendari-ideal">A Osona, el calendari ideal</h3>
 <ul>
 <li><strong>Ceba tendra de primavera</strong> (per menjar a partir d&#x27;abril): sembrar planter al setembre, trasplantar a l&#x27;octubre-novembre</li>
@@ -106,7 +106,7 @@
 <li><strong>All i porro</strong> (competència per nutrients, augmenta risc de plagues)</li>
 <li><strong>Fonoll</strong> (algunes fonts el consideren incompatible)</li>
 </ul>
-<p>&gt; 💡 <strong>Truc clau a Osona</strong>: plantar cebes <strong>al costat de la pastanaga</strong> redueix 60-80% els danys de la mosca de la pastanaga.</p>
+<blockquote>💡 <strong>Truc clau a Osona</strong>: plantar cebes <strong>al costat de la pastanaga</strong> redueix 60-80% els danys de la mosca de la pastanaga.</blockquote>
 <h2 id="sòl-i-preparació">Sòl i preparació</h2>
 <ul>
 <li><strong>pH ideal</strong>: 6,0-7,0</li>
@@ -125,7 +125,7 @@
 <li><strong>Endurir</strong> 7 dies abans de trasplantar (posar al carrer de dia)</li>
 <li><strong>Trasplantar</strong> a arrel nua quan la planta tingui 15-20 cm (3-4 fulles)</li>
 <li><strong>Tallar</strong> 1/3 de les fulles i arrels a 1-2 cm (vigoritza la planta)</li>
-</ul>
+</ol>
 <h3 id="opció-2-sembra-directa-a-terra">Opció 2: Sembra directa a terra</h3>
 <ul>
 <li>Filera fonda 1-1,5 cm</li>
@@ -181,7 +181,7 @@
 <li><strong>Traslladar</strong> a cobert ventilat per acabar d&#x27;assecar (2-4 setmanes)</li>
 <li><strong>Retallar</strong> fulles a 2-3 cm i arrels</li>
 <li><strong>Guardar</strong> en caixes, cistelles o sacs de malla</li>
-</ul>
+</ol>
 <h3 id="producció-esperada">Producció esperada</h3>
 <ul>
 <li><strong>Ceba tendra</strong>: 1-2 kg/m²</li>
@@ -251,8 +251,8 @@
 <td>Blanca, petita, d&#x27;hivern, molt bona</td>
 <td>Recuperar amb L&#x27;Era o Esporus</td>
 </tr>
-</table>
-<p>&gt; 💡 <strong>Truc</strong>: demana la <strong>Ceba de Vic</strong> o la <strong>Ceba d&#x27;hivern d&#x27;Osona</strong> a través d&#x27;Esporus (www.esporus.org) o a la Fira de la Llavor de Vic. Són varietats locals en vies de recuperació.</p>
+</tbody></table>
+<blockquote>💡 <strong>Truc</strong>: demana la <strong>Ceba de Vic</strong> o la <strong>Ceba d&#x27;hivern d&#x27;Osona</strong> a través d&#x27;Esporus (www.esporus.org) o a la Fira de la Llavor de Vic. Són varietats locals en vies de recuperació.</blockquote>
 <h2 id="notes-i-observacions-personals">Notes i observacions personals</h2>
 <ul>
 <li>_Plantar les cebes <strong>entre les pastanagues</strong> des del primer moment._</li>
@@ -315,4 +315,4 @@
 <td><strong>Desembre</strong></td>
 <td>Repòs; consum de les guardades</td>
 </tr>
-</table>
+</tbody></table>

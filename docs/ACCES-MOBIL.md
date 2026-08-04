@@ -1,5 +1,5 @@
 <h1 id="-accés-des-del-mòbil-hort-osona-pwa">📱 Accés des del mòbil — Hort Osona PWA</h1>
-<p>&gt; Tens el projecte disponible des de qualsevol dispositiu amb navegador, fins i tot <strong>offline</strong>.</p>
+<blockquote>Tens el projecte disponible des de qualsevol dispositiu amb navegador, fins i tot <strong>offline</strong>.</blockquote>
 <h2 id="-url-pública">🌐 URL pública</h2>
 <p><strong>https://BernatMora.github.io/hort-osona/</strong></p>
 <p>Aquesta URL:</p>
@@ -17,7 +17,7 @@
 <li>Desplaça&#x27;t i tria <strong>&quot;Afegir a la pantalla d&#x27;inici&quot;</strong></li>
 <li>Confirma el nom &quot;Hort Osona&quot; i toca <strong>&quot;Afegir&quot;</strong></li>
 <li>✅ Tens una icona a la pantalla d&#x27;inici com una app</li>
-</ul>
+</ol>
 <p>Quan l&#x27;obris:</p>
 <ul>
 <li>S&#x27;obre <strong>a pantalla completa</strong> (sense barra del Safari)</li>
@@ -31,7 +31,7 @@
 <li>Tria <strong>&quot;Instal·lar aplicació&quot;</strong> o <strong>&quot;Afegir a la pantalla d&#x27;inici&quot;</strong></li>
 <li>Confirma</li>
 <li>✅ Tens una icona al calaix d&#x27;apps</li>
-</ul>
+</ol>
 <h2 id="-què-pots-fer-des-del-mòbil">✨ Què pots fer des del mòbil</h2>
 <p>Un cop instal·lada l&#x27;app, tens accés a:</p>
 <ul>
@@ -46,14 +46,15 @@
 <p>Cada vegada que vulguis actualitzar el contingut:</p>
 <pre><code>
 cd ~/Desktop/hort-osona
-python3 build_portal.py   # regenera l&#x27;index.html i copia assets PWA
+python3 build_portal_v2.py   # regenera l&#x27;index.html, els documents i els assets PWA
+python3 verify_portal.py     # comprova que tot sigui correcte abans de publicar
 ./hort-sync.sh &quot;missatge&quot; # commit + push
 </code></pre>
 <p>En 30-60 segons, la versió nova és visible al mòbil (i a tot arreu).</p>
 <p>Si vols, pots crear un àlies al terminal per fer-ho en una sola ordre:</p>
 <pre><code>
 # Afegeix això a ~/.zshrc:
-alias hort-publish=&#x27;cd ~/Desktop/hort-osona &amp;&amp; python3 build_portal.py &amp;&amp; ./hort-sync.sh &quot;Actualitzar web&quot;&#x27;
+alias hort-publish=&#x27;cd ~/Desktop/hort-osona &amp;&amp; python3 build_portal_v2.py &amp;&amp; ./hort-sync.sh &quot;Actualitzar web&quot;&#x27;
 </code></pre>
 <p>Després:</p>
 <pre><code>
@@ -100,16 +101,16 @@ hort-publish &quot;Afegida fitxa de carxofa&quot;
 </ul>
 <h2 id="-idees-per-millorar">💡 Idees per millorar</h2>
 <ul>
-<li>[ ] Afegir <strong>botó per afegir notes</strong> (localStorage al mòbil)</li>
-<li>[ ] Afegir <strong>checklist diària</strong> amb sincronització</li>
-<li>[ ] Activar <strong>Tailscale</strong> per accedir al xat des del mòbil</li>
-<li>[ ] <strong>Notificacions push</strong> quan hi ha tasques importants</li>
-<li>[ ] <strong>Mode fosc</strong> per llegir a la nit a l&#x27;hort 🌙</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span>Afegir <strong>botó per afegir notes</strong> (localStorage al mòbil)</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span>Afegir <strong>checklist diària</strong> amb sincronització</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span>Activar <strong>Tailscale</strong> per accedir al xat des del mòbil</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Notificacions push</strong> quan hi ha tasques importants</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span><strong>Mode fosc</strong> per llegir a la nit a l&#x27;hort 🌙</span></label></li>
 </ul>
 <h2 id="-ajuda">📞 Ajuda</h2>
 <p>Si alguna cosa no funciona:</p>
 <ol>
-<li>Comprova que el portal es genera bé: <code>python3 build_portal.py</code></li>
+<li>Comprova que el portal es genera bé: <code>python3 build_portal_v2.py</code></li>
 <li>Comprova els assets PWA: <code>ls -la manifest.json icon-*.png service-worker.js</code></li>
 <li>Comprova que el push ha funcionat: <code>git log --oneline -3</code></li>
-</ul>
+</ol>

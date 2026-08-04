@@ -19,7 +19,7 @@ tot client-side) navegable i cercable.
 Des de l'arrel del projecte:
 
 ```bash
-python site/build.py
+python3 build_portal_v2.py
 ```
 
 Sortida esperada:

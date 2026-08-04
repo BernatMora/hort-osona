@@ -1,5 +1,5 @@
 <h1 id="-guia-de-banys-terapèutics-casolans-12-banys-amb-plantes-del">🛁 Guia de Banys Terapèutics Casolans — 12 banys amb plantes del teu hort</h1>
-<p>&gt; Un <strong>bany terapèutic</strong> és molt més que neteja: és <strong>ritual, curació, meditació, plaer</strong>. Des de l&#x27;antiguitat, totes les cultures han usat banys amb plantes per <strong>curar el cos i l&#x27;ànima</strong>. Amb les <strong>plantes medicinals del teu hort</strong> pots crear <strong>12 banys específics</strong> per a cada necessitat: relaxar, desintoxicar, combatre el refredat, alleujar dolors, calmar la pell, preparar el son... Tots <strong>naturals, eficaços i rituals</strong>.</p>
+<blockquote>Un <strong>bany terapèutic</strong> és molt més que neteja: és <strong>ritual, curació, meditació, plaer</strong>. Des de l&#x27;antiguitat, totes les cultures han usat banys amb plantes per <strong>curar el cos i l&#x27;ànima</strong>. Amb les <strong>plantes medicinals del teu hort</strong> pots crear <strong>12 banys específics</strong> per a cada necessitat: relaxar, desintoxicar, combatre el refredat, alleujar dolors, calmar la pell, preparar el son... Tots <strong>naturals, eficaços i rituals</strong>.</blockquote>
 <h2 id="1-introducció">1. Introducció</h2>
 <h3 id="a-per-què-fer-banys-terapèutics">A. Per què fer banys terapèutics?</h3>
 <ol>
@@ -9,7 +9,7 @@
 <li><strong>Són econòmics</strong> (1 bany = 0,50-2 € vs 30-80 € a un spa)</li>
 <li><strong>Són terapèutics</strong> (milloren la son, l&#x27;estrès, l&#x27;ansietat)</li>
 <li><strong>Són rituals compartits</strong> (en parella, família, amics)</li>
-</ul>
+</ol>
 <h3 id="b-les-plantes-que-necessites">B. Les plantes que necessites</h3>
 <p><strong>Ja les tens al teu hort</strong>: romaní, sàlvia, farigola, espígol, menta, calèndula, camamil·la, til·la.</p>
 <p><strong>Pots afegir</strong>: eucaliptus (refredats), rosa (pètals, afrodisíac), farigola (anti-tòxic).</p>
@@ -46,7 +46,7 @@
 <li>Deixar 10-15 minuts</li>
 <li>Colar</li>
 <li>Afegir a l&#x27;aigua del bany</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: simple, ràpid, eficaç</p>
 <p><strong>Desavantatges</strong>: les olors es perden una mica a l&#x27;aigua</p>
 <p>---</p>
@@ -58,7 +58,7 @@
 <li>Tancar amb cordó</li>
 <li>Submergir a l&#x27;aigua del bany</li>
 <li>Prémer la bossa per alliberar les propietats</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: molt net, pots fer servir la bossa 2-3 vegades</p>
 <p><strong>Desavantatges</strong>: cal cosir</p>
 <p>---</p>
@@ -69,7 +69,7 @@
 <li>Afegir 20-30 gotes d&#x27;oli essencial</li>
 <li>Guardar en pot de vidre</li>
 <li>Usar 100-200 g per bany</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: es conserva molt, excel·lent exfoliant</p>
 <p><strong>Desavantatges</strong>: cal preparar amb antelació</p>
 <p>---</p>
@@ -83,7 +83,7 @@
 <li>30 gotes d&#x27;oli essencial</li>
 <li>2-3 cullerades de plantes seques</li>
 <li>Barrejar, premsar en motlles, deixar assecar 24 h</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: diverteix, bombolleja, excel·lent com a regal</p>
 <p><strong>Desavantatges</strong>: cal preparar amb antelació</p>
 <p>---</p>
@@ -94,7 +94,7 @@
 <li>20-30 gotes d&#x27;oli essencial</li>
 <li>1 cullerada de polisorbat 80 (dispersant)</li>
 <li>Afegir a l&#x27;aigua del bany</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: hidrata molt, suau</p>
 <p><strong>Desavantatges</strong>: cal polisorbat per dispersar l&#x27;oli</p>
 <p>---</p>
@@ -106,7 +106,7 @@
 <li>Deixar infusionar 5 min</li>
 <li>Apropar la cara (amb tovallola al cap)</li>
 <li>Respirar el vapor 5-10 min</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>: excel·lent per a pell, sinusitis, refredat</p>
 <p><strong>Desavantatges</strong>: només cara, no cos</p>
 <h2 id="3-els-12-banys-terapèutics-específics">3. Els 12 banys terapèutics específics</h2>
@@ -122,7 +122,7 @@
 <li>Afegir a l&#x27;aigua del bany (37-38°C)</li>
 <li>Afegir 10 gotes d&#x27;OE d&#x27;espígol (opcional)</li>
 <li>Bany 20-30 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: floral, dolça, calmant</p>
 <p><strong>Propietats</strong>: relaxant, anti-estrès, millora la son</p>
 <p><strong>Durada</strong>: 1 dia (millor fer-la al moment)</p>
@@ -137,7 +137,7 @@
 <li>20 gotes d&#x27;OE de llimona</li>
 <li>Barrejar, guardar en pot</li>
 <li>Usar 200 g al bany (38-40°C, per fer suar)</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: herbaci, cítric</p>
 <p><strong>Propietats</strong>: desintoxicant, estimulant, activador de la circulació</p>
 <p><strong>Durada</strong>: 5-10 min al bany, després dutxa freda</p>
@@ -147,13 +147,17 @@
 <p><strong>Procediment (bossa de tela)</strong>:</p>
 <ol>
 <li>Cosir bossa de tela amb:</li>
+</ol>
+<ul>
 <li>50 g d&#x27;eucaliptus (fulles)</li>
 <li>50 g de farigola</li>
 <li>30 g de menta</li>
+</ul>
+<ol>
 <li>Submergir en bany molt calent (40-42°C)</li>
 <li>Bany 15-20 min</li>
 <li>Sortir, eixugar-se, posar-se roba calenta, anar al llit</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: fort, mentolat, balsàmic</p>
 <p><strong>Propietats</strong>: descongestiu, antisèptic, expectorant</p>
 <p><strong>Atenció</strong>: NO aplicar a nens &lt;3 anys, embarassades</p>
@@ -170,7 +174,7 @@
 <li>Afegir a l&#x27;aigua del bany (38-40°C)</li>
 <li>Afegir 20 ml d&#x27;oli de romaní</li>
 <li>Bany 20-30 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: fort, especiat, calent</p>
 <p><strong>Propietats</strong>: antiàlgic, antiinflamatòria, estimulant</p>
 <p><strong>Durada</strong>: fer al vespre</p>
@@ -185,7 +189,7 @@
 <li>30 g de calèndula</li>
 <li>Barrejar, afegir al bany (37-38°C)</li>
 <li>Bany 20-30 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: dolç, floral</p>
 <p><strong>Propietats</strong>: hidratant, nutritiu, calmant</p>
 <p><strong>Durada</strong>: 1 bany = 1 aplicació</p>
@@ -200,7 +204,7 @@
 <li>Infusió suau</li>
 <li>Afegir al bany del nen (35-37°C)</li>
 <li>Bany 10-15 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: dolça, suau</p>
 <p><strong>Propietats</strong>: relaxant, calmant, ajuda a dormir</p>
 <p><strong>Durada</strong>: fer al vespre</p>
@@ -216,7 +220,7 @@
 <li>Afegir al bany (37-38°C)</li>
 <li>Afegir 10 gotes d&#x27;OE d&#x27;ylang-ylang</li>
 <li>Bany amb espelmes, música suau</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: floral, sensual</p>
 <p><strong>Propietats</strong>: afrodisíac, relaxant, sensual</p>
 <p><strong>Durada</strong>: 1 bany = 1 moment especial</p>
@@ -231,7 +235,7 @@
 <li>Infusió suau</li>
 <li>Bany a 35-37°C (NO gaire calent)</li>
 <li>Bany 10-15 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: dolça, suau</p>
 <p><strong>Propietats</strong>: calmant, hidratant, suau</p>
 <p><strong>Durada</strong>: fer al vespre</p>
@@ -248,7 +252,7 @@
 <li>Afegir aigua calenta fins a temperatura còmoda (38-40°C)</li>
 <li>Bany de peus 15-20 min</li>
 <li>Eixugar bé, posar mitjons</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: refrescant, fort</p>
 <p><strong>Propietats</strong>: refrescant, estimulant, desodorant</p>
 <p><strong>Durada</strong>: fer al vespre</p>
@@ -263,7 +267,7 @@
 <li>Bullir 1 L d&#x27;aigua, afegir les plantes, 15 min</li>
 <li>Colar, afegir a un recipient</li>
 <li>Bany de mans 15-20 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: fort, especiat</p>
 <p><strong>Propietats</strong>: antiàlgic, antiinflamatòria, estimulant</p>
 <p><strong>Durada</strong>: fer 2-3 cops al dia</p>
@@ -278,7 +282,7 @@
 <li>Apropar la cara (amb tovallola al cap)</li>
 <li>Respirar el vapor 5-10 min</li>
 <li>Rentar la cara amb aigua freda</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: fort, mentolat (si poses menta)</p>
 <p><strong>Propietats</strong>: netejador, descongestiu, antisèptic</p>
 <p><strong>Durada</strong>: fer 1-2 cops per setmana</p>
@@ -291,7 +295,7 @@
 <li>Infusió forta</li>
 <li>Bany a 37-38°C</li>
 <li>20-30 min</li>
-</ul>
+</ol>
 <p><strong>Olors</strong>: barreja</p>
 <p><strong>Propietats</strong>: relaxant, anti-estrès, multiús</p>
 <p><strong>Durada</strong>: sempre</p>
@@ -317,7 +321,7 @@
 <li>Premsar fort en motlles (motlles de boles de bany, o manuals)</li>
 <li>Deixar assecar 24 hores</li>
 <li>Desmotllar</li>
-</ul>
+</ol>
 <p><strong>Propietats</strong>: bombollegen, aromàtiques, suaus</p>
 <p><strong>Conservació</strong>: 3-6 mesos (en pot sec, tancat)</p>
 <h2 id="5-sal-de-bany-aromatitzada">5. Sal de bany aromatitzada</h2>
@@ -335,7 +339,7 @@
 <li>Afegir l&#x27;oli essencial</li>
 <li>Trossejar les plantes amb les mans (alliberen les olors)</li>
 <li>Guardar en pot de vidre</li>
-</ul>
+</ol>
 <p><strong>Propietats</strong>: exfoliant, aromàtic, estimulant</p>
 <p><strong>Conservació</strong>: 6-12 mesos</p>
 <h2 id="6-com-crear-un-ritual-de-bany">6. Com crear un ritual de bany</h2>
@@ -345,7 +349,7 @@
 <li><strong>Bany</strong> (20-30 min): submergir-te, respirar, deixar-te anar</li>
 <li><strong>Hidratar</strong> (5 min): sortir, eixugar, aplicar oli de massatge</li>
 <li><strong>Descans</strong> (15 min): posar-te roba còmoda, estirar-te, beure aigua o infusió</li>
-</ul>
+</ol>
 <h3 id="per-a-curar-un-refredat-vespre">Per a curar un refredat (vespre)</h3>
 <ol>
 <li>Bany molt calent (40-42°C)</li>
@@ -356,7 +360,7 @@
 <li>Xarop de farigola + mel</li>
 <li>Infusió d&#x27;espígol + til·la</li>
 <li>Anar al llit amb manta</li>
-</ul>
+</ol>
 <h3 id="per-a-nens-vespre">Per a nens (vespre)</h3>
 <ol>
 <li>Bany a 35-37°C</li>
@@ -367,10 +371,10 @@
 <li>Infusió de camamil·la</li>
 <li>Contar un conte</li>
 <li>Dormir</li>
-</ul>
+</ol>
 <h2 id="7-notes-finals">7. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Un <strong>bany terapèutic</strong> és un dels <strong>tresors més antics</strong> de la humanitat. Les plantes del teu hort, combinades amb aigua calenta, poden <strong>curar el cos i l&#x27;ànima</strong> de manera <strong>neta, eficaç, i plaent</strong>. No cal ser ric per tenir un spa a casa: només cal <strong>les plantes, l&#x27;aigua, i el temps</strong>.</p>
+<blockquote>Un <strong>bany terapèutic</strong> és un dels <strong>tresors més antics</strong> de la humanitat. Les plantes del teu hort, combinades amb aigua calenta, poden <strong>curar el cos i l&#x27;ànima</strong> de manera <strong>neta, eficaç, i plaent</strong>. No cal ser ric per tenir un spa a casa: només cal <strong>les plantes, l&#x27;aigua, i el temps</strong>.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: comprar plantes que et faltin</li>
@@ -378,7 +382,7 @@
 <li><strong>Aquest mes</strong>: fer 2-3 banys més</li>
 <li><strong>Aquest hivern</strong>: fer el <strong>bany per a refredat</strong> (quan calgui!)</li>
 <li><strong>Aquest any</strong>: tenir 8-10 receptes a punt</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-de-lx27aigua">La saviesa de l&#x27;aigua</h3>
-<p>&gt; L&#x27;aigua és el <strong>purificador universal</strong>. Les plantes en son les <strong>essències</strong>. El <strong>calor</strong> n&#x27;és el <strong>transportador</strong>. I el <strong>temps</strong> és el <strong>curador</strong>. Combina aquests 4 elements i tindràs una <strong>farmàcia a la banyera</strong>.</p>
+<blockquote>L&#x27;aigua és el <strong>purificador universal</strong>. Les plantes en son les <strong>essències</strong>. El <strong>calor</strong> n&#x27;és el <strong>transportador</strong>. I el <strong>temps</strong> és el <strong>curador</strong>. Combina aquests 4 elements i tindràs una <strong>farmàcia a la banyera</strong>.</blockquote>
 <p>🛁 <strong>Bona salut amb els teus banys terapèutics!</strong></p>

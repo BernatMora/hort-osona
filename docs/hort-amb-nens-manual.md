@@ -1,5 +1,5 @@
 <h1 id="-manual-dx27hort-amb-nens-guia-pràctica-per-a-famílies-i-edu">🌱 Manual d&#x27;Hort amb Nens — Guia pràctica per a famílies i educadors</h1>
-<p>&gt; L&#x27;hort és una <strong>aula a l&#x27;aire lliure</strong> on els nens aprenen <strong>ciència, biologia, ecologia, alimentació, paciència, responsabilitat, i respecte per la natura</strong>, tot jugant. Aquest manual t&#x27;ensenya com <strong>ensenyar als nens</strong> (de 3 a 14 anys) a cultivar el seu propi hort, amb <strong>activitats, jocs, fitxes per edats, consells de seguretat</strong> i <strong>com transformar l&#x27;hort en una eina educativa</strong>. Tant si tens <strong>fills, nebts, alumnes, o nens del veïnat</strong>, aquí trobaràs com fer de l&#x27;hort una <strong>experiència inoblidable</strong>.</p>
+<blockquote>L&#x27;hort és una <strong>aula a l&#x27;aire lliure</strong> on els nens aprenen <strong>ciència, biologia, ecologia, alimentació, paciència, responsabilitat, i respecte per la natura</strong>, tot jugant. Aquest manual t&#x27;ensenya com <strong>ensenyar als nens</strong> (de 3 a 14 anys) a cultivar el seu propi hort, amb <strong>activitats, jocs, fitxes per edats, consells de seguretat</strong> i <strong>com transformar l&#x27;hort en una eina educativa</strong>. Tant si tens <strong>fills, nebts, alumnes, o nens del veïnat</strong>, aquí trobaràs com fer de l&#x27;hort una <strong>experiència inoblidable</strong>.</blockquote>
 <h2 id="1-per-què-un-hort-amb-nens">1. PER QUÈ UN HORT AMB NENS?</h2>
 <h3 id="11-beneficis-educatius">1.1. Beneficis educatius</h3>
 <p><strong>CIÈNCIA I NATURA</strong>:</p>
@@ -69,7 +69,7 @@
 <td>Projectes propis, vendre, intercanviar</td>
 <td>Tot el que vulguin!</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-preparar-lx27hort-amb-nens">2. PREPARAR L&#x27;HORT AMB NENS</h2>
 <h3 id="21-zona-per-a-nens">2.1. Zona per a nens</h3>
 <p>Si tens <strong>un hort ja existent</strong> (com el teu de 20 m²), pots:</p>
@@ -123,7 +123,7 @@
 <li><strong>Aigua</strong>: que no s&#x27;assequin!</li>
 <li><strong>No pesticides químics</strong> (ecològic!)</li>
 <li><strong>Avisar</strong> si troben algun animal estrany</li>
-</ul>
+</ol>
 <p><strong>Plantes a evitar amb nens</strong> (tòxiques):</p>
 <ul>
 <li>Baladre (Nerium)</li>
@@ -138,6 +138,8 @@
 <h3 id="a-per-la-rapidesa-veuen-resultats-ràpid">A. Per la rapidesa (veuen resultats ràpid!)</h3>
 <ol>
 <li><strong>RAVE</strong> (<em>Raphanus sativus</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 4-7 dies</li>
 <li><strong>Collita</strong>: 25-35 dies</li>
 <li><strong>Per què als nens</strong>: creix MOLT ràpid, veuen el tubercle</li>
@@ -145,6 +147,8 @@
 </ul>
 <ol>
 <li><strong>ENCIAM</strong> (<em>Lactuca sativa</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-10 dies</li>
 <li><strong>Collita</strong>: 45-60 dies</li>
 <li><strong>Per què als nens</strong>: fulles tendres, mengen amanida</li>
@@ -152,6 +156,8 @@
 </ul>
 <ol>
 <li><strong>FAVA</strong> (<em>Vicia faba</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-14 dies</li>
 <li><strong>Collita</strong>: 80-100 dies</li>
 <li><strong>Per què als nens</strong>: llavors GRANS, fàcils de plantar</li>
@@ -159,6 +165,8 @@
 </ul>
 <ol>
 <li><strong>GIRA-SOL</strong> (<em>Helianthus annuus</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-10 dies</li>
 <li><strong>Collita</strong>: 80-120 dies</li>
 <li><strong>Per què als nens</strong>: GRAN, vistós, els nens queden bocabadats</li>
@@ -166,6 +174,8 @@
 </ul>
 <ol>
 <li><strong>PÉSOLS</strong> (<em>Pisum sativum</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-14 dies</li>
 <li><strong>Collita</strong>: 60-80 dies</li>
 <li><strong>Per què als nens</strong>: dolços, tendeixen a menjar directament</li>
@@ -174,6 +184,8 @@
 <h3 id="b-per-la-vistositat">B. Per la vistositat</h3>
 <ol>
 <li><strong>CARABASSA</strong> (<em>Cucurbita pepo</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-10 dies</li>
 <li><strong>Collita</strong>: 100-130 dies</li>
 <li><strong>Per què als nens</strong>: GRANS, formes, colors</li>
@@ -181,6 +193,8 @@
 </ul>
 <ol>
 <li><strong>TOMÀQUET</strong> (<em>Solanum lycopersicum</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-14 dies</li>
 <li><strong>Collita</strong>: 60-90 dies</li>
 <li><strong>Per què als nens</strong>: mengen del peu a la boca</li>
@@ -188,6 +202,8 @@
 </ul>
 <ol>
 <li><strong>CALÈNDULA</strong> (<em>Calendula officinalis</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 7-14 dies</li>
 <li><strong>Collita</strong>: 50-70 dies</li>
 <li><strong>Per què als nens</strong>: FLORS, es ressembren</li>
@@ -195,6 +211,8 @@
 </ul>
 <ol>
 <li><strong>SAJOLIDA</strong> (<em>Satureja montana</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 14-20 dies</li>
 <li><strong>Collita</strong>: 60-90 dies</li>
 <li><strong>Per què als nens</strong>: aromàtica, amb sabó</li>
@@ -202,6 +220,8 @@
 </ul>
 <ol>
 <li><strong>MARIALLUÏSA</strong> (<em>Lippia citriodora</em>)</li>
+</ol>
+<ul>
 <li><strong>Germinació</strong>: 14-21 dies</li>
 <li><strong>Collita</strong>: 60-90 dies</li>
 <li><strong>Per què als nens</strong>: olor de llimona</li>
@@ -646,16 +666,16 @@
 </ul>
 <h2 id="10-notes-finals">10. NOTES FINALS</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; L&#x27;hort amb nens <strong>NO és només cultivar plantes</strong>. És <strong>cultivar nens</strong>: la seva paciència, responsabilitat, amor per la natura, coneixement del món. Cada llavor que planten és una <strong>lliçó de vida</strong> que recordaran sempre.</p>
-<p>&gt;</p>
-<p>&gt; A Osona, els <strong>nostres avis i àvies</strong> aprenien a cultivar des de petits. Avui, en un món de <strong>pantalles i desconnexió</strong>, l&#x27;hort és una <strong>eina poderosa</strong> per reconnectar els nens amb <strong>la terra, el menjar, i ells mateixos</strong>.</p>
+<blockquote>L&#x27;hort amb nens <strong>NO és només cultivar plantes</strong>. És <strong>cultivar nens</strong>: la seva paciència, responsabilitat, amor per la natura, coneixement del món. Cada llavor que planten és una <strong>lliçó de vida</strong> que recordaran sempre.</blockquote>
+<blockquote></blockquote>
+<blockquote>A Osona, els <strong>nostres avis i àvies</strong> aprenien a cultivar des de petits. Avui, en un món de <strong>pantalles i desconnexió</strong>, l&#x27;hort és una <strong>eina poderosa</strong> per reconnectar els nens amb <strong>la terra, el menjar, i ells mateixos</strong>.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: compra llavors de rave i fava</li>
 <li><strong>Aquest cap de setmana</strong>: planta amb un nen</li>
 <li><strong>Aquest mes</strong>: observa, espera, sorprèn-te</li>
 <li><strong>Aquest any</strong>: collir junts</li>
-</ul>
+</ol>
 <h3 id="la-saviesa">La saviesa</h3>
-<p>&gt; A Osona, les <strong>àvies</strong> tenien una saviesa pagesa que <strong>s&#x27;ensenyava als nets</strong>: a plantar, a collir, a transformar. Ara tu pots <strong>recuperar</strong> aquesta saviesa, <strong>compartir-la</strong> amb nens, i <strong>crear memòries</strong> que duraran tota la vida.</p>
+<blockquote>A Osona, les <strong>àvies</strong> tenien una saviesa pagesa que <strong>s&#x27;ensenyava als nets</strong>: a plantar, a collir, a transformar. Ara tu pots <strong>recuperar</strong> aquesta saviesa, <strong>compartir-la</strong> amb nens, i <strong>crear memòries</strong> que duraran tota la vida.</blockquote>
 <p>🌱 <strong>Bona hort amb nens!</strong></p>

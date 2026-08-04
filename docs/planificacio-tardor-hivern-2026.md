@@ -1,5 +1,5 @@
 <h1 id="-planificació-de-tardor-i-hivern-a-osona">🍂 Planificació de tardor i hivern a Osona</h1>
-<p>&gt; Guia pràctica per planificar la segona meitat de l&#x27;any al teu hort. A Osona, l&#x27;hivern és dur (gelades, dies curts) però l&#x27;hort no s&#x27;atura: cols, escaroles, alls, porros i adobs verds et mantindran l&#x27;hort actiu tot l&#x27;any.</p>
+<blockquote>Guia pràctica per planificar la segona meitat de l&#x27;any al teu hort. A Osona, l&#x27;hivern és dur (gelades, dies curts) però l&#x27;hort no s&#x27;atura: cols, escaroles, alls, porros i adobs verds et mantindran l&#x27;hort actiu tot l&#x27;any.</blockquote>
 <h2 id="per-què-planificar-tardorhivern-ara">Per què planificar tardor/hivern ara?</h2>
 <p>Si esperes a l&#x27;octubre a pensar què plantar a l&#x27;hivern, <strong>ja serà tard</strong>. La clau és:</p>
 <ul>
@@ -76,7 +76,7 @@
 <td>Setembre-febrer</td>
 <td>2-3 mesos</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="hortalisses-dx27arrel-guarden-bé">Hortalisses d&#x27;arrel (guarden bé)</h3>
 <table>
 <thead><tr>
@@ -121,7 +121,7 @@
 <td>Octubre-març</td>
 <td>Al sòl</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="hortalisses-de-bulb-per-guardar">Hortalisses de bulb (per guardar)</h3>
 <table>
 <thead><tr>
@@ -148,7 +148,7 @@
 <td>Octubre-març</td>
 <td>Tot l&#x27;hivern</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="lleguminoses-per-adob-verd-i-consum">Lleguminoses (per adob verd i consum)</h3>
 <table>
 <thead><tr>
@@ -175,7 +175,7 @@
 <td>Incorporar març-abril</td>
 <td>Millora sòl</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-calendari-pràctic-per-al-teu-hort-de-20-m²">2. Calendari pràctic (per al teu hort de 20 m²)</h2>
 <h3 id="juliol-agost-planificar-i-preparar">Juliol-agost: PLANIFICAR I PREPARAR</h3>
 <p><strong>A fer aquests mesos</strong>:</p>
@@ -215,7 +215,7 @@
 <td>Trasplantar les primeres cols (a l&#x27;exterior)</td>
 <td>Que arrelin bé abans del fred</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="setembre-octubre-plantar-i-trasplantar">Setembre-octubre: PLANTAR I TRASPLANTAR</h3>
 <p><strong>A fer aquests mesos</strong>:</p>
 <table>
@@ -254,7 +254,7 @@
 <td>Trasplantar cebes d&#x27;hivern (si tens planter)</td>
 <td>Colliràs a la primavera</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="novembre-desembre-collir-i-mantenir">Novembre-desembre: COLLIR I MANTENIR</h3>
 <p><strong>A fer aquests mesos</strong>:</p>
 <table>
@@ -283,7 +283,7 @@
 <td>Cols (últimes), kale, porros, naps, alls tendres</td>
 <td>Trasplantar alls (si no ho vas fer a l&#x27;octubre), sembrar primeres cols</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="3-pla-concret-per-al-teu-hort-de-20-m²">3. Pla concret per al teu hort de 20 m²</h2>
 <h3 id="distribució-recomanada-per-a-lx27hivern-2026-27">Distribució recomanada per a l&#x27;hivern 2026-27</h3>
 <table>
@@ -347,7 +347,7 @@
 <td><strong>~20 m²</strong></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="què-plantar-i-quan-resum-visual">Què plantar i quan (resum visual)</h3>
 <pre><code>
 JULIOL
@@ -412,7 +412,7 @@ GENER-FEBRER
 <td>Cols (final), kale, porros, naps, alls tendres</td>
 <td>Trasplantar les primeres cols de 2027</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="producció-estimada-hivern-2026-27-20-m²">Producció estimada hivern 2026-27 (20 m²)</h3>
 <table>
 <thead><tr>
@@ -481,7 +481,7 @@ GENER-FEBRER
 <td><strong>~50-80 kg de menjar</strong></td>
 <td>Excel·lent!</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="5-com-protegir-els-cultius-del-fred-a-osona">5. Com protegir els cultius del fred a Osona</h2>
 <h3 id="gelades-quan-i-com">Gelades: quan i com</h3>
 <p><strong>A Osona les gelades solen arribar</strong>:</p>
@@ -528,7 +528,7 @@ GENER-FEBRER
 <td>0-2 €</td>
 <td>Protecció rústica</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="aplica-ho-al-teu-hort">Aplica-ho al teu hort</h3>
 <ol>
 <li><strong>Cols i kale</strong> (resisteixen -10°C): no cal protegir</li>
@@ -537,7 +537,7 @@ GENER-FEBRER
 <li><strong>Alls</strong> (resisteixen -15°C): no cal protegir</li>
 <li><strong>Api</strong> (resisteix -3°C): malla tèrmica en gelades fortes</li>
 <li><strong>Cebes d&#x27;hivern</strong> (resisteixen -5°C): malla tèrmica</li>
-</ul>
+</ol>
 <h2 id="6-adob-verd-la-clau-de-lx27hivern">6. Adob verd: la clau de l&#x27;hivern</h2>
 <h3 id="per-què-és-tan-important">Per què és tan important</h3>
 <ul>
@@ -551,20 +551,24 @@ GENER-FEBRER
 <p><strong>A l&#x27;octubre, en les parcel·les lliures</strong> (4 m²):</p>
 <ol>
 <li><strong>Sembra a voleo</strong> la barreja:</li>
+</ol>
+<ul>
 <li>80 g civada + 40 g veça per m²</li>
 <li>O 50 g ordi + 30 g pèsol farratger</li>
 <li>O 100 g favó sol (excel·lent fixador de N)</li>
+</ul>
+<ol>
 <li><strong>Cobrir lleugerament</strong> amb rasclet</li>
 <li><strong>Regar</strong> si no plou els 3-5 dies següents</li>
 <li><strong>Esperar</strong> 5-6 mesos</li>
-</ul>
+</ol>
 <p><strong>A finals de març-abril</strong> (abans de sembrar cultius d&#x27;estiu):</p>
 <ol>
 <li><strong>Segar</strong> quan la civada comenci a granar</li>
 <li><strong>Triturar</strong> amb tisores o aixada</li>
 <li><strong>Incorporar superficialment</strong> amb aixada (10-15 cm)</li>
 <li><strong>Esperar 3-4 setmanes</strong> abans de sembrar/trasplantar</li>
-</ul>
+</ol>
 <h2 id="7-varietats-locals-catalanes-recomanades-per-a-lx27hivern">7. Varietats locals catalanes recomanades per a l&#x27;hivern</h2>
 <h3 id="cols">Cols</h3>
 <ul>
@@ -687,7 +691,7 @@ GENER-FEBRER
 <td>—</td>
 <td><strong>~30-50 €</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="altres-compres">Altres compres</h3>
 <table>
 <thead><tr>
@@ -725,7 +729,7 @@ GENER-FEBRER
 <td>—</td>
 <td><strong>~60-100 €</strong></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="cost-total-hivern-2026-27-90-150-"><strong>COST TOTAL HIVERN 2026-27: ~90-150 €</strong></h3>
 <p>Per a una collita de <strong>50-80 kg</strong> de menjar ecològic = <strong>excel·lent rendiment!</strong></p>
 <h2 id="9-cronograma-de-tasques-resum-visual">9. Cronograma de tasques (resum visual)</h2>
@@ -795,5 +799,5 @@ JUNY 2026                AGOST 2026                  OCTUBRE 2026
 <li><strong>Pla mensual</strong> específic per a un mes concret</li>
 <li><strong>Quan comprar llavors</strong> i quines marques</li>
 <li><strong>Sistema de protecció</strong> contra gelades (malla, hivernacle)</li>
-</ul>
+</ol>
 <p>🌱 Bona planificació! Com més aviat comencis, millor.</p>

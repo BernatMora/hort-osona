@@ -31,6 +31,8 @@ python hort-checklist.py --print-fase 2026-08-15
 <li><strong>Context climàtic</strong> del mes (per Osona, no genèric)</li>
 <li><strong>Calendari lunar</strong> amb totes les setmanes i fases amb recomanacions</li>
 <li><strong>Tasques organitzades per categoria</strong>:</li>
+</ol>
+<ul>
 <li>🌱 Sembra</li>
 <li>🌿 Trasplantament</li>
 <li>🛠️ Conreu</li>
@@ -38,9 +40,11 @@ python hort-checklist.py --print-fase 2026-08-15
 <li>🧺 Collita</li>
 <li>📋 Planificació</li>
 <li>👀 Observació</li>
+</ul>
+<ol>
 <li>Cada tasca té <strong>prioritat</strong> (1-5) i <strong>descripció</strong></li>
 <li><strong>Dates clau</strong> a Osona (Sant Jordi, Mare de Déu d&#x27;Agost, etc.)</li>
-</ul>
+</ol>
 <h2 id="integració-amb-el-lloc-web">Integració amb el lloc web</h2>
 <p>Cada vegada que executes <code>python site/build.py</code>:</p>
 <ol>
@@ -49,10 +53,16 @@ python hort-checklist.py --print-fase 2026-08-15
 <li>Les desa a <code>site/checklist-data.json</code></li>
 <li>Les incrusta dins l&#x27;HTML generat</li>
 <li>La pàgina d&#x27;inici mostra un <strong>giny</strong> amb:</li>
+</ol>
+<ul>
 <li>Mes actual + fase lunar de la setmana en curs</li>
 <li>Top tasca prioritària</li>
 <li>Strip de les 4 primeres setmanes amb fases</li>
+</ul>
+<ol>
 <li>La pàgina <code>#checklist</code> (o el botó &quot;Obrir checklist completa&quot;) mostra:</li>
+</ol>
+<ul>
 <li>Totes les tasques amb checkboxes persistents (localStorage)</li>
 <li>Taula del calendari lunar</li>
 <li>Dates clau d&#x27;Osona</li>

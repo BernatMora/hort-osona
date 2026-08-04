@@ -17,7 +17,7 @@ MESOS_CAT = [
 
 
 def main():
-    p = Path(r"C:\Users\iadmin\bernatlab\projects\hort-osona\index.html")
+    p = Path(__file__).resolve().parents[1] / "index.html"
 
     # Determinar el mes
     if len(sys.argv) > 1:

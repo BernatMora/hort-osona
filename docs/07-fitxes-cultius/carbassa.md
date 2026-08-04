@@ -105,7 +105,7 @@
 <li><strong>Carbassa del Vallès</strong> (rodona, gran)</li>
 <li><strong>Carbassa &quot;Tot i tant&quot;</strong> (varietat pagesa, recuperació activa)</li>
 </ul>
-<p>&gt; 💡 Et recomano especialment la <strong>Potimarron</strong>: la més gustosa, pell fina, mida petita (1-1,5 kg), excel·lent rostida.</p>
+<blockquote>💡 Et recomano especialment la <strong>Potimarron</strong>: la més gustosa, pell fina, mida petita (1-1,5 kg), excel·lent rostida.</blockquote>
 <h2 id="notes-i-observacions-personals">Notes i observacions personals</h2>
 <ul>
 <li>_A Osona, sembra a finals d&#x27;abril o principis de maig (cobert)._</li>

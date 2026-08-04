@@ -139,7 +139,7 @@
 <td>Tomàquet, pebrot, albergínia, cols, fruiters</td>
 <td>Secreció d&#x27;arrels repel·leix nematodes</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="2-incompatibilitats-no-associar">2. Incompatibilitats (NO associar)</h2>
 <table>
 <thead><tr>
@@ -207,7 +207,7 @@
 <td>Pastanaga, cols, ràdic</td>
 <td>Molt invasiva, millor en contenidor</td>
 </tr>
-</table>
+</tbody></table>
 <h2 id="3-rotacions-de-cultius">3. Rotacions de cultius</h2>
 <h3 id="per-què-rotar">Per què rotar?</h3>
 <ul>
@@ -257,7 +257,7 @@
 <td><strong>Poàcies (Gramínies)</strong></td>
 <td>Blat de moro, blat, ordi, civada</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="rotació-de-4-anys-mínim-recomanable">Rotació de 4 anys (mínim recomanable)</h3>
 <table>
 <thead><tr>
@@ -295,7 +295,7 @@
 <td>Crucíferes + bulbs</td>
 <td>Lleguminoses</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Regla d&#x27;or</strong>: després de lleguminoses → cultius exigents (fruiters). Després de fruiters → arrels/fulles. Deixar 4 anys abans de repetir família.</li>
 </ul>
@@ -349,7 +349,7 @@
 <td>Bulbs / adob verd</td>
 <td>Lleguminoses</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="rotació-de-6-anys-la-ideal-amb-adob-verd-integrat">Rotació de 6 anys (la ideal, amb adob verd integrat)</h3>
 <table>
 <thead><tr>
@@ -415,7 +415,7 @@
 <td>Adob verd</td>
 <td>Lleguminoses</td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="incorporar-adobs-verds-veure-05-cobertes-adobs-verdsmd-en-un">Incorporar <strong>adobs verds</strong> (veure 05-cobertes-adobs-verds.md) en una de les parcel·les cada any:</h3>
 <ul>
 <li>Hivern: <strong>civada + veça</strong> o <strong>mostassa</strong> (sega i incorpora al febrer-març)</li>

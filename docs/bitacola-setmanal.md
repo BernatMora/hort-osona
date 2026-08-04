@@ -1,5 +1,5 @@
 <h1 id="-bitàcola-setmanal-de-lx27hort-plantilla">📓 Bitàcola setmanal de l&#x27;hort — Plantilla</h1>
-<p>&gt; Imprimeix una d&#x27;aquestes fitxes per setmana. Penja-les en una carpeta dins d&#x27;un dossier o guarda-les soltes.</p>
+<blockquote>Imprimeix una d&#x27;aquestes fitxes per setmana. Penja-les en una carpeta dins d&#x27;un dossier o guarda-les soltes.</blockquote>
 <p>---</p>
 <h2 id="setmana-nº-___-de-lx27any-___-del-_____-al-_____">Setmana nº ___ de l&#x27;any ___ | Del _____ al _____</h2>
 <h3 id="-meteorologia">🌤️ Meteorologia</h3>
@@ -76,13 +76,13 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="-sembres-i-trasplantaments">🌱 Sembres i trasplantaments</h3>
 <ul>
-<li>[ ] <strong>Sembrat:</strong> _________________________________________________</li>
-<li>[ ] <strong>Trasplantat:</strong> _____________________________________________</li>
-<li>[ ] <strong>Varietat:</strong> _______________________________________________</li>
-<li>[ ] <strong>Ubicació:</strong> _______________________________________________</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="0"> <span><strong>Sembrat:</strong> _________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="1"> <span><strong>Trasplantat:</strong> _____________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="2"> <span><strong>Varietat:</strong> _______________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="3"> <span><strong>Ubicació:</strong> _______________________________________________</span></label></li>
 </ul>
 <h3 id="-collites">🌾 Collites</h3>
 <table>
@@ -107,13 +107,13 @@
 <th></th>
 <th></th>
 </tr></thead><tbody>
-</table>
+</tbody></table>
 <h3 id="-reg">💧 Reg</h3>
 <ul>
-<li>[ ] <strong>Dies de reg:</strong> _____________________________________________</li>
-<li>[ ] <strong>Volum total setmana:</strong> ________ L</li>
-<li>[ ] <strong>Sistema utilitzat:</strong> ☐ Goteig  ☐ Exudació  ☐ Manual  ☐ Aspersió</li>
-<li>[ ] <strong>Incidències (embussos, fuites):</strong> ____________________________</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="4"> <span><strong>Dies de reg:</strong> _____________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="5"> <span><strong>Volum total setmana:</strong> ________ L</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="6"> <span><strong>Sistema utilitzat:</strong> ☐ Goteig  ☐ Exudació  ☐ Manual  ☐ Aspersió</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="7"> <span><strong>Incidències (embussos, fuites):</strong> ____________________________</span></label></li>
 </ul>
 <h3 id="-tractaments-aplicats">🧴 Tractaments aplicats</h3>
 <table>
@@ -141,7 +141,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <h3 id="-plagues-i-malalties-observades">🐛 Plagues i malalties observades</h3>
 <table>
 <thead><tr>
@@ -158,15 +158,15 @@
 <th></th>
 <th></th>
 </tr></thead><tbody>
-</table>
+</tbody></table>
 <h3 id="-fauna-útil-observada">🐝 Fauna útil observada</h3>
 <ul>
-<li>[ ] 🐞 <strong>Marietes</strong> — on? _________________________________________</li>
-<li>[ ] 🐝 <strong>Abelles</strong> — on? _________________________________________</li>
-<li>[ ] 🦋 <strong>Papallones</strong> — quines? ___________________________________</li>
-<li>[ ] 🐦 <strong>Ocells</strong> — quins? _______________________________________</li>
-<li>[ ] 🐝 <strong>Abelles solitàries</strong> — on? ________________________________</li>
-<li>[ ] Altres: ___________________________________________________</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="8"> <span>🐞 <strong>Marietes</strong> — on? _________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="9"> <span>🐝 <strong>Abelles</strong> — on? _________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="10"> <span>🦋 <strong>Papallones</strong> — quines? ___________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="11"> <span>🐦 <strong>Ocells</strong> — quins? _______________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="12"> <span>🐝 <strong>Abelles solitàries</strong> — on? ________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="13"> <span>Altres: ___________________________________________________</span></label></li>
 </ul>
 <h3 id="-estat-dels-cultius">🌱 Estat dels cultius</h3>
 <table>
@@ -255,7 +255,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <p>_Escala: 1 = mort/sec, 2 = molt malament, 3 = regular, 4 = bo, 5 = excel·lent_</p>
 <h3 id="-compres-i-compres-pendents">🛒 Compres i compres pendents</h3>
 <table>
@@ -274,7 +274,7 @@
 <td></td>
 <td></td>
 </tr>
-</table>
+</tbody></table>
 <table>
 <thead><tr>
 <th>Pendent de comprar</th>
@@ -284,14 +284,14 @@
 <th></th>
 <th></th>
 </tr></thead><tbody>
-</table>
+</tbody></table>
 <h3 id="-manteniment-i-infraestructura">🛠️ Manteniment i infraestructura</h3>
 <ul>
-<li>[ ] Compost:  ☐ Remogut  ☐ Afegit restes  ☐ Regat  ☐ Acabat</li>
-<li>[ ] Reg:  ☐ Revisar degoters  ☐ Netejar filtres  ☐ Comprovar pressió</li>
-<li>[ ] Eines:  ☐ Reparar  ☐ Netejar  ☐ Afilar</li>
-<li>[ ] Estructures:  ☐ Tutors nous  ☐ Mallesombra  ☐ Hivernacle revisat</li>
-<li>[ ] Tanques i camins:  ☐ Reparar  ☐ Netejar males herbes</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="14"> <span>Compost:  ☐ Remogut  ☐ Afegit restes  ☐ Regat  ☐ Acabat</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="15"> <span>Reg:  ☐ Revisar degoters  ☐ Netejar filtres  ☐ Comprovar pressió</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="16"> <span>Eines:  ☐ Reparar  ☐ Netejar  ☐ Afilar</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="17"> <span>Estructures:  ☐ Tutors nous  ☐ Mallesombra  ☐ Hivernacle revisat</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="18"> <span>Tanques i camins:  ☐ Reparar  ☐ Netejar males herbes</span></label></li>
 </ul>
 <h3 id="-compost">🪴 Compost</h3>
 <table>
@@ -305,16 +305,16 @@
 <th></th>
 <th></th>
 </tr></thead><tbody>
-</table>
+</tbody></table>
 <h3 id="-tasques-per-a-la-setmana-vinent">📋 Tasques per a la setmana vinent</h3>
 <ul>
-<li>[ ] 1. ____________________________________________________</li>
-<li>[ ] 2. ____________________________________________________</li>
-<li>[ ] 3. ____________________________________________________</li>
-<li>[ ] 4. ____________________________________________________</li>
-<li>[ ] 5. ____________________________________________________</li>
-<li>[ ] 6. ____________________________________________________</li>
-<li>[ ] 7. ____________________________________________________</li>
+<li class="task-item"><label><input type="checkbox" data-task-index="19"> <span>1. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="20"> <span>2. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="21"> <span>3. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="22"> <span>4. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="23"> <span>5. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="24"> <span>6. ____________________________________________________</span></label></li>
+<li class="task-item"><label><input type="checkbox" data-task-index="25"> <span>7. ____________________________________________________</span></label></li>
 </ul>
 <h3 id="-reflexions-i-aprenentatges-de-la-setmana">💡 Reflexions i aprenentatges de la setmana</h3>
 <pre><code>
@@ -349,7 +349,7 @@ _________________________________________________________________
 <li><strong>Omple-la el mateix dia</strong> o el vespre — millor no esperar al diumenge</li>
 <li><strong>Arxiva-les totes</strong> — al cap de l&#x27;any són or pur per a planificar el següent</li>
 <li><strong>Consulta-les</strong> abans de prendre decisions importants</li>
-</ul>
+</ol>
 <h2 id="-al-final-de-lx27any">📊 Al final de l&#x27;any...</h2>
 <p>Amb 52 setmanes de dades tindràs:</p>
 <ul>

@@ -37,7 +37,7 @@
 <td>Març-abril</td>
 <td>Juny-agost</td>
 </tr>
-</table>
+</tbody></table>
 <ul>
 <li><strong>Dies des de sembra fins a collita</strong>: 60-90 dies (molt ràpid)</li>
 </ul>

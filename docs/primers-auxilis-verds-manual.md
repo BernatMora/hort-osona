@@ -1,8 +1,8 @@
 <h1 id="-manual-de-primers-auxilis-verds-guia-ràpida-amb-remeis-natu">🚑 Manual de Primers Auxilis Verds — Guia ràpida amb remeis naturals del teu hort</h1>
-<p>&gt; Aquest és el <strong>manual d&#x27;emergència</strong> de la teva base de coneixement. Quan tens un <strong>problema sobtat</strong> a l&#x27;hort, a casa, o en una excursió — <strong>tall, cremada, picada, cop, insolació, nàusea, febre, ansietat, ferida</strong> — vols saber <strong>immediatament què fer</strong> i <strong>quina planta del teu hort pot ajudar-te</strong>. Aquest manual t&#x27;ho dóna: <strong>20 situacions d&#x27;emergència</strong> amb <strong>resposta ràpida, plantes útils, recepta express, i senyal d&#x27;alerta per anar al metge</strong>. <strong>Tingueu-lo sempre a mà</strong>: imprès a la caseta de l&#x27;hort, a la farmaciola, o desat al mòbil.</p>
+<blockquote>Aquest és el <strong>manual d&#x27;emergència</strong> de la teva base de coneixement. Quan tens un <strong>problema sobtat</strong> a l&#x27;hort, a casa, o en una excursió — <strong>tall, cremada, picada, cop, insolació, nàusea, febre, ansietat, ferida</strong> — vols saber <strong>immediatament què fer</strong> i <strong>quina planta del teu hort pot ajudar-te</strong>. Aquest manual t&#x27;ho dóna: <strong>20 situacions d&#x27;emergència</strong> amb <strong>resposta ràpida, plantes útils, recepta express, i senyal d&#x27;alerta per anar al metge</strong>. <strong>Tingueu-lo sempre a mà</strong>: imprès a la caseta de l&#x27;hort, a la farmaciola, o desat al mòbil.</blockquote>
 <h2 id="abans-de-començar-regles-dx27or">ABANS DE COMENÇAR: REGLES D&#x27;OR</h2>
 <h3 id="a-la-regla-dx27or-número-1">A. La regla d&#x27;or número 1</h3>
-<p>&gt; <strong>Aquest manual NO substitueix el metge</strong>. Per a <strong>emergències greus</strong>, truca al <strong>112</strong> immediatament. Per a <strong>dubtes</strong>, consulta el teu metge o farmacèutic.</p>
+<blockquote><strong>Aquest manual NO substitueix el metge</strong>. Per a <strong>emergències greus</strong>, truca al <strong>112</strong> immediatament. Per a <strong>dubtes</strong>, consulta el teu metge o farmacèutic.</blockquote>
 <h3 id="b-senyals-dx27alerta-anar-al-metge-sempre">B. Senyals d&#x27;alerta (anar al metge SEMPRE):</h3>
 <ul>
 <li>Sagnat abundant que no para</li>
@@ -23,7 +23,7 @@
 <li><strong>C</strong>alma (respira, no pànic)</li>
 <li><strong>M</strong>ira (observa la situació, valora la gravetat)</li>
 <li><strong>P</strong>rocura (actua, aplica el remei, busca ajuda)</li>
-</ul>
+</ol>
 <p>---</p>
 <h2 id="1-talls-i-ferides-lleus">1. TALLS I FERIDES LLEUS</h2>
 <h3 id="símptomes">Símptomes</h3>
@@ -40,7 +40,7 @@
 <li><strong>Fes pressió</strong> amb gasa neta (5-10 min)</li>
 <li><strong>Aplica</strong> remei natural</li>
 <li><strong>Cobreix</strong> amb apòsit</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Calèndula</strong> (oli o ungüent): cicatritzant, antisèptic — aplicar 2-3 cops/dia</li>
@@ -59,7 +59,7 @@
 <li>Deixar 10 min</li>
 <li>Colar, deixar refredar</li>
 <li>Mullar una gasa, aplicar sobre la ferida 10-15 min</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Tall profund (&gt; 1 cm)</li>
@@ -86,7 +86,7 @@
 <li><strong>Aplica</strong> remei natural</li>
 <li><strong>Cobreix</strong> amb gasa humida (si hi ha butllofes, NO trencar-les)</li>
 <li><strong>Beu</strong> molta aigua (cremades = deshidratació)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Àloe vera</strong> (gel fresc): el millor! Aplicar directament</li>
@@ -103,7 +103,7 @@
 <li>1 cullerada d&#x27;oli de calèndula</li>
 <li>Barrejar al moment</li>
 <li>Aplicar sobre la cremada (3-4 cops/dia)</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Cremada &gt; 5 cm</li>
@@ -130,20 +130,20 @@
 <li>Rentar amb aigua i sabó</li>
 <li>Aplicar fred (5-10 min)</li>
 <li>Remei natural</li>
-</ul>
+</ol>
 <p><strong>ABELLES</strong> (tenen fibló):</p>
 <ol>
 <li>Treure el fibló amb una targeta (NO amb pinces!)</li>
 <li>Rentar amb aigua i sabó</li>
 <li>Aplicar fred</li>
 <li>Remei natural</li>
-</ul>
+</ol>
 <p><strong>VESPES</strong> (NO tenen fibló):</p>
 <ol>
 <li>Rentar amb aigua i sabó</li>
 <li>Aplicar fred</li>
 <li>Remei natural</li>
-</ul>
+</ol>
 <p><strong>PAPARRA</strong>:</p>
 <ol>
 <li>NO aplicar res (oli, alcohol, calor) — podria fer que regurgiti</li>
@@ -152,7 +152,7 @@
 <li>Rentar amb antisèptic</li>
 <li>Guardar la paparra (per si cal analitzar)</li>
 <li>Anar al metge si simptomes (febre, erupció) en 1-2 setmanes</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Menta</strong> (oli o fulla fresca aixafada): refrescant, antipruriginós</li>
@@ -169,7 +169,7 @@
 <li>1 gota d&#x27;oli essencial d&#x27;espígol</li>
 <li>Barrejar</li>
 <li>Aplicar a la picada 2-3 cops/dia</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si-urgent">Anar al metge SI (URGENT!)</h3>
 <ul>
 <li><strong>Dificultat per respirar</strong> (reacció al·lèrgica greu → ADRENALINA → 112)</li>
@@ -192,13 +192,17 @@
 <h3 id="què-fer-resposta-ràpida">Què fer (resposta ràpida)</h3>
 <ol>
 <li><strong>R.I.C.E.</strong>:</li>
+</ol>
+<ul>
 <li><strong>R</strong>epòs (no carregar)</li>
 <li><strong>I</strong>gla (aplicar gel/fred 15-20 min cada hora)</li>
 <li><strong>C</strong>ompressió (embenar suaument)</li>
 <li><strong>E</strong>levació (posar la zona aixecada)</li>
+</ul>
+<ol>
 <li><strong>Aplica</strong> remei natural</li>
 <li><strong>Descansa</strong></li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Àrnica</strong> (gel o ungüent extern): el millor! MAI sobre ferides obertes</li>
@@ -216,7 +220,7 @@
 <li>10 gotes d&#x27;oli essencial d&#x27;espígol</li>
 <li>5 gotes d&#x27;oli essencial de menta</li>
 <li>Aplicar amb massatge suau 2-3 cops/dia</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Cop al cap amb pèrdua de coneixement, mal de cap intens, confusió</li>
@@ -247,7 +251,7 @@
 <li><strong>Beure</strong> aigua o líquids (a poc a poc)</li>
 <li><strong>Aplica</strong> remei natural</li>
 <li><strong>Trucar 112</strong> si gravetat</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Menta</strong> (infusió freda, compreses): refrescant</li>
@@ -265,7 +269,7 @@
 <li>1 llimona</li>
 <li>Deixar 1 hora a la nevera</li>
 <li>Beure a glops petits</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si-urgent">Anar al metge SI (URGENT!)</h3>
 <ul>
 <li>Confusió, pèrdua de coneixement</li>
@@ -291,7 +295,7 @@
 <li><strong>Beu</strong> aigua</li>
 <li><strong>Massatge</strong> a les temples</li>
 <li><strong>Infusió</strong> calmant</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Menta</strong> (oli essencial, 1-2 gotes a les temples): refrescant</li>
@@ -309,7 +313,7 @@
 <li>3 gotes d&#x27;oli essencial de menta</li>
 <li>2 gotes d&#x27;oli essencial d&#x27;espígol</li>
 <li>Aplicar a les temples, el clatell, els canells</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Mal de cap sobtat i intens (&quot;el pitjor de la teva vida&quot;)</li>
@@ -335,7 +339,7 @@
 <li><strong>Infusió</strong> calmant</li>
 <li><strong>Aplica</strong> fred al front</li>
 <li><strong>Mengeu</strong> suaument (BRAT: banana, arròs, poma torrada, torrada)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Gingebre</strong> (infusió, fresc ratllat): el millor antiemètic natural</li>
@@ -353,7 +357,7 @@
 <li>250 ml d&#x27;aigua bullint</li>
 <li>Deixar 10 min</li>
 <li>Colar, beure a glops petits</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Vòmits amb sang</li>
@@ -379,7 +383,7 @@
 <li><strong>Menjar</strong> poc i suau</li>
 <li><strong>Infusió</strong> digestiva</li>
 <li><strong>Evitar</strong> menjars grassos, especiats, àcids</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Camamil·la</strong> (infusió): digestiva, antiinflamatòria</li>
@@ -400,7 +404,7 @@
 <li>1 culleradeta de farigola</li>
 <li>250 ml d&#x27;aigua bullint</li>
 <li>10 min, colar, beure</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Dolor intens</li>
@@ -429,7 +433,7 @@
 <li><strong>Infusió</strong> calmant</li>
 <li><strong>Inhalar</strong> olis essencials</li>
 <li><strong>Parlar</strong> amb algú</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Espígol</strong> (OE, 2-3 gotes en un mocador, inhalar): el millor!</li>
@@ -446,7 +450,7 @@
 <li>2-3 gotes d&#x27;oli essencial d&#x27;espígol en un mocador</li>
 <li>Inhalar profundament 5-10 vegades</li>
 <li>Repetir cada 5 min si cal</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Dolor al pit (excloure infart!)</li>
@@ -471,7 +475,7 @@
 <li><strong>Bany</strong> calent amb espígol</li>
 <li><strong>Oli</strong> a les temples</li>
 <li><strong>Bajar llums</strong>, sense pantalles</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Til·la</strong> (infusió): la millor</li>
@@ -490,7 +494,7 @@
 <li>1 culleradeta de melissa</li>
 <li>250 ml d&#x27;aigua bullint</li>
 <li>10 min, colar, beure al vespre</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Insomni crònic (&gt; 3 setmanes)</li>
@@ -514,7 +518,7 @@
 <li><strong>Compreses</strong> tèbies (NO fredes)</li>
 <li><strong>Infusió</strong> antitèrmica</li>
 <li><strong>Antitèrmic</strong> si cal (paracetamol, ibuprofèn)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Til·la</strong> (infusió): antitèrmica, diaforètica</li>
@@ -534,7 +538,7 @@
 <li>250 ml d&#x27;aigua bullint</li>
 <li>10 min, colar, afegir mel i llimona</li>
 <li>Beure calent</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Febre &gt; 39°C en adults</li>
@@ -559,7 +563,7 @@
 <li><strong>Evitar</strong> làctics, greixos, fibra</li>
 <li><strong>Infusió</strong> antidiarreica</li>
 <li><strong>Probiótics</strong> (iogurt, kèfir)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals-del-teu-hort">Remeis naturals del teu hort</h3>
 <ul>
 <li><strong>Plantatge</strong> (infusió): antidiarreic, mucilags</li>
@@ -578,7 +582,7 @@
 <li>Coure a foc lent 20 min</li>
 <li>Colar, beure l&#x27;aigua</li>
 <li>Prendre a glops petits</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Diarrea amb sang</li>
@@ -596,7 +600,7 @@
 <li><strong>Moviment</strong> (caminar, exercici)</li>
 <li><strong>Infusió</strong> laxant suau</li>
 <li><strong>Llavors de lli</strong> (1 cullerada amb aigua)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Llavors de lli</strong> (mucílags)</li>
@@ -621,7 +625,7 @@
 <li><strong>Gàrgares</strong> amb infusions antisèptiques</li>
 <li><strong>Hidratació</strong></li>
 <li><strong>Descans</strong> de la veu</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Sàlvia</strong> (gàrgares): antisèptica</li>
@@ -640,7 +644,7 @@
 <li>10 min</li>
 <li>Colar</li>
 <li>Fer gàrgares 3-4 cops/dia</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Febre alta</li>
@@ -657,7 +661,7 @@
 <li><strong>Infusió</strong> amb mel</li>
 <li><strong>Molta hidratació</strong></li>
 <li><strong>Descans</strong></li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Eucaliptus</strong> (bafs): descongestiu</li>
@@ -679,7 +683,7 @@
 <li>Abocar en un bol gran</li>
 <li>Tapar el cap amb una tovallola</li>
 <li>Respirar el vapor 5-10 min</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Més de 10 dies</li>
@@ -696,7 +700,7 @@
 <li><strong>Oli de massatge</strong> antiàlgic</li>
 <li><strong>Infusió</strong> antiinflamatòria</li>
 <li><strong>Estiraments</strong> suaus (després)</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Romaní</strong> (oli de massatge): estimulant</li>
@@ -714,7 +718,7 @@
 <li>5 gotes d&#x27;OE d&#x27;espígol</li>
 <li>3 gotes d&#x27;OE de gingebre</li>
 <li>Aplicar amb massatge 2-3 cops/dia</li>
-</ul>
+</ol>
 <h3 id="anar-al-metge-si">Anar al metge SI</h3>
 <ul>
 <li>Dolor irradiat a la cama</li>
@@ -732,7 +736,7 @@
 <li><strong>Hidratar</strong> beure aigua</li>
 <li><strong>Aplicar</strong> remei natural</li>
 <li><strong>Crema</strong> hidratant</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Àloe vera</strong> (gel fresc): el millor!</li>
@@ -757,7 +761,7 @@
 <li><strong>Identificar</strong> al·lergen (si és possible)</li>
 <li><strong>Evitar</strong> la causa</li>
 <li><strong>Antihistamínic</strong> si cal</li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Camamil·la</strong> (compreses): calmant</li>
@@ -782,7 +786,7 @@
 <li><strong>Rentar</strong> amb aigua</li>
 <li><strong>Aplicar</strong> remei natural</li>
 <li><strong>No gratar</strong></li>
-</ul>
+</ol>
 <h3 id="remeis-naturals">Remeis naturals</h3>
 <ul>
 <li><strong>Àloe vera</strong> (gel): refrescant</li>
@@ -802,7 +806,7 @@
 <li><strong>Si NO respira</strong>: RCP (reanimació cardiopulmonar)</li>
 <li><strong>Si respira</strong>: posició lateral de seguretat</li>
 <li><strong>Abrigar</strong> (per evitar hipotèrmia)</li>
-</ul>
+</ol>
 <h3 id="no-fer">NO fer</h3>
 <ul>
 <li>NO perdre temps</li>
@@ -897,13 +901,13 @@
 </ul>
 <h2 id="notes-finals">NOTES FINALS</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Aquest manual t&#x27;ha donat <strong>20 situacions d&#x27;emergència</strong> amb <strong>respostes ràpides</strong> i <strong>remeis naturals del teu hort</strong>. Tingueu-lo <strong>sempre a mà</strong>: imprès a la caseta de l&#x27;hort, a la farmaciola, o desat al mòbil. Però <strong>recorda</strong>:</p>
-<p>&gt;</p>
-<p>&gt; 1. <strong>Sempre la seguretat primer</strong></p>
-<p>&gt; 2. <strong>Aquest manual NO substitueix el metge</strong></p>
-<p>&gt; 3. <strong>Trucar 112</strong> per a emergències</p>
-<p>&gt; 4. <strong>Consultar</strong> per a dubtes</p>
-<p>&gt; 5. <strong>Actuar amb seny</strong></p>
+<blockquote>Aquest manual t&#x27;ha donat <strong>20 situacions d&#x27;emergència</strong> amb <strong>respostes ràpides</strong> i <strong>remeis naturals del teu hort</strong>. Tingueu-lo <strong>sempre a mà</strong>: imprès a la caseta de l&#x27;hort, a la farmaciola, o desat al mòbil. Però <strong>recorda</strong>:</blockquote>
+<blockquote></blockquote>
+<blockquote>1. <strong>Sempre la seguretat primer</strong></blockquote>
+<blockquote>2. <strong>Aquest manual NO substitueix el metge</strong></blockquote>
+<blockquote>3. <strong>Trucar 112</strong> per a emergències</blockquote>
+<blockquote>4. <strong>Consultar</strong> per a dubtes</blockquote>
+<blockquote>5. <strong>Actuar amb seny</strong></blockquote>
 <h3 id="la-saviesa">La saviesa</h3>
-<p>&gt; A Osona, les <strong>àvies</strong> tenien una saviesa pagesa que <strong>s&#x27;ensenyava als nets</strong>: com tractar un tall, una cremada, una picada, un cop, una febre... Tots amb <strong>plantes</strong> que tenien a l&#x27;hort o al bosc. Avui tu tens <strong>la mateixa saviesa</strong> + la <strong>ciència moderna</strong>. Comparteix-la.</p>
+<blockquote>A Osona, les <strong>àvies</strong> tenien una saviesa pagesa que <strong>s&#x27;ensenyava als nets</strong>: com tractar un tall, una cremada, una picada, un cop, una febre... Tots amb <strong>plantes</strong> que tenien a l&#x27;hort o al bosc. Avui tu tens <strong>la mateixa saviesa</strong> + la <strong>ciència moderna</strong>. Comparteix-la.</blockquote>
 <p>🚑 <strong>Bona seguretat amb els primers auxilis verds!</strong></p>

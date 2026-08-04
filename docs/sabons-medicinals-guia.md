@@ -1,5 +1,5 @@
 <h1 id="-guia-de-sabons-medicinals-casolans-10-sabons-amb-plantes-de">🧴 Guia de Sabons Medicinals Casolans — 10 sabons amb plantes del teu hort</h1>
-<p>&gt; Fer sabons a casa és una <strong>art mil·lenària</strong> que connecta amb les nostres àvies. Amb les <strong>plantes medicinals del teu hort</strong> pots fer <strong>sabons eficaços, suaus, naturals i bonics</strong> que cuiden la pell i l&#x27;ànima. Aquesta guia t&#x27;ensenya a fer <strong>10 sabons específics</strong> amb <strong>3 mètodes</strong> diferents: <strong>Melt &amp; Pour</strong> (per a nens i principiants), <strong>mètode fred</strong> (tradicional) i <strong>mètode calent</strong> (artesanal). Tots amb <strong>ingredients naturals, plantes del teu hort</strong> i <strong>instruccions pas a pas</strong>.</p>
+<blockquote>Fer sabons a casa és una <strong>art mil·lenària</strong> que connecta amb les nostres àvies. Amb les <strong>plantes medicinals del teu hort</strong> pots fer <strong>sabons eficaços, suaus, naturals i bonics</strong> que cuiden la pell i l&#x27;ànima. Aquesta guia t&#x27;ensenya a fer <strong>10 sabons específics</strong> amb <strong>3 mètodes</strong> diferents: <strong>Melt &amp; Pour</strong> (per a nens i principiants), <strong>mètode fred</strong> (tradicional) i <strong>mètode calent</strong> (artesanal). Tots amb <strong>ingredients naturals, plantes del teu hort</strong> i <strong>instruccions pas a pas</strong>.</blockquote>
 <h2 id="1-introducció">1. Introducció</h2>
 <h3 id="a-per-què-fer-sabons-a-casa">A. Per què fer sabons a casa?</h3>
 <ol>
@@ -10,7 +10,7 @@
 <li><strong>Sostenibles</strong> (sense envasos plàstic)</li>
 <li><strong>Econòmics</strong> (1 sabó costa 1-2 € vs 5-8 € a l&#x27;herboristeria)</li>
 <li><strong>Terapèutics</strong> (fer sabons és meditatiu!)</li>
-</ul>
+</ol>
 <h3 id="b-les-3-plantes-principals-que-necessites">B. Les 3 plantes principals que necessites</h3>
 <p>Ja les tens al teu hort o les pots afegir fàcilment:</p>
 <ul>
@@ -72,7 +72,7 @@
 <li>Deixa refresdar 2-4 hores</li>
 <li>Desmotlla amb cura</li>
 <li>Deixa assecar 24-48 hores</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>:</p>
 <ul>
 <li>Ràpid</li>
@@ -140,7 +140,7 @@
 <td>Plantes seques</td>
 <td>2-3 cullerades</td>
 </tr>
-</table>
+</tbody></table>
 <p><strong>Preparació</strong>:</p>
 <ol>
 <li>Posa els guants i ulleres</li>
@@ -157,7 +157,7 @@
 <li>Deixa 24-48 hores</li>
 <li>Desmotlla</li>
 <li>Deixa curar 4-6 setmanes (en lloc fresc i sec)</li>
-</ul>
+</ol>
 <p><strong>Avantatges</strong>:</p>
 <ul>
 <li><strong>100% natural</strong> (tu controles TOTS els ingredients)</li>
@@ -201,7 +201,7 @@
 <li>Remena suaument</li>
 <li>Aboca en motlles</li>
 <li>Deixa refresdar</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="2-sabó-dx27espígol-relaxant-per-a-dormir">2. Sabó d&#x27;espígol (relaxant, per a dormir)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour o fred</p>
@@ -221,7 +221,7 @@
 <li>Afegeix l&#x27;oli essencial</li>
 <li>Aboca en motlles</li>
 <li>Deixa refresdar 24 hores</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="3-sabó-de-camamilla-calmant-per-a-nens">3. Sabó de camamil·la (calmant, per a nens)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour (perfecte per a nens!)</p>
@@ -243,7 +243,7 @@
 <li>Afegeix la mel i l&#x27;avena</li>
 <li>Aboca en motlles (els de figures són ideals!)</li>
 <li>Deixa refresdar</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="4-sabó-de-carbó-actiu-anti-tòxic-anti-grans">4. Sabó de carbó actiu (anti-tòxic, anti-grans)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour o fred</p>
@@ -264,7 +264,7 @@
 <li>Bateix suaument perquè quedi negre</li>
 <li>Aboca en motlles</li>
 <li>Deixa refresdar</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="5-sabó-de-romaní-estimulant-energitzant">5. Sabó de romaní (estimulant, energitzant)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour o fred</p>
@@ -284,7 +284,7 @@
 <li>Afegeix l&#x27;oli essencial</li>
 <li>Afegeix les fulles</li>
 <li>Aboca en motlles</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="6-sabó-de-menta-refrescant-per-a-picades">6. Sabó de menta (refrescant, per a picades)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour</p>
@@ -304,7 +304,7 @@
 <li>Afegeix l&#x27;oli essencial</li>
 <li>Aboca en motlles</li>
 <li>Refreda a la nevera perquè quedi ben fresc</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="7-sabó-dx27argila-detox-anti-impureses">7. Sabó d&#x27;argila (detox, anti-impureses)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour o fred</p>
@@ -324,7 +324,7 @@
 <li>Afegeix els olis essencials</li>
 <li>Aboca en motlles</li>
 <li>Deixa refresdar</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="8-sabó-exfoliant-de-cafè-o-sal">8. Sabó exfoliant (de cafè o sal)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour</p>
@@ -345,7 +345,7 @@
 <li>Afegeix l&#x27;oli essencial</li>
 <li>Aboca en motlles grans</li>
 <li>Deixa refresdar</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="9-sabó-de-mel-i-llet-hidratant-per-a-pell-seca">9. Sabó de mel i llet (hidratant, per a pell seca)</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour o fred</p>
@@ -369,7 +369,7 @@
 <li>Afegeix la mantega de karité</li>
 <li>Afegeix l&#x27;oli essencial</li>
 <li>Aboca en motlles</li>
-</ul>
+</ol>
 <p>---</p>
 <h3 id="10-sabó-multiusos-dx27emergència">10. Sabó multiusos d&#x27;emergència</h3>
 <p><strong>Mètode</strong>: Melt &amp; Pour</p>
@@ -391,7 +391,7 @@
 <li>Remena bé</li>
 <li>Aboca en motlles</li>
 <li>Etiqueta</li>
-</ul>
+</ol>
 <h2 id="4-com-conservar-els-sabons">4. Com conservar els sabons</h2>
 <p><strong>Emmagatzematge</strong>:</p>
 <ul>
@@ -420,7 +420,7 @@
 <li><strong>Pot de vidre</strong> (amb molts sabons petits)</li>
 <li><strong>Bossa de tela</strong> (amb cordó)</li>
 <li><strong>Capsa de cartó kraft</strong> (amb etiqueta artesanal)</li>
-</ul>
+</ol>
 <h3 id="idees-dx27etiquetes">Idees d&#x27;etiquetes</h3>
 <ul>
 <li><strong>Nom del sabó</strong></li>
@@ -473,7 +473,7 @@
 </ul>
 <h2 id="7-notes-finals">7. Notes finals</h2>
 <h3 id="el-missatge-clau">El missatge clau</h3>
-<p>&gt; Fer sabons a casa és <strong>una art, una ciència i una teràpia</strong>. Amb les plantes del teu hort pots fer <strong>10 sabons únics</strong> que cuiden la pell, l&#x27;ànima i el planeta. <strong>Són regals perfectes</strong>, <strong>són artesania</strong>, <strong>són autosuficiència</strong>.</p>
+<blockquote>Fer sabons a casa és <strong>una art, una ciència i una teràpia</strong>. Amb les plantes del teu hort pots fer <strong>10 sabons únics</strong> que cuiden la pell, l&#x27;ànima i el planeta. <strong>Són regals perfectes</strong>, <strong>són artesania</strong>, <strong>són autosuficiència</strong>.</blockquote>
 <h3 id="comença-avui">Comença avui</h3>
 <ol>
 <li><strong>Aquesta setmana</strong>: comprar sabó base (Melt &amp; Pour)</li>
@@ -481,7 +481,7 @@
 <li><strong>Aquest mes</strong>: fer 2-3 sabons més</li>
 <li><strong>Aquest estiu</strong>: tenir <strong>8-10 sabons</strong> variats</li>
 <li><strong>Nadal</strong>: regalar sabons artesans</li>
-</ul>
+</ol>
 <h3 id="la-saviesa-pagesa">La saviesa pagesa</h3>
-<p>&gt; Les àvies d&#x27;Osona ja feien sabons amb sosa, cendres i greixos animals. <strong>Tu tens les plantes, les eines, i el temps</strong>. Cada sabó que fas és un <strong>acte d&#x27;amor</strong>: per a tu, per a la teva família, per al planeta.</p>
+<blockquote>Les àvies d&#x27;Osona ja feien sabons amb sosa, cendres i greixos animals. <strong>Tu tens les plantes, les eines, i el temps</strong>. Cada sabó que fas és un <strong>acte d&#x27;amor</strong>: per a tu, per a la teva família, per al planeta.</blockquote>
 <p>🧴 <strong>Bona artesania amb els teus sabons!</strong></p>

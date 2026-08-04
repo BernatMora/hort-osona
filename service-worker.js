@@ -1,7 +1,7 @@
 // service-worker.js — Service Worker per a Hort Osona PWA
 // Cache-first per a l'HTML i assets, network-first per a Open-Meteo
 
-const CACHE_VERSION = 'hort-osona-v2';
+const CACHE_VERSION = 'hort-osona-v4';
 const STATIC_CACHE = CACHE_VERSION + '-static';
 const RUNTIME_CACHE = CACHE_VERSION + '-runtime';
 
@@ -13,6 +13,7 @@ const STATIC_ASSETS = [
   './icon-192.png',
   './icon-512.png',
   './checklist-data.json',
+  './search_index.json',
 ];
 
 // Instal·lació: pre-cache dels assets estàtics
@@ -60,7 +61,42 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Cache-first per a la resta (incloent l'HTML i JSON)
+  // Network-first per a navegacions: evita que la portada quedi congelada
+  // en una versió antiga després d'una actualització a GitHub Pages.
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(RUNTIME_CACHE).then(cache => cache.put(request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request).then(cached => cached || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Network-first per als documents i la cerca, perquè el contingut nou
+  // aparegui sense haver d'esborrar manualment la memòria cau.
+  if (request.method === 'GET' &&
+      (url.pathname.includes('/docs/') || url.pathname.endsWith('/search_index.json'))) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(RUNTIME_CACHE).then(cache => cache.put(request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Cache-first per a la resta d'assets locals.
   if (request.method === 'GET') {
     event.respondWith(
       caches.match(request)

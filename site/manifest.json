@@ -36,25 +36,25 @@
       "name": "Checklist del mes",
       "short_name": "Checklist",
       "description": "Tasques mensuals amb fase lunar",
-      "url": "./index.html#checklist"
+      "url": "./index.html#HORT-CHECKLIST.md"
     },
     {
       "name": "Quadern d'observació",
       "short_name": "Quadern",
       "description": "Anotacions diàries de l'hort",
-      "url": "./index.html#quadern"
+      "url": "./index.html#bitacola-setmanal.md"
     },
     {
       "name": "Calculadora de rotacions",
       "short_name": "Rotacions",
       "description": "Planifica les rotacions de cultius",
-      "url": "./index.html#rotacions"
+      "url": "./index.html#02-associacions-rotacions.md"
     },
     {
-      "name": "Estadístiques",
-      "short_name": "Stats",
-      "description": "Resum de la teva activitat",
-      "url": "./index.html#stats"
+      "name": "Calendari de sembra",
+      "short_name": "Calendari",
+      "description": "Consulta què sembrar cada mes",
+      "url": "./index.html#01-calendari-sembra.md"
     }
   ]
 }
