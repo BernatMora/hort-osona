@@ -164,7 +164,6 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
     ],
     "Eines i tecnologia": [
         ("hort-osona-iot/README.md", "Sistema IoT (Raspberry Pi)"),
-        ("hort-osona-iot/CHAT-SETUP.md", "Configurar el xat local"),
     ],
     "El meu hort": [
         ("ACCES-MOBIL.md", "Com accedir des del mòbil"),
@@ -888,166 +887,10 @@ a:hover {{ text-decoration: underline; }}
   margin-top: 4px;
 }}
 
-/* ──────────── CHAT ──────────── */
-.chat-overlay {{
-  position: fixed;
-  inset: 0;
-  background: var(--c-bg);
-  z-index: 60;
-  display: none;
-  flex-direction: column;
-}}
 
-.chat-overlay.open {{ display: flex; }}
-
-.chat-bar {{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: var(--c-olive);
-  color: var(--c-paper);
-  height: var(--header-h);
-}}
-
-.chat-title {{
-  flex: 1;
-  font-weight: 600;
-  font-size: 1rem;
-}}
-
-.chat-status {{
-  font-size: 0.75rem;
-  padding: 2px 8px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.15);
-  color: var(--c-paper);
-}}
-
-.chat-status.online {{ background: #4a7a3a; }}
-.chat-status.offline {{ background: #a04040; }}
-.chat-status.thinking {{ background: #b5853a; }}
-
-.chat-messages {{
-  flex: 1;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}}
-
-.chat-msg {{
-  max-width: 85%;
-  padding: 10px 14px;
-  border-radius: 14px;
-  line-height: 1.4;
-  word-wrap: break-word;
-  font-size: 0.95rem;
-}}
-
-.chat-msg-bot {{
-  background: var(--c-paper);
-  border: 1px solid var(--c-line);
-  align-self: flex-start;
-  border-bottom-left-radius: 4px;
-}}
-
-.chat-msg-user {{
-  background: var(--c-olive);
-  color: var(--c-paper);
-  align-self: flex-end;
-  border-bottom-right-radius: 4px;
-}}
-
-.chat-msg-error {{
-  background: #fce4e4;
-  border: 1px solid #d97070;
-  color: #6b1f1f;
-  align-self: flex-start;
-  font-size: 0.9rem;
-}}
-
-.chat-msg-thinking {{
-  background: var(--c-paper);
-  border: 1px solid var(--c-line);
-  align-self: flex-start;
-  font-style: italic;
-  color: var(--c-ink-2);
-}}
-
-.chat-msg-sources {{
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid var(--c-line);
-  font-size: 0.8rem;
-  color: var(--c-ink-2);
-}}
-
-.chat-msg-sources ul {{
-  margin: 4px 0 0 16px;
-  padding: 0;
-}}
-
-.chat-form {{
-  display: flex;
-  gap: 8px;
-  padding: 8px 12px;
-  background: var(--c-paper);
-  border-top: 1px solid var(--c-line);
-  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-}}
-
-.chat-form input {{
-  flex: 1;
-  padding: 10px 14px;
-  border: 1px solid var(--c-line);
-  border-radius: 20px;
-  font-size: 1rem;
-  background: var(--c-bg);
-  color: var(--c-ink);
-}}
-
-.chat-form input:focus {{
-  outline: 2px solid var(--c-ochre);
-  outline-offset: 1px;
-}}
-
-.chat-form button {{
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--c-olive);
-  color: var(--c-paper);
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}}
-
-.chat-form button:hover,
-.chat-form button:active {{
-  background: #2a3420;
-}}
-
-.chat-form button:disabled {{
-  background: var(--c-ink-2);
-  opacity: 0.6;
-}}
 
 /* ──────────── DESKTOP (≥768px) ──────────── */
 @media (min-width: 768px) {{
-  .chat-overlay {{
-    /* A escriptori, obre com a panell lateral dret (no pantalla completa) */
-    left: auto;
-    top: var(--header-h);
-    right: 0;
-    bottom: 0;
-    width: 420px;
-    border-left: 1px solid var(--c-line);
-    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
-  }}
 
   .app {{
     grid-template-columns: var(--sidebar-w) 1fr;
@@ -1491,7 +1334,6 @@ a:hover {{ text-decoration: underline; }}
     <button class="home-btn" id="home-btn" aria-label="Tornar a l'inici" title="Inici">⌂</button>
     <div class="title">🌱 Hort Osona</div>
     <a class="search-toggle project-shortcut" href="https://bernatmora.github.io/bernatlab/" target="_blank" rel="noopener" aria-label="Obrir BernatLab" title="BernatLab"><span aria-hidden="true">🧪</span> Lab</a>
-    <button class="search-toggle" id="chat-btn" aria-label="Xat amb l'hort" title="Pregunta a l'hort">💬</button>
     <button class="search-toggle" id="search-btn" aria-label="Cerca">🔍</button>
   </header>
 
@@ -1562,33 +1404,6 @@ a:hover {{ text-decoration: underline; }}
     </div>
     <div class="search-results" id="search-results"></div>
   </div>
-
-  <!-- CHAT PANEL -->
-  <div class="chat-overlay" id="chat-overlay">
-    <div class="chat-bar">
-      <span class="chat-title">💬 Xat amb l'hort</span>
-      <span class="chat-status" id="chat-status">desconnectat</span>
-      <button class="drawer-close" id="chat-close" aria-label="Tancar" style="color: var(--c-paper)">✕</button>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-      <div class="chat-msg chat-msg-bot">
-        <strong>🌱 Hort Osona</strong><br>
-        Hola! Soc el teu assistent hortolà. Pregunta'm qualsevol cosa sobre el teu hort a Osona.<br><br>
-        <em>Exemples:</em>
-        <ul style="margin: 8px 0 0 16px; font-size: 0.9rem;">
-          <li>Quan sembrar carbassa?</li>
-          <li>Com combatre el mildiu?</li>
-          <li>Quines plantes medicinals puc cultivar?</li>
-        </ul>
-      </div>
-    </div>
-    <form class="chat-form" id="chat-form">
-      <input type="text" id="chat-input" placeholder="Pregunta a l'hort..." autocomplete="off" required>
-      <button type="submit" id="chat-send" aria-label="Enviar">➤</button>
-    </form>
-  </div>
-
-</div>
 
 <script>
 const SIDEBAR = {sidebar_json};
@@ -1924,175 +1739,6 @@ function configureCurrentMonth() {{
   }}
 }}
 
-// ──────────── CHAT (RAG local) ────────────
-// IMPORTANT: des del mobil NO es pot accedir a 'localhost' perque localhost
-// sempre apunta al propi dispositiu. Cal usar la IP del Mac a la xarxa local.
-// Si el backend es a una Raspberry Pi o altre maquina, canviar aqui.
-//
-// 1. window.CHAT_API_URL (definit a l'HTML) - te prioritat
-// 2. localStorage (desat per l'usuari al panell de config)
-// 3. Fallback: Funnel/Serve HTTPS de la Raspberry (cert valid, sense mixed content)
-const FALLBACK_CHAT_URLS = [
-  'https://hortosona.tail37c051.ts.net/chat',
-  'http://localhost:8001/chat'
-];
-let CHAT_API = window.CHAT_API_URL || localStorage.getItem('hort-chat-api') || FALLBACK_CHAT_URLS[0];
-let currentUrlIndex = 0;
-
-function setChatStatus(text, cls) {{
-  const el = document.getElementById('chat-status');
-  el.textContent = text;
-  el.className = 'chat-status ' + (cls || '');
-}}
-
-function openChat() {{
-  document.getElementById('chat-overlay').classList.add('open');
-  setTimeout(() => document.getElementById('chat-input').focus(), 50);
-  // Comprovar estat de l'API (prova totes les URLs)
-  checkChatHealth();
-}}
-
-function closeChat() {{
-  document.getElementById('chat-overlay').classList.remove('open');
-}}
-
-function appendChatMsg(html, kind) {{
-  const div = document.createElement('div');
-  div.className = 'chat-msg chat-msg-' + (kind || 'bot');
-  div.innerHTML = html;
-  const container = document.getElementById('chat-messages');
-  container.appendChild(div);
-  container.scrollTop = container.scrollHeight;
-  return div;
-}}
-
-async function checkChatHealth() {{
-  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {{
-    setChatStatus('cal una URL HTTPS', 'offline');
-    return false;
-  }}
-  // Provar totes les URLs fins que una funcioni
-  const candidates = [...new Set([CHAT_API, ...FALLBACK_CHAT_URLS])]
-    .filter(url => location.protocol !== 'https:' || url.startsWith('https:'));
-  for (let i = 0; i < candidates.length; i++) {{
-    const url = candidates[i].replace(/[/]chat[/]?$/, '/chat/health');
-    try {{
-      const r = await fetch(url, {{ cache: 'no-store' }});
-      if (r.ok) {{
-        const data = await r.json();
-        if (data.status === 'ok') {{
-          CHAT_API = candidates[i];
-          currentUrlIndex = i;
-          setChatStatus('connectat · ' + (data.model || ''), 'online');
-          return true;
-        }}
-      }}
-    }} catch (e) {{
-      // provar la seguent
-    }}
-  }}
-  setChatStatus('desconnectat', 'offline');
-  return false;
-}}
-
-async function sendChat(question) {{
-  // Mostrar pregunta de l'usuari
-  appendChatMsg(escapeHtml(question), 'user');
-
-  // Mostrar "pensant..."
-  const thinking = appendChatMsg('🤔 Pensant...', 'thinking');
-  setChatStatus('pensant...', 'thinking');
-  const sendBtn = document.getElementById('chat-send');
-  const input = document.getElementById('chat-input');
-  sendBtn.disabled = true;
-  input.disabled = true;
-
-  // Assegurar-nos que tenim una URL connectada
-  const connected = await checkChatHealth();
-  if (!connected) {{
-    thinking.remove();
-    appendChatMsg(buildOfflineHelp(), 'error');
-    setChatStatus('desconnectat', 'offline');
-    sendBtn.disabled = false;
-    input.disabled = false;
-    input.focus();
-    return;
-  }}
-
-  try {{
-    const r = await fetch(CHAT_API, {{
-      method: 'POST',
-      headers: {{ 'Content-Type': 'application/json' }},
-      body: JSON.stringify({{ question }})
-    }});
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const data = await r.json();
-    thinking.remove();
-
-    // Renderitzar resposta amb format basic
-    let answer = data.answer || '(Sense resposta)';
-    // Convertir markdown molt basic a HTML
-    answer = escapeHtml(answer)
-      .replace(/\\*\\*([^*]+)\\*\\*/g, '<strong>$1</strong>')
-      .replace(/\\n\\n/g, '</p><p>')
-      .replace(/\\n/g, '<br>')
-      .replace(/^/, '<p>')
-      .replace(/$/, '</p>');
-
-    // Afegir fonts
-    let sources = '';
-    if (data.sources && data.sources.length > 0) {{
-      sources = '<div class="chat-msg-sources"><strong>📚 Fonts:</strong><ul>';
-      data.sources.slice(0, 4).forEach(s => {{
-        sources += '<li>' + escapeHtml(s.title) + '</li>';
-      }});
-      sources += '</ul></div>';
-    }}
-
-    appendChatMsg(answer + sources, 'bot');
-    setChatStatus('connectat', 'online');
-  }} catch (e) {{
-    thinking.remove();
-    let msg = '❌ Error: ' + escapeHtml(e.message);
-    if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError')) {{
-      msg = buildOfflineHelp();
-    }}
-    appendChatMsg(msg, 'error');
-    setChatStatus('desconnectat', 'offline');
-  }} finally {{
-    sendBtn.disabled = false;
-    input.disabled = false;
-    input.focus();
-  }}
-}}
-
-function buildOfflineHelp() {{
-  const url = FALLBACK_CHAT_URLS[0];
-  let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
-  help += '<strong>El backend corre a la Raspberry Pi (hortosona).</strong> Si aquest missatge persisteix:<br><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
-  help += '<li>Comprova que la Raspberry estigui engegada i a la tailnet</li>';
-  help += '<li>El servei hauria d\\'estar actiu:<br>' +
-    '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">sudo systemctl status hort-osona-chat</code></li>';
-  help += `<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button></li>`;
-  help += '</ol>';
-  help += '<div style="margin-top:10px;font-size:0.8rem;color:#6B665A">URL que provem: <code>' + escapeHtml(url) + '</code></div>';
-  help += '<div style="margin-top:12px"><label for="chat-api-url"><strong>URL del xat</strong></label>' +
-    '<div style="display:flex;gap:6px;margin-top:5px"><input id="chat-api-url" type="url" value="' + escapeHtml(CHAT_API) + '" placeholder="https://.../chat" style="min-width:0;flex:1;padding:7px;border:1px solid #D9D0B5;border-radius:5px">' +
-    '<button onclick="saveChatUrl()" style="background:#3D4A2A;color:#FFFCF3;padding:7px 10px;border-radius:5px">Desar</button></div></div>';
-  return help;
-}}
-
-function saveChatUrl() {{
-  const input = document.getElementById('chat-api-url');
-  if (!input) return;
-  const value = input.value.trim().replace(/[/]$/, '');
-  if (!/^https?:[/][/]/i.test(value)) return;
-  CHAT_API = value.endsWith('/chat') ? value : value + '/chat';
-  localStorage.setItem('hort-chat-api', CHAT_API);
-  setChatStatus('comprovant...', 'thinking');
-  checkChatHealth();
-}}
-
 // ──────────── INIT ────────────
 document.addEventListener('DOMContentLoaded', () => {{
   // Botons header: registrar-los primer perquè una funció secundària
@@ -2103,10 +1749,8 @@ document.addEventListener('DOMContentLoaded', () => {{
   document.getElementById('back-home-btn').addEventListener('click', () => showWelcome());
   document.getElementById('reset-tasks-btn').addEventListener('click', resetCurrentTasks);
   document.getElementById('search-btn').addEventListener('click', openSearch);
-  document.getElementById('chat-btn').addEventListener('click', openChat);
   document.getElementById('drawer-close').addEventListener('click', closeDrawer);
   document.getElementById('search-close').addEventListener('click', closeSearch);
-  document.getElementById('chat-close').addEventListener('click', closeChat);
   document.getElementById('drawer-bg').addEventListener('click', closeDrawer);
 
   // Inicialització no crítica: un error aquí no desactiva els botons.
@@ -2151,16 +1795,6 @@ document.addEventListener('DOMContentLoaded', () => {{
     doSearch(e.target.value);
   }});
 
-  // Chat form
-  document.getElementById('chat-form').addEventListener('submit', (e) => {{
-    e.preventDefault();
-    const input = document.getElementById('chat-input');
-    const q = input.value.trim();
-    if (!q) return;
-    input.value = '';
-    sendChat(q);
-  }});
-
   // Escape per tancar
   document.addEventListener('keydown', (e) => {{
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {{
@@ -2171,7 +1805,6 @@ document.addEventListener('DOMContentLoaded', () => {{
     if (e.key === 'Escape') {{
       closeDrawer();
       closeSearch();
-      closeChat();
     }}
   }});
 

@@ -105,8 +105,8 @@ def main() -> None:
         fail("Els botons s'han de registrar abans de configurar el mes")
 
     required_handlers = [
-        "menu-btn", "home-btn", "search-btn", "chat-btn",
-        "drawer-close", "search-close", "chat-close",
+        "menu-btn", "home-btn", "search-btn",
+        "drawer-close", "search-close",
     ]
     missing_handlers = [
         item for item in required_handlers
