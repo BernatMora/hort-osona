@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una maduixa">
+  <defs>
+    <radialGradient id="maduixa-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="maduixa-fruit" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#F26B5E"/>
+      <stop offset="60%" stop-color="#D9382E"/>
+      <stop offset="100%" stop-color="#A31F1E"/>
+    </radialGradient>
+    <linearGradient id="maduixa-leaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#maduixa-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Palla / encoixinat -->
+  <g stroke="#D9C28F" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M 46 150 C 60 144 74 146 84 150"/>
+    <path d="M 108 152 C 124 146 140 148 154 152"/>
+    <path d="M 56 156 C 72 152 88 154 96 156"/>
+  </g>
+
+  <!-- Planta amb fulla trifoliada -->
+  <path d="M 100 150 C 98 128 102 112 100 98" stroke="#5C7135" stroke-width="3" fill="none"/>
+  <path d="M 100 98 C 86 94 80 82 88 74 C 94 68 102 74 100 86 Z" fill="url(#maduixa-leaf)"/>
+  <path d="M 100 100 C 114 96 122 84 116 74 C 108 70 100 78 102 90 Z" fill="url(#maduixa-leaf)" opacity="0.92"/>
+  <path d="M 100 104 C 100 92 104 84 112 80" stroke="#6B8A3E" stroke-width="2" fill="none"/>
+  <!-- Flor blanca de 5 pètals -->
+  <g transform="rotate(12 126 70)">
+    <circle cx="126" cy="64" r="4.5" fill="#FFF8E8"/>
+    <circle cx="132.5" cy="69" r="4.5" fill="#FFF8E8"/>
+    <circle cx="129" cy="76.5" r="4.5" fill="#FFF8E8"/>
+    <circle cx="121" cy="76.5" r="4.5" fill="#FFF8E8"/>
+    <circle cx="119.5" cy="69" r="4.5" fill="#FFF8E8"/>
+    <circle cx="126" cy="70.5" r="3.2" fill="#F2C94C"/>
+  </g>
+
+  <!-- Maduixa gran -->
+  <g transform="rotate(-14 88 116)">
+    <path d="M 88 96
+             C 72 96 64 110 68 126
+             C 72 142 80 150 88 152
+             C 96 150 104 142 108 126
+             C 112 110 104 96 88 96 Z"
+          fill="url(#maduixa-fruit)"/>
+    <!-- Llavors/aquenis -->
+    <g fill="#F5EBD8" opacity="0.9">
+      <ellipse cx="80" cy="112" rx="1.8" ry="2.6"/>
+      <ellipse cx="90" cy="110" rx="1.8" ry="2.6"/>
+      <ellipse cx="98" cy="114" rx="1.8" ry="2.6"/>
+      <ellipse cx="76" cy="124" rx="1.8" ry="2.6"/>
+      <ellipse cx="87" cy="122" rx="1.8" ry="2.6"/>
+      <ellipse cx="97" cy="126" rx="1.8" ry="2.6"/>
+      <ellipse cx="82" cy="136" rx="1.8" ry="2.6"/>
+      <ellipse cx="92" cy="138" rx="1.8" ry="2.6"/>
+    </g>
+    <!-- Calze -->
+    <path d="M 80 96 L 84 86 L 88 94 L 92 84 L 96 92 L 100 86 L 98 98 C 92 102 86 102 80 96 Z" fill="url(#maduixa-leaf)"/>
+  </g>
+
+  <!-- Maduixa petita -->
+  <g transform="rotate(16 138 128) scale(0.62)" transform-origin="124 168">
+    <path d="M 124 122
+             C 110 122 104 134 108 148
+             C 112 160 118 166 124 168
+             C 130 166 136 160 140 148
+             C 144 134 138 122 124 122 Z"
+          fill="url(#maduixa-fruit)"/>
+    <g fill="#F5EBD8" opacity="0.9">
+      <ellipse cx="118" cy="136" rx="1.9" ry="2.7"/>
+      <ellipse cx="128" cy="134" rx="1.9" ry="2.7"/>
+      <ellipse cx="115" cy="148" rx="1.9" ry="2.7"/>
+      <ellipse cx="126" cy="146" rx="1.9" ry="2.7"/>
+      <ellipse cx="136" cy="150" rx="1.9" ry="2.7"/>
+      <ellipse cx="121" cy="158" rx="1.9" ry="2.7"/>
+    </g>
+    <path d="M 116 124 L 120 116 L 124 122 L 128 114 L 132 122 L 136 116 L 134 126 C 128 129 121 129 116 124 Z" fill="url(#maduixa-leaf)"/>
+  </g>
+</svg>

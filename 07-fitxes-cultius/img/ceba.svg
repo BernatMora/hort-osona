@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una ceba daurada">
+  <defs>
+    <radialGradient id="ceba-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="ceba-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9A62E"/>
+      <stop offset="100%" stop-color="#A8761E"/>
+    </linearGradient>
+
+    <linearGradient id="ceba-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#ceba-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <g>
+    <path d="M 100 78 C 74 78 60 104 62 128 C 64 148 80 160 100 160 C 120 160 136 148 138 128 C 140 104 126 78 100 78 Z" fill="url(#ceba-skin)"/>
+    <path d="M 100 80 C 92 104 92 136 100 158 M 88 84 C 80 106 82 136 88 156 M 112 84 C 120 106 118 136 112 156" stroke="#8F6A1E" stroke-width="1.4" fill="none" opacity="0.6"/>
+    <path d="M 94 80 C 92 62 94 48 90 38 M 100 78 C 100 58 100 46 100 34 M 106 80 C 108 62 106 48 110 38" stroke="#7BA05B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 100 160 C 100 168 98 174 96 180 M 96 160 L 104 176 M 104 158 C 106 166 106 172 108 178" stroke="#C9B58A" stroke-width="1.4" fill="none"/>
+  </g>
+</svg>

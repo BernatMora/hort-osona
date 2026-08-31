@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-patata-solanum-tuberosum">Fitxa de cultiu: Patata (Solanum tuberosum)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/patata.svg" alt="Fitxa de cultiu: Patata (Solanum tuberosum)" loading="lazy"></div><h1 id="fitxa-de-cultiu-patata-solanum-tuberosum">Fitxa de cultiu: Patata (Solanum tuberosum)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Solanum tuberosum</em></li>

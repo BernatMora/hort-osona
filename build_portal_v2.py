@@ -75,6 +75,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("07-fitxes-cultius/alberginia.md", "Albergínia"),
         ("07-fitxes-cultius/api.md", "Api"),
         ("07-fitxes-cultius/bleda.md", "Bleda"),
+        ("07-fitxes-cultius/blat-de-moro.md", "Blat de moro"),
         ("07-fitxes-cultius/carbassa.md", "Carbassa"),
         ("07-fitxes-cultius/carabasso.md", "Carabassó"),
         ("07-fitxes-cultius/ceba.md", "Ceba"),
@@ -88,6 +89,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("07-fitxes-cultius/lufa.md", "Lufa · esponja vegetal"),
         ("07-fitxes-cultius/melo.md", "Meló"),
         ("07-fitxes-cultius/menta.md", "Menta"),
+        ("07-fitxes-cultius/maduixa.md", "Maduixa"),
         ("07-fitxes-cultius/mongeta.md", "Mongeta"),
         ("07-fitxes-cultius/moniato.md", "Moniato"),
         ("07-fitxes-cultius/nap.md", "Nap"),
@@ -110,6 +112,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("05-cobertes-adobs-verds.md", "Cobertes i adobs verds"),
         ("06-varietats-tradicionals.md", "Varietats tradicionals"),
         ("compost.md", "Compost"),
+        ("multiplicacio-guia.md", "Multiplicació de plantes"),
         ("planters-guia-completa.md", "Planters"),
         ("guardar-llavors.md", "Guardar llavors"),
         ("biodinamica-guia-completa.md", "Biodinàmica"),
@@ -569,7 +572,7 @@ a:hover {{ text-decoration: underline; }}
 /* ──────────── LAYOUT ──────────── */
 .app {{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: var(--header-h) 1fr;
   height: 100vh;
   height: 100dvh;
@@ -622,6 +625,7 @@ a:hover {{ text-decoration: underline; }}
   font-weight: 600;
   font-size: 1.05rem;
   flex: 1;
+  min-width: 0; /* sense aixo el titol nowrap inflaria la pista grid al mobil */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

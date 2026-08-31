@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-bleda">Fitxa de cultiu: Bleda</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/bleda.svg" alt="Fitxa de cultiu: Bleda" loading="lazy"></div><h1 id="fitxa-de-cultiu-bleda">Fitxa de cultiu: Bleda</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Beta vulgaris</em> subsp. <em>cicla</em> (var. <em>flavescens</em>)</li>

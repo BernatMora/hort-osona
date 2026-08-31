@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració de beines de fava amb llavors">
+  <defs>
+    <radialGradient id="fava-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="fava-pod" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B9A4A"/>
+      <stop offset="100%" stop-color="#3F5F28"/>
+    </linearGradient>
+    <linearGradient id="fava-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#fava-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="154" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Tija de fava (quadrada) i fulles -->
+  <g stroke="#4A6B2A" stroke-width="3.2" fill="none">
+    <path d="M 94 152 C 90 120 92 92 104 68"/>
+  </g>
+  <g fill="url(#fava-leaves)">
+    <ellipse cx="88" cy="96" rx="14" ry="9" transform="rotate(-28 88 96)"/>
+    <ellipse cx="104" cy="82" rx="13" ry="8.4" transform="rotate(-40 104 82)"/>
+    <ellipse cx="112" cy="62" rx="12" ry="8" transform="rotate(-52 112 62)"/>
+  </g>
+  <!-- Flors blanques amb taques negres de fava -->
+  <g>
+    <ellipse cx="118" cy="78" rx="4.6" ry="6" fill="#FFF8E8" transform="rotate(24 118 78)"/>
+    <circle cx="119.5" cy="76" r="1.9" fill="#3A3A3A"/>
+    <ellipse cx="110" cy="94" rx="4.2" ry="5.6" fill="#FFF8E8" transform="rotate(18 110 94)"/>
+    <circle cx="111.5" cy="92" r="1.7" fill="#3A3A3A"/>
+  </g>
+
+  <!-- Beina gran amb llavors (la protagonista) -->
+  <g transform="rotate(-10 104 128)">
+    <path d="M 58 118 C 68 106 100 100 136 106 C 142 107 144 114 142 122 C 138 138 108 144 76 138 C 66 136 58 128 58 118 Z" fill="url(#fava-pod)"/>
+    <path d="M 60 118 C 76 126 112 130 140 122" stroke="#2F4A1E" stroke-width="1.4" fill="none" opacity="0.55"/>
+    <!-- Llavors marcades amb el niable fosc -->
+    <g fill="#D9CFA0" stroke="#8F8158" stroke-width="1">
+      <ellipse cx="80" cy="124" rx="8.6" ry="7.2"/>
+      <ellipse cx="102" cy="126" rx="8.6" ry="7.2"/>
+      <ellipse cx="124" cy="126" rx="8.6" ry="7.2"/>
+    </g>
+    <g fill="#3A3A3A">
+      <ellipse cx="80" cy="121" rx="3" ry="2"/>
+      <ellipse cx="102" cy="123" rx="3" ry="2"/>
+      <ellipse cx="124" cy="123" rx="3" ry="2"/>
+    </g>
+  </g>
+</svg>

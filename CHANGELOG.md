@@ -2,6 +2,18 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-08-31c] — Pendents: blat de moro, maduixa, multiplicació + mòbil vertical arreglat de veritat
+
+### Nous continguts (105 documents, 33 fitxes de cultiu)
+- **Nova fitxa: Blat de moro** (*Zea mays*): les tres germanes, sembra en bloc per pol·linització, collita "en llet" vs en sec, corc de la tija
+- **Nova fitxa: Maduixa** (*Fragaria × ananassa*): uníferes vs remontants, corona a nivell de terra, encoixinat de palla imprescindible, llimacs i ocells
+- **Nova guia: "Multiplicació de plantes"** (`multiplicacio-guia.md`): esqueixos herbacis i semilenyosos, divisió de mata, acodaments, estaolons, bulbs — taula ràpida planta→tècnica→època a Osona
+- **2 il·lustracions SVG noves**: blat de moro, maduixa (i 20 més en camí)
+
+### Portal — mòbil en vertical arreglat de veritat
+- **Bug real trobat i corregit**: el títol del document a la capçalera (`white-space: nowrap`) inflava la pista de la graella `.app` al mínim del text sencer (722px en un viewport de 390px) — per això calia girar el mòbil en horitzontal. Solucions: `grid-template-columns: minmax(0, 1fr)` a `.app` + `min-width: 0` al títol. Verificat en simulació 390px amb els documents més amples (taules): la pista es queda a 390px i el títol trunca amb ellipsis
+- `test-mobile.html` nou: pàgina de prova amb iframe 390×844 per verificar el mode mòbil des de l'escriptori
+
 ## [2026-08-31] — Lufa + 4 fitxes noves + armeria de productes + mòbil
 
 ### Nous continguts (102 documents, 31 fitxes de cultiu)

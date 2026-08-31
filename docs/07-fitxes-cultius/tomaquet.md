@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-tomàquet-solanum-lycopersicum">Fitxa de cultiu: Tomàquet (Solanum lycopersicum)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/tomaquet.svg" alt="Fitxa de cultiu: Tomàquet (Solanum lycopersicum)" loading="lazy"></div><h1 id="fitxa-de-cultiu-tomàquet-solanum-lycopersicum">Fitxa de cultiu: Tomàquet (Solanum lycopersicum)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Família</strong>: Solanàcies</li>

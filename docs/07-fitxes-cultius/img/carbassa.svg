@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una carbassa taronja">
+  <defs>
+    <radialGradient id="carbassa-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="carbassa-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8873C"/>
+      <stop offset="100%" stop-color="#B55A1E"/>
+    </linearGradient>
+
+    <linearGradient id="carbassa-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#carbassa-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <g>
+    <path d="M 100 66 C 62 66 48 96 52 124 C 56 150 74 162 100 162 C 126 162 144 150 148 124 C 152 96 138 66 100 66 Z" fill="url(#carbassa-skin)"/>
+    <path d="M 100 70 C 88 92 88 140 100 158 M 100 70 C 112 92 112 140 100 158" stroke="#8F4518" stroke-width="1.6" fill="none" opacity="0.55"/>
+    <rect x="94" y="48" width="12" height="20" rx="4" fill="#4A5F30"/>
+    <path d="M 106 58 C 118 56 126 62 128 70" stroke="#4A5F30" stroke-width="2.5" fill="none"/>
+  </g>
+</svg>

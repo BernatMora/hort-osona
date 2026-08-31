@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-romaní-salvia-rosmarinus">Fitxa de cultiu: Romaní (<em>Salvia rosmarinus</em>)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/romani.svg" alt="Fitxa de cultiu: Romaní (*Salvia rosmarinus*)" loading="lazy"></div><h1 id="fitxa-de-cultiu-romaní-salvia-rosmarinus">Fitxa de cultiu: Romaní (<em>Salvia rosmarinus</em>)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Salvia rosmarinus</em> (abans <em>Rosmarinus officinalis</em>)</li>

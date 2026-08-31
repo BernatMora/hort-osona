@@ -1,4 +1,4 @@
-<h1 id="-aromàtiques-a-lx27hort-dx27osona">🌿 Aromàtiques a l&#x27;hort d&#x27;Osona</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/aromatiques.svg" alt="🌿 Aromàtiques a l&#x27;hort d&#x27;Osona" loading="lazy"></div><h1 id="-aromàtiques-a-lx27hort-dx27osona">🌿 Aromàtiques a l&#x27;hort d&#x27;Osona</h1>
 <h2 id="per-què-plantar-aromàtiques">Per què plantar aromàtiques?</h2>
 <ul>
 <li><strong>Repel·leixen plagues</strong> amb les seves olors (més potents que molts insecticides!)</li>

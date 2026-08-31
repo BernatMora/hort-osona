@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-alfàbrega-ocimum-basilicum">Fitxa de cultiu: Alfàbrega (<em>Ocimum basilicum</em>)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/alfabrega.svg" alt="Fitxa de cultiu: Alfàbrega (*Ocimum basilicum*)" loading="lazy"></div><h1 id="fitxa-de-cultiu-alfàbrega-ocimum-basilicum">Fitxa de cultiu: Alfàbrega (<em>Ocimum basilicum</em>)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Ocimum basilicum</em></li>

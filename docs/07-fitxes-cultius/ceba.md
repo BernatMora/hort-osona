@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-ceba-allium-cepa">Fitxa de cultiu: Ceba (Allium cepa)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/ceba.svg" alt="Fitxa de cultiu: Ceba (Allium cepa)" loading="lazy"></div><h1 id="fitxa-de-cultiu-ceba-allium-cepa">Fitxa de cultiu: Ceba (Allium cepa)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Família</strong>: Liliàcies (Aliàcies)</li>

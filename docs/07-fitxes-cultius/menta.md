@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-menta-mentha-sp">Fitxa de cultiu: Menta (<em>Mentha sp.</em>)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/menta.svg" alt="Fitxa de cultiu: Menta (*Mentha sp.*)" loading="lazy"></div><h1 id="fitxa-de-cultiu-menta-mentha-sp">Fitxa de cultiu: Menta (<em>Mentha sp.</em>)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Mentha sp.</em> (hi ha moltes espècies i híbrids)</li>

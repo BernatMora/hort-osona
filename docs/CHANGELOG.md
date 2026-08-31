@@ -1,5 +1,18 @@
 <h1 id="-changelog-hort-osona">📝 CHANGELOG — Hort Osona</h1>
 <p>Tots els canvis notables al projecte, per data.</p>
+<h2 id="2026-08-31c-pendents-blat-de-moro-maduixa-multiplicació-mòbi">[2026-08-31c] — Pendents: blat de moro, maduixa, multiplicació + mòbil vertical arreglat de veritat</h2>
+<h3 id="nous-continguts-105-documents-33-fitxes-de-cultiu">Nous continguts (105 documents, 33 fitxes de cultiu)</h3>
+<ul>
+<li><strong>Nova fitxa: Blat de moro</strong> (<em>Zea mays</em>): les tres germanes, sembra en bloc per pol·linització, collita &quot;en llet&quot; vs en sec, corc de la tija</li>
+<li><strong>Nova fitxa: Maduixa</strong> (<em>Fragaria × ananassa</em>): uníferes vs remontants, corona a nivell de terra, encoixinat de palla imprescindible, llimacs i ocells</li>
+<li><strong>Nova guia: &quot;Multiplicació de plantes&quot;</strong> (<code>multiplicacio-guia.md</code>): esqueixos herbacis i semilenyosos, divisió de mata, acodaments, estaolons, bulbs — taula ràpida planta→tècnica→època a Osona</li>
+<li><strong>2 il·lustracions SVG noves</strong>: blat de moro, maduixa (i 20 més en camí)</li>
+</ul>
+<h3 id="portal-mòbil-en-vertical-arreglat-de-veritat">Portal — mòbil en vertical arreglat de veritat</h3>
+<ul>
+<li><strong>Bug real trobat i corregit</strong>: el títol del document a la capçalera (<code>white-space: nowrap</code>) inflava la pista de la graella <code>.app</code> al mínim del text sencer (722px en un viewport de 390px) — per això calia girar el mòbil en horitzontal. Solucions: <code>grid-template-columns: minmax(0, 1fr)</code> a <code>.app</code> + <code>min-width: 0</code> al títol. Verificat en simulació 390px amb els documents més amples (taules): la pista es queda a 390px i el títol trunca amb ellipsis</li>
+<li><code>test-mobile.html</code> nou: pàgina de prova amb iframe 390×844 per verificar el mode mòbil des de l&#x27;escriptori</li>
+</ul>
 <h2 id="2026-08-31-lufa-4-fitxes-noves-armeria-de-productes-mòbil">[2026-08-31] — Lufa + 4 fitxes noves + armeria de productes + mòbil</h2>
 <h3 id="nous-continguts-102-documents-31-fitxes-de-cultiu">Nous continguts (102 documents, 31 fitxes de cultiu)</h3>
 <ul>

@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-carabassó-cucurbita-pepo">Fitxa de cultiu: Carabassó (Cucurbita pepo)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/carabasso.svg" alt="Fitxa de cultiu: Carabassó (Cucurbita pepo)" loading="lazy"></div><h1 id="fitxa-de-cultiu-carabassó-cucurbita-pepo">Fitxa de cultiu: Carabassó (Cucurbita pepo)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Família</strong>: Cucurbitàcies</li>

@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-carbassa-cucurbita-maxima-c-moschata">Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/carbassa.svg" alt="Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)" loading="lazy"></div><h1 id="fitxa-de-cultiu-carbassa-cucurbita-maxima-c-moschata">Fitxa de cultiu: Carbassa (Cucurbita maxima, C. moschata)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Família</strong>: Cucurbitàcies</li>

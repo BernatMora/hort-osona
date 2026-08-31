@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-enciam-lactuca-sativa">Fitxa de cultiu: Enciam (Lactuca sativa)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/enciam.svg" alt="Fitxa de cultiu: Enciam (Lactuca sativa)" loading="lazy"></div><h1 id="fitxa-de-cultiu-enciam-lactuca-sativa">Fitxa de cultiu: Enciam (Lactuca sativa)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Família</strong>: Asteràcies (Compostes)</li>

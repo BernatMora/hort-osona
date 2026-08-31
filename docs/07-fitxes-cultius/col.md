@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-col-brassica-oleracea">Fitxa de cultiu: Col (Brassica oleracea)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/col.svg" alt="Fitxa de cultiu: Col (Brassica oleracea)" loading="lazy"></div><h1 id="fitxa-de-cultiu-col-brassica-oleracea">Fitxa de cultiu: Col (Brassica oleracea)</h1>
 <blockquote><strong>Aplica a:</strong> col llombarda, col de cabdell (repol·lo), col kale, bròquil, coliflor, colrave (kohlrabi), col de Brussel·les, col xina (bok choy), col ràpano.</blockquote>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>

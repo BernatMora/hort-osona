@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-all-allium-sativum">Fitxa de cultiu: All (Allium sativum)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/all.svg" alt="Fitxa de cultiu: All (Allium sativum)" loading="lazy"></div><h1 id="fitxa-de-cultiu-all-allium-sativum">Fitxa de cultiu: All (Allium sativum)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Allium sativum</em></li>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració de farigola">
+  <defs>
+    <radialGradient id="farigola-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="farigola-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B8A3E"/>
+      <stop offset="100%" stop-color="#3F5B26"/>
+    </linearGradient>
+
+    <linearGradient id="farigola-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#farigola-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Mata baixa llenyosa -->
+  <path d="M 74 150 C 84 140 96 136 104 136 M 92 152 C 100 144 110 140 122 140" stroke="#7A6A4A" stroke-width="3" fill="none"/>
+  <g stroke="url(#farigola-skin)" stroke-width="2.4" fill="none">
+    <path d="M 80 146 C 82 124 88 106 100 92"/>
+    <path d="M 96 148 C 100 128 108 112 120 102"/>
+    <path d="M 68 142 C 70 122 76 108 86 98"/>
+    <path d="M 112 146 C 118 128 128 116 140 108"/>
+    <path d="M 104 144 C 108 124 116 110 128 102"/>
+  </g>
+  <!-- Fullinetes petites -->
+  <g fill="url(#farigola-skin)">
+    <ellipse cx="94" cy="104" rx="5" ry="3.4" transform="rotate(-30 94 104)"/>
+    <ellipse cx="88" cy="118" rx="5" ry="3.4" transform="rotate(-40 88 118)"/>
+    <ellipse cx="84" cy="132" rx="5" ry="3.4" transform="rotate(-46 84 132)"/>
+    <ellipse cx="112" cy="112" rx="5" ry="3.4" transform="rotate(24 112 112)"/>
+    <ellipse cx="106" cy="128" rx="5" ry="3.4" transform="rotate(18 106 128)"/>
+    <ellipse cx="126" cy="110" rx="5" ry="3.4" transform="rotate(30 126 110)"/>
+    <ellipse cx="120" cy="124" rx="5" ry="3.4" transform="rotate(22 120 124)"/>
+    </g>
+  <!-- Florcines liles -->
+  <g fill="#B08AC9">
+    <circle cx="100" cy="90" r="3"/>
+    <circle cx="120" cy="100" r="3"/>
+    <circle cx="86" cy="104" r="2.6"/>
+    <circle cx="140" cy="112" r="3"/>
+    <circle cx="128" cy="100" r="2.6"/>
+  </g>
+</svg>
