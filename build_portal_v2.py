@@ -83,6 +83,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("07-fitxes-cultius/espinac.md", "Espinac"),
         ("07-fitxes-cultius/farigola.md", "Farigola"),
         ("07-fitxes-cultius/fava.md", "Fava"),
+        ("07-fitxes-cultius/lufa.md", "Lufa · esponja vegetal"),
         ("07-fitxes-cultius/melo.md", "Meló"),
         ("07-fitxes-cultius/menta.md", "Menta"),
         ("07-fitxes-cultius/mongeta.md", "Mongeta"),

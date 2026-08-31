@@ -2,6 +2,13 @@
 
 Tots els canvis notables al projecte, per data.
 
+## [2026-08-31] — Nova fitxa: Lufa o esponja vegetal
+
+- Nova fitxa de cultiu `07-fitxes-cultius/lufa.md` (*Luffa aegyptiaca*): sembra març-abril amb calor de fons, tutor imprescindible, collita abans de gelades i processat de l'esponja pas a pas
+- Secció "De on treure granes" amb fonts catalanes (Les Refardes, l'Era, Germigarden, intercanvi)
+- Integrada al portal (97 documents), al README, a 00-index i al builder
+- Service worker: cache a `hort-osona-v9` perquè la PWA es refresqui sola
+
 ## [2026-07-03] — Sensors IoT + Assistent IA local (RAG + Ollama)
 
 ### Sensors IoT — pàgina #sensors

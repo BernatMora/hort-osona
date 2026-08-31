@@ -1,7 +1,7 @@
 // service-worker.js — Service Worker per a Hort Osona PWA
 // Cache-first per a l'HTML i assets, network-first per a Open-Meteo
 
-const CACHE_VERSION = 'hort-osona-v8';
+const CACHE_VERSION = 'hort-osona-v9';
 const STATIC_CACHE = CACHE_VERSION + '-static';
 const RUNTIME_CACHE = CACHE_VERSION + '-runtime';
 
@@ -48,7 +48,7 @@ self.addEventListener('fetch', event => {
   // Network-first per a Open-Meteo (dades meteorològiques)
   if (url.hostname === 'api.open-meteo.com') {
     event.respondWith(
-      fetch(request, { cache: 'no-store' })
+      fetch(request)
         .then(response => {
           if (response.ok) {
             const clone = response.clone();
@@ -65,7 +65,7 @@ self.addEventListener('fetch', event => {
   // en una versió antiga després d'una actualització a GitHub Pages.
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request, { cache: 'no-store' })
+      fetch(request)
         .then(response => {
           if (response.ok) {
             const clone = response.clone();
@@ -83,7 +83,7 @@ self.addEventListener('fetch', event => {
   if (request.method === 'GET' &&
       (url.pathname.includes('/docs/') || url.pathname.endsWith('/search_index.json'))) {
     event.respondWith(
-      fetch(request, { cache: 'no-store' })
+      fetch(request)
         .then(response => {
           if (response.ok) {
             const clone = response.clone();
