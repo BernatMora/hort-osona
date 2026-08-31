@@ -1,0 +1,30 @@
+[Unit]
+Description=Hort Osona - Chat API (RAG per la PWA)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bernat
+Group=bernat
+
+WorkingDirectory=/home/bernat/hort-osona/hort-osona-iot
+EnvironmentFile=/home/bernat/hort-osona/hort-osona-iot/.env
+Environment="PYTHONUNBUFFERED=1"
+Environment="PATH=/home/bernat/hort-osona/hort-osona-iot/venv/bin:/usr/local/bin:/usr/bin:/bin"
+
+ExecStart=/home/bernat/hort-osona/hort-osona-iot/venv/bin/python /home/bernat/hort-osona/hort-osona-iot/backend/api_chat.py
+
+Restart=always
+RestartSec=10
+
+StandardOutput=append:/home/bernat/hort-osona/hort-osona-iot/logs/chat_api.log
+StandardError=append:/home/bernat/hort-osona/hort-osona-iot/logs/chat_api.log
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/home/bernat/hort-osona/hort-osona-iot
+
+[Install]
+WantedBy=multi-user.target

@@ -1443,12 +1443,11 @@ function configureCurrentMonth() {
 // sempre apunta al propi dispositiu. Cal usar la IP del Mac a la xarxa local.
 // Si el backend es a una Raspberry Pi o altre maquina, canviar aqui.
 //
-// Prioritat de URLs:
 // 1. window.CHAT_API_URL (definit a l'HTML) - te prioritat
-// 2. localhost:8001 - nomes funciona des de l'ordinador
-// 3. IP del Mac a la xarxa local (192.168.100.110:8001) - funciona des de mobil
+// 2. localStorage (desat per l'usuari al panell de config)
+// 3. Fallback: Funnel/Serve HTTPS de la Raspberry (cert valid, sense mixed content)
 const FALLBACK_CHAT_URLS = [
-  'http://192.168.100.110:8001/chat',
+  'https://hortosona.tail37c051.ts.net/chat',
   'http://localhost:8001/chat'
 ];
 let CHAT_API = window.CHAT_API_URL || localStorage.getItem('hort-chat-api') || FALLBACK_CHAT_URLS[0];
@@ -1582,29 +1581,16 @@ async function sendChat(question) {
 }
 
 function buildOfflineHelp() {
-  // Detectar si estem en mobil/tablet
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const url = FALLBACK_CHAT_URLS[0];
-  const ipMatch = url.match(/http:[/][/]([0-9.]+):/);
-  const ip = ipMatch ? ipMatch[1] : 'la IP del Mac';
   let help = '❌ No puc connectar amb el servidor del xat.<br><br>';
-  if (location.protocol === 'https:' && CHAT_API.startsWith('http:')) {
-    help += '<strong>La web pública és HTTPS i el navegador bloqueja un servidor HTTP local.</strong> Configura una adreça HTTPS segura de la Raspberry o del Mac.<br><br>';
-  }
-  help += '<strong>Com resoldre-ho:</strong><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
-  if (isMobile) {
-    help += '<li>Assegura\'t que el <strong>iPhone i el Mac estan a la mateixa WiFi</strong></li>';
-    help += '<li>Obre el <strong>Terminal</strong> al Mac i executa:<br>' +
-      '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">cd ~/Desktop/hort-osona/hort-osona-iot && python3 -m uvicorn backend.api_chat:app --host 0.0.0.0 --port 8001</code></li>';
-    help += '<li>Espera que aparegui "Uvicorn running on http://0.0.0.0:8001"</li>';
-  } else {
-    help += '<li>El backend no esta arrencat. Obre el <strong>Terminal</strong> i executa:<br>' +
-      '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">cd ~/Desktop/hort-osona/hort-osona-iot && python3 -m uvicorn backend.api_chat:app --port 8001</code></li>';
-  }
-  help += `<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button> un cop arrencat</li>`;
+  help += '<strong>El backend corre a la Raspberry Pi (hortosona).</strong> Si aquest missatge persisteix:<br><ol style="margin:8px 0 0 20px;font-size:0.9rem;line-height:1.5">';
+  help += '<li>Comprova que la Raspberry estigui engegada i a la tailnet</li>';
+  help += '<li>El servei hauria d\'estar actiu:<br>' +
+    '<code style="display:block;background:#f0e8d8;padding:6px 8px;border-radius:4px;margin:4px 0;font-size:0.85rem">sudo systemctl status hort-osona-chat</code></li>';
+  help += `<li>Prem <button onclick="checkChatHealth(); document.getElementById('chat-input').focus();" style="background:#3D4A2A;color:#FFFCF3;border:none;padding:4px 10px;border-radius:4px;cursor:pointer">🔄 Tornar a provar</button></li>`;
   help += '</ol>';
   help += '<div style="margin-top:10px;font-size:0.8rem;color:#6B665A">URL que provem: <code>' + escapeHtml(url) + '</code></div>';
-  help += '<div style="margin-top:12px"><label for="chat-api-url"><strong>URL HTTPS del xat</strong></label>' +
+  help += '<div style="margin-top:12px"><label for="chat-api-url"><strong>URL del xat</strong></label>' +
     '<div style="display:flex;gap:6px;margin-top:5px"><input id="chat-api-url" type="url" value="' + escapeHtml(CHAT_API) + '" placeholder="https://.../chat" style="min-width:0;flex:1;padding:7px;border:1px solid #D9D0B5;border-radius:5px">' +
     '<button onclick="saveChatUrl()" style="background:#3D4A2A;color:#FFFCF3;padding:7px 10px;border-radius:5px">Desar</button></div></div>';
   return help;
