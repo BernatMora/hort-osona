@@ -1,5 +1,22 @@
 <h1 id="-changelog-hort-osona">📝 CHANGELOG — Hort Osona</h1>
 <p>Tots els canvis notables al projecte, per data.</p>
+<h2 id="2026-08-31-lufa-4-fitxes-noves-armeria-de-productes-mòbil">[2026-08-31] — Lufa + 4 fitxes noves + armeria de productes + mòbil</h2>
+<h3 id="nous-continguts-102-documents-31-fitxes-de-cultiu">Nous continguts (102 documents, 31 fitxes de cultiu)</h3>
+<ul>
+<li><strong>Nova fitxa: Lufa o esponja vegetal</strong> (<em>Luffa aegyptiaca</em>): sembra març-abril amb calor de fons, tutor imprescindible, collita abans de gelades, processat de l&#x27;esponja pas a pas i on treure granes a Catalunya (Les Refardes, l&#x27;Era, Germigarden)</li>
+<li><strong>4 fitxes noves</strong>: Albergínia, Cogombre, Nap i Moniato — adaptades a Osona</li>
+<li><strong>Nova guia &quot;Armeria de l&#x27;hort&quot;</strong> (<code>productes-ecologics-guia.md</code>): 15 productes ecològics amb dosi casolana, quan aplicar-los i precaucions (sofre, coure, sabó potàssic, neem, Bt, ferramol, trampes...), taula de compatibilitats i ràpides plaga→producte i mes→productes</li>
+<li><strong>5 il·lustracions SVG noves</strong>: lufa, albergínia, cogombre, nap, moniato</li>
+<li>Afegides les fitxes i la guia nova al README, 00-index i constructor del portal</li>
+</ul>
+<h3 id="portal">Portal</h3>
+<ul>
+<li><strong>Corregit l&#x27;scroll horitzontal al mòbil</strong>: <code>overflow-x: hidden</code>, <code>min-width: 0</code> al .main i <code>overflow-wrap: break-word</code> al contingut — taules i paraules llargues ja no empenyen la pantalla</li>
+<li><strong>Card &quot;El que toca ara&quot; amb contingut real del mes</strong>: clima + tasques del mes (sembra, trasplantament, collita, conreu) per als 12 mesos, calculat a runtime des de <code>hort-checklist.py</code> — ja no cal rebuild cada mes</li>
+<li>Corregit el typo <code>GELADA_PRIMA</code> → <code>GELADA_PRIMERA</code> a hort-checklist.py (trencava les notes de clima d&#x27;octubre-novembre)</li>
+<li><code>verify_portal.py</code> reparat (el JS ara passa per stdin: el límit d&#x27;argv de Windows el trencava)</li>
+<li>Service worker: cache a <code>hort-osona-v9</code> perquè la PWA es refresqui sola</li>
+</ul>
 <h2 id="2026-07-03-sensors-iot-assistent-ia-local-rag-ollama">[2026-07-03] — Sensors IoT + Assistent IA local (RAG + Ollama)</h2>
 <h3 id="sensors-iot-pàgina-sensors">Sensors IoT — pàgina #sensors</h3>
 <ul>

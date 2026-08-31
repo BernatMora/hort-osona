@@ -1,4 +1,4 @@
-<h1 id="fitxa-de-cultiu-lufa-o-esponja-vegetal-luffa-aegyptiaca">Fitxa de cultiu: Lufa o esponja vegetal (Luffa aegyptiaca)</h1>
+<div class="doc-hero"><img src="docs/07-fitxes-cultius/img/lufa.svg" alt="Fitxa de cultiu: Lufa o esponja vegetal (Luffa aegyptiaca)" loading="lazy"></div><h1 id="fitxa-de-cultiu-lufa-o-esponja-vegetal-luffa-aegyptiaca">Fitxa de cultiu: Lufa o esponja vegetal (Luffa aegyptiaca)</h1>
 <h2 id="dades-generals">Dades generals</h2>
 <ul>
 <li><strong>Nom científic</strong>: <em>Luffa aegyptiaca</em> (sin. <em>L. cylindrica</em>); n&#x27;hi ha una altra espècie, <em>L. acutangula</em> (llufa de costelles)</li>

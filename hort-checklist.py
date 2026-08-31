@@ -437,7 +437,7 @@ def notes_per_mes(month: int) -> str:
     if month in (9, 10):
         parts.append("Pluges de tardor. **Aprofitar** per sembrar adobs verds i cultius d'hivern.")
     if month in (10, 11):
-        parts.append(f"⚠️ **Primeres gelades** a partir de {GELADA_PRIMA}.")
+        parts.append(f"⚠️ **Primeres gelades** a partir de {GELADA_PRIMERA}.")
     if month in (11, 12):
         parts.append(f"**Gelada forta** a partir de {GELADA_FORTA}. Protegir cultius d'hivern.")
     return "\n".join(parts)

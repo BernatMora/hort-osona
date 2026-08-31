@@ -72,11 +72,13 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
     "Fitxes de cultiu": [
         ("07-fitxes-cultius/all.md", "All"),
         ("07-fitxes-cultius/alfabrega.md", "Alfàbrega"),
+        ("07-fitxes-cultius/alberginia.md", "Albergínia"),
         ("07-fitxes-cultius/api.md", "Api"),
         ("07-fitxes-cultius/bleda.md", "Bleda"),
         ("07-fitxes-cultius/carbassa.md", "Carbassa"),
         ("07-fitxes-cultius/carabasso.md", "Carabassó"),
         ("07-fitxes-cultius/ceba.md", "Ceba"),
+        ("07-fitxes-cultius/cogombre.md", "Cogombre"),
         ("07-fitxes-cultius/col.md", "Col"),
         ("07-fitxes-cultius/enciam.md", "Enciam"),
         ("07-fitxes-cultius/escarola.md", "Escarola"),
@@ -87,6 +89,8 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("07-fitxes-cultius/melo.md", "Meló"),
         ("07-fitxes-cultius/menta.md", "Menta"),
         ("07-fitxes-cultius/mongeta.md", "Mongeta"),
+        ("07-fitxes-cultius/moniato.md", "Moniato"),
+        ("07-fitxes-cultius/nap.md", "Nap"),
         ("07-fitxes-cultius/orenga.md", "Orenga"),
         ("07-fitxes-cultius/pastanaga.md", "Pastanaga"),
         ("07-fitxes-cultius/patata.md", "Patata"),
@@ -112,6 +116,7 @@ CATEGORIES: Dict[str, List[Tuple[str, str]]] = {
         ("guia-avancada-osona.md", "Guia avançada Osona"),
         ("practiques-avancades.md", "Pràctiques avançades"),
         ("pla-tractaments-fitosanitaris.md", "Tractaments fitosanitaris"),
+        ("productes-ecologics-guia.md", "Productes ecològics (armeria)"),
         ("plagues-guia-visual.md", "Guia visual de plagues"),
     ],
     "Eines operatives": [
@@ -415,6 +420,35 @@ def main():
 
     sidebar_json = json.dumps(sidebar_data, ensure_ascii=False)
 
+    # ──────────── DADES DEL MES (hort-checklist.py) ────────────
+    # Genera tasques/clima per als 12 mesos a build-time; el JS tria el mes
+    # actual a runtime (el card de l'inici sempre mostra el mes en curs).
+    def month_data_for_site():
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                "hort_checklist", BASE / "hort-checklist.py")
+            hc = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(hc)
+            data = {}
+            for m in range(1, 13):
+                data[str(m)] = {
+                    "clima": hc.notes_per_mes(m),
+                    "tasques": [
+                        {"cat": t["cat"], "titol": t["titol"], "desc": t["desc"]}
+                        for t in hc.tasques_del_mes(m)
+                    ],
+                }
+            return data
+        except Exception as e:
+            print(f"⚠️ No s'ha pogut generar el calendari mensual: {e}")
+            return None
+
+    month_data = month_data_for_site()
+    month_data_json = json.dumps(month_data, ensure_ascii=False) if month_data else "null"
+    if month_data:
+        print(f"✅ Dades dels 12 mesos carregades (hort-checklist)")
+
     # ──────────── GENERAR FITXERS HTML PER A CADA DOCUMENT ────────────
     docs_dir = BASE / "docs"
     docs_dir.mkdir(exist_ok=True)
@@ -489,6 +523,7 @@ def main():
 
 html, body {{
   height: 100%;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -616,6 +651,7 @@ a:hover {{ text-decoration: underline; }}
   grid-row: 2;
   grid-column: 1;
   overflow-y: auto;
+  min-width: 0;
   -webkit-overflow-scrolling: touch;
   padding: 16px;
   padding-bottom: env(safe-area-inset-bottom, 16px);
@@ -1196,6 +1232,13 @@ a:hover {{ text-decoration: underline; }}
   color: var(--c-ink);
 }}
 
+/* Contingut: mai no desborda horitzontalment */
+.welcome, .doc {{
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}}
+
 .doc table {{
   border-collapse: collapse;
   width: 100%;
@@ -1313,6 +1356,50 @@ a:hover {{ text-decoration: underline; }}
 }}
 
 .current-month-card p {{ margin-bottom: 14px; }}
+
+.current-month-card .clima {{
+  opacity: 0.92;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}}
+
+.current-month-card .month-list {{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+}}
+
+.current-month-card .month-task {{
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}}
+
+.current-month-card .month-task .cat {{
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  margin-bottom: 2px;
+}}
+
+.current-month-card .month-task .desc {{
+  opacity: 0.88;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}}
+
+.current-month-card .month-task li,
+.current-month-card .month-task {{
+  overflow-wrap: break-word;
+}}
 
 .current-month-card a {{
   display: inline-flex;
@@ -1437,7 +1524,8 @@ a:hover {{ text-decoration: underline; }}
       <section class="current-month-card" aria-labelledby="current-month-title">
         <div class="eyebrow">El que toca ara a Osona</div>
         <h2 id="current-month-title">Carregant el mes actual…</h2>
-        <p>Sembres, trasplantaments, collites i feines recomanades per aquest mes.</p>
+        <p class="clima" id="current-month-clima"></p>
+        <ul class="month-list" id="current-month-list"></ul>
         <a href="#" id="current-month-link">🌱 Veure què pots plantar i què toca fer</a>
       </section>
       <h2>Com començar</h2>
@@ -1500,6 +1588,7 @@ a:hover {{ text-decoration: underline; }}
 
 <script>
 const SIDEBAR = {sidebar_json};
+const MONTH_DATA = {month_data_json};
 const DOCS = {docs_json};
 
 // ──────────── INDEX DE CERCA ────────────
@@ -1762,9 +1851,12 @@ function configureCurrentMonth() {{
   const path = exact || previous || latest;
   const title = document.getElementById('current-month-title');
   const link = document.getElementById('current-month-link');
+  const clima = document.getElementById('current-month-clima');
+  const list = document.getElementById('current-month-list');
 
   if (!title || !link) return;
-  title.textContent = `${{monthNames[now.getMonth()].charAt(0).toUpperCase() + monthNames[now.getMonth()].slice(1)}} ${{now.getFullYear()}}`;
+  const mesCa = monthNames[now.getMonth()].charAt(0).toUpperCase() + monthNames[now.getMonth()].slice(1);
+  title.textContent = `${{mesCa}} ${{now.getFullYear()}}`;
   if (path) {{
     link.dataset.path = path;
     link.addEventListener('click', event => {{
@@ -1781,6 +1873,50 @@ function configureCurrentMonth() {{
       event.preventDefault();
       openDoc('01-calendari-sembra.md');
     }});
+  }}
+
+  // Contingut ric del mes (hort-checklist: sembra, trasplantament, collita...)
+  if (clima && list) {{
+    clima.textContent = '';
+    list.innerHTML = '';
+    const md = MONTH_DATA && MONTH_DATA[String(now.getMonth() + 1)];
+    if (md) {{
+      const catEmoji = {{
+        sembra: '🌱 Sembra',
+        trasplantament: '🌿 Trasplantament',
+        collita: '🧺 Collita',
+        conreu: '🔧 Conreu',
+        planificacio: '📋 Planificació',
+        tractaments: '🧪 Tractaments',
+        observacio: '👀 Observació'
+      }};
+      // Clima: treure negretes markdown del text
+      clima.innerHTML = md.clima.replace(/\\*\\*/g, '');
+      const maxTasks = 6;
+      md.tasques.slice(0, maxTasks).forEach(function(t) {{
+        const li = document.createElement('li');
+        li.className = 'month-task';
+        const cat = document.createElement('span');
+        cat.className = 'cat';
+        cat.textContent = catEmoji[t.cat] || '🔧 ' + t.cat;
+        li.appendChild(cat);
+        const titol = document.createElement('div');
+        titol.textContent = t.titol;
+        li.appendChild(titol);
+        const desc = document.createElement('div');
+        desc.className = 'desc';
+        desc.textContent = t.desc;
+        li.appendChild(desc);
+        list.appendChild(li);
+      }});
+      if (md.tasques.length > maxTasks) {{
+        const extra = document.createElement('li');
+        extra.className = 'month-task';
+        extra.style.background = 'transparent';
+        extra.textContent = `… i ${{md.tasques.length - maxTasks}} tasques més al pla complet`;
+        list.appendChild(extra);
+      }}
+    }}
   }}
 }}
 

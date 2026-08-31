@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un cogombre">
+  <defs>
+    <radialGradient id="cog-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="cog-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5E8C3A"/>
+      <stop offset="100%" stop-color="#38592A"/>
+    </linearGradient>
+    <linearGradient id="cog-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#cog-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="55" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Fruit: cogombre allargat amb lleugera curvatura -->
+  <g transform="rotate(24 100 110)">
+    <path d="M 100 40
+             C 86 40 82 52 83 70
+             C 84 96 90 140 100 168
+             C 110 140 116 96 117 70
+             C 118 52 114 40 100 40 Z"
+          fill="url(#cog-skin)"/>
+    <!-- Verrugues/punts -->
+    <circle cx="92" cy="70" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="104" cy="64" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="97" cy="92" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="108" cy="102" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="90" cy="116" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="100" cy="130" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <circle cx="94" cy="146" r="1.8" fill="#2A4420" opacity="0.8"/>
+    <!-- Flor seca a la punta -->
+    <circle cx="100" cy="170" r="4" fill="#C9A96B"/>
+  </g>
+
+  <!-- Tija i fulla -->
+  <path d="M 66 60 C 74 48 84 42 96 40" stroke="#5C7135" stroke-width="3.5" fill="none"/>
+  <path d="M 66 60 C 50 54 44 38 56 30 C 70 24 80 38 74 52 C 72 57 69 59 66 60 Z" fill="url(#cog-leaves)"/>
+  <!-- Fil espiral (circell) -->
+  <path d="M 74 54 C 88 46 96 52 90 58 C 86 62 80 58 84 54" stroke="#5C7135" stroke-width="2" fill="none"/>
+</svg>

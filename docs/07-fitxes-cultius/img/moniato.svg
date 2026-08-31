@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un moniato">
+  <defs>
+    <radialGradient id="mon-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="mon-root" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#E08A4E"/>
+      <stop offset="60%" stop-color="#C2662E"/>
+      <stop offset="100%" stop-color="#8F4518"/>
+    </radialGradient>
+    <linearGradient id="mon-leaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#mon-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="122" rx="60" ry="9" fill="#8B6F47" opacity="0.55"/>
+
+  <!-- Fulles d'ipomea (forma de cor) -->
+  <g transform="translate(0,-6)">
+    <path d="M 100 116 C 82 112 72 98 78 84 C 84 72 98 74 100 88 C 102 74 116 72 122 84 C 128 98 118 112 100 116 Z"
+          fill="url(#mon-leaf)"/>
+    <path d="M 100 112 C 86 122 70 118 66 106" stroke="#5C7135" stroke-width="3.5" fill="none"/>
+    <path d="M 66 106 C 58 96 60 82 70 80 C 78 79 82 90 78 98 Z" fill="url(#mon-leaf)" opacity="0.9"/>
+    <path d="M 100 112 C 114 122 130 118 134 106" stroke="#5C7135" stroke-width="3.5" fill="none"/>
+    <path d="M 134 106 C 142 96 140 82 130 80 C 122 79 118 90 122 98 Z" fill="url(#mon-leaf)" opacity="0.9"/>
+    <!-- Tija principal -->
+    <path d="M 100 118 L 100 122" stroke="#5C7135" stroke-width="4"/>
+  </g>
+
+  <!-- Moniato (fus allargat, rovellat) -->
+  <g transform="rotate(-14 85 150)">
+    <path d="M 85 126
+             C 68 128 62 142 66 156
+             C 70 172 80 180 85 180
+             C 90 180 100 172 104 156
+             C 108 142 102 128 85 126 Z"
+          fill="url(#mon-root)"/>
+    <!-- Vetes longitudinals -->
+    <path d="M 78 132 C 74 146 74 160 80 172" stroke="#8F4518" stroke-width="1.2" fill="none" opacity="0.6"/>
+    <path d="M 85 128 L 85 178" stroke="#8F4518" stroke-width="1.2" opacity="0.5"/>
+    <path d="M 92 132 C 96 146 96 160 90 172" stroke="#8F4518" stroke-width="1.2" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Segon moniato més petit -->
+  <g transform="rotate(18 124 154)">
+    <path d="M 124 138
+             C 112 140 108 150 111 160
+             C 114 172 121 178 124 178
+             C 127 178 134 172 137 160
+             C 140 150 136 140 124 138 Z"
+          fill="url(#mon-root)"/>
+    <path d="M 124 141 L 124 176" stroke="#8F4518" stroke-width="1.2" opacity="0.5"/>
+  </g>
+</svg>

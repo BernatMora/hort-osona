@@ -70,8 +70,18 @@ def main() -> None:
     script = re.search(r"<script>([\s\S]*)</script>", source)
     if not script:
         fail("No s'ha trobat el JavaScript del portal")
+    # Passar el JS per stdin (argv té límit de 32KB a Windows → WinError 206)
     result = subprocess.run(
-        ["node", "-e", "new Function(process.argv[1])", script.group(1)],
+        [
+            "node", "-e",
+            "let s=''; process.stdin.setEncoding('utf8');"
+            "process.stdin.on('data', d => s += d);"
+            "process.stdin.on('end', () => {"
+            "  try { new Function(s); process.exit(0); }"
+            "  catch (e) { console.error(e.message); process.exit(1); }"
+            "});",
+        ],
+        input=script.group(1),
         capture_output=True,
         text=True,
     )

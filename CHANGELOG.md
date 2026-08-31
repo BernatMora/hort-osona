@@ -2,11 +2,20 @@
 
 Tots els canvis notables al projecte, per data.
 
-## [2026-08-31] — Nova fitxa: Lufa o esponja vegetal
+## [2026-08-31] — Lufa + 4 fitxes noves + armeria de productes + mòbil
 
-- Nova fitxa de cultiu `07-fitxes-cultius/lufa.md` (*Luffa aegyptiaca*): sembra març-abril amb calor de fons, tutor imprescindible, collita abans de gelades i processat de l'esponja pas a pas
-- Secció "De on treure granes" amb fonts catalanes (Les Refardes, l'Era, Germigarden, intercanvi)
-- Integrada al portal (97 documents), al README, a 00-index i al builder
+### Nous continguts (102 documents, 31 fitxes de cultiu)
+- **Nova fitxa: Lufa o esponja vegetal** (*Luffa aegyptiaca*): sembra març-abril amb calor de fons, tutor imprescindible, collita abans de gelades, processat de l'esponja pas a pas i on treure granes a Catalunya (Les Refardes, l'Era, Germigarden)
+- **4 fitxes noves**: Albergínia, Cogombre, Nap i Moniato — adaptades a Osona
+- **Nova guia "Armeria de l'hort"** (`productes-ecologics-guia.md`): 15 productes ecològics amb dosi casolana, quan aplicar-los i precaucions (sofre, coure, sabó potàssic, neem, Bt, ferramol, trampes...), taula de compatibilitats i ràpides plaga→producte i mes→productes
+- **5 il·lustracions SVG noves**: lufa, albergínia, cogombre, nap, moniato
+- Afegides les fitxes i la guia nova al README, 00-index i constructor del portal
+
+### Portal
+- **Corregit l'scroll horitzontal al mòbil**: `overflow-x: hidden`, `min-width: 0` al .main i `overflow-wrap: break-word` al contingut — taules i paraules llargues ja no empenyen la pantalla
+- **Card "El que toca ara" amb contingut real del mes**: clima + tasques del mes (sembra, trasplantament, collita, conreu) per als 12 mesos, calculat a runtime des de `hort-checklist.py` — ja no cal rebuild cada mes
+- Corregit el typo `GELADA_PRIMA` → `GELADA_PRIMERA` a hort-checklist.py (trencava les notes de clima d'octubre-novembre)
+- `verify_portal.py` reparat (el JS ara passa per stdin: el límit d'argv de Windows el trencava)
 - Service worker: cache a `hort-osona-v9` perquè la PWA es refresqui sola
 
 ## [2026-07-03] — Sensors IoT + Assistent IA local (RAG + Ollama)

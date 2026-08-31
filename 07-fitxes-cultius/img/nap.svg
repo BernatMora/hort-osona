@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un nap">
+  <defs>
+    <radialGradient id="nap-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="nap-root" cx="42%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#F3F0E4"/>
+      <stop offset="65%" stop-color="#D8D2BC"/>
+      <stop offset="100%" stop-color="#B5AD90"/>
+    </radialGradient>
+    <linearGradient id="nap-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#nap-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="128" rx="58" ry="9" fill="#8B6F47" opacity="0.55"/>
+
+  <!-- Part enterrada -->
+  <path d="M 100 126
+           C 78 126 74 140 78 152
+           C 82 164 94 170 100 170
+           C 106 170 118 164 122 152
+           C 126 140 122 126 100 126 Z"
+        fill="url(#nap-root)"/>
+  <!-- Arrel prima -->
+  <path d="M 100 170 C 100 178 98 184 96 190" stroke="#B5AD90" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 92 158 L 84 166 M 108 160 L 115 168" stroke="#B5AD90" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Coll -->
+  <rect x="93" y="112" width="14" height="18" rx="6" fill="#E4DFC8"/>
+
+  <!-- Fulles de col verdes i erguides -->
+  <path d="M 100 116 C 84 110 74 92 80 72 C 88 78 96 92 100 106 Z" fill="url(#nap-leaves)"/>
+  <path d="M 100 116 C 116 110 126 92 120 72 C 112 78 104 92 100 106 Z" fill="url(#nap-leaves)" opacity="0.92"/>
+  <path d="M 100 114 C 96 94 96 74 100 54 C 104 74 104 94 100 114 Z" fill="url(#nap-leaves)"/>
+  <path d="M 100 112 C 88 100 84 82 88 62 C 94 76 98 94 100 108 Z" fill="#8FAF6B" opacity="0.85"/>
+  <path d="M 100 112 C 112 100 116 82 112 62 C 106 76 102 94 100 108 Z" fill="#8FAF6B" opacity="0.85"/>
+</svg>
