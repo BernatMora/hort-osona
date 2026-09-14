@@ -46,7 +46,7 @@
 <h2 id="plantació">Plantació</h2>
 <ul>
 <li><strong>Comprar plantes certificades</strong> o multiplicar per estolons de les teves millors plantes (veure <a href="../multiplicacio-guia.md" target="_blank" rel="noopener">multiplicació</a>)</li>
-<li><strong>Distància</strong>: 30 cm entre plantes × 60-75 cm entre fileres (les fileres es tornaran plens d&#x27;estolons)</li>
+<li><strong>Distància</strong>: 30×40 cm (marc pràctic de tardor). 30 cm entre plantes × 60-75 cm entre fileres si les fas amples perquè els estolons s&#x27;escampin</li>
 <li><strong>Corona a nivell de terra</strong>: ni enterrada (es podreix), ni alçada amb les arrels a l&#x27;aire (s&#x27;asseca) — és el punt clau de la plantació</li>
 <li>Reg abundants just després de plantar; el sòl sempre humit però no xop les primeres 2-3 setmanes</li>
 </ul>

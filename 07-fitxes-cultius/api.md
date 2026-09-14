@@ -17,7 +17,7 @@
 ## Sembra
 - **Per planter**: febrer-març (amb calor, 18-20°C)
 - **Trasplantament**: maig-juny, quan té 4-5 fulles
-- **Marc**: 30×30 cm (api de penes) o 25×25 cm (api arrel)
+- **Marc**: 35×40 cm (marc pràctic de tardor). 30×30 cm (api de penes) o 25×25 cm (api arrel) si fas espais menys generosos
 - **A sol**: a partir de l'abril, amb molta humitat
 
 ## Cultiu

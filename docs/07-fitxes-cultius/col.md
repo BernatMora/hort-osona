@@ -76,7 +76,7 @@
 <h2 id="sembra">Sembra</h2>
 <ul>
 <li><strong>Profunditat de sembra</strong>: 0,5-1 cm (llavors petites)</li>
-<li><strong>Marc de plantació</strong>:</li>
+<li><strong>Marc de plantació</strong> (marc pràctic de tardor: <strong>45×55 cm</strong>):</li>
 <li>Col de cabdell gran: 60-70 × 60-70 cm</li>
 <li>Col de cabdell petit: 50 × 50 cm</li>
 <li>Bròquil / coliflor: 60 × 60 cm</li>

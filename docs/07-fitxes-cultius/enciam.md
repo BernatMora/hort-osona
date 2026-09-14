@@ -45,7 +45,7 @@
 <h2 id="sembra">Sembra</h2>
 <ul>
 <li><strong>Profunditat</strong>: 0,5 cm</li>
-<li><strong>Marc de plantació</strong>: 25-30 cm entre plantes (mini: 20 cm); 30-40 cm entre files</li>
+<li><strong>Marc de plantació</strong>: 25×30 cm (marc pràctic de tardor) — mini: 20 cm; 30-40 cm entre files si fas fileres amples</li>
 <li><strong>Densitat</strong>: 10-15 plantes/m²</li>
 <li><strong>Tècnica</strong>:</li>
 <li>A l&#x27;estiu: sembra a l&#x27;ombra, regs fins.</li>

@@ -49,7 +49,7 @@
 
 ## Sembra
 - **Profunditat de sembra**: 0,5-1 cm (llavors petites)
-- **Marc de plantació**:
+- **Marc de plantació** (marc pràctic de tardor: **45×55 cm**):
   - Col de cabdell gran: 60-70 × 60-70 cm
   - Col de cabdell petit: 50 × 50 cm
   - Bròquil / coliflor: 60 × 60 cm

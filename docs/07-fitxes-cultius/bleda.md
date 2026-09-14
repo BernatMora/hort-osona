@@ -33,7 +33,7 @@
 <h2 id="sembra">Sembra</h2>
 <ul>
 <li><strong>Profunditat de sembra</strong>: 2-3 cm</li>
-<li><strong>Marc de plantació</strong>: 30-40 cm entre plantes × 40-50 cm entre files</li>
+<li><strong>Marc de plantació</strong>: 30×40 cm (marc pràctic de tardor). 30-40 cm entre plantes × 40-50 cm entre files si fas fileres amples</li>
 <li><strong>Densitat</strong>: 5-7 plantes/m²</li>
 <li><strong>Tècnica de sembra</strong>:</li>
 <li>Directa: en filera, aclarint a 30 cm quan les plantes tinguin 4 fulles</li>

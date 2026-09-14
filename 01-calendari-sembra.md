@@ -27,6 +27,7 @@
 | **Espinac** | | S | S·C | S·C | C | | | S | S·C | S·C | C | |
 | **Bleda** | | | S | S·T | T·C | C | C | S·T | T·C | C | C | |
 | **Rúcula** | | S | S·C | S·C | C | C | | S | S·C | S·C | C | |
+| **Canonges** | C | C | | | | | | S | S·C | S·C | C | C |
 | **Col (bròquil, coliflor, col llombarda, col kale)** | | | M | M·T | T | T | | S | S·T | T·C | C | C |
 | **Rave** | | | S | S·C | S·C | C | C | S | S·C | S·C | C | |
 | **Pastanaga** | | | S | S | S | | | S | S | S | C | C |
@@ -52,6 +53,7 @@
 | **Ceba** | | M | M·S | S·T | S·T·C | C | C | S | S | S | | |
 | **All** | S | S | S | C | C | | | | | S | S | S |
 | **Porro** | | M | M | M·T | T·C | C | C | S·T | T·C | C | C | C |
+| **Calçots** | | M | M | | | T | T | | | | C | C |
 | **Patata** | | | S | S | S | C | C | | S | S | C | |
 | **Moniato (batata)** | | | | M | M·T | T | T·C | C | C | C | | |
 

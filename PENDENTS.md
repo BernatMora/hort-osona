@@ -39,6 +39,12 @@ incrusta sol si el fitxer existeix (`docs/.../img/<nom>.svg` es genera amb el bu
 Seguir el to/estructura de les fitxes existents i registrar-les a
 `build_portal_v2.py`, README i 00-index.
 
+## 4. Fitxes tardor-hivern noves + marcs  ✅ FETA (2026-09-14: broquil, calcots, canonges, rucula.md)
+
+Afegides per la llista de marcs (imatge). Fitxes noves amb marcs de plantació.
+Actualitzats marcs existents (bleda, col, enciam, api, maduixa). Pendents:
+SVGs per a les fitxes noves si es volen.
+
 ## Idees en reserva (no acordades)
 - Guia de fauna de l'hort (senglars, conills, ocells): barreres, protecció i convivència
 - Circuit d'intercanvi de llavors (on, quan, com etiquetar-les)
