@@ -113,6 +113,8 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   width: 40px;
   height: 40px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 8px;
   font-size: 24px;
   color: var(--c-paper);
@@ -124,6 +126,8 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   width: 40px;
   height: 40px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 8px;
   color: var(--c-paper);
 }
@@ -151,6 +155,8 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   width: 40px;
   height: 40px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 8px;
   font-size: 20px;
   color: var(--c-paper);
@@ -314,7 +320,7 @@ a:hover { text-decoration: underline; }
 
 .cat-items li a {
   display: block;
-  padding: 10px 16px 10px 24px;
+  padding: 12px 16px 12px 24px;
   font-size: 0.95rem;
   color: var(--c-ink);
   border-left: 3px solid transparent;
@@ -458,7 +464,8 @@ a:hover { text-decoration: underline; }
 /* ──────────── TIPOGRAFIA DEL CONTINGUT ──────────── */
 .doc h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+  line-height: 1.2;
   color: var(--c-olive);
   margin-bottom: 16px;
   padding-bottom: 8px;
@@ -546,14 +553,14 @@ a:hover { text-decoration: underline; }
 
 .doc h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
+  font-size: clamp(1.15rem, 3.5vw, 1.35rem);
   color: var(--c-olive);
   margin-top: 24px;
   margin-bottom: 12px;
 }
 
 .doc h3 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 3vw, 1.1rem);
   color: var(--c-ink);
   margin-top: 18px;
   margin-bottom: 8px;
@@ -576,6 +583,7 @@ a:hover { text-decoration: underline; }
   font-family: "SF Mono", Menlo, monospace;
   font-size: 0.88em;
   color: var(--c-ochre);
+  overflow-wrap: anywhere;
 }
 
 .doc pre {
@@ -618,10 +626,73 @@ a:hover { text-decoration: underline; }
   vertical-align: top;
 }
 
+/* Taules amples (calendari, marcs): cel·les que no trenquen + primera columna fixa */
+.doc table.wide th,
+.doc table.wide td {
+  white-space: nowrap;
+  padding: 6px 10px;
+}
+
+.doc table.wide th:first-child,
+.doc table.wide td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--c-paper);
+  font-weight: 600;
+  box-shadow: 2px 0 0 var(--c-line);
+}
+
+.doc table.wide thead th:first-child {
+  z-index: 2;
+  background: var(--c-olive-bg);
+}
+
 .doc th {
   background: var(--c-olive-bg);
   font-weight: 600;
 }
+
+/* ─── Calendari de sembra: targetes en mòbil (molt més llegible que la taula de 13 cols) ─── */
+.doc table.calendar-cards {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.doc table.calendar-cards thead { display: none; }
+.doc table.calendar-cards tbody { display: contents; }
+.doc table.calendar-cards tr {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.doc table.calendar-cards td {
+  border: none;
+  white-space: normal;
+  padding: 3px 0;
+  font-size: 0.85rem;
+}
+.doc table.calendar-cards td[data-title] {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--c-olive);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--c-line);
+}
+.doc table.calendar-cards td:not([data-title]) {
+  color: var(--c-ink-2);
+}
+.doc table.calendar-cards td:not([data-title])::before {
+  content: attr(data-label) ': ';
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.doc table.calendar-cards td:empty { display: none; }
 
 .doc blockquote {
   border-left: 3px solid var(--c-ochre);
@@ -1048,6 +1119,30 @@ async function openDoc(path, options = {}) {
     html = html.split('<\!--').join('<!--');
     doc.innerHTML = html;
     initTaskCheckboxes(path);
+    // Taules amples: columna fixa + scroll en tàctil; en pantalles petites,
+    // el calendari de sembra es converteix en targetes per cultiu (molt més llegible).
+    doc.querySelectorAll('table').forEach(t => {
+      const cols = t.rows.length && t.rows[0].cells.length ? t.rows[0].cells.length : 0;
+      const wide = cols >= 6;
+      if (wide) t.classList.add('wide');
+      // Convertir el calendari (>=9 columnes, primer th = "Cultiu") a targetes en mòbil
+      if (cols >= 9 && window.matchMedia('(max-width: 767px)').matches) {
+        const firstHead = t.querySelector('thead th');
+        const isCalendar = firstHead && /[Cc]ultiu/.test(firstHead.textContent);
+        if (isCalendar) {
+          t.classList.add('calendar-cards');
+          const heads = Array.from(t.querySelectorAll('thead th')).map(th => th.textContent.trim()).slice(1);
+          t.querySelectorAll('tbody tr').forEach(row => {
+            const nameTd = row.querySelector('td');
+            if (nameTd) nameTd.setAttribute('data-title', nameTd.textContent.trim());
+            row.querySelectorAll('td').forEach((td, i) => {
+              if (i === 0 || !td.textContent.trim()) return; // primera columna = títol
+              td.setAttribute('data-label', heads[i - 1] || '');
+            });
+          });
+        }
+      }
+    });
     if (section) {
       requestAnimationFrame(() => {
         const target = document.getElementById(section);
