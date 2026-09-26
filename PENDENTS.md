@@ -61,7 +61,7 @@ SVGs per a les fitxes noves si es volen.
 
 ## Pendent (per ordre)
 
-- [ ] **Publicar el disseny nou** (decisio de l'usuari): `./publicar.sh --si` + `./hort-sync.sh`.
+- [x] **Publicat** el 26/09/2026 (commit `7b2275c`): la web nova es a bernatmora.github.io/hort-osona.
 - [x] **Contradiccions d'associacions**: resolt amb un **criteri prudent automatic** (26/09/2026).
       Si un parell surt com a bo en una font i com a dolent en una altra, la web **no el posa
       com a bo**: el marca com a **⚠️ discutit** i el deixa fora. N'hi ha 5 a les fitxes
