@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un tomàquet">
+  <defs>
+    <radialGradient id="tomaquet-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="tomaquet-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E04A38"/>
+      <stop offset="100%" stop-color="#A82A20"/>
+    </linearGradient>
+
+    <linearGradient id="tomaquet-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#tomaquet-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <g>
+    <path d="M 100 74 C 66 74 50 98 52 122 C 54 146 74 160 100 160 C 126 160 146 146 148 122 C 150 98 134 74 100 74 Z" fill="url(#tomaquet-skin)"/>
+    <ellipse cx="78" cy="104" rx="6" ry="10" fill="#F08A7A" opacity="0.5" transform="rotate(-16 78 104)"/>
+    <!-- Calze estrellat -->
+    <path d="M 100 76 L 92 60 L 98 74 L 88 64 L 96 76 L 92 60 L 100 78 L 108 60 L 102 76 L 112 64 L 104 74 L 108 60 L 100 76 L 108 60" fill="#4A5F30"/>
+    <g fill="#4A5F30">
+      <path d="M 100 56 C 94 58 90 64 92 70 L 100 74 L 108 70 C 108 62 106 58 100 56 Z"/>
+    </g>
+    <rect x="96" y="44" width="8" height="18" rx="3" fill="#5C7135"/>
+  </g>
+</svg>

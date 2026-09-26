@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una pastanaga">
+  <defs>
+    <radialGradient id="pastanaga-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="pastanaga-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8873A"/>
+      <stop offset="100%" stop-color="#B5561E"/>
+    </linearGradient>
+
+    <linearGradient id="pastanaga-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#pastanaga-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <g transform="rotate(-12 100 116)">
+    <path d="M 100 96 C 88 96 82 108 84 124 C 86 142 94 158 100 166 C 106 166 114 142 116 124 C 118 108 112 96 100 96 Z" fill="url(#pastanaga-skin)"/>
+    <path d="M 94 104 C 92 112 92 130 96 148 M 106 96 C 110 110 110 132 104 154" stroke="#8F3E10" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <path d="M 92 98 L 82 86 M 108 98 L 116 84 M 100 94 L 100 78" stroke="#4A6B2A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Fulles plomoses -->
+  <g stroke="url(#pastanaga-leaves)" stroke-width="2" fill="none">
+    <path d="M 92 82 C 84 74 80 62 84 52"/>
+    <path d="M 100 78 C 100 66 102 54 108 46"/>
+    <path d="M 110 84 C 118 76 124 66 124 56"/>
+  </g>
+  <g fill="url(#pastanaga-leaves)">
+    <ellipse cx="80" cy="50" rx="4" ry="7" transform="rotate(-30 80 50)"/>
+    <ellipse cx="92" cy="62" rx="4" ry="7" transform="rotate(-50 92 62)"/>
+    <ellipse cx="104" cy="48" rx="4" ry="7"/>
+    <ellipse cx="110" cy="62" rx="4" ry="7" transform="rotate(40 110 62)"/>
+    <ellipse cx="122" cy="54" rx="4" ry="7" transform="rotate(60 122 54)"/>
+  </g>
+</svg>

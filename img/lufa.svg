@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una lufa o esponja vegetal">
+  <defs>
+    <radialGradient id="lufa-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="lufa-fruit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8CA25B"/>
+      <stop offset="100%" stop-color="#5C7135"/>
+    </linearGradient>
+    <linearGradient id="lufa-sponge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8D9A0"/>
+      <stop offset="100%" stop-color="#C9A96B"/>
+    </linearGradient>
+    <linearGradient id="lufa-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#lufa-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="150" rx="60" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Tija i fulla -->
+  <path d="M 100 148 C 96 120 98 90 92 62" stroke="#5C7135" stroke-width="4" fill="none"/>
+  <path d="M 92 62 C 74 54 68 38 80 30 C 94 24 104 38 98 52 C 96 58 94 60 92 62 Z" fill="url(#lufa-leaves)"/>
+  <path d="M 104 110 C 122 104 132 90 126 80" stroke="#5C7135" stroke-width="3" fill="none"/>
+  <path d="M 126 80 C 140 76 150 84 146 96 C 142 94 134 94 128 98 Z" fill="url(#lufa-leaves)" opacity="0.9"/>
+
+  <!-- Fruit lufa penjant (llarg, cilíndric) -->
+  <g transform="rotate(28 128 118)">
+    <rect x="110" y="80" width="38" height="88" rx="18" fill="url(#lufa-fruit)"/>
+    <line x1="120" y1="84" x2="120" y2="164" stroke="#4A5A2A" stroke-width="1.5" opacity="0.6"/>
+    <line x1="128" y1="82" x2="128" y2="166" stroke="#4A5A2A" stroke-width="1.5" opacity="0.6"/>
+    <line x1="136" y1="84" x2="136" y2="164" stroke="#4A5A2A" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <!-- Circell -->
+  <path d="M 104 96 C 116 96 118 86 112 84 C 108 82 106 88 110 90" stroke="#5C7135" stroke-width="2" fill="none"/>
+
+  <!-- Esponja (detall petit) -->
+  <g transform="rotate(-18 52 148)">
+    <rect x="30" y="128" width="44" height="26" rx="12" fill="url(#lufa-sponge)"/>
+    <circle cx="40" cy="138" r="3" fill="#A88B55" opacity="0.8"/>
+    <circle cx="52" cy="142" r="2.5" fill="#A88B55" opacity="0.8"/>
+    <circle cx="62" cy="136" r="2.5" fill="#A88B55" opacity="0.8"/>
+    <circle cx="46" cy="130" r="2" fill="#A88B55" opacity="0.6"/>
+  </g>
+</svg>

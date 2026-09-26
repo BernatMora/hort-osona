@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un carabassó">
+  <defs>
+    <radialGradient id="carabasso-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="carabasso-fruit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7FA24A"/>
+      <stop offset="100%" stop-color="#4A6B2A"/>
+    </linearGradient>
+    <linearGradient id="carabasso-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#carabasso-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="150" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Mata al fons -->
+  <path d="M 52 142 C 66 130 80 126 92 128" stroke="#5C7135" stroke-width="3" fill="none"/>
+  <path d="M 52 142 C 40 136 36 122 46 114 C 58 108 68 120 62 132 C 59 137 55 140 52 142 Z" fill="url(#carabasso-leaves)"/>
+  <path d="M 96 130 C 104 122 104 120 102 114 C 100 118 100 122 98 126" stroke="#5C7135" stroke-width="1.8" fill="none"/>
+
+  <!-- Carabassó llarg, recolzat a terra -->
+  <g transform="rotate(28 112 118)">
+    <path d="M 112 62
+             C 100 62 96 74 98 96
+             C 101 126 108 154 112 162
+             C 116 154 123 126 126 96
+             C 128 74 124 62 112 62 Z" fill="url(#carabasso-fruit)"/>
+    <!-- Estries longitudinals -->
+    <path d="M 107 70 C 104 96 106 136 112 156" stroke="#3A5423" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 117 70 C 120 96 118 136 112 156" stroke="#3A5423" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <!-- Peduncle i flor -->
+    <rect x="108" y="48" width="9" height="16" rx="3.4" fill="#4A6B2A"/>
+    <circle cx="112.5" cy="46" r="5" fill="#F2C94C"/>
+    <circle cx="112.5" cy="46" r="2.4" fill="#D9A62E"/>
+  </g>
+</svg>

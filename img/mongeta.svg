@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració de beines de mongeta">
+  <defs>
+    <radialGradient id="mongeta-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="mongeta-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B9A4A"/>
+      <stop offset="100%" stop-color="#3F5F28"/>
+    </linearGradient>
+
+    <linearGradient id="mongeta-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#mongeta-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Suport / canya -->
+  <line x1="100" y1="36" x2="100" y2="164" stroke="#8B6F47" stroke-width="5"/>
+  <!-- Beina 1 -->
+  <g transform="rotate(10 84 96)">
+    <path d="M 84 62 C 76 62 72 72 74 92 C 76 112 82 128 84 132 C 86 128 94 112 94 92 C 94 72 90 62 84 62 Z" fill="url(#mongeta-skin)"/>
+    <path d="M 84 64 L 84 130" stroke="#2F4A1E" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <!-- Beina 2 -->
+  <g transform="rotate(-14 118 100)">
+    <path d="M 118 70 C 110 70 106 80 108 100 C 110 118 116 132 118 136 C 120 132 128 118 128 100 C 128 80 124 70 118 70 Z" fill="url(#mongeta-skin)" opacity="0.94"/>
+    <path d="M 118 72 L 118 134" stroke="#2F4A1E" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <!-- Flors blanques -->
+  <g fill="#FFF8E8">
+    <circle cx="96" cy="70" r="3.4"/>
+    <circle cx="104" cy="86" r="3"/>
+    <circle cx="92" cy="100" r="2.8"/>
+  </g>
+</svg>

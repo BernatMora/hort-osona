@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un porro">
+  <defs>
+    <radialGradient id="porro-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="porro-stem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9CC475"/>
+      <stop offset="50%" stop-color="#E8E2CC"/>
+      <stop offset="100%" stop-color="#FFFCF3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#porro-bg)" rx="12"/>
+
+  <!-- Arrels -->
+  <g stroke="#C9A57B" stroke-width="1.2" fill="none" opacity="0.8">
+    <path d="M 100 170 L 90 188"/>
+    <path d="M 100 170 L 95 190"/>
+    <path d="M 100 170 L 100 192"/>
+    <path d="M 100 170 L 105 190"/>
+    <path d="M 100 170 L 110 188"/>
+    <path d="M 95 172 L 82 188"/>
+    <path d="M 105 172 L 118 188"/>
+  </g>
+
+  <!-- Tija del porro (cilindre) -->
+  <path d="M 88 170 L 88 90 L 85 70 L 90 50 L 110 50 L 115 70 L 112 90 L 112 170 Z"
+        fill="url(#porro-stem)" stroke="#3D4A2A" stroke-width="1.5"/>
+
+  <!-- Línies de separació entre fulles -->
+  <path d="M 88 95 L 112 95 M 88 115 L 112 115 M 88 140 L 112 140" stroke="#3D4A2A" stroke-width="0.5" opacity="0.4" fill="none"/>
+
+  <!-- Fulles verdes (que es despleguen) -->
+  <g fill="#5C7A45" opacity="0.85">
+    <path d="M 90 55 L 65 30 L 70 50 L 75 35 L 85 25 Z"/>
+    <path d="M 110 55 L 135 30 L 130 50 L 125 35 L 115 25 Z"/>
+  </g>
+
+  <!-- Part verda superior (brots) -->
+  <g fill="#3D4A2A">
+    <ellipse cx="100" cy="40" rx="12" ry="20"/>
+  </g>
+
+  <text x="100" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3D4A2A" font-style="italic">Allium porrum</text>
+</svg>

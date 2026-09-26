@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un espinac">
+  <defs>
+    <radialGradient id="espinac-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="espinac-leaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#espinac-bg)" rx="12"/>
+
+  <!-- Base / terra -->
+  <ellipse cx="100" cy="170" rx="55" ry="8" fill="#8B6F47" opacity="0.4"/>
+
+  <!-- Grup de fulles d'espinac (roseta) -->
+  <g fill="url(#espinac-leaf)">
+    <!-- Fulla central (més gran) -->
+    <path d="M 100 170 Q 70 130 85 80 Q 100 50 115 80 Q 130 130 100 170 Z"/>
+    <!-- Fulla esquerra -->
+    <path d="M 100 170 Q 50 145 50 110 Q 60 90 75 110 Q 85 140 100 170 Z"/>
+    <!-- Fulla dreta -->
+    <path d="M 100 170 Q 150 145 150 110 Q 140 90 125 110 Q 115 140 100 170 Z"/>
+    <!-- Fulla superior-esquerra -->
+    <path d="M 100 170 Q 60 110 70 80 Q 85 70 90 90 Q 95 130 100 170 Z"/>
+    <!-- Fulla superior-dreta -->
+    <path d="M 100 170 Q 140 110 130 80 Q 115 70 110 90 Q 105 130 100 170 Z"/>
+  </g>
+
+  <!-- Nervis de les fulles -->
+  <g stroke="#3D4A2A" stroke-width="0.8" fill="none" opacity="0.6">
+    <path d="M 100 170 L 100 60"/>
+    <path d="M 100 170 L 60 110"/>
+    <path d="M 100 170 L 140 110"/>
+    <path d="M 100 170 L 75 85"/>
+    <path d="M 100 170 L 125 85"/>
+  </g>
+
+  <!-- Brillos -->
+  <g fill="#FFFCF3" opacity="0.4">
+    <ellipse cx="95" cy="80" rx="3" ry="6"/>
+    <ellipse cx="65" cy="120" rx="2" ry="4"/>
+    <ellipse cx="135" cy="120" rx="2" ry="4"/>
+  </g>
+
+  <text x="100" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3D4A2A" font-style="italic">Spinacia oleracea</text>
+</svg>

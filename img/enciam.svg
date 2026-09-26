@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un enciam capollós">
+  <defs>
+    <radialGradient id="enciam-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="enciam-head" cx="45%" cy="40%" r="72%">
+      <stop offset="0%" stop-color="#B8CE7E"/>
+      <stop offset="65%" stop-color="#8CA85B"/>
+      <stop offset="100%" stop-color="#5B7A34"/>
+    </radialGradient>
+    <linearGradient id="enciam-leaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A8C070"/>
+      <stop offset="100%" stop-color="#6B8A3E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#enciam-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="150" rx="60" ry="9" fill="#8B6F47" opacity="0.55"/>
+
+  <!-- Fulles de base ondulades -->
+  <path d="M 100 148 C 70 150 48 132 52 110 C 54 98 64 94 70 102 C 66 118 76 138 100 148 Z" fill="url(#enciam-leaf)"/>
+  <path d="M 100 148 C 130 150 152 132 148 110 C 146 98 136 94 130 102 C 134 118 124 138 100 148 Z" fill="url(#enciam-leaf)" opacity="0.92"/>
+
+  <!-- Capoll central amb vora ondulada (fulla a fulla) -->
+  <path d="M 100 64 C 78 64 62 82 62 106 C 62 130 78 144 100 144 C 122 144 138 130 138 106 C 138 82 122 64 100 64 Z" fill="url(#enciam-head)"/>
+  <!-- Ondulacions de les fulles del capoll -->
+  <g stroke="#4A6B2A" stroke-width="1.5" fill="none" opacity="0.65">
+    <path d="M 100 66 C 92 88 92 120 100 142"/>
+    <path d="M 100 66 C 108 88 108 120 100 142"/>
+    <path d="M 84 72 C 76 92 78 122 92 140"/>
+    <path d="M 116 72 C 124 92 122 122 108 140"/>
+    <path d="M 70 84 C 64 102 68 126 84 138"/>
+    <path d="M 130 84 C 136 102 132 126 116 138"/>
+  </g>
+  <!-- Rellunyida fulla crema del cor -->
+  <path d="M 94 74 C 90 88 90 112 96 130 L 104 130 C 110 112 110 88 106 74 C 102 70 98 70 94 74 Z" fill="#D9E2AC" opacity="0.85"/>
+</svg>

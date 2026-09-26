@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'orenga">
+  <defs>
+    <radialGradient id="orenga-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="orenga-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FAF6B"/>
+      <stop offset="100%" stop-color="#4A5F30"/>
+    </linearGradient>
+
+    <linearGradient id="orenga-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#orenga-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Mata compacta -->
+  <g stroke="url(#orenga-skin)" stroke-width="2.4" fill="none">
+    <path d="M 78 150 C 78 124 84 102 96 88"/>
+    <path d="M 92 152 C 94 126 100 104 112 92"/>
+    <path d="M 106 152 C 110 128 118 110 130 100"/>
+    <path d="M 120 148 C 126 128 134 116 144 108"/>
+    <path d="M 68 144 C 70 124 76 110 84 100"/>
+  </g>
+  <g fill="url(#orenga-skin)">
+    <ellipse cx="92" cy="98" rx="5.4" ry="3.6" transform="rotate(-32 92 98)"/>
+    <ellipse cx="86" cy="114" rx="5.4" ry="3.6" transform="rotate(-36 86 114)"/>
+    <ellipse cx="82" cy="130" rx="5.4" ry="3.6" transform="rotate(-42 82 130)"/>
+    <ellipse cx="106" cy="102" rx="5.4" ry="3.6" transform="rotate(20 106 102)"/>
+    <ellipse cx="112" cy="118" rx="5.4" ry="3.6" transform="rotate(26 112 118)"/>
+    <ellipse cx="104" cy="134" rx="5.4" ry="3.6"/>
+    <ellipse cx="126" cy="108" rx="5.4" ry="3.6" transform="rotate(30 126 108)"/>
+    <ellipse cx="136" cy="116" rx="5.4" ry="3.6" transform="rotate(34 136 116)"/>
+  </g>
+  <!-- Bràctees porpres -->
+  <g fill="#9E6BA8">
+    <ellipse cx="97" cy="86" rx="4" ry="5.4"/>
+    <ellipse cx="114" cy="90" rx="4" ry="5.4" transform="rotate(20 114 90)"/>
+    <ellipse cx="132" cy="98" rx="4" ry="5.4" transform="rotate(30 132 98)"/>
+    <ellipse cx="82" cy="98" rx="3.6" ry="5" transform="rotate(-28 82 98)"/>
+  </g>
+</svg>

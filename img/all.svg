@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un cap d'all">
+  <defs>
+    <radialGradient id="all-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="all-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3F0E4"/>
+      <stop offset="100%" stop-color="#C9C2AC"/>
+    </linearGradient>
+
+    <linearGradient id="all-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#all-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Cap d'all -->
+  <g transform="rotate(-8 100 118)">
+    <path d="M 100 92 C 72 92 62 116 66 136 C 70 154 84 162 100 162 C 116 162 130 154 134 136 C 138 116 128 92 100 92 Z" fill="url(#all-skin)"/>
+    <path d="M 100 94 L 100 160 M 84 98 C 80 118 80 140 88 158 M 116 98 C 120 118 120 140 112 158" stroke="#B5AD94" stroke-width="1.5" fill="none" opacity="0.8"/>
+    <path d="M 84 96 L 88 82 L 94 94 L 100 78 L 106 94 L 112 82 L 116 96 C 106 102 94 102 84 96 Z" fill="#D9CFA8"/>
+  </g>
+</svg>

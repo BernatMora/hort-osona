@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una bleda">
+  <defs>
+    <radialGradient id="bleda-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="bleda-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8CA25B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+
+    <linearGradient id="bleda-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#bleda-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Pecíols blancs gruixuts -->
+  <g stroke="#F3F0E4" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M 92 150 C 90 122 92 96 86 66"/>
+    <path d="M 104 150 C 106 122 106 96 112 64"/>
+    <path d="M 98 152 C 98 128 98 108 99 84"/>
+  </g>
+  <!-- Fulles arrugades -->
+  <path d="M 86 66 C 70 60 62 44 72 32 C 84 24 96 34 94 50 C 92 58 89 63 86 66 Z" fill="url(#bleda-skin)"/>
+  <path d="M 112 64 C 128 58 136 42 126 30 C 114 22 102 32 104 48 C 106 56 109 61 112 64 Z" fill="url(#bleda-skin)" opacity="0.92"/>
+  <path d="M 99 84 C 92 72 92 56 99 44 C 106 56 106 72 101 82 Z" fill="url(#bleda-skin)" opacity="0.88"/>
+  <!-- Nervis blancs -->
+  <g stroke="#F3F0E4" stroke-width="1.4" fill="none" opacity="0.85">
+    <path d="M 88 60 L 80 46 M 92 56 L 92 40"/>
+    <path d="M 110 58 L 118 44 M 106 54 L 106 40"/>
+  </g>
+</svg>

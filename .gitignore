@@ -43,3 +43,7 @@ site/extracted.js
 
 # Backups locals de carpetes iCloud
 hort-osona-icloud-backup-*/
+
+# Web: la carpeta de proves no es publica
+preview/
+*.bak.*

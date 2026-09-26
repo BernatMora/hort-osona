@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració de plantes aromàtiques en test">
+  <defs>
+    <radialGradient id="aromatiques-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+        <linearGradient id="aromatiques-skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FAF6B"/>
+      <stop offset="100%" stop-color="#4A5F30"/>
+    </linearGradient>
+
+    <linearGradient id="aromatiques-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#aromatiques-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="152" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <!-- Test -->
+  <path d="M 70 128 L 130 128 L 122 166 L 78 166 Z" fill="#B5763A"/>
+  <path d="M 66 122 L 134 122 L 132 130 L 68 130 Z" fill="#8F5A28"/>
+  <!-- Tres branquetes -->
+  <path d="M 88 122 C 86 96 88 74 84 58" stroke="#4A5F30" stroke-width="3" fill="none"/>
+  <path d="M 100 128 C 100 100 102 78 102 56" stroke="#4A5F30" stroke-width="3" fill="none"/>
+  <path d="M 112 128 C 114 100 112 76 118 60" stroke="#5C7135" stroke-width="3" fill="none"/>
+  <g fill="url(#aromatiques-skin)">
+    <ellipse cx="82" cy="64" rx="6" ry="9" transform="rotate(-18 82 64)"/>
+    <ellipse cx="88" cy="82" rx="6" ry="9" transform="rotate(12 88 82)"/>
+    <ellipse cx="84" cy="100" rx="6" ry="9" transform="rotate(-10 84 100)"/>
+    <ellipse cx="102" cy="60" rx="6" ry="9"/>
+    <ellipse cx="96" cy="80" rx="6" ry="9" transform="rotate(-12 96 80)"/>
+    <ellipse cx="105" cy="98" rx="6" ry="9" transform="rotate(10 105 98)"/>
+    <ellipse cx="118" cy="66" rx="6" ry="9" transform="rotate(16 118 66)"/>
+    <ellipse cx="112" cy="86" rx="6" ry="9" transform="rotate(-8 112 86)"/>
+    <ellipse cx="116" cy="106" rx="6" ry="9"/>
+  </g>
+</svg>

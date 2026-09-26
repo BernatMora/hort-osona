@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració de fulles de menta">
+  <defs>
+    <radialGradient id="menta-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="menta-leaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5E9A4A"/>
+      <stop offset="100%" stop-color="#2F6B26"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#menta-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="154" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Tiges quatrillades -->
+  <g stroke="#3F7A34" stroke-width="3.4" fill="none" stroke-linecap="round">
+    <path d="M 84 152 C 82 122 84 96 92 70"/>
+    <path d="M 104 154 C 106 124 104 98 102 74"/>
+    <path d="M 120 150 C 122 128 118 108 112 92"/>
+  </g>
+
+  <!-- Fulla: forma ovada amb punta i dents - parell frontal -->
+  <g>
+    <path d="M 92 70 C 84 58 86 44 96 38 C 104 34 110 40 108 50 C 107 58 100 66 92 70 Z" fill="url(#menta-leaf)"/>
+    <path d="M 88 60 L 92 56 M 96 46 L 96 42 M 104 48 L 107 45" stroke="#1F4A18" stroke-width="1.2" opacity="0.7"/>
+  </g>
+  <g>
+    <path d="M 102 74 C 96 88 98 104 108 112 C 118 106 120 92 112 80 C 109 76 105 74 102 74 Z" fill="url(#menta-leaf)" opacity="0.94"/>
+    <path d="M 106 84 L 110 82 M 108 94 L 112 93 M 106 104 L 109 104" stroke="#1F4A18" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <!-- Parell creuat -->
+  <g>
+    <path d="M 84 120 C 70 118 60 108 62 96 C 64 86 74 84 80 92 C 85 98 86 110 84 120 Z" fill="url(#menta-leaf)" opacity="0.92"/>
+    <path d="M 112 96 C 124 98 132 108 128 118 C 124 126 114 124 110 114 C 108 108 109 101 112 96 Z" fill="url(#menta-leaf)" opacity="0.9"/>
+  </g>
+  <!-- Brots cim -->
+  <g fill="#6FA85A">
+    <path d="M 100 74 C 96 66 98 58 104 54 C 108 62 106 70 102 74 Z"/>
+    <path d="M 88 74 C 88 66 92 60 98 58" stroke="#6FA85A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

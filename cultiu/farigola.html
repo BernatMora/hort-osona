@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Farigola · Hort Osona</title>
+<meta name="description" content="Hort ecològic a Osona: què plantar aquest mes, associacions de cultius i guies pràctiques.">
+<meta name="theme-color" content="#3D4A2A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hort Osona">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="stylesheet" href="../estil.css">
+<link rel="icon" href="../icon.svg">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="marca" href="../index.html">🥬 Hort Osona</a>
+  <nav><a href="../index.html">🌱 Ara</a><a href="../calendari.html">📅 Calendari</a><a href="../associacions.html">🤝 Al costat de què</a><a href="../cultius.html">🥬 Cultius</a><a href="../tot.html">📚 Tot el fons</a></nav>
+</div></header>
+<main class="wrap">
+
+<section class="seccio" style="margin-top:22px">
+  <div class="targeta" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+    <img src="../img/farigola.svg" alt="" style="width:76px;height:76px">
+    <div><h1 style="margin-bottom:2px">Farigola</h1>
+    <p class="buidet" style="margin:0">Thymus vulgaris</p></div>
+  </div>
+</section>
+<section class="seccio">
+  <h2>Dades ràpides</h2>
+  <div class="dades-rapides"><div class="dada"><div class="k">Família botànica</div><div class="v">Lamiàcies</div></div><div class="dada"><div class="k">Cicle</div><div class="v">perenne (10-20 anys)</div></div></div>
+</section>
+<section class="seccio">
+  <h2>🤝 Al costat de què</h2>
+  <div class="targeta"><p class="buidet">Sense associacions declarades a la fitxa.</p></div>
+  <div class="graella" style="margin-top:14px">
+    <div class="targeta"><h3>✅ Bones</h3><div class="chips"><span class="buidet">—</span></div></div>
+    <div class="targeta"><h3>❌ Dolentes</h3><div class="chips"><span class="buidet">—</span></div></div>
+  </div>
+  
+</section>
+<section class="seccio">
+  <h2>📖 Fitxa completa</h2>
+  <p class="sub">Calendari a Osona, sembra, conreu, plagues, collita, varietats i conservació.</p>
+  <p><a class="boto" href="../docs/07-fitxes-cultius/farigola.html">Obrir la fitxa sencera →</a></p>
+</section>
+</main>
+<nav class="bottom"><a href="../index.html"><span class="i">🌱</span>Ara</a><a href="../calendari.html"><span class="i">📅</span>Calendari</a><a href="../associacions.html"><span class="i">🤝</span>Al costat de què</a><a href="../cultius.html"><span class="i">🥬</span>Cultius</a><a href="../tot.html"><span class="i">📚</span>Tot el fons</a></nav>
+<footer class="peu"><div class="wrap">
+  <p><strong>Hort Osona</strong> · horticultura ecològica, plantes medicinals i conserves adaptades a Osona.
+  Contingut fet a partir de l'experiència al propi hort · 2026.</p>
+  <p><a href="../tot.html">Tot el fons</a> ·
+     <a href="../associacions.html">Associacions</a> ·
+     <a href="../calendari.html">Calendari</a> ·
+     <a href="../cultius.html">Fitxes de cultiu</a></p>
+  <p class="buidet">Aquesta web no substitueix el que veus al tros: la temperatura i les gelades manen sempre.</p>
+</div></footer>
+<div class="off" id="off">📴 Sense connexió — estas veient la copia desada al mòbil.</div>
+<script>
+// Service worker: la web funciona sense cobertura al tros.
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js').catch(()=>{});}
+// Avis si es queda sense xarxa.
+function estatXarxa(){const o=document.getElementById('off');
+  if(o)o.classList.toggle('visible',!navigator.onLine);}
+addEventListener('online',estatXarxa);addEventListener('offline',estatXarxa);estatXarxa();
+</script>
+</body></html>

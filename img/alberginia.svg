@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una albergínia">
+  <defs>
+    <radialGradient id="alb-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="alb-skin" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#7C4A9E"/>
+      <stop offset="60%" stop-color="#5B2D7A"/>
+      <stop offset="100%" stop-color="#3E1D57"/>
+    </radialGradient>
+    <linearGradient id="alb-calix" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#4A5F30"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#alb-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="158" rx="55" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Brillantor -->
+  <path d="M 78 66 C 70 84 70 112 80 134" stroke="#B08AC9" stroke-width="6" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Fruit (ovaal amb estrenyement superior) -->
+  <path d="M 100 62
+           C 62 62 56 108 62 130
+           C 68 152 86 160 86 160
+           C 90 162 110 162 114 160
+           C 114 160 132 152 138 130
+           C 144 108 138 62 100 62 Z"
+        fill="url(#alb-skin)"/>
+
+  <!-- Calze i tija -->
+  <path d="M 84 66 L 88 46 L 94 62 L 100 42 L 106 62 L 112 46 L 116 66
+           C 108 72 92 72 84 66 Z" fill="url(#alb-calix)"/>
+  <rect x="97" y="26" width="6" height="20" rx="3" fill="#5C7135" transform="rotate(6 100 36)"/>
+
+  <!-- Reflex de llum -->
+  <ellipse cx="82" cy="100" rx="5" ry="18" fill="#C9A6DC" opacity="0.45" transform="rotate(-8 82 100)"/>
+</svg>

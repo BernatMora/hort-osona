@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una col capcerrada">
+  <defs>
+    <radialGradient id="col-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="col-head" cx="45%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#9BC06A"/>
+      <stop offset="70%" stop-color="#5E8C3A"/>
+      <stop offset="100%" stop-color="#3F6B26"/>
+    </radialGradient>
+    <linearGradient id="col-outer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#col-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="150" rx="62" ry="9" fill="#8B6F47" opacity="0.55"/>
+
+  <!-- Fulles externes obertes (ondulades) -->
+  <path d="M 100 148 C 60 146 40 118 52 90 C 58 76 72 72 78 84 C 66 92 60 110 68 124 C 76 138 88 146 100 148 Z" fill="url(#col-outer)"/>
+  <path d="M 100 148 C 140 146 160 118 148 90 C 142 76 128 72 122 84 C 134 92 140 110 132 124 C 124 138 112 146 100 148 Z" fill="url(#col-outer)" opacity="0.94"/>
+  <path d="M 62 128 C 54 102 62 78 82 66" stroke="#2F4A1E" stroke-width="1.4" fill="none" opacity="0.5"/>
+  <path d="M 138 128 C 146 102 138 78 118 66" stroke="#2F4A1E" stroke-width="1.4" fill="none" opacity="0.5"/>
+
+  <!-- Capoll central (esfera amb vetes de fulles concèntriques) -->
+  <circle cx="100" cy="102" r="44" fill="url(#col-head)"/>
+  <g stroke="#3F6B26" stroke-width="1.6" fill="none" opacity="0.75">
+    <path d="M 62 94 C 78 84 122 84 138 94"/>
+    <path d="M 60 106 C 80 96 120 96 140 106"/>
+    <path d="M 64 118 C 84 98 116 98 136 118"/>
+    <path d="M 74 134 C 88 112 112 112 126 134"/>
+    <path d="M 100 58 C 88 78 88 126 100 146"/>
+  </g>
+</svg>

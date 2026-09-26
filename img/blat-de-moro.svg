@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una panotxa de blat de moro">
+  <defs>
+    <radialGradient id="moro-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="moro-grain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2C94C"/>
+      <stop offset="100%" stop-color="#D9A62E"/>
+    </linearGradient>
+    <linearGradient id="moro-husk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A8BC6A"/>
+      <stop offset="100%" stop-color="#5C7135"/>
+    </linearGradient>
+    <linearGradient id="moro-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#moro-bg)" rx="12"/>
+
+  <!-- Terra -->
+  <ellipse cx="100" cy="158" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+
+  <!-- Tija gruixuda -->
+  <rect x="94" y="70" width="12" height="88" rx="4" fill="#6B8A3E"/>
+
+  <!-- Fulla llarga penjant -->
+  <path d="M 100 78 C 72 84 56 106 60 134 C 74 118 92 104 102 88 Z" fill="url(#moro-leaves)"/>
+  <path d="M 100 96 C 126 102 142 122 140 150 C 124 134 106 118 98 102 Z" fill="url(#moro-leaves)" opacity="0.9"/>
+
+  <!-- Panotxa amb fulles envolvent obertes -->
+  <g transform="rotate(-24 116 84)">
+    <path d="M 116 52 C 108 54 104 62 104 72 L 104 108 C 104 118 110 122 116 122 C 122 122 128 118 128 108 L 128 72 C 128 62 124 54 116 52 Z" fill="url(#moro-husk)"/>
+    <path d="M 104 72 C 96 78 92 92 94 108 C 98 100 102 88 106 78 Z" fill="url(#moro-husk)" opacity="0.85"/>
+    <path d="M 128 72 C 136 78 140 92 138 108 C 134 100 130 88 126 78 Z" fill="url(#moro-husk)" opacity="0.85"/>
+    <!-- Gra en quadricula -->
+    <g fill="url(#moro-grain)">
+      <circle cx="110" cy="66" r="4.2"/>
+      <circle cx="119" cy="64" r="4.2"/>
+      <circle cx="110" cy="77" r="4.2"/>
+      <circle cx="119" cy="75" r="4.2"/>
+      <circle cx="110" cy="88" r="4.2"/>
+      <circle cx="119" cy="86" r="4.2"/>
+      <circle cx="110" cy="99" r="4.2"/>
+      <circle cx="119" cy="97" r="4.2"/>
+      <circle cx="110" cy="110" r="4.2"/>
+      <circle cx="119" cy="108" r="4.2"/>
+    </g>
+    <!-- Sedes -->
+    <path d="M 112 48 C 110 42 112 38 110 34 M 118 48 C 120 40 118 36 120 32 M 115 46 C 115 40 113 38 114 34" stroke="#C9A57B" stroke-width="1.6" fill="none" opacity="0.9"/>
+  </g>
+</svg>

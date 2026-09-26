@@ -48,3 +48,25 @@ SVGs per a les fitxes noves si es volen.
 ## Idees en reserva (no acordades)
 - Guia de fauna de l'hort (senglars, conills, ocells): barreres, protecció i convivència
 - Circuit d'intercanvi de llavors (on, quan, com etiquetar-les)
+
+---
+
+## Fet el 2026-09-26 (disseny nou)
+
+- [x] Generador unificat (`build_web.py` + `md_render.py`); els antics a `_antics/`.
+- [x] Portada amb **que plantar aquest mes** i **al costat de que**, mobil primer.
+- [x] Una pagina per cultiu i una per document; calendari anual en colors.
+- [x] PWA instal·lable i les 33 il·lustracions SVG en us.
+- [x] Detector automatic de contradiccions a les associacions.
+
+## Pendent (per ordre)
+
+- [ ] **Publicar el disseny nou** (decisio de l'usuari): `./publicar.sh --si` + `./hort-sync.sh`.
+- [x] **Contradiccions d'associacions**: resolt amb un **criteri prudent automatic** (26/09/2026).
+      Si un parell surt com a bo en una font i com a dolent en una altra, la web **no el posa
+      com a bo**: el marca com a **⚠️ discutit** i el deixa fora. N'hi ha 5 a les fitxes
+      (all↔cols, patata↔api, pebrot↔alberginia, pesol↔all/ceba/porro, tomaquet↔api/pebrot/alberginia)
+      i 3 a la taula general. Es poden resoldre definitivament decidint quina font mana.
+- [x] **Cerca global** a la portada: un sol camp que busca entre cultius, pagines i tots els
+      documents (index generat al build, funciona tambe sense connexio).
+- [ ] Acabar els SVG de les fitxes que no en tenen.

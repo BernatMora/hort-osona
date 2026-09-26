@@ -1,5 +1,33 @@
 # 📝 CHANGELOG — Hort Osona
 
+## 2026-09-26 — Disseny nou: el que cal dia a dia, a primera plana
+
+**Motiu.** Qui visita la web (des del mobil, al tros) ha de veure d'un cop d'ull el que
+necessita cada dia: **que pot plantar aquest mes** i **amb que ho pot associar**. Abans
+calia buscar-ho entre 108 documents.
+
+**Que s'ha fet.**
+- **Generador nou `build_web.py`** (un de sol, substitueix els tres anteriors que queden
+  arxivats a `_antics/`). `md_render.py` es la biblioteca de conversio markdown→HTML.
+- **Portada nova**: mes en curs amb fons estacional, clima, setmana en curs, dates clau,
+  **lluna del dia** amb el consell del projecte i el **mes dia a dia amb la lluna**.
+- **Que plantar ara**: quatre blocs (sembrar a terra, en planter, trasplantar, collir) amb
+  els cultius reals del mes, trets del calendari de sembra.
+- **Al costat de que**: una fitxa per cultiu amb ✅/❌, **diagrama vertical** i cinc
+  **receptes de bancal**; i una pagina `associacions.html` amb la taula completa.
+- **Calendari** de tot l'any en colors (sembrar/trasplantar/collir) i **una pagina per
+  cultiu** amb dades rapides, associacions i la fitxa sencera; **una pagina per document**.
+- **Mobil primer**: lletra i botons grans, barra fixa a baix, checklist de tasques que es
+  desa al mobil, PWA instal·lable (manifest + service worker) i les **33 il·lustracions SVG**
+  del repo que el portal vell no ensenyava.
+- **Deteccio automatica de contradiccions** d'associacions (n'ha trobat 4, vegeu PENDENTS).
+- Verificat: **0 enllacos de navegacio trencats**, 37 fitxes, 107 documents, portada de
+  36 KB (abans 81 KB).
+
+**Pendent abans de publicar:** decisio de l'usuari sobre el disseny i resoldre les 4
+contradiccions de les associacions.
+
+
 Tots els canvis notables al projecte, per data.
 
 ## [2026-08-31c] — Pendents: blat de moro, maduixa, multiplicació + mòbil vertical arreglat de veritat

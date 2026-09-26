@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una escarola">
+  <defs>
+    <radialGradient id="escarola-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <radialGradient id="escarola-head" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFCF3"/>
+      <stop offset="50%" stop-color="#E8E2CC"/>
+      <stop offset="100%" stop-color="#9C8B45"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="200" height="200" fill="url(#escarola-bg)" rx="12"/>
+
+  <!-- Arrels -->
+  <g stroke="#C9A57B" stroke-width="1" fill="none" opacity="0.7">
+    <path d="M 100 165 L 88 185"/>
+    <path d="M 100 165 L 100 188"/>
+    <path d="M 100 165 L 112 185"/>
+  </g>
+
+  <!-- Base (arrel pivotant) -->
+  <ellipse cx="100" cy="165" rx="10" ry="6" fill="#FFFCF3" stroke="#9C8B45" stroke-width="1"/>
+
+  <!-- Cos de l'escarola (cap bullit) -->
+  <ellipse cx="100" cy="115" rx="55" ry="50" fill="url(#escarola-head)"/>
+
+  <!-- Fulles arrissades superposades -->
+  <g fill="none" stroke="#9C8B45" stroke-width="1.2" opacity="0.7">
+    <path d="M 60 100 Q 70 90 80 100 Q 90 110 100 100 Q 110 90 120 100 Q 130 110 140 100"/>
+    <path d="M 55 115 Q 65 105 75 115 Q 85 125 95 115 Q 105 105 115 115 Q 125 125 135 115 Q 145 105 145 115"/>
+    <path d="M 60 130 Q 70 120 80 130 Q 90 140 100 130 Q 110 120 120 130 Q 130 140 140 130"/>
+    <path d="M 65 145 Q 75 135 85 145 Q 95 155 105 145 Q 115 135 125 145 Q 135 155 135 145"/>
+  </g>
+
+  <!-- Cor interior (més clar) -->
+  <ellipse cx="100" cy="115" rx="20" ry="18" fill="#FFFCF3" opacity="0.6"/>
+
+  <!-- Fulles exteriors verdes -->
+  <g fill="#5C7A45" opacity="0.7">
+    <ellipse cx="55" cy="100" rx="10" ry="20" transform="rotate(-30 55 100)"/>
+    <ellipse cx="145" cy="100" rx="10" ry="20" transform="rotate(30 145 100)"/>
+  </g>
+
+  <text x="100" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3D4A2A" font-style="italic">Cichorium endivia</text>
+</svg>
