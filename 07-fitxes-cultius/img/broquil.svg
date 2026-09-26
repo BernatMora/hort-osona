@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'un bròquil">
+  <defs>
+    <radialGradient id="broquil-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="broquil-head" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#82B356"/>
+      <stop offset="100%" stop-color="#3E6B2E"/>
+    </linearGradient>
+    <linearGradient id="broquil-stem" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D2E2B2"/>
+      <stop offset="100%" stop-color="#9DBB74"/>
+    </linearGradient>
+    <linearGradient id="broquil-leaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7BA05B"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#broquil-bg)" rx="12"/>
+  <ellipse cx="100" cy="158" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <path d="M100 154 C 74 152 54 138 47 118 C 72 115 95 128 100 154 Z" fill="url(#broquil-leaves)"/>
+  <path d="M100 154 C 126 152 146 138 153 118 C 128 115 105 128 100 154 Z" fill="url(#broquil-leaves)"/>
+  <path d="M88 156 C 87 132 89 114 92 104 L108 104 C 111 114 113 132 112 156 Z" fill="url(#broquil-stem)"/>
+  <g fill="url(#broquil-head)">
+    <circle cx="100" cy="84" r="27"/>
+    <circle cx="76" cy="94" r="19"/>
+    <circle cx="124" cy="94" r="19"/>
+    <circle cx="84" cy="70" r="17"/>
+    <circle cx="116" cy="70" r="17"/>
+    <circle cx="100" cy="60" r="15"/>
+    <circle cx="64" cy="106" r="12"/>
+    <circle cx="136" cy="106" r="12"/>
+  </g>
+  <g fill="#2F5222" opacity="0.3">
+    <circle cx="100" cy="80" r="4"/><circle cx="88" cy="92" r="3.5"/><circle cx="112" cy="92" r="3.5"/>
+    <circle cx="78" cy="96" r="3"/><circle cx="122" cy="96" r="3"/><circle cx="100" cy="98" r="3"/>
+    <circle cx="86" cy="72" r="3"/><circle cx="114" cy="72" r="3"/>
+  </g>
+</svg>

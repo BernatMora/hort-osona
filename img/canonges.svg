@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una roseta de canonges">
+  <defs>
+    <radialGradient id="canonges-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="canonges-full" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9CC96A"/>
+      <stop offset="100%" stop-color="#41682F"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#canonges-bg)" rx="12"/>
+  <ellipse cx="100" cy="158" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <ellipse cx="100" cy="82" rx="11.0" ry="22.9" transform="rotate(-80 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="11.0" ry="22.9" transform="rotate(-54 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="12.5" ry="26.0" transform="rotate(-28 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="12.5" ry="26.0" transform="rotate(0 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="12.5" ry="26.0" transform="rotate(28 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="11.0" ry="22.9" transform="rotate(54 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <ellipse cx="100" cy="82" rx="11.0" ry="22.9" transform="rotate(80 100 112)" fill="url(#canonges-full)" stroke="#3D4A2A" stroke-opacity="0.25" stroke-width="1.1"/>
+  <circle cx="100" cy="112" r="9" fill="#6E9B48"/>
+</svg>

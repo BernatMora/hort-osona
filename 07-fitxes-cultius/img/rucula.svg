@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Il·lustració d'una mata de rúcula">
+  <defs>
+    <radialGradient id="rucula-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5EBD8"/>
+      <stop offset="100%" stop-color="#D9D0B5"/>
+    </radialGradient>
+    <linearGradient id="rucula-full" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8FBF5A"/>
+      <stop offset="100%" stop-color="#3D4A2A"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#rucula-bg)" rx="12"/>
+  <ellipse cx="100" cy="158" rx="58" ry="8" fill="#8B6F47" opacity="0.5"/>
+  <g transform="translate(106 156) rotate(-70) scale(0.8)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(100 152) rotate(-46) scale(0.95)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(100 150) rotate(-22) scale(1.05)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(100 150) rotate(0) scale(1.12)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(100 150) rotate(22) scale(1.05)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(100 152) rotate(46) scale(0.95)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+  <g transform="translate(94 156) rotate(70) scale(0.8)"><path d="M0 0 C -7 -8 -10 -14 -11 -21 C -17 -19 -21 -23 -19 -29 C -25 -30 -27 -36 -23 -41 C -27 -46 -25 -53 -19 -56 C -13 -60 -5 -63 0 -72 C 5 -63 13 -60 19 -56 C 25 -53 27 -46 23 -41 C 27 -36 25 -30 19 -29 C 21 -23 17 -19 11 -21 C 10 -14 7 -8 0 0 Z" fill="url(#rucula-full)" stroke="#2F5222" stroke-opacity="0.3" stroke-width="1.2"/><path d="M0 -6 L0 -66" stroke="#2F5222" stroke-opacity="0.35" stroke-width="1.4" fill="none"/></g>
+</svg>
